@@ -57,7 +57,7 @@ export interface UserProducts{
     success: boolean,
     message: string,
     data: {
-        products: Product[],
+        Products: Product[],
     }
 }
 export interface Brand{

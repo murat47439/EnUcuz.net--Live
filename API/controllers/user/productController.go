@@ -192,7 +192,7 @@ func (pc *ProductController) GetUserProducts(w http.ResponseWriter, r *http.Requ
 		return
 	}
 	RespondWithJSON(w, http.StatusOK, map[string]interface{}{
-		"products": products,
+		"Products": products,
 	})
 }
 
