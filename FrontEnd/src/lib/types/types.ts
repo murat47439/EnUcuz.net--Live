@@ -185,7 +185,7 @@ export interface AddFavoriteRequest{
     id: number
 }
 export interface ProductDetail{    
-data: {Product: Product,
+data: {product: Product,
 Attribute: ProductAttribute[]
 }
     }
