@@ -1,0 +1,167 @@
+APP_LOG: 2025/10/28 20:12:27 config.go:13: JWT_SECRET not set in environment
+APP_LOG: 2025/10/28 20:12:27 config.go:18: REFRESH_TOKEN_SECRET not set in environment
+APP_LOG: 2025/10/28 20:12:27 main.go:24: Application started successfully.
+APP_LOG: 2025/10/28 20:13:31 controllers.go:21: Success response: 200
+APP_LOG: 2025/10/28 20:13:41 controllers.go:21: Success response: 200
+APP_LOG: 2025/10/28 20:13:57 controllers.go:21: Success response: 200
+APP_LOG: 2025/10/28 20:14:05 controllers.go:21: Success response: 200
+APP_LOG: 2025/10/28 20:14:37 controllers.go:21: Success response: 200
+APP_LOG: 2025/10/28 20:14:47 controllers.go:21: Success response: 200
+APP_LOG: 2025/10/28 20:14:47 controllers.go:21: Success response: 200
+APP_LOG: 2025/10/28 20:17:25 controllers.go:21: Success response: 200
+APP_LOG: 2025/10/28 20:17:25 controllers.go:21: Success response: 200
+APP_LOG: 2025/10/28 20:17:33 controllers.go:21: Success response: 200
+APP_LOG: 2025/10/28 20:17:33 controllers.go:21: Success response: 200
+APP_LOG: 2025/10/28 20:17:59 usersController.go:54: Login request started
+APP_LOG: 2025/10/28 20:17:59 usersController.go:93: Login success: User 1 logged in
+APP_LOG: 2025/10/28 20:17:59 controllers.go:21: Success response: 202
+APP_LOG: 2025/10/28 20:17:59 controllers.go:21: Success response: 200
+APP_LOG: 2025/10/28 20:17:59 controllers.go:21: Success response: 200
+APP_LOG: 2025/10/28 20:18:03 controllers.go:21: Success response: 200
+APP_LOG: 2025/10/28 20:18:09 usersController.go:213: GetAccess request started
+APP_LOG: 2025/10/28 20:18:09 usersController.go:249: GetAccess success: Access token refreshed
+APP_LOG: 2025/10/28 20:18:09 controllers.go:21: Success response: 200
+APP_LOG: 2025/10/28 20:18:46 controllers.go:21: Success response: 200
+APP_LOG: 2025/10/28 20:18:51 usersController.go:100: Logout request started
+APP_LOG: 2025/10/28 20:18:51 usersController.go:141: Logout success: User 1 logged out
+APP_LOG: 2025/10/28 20:18:51 controllers.go:21: Success response: 200
+APP_LOG: 2025/10/28 20:18:51 controllers.go:21: Success response: 200
+APP_LOG: 2025/10/28 20:19:08 usersController.go:54: Login request started
+APP_LOG: 2025/10/28 20:19:08 usersController.go:93: Login success: User 1 logged in
+APP_LOG: 2025/10/28 20:19:08 controllers.go:21: Success response: 202
+APP_LOG: 2025/10/28 20:19:09 controllers.go:21: Success response: 200
+APP_LOG: 2025/10/28 20:19:09 controllers.go:21: Success response: 200
+APP_LOG: 2025/10/28 20:19:11 favoriesController.go:33: AddFavori request started
+APP_LOG: 2025/10/28 20:19:11 favoriesController.go:58: AddFavori success: Product 4 added to favorites for user 1
+APP_LOG: 2025/10/28 20:19:11 controllers.go:21: Success response: 201
+APP_LOG: 2025/10/28 20:19:14 favoriesController.go:93: GetFavourites request started
+APP_LOG: 2025/10/28 20:19:14 favoriesController.go:110: GetFavourites parameters: userID=1, page=1
+APP_LOG: 2025/10/28 20:19:14 favoriesController.go:119: GetFavourites success: 4 favorites retrieved for user 1
+APP_LOG: 2025/10/28 20:19:14 controllers.go:21: Success response: 200
+APP_LOG: 2025/10/28 20:19:14 favoriesController.go:93: GetFavourites request started
+APP_LOG: 2025/10/28 20:19:14 favoriesController.go:110: GetFavourites parameters: userID=1, page=1
+APP_LOG: 2025/10/28 20:19:14 favoriesController.go:119: GetFavourites success: 4 favorites retrieved for user 1
+APP_LOG: 2025/10/28 20:19:14 controllers.go:21: Success response: 200
+APP_LOG: 2025/10/28 20:19:17 favoriesController.go:64: RemoveFavori request started
+APP_LOG: 2025/10/28 20:19:17 favoriesController.go:87: RemoveFavori success: Favorite 13 removed for user 1
+APP_LOG: 2025/10/28 20:19:17 controllers.go:21: Success response: 200
+APP_LOG: 2025/10/28 20:19:18 favoriesController.go:64: RemoveFavori request started
+APP_LOG: 2025/10/28 20:19:18 favoriesController.go:87: RemoveFavori success: Favorite 9 removed for user 1
+APP_LOG: 2025/10/28 20:19:18 controllers.go:21: Success response: 200
+APP_LOG: 2025/10/28 20:19:19 favoriesController.go:64: RemoveFavori request started
+APP_LOG: 2025/10/28 20:19:19 favoriesController.go:87: RemoveFavori success: Favorite 5 removed for user 1
+APP_LOG: 2025/10/28 20:19:19 controllers.go:21: Success response: 200
+APP_LOG: 2025/10/28 20:19:23 favoriesController.go:93: GetFavourites request started
+APP_LOG: 2025/10/28 20:19:23 favoriesController.go:110: GetFavourites parameters: userID=1, page=1
+APP_LOG: 2025/10/28 20:19:23 favoriesController.go:119: GetFavourites success: 1 favorites retrieved for user 1
+APP_LOG: 2025/10/28 20:19:23 controllers.go:21: Success response: 200
+APP_LOG: 2025/10/28 20:19:31 controllers.go:21: Success response: 200
+APP_LOG: 2025/10/28 20:19:31 controllers.go:21: Success response: 200
+APP_LOG: 2025/10/28 20:19:34 controllers.go:21: Success response: 200
+APP_LOG: 2025/10/28 20:19:34 controllers.go:21: Success response: 200
+APP_LOG: 2025/10/28 20:19:42 categoriesController.go:44: GetCategories request started
+APP_LOG: 2025/10/28 20:19:42 categoriesController.go:56: GetCategories parameters: page=1, search=''
+APP_LOG: 2025/10/28 20:19:42 brandsController.go:45: GetBrands request started
+APP_LOG: 2025/10/28 20:19:42 brandsController.go:57: GetBrands parameters: page=1, search=''
+APP_LOG: 2025/10/28 20:19:42 categoriesController.go:65: GetCategories success: 50 categories retrieved
+APP_LOG: 2025/10/28 20:19:42 controllers.go:21: Success response: 200
+APP_LOG: 2025/10/28 20:19:42 brandsController.go:66: GetBrands success: 50 brands retrieved
+APP_LOG: 2025/10/28 20:19:42 controllers.go:21: Success response: 200
+APP_LOG: 2025/10/28 20:19:45 controllers.go:21: Success response: 200
+APP_LOG: 2025/10/28 20:19:45 controllers.go:21: Success response: 200
+APP_LOG: 2025/10/28 20:23:59 controllers.go:21: Success response: 200
+APP_LOG: 2025/10/28 20:24:34 controllers.go:21: Success response: 200
+APP_LOG: 2025/10/28 20:24:34 controllers.go:21: Success response: 200
+APP_LOG: 2025/10/28 20:24:40 controllers.go:21: Success response: 200
+APP_LOG: 2025/10/28 20:24:40 controllers.go:21: Success response: 200
+APP_LOG: 2025/10/28 20:24:45 controllers.go:21: Success response: 200
+APP_LOG: 2025/10/28 20:24:45 controllers.go:21: Success response: 200
+APP_LOG: 2025/10/28 20:24:48 controllers.go:21: Success response: 200
+APP_LOG: 2025/10/28 20:24:48 controllers.go:21: Success response: 200
+APP_LOG: 2025/10/28 20:24:58 brandsController.go:45: GetBrands request started
+APP_LOG: 2025/10/28 20:24:58 brandsController.go:57: GetBrands parameters: page=1, search=''
+APP_LOG: 2025/10/28 20:24:58 categoriesController.go:44: GetCategories request started
+APP_LOG: 2025/10/28 20:24:58 categoriesController.go:56: GetCategories parameters: page=1, search=''
+APP_LOG: 2025/10/28 20:24:58 brandsController.go:66: GetBrands success: 50 brands retrieved
+APP_LOG: 2025/10/28 20:24:58 controllers.go:21: Success response: 200
+APP_LOG: 2025/10/28 20:24:58 categoriesController.go:65: GetCategories success: 50 categories retrieved
+APP_LOG: 2025/10/28 20:24:58 controllers.go:21: Success response: 200
+APP_LOG: 2025/10/28 20:25:01 usersController.go:148: GetUserData request started
+APP_LOG: 2025/10/28 20:25:01 usersController.go:164: GetUserData success: User data retrieved for user 1
+APP_LOG: 2025/10/28 20:25:01 controllers.go:21: Success response: 200
+APP_LOG: 2025/10/28 20:25:01 usersController.go:148: GetUserData request started
+APP_LOG: 2025/10/28 20:25:01 usersController.go:164: GetUserData success: User data retrieved for user 1
+APP_LOG: 2025/10/28 20:25:01 controllers.go:21: Success response: 200
+APP_LOG: 2025/10/28 20:25:04 favoriesController.go:93: GetFavourites request started
+APP_LOG: 2025/10/28 20:25:04 favoriesController.go:110: GetFavourites parameters: userID=1, page=1
+APP_LOG: 2025/10/28 20:25:04 favoriesController.go:119: GetFavourites success: 1 favorites retrieved for user 1
+APP_LOG: 2025/10/28 20:25:04 controllers.go:21: Success response: 200
+APP_LOG: 2025/10/28 20:25:04 favoriesController.go:93: GetFavourites request started
+APP_LOG: 2025/10/28 20:25:04 favoriesController.go:110: GetFavourites parameters: userID=1, page=1
+APP_LOG: 2025/10/28 20:25:04 favoriesController.go:119: GetFavourites success: 1 favorites retrieved for user 1
+APP_LOG: 2025/10/28 20:25:04 controllers.go:21: Success response: 200
+APP_LOG: 2025/10/28 20:25:06 favoriesController.go:64: RemoveFavori request started
+APP_LOG: 2025/10/28 20:25:06 favoriesController.go:87: RemoveFavori success: Favorite 4 removed for user 1
+APP_LOG: 2025/10/28 20:25:06 controllers.go:21: Success response: 200
+APP_LOG: 2025/10/28 20:25:08 favoriesController.go:64: RemoveFavori request started
+APP_LOG: 2025/10/28 20:25:08 favoriesController.go:82: RemoveFavori service error: Favori not found
+APP_LOG: 2025/10/28 20:25:08 controllers.go:10: Error response: 404 - Favori bulunamadı veya silinemedi
+APP_LOG: 2025/10/28 20:25:10 favoriesController.go:93: GetFavourites request started
+APP_LOG: 2025/10/28 20:25:10 favoriesController.go:110: GetFavourites parameters: userID=1, page=1
+APP_LOG: 2025/10/28 20:25:10 favoriesController.go:119: GetFavourites success: 0 favorites retrieved for user 1
+APP_LOG: 2025/10/28 20:25:10 controllers.go:21: Success response: 200
+APP_LOG: 2025/10/28 20:27:18 usersController.go:100: Logout request started
+APP_LOG: 2025/10/28 20:27:18 usersController.go:141: Logout success: User 1 logged out
+APP_LOG: 2025/10/28 20:27:18 controllers.go:21: Success response: 200
+APP_LOG: 2025/10/28 20:27:19 controllers.go:21: Success response: 200
+APP_LOG: 2025/10/28 20:27:23 controllers.go:21: Success response: 200
+APP_LOG: 2025/10/28 20:27:23 controllers.go:21: Success response: 200
+APP_LOG: 2025/10/28 20:27:24 productRepo.go:60:  true
+APP_LOG: 2025/10/28 20:27:24 controllers.go:21: Success response: 200
+APP_LOG: 2025/10/28 20:27:30 controllers.go:21: Success response: 200
+APP_LOG: 2025/10/28 20:27:30 controllers.go:21: Success response: 200
+APP_LOG: 2025/10/28 21:39:33 config.go:13: JWT_SECRET not set in environment
+APP_LOG: 2025/10/28 21:39:33 config.go:18: REFRESH_TOKEN_SECRET not set in environment
+APP_LOG: 2025/10/28 21:40:09 config.go:13: JWT_SECRET not set in environment
+APP_LOG: 2025/10/28 21:40:09 config.go:18: REFRESH_TOKEN_SECRET not set in environment
+APP_LOG: 2025/10/28 21:40:11 main.go:24: Application started successfully.
+APP_LOG: 2025/10/29 18:43:59 config.go:13: JWT_SECRET not set in environment
+APP_LOG: 2025/10/29 18:43:59 config.go:18: REFRESH_TOKEN_SECRET not set in environment
+APP_LOG: 2025/10/29 18:44:19 config.go:13: JWT_SECRET not set in environment
+APP_LOG: 2025/10/29 18:44:19 config.go:18: REFRESH_TOKEN_SECRET not set in environment
+APP_LOG: 2025/10/29 18:45:03 config.go:13: JWT_SECRET not set in environment
+APP_LOG: 2025/10/29 18:45:03 config.go:18: REFRESH_TOKEN_SECRET not set in environment
+APP_LOG: 2025/10/29 18:45:25 config.go:13: JWT_SECRET not set in environment
+APP_LOG: 2025/10/29 18:45:25 config.go:18: REFRESH_TOKEN_SECRET not set in environment
+APP_LOG: 2025/10/29 18:45:43 config.go:13: JWT_SECRET not set in environment
+APP_LOG: 2025/10/29 18:45:43 config.go:18: REFRESH_TOKEN_SECRET not set in environment
+APP_LOG: 2025/10/29 18:45:53 config.go:13: JWT_SECRET not set in environment
+APP_LOG: 2025/10/29 18:45:53 config.go:18: REFRESH_TOKEN_SECRET not set in environment
+APP_LOG: 2025/10/29 18:45:53 main.go:24: Application started successfully.
+APP_LOG: 2025/10/29 18:46:05 controllers.go:21: Success response: 200
+APP_LOG: 2025/10/29 18:46:11 usersController.go:54: Login request started
+APP_LOG: 2025/10/29 18:46:11 usersController.go:93: Login success: User 1 logged in
+APP_LOG: 2025/10/29 18:46:11 controllers.go:21: Success response: 202
+APP_LOG: 2025/10/29 18:46:12 controllers.go:21: Success response: 200
+APP_LOG: 2025/10/29 18:46:12 controllers.go:21: Success response: 200
+APP_LOG: 2025/10/29 18:46:13 controllers.go:21: Success response: 200
+APP_LOG: 2025/10/29 18:46:13 controllers.go:21: Success response: 200
+APP_LOG: 2025/10/29 18:47:17 config.go:13: JWT_SECRET not set in environment
+APP_LOG: 2025/10/29 18:47:17 config.go:18: REFRESH_TOKEN_SECRET not set in environment
+APP_LOG: 2025/10/29 18:47:17 main.go:24: Application started successfully.
+APP_LOG: 2025/10/29 18:47:21 controllers.go:21: Success response: 200
+APP_LOG: 2025/10/29 18:47:24 controllers.go:21: Success response: 200
+APP_LOG: 2025/10/29 18:48:03 usersController.go:54: Login request started
+APP_LOG: 2025/10/29 18:48:03 usersController.go:93: Login success: User 1 logged in
+APP_LOG: 2025/10/29 18:48:03 controllers.go:21: Success response: 202
+APP_LOG: 2025/10/29 18:48:07 controllers.go:21: Success response: 200
+APP_LOG: 2025/10/29 18:48:29 controllers.go:21: Success response: 200
+APP_LOG: 2025/10/29 18:48:39 controllers.go:21: Success response: 200
+APP_LOG: 2025/10/29 18:50:01 controllers.go:21: Success response: 200
+APP_LOG: 2025/10/29 18:50:55 controllers.go:21: Success response: 200
+APP_LOG: 2025/10/29 18:50:55 controllers.go:21: Success response: 200
+APP_LOG: 2025/10/29 18:56:21 controllers.go:21: Success response: 200
+APP_LOG: 2025/10/29 18:56:21 controllers.go:21: Success response: 200
+APP_LOG: 2025/10/29 19:00:17 controllers.go:21: Success response: 200
+APP_LOG: 2025/10/29 19:00:18 controllers.go:21: Success response: 200
+APP_LOG: 2025/10/29 19:01:37 controllers.go:21: Success response: 200
