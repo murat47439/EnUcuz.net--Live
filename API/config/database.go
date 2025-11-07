@@ -29,7 +29,7 @@ func ConnectDB() *sqlx.DB {
 	if dbuser == "" || dbpass == "" || dbhost == "" || dbport == "" || dbname == "" {
 		log.Fatal("invalid value")
 	}
-	dsn := fmt.Sprintf("host=%s port=%s user=%s password=%s dbname=%s sslmode=disable",
+	dsn := fmt.Sprintf("host=%s port=%s user=%s password=%s dbname=%s sslmode=require",
 		dbhost, dbport, dbuser, dbpass, dbname)
 
 	db, err := sqlx.Open("postgres", dsn)

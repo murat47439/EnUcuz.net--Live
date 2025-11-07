@@ -3,8 +3,6 @@ package config
 import (
 	"os"
 	"strings"
-
-	"github.com/joho/godotenv"
 )
 
 var (
@@ -14,10 +12,7 @@ var (
 )
 
 func LoadConfig() {
-	err := godotenv.Load()
-	if err != nil {
-		Logger.Printf(".env Yüklenemedi")
-	}
+
 	jwt_secret := os.Getenv("JWT_SECRET")
 	if jwt_secret == "" {
 		Logger.Printf("JWT_SECRET not set in environment")
