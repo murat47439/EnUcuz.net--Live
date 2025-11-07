@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
-import { Brand, Category, CategoryAttribute, FeatureKey, Product } from "@/lib/types/types";
+import { Brand, Category, CategoryAttribute, FeatureKey } from "@/lib/types/types";
 import { PaginationRequest, IdParam } from "@/lib/types/types";
 import { addProduct } from "@/lib/api/products/useAdd";
 import { getBrands } from "@/lib/api/brands/useGets";
