@@ -4,7 +4,7 @@ import { Message } from "@/lib/types/types";
 
 export async function refreshToken() {
     try{
-        const res = await api.get<Message>("/refresh")
+        const res = await api.post<Message>("/refresh")
         return res.data
     }catch(err: unknown){
         const error = err as AxiosError<{ message: string }>;

@@ -31,9 +31,9 @@ const ProductDetailCard: React.FC<ProductDetailCardProps> = ({ product }) => {
                         : "Fiyat bilgisi yok"}
                 </p>
 
-                {product?.data.Attribute && product.data.Attribute.length > 0 ? (
+                {product?.data.attribute && product.data.attribute.length > 0 ? (
                     <ul className="list-none list-inside space-y-2">
-                        {product.data.Attribute.map((attr, index) => (
+                        {product.data.attribute.map((attr, index) => (
                             <li key={index} className="text-gray-700 border border-gray-200 rounded-xl text-center p-3">
                                 {attr.attribute_name}: {attr.value}
                             </li>

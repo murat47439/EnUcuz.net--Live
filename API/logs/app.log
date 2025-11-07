@@ -1,127 +1,625 @@
-APP_LOG: 2025/10/28 20:12:27 config.go:13: JWT_SECRET not set in environment
-APP_LOG: 2025/10/28 20:12:27 config.go:18: REFRESH_TOKEN_SECRET not set in environment
-APP_LOG: 2025/10/28 20:12:27 main.go:24: Application started successfully.
-APP_LOG: 2025/10/28 20:13:31 controllers.go:21: Success response: 200
-APP_LOG: 2025/10/28 20:13:41 controllers.go:21: Success response: 200
-APP_LOG: 2025/10/28 20:13:57 controllers.go:21: Success response: 200
-APP_LOG: 2025/10/28 20:14:05 controllers.go:21: Success response: 200
-APP_LOG: 2025/10/28 20:14:37 controllers.go:21: Success response: 200
-APP_LOG: 2025/10/28 20:14:47 controllers.go:21: Success response: 200
-APP_LOG: 2025/10/28 20:14:47 controllers.go:21: Success response: 200
-APP_LOG: 2025/10/28 20:17:25 controllers.go:21: Success response: 200
-APP_LOG: 2025/10/28 20:17:25 controllers.go:21: Success response: 200
-APP_LOG: 2025/10/28 20:17:33 controllers.go:21: Success response: 200
-APP_LOG: 2025/10/28 20:17:33 controllers.go:21: Success response: 200
-APP_LOG: 2025/10/28 20:17:59 usersController.go:54: Login request started
-APP_LOG: 2025/10/28 20:17:59 usersController.go:93: Login success: User 1 logged in
-APP_LOG: 2025/10/28 20:17:59 controllers.go:21: Success response: 202
-APP_LOG: 2025/10/28 20:17:59 controllers.go:21: Success response: 200
-APP_LOG: 2025/10/28 20:17:59 controllers.go:21: Success response: 200
-APP_LOG: 2025/10/28 20:18:03 controllers.go:21: Success response: 200
-APP_LOG: 2025/10/28 20:18:09 usersController.go:213: GetAccess request started
-APP_LOG: 2025/10/28 20:18:09 usersController.go:249: GetAccess success: Access token refreshed
-APP_LOG: 2025/10/28 20:18:09 controllers.go:21: Success response: 200
-APP_LOG: 2025/10/28 20:18:46 controllers.go:21: Success response: 200
-APP_LOG: 2025/10/28 20:18:51 usersController.go:100: Logout request started
-APP_LOG: 2025/10/28 20:18:51 usersController.go:141: Logout success: User 1 logged out
-APP_LOG: 2025/10/28 20:18:51 controllers.go:21: Success response: 200
-APP_LOG: 2025/10/28 20:18:51 controllers.go:21: Success response: 200
-APP_LOG: 2025/10/28 20:19:08 usersController.go:54: Login request started
-APP_LOG: 2025/10/28 20:19:08 usersController.go:93: Login success: User 1 logged in
-APP_LOG: 2025/10/28 20:19:08 controllers.go:21: Success response: 202
-APP_LOG: 2025/10/28 20:19:09 controllers.go:21: Success response: 200
-APP_LOG: 2025/10/28 20:19:09 controllers.go:21: Success response: 200
-APP_LOG: 2025/10/28 20:19:11 favoriesController.go:33: AddFavori request started
-APP_LOG: 2025/10/28 20:19:11 favoriesController.go:58: AddFavori success: Product 4 added to favorites for user 1
-APP_LOG: 2025/10/28 20:19:11 controllers.go:21: Success response: 201
-APP_LOG: 2025/10/28 20:19:14 favoriesController.go:93: GetFavourites request started
-APP_LOG: 2025/10/28 20:19:14 favoriesController.go:110: GetFavourites parameters: userID=1, page=1
-APP_LOG: 2025/10/28 20:19:14 favoriesController.go:119: GetFavourites success: 4 favorites retrieved for user 1
-APP_LOG: 2025/10/28 20:19:14 controllers.go:21: Success response: 200
-APP_LOG: 2025/10/28 20:19:14 favoriesController.go:93: GetFavourites request started
-APP_LOG: 2025/10/28 20:19:14 favoriesController.go:110: GetFavourites parameters: userID=1, page=1
-APP_LOG: 2025/10/28 20:19:14 favoriesController.go:119: GetFavourites success: 4 favorites retrieved for user 1
-APP_LOG: 2025/10/28 20:19:14 controllers.go:21: Success response: 200
-APP_LOG: 2025/10/28 20:19:17 favoriesController.go:64: RemoveFavori request started
-APP_LOG: 2025/10/28 20:19:17 favoriesController.go:87: RemoveFavori success: Favorite 13 removed for user 1
-APP_LOG: 2025/10/28 20:19:17 controllers.go:21: Success response: 200
-APP_LOG: 2025/10/28 20:19:18 favoriesController.go:64: RemoveFavori request started
-APP_LOG: 2025/10/28 20:19:18 favoriesController.go:87: RemoveFavori success: Favorite 9 removed for user 1
-APP_LOG: 2025/10/28 20:19:18 controllers.go:21: Success response: 200
-APP_LOG: 2025/10/28 20:19:19 favoriesController.go:64: RemoveFavori request started
-APP_LOG: 2025/10/28 20:19:19 favoriesController.go:87: RemoveFavori success: Favorite 5 removed for user 1
-APP_LOG: 2025/10/28 20:19:19 controllers.go:21: Success response: 200
-APP_LOG: 2025/10/28 20:19:23 favoriesController.go:93: GetFavourites request started
-APP_LOG: 2025/10/28 20:19:23 favoriesController.go:110: GetFavourites parameters: userID=1, page=1
-APP_LOG: 2025/10/28 20:19:23 favoriesController.go:119: GetFavourites success: 1 favorites retrieved for user 1
-APP_LOG: 2025/10/28 20:19:23 controllers.go:21: Success response: 200
-APP_LOG: 2025/10/28 20:19:31 controllers.go:21: Success response: 200
-APP_LOG: 2025/10/28 20:19:31 controllers.go:21: Success response: 200
-APP_LOG: 2025/10/28 20:19:34 controllers.go:21: Success response: 200
-APP_LOG: 2025/10/28 20:19:34 controllers.go:21: Success response: 200
-APP_LOG: 2025/10/28 20:19:42 categoriesController.go:44: GetCategories request started
-APP_LOG: 2025/10/28 20:19:42 categoriesController.go:56: GetCategories parameters: page=1, search=''
-APP_LOG: 2025/10/28 20:19:42 brandsController.go:45: GetBrands request started
-APP_LOG: 2025/10/28 20:19:42 brandsController.go:57: GetBrands parameters: page=1, search=''
-APP_LOG: 2025/10/28 20:19:42 categoriesController.go:65: GetCategories success: 50 categories retrieved
-APP_LOG: 2025/10/28 20:19:42 controllers.go:21: Success response: 200
-APP_LOG: 2025/10/28 20:19:42 brandsController.go:66: GetBrands success: 50 brands retrieved
-APP_LOG: 2025/10/28 20:19:42 controllers.go:21: Success response: 200
-APP_LOG: 2025/10/28 20:19:45 controllers.go:21: Success response: 200
-APP_LOG: 2025/10/28 20:19:45 controllers.go:21: Success response: 200
-APP_LOG: 2025/10/28 20:23:59 controllers.go:21: Success response: 200
-APP_LOG: 2025/10/28 20:24:34 controllers.go:21: Success response: 200
-APP_LOG: 2025/10/28 20:24:34 controllers.go:21: Success response: 200
-APP_LOG: 2025/10/28 20:24:40 controllers.go:21: Success response: 200
-APP_LOG: 2025/10/28 20:24:40 controllers.go:21: Success response: 200
-APP_LOG: 2025/10/28 20:24:45 controllers.go:21: Success response: 200
-APP_LOG: 2025/10/28 20:24:45 controllers.go:21: Success response: 200
-APP_LOG: 2025/10/28 20:24:48 controllers.go:21: Success response: 200
-APP_LOG: 2025/10/28 20:24:48 controllers.go:21: Success response: 200
-APP_LOG: 2025/10/28 20:24:58 brandsController.go:45: GetBrands request started
-APP_LOG: 2025/10/28 20:24:58 brandsController.go:57: GetBrands parameters: page=1, search=''
-APP_LOG: 2025/10/28 20:24:58 categoriesController.go:44: GetCategories request started
-APP_LOG: 2025/10/28 20:24:58 categoriesController.go:56: GetCategories parameters: page=1, search=''
-APP_LOG: 2025/10/28 20:24:58 brandsController.go:66: GetBrands success: 50 brands retrieved
-APP_LOG: 2025/10/28 20:24:58 controllers.go:21: Success response: 200
-APP_LOG: 2025/10/28 20:24:58 categoriesController.go:65: GetCategories success: 50 categories retrieved
-APP_LOG: 2025/10/28 20:24:58 controllers.go:21: Success response: 200
-APP_LOG: 2025/10/28 20:25:01 usersController.go:148: GetUserData request started
-APP_LOG: 2025/10/28 20:25:01 usersController.go:164: GetUserData success: User data retrieved for user 1
-APP_LOG: 2025/10/28 20:25:01 controllers.go:21: Success response: 200
-APP_LOG: 2025/10/28 20:25:01 usersController.go:148: GetUserData request started
-APP_LOG: 2025/10/28 20:25:01 usersController.go:164: GetUserData success: User data retrieved for user 1
-APP_LOG: 2025/10/28 20:25:01 controllers.go:21: Success response: 200
-APP_LOG: 2025/10/28 20:25:04 favoriesController.go:93: GetFavourites request started
-APP_LOG: 2025/10/28 20:25:04 favoriesController.go:110: GetFavourites parameters: userID=1, page=1
-APP_LOG: 2025/10/28 20:25:04 favoriesController.go:119: GetFavourites success: 1 favorites retrieved for user 1
-APP_LOG: 2025/10/28 20:25:04 controllers.go:21: Success response: 200
-APP_LOG: 2025/10/28 20:25:04 favoriesController.go:93: GetFavourites request started
-APP_LOG: 2025/10/28 20:25:04 favoriesController.go:110: GetFavourites parameters: userID=1, page=1
-APP_LOG: 2025/10/28 20:25:04 favoriesController.go:119: GetFavourites success: 1 favorites retrieved for user 1
-APP_LOG: 2025/10/28 20:25:04 controllers.go:21: Success response: 200
-APP_LOG: 2025/10/28 20:25:06 favoriesController.go:64: RemoveFavori request started
-APP_LOG: 2025/10/28 20:25:06 favoriesController.go:87: RemoveFavori success: Favorite 4 removed for user 1
-APP_LOG: 2025/10/28 20:25:06 controllers.go:21: Success response: 200
-APP_LOG: 2025/10/28 20:25:08 favoriesController.go:64: RemoveFavori request started
-APP_LOG: 2025/10/28 20:25:08 favoriesController.go:82: RemoveFavori service error: Favori not found
-APP_LOG: 2025/10/28 20:25:08 controllers.go:10: Error response: 404 - Favori bulunamadı veya silinemedi
-APP_LOG: 2025/10/28 20:25:10 favoriesController.go:93: GetFavourites request started
-APP_LOG: 2025/10/28 20:25:10 favoriesController.go:110: GetFavourites parameters: userID=1, page=1
-APP_LOG: 2025/10/28 20:25:10 favoriesController.go:119: GetFavourites success: 0 favorites retrieved for user 1
-APP_LOG: 2025/10/28 20:25:10 controllers.go:21: Success response: 200
-APP_LOG: 2025/10/28 20:27:18 usersController.go:100: Logout request started
-APP_LOG: 2025/10/28 20:27:18 usersController.go:141: Logout success: User 1 logged out
-APP_LOG: 2025/10/28 20:27:18 controllers.go:21: Success response: 200
-APP_LOG: 2025/10/28 20:27:19 controllers.go:21: Success response: 200
-APP_LOG: 2025/10/28 20:27:23 controllers.go:21: Success response: 200
-APP_LOG: 2025/10/28 20:27:23 controllers.go:21: Success response: 200
-APP_LOG: 2025/10/28 20:27:24 productRepo.go:60:  true
-APP_LOG: 2025/10/28 20:27:24 controllers.go:21: Success response: 200
-APP_LOG: 2025/10/28 20:27:30 controllers.go:21: Success response: 200
-APP_LOG: 2025/10/28 20:27:30 controllers.go:21: Success response: 200
-APP_LOG: 2025/10/28 21:39:33 config.go:13: JWT_SECRET not set in environment
-APP_LOG: 2025/10/28 21:39:33 config.go:18: REFRESH_TOKEN_SECRET not set in environment
-APP_LOG: 2025/10/28 21:40:09 config.go:13: JWT_SECRET not set in environment
-APP_LOG: 2025/10/28 21:40:09 config.go:18: REFRESH_TOKEN_SECRET not set in environment
-APP_LOG: 2025/10/28 21:40:11 main.go:24: Application started successfully.
+APP_LOG: 2025/11/03 20:29:21 main.go:24: Application started successfully.
+APP_LOG: 2025/11/03 20:29:31 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/03 20:33:28 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/03 20:39:11 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/06 20:22:21 main.go:24: Application started successfully.
+APP_LOG: 2025/11/06 20:26:16 main.go:24: Application started successfully.
+APP_LOG: 2025/11/06 20:26:30 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/06 20:34:01 usersController.go:54: Login request started
+APP_LOG: 2025/11/06 20:34:01 usersController.go:93: Login success: User 1 logged in
+APP_LOG: 2025/11/06 20:34:01 controllers.go:21: Success response: 202
+APP_LOG: 2025/11/06 20:34:02 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/06 20:34:02 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/06 20:35:28 usersController.go:213: GetAccess request started
+APP_LOG: 2025/11/06 20:35:28 usersController.go:249: GetAccess success: Access token refreshed
+APP_LOG: 2025/11/06 20:35:28 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/06 20:35:50 usersController.go:213: GetAccess request started
+APP_LOG: 2025/11/06 20:35:50 usersController.go:249: GetAccess success: Access token refreshed
+APP_LOG: 2025/11/06 20:35:50 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/06 20:35:51 usersController.go:213: GetAccess request started
+APP_LOG: 2025/11/06 20:35:52 usersController.go:249: GetAccess success: Access token refreshed
+APP_LOG: 2025/11/06 20:35:52 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/06 20:35:53 usersController.go:213: GetAccess request started
+APP_LOG: 2025/11/06 20:35:53 usersController.go:249: GetAccess success: Access token refreshed
+APP_LOG: 2025/11/06 20:35:53 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/06 20:35:54 usersController.go:213: GetAccess request started
+APP_LOG: 2025/11/06 20:35:54 usersController.go:249: GetAccess success: Access token refreshed
+APP_LOG: 2025/11/06 20:35:54 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/06 20:35:56 usersController.go:213: GetAccess request started
+APP_LOG: 2025/11/06 20:35:56 usersController.go:249: GetAccess success: Access token refreshed
+APP_LOG: 2025/11/06 20:35:56 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/06 20:36:05 usersController.go:213: GetAccess request started
+APP_LOG: 2025/11/06 20:36:05 usersController.go:249: GetAccess success: Access token refreshed
+APP_LOG: 2025/11/06 20:36:05 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/06 20:37:40 usersController.go:213: GetAccess request started
+APP_LOG: 2025/11/06 20:37:40 usersController.go:249: GetAccess success: Access token refreshed
+APP_LOG: 2025/11/06 20:37:40 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/06 20:37:41 usersController.go:213: GetAccess request started
+APP_LOG: 2025/11/06 20:37:41 usersController.go:249: GetAccess success: Access token refreshed
+APP_LOG: 2025/11/06 20:37:41 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/06 20:37:42 usersController.go:213: GetAccess request started
+APP_LOG: 2025/11/06 20:37:42 usersController.go:249: GetAccess success: Access token refreshed
+APP_LOG: 2025/11/06 20:37:42 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/06 20:38:20 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/06 20:38:36 usersController.go:148: GetUserData request started
+APP_LOG: 2025/11/06 20:38:36 usersController.go:164: GetUserData success: User data retrieved for user 1
+APP_LOG: 2025/11/06 20:38:36 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/06 20:38:36 usersController.go:148: GetUserData request started
+APP_LOG: 2025/11/06 20:38:36 usersController.go:164: GetUserData success: User data retrieved for user 1
+APP_LOG: 2025/11/06 20:38:36 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/06 20:38:38 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/06 20:38:38 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/06 20:40:35 usersController.go:148: GetUserData request started
+APP_LOG: 2025/11/06 20:40:35 usersController.go:164: GetUserData success: User data retrieved for user 1
+APP_LOG: 2025/11/06 20:40:35 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/06 20:40:35 usersController.go:148: GetUserData request started
+APP_LOG: 2025/11/06 20:40:35 usersController.go:164: GetUserData success: User data retrieved for user 1
+APP_LOG: 2025/11/06 20:40:35 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/06 20:40:36 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/06 20:40:36 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/06 20:45:10 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/06 20:45:22 usersController.go:148: GetUserData request started
+APP_LOG: 2025/11/06 20:45:22 usersController.go:164: GetUserData success: User data retrieved for user 1
+APP_LOG: 2025/11/06 20:45:22 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/06 20:45:22 usersController.go:148: GetUserData request started
+APP_LOG: 2025/11/06 20:45:22 usersController.go:164: GetUserData success: User data retrieved for user 1
+APP_LOG: 2025/11/06 20:45:22 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/06 20:45:24 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/06 20:45:24 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/06 20:48:36 brandsController.go:45: GetBrands request started
+APP_LOG: 2025/11/06 20:48:36 categoriesController.go:44: GetCategories request started
+APP_LOG: 2025/11/06 20:48:36 brandsController.go:57: GetBrands parameters: page=1, search=''
+APP_LOG: 2025/11/06 20:48:36 categoriesController.go:56: GetCategories parameters: page=1, search=''
+APP_LOG: 2025/11/06 20:48:36 brandsController.go:66: GetBrands success: 50 brands retrieved
+APP_LOG: 2025/11/06 20:48:36 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/06 20:48:36 categoriesController.go:65: GetCategories success: 50 categories retrieved
+APP_LOG: 2025/11/06 20:48:36 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/06 20:50:19 brandsController.go:45: GetBrands request started
+APP_LOG: 2025/11/06 20:50:19 brandsController.go:57: GetBrands parameters: page=1, search='iph'
+APP_LOG: 2025/11/06 20:50:19 brandsController.go:66: GetBrands success: 4 brands retrieved
+APP_LOG: 2025/11/06 20:50:19 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/06 20:50:20 brandsController.go:45: GetBrands request started
+APP_LOG: 2025/11/06 20:50:20 brandsController.go:57: GetBrands parameters: page=1, search='iphone'
+APP_LOG: 2025/11/06 20:50:20 brandsController.go:66: GetBrands success: 1 brands retrieved
+APP_LOG: 2025/11/06 20:50:20 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/06 20:50:21 brandsController.go:45: GetBrands request started
+APP_LOG: 2025/11/06 20:50:21 brandsController.go:57: GetBrands parameters: page=1, search=''
+APP_LOG: 2025/11/06 20:50:21 brandsController.go:66: GetBrands success: 50 brands retrieved
+APP_LOG: 2025/11/06 20:50:21 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/06 20:50:24 categoriesController.go:44: GetCategories request started
+APP_LOG: 2025/11/06 20:50:24 categoriesController.go:56: GetCategories parameters: page=1, search='IOS'
+APP_LOG: 2025/11/06 20:50:24 categoriesController.go:65: GetCategories success: 1 categories retrieved
+APP_LOG: 2025/11/06 20:50:24 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/06 20:50:25 categoriesController.go:44: GetCategories request started
+APP_LOG: 2025/11/06 20:50:25 categoriesController.go:56: GetCategories parameters: page=1, search=''
+APP_LOG: 2025/11/06 20:50:25 categoriesController.go:65: GetCategories success: 50 categories retrieved
+APP_LOG: 2025/11/06 20:50:25 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/06 20:50:27 categoriesController.go:44: GetCategories request started
+APP_LOG: 2025/11/06 20:50:27 categoriesController.go:56: GetCategories parameters: page=1, search='IOS'
+APP_LOG: 2025/11/06 20:50:27 categoriesController.go:65: GetCategories success: 1 categories retrieved
+APP_LOG: 2025/11/06 20:50:27 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/06 20:50:28 categoriesController.go:44: GetCategories request started
+APP_LOG: 2025/11/06 20:50:28 categoriesController.go:56: GetCategories parameters: page=1, search=''
+APP_LOG: 2025/11/06 20:50:28 categoriesController.go:65: GetCategories success: 50 categories retrieved
+APP_LOG: 2025/11/06 20:50:28 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/06 20:50:28 controllers.go:21: Admin success response: 200
+APP_LOG: 2025/11/06 21:03:01 brandsController.go:45: GetBrands request started
+APP_LOG: 2025/11/06 21:03:01 brandsController.go:57: GetBrands parameters: page=1, search=''
+APP_LOG: 2025/11/06 21:03:01 categoriesController.go:44: GetCategories request started
+APP_LOG: 2025/11/06 21:03:01 categoriesController.go:56: GetCategories parameters: page=1, search=''
+APP_LOG: 2025/11/06 21:03:01 brandsController.go:66: GetBrands success: 50 brands retrieved
+APP_LOG: 2025/11/06 21:03:01 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/06 21:03:01 categoriesController.go:65: GetCategories success: 50 categories retrieved
+APP_LOG: 2025/11/06 21:03:01 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/06 21:03:02 brandsController.go:45: GetBrands request started
+APP_LOG: 2025/11/06 21:03:02 brandsController.go:57: GetBrands parameters: page=1, search=''
+APP_LOG: 2025/11/06 21:03:02 categoriesController.go:44: GetCategories request started
+APP_LOG: 2025/11/06 21:03:02 categoriesController.go:56: GetCategories parameters: page=1, search=''
+APP_LOG: 2025/11/06 21:03:02 brandsController.go:66: GetBrands success: 50 brands retrieved
+APP_LOG: 2025/11/06 21:03:02 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/06 21:03:02 categoriesController.go:65: GetCategories success: 50 categories retrieved
+APP_LOG: 2025/11/06 21:03:02 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/06 21:03:04 brandsController.go:45: GetBrands request started
+APP_LOG: 2025/11/06 21:03:04 brandsController.go:57: GetBrands parameters: page=1, search=''
+APP_LOG: 2025/11/06 21:03:04 categoriesController.go:44: GetCategories request started
+APP_LOG: 2025/11/06 21:03:04 categoriesController.go:56: GetCategories parameters: page=1, search=''
+APP_LOG: 2025/11/06 21:03:04 brandsController.go:66: GetBrands success: 50 brands retrieved
+APP_LOG: 2025/11/06 21:03:04 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/06 21:03:04 categoriesController.go:65: GetCategories success: 50 categories retrieved
+APP_LOG: 2025/11/06 21:03:04 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/06 21:03:19 brandsController.go:45: GetBrands request started
+APP_LOG: 2025/11/06 21:03:19 brandsController.go:57: GetBrands parameters: page=1, search=''
+APP_LOG: 2025/11/06 21:03:19 categoriesController.go:44: GetCategories request started
+APP_LOG: 2025/11/06 21:03:19 categoriesController.go:56: GetCategories parameters: page=1, search=''
+APP_LOG: 2025/11/06 21:03:19 brandsController.go:66: GetBrands success: 50 brands retrieved
+APP_LOG: 2025/11/06 21:03:19 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/06 21:03:19 categoriesController.go:65: GetCategories success: 50 categories retrieved
+APP_LOG: 2025/11/06 21:03:19 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/06 21:03:24 brandsController.go:45: GetBrands request started
+APP_LOG: 2025/11/06 21:03:24 brandsController.go:57: GetBrands parameters: page=1, search=''
+APP_LOG: 2025/11/06 21:03:24 categoriesController.go:44: GetCategories request started
+APP_LOG: 2025/11/06 21:03:24 categoriesController.go:56: GetCategories parameters: page=1, search=''
+APP_LOG: 2025/11/06 21:03:24 brandsController.go:66: GetBrands success: 50 brands retrieved
+APP_LOG: 2025/11/06 21:03:24 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/06 21:03:24 categoriesController.go:65: GetCategories success: 50 categories retrieved
+APP_LOG: 2025/11/06 21:03:24 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/06 21:03:25 brandsController.go:45: GetBrands request started
+APP_LOG: 2025/11/06 21:03:25 brandsController.go:57: GetBrands parameters: page=1, search=''
+APP_LOG: 2025/11/06 21:03:25 categoriesController.go:44: GetCategories request started
+APP_LOG: 2025/11/06 21:03:25 categoriesController.go:56: GetCategories parameters: page=1, search=''
+APP_LOG: 2025/11/06 21:03:25 brandsController.go:66: GetBrands success: 50 brands retrieved
+APP_LOG: 2025/11/06 21:03:25 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/06 21:03:25 categoriesController.go:65: GetCategories success: 50 categories retrieved
+APP_LOG: 2025/11/06 21:03:25 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/06 21:05:43 brandsController.go:45: GetBrands request started
+APP_LOG: 2025/11/06 21:05:43 brandsController.go:57: GetBrands parameters: page=1, search='İphone'
+APP_LOG: 2025/11/06 21:05:43 brandsController.go:66: GetBrands success: 0 brands retrieved
+APP_LOG: 2025/11/06 21:05:43 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/06 21:05:46 brandsController.go:45: GetBrands request started
+APP_LOG: 2025/11/06 21:05:46 brandsController.go:57: GetBrands parameters: page=1, search='ıphone'
+APP_LOG: 2025/11/06 21:05:46 brandsController.go:66: GetBrands success: 0 brands retrieved
+APP_LOG: 2025/11/06 21:05:46 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/06 21:05:47 brandsController.go:45: GetBrands request started
+APP_LOG: 2025/11/06 21:05:47 brandsController.go:57: GetBrands parameters: page=1, search=''
+APP_LOG: 2025/11/06 21:05:47 brandsController.go:66: GetBrands success: 50 brands retrieved
+APP_LOG: 2025/11/06 21:05:47 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/06 21:05:49 brandsController.go:45: GetBrands request started
+APP_LOG: 2025/11/06 21:05:49 brandsController.go:57: GetBrands parameters: page=1, search='ıpho'
+APP_LOG: 2025/11/06 21:05:49 brandsController.go:66: GetBrands success: 0 brands retrieved
+APP_LOG: 2025/11/06 21:05:49 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/06 21:05:52 brandsController.go:45: GetBrands request started
+APP_LOG: 2025/11/06 21:05:52 brandsController.go:57: GetBrands parameters: page=1, search=''
+APP_LOG: 2025/11/06 21:05:52 brandsController.go:66: GetBrands success: 50 brands retrieved
+APP_LOG: 2025/11/06 21:05:52 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/06 21:06:08 brandsController.go:45: GetBrands request started
+APP_LOG: 2025/11/06 21:06:08 brandsController.go:57: GetBrands parameters: page=1, search='iphone'
+APP_LOG: 2025/11/06 21:06:08 brandsController.go:66: GetBrands success: 1 brands retrieved
+APP_LOG: 2025/11/06 21:06:08 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/06 21:06:11 brandsController.go:45: GetBrands request started
+APP_LOG: 2025/11/06 21:06:11 brandsController.go:57: GetBrands parameters: page=1, search=''
+APP_LOG: 2025/11/06 21:06:11 brandsController.go:66: GetBrands success: 50 brands retrieved
+APP_LOG: 2025/11/06 21:06:11 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/06 21:06:12 categoriesController.go:44: GetCategories request started
+APP_LOG: 2025/11/06 21:06:12 categoriesController.go:56: GetCategories parameters: page=1, search='IOS'
+APP_LOG: 2025/11/06 21:06:12 categoriesController.go:65: GetCategories success: 1 categories retrieved
+APP_LOG: 2025/11/06 21:06:12 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/06 21:06:14 categoriesController.go:44: GetCategories request started
+APP_LOG: 2025/11/06 21:06:14 categoriesController.go:56: GetCategories parameters: page=1, search=''
+APP_LOG: 2025/11/06 21:06:14 categoriesController.go:65: GetCategories success: 50 categories retrieved
+APP_LOG: 2025/11/06 21:06:14 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/06 21:06:14 controllers.go:21: Admin success response: 200
+APP_LOG: 2025/11/06 21:07:31 usersController.go:213: GetAccess request started
+APP_LOG: 2025/11/06 21:07:31 usersController.go:249: GetAccess success: Access token refreshed
+APP_LOG: 2025/11/06 21:07:31 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/06 21:07:31 productController.go:86: AddProduct request started
+APP_LOG: 2025/11/06 21:07:39 productController.go:168: AddProduct success: Product added by user 1
+APP_LOG: 2025/11/06 21:07:39 controllers.go:21: Success response: 201
+APP_LOG: 2025/11/06 21:09:19 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/06 21:09:19 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/06 21:09:25 productRepo.go:60:  true
+APP_LOG: 2025/11/06 21:09:25 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/06 21:14:00 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/06 21:14:00 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/06 21:14:02 productRepo.go:60:  true
+APP_LOG: 2025/11/06 21:14:02 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/06 21:14:03 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/06 21:14:03 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/06 21:14:04 productRepo.go:60:  true
+APP_LOG: 2025/11/06 21:14:04 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/06 21:14:06 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/06 21:14:06 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/06 22:01:17 productRepo.go:60:  true
+APP_LOG: 2025/11/06 22:01:17 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/06 22:01:21 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/06 22:01:21 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/06 22:02:43 brandsController.go:45: GetBrands request started
+APP_LOG: 2025/11/06 22:02:43 brandsController.go:57: GetBrands parameters: page=1, search=''
+APP_LOG: 2025/11/06 22:02:43 categoriesController.go:44: GetCategories request started
+APP_LOG: 2025/11/06 22:02:43 categoriesController.go:56: GetCategories parameters: page=1, search=''
+APP_LOG: 2025/11/06 22:02:43 brandsController.go:66: GetBrands success: 50 brands retrieved
+APP_LOG: 2025/11/06 22:02:43 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/06 22:02:43 categoriesController.go:65: GetCategories success: 50 categories retrieved
+APP_LOG: 2025/11/06 22:02:43 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/06 22:02:57 brandsController.go:45: GetBrands request started
+APP_LOG: 2025/11/06 22:02:57 brandsController.go:57: GetBrands parameters: page=1, search='iphone'
+APP_LOG: 2025/11/06 22:02:57 brandsController.go:66: GetBrands success: 1 brands retrieved
+APP_LOG: 2025/11/06 22:02:57 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/06 22:02:58 brandsController.go:45: GetBrands request started
+APP_LOG: 2025/11/06 22:02:58 brandsController.go:57: GetBrands parameters: page=1, search=''
+APP_LOG: 2025/11/06 22:02:58 brandsController.go:66: GetBrands success: 50 brands retrieved
+APP_LOG: 2025/11/06 22:02:58 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/06 22:03:08 categoriesController.go:44: GetCategories request started
+APP_LOG: 2025/11/06 22:03:08 categoriesController.go:56: GetCategories parameters: page=1, search='ıos'
+APP_LOG: 2025/11/06 22:03:08 categoriesController.go:65: GetCategories success: 0 categories retrieved
+APP_LOG: 2025/11/06 22:03:08 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/06 22:03:09 categoriesController.go:44: GetCategories request started
+APP_LOG: 2025/11/06 22:03:09 categoriesController.go:56: GetCategories parameters: page=1, search=''
+APP_LOG: 2025/11/06 22:03:09 categoriesController.go:65: GetCategories success: 50 categories retrieved
+APP_LOG: 2025/11/06 22:03:09 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/06 22:03:09 categoriesController.go:44: GetCategories request started
+APP_LOG: 2025/11/06 22:03:09 categoriesController.go:56: GetCategories parameters: page=1, search='IOS'
+APP_LOG: 2025/11/06 22:03:09 categoriesController.go:65: GetCategories success: 1 categories retrieved
+APP_LOG: 2025/11/06 22:03:09 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/06 22:03:10 categoriesController.go:44: GetCategories request started
+APP_LOG: 2025/11/06 22:03:10 categoriesController.go:56: GetCategories parameters: page=1, search=''
+APP_LOG: 2025/11/06 22:03:10 controllers.go:21: Admin success response: 200
+APP_LOG: 2025/11/06 22:03:10 categoriesController.go:65: GetCategories success: 50 categories retrieved
+APP_LOG: 2025/11/06 22:03:10 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/06 22:03:47 usersController.go:213: GetAccess request started
+APP_LOG: 2025/11/06 22:03:47 usersController.go:249: GetAccess success: Access token refreshed
+APP_LOG: 2025/11/06 22:03:47 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/06 22:03:47 productController.go:86: AddProduct request started
+APP_LOG: 2025/11/06 22:03:47 productController.go:168: AddProduct success: Product added by user 1
+APP_LOG: 2025/11/06 22:03:47 controllers.go:21: Success response: 201
+APP_LOG: 2025/11/06 22:03:52 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/06 22:03:52 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/06 22:03:56 productRepo.go:60:  true
+APP_LOG: 2025/11/06 22:03:56 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/06 22:05:10 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/06 22:05:10 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/06 22:05:12 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/06 22:05:16 productRepo.go:60:  true
+APP_LOG: 2025/11/06 22:05:16 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/06 22:05:49 productRepo.go:60:  true
+APP_LOG: 2025/11/06 22:05:49 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/06 22:05:53 productRepo.go:60:  true
+APP_LOG: 2025/11/06 22:05:53 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/06 22:05:59 brandsController.go:45: GetBrands request started
+APP_LOG: 2025/11/06 22:05:59 brandsController.go:57: GetBrands parameters: page=1, search=''
+APP_LOG: 2025/11/06 22:05:59 categoriesController.go:44: GetCategories request started
+APP_LOG: 2025/11/06 22:05:59 categoriesController.go:56: GetCategories parameters: page=1, search=''
+APP_LOG: 2025/11/06 22:05:59 brandsController.go:66: GetBrands success: 50 brands retrieved
+APP_LOG: 2025/11/06 22:05:59 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/06 22:05:59 categoriesController.go:65: GetCategories success: 50 categories retrieved
+APP_LOG: 2025/11/06 22:05:59 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/06 22:06:11 brandsController.go:45: GetBrands request started
+APP_LOG: 2025/11/06 22:06:11 brandsController.go:57: GetBrands parameters: page=1, search='iphone'
+APP_LOG: 2025/11/06 22:06:11 brandsController.go:66: GetBrands success: 1 brands retrieved
+APP_LOG: 2025/11/06 22:06:11 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/06 22:06:12 brandsController.go:45: GetBrands request started
+APP_LOG: 2025/11/06 22:06:12 brandsController.go:57: GetBrands parameters: page=1, search=''
+APP_LOG: 2025/11/06 22:06:12 brandsController.go:66: GetBrands success: 50 brands retrieved
+APP_LOG: 2025/11/06 22:06:12 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/06 22:06:14 categoriesController.go:44: GetCategories request started
+APP_LOG: 2025/11/06 22:06:14 categoriesController.go:56: GetCategories parameters: page=1, search='IOS'
+APP_LOG: 2025/11/06 22:06:14 categoriesController.go:65: GetCategories success: 1 categories retrieved
+APP_LOG: 2025/11/06 22:06:14 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/06 22:06:16 categoriesController.go:44: GetCategories request started
+APP_LOG: 2025/11/06 22:06:16 categoriesController.go:56: GetCategories parameters: page=1, search=''
+APP_LOG: 2025/11/06 22:06:16 categoriesController.go:65: GetCategories success: 50 categories retrieved
+APP_LOG: 2025/11/06 22:06:16 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/06 22:06:16 controllers.go:21: Admin success response: 200
+APP_LOG: 2025/11/06 22:07:14 productController.go:86: AddProduct request started
+APP_LOG: 2025/11/06 22:07:14 productController.go:163: AddProduct service error: Error : %!w(string=Database error pq: value too long for type character varying(100))
+APP_LOG: 2025/11/06 22:07:14 controllers.go:10: Error response: 500 - Ürün eklenirken hata oluştu
+APP_LOG: 2025/11/06 22:26:35 usersController.go:213: GetAccess request started
+APP_LOG: 2025/11/06 22:26:35 usersController.go:249: GetAccess success: Access token refreshed
+APP_LOG: 2025/11/06 22:26:35 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/06 22:26:35 productController.go:86: AddProduct request started
+APP_LOG: 2025/11/06 22:26:35 productController.go:168: AddProduct success: Product added by user 1
+APP_LOG: 2025/11/06 22:26:35 controllers.go:21: Success response: 201
+APP_LOG: 2025/11/06 22:28:49 brandsController.go:45: GetBrands request started
+APP_LOG: 2025/11/06 22:28:49 brandsController.go:57: GetBrands parameters: page=1, search=''
+APP_LOG: 2025/11/06 22:28:49 categoriesController.go:44: GetCategories request started
+APP_LOG: 2025/11/06 22:28:49 categoriesController.go:56: GetCategories parameters: page=1, search=''
+APP_LOG: 2025/11/06 22:28:49 brandsController.go:66: GetBrands success: 50 brands retrieved
+APP_LOG: 2025/11/06 22:28:49 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/06 22:28:49 categoriesController.go:65: GetCategories success: 50 categories retrieved
+APP_LOG: 2025/11/06 22:28:49 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/06 22:29:20 brandsController.go:45: GetBrands request started
+APP_LOG: 2025/11/06 22:29:20 brandsController.go:57: GetBrands parameters: page=1, search=''
+APP_LOG: 2025/11/06 22:29:20 categoriesController.go:44: GetCategories request started
+APP_LOG: 2025/11/06 22:29:20 categoriesController.go:56: GetCategories parameters: page=1, search=''
+APP_LOG: 2025/11/06 22:29:20 brandsController.go:66: GetBrands success: 50 brands retrieved
+APP_LOG: 2025/11/06 22:29:20 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/06 22:29:20 categoriesController.go:65: GetCategories success: 50 categories retrieved
+APP_LOG: 2025/11/06 22:29:20 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/06 22:29:38 brandsController.go:45: GetBrands request started
+APP_LOG: 2025/11/06 22:29:38 brandsController.go:57: GetBrands parameters: page=1, search='iphone'
+APP_LOG: 2025/11/06 22:29:38 brandsController.go:66: GetBrands success: 1 brands retrieved
+APP_LOG: 2025/11/06 22:29:38 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/06 22:29:39 brandsController.go:45: GetBrands request started
+APP_LOG: 2025/11/06 22:29:39 brandsController.go:57: GetBrands parameters: page=1, search=''
+APP_LOG: 2025/11/06 22:29:39 brandsController.go:66: GetBrands success: 50 brands retrieved
+APP_LOG: 2025/11/06 22:29:39 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/06 22:29:41 categoriesController.go:44: GetCategories request started
+APP_LOG: 2025/11/06 22:29:41 categoriesController.go:56: GetCategories parameters: page=1, search='ıos'
+APP_LOG: 2025/11/06 22:29:41 categoriesController.go:65: GetCategories success: 0 categories retrieved
+APP_LOG: 2025/11/06 22:29:41 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/06 22:29:44 categoriesController.go:44: GetCategories request started
+APP_LOG: 2025/11/06 22:29:44 categoriesController.go:56: GetCategories parameters: page=1, search='ips'
+APP_LOG: 2025/11/06 22:29:44 categoriesController.go:65: GetCategories success: 2 categories retrieved
+APP_LOG: 2025/11/06 22:29:44 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/06 22:29:44 categoriesController.go:44: GetCategories request started
+APP_LOG: 2025/11/06 22:29:44 categoriesController.go:56: GetCategories parameters: page=1, search='i'
+APP_LOG: 2025/11/06 22:29:44 categoriesController.go:65: GetCategories success: 50 categories retrieved
+APP_LOG: 2025/11/06 22:29:44 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/06 22:29:45 categoriesController.go:44: GetCategories request started
+APP_LOG: 2025/11/06 22:29:45 categoriesController.go:56: GetCategories parameters: page=1, search='ios'
+APP_LOG: 2025/11/06 22:29:45 categoriesController.go:65: GetCategories success: 1 categories retrieved
+APP_LOG: 2025/11/06 22:29:45 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/06 22:29:46 categoriesController.go:44: GetCategories request started
+APP_LOG: 2025/11/06 22:29:46 categoriesController.go:56: GetCategories parameters: page=1, search=''
+APP_LOG: 2025/11/06 22:29:46 categoriesController.go:65: GetCategories success: 50 categories retrieved
+APP_LOG: 2025/11/06 22:29:46 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/06 22:29:46 controllers.go:21: Admin success response: 200
+APP_LOG: 2025/11/06 22:30:05 productController.go:86: AddProduct request started
+APP_LOG: 2025/11/06 22:30:05 productController.go:163: AddProduct service error: Error : %!w(string=Database error pq: duplicate key value violates unique constraint "products_lower_idx")
+APP_LOG: 2025/11/06 22:30:05 controllers.go:10: Error response: 500 - Ürün eklenirken hata oluştu
+APP_LOG: 2025/11/06 22:31:09 productController.go:86: AddProduct request started
+APP_LOG: 2025/11/06 22:31:09 productController.go:168: AddProduct success: Product added by user 1
+APP_LOG: 2025/11/06 22:31:09 controllers.go:21: Success response: 201
+APP_LOG: 2025/11/06 22:31:13 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/06 22:31:13 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/06 22:31:18 productRepo.go:60:  true
+APP_LOG: 2025/11/06 22:31:18 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/06 22:36:13 main.go:24: Application started successfully.
+APP_LOG: 2025/11/06 22:36:25 brandsController.go:45: GetBrands request started
+APP_LOG: 2025/11/06 22:36:25 brandsController.go:57: GetBrands parameters: page=1, search=''
+APP_LOG: 2025/11/06 22:36:25 categoriesController.go:44: GetCategories request started
+APP_LOG: 2025/11/06 22:36:25 categoriesController.go:56: GetCategories parameters: page=1, search=''
+APP_LOG: 2025/11/06 22:36:25 brandsController.go:66: GetBrands success: 50 brands retrieved
+APP_LOG: 2025/11/06 22:36:25 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/06 22:36:25 categoriesController.go:65: GetCategories success: 50 categories retrieved
+APP_LOG: 2025/11/06 22:36:25 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/06 22:36:40 brandsController.go:45: GetBrands request started
+APP_LOG: 2025/11/06 22:36:40 brandsController.go:57: GetBrands parameters: page=1, search='iphone'
+APP_LOG: 2025/11/06 22:36:40 brandsController.go:66: GetBrands success: 1 brands retrieved
+APP_LOG: 2025/11/06 22:36:40 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/06 22:36:42 brandsController.go:45: GetBrands request started
+APP_LOG: 2025/11/06 22:36:42 brandsController.go:57: GetBrands parameters: page=1, search=''
+APP_LOG: 2025/11/06 22:36:42 brandsController.go:66: GetBrands success: 50 brands retrieved
+APP_LOG: 2025/11/06 22:36:42 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/06 22:36:45 categoriesController.go:44: GetCategories request started
+APP_LOG: 2025/11/06 22:36:45 categoriesController.go:56: GetCategories parameters: page=1, search='ios'
+APP_LOG: 2025/11/06 22:36:45 categoriesController.go:65: GetCategories success: 1 categories retrieved
+APP_LOG: 2025/11/06 22:36:45 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/06 22:36:46 categoriesController.go:44: GetCategories request started
+APP_LOG: 2025/11/06 22:36:46 categoriesController.go:56: GetCategories parameters: page=1, search=''
+APP_LOG: 2025/11/06 22:36:46 categoriesController.go:65: GetCategories success: 50 categories retrieved
+APP_LOG: 2025/11/06 22:36:46 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/06 22:36:46 controllers.go:21: Admin success response: 200
+APP_LOG: 2025/11/06 22:36:59 productController.go:85: AddProduct request started
+APP_LOG: 2025/11/06 22:36:59 productController.go:174: AddProduct success: Product added by user 1
+APP_LOG: 2025/11/06 22:36:59 controllers.go:21: Success response: 201
+APP_LOG: 2025/11/06 22:37:09 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/06 22:37:09 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/06 22:37:13 productRepo.go:60:  true
+APP_LOG: 2025/11/06 22:37:13 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/06 22:38:39 main.go:24: Application started successfully.
+APP_LOG: 2025/11/06 22:38:46 brandsController.go:45: GetBrands request started
+APP_LOG: 2025/11/06 22:38:46 brandsController.go:57: GetBrands parameters: page=1, search=''
+APP_LOG: 2025/11/06 22:38:46 categoriesController.go:44: GetCategories request started
+APP_LOG: 2025/11/06 22:38:46 categoriesController.go:56: GetCategories parameters: page=1, search=''
+APP_LOG: 2025/11/06 22:38:46 brandsController.go:66: GetBrands success: 50 brands retrieved
+APP_LOG: 2025/11/06 22:38:46 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/06 22:38:46 categoriesController.go:65: GetCategories success: 50 categories retrieved
+APP_LOG: 2025/11/06 22:38:46 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/06 22:38:59 brandsController.go:45: GetBrands request started
+APP_LOG: 2025/11/06 22:38:59 brandsController.go:57: GetBrands parameters: page=1, search='iphme'
+APP_LOG: 2025/11/06 22:38:59 brandsController.go:66: GetBrands success: 0 brands retrieved
+APP_LOG: 2025/11/06 22:38:59 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/06 22:39:01 brandsController.go:45: GetBrands request started
+APP_LOG: 2025/11/06 22:39:01 brandsController.go:57: GetBrands parameters: page=1, search='iphone'
+APP_LOG: 2025/11/06 22:39:01 brandsController.go:66: GetBrands success: 1 brands retrieved
+APP_LOG: 2025/11/06 22:39:01 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/06 22:39:02 brandsController.go:45: GetBrands request started
+APP_LOG: 2025/11/06 22:39:02 brandsController.go:57: GetBrands parameters: page=1, search=''
+APP_LOG: 2025/11/06 22:39:02 brandsController.go:66: GetBrands success: 50 brands retrieved
+APP_LOG: 2025/11/06 22:39:02 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/06 22:39:04 categoriesController.go:44: GetCategories request started
+APP_LOG: 2025/11/06 22:39:04 categoriesController.go:56: GetCategories parameters: page=1, search='ios'
+APP_LOG: 2025/11/06 22:39:04 categoriesController.go:65: GetCategories success: 1 categories retrieved
+APP_LOG: 2025/11/06 22:39:04 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/06 22:39:05 categoriesController.go:44: GetCategories request started
+APP_LOG: 2025/11/06 22:39:05 categoriesController.go:56: GetCategories parameters: page=1, search=''
+APP_LOG: 2025/11/06 22:39:05 categoriesController.go:65: GetCategories success: 50 categories retrieved
+APP_LOG: 2025/11/06 22:39:05 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/06 22:39:05 controllers.go:21: Admin success response: 200
+APP_LOG: 2025/11/06 22:39:16 productController.go:85: AddProduct request started
+APP_LOG: 2025/11/06 22:39:16 productController.go:174: AddProduct success: Product added by user 1
+APP_LOG: 2025/11/06 22:39:16 controllers.go:21: Success response: 201
+APP_LOG: 2025/11/06 22:39:17 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/06 22:39:17 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/06 22:39:21 productRepo.go:60:  true
+APP_LOG: 2025/11/06 22:39:21 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/06 22:39:37 productRepo.go:60:  true
+APP_LOG: 2025/11/06 22:39:37 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/06 22:39:43 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/06 22:39:43 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/06 22:39:44 productRepo.go:60:  true
+APP_LOG: 2025/11/06 22:39:44 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/06 22:39:45 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/06 22:39:45 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/06 22:39:46 productRepo.go:60:  true
+APP_LOG: 2025/11/06 22:39:46 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/06 22:39:46 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/06 22:39:46 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/06 22:39:47 productRepo.go:60:  true
+APP_LOG: 2025/11/06 22:39:47 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/06 22:39:48 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/06 22:39:48 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/06 22:40:23 productRepo.go:60:  true
+APP_LOG: 2025/11/06 22:40:23 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/06 22:40:38 productRepo.go:60:  true
+APP_LOG: 2025/11/06 22:40:38 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/06 22:40:56 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/06 22:40:56 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/06 22:40:57 productRepo.go:60:  true
+APP_LOG: 2025/11/06 22:40:57 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/06 22:40:58 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/06 22:40:58 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/06 22:41:00 productRepo.go:60:  true
+APP_LOG: 2025/11/06 22:41:00 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/06 22:41:01 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/06 22:41:01 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/06 22:41:02 productRepo.go:60:  true
+APP_LOG: 2025/11/06 22:41:02 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/06 22:41:04 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/06 22:41:04 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/06 22:41:08 productRepo.go:60:  true
+APP_LOG: 2025/11/06 22:41:08 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/06 22:43:36 main.go:24: Application started successfully.
+APP_LOG: 2025/11/06 22:44:07 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/06 22:46:20 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/06 22:46:25 usersController.go:213: GetAccess request started
+APP_LOG: 2025/11/06 22:46:25 usersController.go:249: GetAccess success: Access token refreshed
+APP_LOG: 2025/11/06 22:46:25 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/06 22:46:25 usersController.go:148: GetUserData request started
+APP_LOG: 2025/11/06 22:46:25 usersController.go:164: GetUserData success: User data retrieved for user 1
+APP_LOG: 2025/11/06 22:46:25 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/06 22:46:30 brandsController.go:45: GetBrands request started
+APP_LOG: 2025/11/06 22:46:30 brandsController.go:57: GetBrands parameters: page=1, search=''
+APP_LOG: 2025/11/06 22:46:30 categoriesController.go:44: GetCategories request started
+APP_LOG: 2025/11/06 22:46:30 categoriesController.go:56: GetCategories parameters: page=1, search=''
+APP_LOG: 2025/11/06 22:46:30 brandsController.go:66: GetBrands success: 50 brands retrieved
+APP_LOG: 2025/11/06 22:46:30 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/06 22:46:30 categoriesController.go:65: GetCategories success: 50 categories retrieved
+APP_LOG: 2025/11/06 22:46:30 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/07 19:05:59 main.go:24: Application started successfully.
+APP_LOG: 2025/11/07 19:06:28 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/07 19:07:32 brandsController.go:45: GetBrands request started
+APP_LOG: 2025/11/07 19:07:32 brandsController.go:57: GetBrands parameters: page=1, search=''
+APP_LOG: 2025/11/07 19:07:32 categoriesController.go:44: GetCategories request started
+APP_LOG: 2025/11/07 19:07:32 categoriesController.go:56: GetCategories parameters: page=1, search=''
+APP_LOG: 2025/11/07 19:07:32 brandsController.go:66: GetBrands success: 50 brands retrieved
+APP_LOG: 2025/11/07 19:07:32 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/07 19:07:32 categoriesController.go:65: GetCategories success: 50 categories retrieved
+APP_LOG: 2025/11/07 19:07:32 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/07 19:08:00 brandsController.go:45: GetBrands request started
+APP_LOG: 2025/11/07 19:08:00 brandsController.go:57: GetBrands parameters: page=1, search='ihpne'
+APP_LOG: 2025/11/07 19:08:01 brandsController.go:66: GetBrands success: 0 brands retrieved
+APP_LOG: 2025/11/07 19:08:01 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/07 19:08:02 brandsController.go:45: GetBrands request started
+APP_LOG: 2025/11/07 19:08:02 brandsController.go:57: GetBrands parameters: page=1, search='i'
+APP_LOG: 2025/11/07 19:08:02 brandsController.go:66: GetBrands success: 50 brands retrieved
+APP_LOG: 2025/11/07 19:08:02 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/07 19:08:03 brandsController.go:45: GetBrands request started
+APP_LOG: 2025/11/07 19:08:03 brandsController.go:57: GetBrands parameters: page=1, search='iphone'
+APP_LOG: 2025/11/07 19:08:03 brandsController.go:66: GetBrands success: 1 brands retrieved
+APP_LOG: 2025/11/07 19:08:03 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/07 19:08:04 brandsController.go:45: GetBrands request started
+APP_LOG: 2025/11/07 19:08:04 brandsController.go:57: GetBrands parameters: page=1, search=''
+APP_LOG: 2025/11/07 19:08:04 brandsController.go:66: GetBrands success: 50 brands retrieved
+APP_LOG: 2025/11/07 19:08:04 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/07 19:08:07 categoriesController.go:44: GetCategories request started
+APP_LOG: 2025/11/07 19:08:07 categoriesController.go:56: GetCategories parameters: page=1, search='ios'
+APP_LOG: 2025/11/07 19:08:07 categoriesController.go:65: GetCategories success: 1 categories retrieved
+APP_LOG: 2025/11/07 19:08:07 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/07 19:08:08 categoriesController.go:44: GetCategories request started
+APP_LOG: 2025/11/07 19:08:08 categoriesController.go:56: GetCategories parameters: page=1, search=''
+APP_LOG: 2025/11/07 19:08:08 categoriesController.go:65: GetCategories success: 50 categories retrieved
+APP_LOG: 2025/11/07 19:08:08 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/07 19:08:08 controllers.go:21: Admin success response: 200
+APP_LOG: 2025/11/07 19:08:26 usersController.go:213: GetAccess request started
+APP_LOG: 2025/11/07 19:08:26 usersController.go:249: GetAccess success: Access token refreshed
+APP_LOG: 2025/11/07 19:08:26 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/07 19:08:26 productController.go:85: AddProduct request started
+APP_LOG: 2025/11/07 19:08:46 productController.go:85: AddProduct request started
+APP_LOG: 2025/11/07 19:08:53 productController.go:169: AddProduct success: Product added by user 1
+APP_LOG: 2025/11/07 19:08:53 controllers.go:21: Success response: 201
+APP_LOG: 2025/11/07 19:08:56 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/07 19:08:56 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/07 19:09:12 productRepo.go:60:  true
+APP_LOG: 2025/11/07 19:09:12 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/07 19:13:11 main.go:24: Application started successfully.
+APP_LOG: 2025/11/07 19:13:16 productRepo.go:60:  true
+APP_LOG: 2025/11/07 19:13:16 controllers.go:10: Error response: 400 - missing destination name images in *models.Product
+APP_LOG: 2025/11/07 19:14:10 main.go:24: Application started successfully.
+APP_LOG: 2025/11/07 19:14:14 productRepo.go:60:  true
+APP_LOG: 2025/11/07 19:14:14 controllers.go:10: Error response: 400 - pq: column p.product_id does not exist
+APP_LOG: 2025/11/07 19:15:35 productRepo.go:60:  true
+APP_LOG: 2025/11/07 19:15:35 controllers.go:10: Error response: 400 - pq: column p.product_id does not exist
+APP_LOG: 2025/11/07 19:15:40 main.go:24: Application started successfully.
+APP_LOG: 2025/11/07 19:15:47 productRepo.go:60:  true
+APP_LOG: 2025/11/07 19:15:47 controllers.go:10: Error response: 400 - sql: Scan error on column index 17, name "image_urls": unsupported Scan, storing driver.Value type []uint8 into type *[]string
+APP_LOG: 2025/11/07 19:16:21 productRepo.go:60:  true
+APP_LOG: 2025/11/07 19:16:21 controllers.go:10: Error response: 400 - sql: Scan error on column index 17, name "image_urls": unsupported Scan, storing driver.Value type []uint8 into type *[]string
+APP_LOG: 2025/11/07 19:17:20 productRepo.go:60:  true
+APP_LOG: 2025/11/07 19:17:20 controllers.go:10: Error response: 400 - sql: Scan error on column index 17, name "image_urls": unsupported Scan, storing driver.Value type []uint8 into type *[]string
+APP_LOG: 2025/11/07 19:17:21 productRepo.go:60:  true
+APP_LOG: 2025/11/07 19:17:21 controllers.go:10: Error response: 400 - sql: Scan error on column index 17, name "image_urls": unsupported Scan, storing driver.Value type []uint8 into type *[]string
+APP_LOG: 2025/11/07 19:17:22 productRepo.go:60:  true
+APP_LOG: 2025/11/07 19:17:22 controllers.go:10: Error response: 400 - sql: Scan error on column index 17, name "image_urls": unsupported Scan, storing driver.Value type []uint8 into type *[]string
+APP_LOG: 2025/11/07 19:17:28 main.go:24: Application started successfully.
+APP_LOG: 2025/11/07 19:17:39 productRepo.go:60:  true
+APP_LOG: 2025/11/07 19:17:39 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/07 19:18:48 usersController.go:213: GetAccess request started
+APP_LOG: 2025/11/07 19:18:48 usersController.go:249: GetAccess success: Access token refreshed
+APP_LOG: 2025/11/07 19:18:48 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/07 19:18:58 productRepo.go:60:  false
+APP_LOG: 2025/11/07 19:18:58 controllers.go:10: Error response: 400 - Product not found
+APP_LOG: 2025/11/07 19:19:01 productRepo.go:60:  true
+APP_LOG: 2025/11/07 19:19:01 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/07 19:29:38 main.go:24: Application started successfully.
+APP_LOG: 2025/11/07 19:29:42 productRepo.go:60:  true
+APP_LOG: 2025/11/07 19:29:42 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/07 19:30:04 main.go:24: Application started successfully.
+APP_LOG: 2025/11/07 19:30:08 productRepo.go:60:  true
+APP_LOG: 2025/11/07 19:30:08 controllers.go:10: Error response: 400 - pq: column "deleted_at" does not exist
+APP_LOG: 2025/11/07 19:30:27 main.go:24: Application started successfully.
+APP_LOG: 2025/11/07 19:30:31 productRepo.go:60:  true
+APP_LOG: 2025/11/07 19:30:31 controllers.go:10: Error response: 400 - sql: Scan error on column index 0, name "image_url": unsupported Scan, storing driver.Value type string into type *[]string
+APP_LOG: 2025/11/07 19:35:35 main.go:24: Application started successfully.
+APP_LOG: 2025/11/07 19:35:40 productRepo.go:60:  true
+APP_LOG: 2025/11/07 19:35:40 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/07 19:36:07 productRepo.go:60:  true
+APP_LOG: 2025/11/07 19:36:07 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/07 19:36:09 productRepo.go:60:  true
+APP_LOG: 2025/11/07 19:36:09 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/07 19:37:34 productRepo.go:60:  true
+APP_LOG: 2025/11/07 19:37:34 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/07 19:37:53 productRepo.go:60:  true
+APP_LOG: 2025/11/07 19:37:53 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/07 19:38:00 productRepo.go:60:  true
+APP_LOG: 2025/11/07 19:38:00 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/07 19:38:12 productRepo.go:60:  true
+APP_LOG: 2025/11/07 19:38:12 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/07 19:38:13 productRepo.go:60:  true
+APP_LOG: 2025/11/07 19:38:13 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/07 19:38:22 productRepo.go:60:  true
+APP_LOG: 2025/11/07 19:38:22 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/07 19:38:39 productRepo.go:60:  true
+APP_LOG: 2025/11/07 19:38:39 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/07 19:38:50 productRepo.go:60:  true
+APP_LOG: 2025/11/07 19:38:50 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/07 19:39:27 productRepo.go:60:  true
+APP_LOG: 2025/11/07 19:39:27 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/07 19:39:30 productRepo.go:60:  true
+APP_LOG: 2025/11/07 19:39:30 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/07 19:39:40 productRepo.go:60:  true
+APP_LOG: 2025/11/07 19:39:40 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/07 19:39:51 productRepo.go:60:  true
+APP_LOG: 2025/11/07 19:39:51 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/07 19:40:08 productRepo.go:60:  true
+APP_LOG: 2025/11/07 19:40:08 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/07 19:41:04 productRepo.go:60:  true
+APP_LOG: 2025/11/07 19:41:04 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/07 19:41:07 productRepo.go:60:  true
+APP_LOG: 2025/11/07 19:41:07 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/07 19:41:13 productRepo.go:60:  true
+APP_LOG: 2025/11/07 19:41:13 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/07 19:41:14 productRepo.go:60:  true
+APP_LOG: 2025/11/07 19:41:14 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/07 19:41:27 productRepo.go:60:  true
+APP_LOG: 2025/11/07 19:41:27 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/07 19:41:50 productRepo.go:60:  true
+APP_LOG: 2025/11/07 19:41:50 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/07 19:42:09 productRepo.go:60:  true
+APP_LOG: 2025/11/07 19:42:09 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/07 19:42:58 productRepo.go:60:  true
+APP_LOG: 2025/11/07 19:42:58 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/07 19:43:11 productRepo.go:60:  true
+APP_LOG: 2025/11/07 19:43:11 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/07 19:43:17 productRepo.go:60:  true
+APP_LOG: 2025/11/07 19:43:17 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/07 19:43:19 productRepo.go:60:  true
+APP_LOG: 2025/11/07 19:43:19 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/07 19:43:28 productRepo.go:60:  true
+APP_LOG: 2025/11/07 19:43:28 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/07 19:43:31 productRepo.go:60:  true
+APP_LOG: 2025/11/07 19:43:31 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/07 19:43:34 productRepo.go:60:  true
+APP_LOG: 2025/11/07 19:43:34 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/07 19:44:02 productRepo.go:60:  true
+APP_LOG: 2025/11/07 19:44:02 controllers.go:21: Success response: 200

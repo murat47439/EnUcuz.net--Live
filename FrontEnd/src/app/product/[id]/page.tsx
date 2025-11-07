@@ -2,6 +2,7 @@ import { getProduct } from "@/lib/api/products/useGetProduct";
 import ProductDetailCard from "@/features/components/productDetailCard";
 import { notFound } from "next/navigation";
 import { IdParam } from "@/lib/types/types";
+import Image from "next/image";
 import Link from "next/link";
 
 export default async function ProductDetailPage({params} : {params : {id : number}}) {
@@ -34,6 +35,22 @@ export default async function ProductDetailPage({params} : {params : {id : numbe
                 <div className="border-l hidden sm:block w-0.5 border-gray-100"></div>
                 <div>
                     <h2 className="font-semibold text-center">Ürün Resimleri</h2>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mx-auto p-4">
+                    {product.data.product.image_urls.map((image, index) => (
+                        <div
+                        key={index}
+                        className="overflow-hidden rounded-lg shadow-lg hover:scale-105 transition-transform duration-300 mx-auto"
+                        >
+                        <Image
+                            src={image}
+                            alt={product.data.product.name}
+                            width={200}
+                            height={200}
+                            className="object-cover w-full h-full"
+                        />
+                        </div>
+                    ))}
+                    </div>
                 </div>
             </div>
         </main>

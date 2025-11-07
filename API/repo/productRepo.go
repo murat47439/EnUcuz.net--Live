@@ -82,12 +82,38 @@ func (pr *ProductRepo) CheckProductByName(name, imageUrl string) (bool, error) {
 func (pr *ProductRepo) AddProduct(ctx context.Context, data models.NewProduct, tx *sqlx.Tx) (int, error) {
 	query := `INSERT INTO products(name,description,stock,price,image_url,category_id,created_at,brand_id,seller_id) VALUES($1,$2,$3,$4,$5,$6,NOW(),$7,$8) RETURNING id`
 	var id int
-	err := tx.QueryRowContext(ctx, query, data.Name, data.Description, data.Stock, (data.Price * 100), data.ImageURL, data.CategoryID, data.BrandID, data.SellerID).Scan(&id)
+	err := tx.QueryRowContext(ctx, query, data.Name, data.Description, data.Stock, (data.Price * 100), data.ImageURLs[0], data.CategoryID, data.BrandID, data.SellerID).Scan(&id)
 	if err != nil {
 		return 0, fmt.Errorf("Database error %w", err)
 	}
 	return id, nil
 }
+func (pr *ProductRepo) AddProductImages(ctx context.Context, images []string, id int, tx *sqlx.Tx) error {
+	if len(images) == 0 {
+		return nil
+	}
+
+	query := `INSERT INTO product_images (product_id, image_url, created_at) VALUES `
+	vals := []interface{}{}
+	paramIndex := 1
+
+	for i, url := range images {
+		query += fmt.Sprintf("($%d, $%d, NOW())", paramIndex, paramIndex+1)
+		paramIndex += 2
+		if i < len(images)-1 {
+			query += ","
+		}
+		vals = append(vals, id, url)
+	}
+
+	_, err := tx.ExecContext(ctx, query, vals...)
+	if err != nil {
+		return fmt.Errorf("database error: %w", err)
+	}
+
+	return nil
+}
+
 func (pr *ProductRepo) ExistsData(name string, tx *sqlx.Tx) (bool, error) {
 	if name == "" {
 		return false, fmt.Errorf("Invalid data")
@@ -140,6 +166,32 @@ func (pr *ProductRepo) GetProduct(ctx context.Context, prodid int) (*models.Prod
 	product.Price = product.Price / 100
 
 	return &product, nil
+}
+func (pr *ProductRepo) GetProductImages(ctx context.Context, prodid int) ([]string, error) {
+	var images []string
+	if prodid == 0 {
+		return nil, fmt.Errorf("Invalid data")
+	}
+	query := `SELECT image_url FROM product_images WHERE product_id = $1`
+
+	rows, err := pr.db.QueryContext(ctx, query, prodid)
+	if err != nil {
+		return nil, err
+	}
+	defer rows.Close()
+
+	for rows.Next() {
+		var img string
+		if err = rows.Scan(&img); err != nil {
+			return nil, err
+		}
+		images = append(images, img)
+	}
+	if err = rows.Err(); err != nil {
+		return nil, err
+	}
+
+	return images, nil
 }
 func (pr *ProductRepo) GetProducts(ctx context.Context, page, brand_id, category_id int, search string) ([]*models.Product, error) {
 	var products []*models.Product

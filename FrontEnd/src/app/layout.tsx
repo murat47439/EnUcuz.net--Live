@@ -3,7 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import { AuthProvider } from "@/context/authContext";
 import { ToastProvider } from "@/context/toastContext";
 import Header from "@/features/components/header";
-
+import Footer from "@/features/components/footer";
 import "./globals.css";
 import "../styles/globals.css";
 
@@ -45,7 +45,7 @@ export default function RootLayout({
 
           <main className="pt-28 min-h-screen">{children}</main>
 
-
+        <Footer></Footer>
         </ToastProvider>
         </AuthProvider>
       </body>

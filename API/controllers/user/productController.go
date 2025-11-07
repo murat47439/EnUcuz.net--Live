@@ -2,8 +2,10 @@ package user
 
 import (
 	"Store-Dio/config"
+	"Store-Dio/handlers"
 	"Store-Dio/middleware"
 	"Store-Dio/models"
+
 	"Store-Dio/services/products"
 	"context"
 	"encoding/json"
@@ -81,7 +83,6 @@ func (pc *ProductController) UpdateProduct(w http.ResponseWriter, r *http.Reques
 }
 func (pc *ProductController) AddProduct(w http.ResponseWriter, r *http.Request) {
 	config.Logger.Printf("AddProduct request started")
-
 	userID, ok := r.Context().Value(middleware.UserIDKey).(int)
 	if !ok {
 		config.Logger.Printf("AddProduct error: Unauthorized access")
@@ -95,13 +96,68 @@ func (pc *ProductController) AddProduct(w http.ResponseWriter, r *http.Request) 
 	ctx, cancel := context.WithTimeout(ctx, 10*time.Second)
 	defer cancel()
 
-	err := json.NewDecoder(r.Body).Decode(&product)
+	err := r.ParseMultipartForm(10 << 20) // 10MB
 	if err != nil {
-		config.Logger.Printf("AddProduct error: Invalid request data - %v", err)
-		RespondWithError(w, http.StatusBadRequest, "Geçersiz veri formatı")
+		config.Logger.Printf("handleMultipartProduct error: Failed to parse form - %v", err)
+		RespondWithError(w, http.StatusBadRequest, "Form verisi işlenemedi")
 		return
 	}
-	defer r.Body.Close()
+
+	product.SellerID = userID
+	product.Name = r.FormValue("name")
+	product.Description = r.FormValue("description")
+	product.Price, err = strconv.ParseFloat(r.FormValue("price"), 64)
+	if err != nil {
+		config.Logger.Printf("AddProduct error: Invalid price value '%s' - %v", r.FormValue("price"), err)
+		RespondWithError(w, http.StatusBadRequest, "Geçersiz fiyat değeri")
+		return
+	}
+
+	product.CategoryID, err = strconv.Atoi(r.FormValue("category"))
+	if err != nil {
+		config.Logger.Printf("AddProduct error: Invalid category value '%s' - %v", r.FormValue("category"), err)
+		RespondWithError(w, http.StatusBadRequest, "Geçersiz kategori ID")
+		return
+	}
+
+	product.BrandID, err = strconv.Atoi(r.FormValue("brand"))
+	if err != nil {
+		config.Logger.Printf("AddProduct error: Invalid brand value '%s' - %v", r.FormValue("brand"), err)
+		RespondWithError(w, http.StatusBadRequest, "Geçersiz marka ID")
+		return
+	}
+
+	product.Stock, err = strconv.Atoi(r.FormValue("stock"))
+	if err != nil {
+		config.Logger.Printf("AddProduct error: Invalid stock value '%s' - %v", r.FormValue("stock"), err)
+		RespondWithError(w, http.StatusBadRequest, "Geçersiz stok değeri")
+		return
+	}
+	featuresJSON := r.FormValue("features")
+	if featuresJSON != "" {
+		var features []models.Feature
+		if err := json.Unmarshal([]byte(featuresJSON), &features); err != nil {
+			config.Logger.Printf("AddProduct error: Invalid features JSON - %v", err)
+		} else {
+			product.Features = features
+		}
+	}
+	files := r.MultipartForm.File["images"]
+
+	for _, fileHeader := range files {
+		file, err := fileHeader.Open()
+		if err != nil {
+			config.Logger.Printf("AddProduct error: File open failed - %v", err)
+			continue
+		}
+		url, err := handlers.UploadImage(file, product.Name)
+		file.Close()
+		if err != nil {
+			config.Logger.Printf("AddProduct error: Image upload failed - %v", err)
+			continue
+		}
+		product.ImageURLs = append(product.ImageURLs, url)
+	}
 
 	_, err = pc.ProductService.AddProduct(ctx, product)
 	if err != nil {
@@ -115,6 +171,7 @@ func (pc *ProductController) AddProduct(w http.ResponseWriter, r *http.Request) 
 		"message": "Ürün başarıyla eklendi",
 	})
 }
+
 func (pc *ProductController) DeleteProduct(w http.ResponseWriter, r *http.Request) {
 	id, err := strconv.Atoi(chi.URLParam(r, "id"))
 
@@ -192,7 +249,7 @@ func (pc *ProductController) GetUserProducts(w http.ResponseWriter, r *http.Requ
 		return
 	}
 	RespondWithJSON(w, http.StatusOK, map[string]interface{}{
-		"Products": products,
+		"products": products,
 	})
 }
 

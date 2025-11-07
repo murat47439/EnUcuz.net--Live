@@ -10,7 +10,7 @@ export interface AxiosRequestConfigWithRetry extends AxiosRequestConfig {
 
 const api = axios.create({
   baseURL: API_BASE_URL,
-  withCredentials: true, // cookie tabanlı kimlik doğrulama varsa açık kalabilir
+  withCredentials: true,
   timeout: 30000,
 });
 

@@ -6,6 +6,7 @@ import (
 	"Store-Dio/repo"
 	"context"
 	"fmt"
+	"sync"
 )
 
 type ProductService struct {
@@ -44,6 +45,10 @@ func (ps *ProductService) AddProduct(ctx context.Context, data models.NewProduct
 		}
 	}()
 	prodID, err := ps.ProductRepo.AddProduct(ctx, data, tx)
+	if err != nil {
+		return false, fmt.Errorf("Error : %w", err.Error())
+	}
+	err = ps.ProductRepo.AddProductImages(ctx, data.ImageURLs, prodID, tx)
 	if err != nil {
 		return false, fmt.Errorf("Error : %w", err.Error())
 	}
@@ -128,16 +133,32 @@ func (ps *ProductService) GetProduct(ctx context.Context, id int) (*models.Produ
 	if id == 0 {
 		return nil, nil, fmt.Errorf("Invalid data")
 	}
-	product, err := ps.ProductRepo.GetProduct(ctx, id)
+	var (
+		product    *models.Product
+		attributes []*models.ProductAttribute
+		images     []string
+		perr       error
+		aerr       error
+		ierr       error
+	)
 
-	if err != nil {
-		return nil, nil, err
-	}
-	attributes, err := ps.AttributeRepo.GetProdAttributes(ctx, id)
+	var wg sync.WaitGroup
+	wg.Add(3)
+	go func() { defer wg.Done(); product, perr = ps.ProductRepo.GetProduct(ctx, id) }()
+	go func() { defer wg.Done(); attributes, aerr = ps.AttributeRepo.GetProdAttributes(ctx, id) }()
+	go func() { defer wg.Done(); images, ierr = ps.ProductRepo.GetProductImages(ctx, id) }()
+	wg.Wait()
 
-	if err != nil {
-		return nil, nil, err
+	if perr != nil {
+		return nil, nil, perr
 	}
+	if aerr != nil {
+		return nil, nil, aerr
+	}
+	if ierr != nil {
+		return nil, nil, ierr
+	}
+	product.ImageURLs = images
 	return product, attributes, nil
 }
 func (ps *ProductService) GetProducts(ctx context.Context, page, brand_id, category_id int, search string) ([]*models.Product, error) {

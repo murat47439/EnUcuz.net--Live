@@ -37,6 +37,7 @@ export interface Product{
     seller_phone?: string,
     features?: Features,
     image_url: string,
+    image_urls: string[],
     category_id: number,
     category_name?: string,
     status?: number,
@@ -57,7 +58,7 @@ export interface UserProducts{
     success: boolean,
     message: string,
     data: {
-        Products: Product[],
+        products: Product[],
     }
 }
 export interface Brand{
@@ -186,7 +187,7 @@ export interface AddFavoriteRequest{
 }
 export interface ProductDetail{    
 data: {product: Product,
-Attribute: ProductAttribute[]
+attribute: ProductAttribute[]
 }
     }
 

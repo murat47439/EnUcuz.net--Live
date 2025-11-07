@@ -5,7 +5,16 @@ const nextConfig: NextConfig = {
     NEXT_PUBLIC_API_BASE_URL: process.env.NEXT_PUBLIC_API_BASE_URL,
   },
   images: {
-    domains: ['productimages.hepsiburada.net'],
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'productimages.hepsiburada.net',
+      },
+      {
+        protocol: 'https',
+        hostname: 'ik.imagekit.io',
+      },
+    ],
   },
 };
 

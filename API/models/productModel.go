@@ -12,7 +12,8 @@ type Product struct {
 	Price       float64            `json:"price" db:"price"`
 	Brand       *string            `json:"brand_name,omitempty" db:"brand_name"`
 	BrandID     int                `json:"brand_id,omitempty" db:"brand_id"`
-	ImageUrl    *string            `json:"image_url" db:"image_url"`
+	ImageUrl    string             `json:"image_url" db:"image_url"`
+	ImageURLs   []string           `json:"image_urls" db:"image_urls"`
 	SellerID    int                `json:"seller_id" db:"seller_id"`
 	SellerName  string             `json:"seller_name,omitempty" db:"seller_name"`
 	SellerPhone string             `json:"seller_phone,omitempty" db:"seller_phone"`
@@ -33,7 +34,7 @@ type NewProduct struct {
 	BrandID     int     `json:"brand_id"`
 	CategoryID  int     `json:"category_id"`
 	SellerID    int
-	ImageURL    string    `json:"image_url"`
+	ImageURLs   []string  `json:"image_url"`
 	Features    []Feature `json:"features"`
 }
 type Feature struct {

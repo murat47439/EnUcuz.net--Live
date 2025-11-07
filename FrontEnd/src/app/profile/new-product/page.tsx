@@ -145,18 +145,23 @@ export default function NewProductPage() {
       if (!data.brand) throw new Error("Lütfen marka seçiniz.");
       if (!data.category) throw new Error("Lütfen kategori seçiniz.");
       if (data.stock < 1) throw new Error("Geçersiz stok");
-
-      const request: Product = {
-        name: data.name,
-        description: data.description,
-        stock: Number(data.stock),
-        price: Number(data.price)  ?? 0,
-        brand_id: Number(data.brand.value),
-        category_id: Number(data.category.value),
-        image_url: "",
-        features: data.features,
-      };
-      await addProduct(request);
+  
+      const formData = new FormData();
+      formData.append("name", data.name);
+      formData.append("description", data.description);
+      formData.append("stock", data.stock.toString());
+      formData.append("price", data.price?.toString() ?? "0");
+      formData.append("brand", data.brand.value.toString());
+      formData.append("category", data.category.value.toString());
+      if (data.features && data.features.length > 0) {
+        formData.append("features", JSON.stringify(data.features));
+      }
+      // Dosyaları ekle
+      files.forEach((file) => formData.append("images", file));
+      for (const [key, value] of formData.entries()) {
+        console.log(key, value);
+      }
+      await addProduct(formData);
       setResult("Ürün başarıyla eklendi.");
       nextstep();
     } catch (err: unknown) {
@@ -201,7 +206,10 @@ export default function NewProductPage() {
                   {/* Açıklama */}
                   <label className="grid grid-cols-2 gap-4 items-center mt-6">
                     Açıklama
-                    <Input {...register("description", { required: "Açıklama zorunludur" })} />
+                    <Input
+                      as="textarea"
+                      {...register("description", { required: "Açıklama zorunludur" })}
+                    />
                   </label>
                   {errors.description && (
                     <p className="text-red-500 text-sm mt-1">{errors.description.message}</p>
@@ -274,6 +282,7 @@ export default function NewProductPage() {
                     id="fileinput"
                     hidden
                     type="file"
+                    name="images"
                     multiple
                     accept="image/*"
                     onChange={handleChangeFileCount}

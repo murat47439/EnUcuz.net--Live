@@ -22,7 +22,7 @@ export default function ProfileProductPage(){
         const fetchData = async () => {
             try{
                 const data: UserProducts = await GetUserProducts()
-                setProducts(data.data.Products)
+                setProducts(data.data.products)
             }catch(err){
                 console.error(err)
                 setProducts([])
