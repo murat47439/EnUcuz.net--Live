@@ -1,4 +1,6 @@
+"use client"
 import React, { useRef } from "react";
+import { useEffect } from "react";
 
 interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> {
   className?: string;
@@ -6,7 +8,7 @@ interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> {
   as?: "input" | "textarea"; // ✅ yeni prop
 }
 
-const Input = ({ children, className = '', as = "input", ...rest }: InputProps) => {
+const Input = ({ children, className = '', as = "input", defaultValue = "", ...rest }: InputProps) => {
   const baseClasses =
     "w-full p-3 pl-10 rounded-lg border border-gray-200 bg-white/80 backdrop-blur-sm shadow-sm focus:ring-2 focus:ring-blue-400 focus:border-blue-400 transition";
 
@@ -17,7 +19,13 @@ const Input = ({ children, className = '', as = "input", ...rest }: InputProps) 
     el.style.height = "auto";
     el.style.height = `${el.scrollHeight}px`;
   };
-
+  useEffect(() => {
+    const el = textareaRef.current;
+    if (el) {
+      el.style.height = "auto";
+      el.style.height = `${el.scrollHeight}px`;
+    }
+  }, [defaultValue]);
   return (
     <div className="relative flex items-start w-full">
       {children && (
@@ -30,11 +38,12 @@ const Input = ({ children, className = '', as = "input", ...rest }: InputProps) 
         <textarea
           ref={textareaRef}
           onInput={handleInput}
+          defaultValue={defaultValue}
           className={`${baseClasses} ${className} overflow-hidden resize-none min-h-[80px]`}
           {...(rest as React.TextareaHTMLAttributes<HTMLTextAreaElement>)}
         />
       ) : (
-        <input className={`${baseClasses} ${className}`} {...rest} />
+        <input defaultValue={defaultValue} className={`${baseClasses} ${className}`} {...rest} />
       )}
     </div>
   );

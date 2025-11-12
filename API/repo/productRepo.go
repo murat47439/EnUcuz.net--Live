@@ -127,10 +127,10 @@ func (pr *ProductRepo) ExistsData(name string, tx *sqlx.Tx) (bool, error) {
 	}
 	return exists, nil
 }
-func (pr *ProductRepo) UpdateProduct(ctx context.Context, product *models.Product) error {
+func (pr *ProductRepo) UpdateProduct(ctx context.Context, product *models.UpdProduct) error {
 	query := `UPDATE products SET name = $1, description = $2,stock = $3, price = $4 WHERE id = $5 AND deleted_at IS NULL`
 
-	res, err := pr.db.ExecContext(ctx, query, product.Name, product.Description, product.Stock, product.Price, product.ID)
+	res, err := pr.db.ExecContext(ctx, query, product.Name, product.Description, product.Stock, (product.Price * 100), product.ID)
 	if err != nil {
 		return fmt.Errorf("Database error : %w", err)
 	}

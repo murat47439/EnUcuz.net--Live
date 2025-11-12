@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import { AuthProvider } from "@/context/authContext";
 import { ToastProvider } from "@/context/toastContext";
+import ModalProvider from "@/context/modalContext";
 import Header from "@/features/components/header";
 import Footer from "@/features/components/footer";
 import "./globals.css";
@@ -36,6 +37,8 @@ export default function RootLayout({
       >
         <AuthProvider>
         <ToastProvider>
+
+        <ModalProvider>
         <Header></Header>
         {/* Decorative background glows */}
         <div className="pointer-events-none fixed inset-0 -z-10 overflow-hidden">
@@ -46,7 +49,9 @@ export default function RootLayout({
           <main className="pt-28 min-h-screen">{children}</main>
 
         <Footer></Footer>
+        </ModalProvider>
         </ToastProvider>
+
         </AuthProvider>
       </body>
     </html>

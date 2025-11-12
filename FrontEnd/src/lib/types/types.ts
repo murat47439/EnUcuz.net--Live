@@ -20,9 +20,13 @@ export interface Favorite{
     deleted_at : string
 }
 export type Features = { key: FeatureKey; value: string; }[];
+export type Feature = {
+    key: FeatureKey;
+    value: string;
+  };
 export type FeatureKey = {
     label : string,
-     value: number
+    value: number
 }
 export interface Product{
     id?: number,
@@ -202,10 +206,9 @@ export interface AddAttributeRes{
         attribute: Attribute
     }
 }
-export interface AddProdAttribute{
-    product: Product,
-    category_attribute: CategoryAttribute,
-    Value: string,
+export interface AddProdAttributes{
+    product_id: number,
+    attributes: Feature[],
 }
 export interface ProdAttributeRes{
     success: boolean,
@@ -248,9 +251,9 @@ export interface ProductDetailResponse{
 export interface UpdateProductRequest{
     id : number,
     name: string,
-    image_url: string,
-    brand_id: number,
-    category_id: number,
+    description: string,
+    price: number,
+    stock: number,
 }
 export interface UpdateProductResponse{
     success: boolean,

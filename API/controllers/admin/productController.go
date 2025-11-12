@@ -36,7 +36,7 @@ func (pc *ProductController) UpdateProduct(w http.ResponseWriter, r *http.Reques
 	ctx, cancel := context.WithTimeout(ctx, 10*time.Second)
 	defer cancel()
 
-	var product models.Product
+	var product models.UpdProduct
 	err = json.NewDecoder(r.Body).Decode(&product)
 	if err != nil || id != product.ID {
 		config.Logger.Printf("UpdateProduct error: Invalid request data or ID mismatch - %v", err)

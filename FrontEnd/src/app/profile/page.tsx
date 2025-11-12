@@ -1,5 +1,5 @@
 "use client"
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import Button from "@/features/components/button";
 import Input from "@/features/components/input";
 import Image from "next/image";

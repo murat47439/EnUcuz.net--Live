@@ -1,5 +1,5 @@
 "use client"
-import React, { useEffect, useState } from "react";
+import { useEffect, useState, type ChangeEvent } from "react";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
 import { Brand, Category, CategoryAttribute, FeatureKey } from "@/lib/types/types";
@@ -124,7 +124,7 @@ export default function NewProductPage() {
     return () => clearTimeout(timeoutId);
   }, [searchCategories]);
 
-  const handleChangeFileCount = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleChangeFileCount = (e: ChangeEvent<HTMLInputElement>) => {
     if (!e.target.files) return;
 
     const selectedFiles = Array.from(e.target.files);
@@ -145,6 +145,8 @@ export default function NewProductPage() {
       if (!data.brand) throw new Error("Lütfen marka seçiniz.");
       if (!data.category) throw new Error("Lütfen kategori seçiniz.");
       if (data.stock < 1) throw new Error("Geçersiz stok");
+      if (data.files.length < 1) throw new Error("Resim yüklemeniz gerekmektedir.");
+
   
       const formData = new FormData();
       formData.append("name", data.name);

@@ -37,6 +37,14 @@ type NewProduct struct {
 	ImageURLs   []string  `json:"image_url"`
 	Features    []Feature `json:"features"`
 }
+type UpdProduct struct {
+	ID          int
+	Name        string `json:"name"`
+	Description string `json:"description"`
+	Stock       int    `json:"stock"`
+	PriceGet    string `json:"price"`
+	Price       float64
+}
 type Feature struct {
 	Key   *FeatureKey `json:"key"`
 	Value string      `json:"value"`

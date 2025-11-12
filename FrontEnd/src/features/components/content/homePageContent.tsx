@@ -82,7 +82,7 @@ function HomePageContent() {
         ))}  
       </div>
       </div>  
-      ):(<p className="text-center border rounded-2xl p-4 text-gray-600">Arama kriterlerinize uygun ürün bulunamadı.</p>)
+      ):(<p className="text-center border rounded-2xl p-4 text-gray-600">API nın başlatılması 30-45 saniye sürebilir lütfen bekleyiniz.</p>)
     }
     </main>
   )

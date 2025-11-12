@@ -27,3 +27,7 @@ type ProductAttribute struct {
 	Value         string       `json:"value" db:"value"`
 	DeletedAt     sql.NullTime `json:"-" db:"deleted_at"`
 }
+type NewProductAttribute struct {
+	ProductID  int       `json:"product_id"`
+	Attributes []Feature `json:"attributes"`
+}

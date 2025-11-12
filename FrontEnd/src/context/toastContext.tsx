@@ -1,4 +1,5 @@
 "use client"
+import crypto from 'crypto';
 import React, { createContext, useContext, useState, useCallback } from 'react';
 import ToastNotification from '@/features/components/toast';// Kendi bileşen yolunuz
 import { NotificationType, Notification, ToastContextType } from '@/lib/types/types';
@@ -19,7 +20,7 @@ export const ToastProvider: React.FC<{ children: React.ReactNode }> = ({ childre
     const [notifications, setNotifications] = useState<Notification[]>([]);
 
     const showNotification = useCallback((message: string, type: NotificationType, duration?: number) => {
-        const id = Date.now();
+        const id = parseInt(crypto.randomBytes(4).toString("hex"), 16);
         const newNotification: Notification = { id, message, type, duration };
 
         setNotifications((prev) => [...prev, newNotification]);

@@ -1,8 +1,8 @@
 import api from "../apiClient";
 import { AxiosError } from "axios";
-import { AddProdAttribute, ProdAttributeRes } from "@/lib/types/types";
+import { AddProdAttributes, ProdAttributeRes } from "@/lib/types/types";
 
-export async function addProdAttribute(data:AddProdAttribute) {
+export async function addProdAttribute(data:AddProdAttributes) {
     try{
         const res = await api.post<ProdAttributeRes>(`/attribute/admin/p`, data);
         return res.data

@@ -62,24 +62,24 @@ func (ps *ProductService) AddProduct(ctx context.Context, data models.NewProduct
 
 	return true, nil
 }
-func (ps *ProductService) UpdateProduct(ctx context.Context, product models.Product, user_id int) (*models.Product, error) {
-	exists, err := ps.ProductRepo.CheckProduct(product.ID)
+func (ps *ProductService) UpdateProduct(ctx context.Context, product *models.UpdProduct, user_id int) (*models.UpdProduct, error) {
+	p, err := ps.ProductRepo.GetProduct(ctx, product.ID)
 	switch {
 	case err != nil:
 		return nil, err
-	case !exists:
+	case p.ID == 0:
 		return nil, fmt.Errorf("Product Not Found")
-	case product.SellerID != user_id:
+	case p.SellerID != user_id:
 		return nil, fmt.Errorf("👍")
 	}
-	err = ps.ProductRepo.UpdateProduct(ctx, &product)
+	err = ps.ProductRepo.UpdateProduct(ctx, product)
 	if err != nil {
 		return nil, err
 	}
-	return &product, nil
+	return product, nil
 
 }
-func (ps *ProductService) UpdateProductForAdmin(ctx context.Context, product models.Product) (*models.Product, error) {
+func (ps *ProductService) UpdateProductForAdmin(ctx context.Context, product models.UpdProduct) (*models.UpdProduct, error) {
 	exists, err := ps.ProductRepo.CheckProduct(product.ID)
 	switch {
 	case err != nil:

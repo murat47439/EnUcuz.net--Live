@@ -1,5 +1,5 @@
 "use client"
-import React,{useEffect, useState} from "react";
+import {useEffect, useState} from "react";
 import { useToast } from "@/context/toastContext";
 import { getFavourites } from "@/lib/api/favorites/useGet";
 import { Favorites } from "@/lib/types/types";

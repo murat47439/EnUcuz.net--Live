@@ -623,3 +623,2066 @@ APP_LOG: 2025/11/07 19:43:34 productRepo.go:60:  true
 APP_LOG: 2025/11/07 19:43:34 controllers.go:21: Success response: 200
 APP_LOG: 2025/11/07 19:44:02 productRepo.go:60:  true
 APP_LOG: 2025/11/07 19:44:02 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 07:32:49 main.go:24: Application started successfully.
+APP_LOG: 2025/11/09 07:33:50 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 07:34:28 productRepo.go:60:  true
+APP_LOG: 2025/11/09 07:34:28 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 07:34:47 usersController.go:213: GetAccess request started
+APP_LOG: 2025/11/09 07:34:47 usersController.go:249: GetAccess success: Access token refreshed
+APP_LOG: 2025/11/09 07:34:47 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 07:34:47 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 07:38:14 productRepo.go:60:  true
+APP_LOG: 2025/11/09 07:38:14 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 07:38:19 productRepo.go:60:  true
+APP_LOG: 2025/11/09 07:38:19 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 07:39:48 main.go:24: Application started successfully.
+APP_LOG: 2025/11/09 07:39:54 productRepo.go:60:  true
+APP_LOG: 2025/11/09 07:39:54 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 07:40:49 productRepo.go:60:  true
+APP_LOG: 2025/11/09 07:40:49 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 07:40:53 productRepo.go:60:  true
+APP_LOG: 2025/11/09 07:40:53 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 07:41:31 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 07:41:31 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 07:41:35 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 07:41:35 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 07:41:37 productRepo.go:60:  true
+APP_LOG: 2025/11/09 07:41:37 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 07:41:39 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 07:41:40 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 07:42:00 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 07:42:00 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 07:42:10 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 07:50:46 usersController.go:213: GetAccess request started
+APP_LOG: 2025/11/09 07:50:46 usersController.go:249: GetAccess success: Access token refreshed
+APP_LOG: 2025/11/09 07:50:46 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 07:50:46 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 07:52:35 productRepo.go:60:  true
+APP_LOG: 2025/11/09 07:52:35 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 07:52:36 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 07:52:36 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 07:56:39 productRepo.go:60:  true
+APP_LOG: 2025/11/09 07:56:39 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 07:56:40 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 07:56:40 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 07:57:47 productRepo.go:60:  true
+APP_LOG: 2025/11/09 07:57:47 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 07:57:53 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 07:57:53 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 07:58:49 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 07:58:49 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 07:58:51 productRepo.go:60:  true
+APP_LOG: 2025/11/09 07:58:51 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 08:08:36 productRepo.go:60:  false
+APP_LOG: 2025/11/09 08:08:36 controllers.go:10: Error response: 400 - Product not found
+APP_LOG: 2025/11/09 08:08:40 productRepo.go:60:  true
+APP_LOG: 2025/11/09 08:08:40 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 08:35:55 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 08:35:55 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 08:36:00 usersController.go:213: GetAccess request started
+APP_LOG: 2025/11/09 08:36:00 usersController.go:249: GetAccess success: Access token refreshed
+APP_LOG: 2025/11/09 08:36:00 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 08:36:00 usersController.go:148: GetUserData request started
+APP_LOG: 2025/11/09 08:36:00 usersController.go:164: GetUserData success: User data retrieved for user 1
+APP_LOG: 2025/11/09 08:36:00 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 08:36:03 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 08:36:03 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 08:36:04 productRepo.go:60:  true
+APP_LOG: 2025/11/09 08:36:04 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 08:36:07 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 08:36:07 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 08:37:15 productRepo.go:60:  true
+APP_LOG: 2025/11/09 08:37:15 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 08:38:16 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 08:38:24 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 08:38:24 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 08:38:26 productRepo.go:60:  true
+APP_LOG: 2025/11/09 08:38:26 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 08:38:28 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 08:38:28 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 08:38:30 productRepo.go:60:  true
+APP_LOG: 2025/11/09 08:38:30 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 08:38:31 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 08:38:31 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 08:38:36 productRepo.go:60:  true
+APP_LOG: 2025/11/09 08:38:36 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 08:38:37 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 08:38:37 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 08:38:43 productRepo.go:60:  true
+APP_LOG: 2025/11/09 08:38:43 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 08:40:10 productRepo.go:60:  true
+APP_LOG: 2025/11/09 08:40:10 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 08:40:19 productRepo.go:60:  true
+APP_LOG: 2025/11/09 08:40:19 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 08:40:22 productRepo.go:60:  true
+APP_LOG: 2025/11/09 08:40:22 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 08:41:27 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 08:41:30 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 08:41:30 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 08:41:35 productRepo.go:60:  true
+APP_LOG: 2025/11/09 08:41:35 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 08:41:35 productRepo.go:60:  true
+APP_LOG: 2025/11/09 08:41:35 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 08:41:39 productRepo.go:60:  true
+APP_LOG: 2025/11/09 08:41:39 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 08:41:39 productRepo.go:60:  true
+APP_LOG: 2025/11/09 08:41:39 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 08:41:58 productRepo.go:60:  true
+APP_LOG: 2025/11/09 08:41:58 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 08:41:58 productRepo.go:60:  true
+APP_LOG: 2025/11/09 08:41:58 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 08:43:26 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 08:43:26 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 08:43:29 productRepo.go:60:  true
+APP_LOG: 2025/11/09 08:43:29 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 08:43:33 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 08:43:33 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 08:43:40 productRepo.go:60:  true
+APP_LOG: 2025/11/09 08:43:40 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 08:43:41 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 08:43:41 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 08:43:42 productRepo.go:60:  true
+APP_LOG: 2025/11/09 08:43:42 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 08:43:44 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 08:43:44 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 08:45:31 productRepo.go:60:  true
+APP_LOG: 2025/11/09 08:45:31 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 08:45:32 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 08:45:32 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 08:46:12 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 08:46:13 productRepo.go:60:  true
+APP_LOG: 2025/11/09 08:46:13 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 08:46:14 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 08:46:14 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 08:46:57 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 08:46:58 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 08:47:08 favoriesController.go:33: AddFavori request started
+APP_LOG: 2025/11/09 08:47:08 favoriesController.go:58: AddFavori success: Product 9 added to favorites for user 1
+APP_LOG: 2025/11/09 08:47:08 controllers.go:21: Success response: 201
+APP_LOG: 2025/11/09 08:47:13 productRepo.go:60:  true
+APP_LOG: 2025/11/09 08:47:13 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 08:47:15 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 08:47:15 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 08:47:27 productRepo.go:60:  true
+APP_LOG: 2025/11/09 08:47:27 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 08:47:28 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 08:47:28 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 08:48:48 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 08:49:52 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 08:49:53 productRepo.go:60:  true
+APP_LOG: 2025/11/09 08:49:53 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 08:49:55 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 08:49:55 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 08:49:55 productRepo.go:60:  true
+APP_LOG: 2025/11/09 08:49:55 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 08:49:57 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 08:49:57 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 08:49:58 favoriesController.go:33: AddFavori request started
+APP_LOG: 2025/11/09 08:49:58 favoriesController.go:53: AddFavori service error: Ürün zaten favorilere eklendi.
+APP_LOG: 2025/11/09 08:49:58 controllers.go:10: Error response: 500 - Ürün zaten favorilere eklendi.
+APP_LOG: 2025/11/09 08:50:02 favoriesController.go:33: AddFavori request started
+APP_LOG: 2025/11/09 08:50:02 favoriesController.go:58: AddFavori success: Product 13 added to favorites for user 1
+APP_LOG: 2025/11/09 08:50:02 controllers.go:21: Success response: 201
+APP_LOG: 2025/11/09 08:50:05 favoriesController.go:33: AddFavori request started
+APP_LOG: 2025/11/09 08:50:05 favoriesController.go:53: AddFavori service error: Ürün zaten favorilere eklendi.
+APP_LOG: 2025/11/09 08:50:05 controllers.go:10: Error response: 500 - Ürün zaten favorilere eklendi.
+APP_LOG: 2025/11/09 08:50:07 favoriesController.go:93: GetFavourites request started
+APP_LOG: 2025/11/09 08:50:07 favoriesController.go:110: GetFavourites parameters: userID=1, page=1
+APP_LOG: 2025/11/09 08:50:07 favoriesController.go:119: GetFavourites success: 4 favorites retrieved for user 1
+APP_LOG: 2025/11/09 08:50:07 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 08:50:07 favoriesController.go:93: GetFavourites request started
+APP_LOG: 2025/11/09 08:50:07 favoriesController.go:110: GetFavourites parameters: userID=1, page=1
+APP_LOG: 2025/11/09 08:50:07 favoriesController.go:119: GetFavourites success: 4 favorites retrieved for user 1
+APP_LOG: 2025/11/09 08:50:07 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 08:50:08 favoriesController.go:64: RemoveFavori request started
+APP_LOG: 2025/11/09 08:50:08 favoriesController.go:87: RemoveFavori success: Favorite 1 removed for user 1
+APP_LOG: 2025/11/09 08:50:08 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 08:50:09 favoriesController.go:64: RemoveFavori request started
+APP_LOG: 2025/11/09 08:50:09 favoriesController.go:87: RemoveFavori success: Favorite 8 removed for user 1
+APP_LOG: 2025/11/09 08:50:09 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 08:50:10 favoriesController.go:64: RemoveFavori request started
+APP_LOG: 2025/11/09 08:50:10 favoriesController.go:87: RemoveFavori success: Favorite 9 removed for user 1
+APP_LOG: 2025/11/09 08:50:10 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 08:50:11 favoriesController.go:64: RemoveFavori request started
+APP_LOG: 2025/11/09 08:50:11 favoriesController.go:87: RemoveFavori success: Favorite 13 removed for user 1
+APP_LOG: 2025/11/09 08:50:11 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 08:50:12 favoriesController.go:93: GetFavourites request started
+APP_LOG: 2025/11/09 08:50:12 favoriesController.go:110: GetFavourites parameters: userID=1, page=1
+APP_LOG: 2025/11/09 08:50:12 favoriesController.go:119: GetFavourites success: 0 favorites retrieved for user 1
+APP_LOG: 2025/11/09 08:50:12 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 08:50:14 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 08:50:14 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 08:50:52 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 08:50:56 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 08:50:56 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 08:51:01 productRepo.go:60:  true
+APP_LOG: 2025/11/09 08:51:01 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 08:51:01 productRepo.go:60:  true
+APP_LOG: 2025/11/09 08:51:01 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 08:51:03 usersController.go:213: GetAccess request started
+APP_LOG: 2025/11/09 08:51:03 usersController.go:249: GetAccess success: Access token refreshed
+APP_LOG: 2025/11/09 08:51:03 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 08:51:03 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 08:51:37 productRepo.go:60:  true
+APP_LOG: 2025/11/09 08:51:37 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 08:51:37 productRepo.go:60:  true
+APP_LOG: 2025/11/09 08:51:37 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 08:51:38 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 08:51:38 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 08:51:48 favoriesController.go:33: AddFavori request started
+APP_LOG: 2025/11/09 08:51:48 favoriesController.go:58: AddFavori success: Product 22 added to favorites for user 1
+APP_LOG: 2025/11/09 08:51:48 controllers.go:21: Success response: 201
+APP_LOG: 2025/11/09 08:52:58 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 08:53:00 favoriesController.go:33: AddFavori request started
+APP_LOG: 2025/11/09 08:53:00 favoriesController.go:58: AddFavori success: Product 9 added to favorites for user 1
+APP_LOG: 2025/11/09 08:53:00 controllers.go:21: Success response: 201
+APP_LOG: 2025/11/09 08:53:00 favoriesController.go:33: AddFavori request started
+APP_LOG: 2025/11/09 08:53:00 favoriesController.go:53: AddFavori service error: Ürün zaten favorilere eklendi.
+APP_LOG: 2025/11/09 08:53:00 controllers.go:10: Error response: 500 - Ürün zaten favorilere eklendi.
+APP_LOG: 2025/11/09 08:54:45 favoriesController.go:33: AddFavori request started
+APP_LOG: 2025/11/09 08:54:45 favoriesController.go:53: AddFavori service error: Ürün zaten favorilere eklendi.
+APP_LOG: 2025/11/09 08:54:45 controllers.go:10: Error response: 500 - Ürün zaten favorilere eklendi.
+APP_LOG: 2025/11/09 08:54:45 favoriesController.go:33: AddFavori request started
+APP_LOG: 2025/11/09 08:54:45 favoriesController.go:53: AddFavori service error: Ürün zaten favorilere eklendi.
+APP_LOG: 2025/11/09 08:54:45 controllers.go:10: Error response: 500 - Ürün zaten favorilere eklendi.
+APP_LOG: 2025/11/09 08:54:46 favoriesController.go:33: AddFavori request started
+APP_LOG: 2025/11/09 08:54:46 favoriesController.go:53: AddFavori service error: Ürün zaten favorilere eklendi.
+APP_LOG: 2025/11/09 08:54:46 controllers.go:10: Error response: 500 - Ürün zaten favorilere eklendi.
+APP_LOG: 2025/11/09 08:54:46 favoriesController.go:33: AddFavori request started
+APP_LOG: 2025/11/09 08:54:46 favoriesController.go:53: AddFavori service error: Ürün zaten favorilere eklendi.
+APP_LOG: 2025/11/09 08:54:46 controllers.go:10: Error response: 500 - Ürün zaten favorilere eklendi.
+APP_LOG: 2025/11/09 08:54:53 productRepo.go:60:  true
+APP_LOG: 2025/11/09 08:54:53 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 08:54:53 productRepo.go:60:  true
+APP_LOG: 2025/11/09 08:54:53 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 08:54:56 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 08:54:56 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 08:54:59 productRepo.go:60:  true
+APP_LOG: 2025/11/09 08:54:59 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 08:54:59 productRepo.go:60:  true
+APP_LOG: 2025/11/09 08:54:59 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 08:55:01 productRepo.go:60:  true
+APP_LOG: 2025/11/09 08:55:01 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 08:55:02 productRepo.go:60:  true
+APP_LOG: 2025/11/09 08:55:02 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 08:55:05 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 08:55:05 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 08:56:27 productRepo.go:60:  true
+APP_LOG: 2025/11/09 08:56:27 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 08:56:30 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 08:56:30 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 08:56:33 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 08:56:33 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 09:03:33 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 09:05:34 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 09:06:30 usersController.go:213: GetAccess request started
+APP_LOG: 2025/11/09 09:06:30 usersController.go:249: GetAccess success: Access token refreshed
+APP_LOG: 2025/11/09 09:06:30 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 09:06:30 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 09:06:39 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 09:07:27 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 09:12:15 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 09:33:36 usersController.go:213: GetAccess request started
+APP_LOG: 2025/11/09 09:33:36 usersController.go:249: GetAccess success: Access token refreshed
+APP_LOG: 2025/11/09 09:33:36 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 09:33:36 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 09:34:06 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 09:35:17 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 09:35:44 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 09:35:48 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 09:36:23 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 09:36:41 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 09:38:36 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 09:41:04 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 15:31:08 main.go:24: Application started successfully.
+APP_LOG: 2025/11/09 15:32:03 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 15:32:10 productRepo.go:60:  true
+APP_LOG: 2025/11/09 15:32:10 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 15:32:11 productRepo.go:60:  true
+APP_LOG: 2025/11/09 15:32:11 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 15:32:45 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 15:32:45 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 15:32:54 usersController.go:213: GetAccess request started
+APP_LOG: 2025/11/09 15:32:54 usersController.go:249: GetAccess success: Access token refreshed
+APP_LOG: 2025/11/09 15:32:54 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 15:32:54 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 15:33:00 productRepo.go:60:  true
+APP_LOG: 2025/11/09 15:33:00 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 15:33:00 productRepo.go:60:  true
+APP_LOG: 2025/11/09 15:33:00 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 15:33:10 productRepo.go:60:  true
+APP_LOG: 2025/11/09 15:33:10 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 15:33:10 productRepo.go:60:  true
+APP_LOG: 2025/11/09 15:33:10 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 15:33:19 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 15:33:19 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 15:35:28 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 15:35:28 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 15:35:30 productRepo.go:60:  true
+APP_LOG: 2025/11/09 15:35:30 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 15:35:30 productRepo.go:60:  true
+APP_LOG: 2025/11/09 15:35:30 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 15:37:00 productRepo.go:60:  true
+APP_LOG: 2025/11/09 15:37:00 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 15:39:04 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 15:39:04 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 15:39:06 productRepo.go:60:  true
+APP_LOG: 2025/11/09 15:39:06 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 15:39:11 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 15:39:11 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 15:39:12 productRepo.go:60:  true
+APP_LOG: 2025/11/09 15:39:12 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 15:39:19 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 15:39:19 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 15:39:21 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 15:39:21 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 16:03:39 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 16:10:33 usersController.go:213: GetAccess request started
+APP_LOG: 2025/11/09 16:10:33 usersController.go:249: GetAccess success: Access token refreshed
+APP_LOG: 2025/11/09 16:10:33 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 16:10:33 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 16:10:36 productRepo.go:60:  true
+APP_LOG: 2025/11/09 16:10:36 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 16:10:36 productRepo.go:60:  true
+APP_LOG: 2025/11/09 16:10:36 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 16:12:27 productRepo.go:60:  true
+APP_LOG: 2025/11/09 16:12:27 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 16:12:27 productRepo.go:60:  true
+APP_LOG: 2025/11/09 16:12:27 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 16:12:32 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 16:12:32 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 16:12:36 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 16:12:36 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 16:12:37 productRepo.go:60:  true
+APP_LOG: 2025/11/09 16:12:37 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 16:12:37 productRepo.go:60:  true
+APP_LOG: 2025/11/09 16:12:37 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 16:15:45 productRepo.go:60:  true
+APP_LOG: 2025/11/09 16:15:45 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 16:15:45 productRepo.go:60:  true
+APP_LOG: 2025/11/09 16:15:45 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 16:15:49 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 16:15:49 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 16:15:56 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 16:15:56 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 16:15:58 productRepo.go:60:  true
+APP_LOG: 2025/11/09 16:15:58 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 16:15:58 productRepo.go:60:  true
+APP_LOG: 2025/11/09 16:15:58 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 16:21:56 productRepo.go:60:  true
+APP_LOG: 2025/11/09 16:21:56 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 16:21:56 productRepo.go:60:  true
+APP_LOG: 2025/11/09 16:21:56 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 16:21:57 productRepo.go:60:  true
+APP_LOG: 2025/11/09 16:21:57 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 16:21:57 productRepo.go:60:  true
+APP_LOG: 2025/11/09 16:21:57 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 16:22:16 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 16:22:16 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 16:22:19 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 16:22:19 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 16:22:21 productRepo.go:60:  true
+APP_LOG: 2025/11/09 16:22:21 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 16:22:21 productRepo.go:60:  true
+APP_LOG: 2025/11/09 16:22:21 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 16:22:27 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 16:22:27 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 16:22:37 productRepo.go:60:  true
+APP_LOG: 2025/11/09 16:22:37 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 16:22:41 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 16:22:41 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 16:23:22 productRepo.go:60:  true
+APP_LOG: 2025/11/09 16:23:22 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 16:23:22 productRepo.go:60:  true
+APP_LOG: 2025/11/09 16:23:22 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 16:23:24 productRepo.go:60:  true
+APP_LOG: 2025/11/09 16:23:24 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 16:23:24 productRepo.go:60:  true
+APP_LOG: 2025/11/09 16:23:24 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 16:23:25 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 16:23:29 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 16:23:29 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 16:23:32 productRepo.go:60:  true
+APP_LOG: 2025/11/09 16:23:32 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 16:23:32 productRepo.go:60:  true
+APP_LOG: 2025/11/09 16:23:32 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 16:23:48 productRepo.go:60:  true
+APP_LOG: 2025/11/09 16:23:48 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 16:23:48 productRepo.go:60:  true
+APP_LOG: 2025/11/09 16:23:48 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 16:23:53 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 16:23:53 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 16:23:57 productRepo.go:60:  true
+APP_LOG: 2025/11/09 16:23:57 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 16:23:57 productRepo.go:60:  true
+APP_LOG: 2025/11/09 16:23:57 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 16:25:59 productRepo.go:60:  true
+APP_LOG: 2025/11/09 16:25:59 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 16:25:59 productRepo.go:60:  true
+APP_LOG: 2025/11/09 16:25:59 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 16:26:05 usersController.go:213: GetAccess request started
+APP_LOG: 2025/11/09 16:26:05 usersController.go:249: GetAccess success: Access token refreshed
+APP_LOG: 2025/11/09 16:26:05 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 16:26:05 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 16:26:08 productRepo.go:60:  true
+APP_LOG: 2025/11/09 16:26:08 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 16:26:08 productRepo.go:60:  true
+APP_LOG: 2025/11/09 16:26:08 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 16:37:55 productRepo.go:60:  true
+APP_LOG: 2025/11/09 16:37:55 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 16:37:55 productRepo.go:60:  true
+APP_LOG: 2025/11/09 16:37:55 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 16:38:01 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 16:38:01 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 16:38:05 productRepo.go:60:  true
+APP_LOG: 2025/11/09 16:38:05 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 16:38:05 productRepo.go:60:  true
+APP_LOG: 2025/11/09 16:38:05 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 16:38:52 productRepo.go:60:  true
+APP_LOG: 2025/11/09 16:38:52 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 16:38:52 productRepo.go:60:  true
+APP_LOG: 2025/11/09 16:38:52 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 16:38:53 productRepo.go:60:  true
+APP_LOG: 2025/11/09 16:38:53 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 16:38:53 productRepo.go:60:  true
+APP_LOG: 2025/11/09 16:38:53 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 16:38:58 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 16:38:58 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 16:39:00 productRepo.go:60:  true
+APP_LOG: 2025/11/09 16:39:00 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 16:39:00 productRepo.go:60:  true
+APP_LOG: 2025/11/09 16:39:00 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 16:39:42 productRepo.go:60:  true
+APP_LOG: 2025/11/09 16:39:42 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 16:40:20 productRepo.go:60:  true
+APP_LOG: 2025/11/09 16:40:20 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 16:40:20 productRepo.go:60:  true
+APP_LOG: 2025/11/09 16:40:20 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 16:40:21 productRepo.go:60:  true
+APP_LOG: 2025/11/09 16:40:21 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 16:40:21 productRepo.go:60:  true
+APP_LOG: 2025/11/09 16:40:21 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 16:41:01 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 16:41:01 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 16:41:06 productRepo.go:60:  true
+APP_LOG: 2025/11/09 16:41:06 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 16:41:06 productRepo.go:60:  true
+APP_LOG: 2025/11/09 16:41:06 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 16:41:42 usersController.go:213: GetAccess request started
+APP_LOG: 2025/11/09 16:41:42 usersController.go:249: GetAccess success: Access token refreshed
+APP_LOG: 2025/11/09 16:41:42 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 16:41:42 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 16:41:44 productRepo.go:60:  true
+APP_LOG: 2025/11/09 16:41:44 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 16:41:44 productRepo.go:60:  true
+APP_LOG: 2025/11/09 16:41:44 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 16:44:16 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 16:44:16 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 16:44:17 productRepo.go:60:  true
+APP_LOG: 2025/11/09 16:44:17 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 16:45:03 productRepo.go:60:  true
+APP_LOG: 2025/11/09 16:45:03 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 16:45:57 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 16:45:57 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 16:46:00 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 16:46:00 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 16:46:02 productRepo.go:60:  true
+APP_LOG: 2025/11/09 16:46:02 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 16:46:44 productRepo.go:60:  true
+APP_LOG: 2025/11/09 16:46:44 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 16:47:51 productRepo.go:60:  true
+APP_LOG: 2025/11/09 16:47:51 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 16:47:56 productRepo.go:60:  true
+APP_LOG: 2025/11/09 16:47:56 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 16:48:12 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 16:48:12 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 16:48:18 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 16:48:18 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 16:48:24 productRepo.go:60:  true
+APP_LOG: 2025/11/09 16:48:24 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 16:48:24 productRepo.go:60:  true
+APP_LOG: 2025/11/09 16:48:24 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 16:49:56 productRepo.go:60:  true
+APP_LOG: 2025/11/09 16:49:56 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 16:49:56 productRepo.go:60:  true
+APP_LOG: 2025/11/09 16:49:56 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 16:49:58 productRepo.go:60:  true
+APP_LOG: 2025/11/09 16:49:58 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 16:49:58 productRepo.go:60:  true
+APP_LOG: 2025/11/09 16:49:58 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 16:50:05 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 16:50:05 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 16:50:07 productRepo.go:60:  true
+APP_LOG: 2025/11/09 16:50:07 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 16:50:07 productRepo.go:60:  true
+APP_LOG: 2025/11/09 16:50:07 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 16:50:34 productRepo.go:60:  true
+APP_LOG: 2025/11/09 16:50:34 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 16:51:17 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 16:51:17 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 16:51:19 productRepo.go:60:  true
+APP_LOG: 2025/11/09 16:51:19 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 16:51:19 productRepo.go:60:  true
+APP_LOG: 2025/11/09 16:51:19 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 16:51:23 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 16:51:23 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 16:51:27 productRepo.go:60:  true
+APP_LOG: 2025/11/09 16:51:27 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 16:51:27 productRepo.go:60:  true
+APP_LOG: 2025/11/09 16:51:27 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 16:52:59 productRepo.go:60:  true
+APP_LOG: 2025/11/09 16:52:59 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 16:52:59 productRepo.go:60:  true
+APP_LOG: 2025/11/09 16:52:59 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 16:53:02 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 16:53:02 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 16:53:05 productRepo.go:60:  true
+APP_LOG: 2025/11/09 16:53:05 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 16:53:05 productRepo.go:60:  true
+APP_LOG: 2025/11/09 16:53:05 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 16:53:12 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 16:53:12 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 16:53:21 productRepo.go:60:  true
+APP_LOG: 2025/11/09 16:53:21 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 16:53:21 productRepo.go:60:  true
+APP_LOG: 2025/11/09 16:53:21 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 16:53:33 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 16:53:33 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 16:56:02 productRepo.go:60:  true
+APP_LOG: 2025/11/09 16:56:02 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 16:56:07 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 16:56:07 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 16:56:10 productRepo.go:60:  true
+APP_LOG: 2025/11/09 16:56:10 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 16:56:14 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 16:56:14 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 16:56:18 productRepo.go:60:  true
+APP_LOG: 2025/11/09 16:56:18 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 16:56:18 productRepo.go:60:  true
+APP_LOG: 2025/11/09 16:56:18 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 16:56:18 controllers.go:21: Admin success response: 200
+APP_LOG: 2025/11/09 16:56:18 controllers.go:21: Admin success response: 200
+APP_LOG: 2025/11/09 16:56:22 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 16:56:22 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 16:56:24 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 16:56:24 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 16:56:26 productRepo.go:60:  true
+APP_LOG: 2025/11/09 16:56:26 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 16:56:26 productRepo.go:60:  true
+APP_LOG: 2025/11/09 16:56:26 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 16:56:26 controllers.go:21: Admin success response: 200
+APP_LOG: 2025/11/09 16:56:26 controllers.go:21: Admin success response: 200
+APP_LOG: 2025/11/09 16:56:45 productRepo.go:60:  true
+APP_LOG: 2025/11/09 16:56:45 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 16:56:45 productRepo.go:60:  true
+APP_LOG: 2025/11/09 16:56:45 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 16:56:46 productRepo.go:60:  true
+APP_LOG: 2025/11/09 16:56:46 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 16:56:46 productRepo.go:60:  true
+APP_LOG: 2025/11/09 16:56:46 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 16:56:52 usersController.go:213: GetAccess request started
+APP_LOG: 2025/11/09 16:56:52 usersController.go:249: GetAccess success: Access token refreshed
+APP_LOG: 2025/11/09 16:56:52 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 16:56:52 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 16:56:55 productRepo.go:60:  true
+APP_LOG: 2025/11/09 16:56:55 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 16:56:55 productRepo.go:60:  true
+APP_LOG: 2025/11/09 16:56:55 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 16:58:45 productRepo.go:60:  true
+APP_LOG: 2025/11/09 16:58:45 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 16:58:45 productRepo.go:60:  true
+APP_LOG: 2025/11/09 16:58:45 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 16:58:47 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 16:58:47 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 16:58:51 productRepo.go:60:  true
+APP_LOG: 2025/11/09 16:58:51 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 16:58:51 productRepo.go:60:  true
+APP_LOG: 2025/11/09 16:58:51 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 16:59:13 productRepo.go:60:  true
+APP_LOG: 2025/11/09 16:59:13 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 16:59:13 productRepo.go:60:  true
+APP_LOG: 2025/11/09 16:59:13 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 16:59:14 productRepo.go:60:  true
+APP_LOG: 2025/11/09 16:59:14 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 16:59:14 productRepo.go:60:  true
+APP_LOG: 2025/11/09 16:59:14 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 16:59:38 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 16:59:38 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 16:59:41 productRepo.go:60:  true
+APP_LOG: 2025/11/09 16:59:41 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 16:59:41 productRepo.go:60:  true
+APP_LOG: 2025/11/09 16:59:41 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 17:01:40 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 17:01:44 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 17:01:44 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 17:01:46 productRepo.go:60:  true
+APP_LOG: 2025/11/09 17:01:46 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 17:01:46 productRepo.go:60:  true
+APP_LOG: 2025/11/09 17:01:46 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 17:01:49 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 17:01:49 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 17:01:52 productRepo.go:60:  true
+APP_LOG: 2025/11/09 17:01:52 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 17:01:52 productRepo.go:60:  true
+APP_LOG: 2025/11/09 17:01:52 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 17:02:04 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 17:02:04 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 17:02:06 productRepo.go:60:  true
+APP_LOG: 2025/11/09 17:02:06 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 17:02:13 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 17:02:13 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 17:02:16 productRepo.go:60:  true
+APP_LOG: 2025/11/09 17:02:16 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 17:02:16 productRepo.go:60:  true
+APP_LOG: 2025/11/09 17:02:16 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 20:56:00 main.go:24: Application started successfully.
+APP_LOG: 2025/11/09 20:56:37 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 20:56:40 productRepo.go:60:  true
+APP_LOG: 2025/11/09 20:56:40 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 20:56:51 usersController.go:213: GetAccess request started
+APP_LOG: 2025/11/09 20:56:51 usersController.go:249: GetAccess success: Access token refreshed
+APP_LOG: 2025/11/09 20:56:51 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 20:56:51 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 20:56:54 productRepo.go:60:  true
+APP_LOG: 2025/11/09 20:56:54 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 20:56:54 productRepo.go:60:  true
+APP_LOG: 2025/11/09 20:56:54 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 20:56:58 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 20:56:58 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 20:56:59 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 20:56:59 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 20:57:00 productRepo.go:60:  true
+APP_LOG: 2025/11/09 20:57:00 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 20:57:03 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 20:57:03 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 20:57:04 productRepo.go:60:  true
+APP_LOG: 2025/11/09 20:57:04 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 20:57:04 productRepo.go:60:  true
+APP_LOG: 2025/11/09 20:57:04 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 20:58:28 productRepo.go:60:  true
+APP_LOG: 2025/11/09 20:58:28 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 20:58:28 productRepo.go:60:  true
+APP_LOG: 2025/11/09 20:58:28 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 20:58:28 productRepo.go:60:  true
+APP_LOG: 2025/11/09 20:58:28 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 20:58:28 productRepo.go:60:  true
+APP_LOG: 2025/11/09 20:58:28 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 20:58:32 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 20:58:32 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 20:58:33 productRepo.go:60:  true
+APP_LOG: 2025/11/09 20:58:33 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 20:58:33 productRepo.go:60:  true
+APP_LOG: 2025/11/09 20:58:33 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 21:02:50 productRepo.go:60:  true
+APP_LOG: 2025/11/09 21:02:50 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 21:06:29 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 21:06:29 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 21:06:30 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 21:06:30 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 21:06:32 productRepo.go:60:  true
+APP_LOG: 2025/11/09 21:06:32 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 21:06:32 productRepo.go:60:  true
+APP_LOG: 2025/11/09 21:06:32 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 21:09:53 productRepo.go:60:  true
+APP_LOG: 2025/11/09 21:09:53 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 21:09:53 productRepo.go:60:  true
+APP_LOG: 2025/11/09 21:09:53 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 21:09:55 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 21:09:55 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 21:09:57 productRepo.go:60:  true
+APP_LOG: 2025/11/09 21:09:57 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 21:09:57 productRepo.go:60:  true
+APP_LOG: 2025/11/09 21:09:57 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 21:10:17 productRepo.go:60:  true
+APP_LOG: 2025/11/09 21:10:17 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 21:10:17 productRepo.go:60:  true
+APP_LOG: 2025/11/09 21:10:17 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 21:10:20 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 21:10:20 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 21:10:22 productRepo.go:60:  true
+APP_LOG: 2025/11/09 21:10:22 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 21:10:22 productRepo.go:60:  true
+APP_LOG: 2025/11/09 21:10:22 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 21:10:44 productRepo.go:60:  true
+APP_LOG: 2025/11/09 21:10:44 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 21:12:47 productRepo.go:60:  true
+APP_LOG: 2025/11/09 21:12:47 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 21:12:47 productRepo.go:60:  true
+APP_LOG: 2025/11/09 21:12:47 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 21:12:47 productRepo.go:60:  true
+APP_LOG: 2025/11/09 21:12:47 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 21:12:47 productRepo.go:60:  true
+APP_LOG: 2025/11/09 21:12:47 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 21:12:51 usersController.go:213: GetAccess request started
+APP_LOG: 2025/11/09 21:12:51 usersController.go:249: GetAccess success: Access token refreshed
+APP_LOG: 2025/11/09 21:12:51 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 21:12:51 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 21:12:52 productRepo.go:60:  true
+APP_LOG: 2025/11/09 21:12:52 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 21:12:52 productRepo.go:60:  true
+APP_LOG: 2025/11/09 21:12:52 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 21:15:45 productRepo.go:60:  true
+APP_LOG: 2025/11/09 21:15:45 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 21:15:45 productRepo.go:60:  true
+APP_LOG: 2025/11/09 21:15:45 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 21:15:48 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 21:15:48 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 21:15:49 productRepo.go:60:  true
+APP_LOG: 2025/11/09 21:15:49 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 21:15:49 productRepo.go:60:  true
+APP_LOG: 2025/11/09 21:15:49 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 21:16:34 productRepo.go:60:  true
+APP_LOG: 2025/11/09 21:16:34 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 21:16:34 productRepo.go:60:  true
+APP_LOG: 2025/11/09 21:16:34 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 21:16:37 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 21:16:37 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 21:16:38 productRepo.go:60:  true
+APP_LOG: 2025/11/09 21:16:38 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 21:16:38 productRepo.go:60:  true
+APP_LOG: 2025/11/09 21:16:38 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 21:19:34 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 21:19:34 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 21:34:48 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 21:34:50 productRepo.go:60:  true
+APP_LOG: 2025/11/09 21:34:50 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 21:34:56 usersController.go:213: GetAccess request started
+APP_LOG: 2025/11/09 21:34:56 usersController.go:249: GetAccess success: Access token refreshed
+APP_LOG: 2025/11/09 21:34:56 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 21:34:56 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 21:34:57 productRepo.go:60:  true
+APP_LOG: 2025/11/09 21:34:57 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 21:34:59 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 21:34:59 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 21:35:00 productRepo.go:60:  true
+APP_LOG: 2025/11/09 21:35:00 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 21:35:00 productRepo.go:60:  true
+APP_LOG: 2025/11/09 21:35:00 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 21:39:11 productRepo.go:60:  true
+APP_LOG: 2025/11/09 21:39:11 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 21:39:11 productRepo.go:60:  true
+APP_LOG: 2025/11/09 21:39:11 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 21:39:13 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 21:39:13 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 21:39:14 productRepo.go:60:  true
+APP_LOG: 2025/11/09 21:39:14 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 21:39:14 productRepo.go:60:  true
+APP_LOG: 2025/11/09 21:39:14 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 21:39:28 productRepo.go:60:  true
+APP_LOG: 2025/11/09 21:39:28 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 21:39:28 productRepo.go:60:  true
+APP_LOG: 2025/11/09 21:39:28 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 21:39:31 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 21:39:31 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 21:39:33 productRepo.go:60:  true
+APP_LOG: 2025/11/09 21:39:33 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 21:39:33 productRepo.go:60:  true
+APP_LOG: 2025/11/09 21:39:33 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 21:39:35 productRepo.go:60:  true
+APP_LOG: 2025/11/09 21:39:35 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 21:39:35 productRepo.go:60:  true
+APP_LOG: 2025/11/09 21:39:35 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 21:40:20 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 21:40:20 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 21:40:21 productRepo.go:60:  true
+APP_LOG: 2025/11/09 21:40:21 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 21:40:21 productRepo.go:60:  true
+APP_LOG: 2025/11/09 21:40:21 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 21:40:23 productRepo.go:60:  true
+APP_LOG: 2025/11/09 21:40:23 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 21:40:23 productRepo.go:60:  true
+APP_LOG: 2025/11/09 21:40:23 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 21:40:39 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 21:40:39 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 21:40:40 productRepo.go:60:  true
+APP_LOG: 2025/11/09 21:40:40 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 21:40:40 productRepo.go:60:  true
+APP_LOG: 2025/11/09 21:40:40 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 21:40:43 productRepo.go:60:  true
+APP_LOG: 2025/11/09 21:40:43 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 21:40:43 productRepo.go:60:  true
+APP_LOG: 2025/11/09 21:40:43 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 21:40:46 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 21:40:46 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 21:40:55 productRepo.go:60:  true
+APP_LOG: 2025/11/09 21:40:55 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 21:40:57 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 21:40:57 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 21:40:58 productRepo.go:60:  true
+APP_LOG: 2025/11/09 21:40:58 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 21:40:58 productRepo.go:60:  true
+APP_LOG: 2025/11/09 21:40:58 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 21:41:11 productRepo.go:60:  true
+APP_LOG: 2025/11/09 21:41:11 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 21:41:11 productRepo.go:60:  true
+APP_LOG: 2025/11/09 21:41:11 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 21:41:17 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 21:41:17 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 21:41:20 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 21:41:20 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 21:41:23 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 21:41:23 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 21:41:26 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 21:41:26 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 21:41:27 productRepo.go:60:  true
+APP_LOG: 2025/11/09 21:41:27 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 21:41:27 productRepo.go:60:  true
+APP_LOG: 2025/11/09 21:41:27 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 21:41:43 productRepo.go:60:  true
+APP_LOG: 2025/11/09 21:41:43 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 21:41:43 productRepo.go:60:  true
+APP_LOG: 2025/11/09 21:41:43 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 21:42:09 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 21:42:09 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 21:42:10 productRepo.go:60:  true
+APP_LOG: 2025/11/09 21:42:10 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 21:42:10 productRepo.go:60:  true
+APP_LOG: 2025/11/09 21:42:10 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 21:45:35 productRepo.go:60:  true
+APP_LOG: 2025/11/09 21:45:35 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 21:45:35 productRepo.go:60:  true
+APP_LOG: 2025/11/09 21:45:35 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 21:45:38 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 21:45:38 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 21:45:39 productRepo.go:60:  true
+APP_LOG: 2025/11/09 21:45:39 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 21:45:43 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 21:45:43 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 21:45:44 productRepo.go:60:  true
+APP_LOG: 2025/11/09 21:45:44 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 21:45:44 productRepo.go:60:  true
+APP_LOG: 2025/11/09 21:45:44 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 21:49:03 productRepo.go:60:  true
+APP_LOG: 2025/11/09 21:49:03 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 21:49:03 productRepo.go:60:  true
+APP_LOG: 2025/11/09 21:49:03 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 21:49:04 productRepo.go:60:  true
+APP_LOG: 2025/11/09 21:49:04 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 21:49:04 productRepo.go:60:  true
+APP_LOG: 2025/11/09 21:49:04 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 21:49:06 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 21:49:06 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 21:49:08 productRepo.go:60:  true
+APP_LOG: 2025/11/09 21:49:08 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 21:49:08 productRepo.go:60:  true
+APP_LOG: 2025/11/09 21:49:08 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 21:49:09 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 21:49:09 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 21:49:10 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 21:49:10 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 21:49:11 productRepo.go:60:  true
+APP_LOG: 2025/11/09 21:49:11 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 21:49:11 productRepo.go:60:  true
+APP_LOG: 2025/11/09 21:49:11 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 21:49:14 productRepo.go:60:  true
+APP_LOG: 2025/11/09 21:49:14 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 21:49:18 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 21:49:18 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 21:49:25 productRepo.go:60:  true
+APP_LOG: 2025/11/09 21:49:25 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 21:49:25 productRepo.go:60:  true
+APP_LOG: 2025/11/09 21:49:25 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 21:49:29 productRepo.go:60:  true
+APP_LOG: 2025/11/09 21:49:29 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 21:49:33 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 21:49:33 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 21:50:55 productRepo.go:60:  true
+APP_LOG: 2025/11/09 21:50:55 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 21:50:55 productRepo.go:60:  true
+APP_LOG: 2025/11/09 21:50:55 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 21:50:58 usersController.go:213: GetAccess request started
+APP_LOG: 2025/11/09 21:50:58 usersController.go:249: GetAccess success: Access token refreshed
+APP_LOG: 2025/11/09 21:50:58 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 21:50:58 productRepo.go:60:  true
+APP_LOG: 2025/11/09 21:50:58 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 21:51:03 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 21:51:03 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 21:51:14 productRepo.go:60:  true
+APP_LOG: 2025/11/09 21:51:14 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 21:51:14 productRepo.go:60:  true
+APP_LOG: 2025/11/09 21:51:14 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 21:51:16 productRepo.go:60:  true
+APP_LOG: 2025/11/09 21:51:16 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 21:51:18 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 21:51:18 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 21:51:24 productRepo.go:60:  true
+APP_LOG: 2025/11/09 21:51:24 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 21:51:24 productRepo.go:60:  true
+APP_LOG: 2025/11/09 21:51:24 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 21:54:05 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 21:54:05 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 21:54:06 productRepo.go:60:  true
+APP_LOG: 2025/11/09 21:54:06 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 21:54:06 productRepo.go:60:  true
+APP_LOG: 2025/11/09 21:54:06 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 21:54:13 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 21:54:13 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 21:54:14 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 21:54:14 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 21:54:16 productRepo.go:60:  true
+APP_LOG: 2025/11/09 21:54:16 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 21:54:16 productRepo.go:60:  true
+APP_LOG: 2025/11/09 21:54:16 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 21:54:23 productRepo.go:60:  true
+APP_LOG: 2025/11/09 21:54:23 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 21:54:25 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 21:54:25 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 21:54:28 productRepo.go:60:  true
+APP_LOG: 2025/11/09 21:54:28 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 21:54:28 productRepo.go:60:  true
+APP_LOG: 2025/11/09 21:54:28 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 21:54:31 productRepo.go:60:  true
+APP_LOG: 2025/11/09 21:54:31 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 21:54:33 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 21:54:33 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 21:54:40 productRepo.go:60:  true
+APP_LOG: 2025/11/09 21:54:40 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 21:54:40 productRepo.go:60:  true
+APP_LOG: 2025/11/09 21:54:40 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 21:54:43 productRepo.go:60:  true
+APP_LOG: 2025/11/09 21:54:43 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 21:54:45 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 21:54:45 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 21:54:46 productRepo.go:60:  true
+APP_LOG: 2025/11/09 21:54:46 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 21:54:46 productRepo.go:60:  true
+APP_LOG: 2025/11/09 21:54:46 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 21:54:49 productRepo.go:60:  true
+APP_LOG: 2025/11/09 21:54:49 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 21:54:51 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 21:54:51 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 21:54:52 productRepo.go:60:  true
+APP_LOG: 2025/11/09 21:54:52 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 21:54:52 productRepo.go:60:  true
+APP_LOG: 2025/11/09 21:54:52 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 21:54:53 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 21:54:53 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 21:54:55 productRepo.go:60:  true
+APP_LOG: 2025/11/09 21:54:55 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 21:54:55 productRepo.go:60:  true
+APP_LOG: 2025/11/09 21:54:55 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 21:54:57 productRepo.go:60:  true
+APP_LOG: 2025/11/09 21:54:57 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 21:54:59 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 21:54:59 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 21:55:00 productRepo.go:60:  true
+APP_LOG: 2025/11/09 21:55:00 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 21:55:00 productRepo.go:60:  true
+APP_LOG: 2025/11/09 21:55:00 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 21:56:01 productRepo.go:60:  true
+APP_LOG: 2025/11/09 21:56:01 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 21:56:01 productRepo.go:60:  true
+APP_LOG: 2025/11/09 21:56:01 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 21:56:04 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 21:56:04 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 21:56:06 productRepo.go:60:  true
+APP_LOG: 2025/11/09 21:56:06 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 21:56:06 productRepo.go:60:  true
+APP_LOG: 2025/11/09 21:56:06 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 21:56:49 productRepo.go:60:  true
+APP_LOG: 2025/11/09 21:56:49 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 21:56:49 productRepo.go:60:  true
+APP_LOG: 2025/11/09 21:56:49 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 21:56:52 favoriesController.go:93: GetFavourites request started
+APP_LOG: 2025/11/09 21:56:52 favoriesController.go:110: GetFavourites parameters: userID=1, page=1
+APP_LOG: 2025/11/09 21:56:52 favoriesController.go:119: GetFavourites success: 2 favorites retrieved for user 1
+APP_LOG: 2025/11/09 21:56:52 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 21:56:52 favoriesController.go:93: GetFavourites request started
+APP_LOG: 2025/11/09 21:56:52 favoriesController.go:110: GetFavourites parameters: userID=1, page=1
+APP_LOG: 2025/11/09 21:56:52 favoriesController.go:119: GetFavourites success: 2 favorites retrieved for user 1
+APP_LOG: 2025/11/09 21:56:52 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 21:56:53 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 21:56:53 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 21:56:55 productRepo.go:60:  true
+APP_LOG: 2025/11/09 21:56:55 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 21:56:55 productRepo.go:60:  true
+APP_LOG: 2025/11/09 21:56:55 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 21:56:57 productRepo.go:60:  true
+APP_LOG: 2025/11/09 21:56:57 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 21:56:57 productRepo.go:60:  true
+APP_LOG: 2025/11/09 21:56:57 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 21:58:06 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 21:58:06 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 21:58:08 productRepo.go:60:  true
+APP_LOG: 2025/11/09 21:58:08 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 21:58:08 productRepo.go:60:  true
+APP_LOG: 2025/11/09 21:58:08 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 21:58:53 favoriesController.go:93: GetFavourites request started
+APP_LOG: 2025/11/09 21:58:53 favoriesController.go:110: GetFavourites parameters: userID=1, page=1
+APP_LOG: 2025/11/09 21:58:53 favoriesController.go:119: GetFavourites success: 2 favorites retrieved for user 1
+APP_LOG: 2025/11/09 21:58:53 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 21:58:53 favoriesController.go:93: GetFavourites request started
+APP_LOG: 2025/11/09 21:58:53 favoriesController.go:110: GetFavourites parameters: userID=1, page=1
+APP_LOG: 2025/11/09 21:58:53 favoriesController.go:119: GetFavourites success: 2 favorites retrieved for user 1
+APP_LOG: 2025/11/09 21:58:53 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 21:58:55 favoriesController.go:64: RemoveFavori request started
+APP_LOG: 2025/11/09 21:58:55 favoriesController.go:87: RemoveFavori success: Favorite 9 removed for user 1
+APP_LOG: 2025/11/09 21:58:55 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 21:58:57 favoriesController.go:64: RemoveFavori request started
+APP_LOG: 2025/11/09 21:58:57 favoriesController.go:87: RemoveFavori success: Favorite 22 removed for user 1
+APP_LOG: 2025/11/09 21:58:57 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 21:58:59 favoriesController.go:93: GetFavourites request started
+APP_LOG: 2025/11/09 21:58:59 favoriesController.go:110: GetFavourites parameters: userID=1, page=1
+APP_LOG: 2025/11/09 21:58:59 favoriesController.go:119: GetFavourites success: 0 favorites retrieved for user 1
+APP_LOG: 2025/11/09 21:58:59 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 21:59:01 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 21:59:01 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 21:59:02 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 21:59:02 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 21:59:08 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 21:59:08 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 21:59:11 productRepo.go:60:  true
+APP_LOG: 2025/11/09 21:59:11 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/09 21:59:11 productRepo.go:60:  true
+APP_LOG: 2025/11/09 21:59:11 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/11 16:17:07 main.go:24: Application started successfully.
+APP_LOG: 2025/11/11 16:44:14 main.go:24: Application started successfully.
+APP_LOG: 2025/11/11 16:44:22 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/11 16:44:34 usersController.go:213: GetAccess request started
+APP_LOG: 2025/11/11 16:44:34 usersController.go:249: GetAccess success: Access token refreshed
+APP_LOG: 2025/11/11 16:44:34 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/11 16:44:34 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/11 16:44:36 productRepo.go:60:  true
+APP_LOG: 2025/11/11 16:44:36 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/11 16:44:36 productRepo.go:60:  true
+APP_LOG: 2025/11/11 16:44:36 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/11 16:50:11 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/11 16:50:54 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/11 16:50:54 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/11 16:51:26 productRepo.go:60:  true
+APP_LOG: 2025/11/11 16:51:27 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/11 16:51:27 productRepo.go:60:  true
+APP_LOG: 2025/11/11 16:51:27 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/11 16:55:11 productRepo.go:60:  true
+APP_LOG: 2025/11/11 16:55:11 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/11 16:55:11 productRepo.go:60:  true
+APP_LOG: 2025/11/11 16:55:11 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/11 16:55:14 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/11 16:55:14 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/11 16:55:17 productRepo.go:60:  true
+APP_LOG: 2025/11/11 16:55:17 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/11 16:55:17 productRepo.go:60:  true
+APP_LOG: 2025/11/11 16:55:17 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/11 16:58:04 productRepo.go:60:  true
+APP_LOG: 2025/11/11 16:58:04 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/11 16:58:04 productRepo.go:60:  true
+APP_LOG: 2025/11/11 16:58:04 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/11 16:58:07 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/11 16:58:07 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/11 16:58:08 productRepo.go:60:  true
+APP_LOG: 2025/11/11 16:58:08 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/11 16:58:08 productRepo.go:60:  true
+APP_LOG: 2025/11/11 16:58:08 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/11 16:59:31 productRepo.go:60:  true
+APP_LOG: 2025/11/11 16:59:31 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/11 16:59:31 productRepo.go:60:  true
+APP_LOG: 2025/11/11 16:59:31 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/11 16:59:35 usersController.go:213: GetAccess request started
+APP_LOG: 2025/11/11 16:59:35 usersController.go:249: GetAccess success: Access token refreshed
+APP_LOG: 2025/11/11 16:59:35 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/11 16:59:35 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/11 16:59:37 productRepo.go:60:  true
+APP_LOG: 2025/11/11 16:59:37 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/11 16:59:37 productRepo.go:60:  true
+APP_LOG: 2025/11/11 16:59:37 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/11 17:04:12 productRepo.go:60:  true
+APP_LOG: 2025/11/11 17:04:12 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/11 17:04:12 productRepo.go:60:  true
+APP_LOG: 2025/11/11 17:04:12 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/11 17:04:14 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/11 17:04:14 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/11 17:04:16 productRepo.go:60:  true
+APP_LOG: 2025/11/11 17:04:16 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/11 17:04:16 productRepo.go:60:  true
+APP_LOG: 2025/11/11 17:04:16 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/11 17:04:26 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/11 17:04:26 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/11 17:04:27 productRepo.go:60:  true
+APP_LOG: 2025/11/11 17:04:27 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/11 17:04:27 productRepo.go:60:  true
+APP_LOG: 2025/11/11 17:04:27 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/11 17:04:30 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/11 17:04:30 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/11 17:04:31 productRepo.go:60:  true
+APP_LOG: 2025/11/11 17:04:31 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/11 17:04:31 productRepo.go:60:  true
+APP_LOG: 2025/11/11 17:04:31 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/11 17:05:45 controllers.go:21: Admin success response: 200
+APP_LOG: 2025/11/11 17:05:48 productRepo.go:60:  true
+APP_LOG: 2025/11/11 17:05:48 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/11 19:35:33 productRepo.go:60:  true
+APP_LOG: 2025/11/11 19:35:33 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/11 19:35:33 productRepo.go:60:  true
+APP_LOG: 2025/11/11 19:35:33 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/11 19:35:35 usersController.go:213: GetAccess request started
+APP_LOG: 2025/11/11 19:35:35 usersController.go:249: GetAccess success: Access token refreshed
+APP_LOG: 2025/11/11 19:35:35 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/11 19:35:35 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/11 19:35:37 productRepo.go:60:  true
+APP_LOG: 2025/11/11 19:35:37 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/11 19:35:37 productRepo.go:60:  true
+APP_LOG: 2025/11/11 19:35:37 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/11 19:35:38 controllers.go:21: Admin success response: 200
+APP_LOG: 2025/11/11 19:37:03 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/11 19:37:03 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/11 19:37:05 productRepo.go:60:  true
+APP_LOG: 2025/11/11 19:37:05 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/11 19:37:05 productRepo.go:60:  true
+APP_LOG: 2025/11/11 19:37:05 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/11 19:37:06 controllers.go:21: Admin success response: 200
+APP_LOG: 2025/11/11 19:37:48 controllers.go:21: Admin success response: 200
+APP_LOG: 2025/11/11 19:38:06 controllers.go:21: Admin success response: 200
+APP_LOG: 2025/11/11 19:38:42 controllers.go:21: Admin success response: 200
+APP_LOG: 2025/11/11 19:39:37 controllers.go:21: Admin success response: 200
+APP_LOG: 2025/11/11 19:40:05 productRepo.go:60:  true
+APP_LOG: 2025/11/11 19:40:05 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/11 19:40:26 productRepo.go:60:  true
+APP_LOG: 2025/11/11 19:40:26 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/11 19:44:40 controllers.go:21: Admin success response: 200
+APP_LOG: 2025/11/11 19:46:09 productRepo.go:60:  true
+APP_LOG: 2025/11/11 19:46:09 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/11 19:46:09 productRepo.go:60:  true
+APP_LOG: 2025/11/11 19:46:09 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/11 19:46:11 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/11 19:46:11 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/11 19:46:12 productRepo.go:60:  true
+APP_LOG: 2025/11/11 19:46:12 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/11 19:46:12 productRepo.go:60:  true
+APP_LOG: 2025/11/11 19:46:12 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/11 19:46:51 productRepo.go:60:  true
+APP_LOG: 2025/11/11 19:46:51 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/11 19:46:51 productRepo.go:60:  true
+APP_LOG: 2025/11/11 19:46:51 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/11 19:46:53 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/11 19:46:53 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/11 19:46:55 productRepo.go:60:  true
+APP_LOG: 2025/11/11 19:46:55 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/11 19:46:55 productRepo.go:60:  true
+APP_LOG: 2025/11/11 19:46:55 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/11 19:47:21 productRepo.go:60:  true
+APP_LOG: 2025/11/11 19:47:21 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/11 19:47:21 productRepo.go:60:  true
+APP_LOG: 2025/11/11 19:47:21 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/11 19:50:32 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/11 19:50:32 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/11 19:50:34 productRepo.go:60:  true
+APP_LOG: 2025/11/11 19:50:34 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/11 19:50:34 productRepo.go:60:  true
+APP_LOG: 2025/11/11 19:50:34 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/11 19:51:10 productRepo.go:60:  true
+APP_LOG: 2025/11/11 19:51:10 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/11 19:51:10 productRepo.go:60:  true
+APP_LOG: 2025/11/11 19:51:10 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/11 19:51:17 usersController.go:213: GetAccess request started
+APP_LOG: 2025/11/11 19:51:17 usersController.go:249: GetAccess success: Access token refreshed
+APP_LOG: 2025/11/11 19:51:17 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/11 19:51:17 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/11 19:51:19 productRepo.go:60:  true
+APP_LOG: 2025/11/11 19:51:19 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/11 19:51:19 productRepo.go:60:  true
+APP_LOG: 2025/11/11 19:51:19 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/11 19:51:36 productRepo.go:60:  true
+APP_LOG: 2025/11/11 19:51:36 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/11 19:51:36 productRepo.go:60:  true
+APP_LOG: 2025/11/11 19:51:36 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/11 19:52:56 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/11 19:52:56 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/11 19:52:57 productRepo.go:60:  true
+APP_LOG: 2025/11/11 19:52:57 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/11 19:52:57 productRepo.go:60:  true
+APP_LOG: 2025/11/11 19:52:57 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/11 19:52:58 productRepo.go:60:  true
+APP_LOG: 2025/11/11 19:52:58 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/11 19:52:59 controllers.go:21: Admin success response: 200
+APP_LOG: 2025/11/11 19:54:11 controllers.go:21: Admin success response: 200
+APP_LOG: 2025/11/11 19:54:14 controllers.go:21: Admin success response: 200
+APP_LOG: 2025/11/11 19:54:18 productRepo.go:60:  true
+APP_LOG: 2025/11/11 19:54:18 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/11 19:54:18 productRepo.go:60:  true
+APP_LOG: 2025/11/11 19:54:18 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/11 19:54:21 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/11 19:54:21 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/11 19:54:22 productRepo.go:60:  true
+APP_LOG: 2025/11/11 19:54:22 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/11 19:54:22 productRepo.go:60:  true
+APP_LOG: 2025/11/11 19:54:22 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/11 19:54:23 controllers.go:21: Admin success response: 200
+APP_LOG: 2025/11/11 19:55:59 controllers.go:21: Admin success response: 200
+APP_LOG: 2025/11/11 19:58:21 controllers.go:21: Admin success response: 200
+APP_LOG: 2025/11/11 19:58:30 controllers.go:21: Admin success response: 200
+APP_LOG: 2025/11/11 19:58:33 controllers.go:21: Admin success response: 200
+APP_LOG: 2025/11/11 19:58:52 controllers.go:21: Admin success response: 200
+APP_LOG: 2025/11/11 19:59:15 controllers.go:21: Admin success response: 200
+APP_LOG: 2025/11/11 19:59:29 controllers.go:21: Admin success response: 200
+APP_LOG: 2025/11/11 19:59:32 controllers.go:21: Admin success response: 200
+APP_LOG: 2025/11/11 19:59:34 controllers.go:21: Admin success response: 200
+APP_LOG: 2025/11/11 20:00:16 controllers.go:21: Admin success response: 200
+APP_LOG: 2025/11/11 20:00:25 controllers.go:21: Admin success response: 200
+APP_LOG: 2025/11/11 20:00:41 controllers.go:21: Admin success response: 200
+APP_LOG: 2025/11/11 20:01:30 controllers.go:21: Admin success response: 200
+APP_LOG: 2025/11/11 20:01:38 controllers.go:21: Admin success response: 200
+APP_LOG: 2025/11/11 20:02:00 controllers.go:21: Admin success response: 200
+APP_LOG: 2025/11/11 20:02:23 controllers.go:21: Admin success response: 200
+APP_LOG: 2025/11/11 20:03:18 controllers.go:21: Admin success response: 200
+APP_LOG: 2025/11/11 20:03:46 controllers.go:21: Admin success response: 200
+APP_LOG: 2025/11/11 20:04:09 controllers.go:21: Admin success response: 200
+APP_LOG: 2025/11/11 20:04:15 controllers.go:21: Admin success response: 200
+APP_LOG: 2025/11/11 20:04:31 controllers.go:21: Admin success response: 200
+APP_LOG: 2025/11/11 20:04:36 controllers.go:21: Admin success response: 200
+APP_LOG: 2025/11/11 20:04:44 controllers.go:21: Admin success response: 200
+APP_LOG: 2025/11/11 20:04:59 controllers.go:21: Admin success response: 200
+APP_LOG: 2025/11/11 20:17:22 productRepo.go:60:  true
+APP_LOG: 2025/11/11 20:17:22 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/11 20:17:22 productRepo.go:60:  true
+APP_LOG: 2025/11/11 20:17:22 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/11 20:17:23 productRepo.go:60:  true
+APP_LOG: 2025/11/11 20:17:23 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/11 20:17:23 productRepo.go:60:  true
+APP_LOG: 2025/11/11 20:17:23 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/11 20:48:16 usersController.go:213: GetAccess request started
+APP_LOG: 2025/11/11 20:48:16 usersController.go:249: GetAccess success: Access token refreshed
+APP_LOG: 2025/11/11 20:48:16 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/11 20:48:16 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/11 20:48:20 productRepo.go:60:  true
+APP_LOG: 2025/11/11 20:48:20 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/11 20:48:20 productRepo.go:60:  true
+APP_LOG: 2025/11/11 20:48:20 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/11 20:48:22 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/11 20:48:22 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/11 20:48:25 productRepo.go:60:  true
+APP_LOG: 2025/11/11 20:48:25 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/11 20:48:25 productRepo.go:60:  true
+APP_LOG: 2025/11/11 20:48:25 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/11 20:51:41 productRepo.go:60:  true
+APP_LOG: 2025/11/11 20:51:41 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/11 20:51:41 productRepo.go:60:  true
+APP_LOG: 2025/11/11 20:51:41 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/11 20:51:44 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/11 20:51:44 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/11 20:51:46 productRepo.go:60:  true
+APP_LOG: 2025/11/11 20:51:46 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/11 20:51:46 productRepo.go:60:  true
+APP_LOG: 2025/11/11 20:51:46 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/11 20:52:07 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/11 20:52:10 productRepo.go:60:  true
+APP_LOG: 2025/11/11 20:52:10 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/11 20:52:10 productRepo.go:60:  true
+APP_LOG: 2025/11/11 20:52:10 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/11 20:52:10 controllers.go:21: Admin success response: 200
+APP_LOG: 2025/11/11 20:52:10 controllers.go:21: Admin success response: 200
+APP_LOG: 2025/11/11 20:52:13 controllers.go:21: Admin success response: 200
+APP_LOG: 2025/11/11 20:52:13 controllers.go:21: Admin success response: 200
+APP_LOG: 2025/11/11 20:53:45 controllers.go:21: Admin success response: 200
+APP_LOG: 2025/11/11 20:53:45 controllers.go:21: Admin success response: 200
+APP_LOG: 2025/11/11 20:54:33 controllers.go:10: Admin error response: 400 - Invalid Prod ID
+APP_LOG: 2025/11/11 21:18:10 main.go:24: Application started successfully.
+APP_LOG: 2025/11/11 21:18:41 productRepo.go:60:  true
+APP_LOG: 2025/11/11 21:18:41 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/11 21:18:41 productRepo.go:60:  true
+APP_LOG: 2025/11/11 21:18:41 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/11 21:18:44 usersController.go:213: GetAccess request started
+APP_LOG: 2025/11/11 21:18:44 usersController.go:249: GetAccess success: Access token refreshed
+APP_LOG: 2025/11/11 21:18:44 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/11 21:18:44 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/11 21:18:48 productRepo.go:60:  true
+APP_LOG: 2025/11/11 21:18:48 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/11 21:18:48 productRepo.go:60:  true
+APP_LOG: 2025/11/11 21:18:48 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/11 21:18:50 controllers.go:21: Admin success response: 200
+APP_LOG: 2025/11/11 21:18:50 controllers.go:21: Admin success response: 200
+APP_LOG: 2025/11/11 21:19:11 productRepo.go:60:  true
+APP_LOG: 2025/11/11 21:19:11 controllers.go:21: Admin success response: 200
+APP_LOG: 2025/11/11 21:19:20 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/11 21:19:20 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/11 21:19:22 productRepo.go:60:  true
+APP_LOG: 2025/11/11 21:19:22 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/11 21:19:22 productRepo.go:60:  true
+APP_LOG: 2025/11/11 21:19:22 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/11 21:19:42 productRepo.go:60:  true
+APP_LOG: 2025/11/11 21:19:42 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/11 21:19:42 productRepo.go:60:  true
+APP_LOG: 2025/11/11 21:19:42 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/11 21:19:46 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/11 21:19:46 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/11 21:19:48 productRepo.go:60:  true
+APP_LOG: 2025/11/11 21:19:48 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/11 21:19:48 productRepo.go:60:  true
+APP_LOG: 2025/11/11 21:19:48 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/11 21:19:50 controllers.go:21: Admin success response: 200
+APP_LOG: 2025/11/11 21:19:50 controllers.go:21: Admin success response: 200
+APP_LOG: 2025/11/11 21:19:59 productRepo.go:60:  true
+APP_LOG: 2025/11/11 21:19:59 controllers.go:21: Admin success response: 200
+APP_LOG: 2025/11/11 21:21:24 productRepo.go:60:  true
+APP_LOG: 2025/11/11 21:21:24 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/11 21:21:24 productRepo.go:60:  true
+APP_LOG: 2025/11/11 21:21:24 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/11 21:21:27 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/11 21:21:27 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/11 21:21:29 productRepo.go:60:  true
+APP_LOG: 2025/11/11 21:21:29 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/11 21:21:29 productRepo.go:60:  true
+APP_LOG: 2025/11/11 21:21:29 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/11 21:21:30 controllers.go:21: Admin success response: 200
+APP_LOG: 2025/11/11 21:21:30 controllers.go:21: Admin success response: 200
+APP_LOG: 2025/11/11 21:21:37 productRepo.go:60:  true
+APP_LOG: 2025/11/11 21:21:37 controllers.go:21: Admin success response: 200
+APP_LOG: 2025/11/11 21:22:54 productRepo.go:60:  true
+APP_LOG: 2025/11/11 21:22:54 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/11 21:22:54 productRepo.go:60:  true
+APP_LOG: 2025/11/11 21:22:54 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/11 21:25:33 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/11 21:25:33 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/11 21:25:34 productRepo.go:60:  true
+APP_LOG: 2025/11/11 21:25:34 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/11 21:25:34 productRepo.go:60:  true
+APP_LOG: 2025/11/11 21:25:34 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/11 21:25:36 controllers.go:21: Admin success response: 200
+APP_LOG: 2025/11/11 21:25:36 controllers.go:21: Admin success response: 200
+APP_LOG: 2025/11/11 21:25:41 productRepo.go:60:  true
+APP_LOG: 2025/11/11 21:25:41 controllers.go:10: Admin error response: 400 - Database error: pq: insert or update on table "product_attributes" violates foreign key constraint "fk_attribute_id_prod"
+APP_LOG: 2025/11/11 21:26:10 productRepo.go:60:  true
+APP_LOG: 2025/11/11 21:26:10 controllers.go:21: Admin success response: 200
+APP_LOG: 2025/11/11 21:44:36 main.go:24: Application started successfully.
+APP_LOG: 2025/11/11 21:53:11 productRepo.go:60:  true
+APP_LOG: 2025/11/11 21:53:11 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/11 21:53:11 productRepo.go:60:  true
+APP_LOG: 2025/11/11 21:53:11 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/11 21:53:15 usersController.go:213: GetAccess request started
+APP_LOG: 2025/11/11 21:53:15 usersController.go:249: GetAccess success: Access token refreshed
+APP_LOG: 2025/11/11 21:53:15 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/11 21:53:15 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/11 21:53:16 productRepo.go:60:  true
+APP_LOG: 2025/11/11 21:53:16 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/11 21:53:16 productRepo.go:60:  true
+APP_LOG: 2025/11/11 21:53:16 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/11 21:53:17 controllers.go:21: Admin success response: 200
+APP_LOG: 2025/11/11 21:53:18 controllers.go:21: Admin success response: 200
+APP_LOG: 2025/11/11 21:53:29 productRepo.go:60:  true
+APP_LOG: 2025/11/11 21:53:29 controllers.go:21: Admin success response: 200
+APP_LOG: 2025/11/11 21:53:35 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/11 21:53:35 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/11 21:53:37 productRepo.go:60:  true
+APP_LOG: 2025/11/11 21:53:37 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/11 21:53:37 productRepo.go:60:  true
+APP_LOG: 2025/11/11 21:53:37 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/11 21:55:15 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/11 21:55:15 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/11 21:55:19 productRepo.go:60:  true
+APP_LOG: 2025/11/11 21:55:19 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/11 21:55:19 productRepo.go:60:  true
+APP_LOG: 2025/11/11 21:55:19 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/11 21:55:26 controllers.go:21: Admin success response: 200
+APP_LOG: 2025/11/11 21:55:26 controllers.go:21: Admin success response: 200
+APP_LOG: 2025/11/11 21:58:07 main.go:24: Application started successfully.
+APP_LOG: 2025/11/11 21:58:56 controllers.go:21: Admin success response: 200
+APP_LOG: 2025/11/11 21:58:56 controllers.go:21: Admin success response: 200
+APP_LOG: 2025/11/11 21:59:01 controllers.go:21: Admin success response: 200
+APP_LOG: 2025/11/11 21:59:13 productRepo.go:60:  true
+APP_LOG: 2025/11/11 21:59:13 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/11 21:59:13 productRepo.go:60:  true
+APP_LOG: 2025/11/11 21:59:13 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/11 21:59:13 productRepo.go:60:  true
+APP_LOG: 2025/11/11 21:59:13 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/11 21:59:13 productRepo.go:60:  true
+APP_LOG: 2025/11/11 21:59:13 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/11 21:59:21 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/11 21:59:21 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/11 21:59:22 productRepo.go:60:  true
+APP_LOG: 2025/11/11 21:59:22 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/11 21:59:22 productRepo.go:60:  true
+APP_LOG: 2025/11/11 21:59:22 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/11 22:00:32 main.go:24: Application started successfully.
+APP_LOG: 2025/11/11 22:00:37 controllers.go:21: Admin success response: 200
+APP_LOG: 2025/11/11 22:00:37 controllers.go:21: Admin success response: 200
+APP_LOG: 2025/11/11 22:00:41 attributesController.go:94: Request body: %!(EXTRA string=)
+APP_LOG: 2025/11/11 22:00:41 productRepo.go:60:  true
+APP_LOG: 2025/11/11 22:00:41 controllers.go:21: Admin success response: 200
+APP_LOG: 2025/11/11 22:01:38 main.go:24: Application started successfully.
+APP_LOG: 2025/11/11 22:01:47 controllers.go:21: Admin success response: 200
+APP_LOG: 2025/11/11 22:01:47 controllers.go:21: Admin success response: 200
+APP_LOG: 2025/11/11 22:01:52 productRepo.go:60:  true
+APP_LOG: 2025/11/11 22:01:52 controllers.go:21: Admin success response: 200
+APP_LOG: 2025/11/11 22:03:03 controllers.go:21: Admin success response: 200
+APP_LOG: 2025/11/11 22:03:03 controllers.go:21: Admin success response: 200
+APP_LOG: 2025/11/11 22:03:07 productRepo.go:60:  true
+APP_LOG: 2025/11/11 22:03:07 controllers.go:21: Admin success response: 200
+APP_LOG: 2025/11/11 22:04:48 main.go:24: Application started successfully.
+APP_LOG: 2025/11/11 22:04:54 controllers.go:21: Admin success response: 200
+APP_LOG: 2025/11/11 22:04:54 controllers.go:21: Admin success response: 200
+APP_LOG: 2025/11/11 22:05:00 productRepo.go:60:  true
+APP_LOG: 2025/11/11 22:05:00 controllers.go:21: Admin success response: 200
+APP_LOG: 2025/11/11 22:05:45 productRepo.go:60:  true
+APP_LOG: 2025/11/11 22:05:45 controllers.go:10: Admin error response: 400 - Error
+APP_LOG: 2025/11/11 22:05:47 productRepo.go:60:  true
+APP_LOG: 2025/11/11 22:05:47 controllers.go:10: Admin error response: 400 - Error
+APP_LOG: 2025/11/11 22:05:49 productRepo.go:60:  true
+APP_LOG: 2025/11/11 22:05:49 controllers.go:10: Admin error response: 400 - Error
+APP_LOG: 2025/11/11 22:05:50 productRepo.go:60:  true
+APP_LOG: 2025/11/11 22:05:50 controllers.go:10: Admin error response: 400 - Error
+APP_LOG: 2025/11/11 22:05:58 productRepo.go:60:  true
+APP_LOG: 2025/11/11 22:05:58 controllers.go:21: Admin success response: 200
+APP_LOG: 2025/11/11 22:06:40 main.go:24: Application started successfully.
+APP_LOG: 2025/11/11 22:06:51 productRepo.go:60:  true
+APP_LOG: 2025/11/11 22:06:51 attributeRepo.go:68: Geldi
+APP_LOG: 2025/11/11 22:06:51 controllers.go:21: Admin success response: 200
+APP_LOG: 2025/11/11 22:07:09 main.go:24: Application started successfully.
+APP_LOG: 2025/11/11 22:07:16 productRepo.go:60:  true
+APP_LOG: 2025/11/11 22:07:16 attributeRepo.go:85: INSERT INTO product_attributes (product_id, attribute_id, value) VALUES ($1, $2, $3)
+APP_LOG: 2025/11/11 22:07:16 controllers.go:21: Admin success response: 200
+APP_LOG: 2025/11/11 22:08:12 main.go:24: Application started successfully.
+APP_LOG: 2025/11/11 22:08:20 usersController.go:213: GetAccess request started
+APP_LOG: 2025/11/11 22:08:20 usersController.go:249: GetAccess success: Access token refreshed
+APP_LOG: 2025/11/11 22:08:20 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/11 22:08:20 productRepo.go:60:  true
+APP_LOG: 2025/11/11 22:09:11 main.go:24: Application started successfully.
+APP_LOG: 2025/11/11 22:09:15 productRepo.go:60:  true
+APP_LOG: 2025/11/11 22:09:15 controllers.go:21: Admin success response: 200
+APP_LOG: 2025/11/11 22:09:55 productRepo.go:60:  true
+APP_LOG: 2025/11/11 22:09:55 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/11 22:09:55 productRepo.go:60:  true
+APP_LOG: 2025/11/11 22:09:55 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/11 22:09:57 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/11 22:09:57 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/11 22:09:59 productRepo.go:60:  true
+APP_LOG: 2025/11/11 22:09:59 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/11 22:09:59 productRepo.go:60:  true
+APP_LOG: 2025/11/11 22:09:59 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/11 22:10:01 controllers.go:21: Admin success response: 200
+APP_LOG: 2025/11/11 22:10:01 controllers.go:21: Admin success response: 200
+APP_LOG: 2025/11/11 22:10:04 productRepo.go:60:  true
+APP_LOG: 2025/11/11 22:10:04 controllers.go:21: Admin success response: 200
+APP_LOG: 2025/11/11 22:11:59 main.go:24: Application started successfully.
+APP_LOG: 2025/11/11 22:12:13 productRepo.go:60:  true
+APP_LOG: 2025/11/11 22:12:13 attributeRepo.go:86: INSERT INTO product_attributes (product_id, attribute_id, value) VALUES ($1, $2, $3),($4, $5, $6)
+APP_LOG: 2025/11/11 22:12:13 controllers.go:21: Admin success response: 200
+APP_LOG: 2025/11/11 22:14:02 main.go:24: Application started successfully.
+APP_LOG: 2025/11/11 22:14:16 productRepo.go:60:  true
+APP_LOG: 2025/11/11 22:14:16 controllers.go:10: Admin error response: 400 - Error
+APP_LOG: 2025/11/11 22:14:24 productRepo.go:60:  true
+APP_LOG: 2025/11/11 22:14:24 controllers.go:10: Admin error response: 400 - Error
+APP_LOG: 2025/11/11 22:14:25 productRepo.go:60:  true
+APP_LOG: 2025/11/11 22:14:25 controllers.go:10: Admin error response: 400 - Error
+APP_LOG: 2025/11/11 22:14:26 productRepo.go:60:  true
+APP_LOG: 2025/11/11 22:14:26 controllers.go:10: Admin error response: 400 - Error
+APP_LOG: 2025/11/11 22:14:47 main.go:24: Application started successfully.
+APP_LOG: 2025/11/11 22:14:51 productRepo.go:60:  true
+APP_LOG: 2025/11/11 22:14:51 controllers.go:10: Admin error response: 400 - Attribute already exists
+APP_LOG: 2025/11/11 22:14:55 productRepo.go:60:  true
+APP_LOG: 2025/11/11 22:14:55 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/11 22:14:55 productRepo.go:60:  true
+APP_LOG: 2025/11/11 22:14:55 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/11 22:14:59 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/11 22:14:59 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/11 22:15:00 productRepo.go:60:  true
+APP_LOG: 2025/11/11 22:15:00 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/11 22:15:00 productRepo.go:60:  true
+APP_LOG: 2025/11/11 22:15:00 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/11 22:15:02 controllers.go:21: Admin success response: 200
+APP_LOG: 2025/11/11 22:15:02 controllers.go:21: Admin success response: 200
+APP_LOG: 2025/11/11 22:15:13 productRepo.go:60:  true
+APP_LOG: 2025/11/11 22:15:13 attributeRepo.go:86: Inserting attributes: [23 1216 asdsad 23 1244 asdsad]
+APP_LOG: 2025/11/11 22:15:13 controllers.go:21: Admin success response: 200
+APP_LOG: 2025/11/11 22:16:25 productRepo.go:60:  true
+APP_LOG: 2025/11/11 22:16:25 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/11 22:16:25 productRepo.go:60:  true
+APP_LOG: 2025/11/11 22:16:25 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/11 22:16:29 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/11 22:16:29 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/12 19:21:45 main.go:24: Application started successfully.
+APP_LOG: 2025/11/12 19:27:04 main.go:24: Application started successfully.
+APP_LOG: 2025/11/12 19:27:18 usersController.go:213: GetAccess request started
+APP_LOG: 2025/11/12 19:27:18 usersController.go:249: GetAccess success: Access token refreshed
+APP_LOG: 2025/11/12 19:27:18 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/12 19:27:18 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/12 19:27:21 productRepo.go:60:  true
+APP_LOG: 2025/11/12 19:27:21 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/12 19:27:21 productRepo.go:60:  true
+APP_LOG: 2025/11/12 19:27:21 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/12 19:27:23 controllers.go:21: Admin success response: 200
+APP_LOG: 2025/11/12 19:27:23 controllers.go:21: Admin success response: 200
+APP_LOG: 2025/11/12 19:27:36 productRepo.go:60:  true
+APP_LOG: 2025/11/12 19:27:36 attributeRepo.go:71: [{Key:0xc00010acc0 Value:2 sene}]
+APP_LOG: 2025/11/12 19:27:36 controllers.go:21: Admin success response: 200
+APP_LOG: 2025/11/12 19:28:00 productRepo.go:60:  true
+APP_LOG: 2025/11/12 19:28:00 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/12 19:28:00 productRepo.go:60:  true
+APP_LOG: 2025/11/12 19:28:00 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/12 19:28:04 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/12 19:28:04 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/12 19:28:05 productRepo.go:60:  true
+APP_LOG: 2025/11/12 19:28:05 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/12 19:28:05 productRepo.go:60:  true
+APP_LOG: 2025/11/12 19:28:05 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/12 19:29:17 main.go:24: Application started successfully.
+APP_LOG: 2025/11/12 19:29:22 controllers.go:21: Admin success response: 200
+APP_LOG: 2025/11/12 19:29:22 controllers.go:21: Admin success response: 200
+APP_LOG: 2025/11/12 19:29:25 productRepo.go:60:  true
+APP_LOG: 2025/11/12 19:29:25 attributeRepo.go:97: hatasız geldi
+APP_LOG: 2025/11/12 19:29:25 controllers.go:21: Admin success response: 200
+APP_LOG: 2025/11/12 19:29:42 main.go:24: Application started successfully.
+APP_LOG: 2025/11/12 19:33:27 productRepo.go:60:  true
+APP_LOG: 2025/11/12 19:33:27 controllers.go:21: Admin success response: 200
+APP_LOG: 2025/11/12 19:34:57 main.go:24: Application started successfully.
+APP_LOG: 2025/11/12 19:35:09 productRepo.go:60:  true
+APP_LOG: 2025/11/12 19:35:09 controllers.go:21: Admin success response: 200
+APP_LOG: 2025/11/12 19:35:15 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/12 19:35:15 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/12 19:35:17 productRepo.go:60:  true
+APP_LOG: 2025/11/12 19:35:17 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/12 19:35:17 productRepo.go:60:  true
+APP_LOG: 2025/11/12 19:35:17 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/12 19:35:22 controllers.go:21: Admin success response: 200
+APP_LOG: 2025/11/12 19:35:25 productRepo.go:60:  true
+APP_LOG: 2025/11/12 19:35:25 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/12 19:35:26 productRepo.go:60:  true
+APP_LOG: 2025/11/12 19:35:26 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/12 19:35:26 productRepo.go:60:  true
+APP_LOG: 2025/11/12 19:35:26 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/12 19:35:29 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/12 19:35:29 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/12 19:35:30 productRepo.go:60:  true
+APP_LOG: 2025/11/12 19:35:30 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/12 19:35:30 productRepo.go:60:  true
+APP_LOG: 2025/11/12 19:35:30 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/12 19:38:16 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/12 19:38:16 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/12 19:38:19 productRepo.go:60:  true
+APP_LOG: 2025/11/12 19:38:19 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/12 19:38:19 productRepo.go:60:  true
+APP_LOG: 2025/11/12 19:38:19 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/12 19:38:32 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/12 19:38:32 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/12 19:38:33 productRepo.go:60:  true
+APP_LOG: 2025/11/12 19:38:33 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/12 19:38:33 productRepo.go:60:  true
+APP_LOG: 2025/11/12 19:38:33 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/12 19:39:22 main.go:24: Application started successfully.
+APP_LOG: 2025/11/12 19:39:56 controllers.go:21: Admin success response: 200
+APP_LOG: 2025/11/12 19:39:56 controllers.go:21: Admin success response: 200
+APP_LOG: 2025/11/12 19:40:05 controllers.go:21: Admin success response: 200
+APP_LOG: 2025/11/12 19:40:05 controllers.go:21: Admin success response: 200
+APP_LOG: 2025/11/12 19:40:12 controllers.go:21: Admin success response: 200
+APP_LOG: 2025/11/12 19:40:12 controllers.go:21: Admin success response: 200
+APP_LOG: 2025/11/12 19:40:20 controllers.go:21: Admin success response: 200
+APP_LOG: 2025/11/12 19:40:20 controllers.go:21: Admin success response: 200
+APP_LOG: 2025/11/12 19:40:45 controllers.go:21: Admin success response: 200
+APP_LOG: 2025/11/12 19:40:45 controllers.go:21: Admin success response: 200
+APP_LOG: 2025/11/12 19:40:51 controllers.go:21: Admin success response: 200
+APP_LOG: 2025/11/12 19:40:51 controllers.go:21: Admin success response: 200
+APP_LOG: 2025/11/12 19:41:16 controllers.go:21: Admin success response: 200
+APP_LOG: 2025/11/12 19:41:17 controllers.go:21: Admin success response: 200
+APP_LOG: 2025/11/12 19:41:27 productRepo.go:60:  true
+APP_LOG: 2025/11/12 19:41:27 controllers.go:21: Admin success response: 200
+APP_LOG: 2025/11/12 19:43:37 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/12 19:43:37 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/12 19:43:38 productRepo.go:60:  true
+APP_LOG: 2025/11/12 19:43:39 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/12 19:43:44 usersController.go:213: GetAccess request started
+APP_LOG: 2025/11/12 19:43:44 usersController.go:249: GetAccess success: Access token refreshed
+APP_LOG: 2025/11/12 19:43:44 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/12 19:43:44 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/12 19:43:45 productRepo.go:60:  true
+APP_LOG: 2025/11/12 19:43:45 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/12 19:43:45 productRepo.go:60:  true
+APP_LOG: 2025/11/12 19:43:45 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/12 19:43:53 controllers.go:21: Admin success response: 200
+APP_LOG: 2025/11/12 19:43:55 productRepo.go:60:  true
+APP_LOG: 2025/11/12 19:43:55 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/12 19:43:56 productRepo.go:60:  true
+APP_LOG: 2025/11/12 19:43:56 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/12 19:43:56 productRepo.go:60:  true
+APP_LOG: 2025/11/12 19:43:56 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/12 19:43:58 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/12 19:43:58 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/12 19:43:59 productRepo.go:60:  true
+APP_LOG: 2025/11/12 19:43:59 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/12 19:43:59 productRepo.go:60:  true
+APP_LOG: 2025/11/12 19:43:59 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/12 19:44:00 controllers.go:21: Admin success response: 200
+APP_LOG: 2025/11/12 19:44:00 controllers.go:21: Admin success response: 200
+APP_LOG: 2025/11/12 19:44:09 productRepo.go:60:  true
+APP_LOG: 2025/11/12 19:44:09 controllers.go:21: Admin success response: 200
+APP_LOG: 2025/11/12 19:44:09 productRepo.go:60:  true
+APP_LOG: 2025/11/12 19:44:09 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/12 19:47:01 productRepo.go:60:  true
+APP_LOG: 2025/11/12 19:47:01 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/12 19:47:01 productRepo.go:60:  true
+APP_LOG: 2025/11/12 19:47:01 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/12 19:47:04 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/12 19:47:04 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/12 19:47:05 productRepo.go:60:  true
+APP_LOG: 2025/11/12 19:47:05 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/12 19:47:05 productRepo.go:60:  true
+APP_LOG: 2025/11/12 19:47:05 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/12 19:47:12 controllers.go:21: Admin success response: 200
+APP_LOG: 2025/11/12 19:47:14 productRepo.go:60:  true
+APP_LOG: 2025/11/12 19:47:14 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/12 19:47:16 controllers.go:21: Admin success response: 200
+APP_LOG: 2025/11/12 19:47:16 controllers.go:21: Admin success response: 200
+APP_LOG: 2025/11/12 19:47:22 productRepo.go:60:  true
+APP_LOG: 2025/11/12 19:47:22 controllers.go:21: Admin success response: 200
+APP_LOG: 2025/11/12 19:47:22 productRepo.go:60:  true
+APP_LOG: 2025/11/12 19:47:22 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/12 19:47:45 productRepo.go:60:  true
+APP_LOG: 2025/11/12 19:47:45 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/12 19:51:34 controllers.go:21: Admin success response: 200
+APP_LOG: 2025/11/12 19:51:34 controllers.go:21: Admin success response: 200
+APP_LOG: 2025/11/12 19:53:26 controllers.go:21: Admin success response: 200
+APP_LOG: 2025/11/12 19:53:26 controllers.go:21: Admin success response: 200
+APP_LOG: 2025/11/12 19:53:44 controllers.go:21: Admin success response: 200
+APP_LOG: 2025/11/12 19:53:46 productRepo.go:60:  true
+APP_LOG: 2025/11/12 19:53:46 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/12 19:53:56 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/12 19:53:56 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/12 19:53:57 productRepo.go:60:  true
+APP_LOG: 2025/11/12 19:53:57 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/12 19:54:00 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/12 19:54:00 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/12 19:54:02 productRepo.go:60:  true
+APP_LOG: 2025/11/12 19:54:02 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/12 19:54:02 productRepo.go:60:  true
+APP_LOG: 2025/11/12 19:54:02 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/12 19:54:04 productRepo.go:60:  true
+APP_LOG: 2025/11/12 19:54:04 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/12 19:54:06 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/12 19:54:06 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/12 19:54:11 productRepo.go:60:  true
+APP_LOG: 2025/11/12 19:54:11 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/12 19:54:11 productRepo.go:60:  true
+APP_LOG: 2025/11/12 19:54:11 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/12 19:54:14 productRepo.go:60:  true
+APP_LOG: 2025/11/12 19:54:14 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/12 19:54:16 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/12 19:54:16 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/12 19:54:19 productRepo.go:60:  true
+APP_LOG: 2025/11/12 19:54:19 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/12 19:54:19 productRepo.go:60:  true
+APP_LOG: 2025/11/12 19:54:19 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/12 19:54:21 productRepo.go:60:  true
+APP_LOG: 2025/11/12 19:54:21 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/12 19:54:23 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/12 19:54:23 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/12 19:54:25 productRepo.go:60:  true
+APP_LOG: 2025/11/12 19:54:25 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/12 19:58:23 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/12 19:58:26 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/12 19:58:26 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/12 20:03:19 productRepo.go:60:  true
+APP_LOG: 2025/11/12 20:03:19 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/12 20:05:02 productRepo.go:60:  true
+APP_LOG: 2025/11/12 20:05:02 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/12 20:05:13 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/12 20:05:13 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/12 20:05:15 usersController.go:213: GetAccess request started
+APP_LOG: 2025/11/12 20:05:15 usersController.go:249: GetAccess success: Access token refreshed
+APP_LOG: 2025/11/12 20:05:15 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/12 20:05:15 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/12 20:05:17 productRepo.go:60:  true
+APP_LOG: 2025/11/12 20:05:17 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/12 20:05:17 productRepo.go:60:  true
+APP_LOG: 2025/11/12 20:05:17 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/12 20:05:48 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/12 20:05:48 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/12 20:05:59 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/12 20:06:01 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/12 20:06:12 brandsController.go:45: GetBrands request started
+APP_LOG: 2025/11/12 20:06:12 brandsController.go:57: GetBrands parameters: page=1, search=''
+APP_LOG: 2025/11/12 20:06:12 categoriesController.go:44: GetCategories request started
+APP_LOG: 2025/11/12 20:06:12 categoriesController.go:56: GetCategories parameters: page=1, search=''
+APP_LOG: 2025/11/12 20:06:12 brandsController.go:66: GetBrands success: 50 brands retrieved
+APP_LOG: 2025/11/12 20:06:12 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/12 20:06:12 categoriesController.go:65: GetCategories success: 50 categories retrieved
+APP_LOG: 2025/11/12 20:06:12 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/12 20:08:58 brandsController.go:45: GetBrands request started
+APP_LOG: 2025/11/12 20:08:58 brandsController.go:57: GetBrands parameters: page=1, search='SA'
+APP_LOG: 2025/11/12 20:08:58 brandsController.go:66: GetBrands success: 50 brands retrieved
+APP_LOG: 2025/11/12 20:08:58 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/12 20:08:59 brandsController.go:45: GetBrands request started
+APP_LOG: 2025/11/12 20:08:59 brandsController.go:57: GetBrands parameters: page=1, search='SAMSUN'
+APP_LOG: 2025/11/12 20:08:59 brandsController.go:66: GetBrands success: 45 brands retrieved
+APP_LOG: 2025/11/12 20:08:59 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/12 20:09:01 brandsController.go:45: GetBrands request started
+APP_LOG: 2025/11/12 20:09:01 brandsController.go:57: GetBrands parameters: page=1, search='SAMSUNg'
+APP_LOG: 2025/11/12 20:09:01 brandsController.go:66: GetBrands success: 15 brands retrieved
+APP_LOG: 2025/11/12 20:09:01 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/12 20:09:02 brandsController.go:45: GetBrands request started
+APP_LOG: 2025/11/12 20:09:02 brandsController.go:57: GetBrands parameters: page=1, search=''
+APP_LOG: 2025/11/12 20:09:02 brandsController.go:66: GetBrands success: 50 brands retrieved
+APP_LOG: 2025/11/12 20:09:02 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/12 20:09:05 categoriesController.go:44: GetCategories request started
+APP_LOG: 2025/11/12 20:09:05 categoriesController.go:56: GetCategories parameters: page=1, search='Andr'
+APP_LOG: 2025/11/12 20:09:05 categoriesController.go:65: GetCategories success: 1 categories retrieved
+APP_LOG: 2025/11/12 20:09:05 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/12 20:09:06 categoriesController.go:44: GetCategories request started
+APP_LOG: 2025/11/12 20:09:06 categoriesController.go:56: GetCategories parameters: page=1, search=''
+APP_LOG: 2025/11/12 20:09:06 controllers.go:21: Admin success response: 200
+APP_LOG: 2025/11/12 20:09:07 categoriesController.go:65: GetCategories success: 50 categories retrieved
+APP_LOG: 2025/11/12 20:09:07 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/12 20:09:58 productController.go:85: AddProduct request started
+APP_LOG: 2025/11/12 20:12:17 productController.go:85: AddProduct request started
+APP_LOG: 2025/11/12 20:12:24 productController.go:169: AddProduct success: Product added by user 1
+APP_LOG: 2025/11/12 20:12:24 controllers.go:21: Success response: 201
+APP_LOG: 2025/11/12 20:12:27 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/12 20:12:27 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/12 20:12:31 productRepo.go:60:  true
+APP_LOG: 2025/11/12 20:12:31 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/12 20:13:07 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/12 20:13:07 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/12 20:13:10 productRepo.go:60:  true
+APP_LOG: 2025/11/12 20:13:10 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/12 20:14:58 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/12 20:14:58 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/12 20:14:59 productRepo.go:60:  true
+APP_LOG: 2025/11/12 20:14:59 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/12 20:14:59 productRepo.go:60:  true
+APP_LOG: 2025/11/12 20:14:59 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/12 20:30:12 productRepo.go:60:  true
+APP_LOG: 2025/11/12 20:30:12 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/12 20:30:12 productRepo.go:60:  true
+APP_LOG: 2025/11/12 20:30:12 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/12 20:30:14 usersController.go:213: GetAccess request started
+APP_LOG: 2025/11/12 20:30:14 usersController.go:249: GetAccess success: Access token refreshed
+APP_LOG: 2025/11/12 20:30:14 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/12 20:30:14 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/12 20:30:15 productRepo.go:60:  true
+APP_LOG: 2025/11/12 20:30:15 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/12 20:30:17 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/12 20:30:17 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/12 20:30:18 productRepo.go:60:  true
+APP_LOG: 2025/11/12 20:30:18 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/12 20:30:18 productRepo.go:60:  true
+APP_LOG: 2025/11/12 20:30:18 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/12 20:31:03 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/12 20:31:03 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/12 20:31:04 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/12 20:31:04 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/12 20:31:05 productRepo.go:60:  true
+APP_LOG: 2025/11/12 20:31:05 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/12 20:31:05 productRepo.go:60:  true
+APP_LOG: 2025/11/12 20:31:05 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/12 20:34:35 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/12 20:34:35 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/12 20:34:37 productRepo.go:60:  true
+APP_LOG: 2025/11/12 20:34:37 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/12 20:34:37 productRepo.go:60:  true
+APP_LOG: 2025/11/12 20:34:37 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/12 20:36:47 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/12 20:36:47 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/12 20:36:48 productRepo.go:60:  true
+APP_LOG: 2025/11/12 20:36:48 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/12 20:36:48 productRepo.go:60:  true
+APP_LOG: 2025/11/12 20:36:48 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/12 20:42:22 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/12 20:42:22 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/12 20:42:23 productRepo.go:60:  true
+APP_LOG: 2025/11/12 20:42:23 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/12 20:42:23 productRepo.go:60:  true
+APP_LOG: 2025/11/12 20:42:23 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/12 20:42:48 productRepo.go:60:  true
+APP_LOG: 2025/11/12 20:42:48 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/12 20:42:48 productRepo.go:60:  true
+APP_LOG: 2025/11/12 20:42:48 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/12 20:42:52 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/12 20:42:52 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/12 20:42:53 productRepo.go:60:  true
+APP_LOG: 2025/11/12 20:42:53 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/12 20:42:53 productRepo.go:60:  true
+APP_LOG: 2025/11/12 20:42:53 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/12 20:44:12 controllers.go:10: Error response: 400 - Invalid data
+APP_LOG: 2025/11/12 20:48:47 productRepo.go:60:  true
+APP_LOG: 2025/11/12 20:48:47 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/12 20:48:47 productRepo.go:60:  true
+APP_LOG: 2025/11/12 20:48:47 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/12 20:48:49 usersController.go:213: GetAccess request started
+APP_LOG: 2025/11/12 20:48:49 usersController.go:249: GetAccess success: Access token refreshed
+APP_LOG: 2025/11/12 20:48:49 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/12 20:48:49 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/12 20:48:51 productRepo.go:60:  true
+APP_LOG: 2025/11/12 20:48:51 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/12 20:48:51 productRepo.go:60:  true
+APP_LOG: 2025/11/12 20:48:51 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/12 20:50:06 productRepo.go:60:  true
+APP_LOG: 2025/11/12 20:50:06 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/12 20:50:22 productRepo.go:60:  true
+APP_LOG: 2025/11/12 20:50:22 controllers.go:10: Error response: 400 - 👍
+APP_LOG: 2025/11/12 20:52:54 main.go:24: Application started successfully.
+APP_LOG: 2025/11/12 20:53:05 productRepo.go:60:  true
+APP_LOG: 2025/11/12 20:53:05 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/12 20:53:07 productRepo.go:60:  true
+APP_LOG: 2025/11/12 20:53:07 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/12 20:53:13 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/12 20:53:13 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/12 20:53:14 productRepo.go:60:  true
+APP_LOG: 2025/11/12 20:53:14 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/12 20:53:14 productRepo.go:60:  true
+APP_LOG: 2025/11/12 20:53:14 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/12 20:53:16 productRepo.go:60:  true
+APP_LOG: 2025/11/12 20:53:16 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/12 20:53:16 productRepo.go:60:  true
+APP_LOG: 2025/11/12 20:53:16 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/12 20:53:18 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/12 20:53:18 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/12 20:53:19 productRepo.go:60:  true
+APP_LOG: 2025/11/12 20:53:19 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/12 20:53:19 productRepo.go:60:  true
+APP_LOG: 2025/11/12 20:53:19 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/12 20:53:24 controllers.go:10: Error response: 400 - Invalid data
+APP_LOG: 2025/11/12 20:53:34 controllers.go:10: Error response: 400 - Invalid data
+APP_LOG: 2025/11/12 20:54:32 controllers.go:10: Error response: 400 - Invalid data
+APP_LOG: 2025/11/12 20:56:16 main.go:24: Application started successfully.
+APP_LOG: 2025/11/12 20:56:21 productController.go:66: {ID:23 Name:İphone 17 Pro FULL RESİMLİ Description:
+Yetenekli iPhone Pro
+Güçlü özellikleri ile öne çıkmayı başarmış yeni iPhone 17 Pro Max Türkiye fiyatı belirlendi. A19 Pro çip özelliği ile şimdiye kadar ki en güçlü pil ömrüne sahip iPhone 17 Pro çıkış tarihi ile tüm dikkatleri üzerine çekti. Görseli yoğun güçlü üst seviye oyunlar ve profesyonel çekim işi ile ilgilenenlerin ilgi odağı yeni model bugüne kadar ki en üst performans ile tasarlandı. İnovatif bir termal tasarımla bir araya gelen GPU ve CPU %40’a kadar daha yüksek performans sürekliliği sağlıyor. Her bir GPU çekirdeğine entegre edilen Neural Accelerator teknolojisi sayesinde iPhone 17 Pro, aygıt içi yapay zeka modelleriyle çalışırken şimdi her zamankinden daha güçlü. Stock:1 Price:0 Brand:<nil> BrandID:0 ImageUrl: ImageURLs:[] SellerID:0 SellerName: SellerPhone: CategoryId:0 Category:<nil> Status:<nil> CreatedAt:{Time:0001-01-01 00:00:00 +0000 UTC Valid:false} UpdatedAt:{Time:0001-01-01 00:00:00 +0000 UTC Valid:false} DeletedAt:{Time:0001-01-01 00:00:00 +0000 UTC Valid:false} Attributes:[]}
+APP_LOG: 2025/11/12 20:56:21 controllers.go:10: Error response: 400 - Invalid data
+APP_LOG: 2025/11/12 20:57:02 main.go:24: Application started successfully.
+APP_LOG: 2025/11/12 20:57:08 productController.go:66: {ID:23 Name:İphone 17 Pro FULL RESİMLİ Description:
+Yetenekli iPhone Pro
+Güçlü özellikleri ile öne çıkmayı başarmış yeni iPhone 17 Pro Max Türkiye fiyatı belirlendi. A19 Pro çip özelliği ile şimdiye kadar ki en güçlü pil ömrüne sahip iPhone 17 Pro çıkış tarihi ile tüm dikkatleri üzerine çekti. Görseli yoğun güçlü üst seviye oyunlar ve profesyonel çekim işi ile ilgilenenlerin ilgi odağı yeni model bugüne kadar ki en üst performans ile tasarlandı. İnovatif bir termal tasarımla bir araya gelen GPU ve CPU %40’a kadar daha yüksek performans sürekliliği sağlıyor. Her bir GPU çekirdeğine entegre edilen Neural Accelerator teknolojisi sayesinde iPhone 17 Pro, aygıt içi yapay zeka modelleriyle çalışırken şimdi her zamankinden daha güçlü. Stock:1 Price:0 Brand:<nil> BrandID:0 ImageUrl: ImageURLs:[] SellerID:0 SellerName: SellerPhone: CategoryId:0 Category:<nil> Status:<nil> CreatedAt:{Time:0001-01-01 00:00:00 +0000 UTC Valid:false} UpdatedAt:{Time:0001-01-01 00:00:00 +0000 UTC Valid:false} DeletedAt:{Time:0001-01-01 00:00:00 +0000 UTC Valid:false} Attributes:[]}%!(EXTRA int=23)
+APP_LOG: 2025/11/12 20:57:08 controllers.go:10: Error response: 400 - Invalid data
+APP_LOG: 2025/11/12 20:58:07 productController.go:66: {ID:23 Name:İphone 17 Pro FULL RESİMLİ Description:
+Yetenekli iPhone Pro
+Güçlü özellikleri ile öne çıkmayı başarmış yeni iPhone 17 Pro Max Türkiye fiyatı belirlendi. A19 Pro çip özelliği ile şimdiye kadar ki en güçlü pil ömrüne sahip iPhone 17 Pro çıkış tarihi ile tüm dikkatleri üzerine çekti. Görseli yoğun güçlü üst seviye oyunlar ve profesyonel çekim işi ile ilgilenenlerin ilgi odağı yeni model bugüne kadar ki en üst performans ile tasarlandı. İnovatif bir termal tasarımla bir araya gelen GPU ve CPU %40’a kadar daha yüksek performans sürekliliği sağlıyor. Her bir GPU çekirdeğine entegre edilen Neural Accelerator teknolojisi sayesinde iPhone 17 Pro, aygıt içi yapay zeka modelleriyle çalışırken şimdi her zamankinden daha güçlü. Stock:1 Price:0 Brand:<nil> BrandID:0 ImageUrl: ImageURLs:[] SellerID:0 SellerName: SellerPhone: CategoryId:0 Category:<nil> Status:<nil> CreatedAt:{Time:0001-01-01 00:00:00 +0000 UTC Valid:false} UpdatedAt:{Time:0001-01-01 00:00:00 +0000 UTC Valid:false} DeletedAt:{Time:0001-01-01 00:00:00 +0000 UTC Valid:false} Attributes:[]}%!(EXTRA int=23)
+APP_LOG: 2025/11/12 20:58:07 controllers.go:10: Error response: 400 - Invalid data
+APP_LOG: 2025/11/12 20:58:15 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/12 20:58:15 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/12 20:58:16 productRepo.go:60:  true
+APP_LOG: 2025/11/12 20:58:16 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/12 20:58:16 productRepo.go:60:  true
+APP_LOG: 2025/11/12 20:58:16 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/12 20:58:20 productController.go:66: {ID:23 Name:İphone 17 Pro FULL RESİMLİ23 Description:
+Yetenekli iPhone Pro
+Güçlü özellikleri ile öne çıkmayı başarmış yeni iPhone 17 Pro Max Türkiye fiyatı belirlendi. A19 Pro çip özelliği ile şimdiye kadar ki en güçlü pil ömrüne sahip iPhone 17 Pro çıkış tarihi ile tüm dikkatleri üzerine çekti. Görseli yoğun güçlü üst seviye oyunlar ve profesyonel çekim işi ile ilgilenenlerin ilgi odağı yeni model bugüne kadar ki en üst performans ile tasarlandı. İnovatif bir termal tasarımla bir araya gelen GPU ve CPU %40’a kadar daha yüksek performans sürekliliği sağlıyor. Her bir GPU çekirdeğine entegre edilen Neural Accelerator teknolojisi sayesinde iPhone 17 Pro, aygıt içi yapay zeka modelleriyle çalışırken şimdi her zamankinden daha güçlü. Stock:1 Price:1250 Brand:<nil> BrandID:0 ImageUrl: ImageURLs:[] SellerID:0 SellerName: SellerPhone: CategoryId:0 Category:<nil> Status:<nil> CreatedAt:{Time:0001-01-01 00:00:00 +0000 UTC Valid:false} UpdatedAt:{Time:0001-01-01 00:00:00 +0000 UTC Valid:false} DeletedAt:{Time:0001-01-01 00:00:00 +0000 UTC Valid:false} Attributes:[]}%!(EXTRA int=23)
+APP_LOG: 2025/11/12 20:58:20 productRepo.go:60:  true
+APP_LOG: 2025/11/12 20:58:20 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/12 20:58:22 productRepo.go:60:  true
+APP_LOG: 2025/11/12 20:58:22 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/12 20:58:23 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/12 20:58:23 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/12 20:58:24 productRepo.go:60:  true
+APP_LOG: 2025/11/12 20:58:24 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/12 20:58:24 productRepo.go:60:  true
+APP_LOG: 2025/11/12 20:58:24 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/12 20:58:41 productController.go:66: {ID:23 Name:İphone 17 Pro FULL RESİMLİ23 Description:
+Yetenekli iPhone Pro
+Güçlü özellikleri ile öne çıkmayı başarmış yeni iPhone 17 Pro Max Türkiye fiyatı belirlendi. A19 Pro çip özelliği ile şimdiye kadar ki en güçlü pil ömrüne sahip iPhone 17 Pro çıkış tarihi ile tüm dikkatleri üzerine çekti. Görseli yoğun güçlü üst seviye oyunlar ve profesyonel çekim işi ile ilgilenenlerin ilgi odağı yeni model bugüne kadar ki en üst performans ile tasarlandı. İnovatif bir termal tasarımla bir araya gelen GPU ve CPU %40’a kadar daha yüksek performans sürekliliği sağlıyor. Her bir GPU çekirdeğine entegre edilen Neural Accelerator teknolojisi sayesinde iPhone 17 Pro, aygıt içi yapay zeka modelleriyle çalışırken şimdi her zamankinden daha güçlü. Stock:1 Price:0 Brand:<nil> BrandID:0 ImageUrl: ImageURLs:[] SellerID:0 SellerName: SellerPhone: CategoryId:0 Category:<nil> Status:<nil> CreatedAt:{Time:0001-01-01 00:00:00 +0000 UTC Valid:false} UpdatedAt:{Time:0001-01-01 00:00:00 +0000 UTC Valid:false} DeletedAt:{Time:0001-01-01 00:00:00 +0000 UTC Valid:false} Attributes:[]}%!(EXTRA int=23)
+APP_LOG: 2025/11/12 20:58:41 controllers.go:10: Error response: 400 - Invalid data
+APP_LOG: 2025/11/12 20:58:56 productController.go:66: {ID:23 Name:İphone 17 Pro FULL RESİMLİ23 Description:
+Yetenekli iPhone Pro
+Güçlü özellikleri ile öne çıkmayı başarmış yeni iPhone 17 Pro Max Türkiye fiyatı belirlendi. A19 Pro çip özelliği ile şimdiye kadar ki en güçlü pil ömrüne sahip iPhone 17 Pro çıkış tarihi ile tüm dikkatleri üzerine çekti. Görseli yoğun güçlü üst seviye oyunlar ve profesyonel çekim işi ile ilgilenenlerin ilgi odağı yeni model bugüne kadar ki en üst performans ile tasarlandı. İnovatif bir termal tasarımla bir araya gelen GPU ve CPU %40’a kadar daha yüksek performans sürekliliği sağlıyor. Her bir GPU çekirdeğine entegre edilen Neural Accelerator teknolojisi sayesinde iPhone 17 Pro, aygıt içi yapay zeka modelleriyle çalışırken şimdi her zamankinden daha güçlü. Stock:0 Price:0 Brand:<nil> BrandID:0 ImageUrl: ImageURLs:[] SellerID:0 SellerName: SellerPhone: CategoryId:0 Category:<nil> Status:<nil> CreatedAt:{Time:0001-01-01 00:00:00 +0000 UTC Valid:false} UpdatedAt:{Time:0001-01-01 00:00:00 +0000 UTC Valid:false} DeletedAt:{Time:0001-01-01 00:00:00 +0000 UTC Valid:false} Attributes:[]}%!(EXTRA int=23)
+APP_LOG: 2025/11/12 20:58:56 controllers.go:10: Error response: 400 - Invalid data
+APP_LOG: 2025/11/12 20:59:09 productController.go:66: {ID:23 Name:İphone 17 Pro FULL RESİMLİ Description:
+Yetenekli iPhone Pro
+Güçlü özellikleri ile öne çıkmayı başarmış yeni iPhone 17 Pro Max Türkiye fiyatı belirlendi. A19 Pro çip özelliği ile şimdiye kadar ki en güçlü pil ömrüne sahip iPhone 17 Pro çıkış tarihi ile tüm dikkatleri üzerine çekti. Görseli yoğun güçlü üst seviye oyunlar ve profesyonel çekim işi ile ilgilenenlerin ilgi odağı yeni model bugüne kadar ki en üst performans ile tasarlandı. İnovatif bir termal tasarımla bir araya gelen GPU ve CPU %40’a kadar daha yüksek performans sürekliliği sağlıyor. Her bir GPU çekirdeğine entegre edilen Neural Accelerator teknolojisi sayesinde iPhone 17 Pro, aygıt içi yapay zeka modelleriyle çalışırken şimdi her zamankinden daha güçlü. Stock:0 Price:0 Brand:<nil> BrandID:0 ImageUrl: ImageURLs:[] SellerID:0 SellerName: SellerPhone: CategoryId:0 Category:<nil> Status:<nil> CreatedAt:{Time:0001-01-01 00:00:00 +0000 UTC Valid:false} UpdatedAt:{Time:0001-01-01 00:00:00 +0000 UTC Valid:false} DeletedAt:{Time:0001-01-01 00:00:00 +0000 UTC Valid:false} Attributes:[]}%!(EXTRA int=23)
+APP_LOG: 2025/11/12 20:59:09 controllers.go:10: Error response: 400 - Invalid data
+APP_LOG: 2025/11/12 20:59:17 productController.go:66: {ID:23 Name:İphone 17 Pro FULL RESİMLİ Description:
+Yetenekli iPhone Pro23
+Güçlü özellikleri ile öne çıkmayı başarmış yeni iPhone 17 Pro Max Türkiye fiyatı belirlendi. A19 Pro çip özelliği ile şimdiye kadar ki en güçlü pil ömrüne sahip iPhone 17 Pro çıkış tarihi ile tüm dikkatleri üzerine çekti. Görseli yoğun güçlü üst seviye oyunlar ve profesyonel çekim işi ile ilgilenenlerin ilgi odağı yeni model bugüne kadar ki en üst performans ile tasarlandı. İnovatif bir termal tasarımla bir araya gelen GPU ve CPU %40’a kadar daha yüksek performans sürekliliği sağlıyor. Her bir GPU çekirdeğine entegre edilen Neural Accelerator teknolojisi sayesinde iPhone 17 Pro, aygıt içi yapay zeka modelleriyle çalışırken şimdi her zamankinden daha güçlü. Stock:0 Price:0 Brand:<nil> BrandID:0 ImageUrl: ImageURLs:[] SellerID:0 SellerName: SellerPhone: CategoryId:0 Category:<nil> Status:<nil> CreatedAt:{Time:0001-01-01 00:00:00 +0000 UTC Valid:false} UpdatedAt:{Time:0001-01-01 00:00:00 +0000 UTC Valid:false} DeletedAt:{Time:0001-01-01 00:00:00 +0000 UTC Valid:false} Attributes:[]}%!(EXTRA int=23)
+APP_LOG: 2025/11/12 20:59:17 controllers.go:10: Error response: 400 - Invalid data
+APP_LOG: 2025/11/12 20:59:20 productController.go:66: {ID:23 Name:İphone 17 Pro FULL RESİMLİ Description:
+Yetenekli iPhone Pro23
+Güçlü özellikleri ile öne çıkmayı başarmış yeni iPhone 17 Pro Max Türkiye fiyatı belirlendi. A19 Pro çip özelliği ile şimdiye kadar ki en güçlü pil ömrüne sahip iPhone 17 Pro çıkış tarihi ile tüm dikkatleri üzerine çekti. Görseli yoğun güçlü üst seviye oyunlar ve profesyonel çekim işi ile ilgilenenlerin ilgi odağı yeni model bugüne kadar ki en üst performans ile tasarlandı. İnovatif bir termal tasarımla bir araya gelen GPU ve CPU %40’a kadar daha yüksek performans sürekliliği sağlıyor. Her bir GPU çekirdeğine entegre edilen Neural Accelerator teknolojisi sayesinde iPhone 17 Pro, aygıt içi yapay zeka modelleriyle çalışırken şimdi her zamankinden daha güçlü. Stock:0 Price:0 Brand:<nil> BrandID:0 ImageUrl: ImageURLs:[] SellerID:0 SellerName: SellerPhone: CategoryId:0 Category:<nil> Status:<nil> CreatedAt:{Time:0001-01-01 00:00:00 +0000 UTC Valid:false} UpdatedAt:{Time:0001-01-01 00:00:00 +0000 UTC Valid:false} DeletedAt:{Time:0001-01-01 00:00:00 +0000 UTC Valid:false} Attributes:[]}%!(EXTRA int=23)
+APP_LOG: 2025/11/12 20:59:20 controllers.go:10: Error response: 400 - Invalid data
+APP_LOG: 2025/11/12 20:59:36 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/12 20:59:36 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/12 20:59:39 productRepo.go:60:  true
+APP_LOG: 2025/11/12 20:59:39 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/12 20:59:39 productRepo.go:60:  true
+APP_LOG: 2025/11/12 20:59:39 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/12 20:59:39 productRepo.go:60:  true
+APP_LOG: 2025/11/12 20:59:39 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/12 20:59:46 productController.go:66: {ID:23 Name:İphone 17 Pro FULL RESİMLİ Description:
+Yetenekli iPhone Pro
+Güçlü özellikleri ile öne çıkmayı başarmış yeni iPhone 17 Pro Max Türkiye fiyatı belirlendi. A19 Pro çip özelliği ile şimdiye kadar ki en güçlü pil ömrüne sahip iPhone 17 Pro çıkış tarihi ile tüm dikkatleri üzerine çekti. Görseli yoğun güçlü üst seviye oyunlar ve profesyonel çekim işi ile ilgilenenlerin ilgi odağı yeni model bugüne kadar ki en üst performans ile tasarlandı. İnovatif bir termal tasarımla bir araya gelen GPU ve CPU %40’a kadar daha yüksek performans sürekliliği sağlıyor. Her bir GPU çekirdeğine entegre edilen Neural Accelerator teknolojisi sayesinde iPhone 17 Pro, aygıt içi yapay zeka modelleriyle çalışırken şimdi her zamankinden daha güçlü. Stock:1 Price:12.5 Brand:<nil> BrandID:0 ImageUrl: ImageURLs:[] SellerID:0 SellerName: SellerPhone: CategoryId:0 Category:<nil> Status:<nil> CreatedAt:{Time:0001-01-01 00:00:00 +0000 UTC Valid:false} UpdatedAt:{Time:0001-01-01 00:00:00 +0000 UTC Valid:false} DeletedAt:{Time:0001-01-01 00:00:00 +0000 UTC Valid:false} Attributes:[]}%!(EXTRA int=23)
+APP_LOG: 2025/11/12 20:59:46 productRepo.go:60:  true
+APP_LOG: 2025/11/12 20:59:46 controllers.go:10: Error response: 400 - Database error : pq: invalid input syntax for type bigint: "12.5"
+APP_LOG: 2025/11/12 21:00:24 productController.go:66: {ID:23 Name:İphone 17 Pro FULL RESİMLİ Description:
+Yetenekli iPhone Pro
+Güçlü özellikleri ile öne çıkmayı başarmış yeni iPhone 17 Pro Max Türkiye fiyatı belirlendi. A19 Pro çip özelliği ile şimdiye kadar ki en güçlü pil ömrüne sahip iPhone 17 Pro çıkış tarihi ile tüm dikkatleri üzerine çekti. Görseli yoğun güçlü üst seviye oyunlar ve profesyonel çekim işi ile ilgilenenlerin ilgi odağı yeni model bugüne kadar ki en üst performans ile tasarlandı. İnovatif bir termal tasarımla bir araya gelen GPU ve CPU %40’a kadar daha yüksek performans sürekliliği sağlıyor. Her bir GPU çekirdeğine entegre edilen Neural Accelerator teknolojisi sayesinde iPhone 17 Pro, aygıt içi yapay zeka modelleriyle çalışırken şimdi her zamankinden daha güçlü. Stock:1 Price:0 Brand:<nil> BrandID:0 ImageUrl: ImageURLs:[] SellerID:0 SellerName: SellerPhone: CategoryId:0 Category:<nil> Status:<nil> CreatedAt:{Time:0001-01-01 00:00:00 +0000 UTC Valid:false} UpdatedAt:{Time:0001-01-01 00:00:00 +0000 UTC Valid:false} DeletedAt:{Time:0001-01-01 00:00:00 +0000 UTC Valid:false} Attributes:[]}%!(EXTRA int=23)
+APP_LOG: 2025/11/12 21:00:24 controllers.go:10: Error response: 400 - Invalid data
+APP_LOG: 2025/11/12 21:00:48 main.go:24: Application started successfully.
+APP_LOG: 2025/11/12 21:00:53 productRepo.go:60:  true
+APP_LOG: 2025/11/12 21:00:53 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/12 21:00:53 productRepo.go:60:  true
+APP_LOG: 2025/11/12 21:00:53 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/12 21:00:54 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/12 21:00:54 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/12 21:00:56 productRepo.go:60:  true
+APP_LOG: 2025/11/12 21:00:56 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/12 21:00:56 productRepo.go:60:  true
+APP_LOG: 2025/11/12 21:00:56 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/12 21:01:03 productRepo.go:60:  true
+APP_LOG: 2025/11/12 21:01:03 controllers.go:10: Error response: 400 - Database error : pq: invalid input syntax for type bigint: "12.5"
+APP_LOG: 2025/11/12 21:01:16 controllers.go:10: Error response: 400 - Invalid data
+APP_LOG: 2025/11/12 21:02:16 main.go:24: Application started successfully.
+APP_LOG: 2025/11/12 21:02:22 controllers.go:10: Error response: 400 - Invalid data
+APP_LOG: 2025/11/12 21:02:49 main.go:24: Application started successfully.
+APP_LOG: 2025/11/12 21:02:54 controllers.go:10: Error response: 400 - Invalid data
+APP_LOG: 2025/11/12 21:03:05 productRepo.go:60:  true
+APP_LOG: 2025/11/12 21:03:05 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/12 21:03:05 productRepo.go:60:  true
+APP_LOG: 2025/11/12 21:03:05 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/12 21:03:07 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/12 21:03:07 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/12 21:03:10 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/12 21:03:10 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/12 21:03:15 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/12 21:03:18 productRepo.go:60:  true
+APP_LOG: 2025/11/12 21:03:18 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/12 21:03:18 productRepo.go:60:  true
+APP_LOG: 2025/11/12 21:03:18 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/12 21:03:26 controllers.go:10: Error response: 400 - Invalid data
+APP_LOG: 2025/11/12 21:03:35 controllers.go:10: Error response: 400 - Invalid data
+APP_LOG: 2025/11/12 21:04:42 main.go:24: Application started successfully.
+APP_LOG: 2025/11/12 21:04:47 usersController.go:213: GetAccess request started
+APP_LOG: 2025/11/12 21:04:47 usersController.go:249: GetAccess success: Access token refreshed
+APP_LOG: 2025/11/12 21:04:47 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/12 21:04:47 productController.go:66: 23%!(EXTRA int=23)
+APP_LOG: 2025/11/12 21:04:47 controllers.go:10: Error response: 400 - Invalid data
+APP_LOG: 2025/11/12 21:05:51 main.go:24: Application started successfully.
+APP_LOG: 2025/11/12 21:05:55 productController.go:66: ID kontrolü sonucu: false
+APP_LOG: 2025/11/12 21:05:55 controllers.go:10: Error response: 400 - Invalid data
+APP_LOG: 2025/11/12 21:07:12 main.go:24: Application started successfully.
+APP_LOG: 2025/11/12 21:07:25 main.go:24: Application started successfully.
+APP_LOG: 2025/11/12 21:07:29 productController.go:66: 23%!(EXTRA int=23)
+APP_LOG: 2025/11/12 21:07:29 controllers.go:10: Error response: 400 - Invalid data
+APP_LOG: 2025/11/12 21:08:21 main.go:24: Application started successfully.
+APP_LOG: 2025/11/12 21:08:25 productController.go:66: id eşit mi product.ID? true
+APP_LOG: 2025/11/12 21:08:25 controllers.go:10: Error response: 400 - Invalid data
+APP_LOG: 2025/11/12 21:08:39 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/12 21:08:39 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/12 21:08:42 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/12 21:08:44 productRepo.go:60:  true
+APP_LOG: 2025/11/12 21:08:44 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/12 21:08:44 productRepo.go:60:  true
+APP_LOG: 2025/11/12 21:08:44 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/12 21:08:49 productController.go:66: id eşit mi product.ID? true
+APP_LOG: 2025/11/12 21:08:49 controllers.go:10: Error response: 400 - Invalid data
+APP_LOG: 2025/11/12 21:09:36 main.go:24: Application started successfully.
+APP_LOG: 2025/11/12 21:09:47 productRepo.go:60:  true
+APP_LOG: 2025/11/12 21:09:47 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/12 21:09:47 productRepo.go:60:  true
+APP_LOG: 2025/11/12 21:09:47 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/12 21:09:49 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/12 21:09:49 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/12 21:09:50 productRepo.go:60:  true
+APP_LOG: 2025/11/12 21:09:50 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/12 21:09:50 productRepo.go:60:  true
+APP_LOG: 2025/11/12 21:09:50 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/12 21:09:53 productController.go:66: id eşit mi product.ID? true
+APP_LOG: 2025/11/12 21:09:53 productRepo.go:60:  true
+APP_LOG: 2025/11/12 21:09:53 controllers.go:10: Error response: 400 - Database error : pq: invalid input syntax for type bigint: "12.5"
+APP_LOG: 2025/11/12 21:10:12 productController.go:66: id eşit mi product.ID? true
+APP_LOG: 2025/11/12 21:10:12 controllers.go:10: Error response: 400 - Invalid JSON data
+APP_LOG: 2025/11/12 21:18:31 main.go:24: Application started successfully.
+APP_LOG: 2025/11/12 21:18:38 productRepo.go:60:  true
+APP_LOG: 2025/11/12 21:18:38 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/12 21:18:40 productRepo.go:60:  true
+APP_LOG: 2025/11/12 21:18:40 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/12 21:18:42 productRepo.go:60:  true
+APP_LOG: 2025/11/12 21:18:42 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/12 21:18:42 productRepo.go:60:  true
+APP_LOG: 2025/11/12 21:18:42 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/12 21:18:44 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/12 21:18:44 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/12 21:18:45 productRepo.go:60:  true
+APP_LOG: 2025/11/12 21:18:45 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/12 21:18:45 productRepo.go:60:  true
+APP_LOG: 2025/11/12 21:18:45 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/12 21:18:51 productRepo.go:60:  true
+APP_LOG: 2025/11/12 21:18:51 controllers.go:10: Error response: 400 - Database error : pq: invalid input syntax for type bigint: "1250.25"
+APP_LOG: 2025/11/12 21:19:23 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/12 21:19:23 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/12 21:19:51 usersController.go:213: GetAccess request started
+APP_LOG: 2025/11/12 21:19:51 usersController.go:249: GetAccess success: Access token refreshed
+APP_LOG: 2025/11/12 21:19:51 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/12 21:19:51 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/12 21:19:53 productRepo.go:60:  true
+APP_LOG: 2025/11/12 21:19:53 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/12 21:19:53 productRepo.go:60:  true
+APP_LOG: 2025/11/12 21:19:53 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/12 21:20:35 productRepo.go:60:  true
+APP_LOG: 2025/11/12 21:20:35 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/12 21:20:37 productRepo.go:60:  true
+APP_LOG: 2025/11/12 21:20:37 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/12 21:20:46 productRepo.go:60:  true
+APP_LOG: 2025/11/12 21:20:46 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/12 21:20:48 productRepo.go:60:  true
+APP_LOG: 2025/11/12 21:20:48 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/12 21:23:15 productRepo.go:60:  true
+APP_LOG: 2025/11/12 21:23:15 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/12 21:23:45 productRepo.go:60:  true
+APP_LOG: 2025/11/12 21:23:45 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/12 21:23:45 productRepo.go:60:  true
+APP_LOG: 2025/11/12 21:23:45 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/12 21:23:47 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/12 21:23:47 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/12 21:23:47 productRepo.go:60:  true
+APP_LOG: 2025/11/12 21:23:47 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/12 21:23:47 productRepo.go:60:  true
+APP_LOG: 2025/11/12 21:23:47 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/12 21:23:55 productRepo.go:60:  true
+APP_LOG: 2025/11/12 21:23:55 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/12 21:23:58 productRepo.go:60:  true
+APP_LOG: 2025/11/12 21:23:58 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/12 21:24:31 productRepo.go:60:  true
+APP_LOG: 2025/11/12 21:24:31 controllers.go:10: Error response: 400 - Database error : pq: invalid input syntax for type bigint: "1250.99"
+APP_LOG: 2025/11/12 21:25:52 productRepo.go:60:  true
+APP_LOG: 2025/11/12 21:25:52 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/12 21:25:52 productRepo.go:60:  true
+APP_LOG: 2025/11/12 21:25:52 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/12 21:25:55 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/12 21:25:55 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/12 21:25:56 productRepo.go:60:  true
+APP_LOG: 2025/11/12 21:25:56 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/12 21:25:56 productRepo.go:60:  true
+APP_LOG: 2025/11/12 21:25:56 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/12 21:26:08 productRepo.go:60:  true
+APP_LOG: 2025/11/12 21:26:08 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/12 21:26:08 productRepo.go:60:  true
+APP_LOG: 2025/11/12 21:26:08 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/12 21:26:10 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/12 21:26:10 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/12 21:26:11 productRepo.go:60:  true
+APP_LOG: 2025/11/12 21:26:11 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/12 21:26:11 productRepo.go:60:  true
+APP_LOG: 2025/11/12 21:26:11 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/12 21:26:40 productRepo.go:60:  true
+APP_LOG: 2025/11/12 21:26:40 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/12 21:26:42 productRepo.go:60:  true
+APP_LOG: 2025/11/12 21:26:42 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/12 21:26:47 productRepo.go:60:  true
+APP_LOG: 2025/11/12 21:26:47 controllers.go:10: Error response: 400 - Database error : pq: invalid input syntax for type bigint: "12.5"
+APP_LOG: 2025/11/12 21:28:42 main.go:24: Application started successfully.
+APP_LOG: 2025/11/12 21:28:53 productRepo.go:60:  true
+APP_LOG: 2025/11/12 21:28:53 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/12 21:28:55 productRepo.go:60:  true
+APP_LOG: 2025/11/12 21:28:55 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/12 21:29:03 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/12 21:29:03 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/12 21:29:04 productRepo.go:60:  true
+APP_LOG: 2025/11/12 21:29:04 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/12 21:29:04 productRepo.go:60:  true
+APP_LOG: 2025/11/12 21:29:04 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/12 21:29:08 productRepo.go:60:  true
+APP_LOG: 2025/11/12 21:29:08 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/12 21:29:10 productRepo.go:60:  true
+APP_LOG: 2025/11/12 21:29:10 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/12 21:29:16 productRepo.go:60:  true
+APP_LOG: 2025/11/12 21:29:16 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/12 21:29:16 productRepo.go:60:  true
+APP_LOG: 2025/11/12 21:29:16 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/12 21:29:19 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/12 21:29:19 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/12 21:29:20 productRepo.go:60:  true
+APP_LOG: 2025/11/12 21:29:20 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/12 21:29:20 productRepo.go:60:  true
+APP_LOG: 2025/11/12 21:29:20 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/12 21:29:21 controllers.go:10: Error response: 400 - Invalid JSON data
+APP_LOG: 2025/11/12 21:29:26 productRepo.go:60:  true
+APP_LOG: 2025/11/12 21:29:26 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/12 21:29:28 productRepo.go:60:  true
+APP_LOG: 2025/11/12 21:29:28 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/12 21:33:29 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/12 21:33:29 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/12 21:35:21 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/12 21:35:25 controllers.go:21: Success response: 200

@@ -20,9 +20,9 @@ func SetupRoutes(
 		AllowedOrigins: []string{
 			"http://localhost:3000",
 			"https://www.enucuz.net.tr",
-			"https://enucuz.net.tr",
 			"https://en-ucuz-net-git-main-murats-projects-c4a123ca.vercel.app",
 			"https://en-ucuz-gq2u79gta-murats-projects-c4a123ca.vercel.app",
+			"https://enucuz.net.tr",
 			"https://en-ucuz-net.vercel.app",
 			"https://en-ucuz-net-murats-projects-c4a123ca.vercel.app",
 		},

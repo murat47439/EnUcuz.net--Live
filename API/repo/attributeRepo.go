@@ -65,23 +65,52 @@ func (ar *AttributeRepo) AddProdAttribute(ctx context.Context, data *models.Prod
 }
 func (ar *AttributeRepo) AddProdAttributes(ctx context.Context, data []models.Feature, prodID int, tx *sqlx.Tx) error {
 	if prodID == 0 || len(data) == 0 {
-		return fmt.Errorf("Invalid data")
+		return fmt.Errorf("Invalid data: prodID is zero or data is empty")
 	}
 
 	values := make([]string, 0, len(data))
+
 	args := make([]interface{}, 0, len(data)*3)
 
-	for i, f := range data {
-		base := i * 3
-		values = append(values, fmt.Sprintf("($%d, $%d, $%d)", base+1, base+2, base+3))
+	placeholderCounter := 1
+
+	for _, f := range data {
+		values = append(values, fmt.Sprintf("($%d, $%d, $%d)",
+			placeholderCounter, placeholderCounter+1, placeholderCounter+2))
+
 		args = append(args, prodID, f.Key.Value, f.Value)
+
+		placeholderCounter += 3
 	}
+
 	query := fmt.Sprintf(
 		"INSERT INTO product_attributes (product_id, attribute_id, value) VALUES %s",
 		strings.Join(values, ","),
 	)
+
+	// Bu yöntem, 'args' dizisindeki parametreleri güvenli bir şekilde sorguya bağlar.
 	_, err := tx.ExecContext(ctx, query, args...)
-	return err
+	if err != nil {
+		return fmt.Errorf("failed to insert product attributes: %w", err)
+	}
+
+	return nil
+}
+func (ar *AttributeRepo) DeleteAttribute(ctx context.Context, id int) error {
+	if id == 0 {
+		return fmt.Errorf("Invalid data")
+	}
+	query := `UPDATE attributes SET deleted_at = NOW() WHERE id = $1`
+
+	res, err := ar.db.ExecContext(ctx, query, id)
+	if err != nil {
+		return fmt.Errorf("Database error %w", err)
+	}
+	rows, _ := res.RowsAffected()
+	if rows == 0 {
+		return fmt.Errorf("Attribute not found")
+	}
+	return nil
 }
 func (ar *AttributeRepo) GetProdAttributes(ctx context.Context, prodID int) ([]*models.ProductAttribute, error) {
 	if prodID == 0 {
@@ -160,33 +189,41 @@ func (ar *AttributeRepo) CheckCatAttribute(ctx context.Context, atID, catID int)
 	}
 	return exists, nil
 }
-func (ar *AttributeRepo) CheckProdAttribute(ctx context.Context, prodID, atID int) (bool, error) {
-	if prodID == 0 || atID == 0 {
+func (ar *AttributeRepo) CheckProdAttribute(ctx context.Context, data *models.NewProductAttribute) (bool, error) {
+	if data == nil || data.ProductID == 0 || len(data.Attributes) == 0 {
 		return false, fmt.Errorf("Invalid data")
 	}
-	var exists bool
-	query := `SELECT EXISTS(SELECT 1 FROM product_attributes WHERE product_id = $1 AND attribute_id= $2 AND deleted_at IS NULL)`
-	err := ar.db.GetContext(ctx, &exists, query, prodID, atID)
-	if err != nil {
-		return false, fmt.Errorf("Database error %w", err)
-	}
-	return exists, nil
-}
-func (ar *AttributeRepo) DeleteAttribute(ctx context.Context, id int) error {
-	if id == 0 {
-		return fmt.Errorf("Invalid data")
-	}
-	query := `UPDATE attributes SET deleted_at = NOW() WHERE id = $1`
 
-	res, err := ar.db.ExecContext(ctx, query, id)
-	if err != nil {
-		return fmt.Errorf("Database error %w", err)
+	// 1) Gelen payload içinde aynı attribute_id var mı diye kontrol et
+	seen := make(map[int]bool)
+	for _, a := range data.Attributes {
+		id := a.Key.Value
+		if id == 0 {
+			continue
+		}
+		if seen[id] {
+			// Aynı attribute_id payload içinde tekrar edilmiş -> exist = true
+			return true, nil
+		}
+		seen[id] = true
 	}
-	rows, _ := res.RowsAffected()
-	if rows == 0 {
-		return fmt.Errorf("Attribute not found")
+
+	// 2) Veritabanında bu product için zaten ekli attribute'lar var mı kontrol et
+	query := `SELECT attribute_id FROM product_attributes WHERE product_id = $1 AND deleted_at IS NULL`
+	var existingIDs []int
+	if err := ar.db.SelectContext(ctx, &existingIDs, query, data.ProductID); err != nil {
+		return false, fmt.Errorf("Database error (CheckProdAttribute): %w", err)
 	}
-	return nil
+
+	// Eğer veritabanında aynı attribute_id varsa exist = true
+	for _, id := range existingIDs {
+		if seen[id] {
+			return true, nil
+		}
+	}
+
+	// Hiçbir çakışma yok
+	return false, nil
 }
 func (ar *AttributeRepo) DeleteCatAttribute(ctx context.Context, id int) error {
 	if id == 0 {

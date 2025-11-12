@@ -51,19 +51,24 @@ func (as *AttributeService) AddCatAttribute(ctx context.Context, data *models.Ca
 	}
 	return catattribute, nil
 }
-func (as *AttributeService) AddProdAttribute(ctx context.Context, data *models.ProductAttribute) (*models.ProductAttribute, error) {
-	switch {
-	case data.ProductID == 0:
-		return nil, fmt.Errorf("Invalid Prod ID")
-	case data.Value == "":
-		return nil, fmt.Errorf("Invalid value")
-	case data.AttributeID == 0:
-		return nil, fmt.Errorf("Invalid Cat ID")
+func (as *AttributeService) AddProdAttributes(ctx context.Context, data *models.NewProductAttribute) ([]models.Feature, error) {
+	if data.ProductID == 0 {
+		return nil, fmt.Errorf("Invalid data")
 	}
 	tx, err := as.db.BeginTxx(ctx, nil)
 	if err != nil {
 		return nil, fmt.Errorf("TX ERROR : %w", err)
 	}
+	defer func() {
+		if p := recover(); p != nil {
+			_ = tx.Rollback()
+			panic(p)
+		} else if err != nil {
+			_ = tx.Rollback()
+		} else {
+			err = tx.Commit()
+		}
+	}()
 	exists, err := as.ProductRepo.CheckProduct(data.ProductID)
 	if err != nil {
 		return nil, err
@@ -71,18 +76,18 @@ func (as *AttributeService) AddProdAttribute(ctx context.Context, data *models.P
 	if !exists {
 		return nil, fmt.Errorf("Product Not Found")
 	}
-	exists, err = as.AttributeRepo.CheckProdAttribute(ctx, data.ProductID, data.AttributeID)
+	exists, err = as.AttributeRepo.CheckProdAttribute(ctx, data)
 	if err != nil {
 		return nil, err
 	}
 	if exists {
 		return nil, fmt.Errorf("Attribute already exists")
 	}
-	result, err := as.AttributeRepo.AddProdAttribute(ctx, data, tx)
+	err = as.AttributeRepo.AddProdAttributes(ctx, data.Attributes, data.ProductID, tx)
 	if err != nil {
 		return nil, err
 	}
-	return result, nil
+	return data.Attributes, nil
 }
 func (as *AttributeService) GetProdAttributes(ctx context.Context, prodID int) ([]*models.ProductAttribute, error) {
 	if prodID == 0 {

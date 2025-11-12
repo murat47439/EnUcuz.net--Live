@@ -4,7 +4,7 @@ import { IdParam,Message } from "@/lib/types/types";
 
 export async function deleteProdAttribute(data:IdParam) {
     try{
-        const res = await api.delete<Message>(`/attribute/p/${data.id}`)
+        const res = await api.delete<Message>(`/attribute/admin/p/${data.id}`)
         return res.data
     }catch(err: unknown){
          const error = err as AxiosError<{message: string}>

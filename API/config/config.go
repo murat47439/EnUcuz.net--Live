@@ -12,7 +12,6 @@ var (
 )
 
 func LoadConfig() {
-
 	jwt_secret := os.Getenv("JWT_SECRET")
 	if jwt_secret == "" {
 		Logger.Printf("JWT_SECRET not set in environment")

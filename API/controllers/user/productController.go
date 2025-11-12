@@ -5,7 +5,6 @@ import (
 	"Store-Dio/handlers"
 	"Store-Dio/middleware"
 	"Store-Dio/models"
-
 	"Store-Dio/services/products"
 	"context"
 	"encoding/json"
@@ -61,16 +60,27 @@ func (pc *ProductController) UpdateProduct(w http.ResponseWriter, r *http.Reques
 	ctx := r.Context()
 	ctx, cancel := context.WithTimeout(ctx, 10*time.Second)
 	defer cancel()
-	var product models.Product
+	var product models.UpdProduct
 
 	err = json.NewDecoder(r.Body).Decode(&product)
-	if err != nil || id != product.ID {
-		RespondWithError(w, http.StatusBadRequest, "Invalid data")
+
+	if err != nil {
+		RespondWithError(w, http.StatusBadRequest, "Invalid JSON data")
 		return
 	}
+	product.Price, err = strconv.ParseFloat(product.PriceGet, 64)
+	if err != nil {
+		RespondWithError(w, http.StatusBadRequest, "Invalid Price data")
+		return
+	}
+	if id != int(product.ID) {
+		RespondWithError(w, http.StatusBadRequest, "ID does not match")
+		return
+	}
+
 	defer r.Body.Close()
 
-	updproduct, err := pc.ProductService.UpdateProduct(ctx, product, userID)
+	updproduct, err := pc.ProductService.UpdateProduct(ctx, &product, userID)
 
 	if err != nil {
 		RespondWithError(w, http.StatusBadRequest, err.Error())

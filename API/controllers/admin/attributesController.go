@@ -75,7 +75,7 @@ func (ac *AttributeController) AddCatAttribute(w http.ResponseWriter, r *http.Re
 	})
 }
 func (ac *AttributeController) AddProdAttribute(w http.ResponseWriter, r *http.Request) {
-	var data models.ProductAttribute
+	var data models.NewProductAttribute
 	err := json.NewDecoder(r.Body).Decode(&data)
 	if err != nil {
 		RespondWithError(w, http.StatusBadRequest, "Invalid data")
@@ -86,7 +86,7 @@ func (ac *AttributeController) AddProdAttribute(w http.ResponseWriter, r *http.R
 	ctx, cancel := context.WithTimeout(ctx, 10*time.Second)
 	defer cancel()
 
-	result, err := ac.AttributeService.AddProdAttribute(ctx, &data)
+	result, err := ac.AttributeService.AddProdAttributes(ctx, &data)
 	if err != nil {
 		RespondWithError(w, http.StatusBadRequest, err.Error())
 		return
