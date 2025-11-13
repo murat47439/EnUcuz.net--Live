@@ -46,11 +46,11 @@ func (ps *ProductService) AddProduct(ctx context.Context, data models.NewProduct
 	}()
 	prodID, err := ps.ProductRepo.AddProduct(ctx, data, tx)
 	if err != nil {
-		return false, fmt.Errorf("Error : %w", err.Error())
+		return false, fmt.Errorf("Error : %w", err)
 	}
 	err = ps.ProductRepo.AddProductImages(ctx, data.ImageURLs, prodID, tx)
 	if err != nil {
-		return false, fmt.Errorf("Error : %w", err.Error())
+		return false, fmt.Errorf("Error : %w", err)
 	}
 	data.ID = prodID
 	if len(data.Features) > 0 && data.Features[0].Key.Value != 0 {

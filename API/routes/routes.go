@@ -101,7 +101,7 @@ func SetupRoutes(
 		r.Route("/products", func(product chi.Router) {
 			product.Route("/transactions", func(prod chi.Router) {
 				prod.Use(um.AuthMiddleware)
-				prod.Post("/", controller.UserProductController.AddProduct)
+				prod.Post("/add", controller.UserProductController.AddProduct)
 				prod.Put("/{id}", controller.UserProductController.UpdateProduct)
 				prod.Delete("/{id}", controller.UserProductController.DeleteProduct)
 			})

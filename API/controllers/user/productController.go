@@ -103,7 +103,7 @@ func (pc *ProductController) AddProduct(w http.ResponseWriter, r *http.Request) 
 	var product models.NewProduct
 	product.SellerID = userID
 	ctx := r.Context()
-	ctx, cancel := context.WithTimeout(ctx, 10*time.Second)
+	ctx, cancel := context.WithTimeout(ctx, 30*time.Second)
 	defer cancel()
 
 	err := r.ParseMultipartForm(10 << 20) // 10MB

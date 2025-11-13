@@ -27,6 +27,7 @@ func (um *UserMiddleware) OnlyAdmin(next http.Handler) http.Handler {
 		cookie, err := r.Cookie("access_token")
 
 		if err != nil {
+			config.Logger.Printf("OnlyAdmin: Cookie not found - %v", err)
 			http.Error(w, "No data", http.StatusUnauthorized)
 			return
 		}
@@ -56,11 +57,13 @@ func (um *UserMiddleware) OnlyAdmin(next http.Handler) http.Handler {
 	})
 }
 func (um *UserMiddleware) AuthMiddleware(next http.Handler) http.Handler {
+	config.Logger.Printf("AuthMiddleware Started")
 	return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
 		{
 			cookie, err := r.Cookie("access_token")
 
 			if err != nil {
+				config.Logger.Printf("AuthMiddleware: Cookie not found - %v", err)
 				http.Error(w, "No data", http.StatusUnauthorized)
 				return
 			}

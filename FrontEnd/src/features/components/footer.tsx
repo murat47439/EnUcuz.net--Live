@@ -1,6 +1,4 @@
 import React from 'react'
-import Image from 'next/image'
-
 export default function Footer() {
     return (
         <footer className="bg-gray-800 text-white py-8">
@@ -38,7 +36,7 @@ export default function Footer() {
                 <span className="text-gray-600">|</span>
 
                 {/* Versiyon */}
-                <span className="text-sm text-gray-400">v0.1.2 - Beta</span>
+                <span className="text-sm text-gray-400">v0.1.0 - Beta</span>
             </div>
 
             {/* Alt Bilgi */}
@@ -67,7 +65,7 @@ export default function Footer() {
             <div className="flex flex-wrap items-center justify-center gap-8 mt-4">
   {/* React */}
   <div className="flex items-center space-x-1 text-white transition">
-  <Image src="/react.svg" alt="React" width={24} height={24} />
+  <img src="/react.svg" alt="React" className="w-6 h-6" />
   <span className="text-xs">React</span>
 </div>
 
@@ -75,39 +73,39 @@ export default function Footer() {
 
   {/* Next.js */}
   <div className="flex items-center space-x-1 text-gray-300 hover:text-white transition">
-    <Image src="/next.svg" alt="Next.js" width={24} height={24} />
+    <img src="/next.svg" alt="Next.js" className="w-6 h-6" />
     <span className="text-xs">Next.js</span>
   </div>
 
   {/* TypeScript */}
   <div className="flex items-center space-x-1 text-gray-300 hover:text-white transition">
-    <Image src="/typescript.svg" alt="TypeScript" width={24} height={24} />
+    <img src="/typescript.svg" alt="TypeScript" className="w-6 h-6" />
     <span className="text-xs">TypeScript</span>
   </div>
 
   {/* PostgreSQL */}
   <div className="flex items-center space-x-1 text-gray-300 hover:text-white transition">
-    <Image src="/postgre.svg" alt="PostgreSQL" width={24} height={24} />
+    <img src="/postgre.svg" alt="PostgreSQL" className="w-6 h-6" />
     <span className="text-xs">PostgreSQL</span>
   </div>
 
   {/* Vercel */}
   <div className="flex items-center space-x-1 text-gray-300 hover:text-white transition">
-    <Image src="/vercel.svg" alt="Vercel" width={24} height={24} />
+    <img src="/vercel.svg" alt="Vercel" className="w-6 h-6" />
     <span className="text-xs">Vercel</span>
   </div>
 
   {/* Go */}
   <div className="flex items-center space-x-1 text-gray-300 hover:text-white transition">
-    <Image src="/go.svg" alt="Go" width={24} height={24} />
+    <img src="/go.svg" alt="Go" className="w-6 h-6" />
   </div>
   <div className="flex items-center space-x-1 text-gray-300 hover:text-white transition">
-    <Image src="/imagekit.svg" alt="Imagekit" width={72} height={72} />
+    <img src="/imagekit.svg" alt="Imagekit" className="w-18 h-18" />
   </div>
 
   {/* Render */}
   <div className="flex items-center space-x-1 text-gray-300 hover:text-white transition">
-    <Image src="/render.svg" alt="Render" width={96} height={96} />
+    <img src="/render.svg" alt="Render" className="w-24 h-24" />
   </div>
 </div>
 

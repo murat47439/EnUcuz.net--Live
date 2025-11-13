@@ -1,5 +1,5 @@
 "use client"
-import { useEffect, useState, type ChangeEvent } from "react";
+import { useEffect, useState, ChangeEvent } from "react";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
 import { Brand, Category, CategoryAttribute, FeatureKey } from "@/lib/types/types";

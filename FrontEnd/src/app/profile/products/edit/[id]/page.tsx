@@ -28,14 +28,6 @@ export default function ProductUpdatePage({ params }: { params: Promise<{ id: nu
     const {openModal, closeModal} = UseModal()
     const {showNotification} = useToast();
 
-    const methods = useForm<FormData>({
-        defaultValues : {
-            name: product?.data.product.name ,
-            description: product?.data.product.description ,
-            price: product?.data.product.price,
-            stock: product?.data.product.stock 
-        }
-    })
 
     useEffect(() => {
         if (product){
@@ -46,7 +38,15 @@ export default function ProductUpdatePage({ params }: { params: Promise<{ id: nu
                 stock: product.data.product.stock
             })
         }
-    }, [product, methods])
+    }, [product])
+    const methods = useForm<FormData>({
+        defaultValues : {
+            name: product?.data.product.name ,
+            description: product?.data.product.description ,
+            price: product?.data.product.price,
+            stock: product?.data.product.stock 
+        }
+    })
     const {register, handleSubmit} = methods;
     const resolvedParams = React.use(params)
     useEffect(() => {
