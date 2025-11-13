@@ -29,16 +29,7 @@ export default function ProductUpdatePage({ params }: { params: Promise<{ id: nu
     const {showNotification} = useToast();
 
 
-    useEffect(() => {
-        if (product){
-            methods.reset({
-                name: product.data.product.name,
-                description: product.data.product.description,
-                price: product.data.product.price,
-                stock: product.data.product.stock
-            })
-        }
-    }, [product])
+   
     const methods = useForm<FormData>({
         defaultValues : {
             name: product?.data.product.name ,
@@ -47,6 +38,16 @@ export default function ProductUpdatePage({ params }: { params: Promise<{ id: nu
             stock: product?.data.product.stock 
         }
     })
+     useEffect(() => {
+    if (product){
+        methods.reset({
+            name: product.data.product.name,
+            description: product.data.product.description,
+            price: product.data.product.price,
+            stock: product.data.product.stock
+        })
+    }
+}, [product, methods])
     const {register, handleSubmit} = methods;
     const resolvedParams = React.use(params)
     useEffect(() => {

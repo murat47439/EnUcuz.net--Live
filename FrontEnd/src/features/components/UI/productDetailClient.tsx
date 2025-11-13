@@ -1,8 +1,9 @@
 "use client";
 import Image from "next/image";
 import { UseModal } from "@/context/modalContext";
+import { ProductDetail } from "@/lib/types/types";
 
-export default function ProductDetailClient({ product }: { product: any }) {
+export default function ProductDetailClient({ product }: { product: ProductDetail }) {
   const { openModal, closeModal } = UseModal();
 
   return (

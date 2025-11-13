@@ -2,7 +2,6 @@ import { getProduct } from "@/lib/api/products/useGetProduct";
 import ProductDetailCard from "@/features/components/productDetailCard";
 import { notFound } from "next/navigation";
 import { IdParam } from "@/lib/types/types";
-import Image from "next/image";
 import Link from "next/link";
 import ProductDetailClient from "@/features/components/UI/productDetailClient";
 export default async function ProductDetailPage({params} : {params : {id : number}}) {
