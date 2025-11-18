@@ -15,7 +15,7 @@ function HomePageContent() {
     const brand = parseInt(searchParams.get('brand') || '0')
   const category = parseInt(searchParams.get('category') || '0')
   const [searchQuery, setSearchQuery] = useState('');
-
+  const [result, setResult] = useState('');
   useEffect(() =>{
     const fetchData = async () =>{
       const request: PaginationRequest = {
@@ -25,9 +25,12 @@ function HomePageContent() {
         category: category || 0,
       };
       try{
+        setResult('API nın başlatılması 30-45 saniye sürebilir lütfen bekleyiniz.');
         const data = await getProducts(request);
         setProducts(data.products || []);
+        setResult('Ürün bulunamadı.');
       }catch(err){
+        setResult('Bir hata oluştu lütfen tekrar deneyiniz.');
         console.error(err)
         setProducts([]);
       }
@@ -82,7 +85,7 @@ function HomePageContent() {
         ))}  
       </div>
       </div>  
-      ):(<p className="text-center border rounded-2xl p-4 text-gray-600">API nın başlatılması 30-45 saniye sürebilir lütfen bekleyiniz.</p>)
+      ):(<p className="text-center border rounded-2xl p-4 text-gray-600">{result}</p>)
     }
     </main>
   )

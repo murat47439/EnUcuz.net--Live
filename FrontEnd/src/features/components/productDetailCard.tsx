@@ -33,25 +33,25 @@ const ProductDetailCard: React.FC<ProductDetailCardProps> = ({ product }) => {
                 </p>
 
                 {product?.data.attribute && product.data.attribute.length > 0 ? (
-                    <div className="space-y-2 max-h-96 overflow-y-auto scrollbar-thin scrollbar-thumb-gray-300 dark:scrollbar-thumb-gray-600 scrollbar-track-transparent pr-2">
+                    <div className="space-y-2 max-h-96 overflow-y-auto scrollbar-thin scrollbar-thumb-gray-300  scrollbar-track-transparent pr-2">
                         {product.data.attribute.map((attr, index) => (
                             <div 
                                 key={index} 
-                                className="group bg-gradient-to-r from-gray-50 to-white dark:from-gray-800 dark:to-gray-900 border border-gray-200 dark:border-gray-700 rounded-xl p-3 hover:border-blue-400 dark:hover:border-blue-500 hover:shadow-md transition-all duration-200"
+                                className="group bg-gradient-to-r from-gray-50 to-white   border border-gray-200  rounded-xl p-3 hover:border-blue-400 hover:shadow-md transition-all duration-200"
                             >
                                 <div className="flex items-start gap-2">
                                     <div className="flex-shrink-0 mt-0.5">
-                                        <div className="w-6 h-6 rounded-md bg-blue-100 dark:bg-blue-900/30 flex items-center justify-center group-hover:bg-blue-200 dark:group-hover:bg-blue-900/50 transition-colors">
-                                            <svg className="w-3.5 h-3.5 text-blue-600 dark:text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <div className="w-6 h-6 rounded-md bg-blue-100  flex items-center justify-center group-hover:bg-blue-200  transition-colors">
+                                            <svg className="w-3.5 h-3.5 text-blue-600 " fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                                             </svg>
                                         </div>
                                     </div>
                                     <div className="flex-1 min-w-0">
-                                        <span className="text-xs font-semibold text-blue-600 dark:text-blue-400 uppercase tracking-wide block mb-1">
+                                        <span className="text-xs font-semibold text-blue-600  uppercase tracking-wide block mb-1">
                                             {attr.attribute_name}
                                         </span>
-                                        <span className="text-sm font-medium text-gray-700 dark:text-gray-300 break-words block">
+                                        <span className="text-sm font-medium text-gray-700  break-words block">
                                             {attr.value}
                                         </span>
                                     </div>
@@ -60,11 +60,11 @@ const ProductDetailCard: React.FC<ProductDetailCardProps> = ({ product }) => {
                         ))}
                     </div>
                 ) : (
-                    <div className="text-center py-8 px-4 bg-gray-50 dark:bg-gray-800 rounded-xl border-2 border-dashed border-gray-300 dark:border-gray-700">
-                        <svg className="w-10 h-10 mx-auto text-gray-400 dark:text-gray-500 mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <div className="text-center py-8 px-4 bg-gray-50  rounded-xl border-2 border-dashed border-gray-300 ">
+                        <svg className="w-10 h-10 mx-auto text-gray-400 " fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
                         </svg>
-                        <p className="text-gray-400 dark:text-gray-500 text-sm">Özellik bilgisi yok.</p>
+                        <p className="text-gray-400  text-sm">Özellik bilgisi yok.</p>
                     </div>
                 )}
             </div>
