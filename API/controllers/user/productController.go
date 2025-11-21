@@ -262,6 +262,26 @@ func (pc *ProductController) GetUserProducts(w http.ResponseWriter, r *http.Requ
 		"products": products,
 	})
 }
+func (pc *ProductController) CreateDescription(w http.ResponseWriter, r *http.Request) {
+	config.Logger.Printf("CreateDescription request started")
+	var text models.AIRequestDescription
+	err := json.NewDecoder(r.Body).Decode(&text)
+	if err != nil {
+		RespondWithError(w, http.StatusBadRequest, "Invalid JSON data")
+		return
+	}
+	ctx := r.Context()
+	ctx, cancel := context.WithTimeout(ctx, 30*time.Second)
+	defer cancel()
+	AItext, err := pc.ProductService.CreateDescription(ctx, text.Text)
+	if err != nil {
+		RespondWithError(w, http.StatusInternalServerError, err.Error())
+		return
+	}
+	RespondWithJSON(w, http.StatusOK, map[string]interface{}{
+		"aitext": AItext,
+	})
+}
 
 // func (pc *ProductController) CompareProducts(w http.ResponseWriter, r *http.Request) {
 // 	id1, err := strconv.Atoi(chi.URLParam(r, "one"))

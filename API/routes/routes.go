@@ -105,6 +105,7 @@ func SetupRoutes(
 				prod.Put("/{id}", controller.UserProductController.UpdateProduct)
 				prod.Delete("/{id}", controller.UserProductController.DeleteProduct)
 			})
+			product.Post("/createdescription", controller.UserProductController.CreateDescription)
 			product.Get("/", controller.UserProductController.GetProducts)
 			product.Get("/{id}", controller.UserProductController.GetProduct)
 			product.Get("/{id}/reviews", controller.UserReviewController.GetReviews)

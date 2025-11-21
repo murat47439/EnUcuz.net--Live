@@ -1,6 +1,21 @@
 import React from 'react'
 import Image from 'next/image'
+
+const techStack = [
+    { label: "React", src: "/react.svg", textClass: "text-white" },
+    { label: "Next.js", src: "/next.svg", textClass: "text-gray-300" },
+    { label: "TypeScript", src: "/typescript.svg", textClass: "text-gray-300" },
+    { label: "PostgreSQL", src: "/postgre.svg", textClass: "text-gray-300" },
+    { label: "Vercel", src: "/vercel.svg", textClass: "text-gray-300" },
+    { label: "", src: "/go.svg", textClass: "text-gray-300" },
+    { label: "", src: "/gemini.svg", textClass: "text-white",imgWidth: 72,imgHeight: 72  },
+    { label: "", src: "/imagekit.svg", textClass: "text-gray-300", imgWidth: 72, imgHeight: 72 },
+    { label: "", src: "/render.svg", textClass: "text-gray-300", imgWidth: 96, imgHeight: 96 },
+]
+
 export default function Footer() {
+    const marqueeItems = [...techStack, ...techStack, ...techStack, ...techStack]
+
     return (
         <footer className="bg-gray-800 text-white py-8">
     <div className="container mx-auto px-4">
@@ -40,15 +55,28 @@ export default function Footer() {
                 <span className="text-sm text-gray-400">v0.1.2 - Beta</span>
             </div>
 
-            {/* Alt Bilgi */}
-            <div className="text-center">
-                <p className="text-xs text-gray-500">
-                    © 2025 EnUcuz-Net. Tüm hakları saklıdır.
-                </p>
-            </div>
+          
+            
 
-            {/* İletişim Kutusu */}
-            <div className="bg-gray-700 rounded-lg p-4 w-full max-w-xs">
+            {/* Teknoloji İkonları - Marquee */}
+            <div className="overflow-hidden w-full mt-4">
+                <div className="flex animate-marquee gap-8 w-max">
+                    {marqueeItems.map((tech, index) => (
+                        <div
+                            key={`${tech.label}-${index}`}
+                            className={`flex items-center space-x-1 ${tech.textClass} flex-shrink-0`}
+                        >
+                            <Image
+                                src={tech.src}
+                                alt={tech.label}
+                                width={tech.imgWidth || 24}
+                                height={tech.imgHeight || 24}
+                            />
+                            <span className="text-xs">{tech.label}</span>
+                        </div>
+                    ))}
+                </div>
+                <div className="bg-gray-700 rounded-lg p-4 w-full max-w-xs mx-auto my-4">
                 <a 
                     href="https://www.linkedin.com/in/muratt-turann" 
                     target="_blank" 
@@ -61,57 +89,13 @@ export default function Footer() {
                     <span className="text-sm font-medium">İletişim - LinkedIn</span>
                 </a>
             </div>
+            <div className="text-center">
+                <p className="text-xs text-gray-500">
+                    © 2025 EnUcuz-Net. Tüm hakları saklıdır.
+                </p>
+            </div>
+            </div>
 
-            {/* Teknoloji İkonları */}
-            <div className="flex flex-wrap items-center justify-center gap-8 mt-4">
-  {/* React */}
-  <div className="flex items-center space-x-1 text-white transition">
-    <Image src="/react.svg" alt="React" width={24} height={24} />
-    <span className="text-xs">React</span>
-  </div>
-
-  {/* Next.js */}
-  <div className="flex items-center space-x-1 text-gray-300 hover:text-white transition">
-    <Image src="/next.svg" alt="Next.js" width={24} height={24} />
-    <span className="text-xs">Next.js</span>
-  </div>
-
-  {/* TypeScript */}
-  <div className="flex items-center space-x-1 text-gray-300 hover:text-white transition">
-    <Image src="/typescript.svg" alt="TypeScript" width={24} height={24} />
-    <span className="text-xs">TypeScript</span>
-  </div>
-
-  {/* PostgreSQL */}
-  <div className="flex items-center space-x-1 text-gray-300 hover:text-white transition">
-    <Image src="/postgre.svg" alt="PostgreSQL" width={24} height={24} />
-    <span className="text-xs">PostgreSQL</span>
-  </div>
-
-  {/* Vercel */}
-  <div className="flex items-center space-x-1 text-gray-300 hover:text-white transition">
-    <Image src="/vercel.svg" alt="Vercel" width={24} height={24} />
-    <span className="text-xs">Vercel</span>
-  </div>
-
-  {/* Go */}
-  <div className="flex items-center space-x-1 text-gray-300 hover:text-white transition">
-    <Image src="/go.svg" alt="Go" width={24} height={24} />
-    <span className="text-xs">Go</span>
-  </div>
-
-  {/* Imagekit */}
-  <div className="flex items-center space-x-1 text-gray-300 hover:text-white transition">
-    <Image src="/imagekit.svg" alt="Imagekit" width={72} height={72} />
-    <span className="text-xs">Imagekit</span>
-  </div>
-
-  {/* Render */}
-  <div className="flex items-center space-x-1 text-gray-300 hover:text-white transition">
-    <Image src="/render.svg" alt="Render" width={96} height={96} />
-    <span className="text-xs">Render</span>
-  </div>
-</div>
 
 
 

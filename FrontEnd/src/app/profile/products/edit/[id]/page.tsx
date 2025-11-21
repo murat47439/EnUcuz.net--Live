@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react'
 import { useForm } from 'react-hook-form'
 import { deleteProduct } from '@/lib/api/products/useDelete'
 import { getProduct } from '@/lib/api/products/useGetProduct'
-import { IdParam, ProductDetail, UpdateProductRequest} from '@/lib/types/types'
+import { IdParam, ProductDetail, UpdateProductRequest, AIRequest} from '@/lib/types/types'
 import { useAuth } from '@/context/authContext'
 import { useRouter } from 'next/navigation'
 import Image from 'next/image'
@@ -15,6 +15,8 @@ import {useToast} from '@/context/toastContext'
 import { deleteProdAttribute } from '@/lib/api/attributes/useDeleteProd'
 import AttributeSelect from '@/features/components/attributeselect'
 import { updateProduct } from '@/lib/api/products/useUpdate'
+import ProductDescription from '@/features/components/UI/productDetail/productDescription'
+import { createDescription } from '@/lib/api/products/useCreateDescription'
 type FormData = {
   name: string,
   description: string,
@@ -48,7 +50,7 @@ export default function ProductUpdatePage({ params }: { params: Promise<{ id: nu
           })
       }
   }, [product, methods])
-    const {register, handleSubmit} = methods;
+    const {register, handleSubmit, watch} = methods;
     const resolvedParams = React.use(params)
     useEffect(() => {
 
@@ -126,25 +128,76 @@ export default function ProductUpdatePage({ params }: { params: Promise<{ id: nu
         showNotification('Ürün güncellenemedi.', 'error', 2000)
       }
     }
+    if (!product) {
+        return (
+            <div className="max-w-6xl mx-auto p-6 md:p-8 bg-white rounded-2xl shadow-xl border border-gray-100 mt-6 md:mt-10">
+                <div className="flex items-center justify-center min-h-[400px]">
+                    <p className="text-gray-500">Yükleniyor...</p>
+                </div>
+            </div>
+        )
+    }
+    const handleAIGenerate = async () => {
+      showNotification('Oluşturuluyor', 'info', 10000)
+      try{
+        const res : AIRequest = {
+          text: watch("description")
+        }
+        const data = await createDescription(res)
+        methods.setValue("description", data.data.aitext) 
+      showNotification('Başarıyla oluşturuldu', 'success', 2000)
+
+      }catch(err){
+        console.error(err);
+      }
+      
+    } 
+
     return (
-        <form onSubmit={handleSubmit(onsubmit)} className="max-w-6xl mx-auto p-6 md:p-8 bg-white  rounded-2xl shadow-xl border border-gray-100  mt-6 md:mt-10">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
-          <div className="flex flex-col items-center space-y-6">
-            <div className="w-full aspect-square relative rounded-2xl overflow-hidden shadow-2xl border-2 border-gray-200  bg-gradient-to-br from-gray-50 to-gray-100   group">
+        <form onSubmit={handleSubmit(onsubmit)} className="max-w-6xl mx-auto p-4 sm:p-6 md:p-8 bg-white  rounded-2xl shadow-xl border border-gray-100  mt-6 md:mt-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 lg:gap-12">
+          <div className="w-full">
+            <div className="w-full aspect-square relative rounded-2xl overflow-hidden shadow-2xl border-2 border-gray-200 bg-gradient-to-br from-gray-50 to-gray-100 group">
               <Image
                 src={product?.data.product.image_url ? product.data.product.image_url : "/placeholder.png"}
-
-
                 alt={product?.data.product.name ?? "Ürün Görseli"}
                 fill
-                className="object-contain p-6 transition-transform duration-300 group-hover:scale-105"
+                sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 600px"
+                className="object-contain p-4 md:p-6 transition-transform duration-300 group-hover:scale-105"
                 priority
-                
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-            </div>
+              <div className="absolute inset-0 bg-gradient-to-t from-black/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
+            </div> 
+            <Button type='button' className='w-full ml-0 md:ml-2 flex items-center justify-center text-sm mt-4 '  onClick={() => openModal( 
+() => (
+<div className='flex flex-col gap-2'>
+      <h2 className="text-xl font-semibold mb-2">Ürün Adı ve Açıklama</h2>
+      <Input type="text" placeholder="Ürün Adı" {...register("name")} />
+      <Input as="textarea" placeholder="Ürün Açıklama" {...register("description")} />
+      
+      <div className="flex gap-2 mt-2">
+        <Button type='button' onClick={handleAIGenerate} variant='secondary' className='bg-gradient-to-r from-blue-700 to-cyan-500 text-white 
+    font-semibold 
+    rounded-lg hover:from-blue-800 hover:to-cyan-600 
+    hover:shadow-xl 
+    hover:scale-[1.02] transition-all duration-300 px-4 py-2' >
+          AI ile Üret (HTML)
+        </Button>
+        <Button type='button' onClick={closeModal}>Kaydet</Button>
+      </div>
+    </div>)
+)}> <PencilIcon className='w-4 h-4'></PencilIcon><p className='ml-2 text-xs sm:text-sm'>Ürün adını ve açıklamasını düzenle</p></Button>
+          </div>
   
-            <div className="w-full">
+
+          <div className="flex flex-col justify-between space-y-4 md:space-y-6 w-full">
+            <div className="space-y-4">
+              <div>
+                <h1 className="text-xl sm:text-2xl md:text-3xl font-bold mb-3 text-gray-900  leading-tight text-center md:text-left">
+                  {product?.data.product.name ?? "Ürün Adı"}
+                </h1>
+              </div>
+              <div className="w-full">
               <h3 className="text-sm font-semibold text-gray-700  mb-3 text-center">
                 Ek Görseller
               </h3>
@@ -162,7 +215,6 @@ export default function ProductUpdatePage({ params }: { params: Promise<{ id: nu
                         onClick={() =>
                             openModal(
                               <div className="flex flex-col items-center justify-center">
-                                <h2 className="text-xl font-semibold mb-2">Ürün Resmi</h2>
                                 <div className="relative overflow-hidden group">
                                     <Image
                                         src={img}
@@ -193,30 +245,8 @@ export default function ProductUpdatePage({ params }: { params: Promise<{ id: nu
                 )}
               </div>
             </div>
-          </div>
-  
-
-          <div className="flex flex-col justify-between space-y-6">
-            <div className="space-y-4">
-              <div>
-                <h1 className="text-2xl md:text-3xl font-bold mb-3 text-gray-900  leading-tight">
-                  {product?.data.product.name ?? "Ürün Adı"}
-                </h1>
-              </div>
-              <div className="bg-gray-50  rounded-xl p-4 md:p-6 border border-gray-200 ">
-                <p className="text-gray-600  leading-relaxed text-sm md:text-base">
-                  {product?.data.product.description ?? "Bu ürün için açıklama bulunmamaktadır."}
-                </p>
-              </div>
-              <Button type='button' className=' ml-2  flex items-center justify-center text-sm' onClick={() => openModal(
-
-                <div className='flex flex-col gap-2'>
-                  <h2 className="text-xl font-semibold mb-2">Ürün Adı ve Açıklama</h2>
-                  <Input type="text" placeholder="Ürün Adı"  {...register("name")} />
-                  <Input as="textarea" placeholder="Ürün Açıklama"  {...register("description")}/>
-                  <Button type='button' onClick={closeModal}>Kaydet</Button>
-                </div>
-              )}> <PencilIcon></PencilIcon><p className='ml-2'>Ürün adını ve açıklamasını düzenle</p></Button>
+              
+              
 
             </div>
 
@@ -267,8 +297,8 @@ export default function ProductUpdatePage({ params }: { params: Promise<{ id: nu
                   ))}
                   
                 </div>
-                <div className='absolute bottom-0 right-0 w-48 '>
-                <Button type='button'  onClick={() => openModal(
+                <div className='mt-4 flex justify-end md:absolute md:bottom-0 md:right-0 w-full md:w-48'>
+                <Button type='button' className='w-full md:w-auto' onClick={() => openModal(
             
             product?.data.product && (<AttributeSelect data={product.data.product}></AttributeSelect>)
             )}>Özellik Ekle</Button>
@@ -353,7 +383,7 @@ export default function ProductUpdatePage({ params }: { params: Promise<{ id: nu
                 </div>
               </div>
             </div>
-  
+            
             {/* Kaydet Butonu */}
             <div className='grid grid-cols-1 sm:grid-cols-2 gap-4'>
             <Button type='button' onClick={()=> openModal(
@@ -381,6 +411,13 @@ export default function ProductUpdatePage({ params }: { params: Promise<{ id: nu
             </Button>
             </div>
             
+          </div>
+          
+          <div className="w-full md:col-span-2">
+            <h1 className='w-full text-center font-extrabold text-xl mb-4'>Ürün Açıklaması</h1>
+            <div className="bg-gray-50  rounded-xl p-4 md:p-6 border border-gray-200">
+              <ProductDescription description={product?.data.product.description} />
+            </div>
           </div>
         </div>
       </form>

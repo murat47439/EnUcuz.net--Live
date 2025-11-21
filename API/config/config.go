@@ -9,6 +9,7 @@ var (
 	JWT_SECRET           []byte
 	REFRESH_TOKEN_SECRET []byte
 	IMAGEKIT_PRIVATE_KEY string
+	GEMINI_API_KEY       string
 )
 
 func LoadConfig() {
@@ -16,6 +17,11 @@ func LoadConfig() {
 	if jwt_secret == "" {
 		Logger.Printf("JWT_SECRET not set in environment")
 	}
+	gemini_key := os.Getenv("GEMINI_API_KEY")
+	if gemini_key == "" {
+		Logger.Printf("GEMINI_API_KEY not set in environment")
+	}
+
 	privateKey := os.Getenv("IMAGEKIT_PRIVATE_KEY")
 	if privateKey == "" {
 		Logger.Printf("IMAGEKIT_PRIVATE_KEY not set in environment")
@@ -28,4 +34,5 @@ func LoadConfig() {
 	IMAGEKIT_PRIVATE_KEY = strings.TrimSpace(privateKey)
 	JWT_SECRET = []byte(jwt_secret)
 	REFRESH_TOKEN_SECRET = []byte(refresh_token_secret)
+	GEMINI_API_KEY = strings.TrimSpace(gemini_key)
 }

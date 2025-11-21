@@ -193,57 +193,92 @@ func (pr *ProductRepo) GetProductImages(ctx context.Context, prodid int) ([]stri
 
 	return images, nil
 }
-func (pr *ProductRepo) GetProducts(ctx context.Context, page, brand_id, category_id int, search string) ([]*models.Product, error) {
+func (pr *ProductRepo) GetProducts(ctx context.Context, page, brandID, categoryID int, search string) ([]*models.Product, error) {
 	var products []*models.Product
+
 	offset := (page - 1) * 52
 	limit := 52
-	query := `SELECT p.*, b.name AS brand_name, c.name AS category_name, u.name AS seller_name, u.phone AS seller_phone FROM products p 
-	LEFT JOIN brands b ON p.brand_id = b.id 
-	LEFT JOIN categories c ON p.category_id = c.id
-	LEFT JOIN users u ON p.seller_id = u.id
-	WHERE p.deleted_at IS NULL `
+
 	args := []interface{}{}
 	argIdx := 1
 
-	switch {
-	case search != "":
+	// === Kategori Recursive CTE ===
+	cte := ""
+	if categoryID > 0 {
+		cte = `
+		WITH RECURSIVE alt_kategoriler AS (
+			SELECT id
+			FROM categories
+			WHERE id = $1
+			UNION ALL
+			SELECT c.id
+			FROM categories c
+			JOIN alt_kategoriler ak ON c.parent_id = ak.id
+		)`
+		args = append(args, categoryID)
+		argIdx++
+	}
+
+	query := `
+	` + cte + `
+	SELECT 
+		p.*, 
+		b.name AS brand_name, 
+		c.name AS category_name,
+		u.name AS seller_name,
+		u.phone AS seller_phone
+	FROM products p
+	LEFT JOIN brands b ON p.brand_id = b.id
+	LEFT JOIN categories c ON p.category_id = c.id
+	LEFT JOIN users u ON p.seller_id = u.id
+	WHERE p.deleted_at IS NULL
+	`
+
+	// === Dinamik Filtreler ===
+	if search != "" {
 		query += ` AND p.name ILIKE $` + strconv.Itoa(argIdx)
 		args = append(args, "%"+search+"%")
 		argIdx++
-	case category_id > 0:
-		query += " AND p.category_id = $" + strconv.Itoa(argIdx)
-		args = append(args, category_id)
-		argIdx++
-	case brand_id > 0:
-		query += " AND p.brand_id = $" + strconv.Itoa(argIdx)
-		args = append(args, brand_id)
+	}
+
+	if categoryID > 0 {
+		query += ` AND p.category_id IN (SELECT id FROM alt_kategoriler)`
+	}
+
+	if brandID > 0 {
+		query += ` AND p.brand_id = $` + strconv.Itoa(argIdx)
+		args = append(args, brandID)
 		argIdx++
 	}
-	query += " LIMIT $" + strconv.Itoa(argIdx) + " OFFSET $" + strconv.Itoa(argIdx+1)
-	args = append(args, limit, offset)
+
+	query += ` LIMIT $` + strconv.Itoa(argIdx)
+	args = append(args, limit)
+	argIdx++
+
+	query += ` OFFSET $` + strconv.Itoa(argIdx)
+	args = append(args, offset)
 
 	rows, err := pr.db.QueryxContext(ctx, query, args...)
-
 	if err != nil {
-		return nil, fmt.Errorf("Database error : %s" + err.Error())
+		return nil, fmt.Errorf("Database error: %s", err.Error())
 	}
 	defer rows.Close()
 
 	for rows.Next() {
 		var p models.Product
-
 		if err := rows.StructScan(&p); err != nil {
-			return nil, fmt.Errorf("Scan error : %s", err.Error())
+			return nil, fmt.Errorf("Scan error: %s", err.Error())
 		}
 		products = append(products, &p)
 	}
 
 	if err := rows.Err(); err != nil {
-		return nil, fmt.Errorf("Rows error : %s", err.Error())
+		return nil, fmt.Errorf("Rows error: %s", err.Error())
 	}
 
 	return products, nil
 }
+
 func (pr *ProductRepo) DeleteProduct(data *models.Product) error {
 	tx, err := pr.db.Beginx()
 

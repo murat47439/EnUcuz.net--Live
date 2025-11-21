@@ -1,11 +1,13 @@
 package app
 
 import (
+	"Store-Dio/clients"
 	"Store-Dio/controllers"
 	"Store-Dio/middleware"
 	"Store-Dio/repo"
 	"Store-Dio/routes"
 	"Store-Dio/services"
+	"context"
 
 	"github.com/go-chi/chi/v5"
 	"github.com/jmoiron/sqlx"
@@ -42,7 +44,10 @@ func NewApp(db *sqlx.DB) *App {
 	// Route
 
 	route := routes.SetupRoutes(controllers, userMiddleware)
-
+	//Clients
+	ctx := context.Background()
+	clients.InitGeminiClient(ctx)
+	clients.InitImagekitClient()
 	return &App{
 		DB: db,
 

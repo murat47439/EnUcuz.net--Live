@@ -1,6 +1,7 @@
 package products
 
 import (
+	"Store-Dio/handlers"
 	"Store-Dio/internal/db"
 	"Store-Dio/models"
 	"Store-Dio/repo"
@@ -174,6 +175,16 @@ func (ps *ProductService) GetProducts(ctx context.Context, page, brand_id, categ
 	}
 
 	return products, nil
+}
+func (ps *ProductService) CreateDescription(ctx context.Context, text string) (string, error) {
+	if len(text) < 50 {
+		return "", fmt.Errorf("please give a longer text")
+	}
+	AItext, err := handlers.CreateDescription(text, ctx)
+	if err != nil {
+		return "", err
+	}
+	return AItext, nil
 }
 
 // func (ps *ProductService) CompareProducts(id1, id2 int) ([]models.Product, error) {

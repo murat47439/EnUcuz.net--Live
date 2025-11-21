@@ -4191,3 +4191,887 @@ APP_LOG: 2025/11/18 21:53:55 controllers.go:21: Success response: 200
 APP_LOG: 2025/11/18 21:53:55 controllers.go:21: Success response: 200
 APP_LOG: 2025/11/18 21:53:57 productRepo.go:60:  true
 APP_LOG: 2025/11/18 21:53:57 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/19 22:24:48 config.go:17: JWT_SECRET not set in environment
+APP_LOG: 2025/11/19 22:24:48 config.go:21: IMAGEKIT_PRIVATE_KEY not set in environment
+APP_LOG: 2025/11/19 22:24:48 config.go:25: REFRESH_TOKEN_SECRET not set in environment
+APP_LOG: 2025/11/19 22:24:48 main.go:24: Application started successfully.
+APP_LOG: 2025/11/19 22:24:48 auth.go:60: AuthMiddleware Started
+APP_LOG: 2025/11/19 22:24:48 auth.go:60: AuthMiddleware Started
+APP_LOG: 2025/11/19 22:24:48 auth.go:60: AuthMiddleware Started
+APP_LOG: 2025/11/19 22:24:48 auth.go:60: AuthMiddleware Started
+APP_LOG: 2025/11/19 22:24:48 auth.go:60: AuthMiddleware Started
+APP_LOG: 2025/11/19 22:24:48 auth.go:60: AuthMiddleware Started
+APP_LOG: 2025/11/19 22:24:48 auth.go:60: AuthMiddleware Started
+APP_LOG: 2025/11/19 22:24:48 auth.go:60: AuthMiddleware Started
+APP_LOG: 2025/11/19 22:24:48 auth.go:60: AuthMiddleware Started
+APP_LOG: 2025/11/19 22:24:48 auth.go:60: AuthMiddleware Started
+APP_LOG: 2025/11/19 22:24:48 auth.go:60: AuthMiddleware Started
+APP_LOG: 2025/11/19 22:25:35 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/19 22:25:39 productRepo.go:60:  true
+APP_LOG: 2025/11/19 22:25:39 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/19 22:25:44 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/19 22:25:44 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/19 22:25:49 productRepo.go:60:  true
+APP_LOG: 2025/11/19 22:25:49 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/19 22:30:31 productRepo.go:60:  true
+APP_LOG: 2025/11/19 22:30:31 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/19 22:33:33 auth.go:66: AuthMiddleware: Cookie not found - http: named cookie not present
+APP_LOG: 2025/11/19 22:33:33 auth.go:66: AuthMiddleware: Cookie not found - http: named cookie not present
+APP_LOG: 2025/11/19 22:33:33 usersController.go:213: GetAccess request started
+APP_LOG: 2025/11/19 22:33:33 usersController.go:249: GetAccess success: Access token refreshed
+APP_LOG: 2025/11/19 22:33:33 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/19 22:33:33 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/19 22:33:37 productRepo.go:60:  true
+APP_LOG: 2025/11/19 22:33:37 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/19 22:33:37 productRepo.go:60:  true
+APP_LOG: 2025/11/19 22:33:37 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/19 22:34:14 productRepo.go:60:  true
+APP_LOG: 2025/11/19 22:34:14 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/19 22:34:16 productRepo.go:60:  true
+APP_LOG: 2025/11/19 22:34:16 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/19 22:34:23 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/19 22:34:23 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/19 22:34:24 productRepo.go:60:  true
+APP_LOG: 2025/11/19 22:34:24 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/19 22:39:51 config.go:17: JWT_SECRET not set in environment
+APP_LOG: 2025/11/19 22:39:51 config.go:21: IMAGEKIT_PRIVATE_KEY not set in environment
+APP_LOG: 2025/11/19 22:39:51 config.go:25: REFRESH_TOKEN_SECRET not set in environment
+APP_LOG: 2025/11/19 22:39:51 main.go:24: Application started successfully.
+APP_LOG: 2025/11/19 22:39:51 auth.go:60: AuthMiddleware Started
+APP_LOG: 2025/11/19 22:39:51 auth.go:60: AuthMiddleware Started
+APP_LOG: 2025/11/19 22:39:51 auth.go:60: AuthMiddleware Started
+APP_LOG: 2025/11/19 22:39:51 auth.go:60: AuthMiddleware Started
+APP_LOG: 2025/11/19 22:39:51 auth.go:60: AuthMiddleware Started
+APP_LOG: 2025/11/19 22:39:51 auth.go:60: AuthMiddleware Started
+APP_LOG: 2025/11/19 22:39:51 auth.go:60: AuthMiddleware Started
+APP_LOG: 2025/11/19 22:39:51 auth.go:60: AuthMiddleware Started
+APP_LOG: 2025/11/19 22:39:51 auth.go:60: AuthMiddleware Started
+APP_LOG: 2025/11/19 22:39:51 auth.go:60: AuthMiddleware Started
+APP_LOG: 2025/11/19 22:39:51 auth.go:60: AuthMiddleware Started
+APP_LOG: 2025/11/19 22:40:20 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/19 22:40:26 productRepo.go:60:  true
+APP_LOG: 2025/11/19 22:40:26 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/19 22:40:32 productRepo.go:60:  true
+APP_LOG: 2025/11/19 22:40:32 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/19 22:40:38 productRepo.go:60:  true
+APP_LOG: 2025/11/19 22:40:38 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/19 22:40:41 productRepo.go:60:  true
+APP_LOG: 2025/11/19 22:40:41 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/19 22:41:36 productRepo.go:60:  true
+APP_LOG: 2025/11/19 22:41:36 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/19 22:41:43 productRepo.go:60:  true
+APP_LOG: 2025/11/19 22:41:43 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/20 20:41:28 config.go:17: JWT_SECRET not set in environment
+APP_LOG: 2025/11/20 20:41:28 config.go:21: IMAGEKIT_PRIVATE_KEY not set in environment
+APP_LOG: 2025/11/20 20:41:28 config.go:25: REFRESH_TOKEN_SECRET not set in environment
+APP_LOG: 2025/11/20 20:41:28 main.go:24: Application started successfully.
+APP_LOG: 2025/11/20 20:41:28 auth.go:60: AuthMiddleware Started
+APP_LOG: 2025/11/20 20:41:28 auth.go:60: AuthMiddleware Started
+APP_LOG: 2025/11/20 20:41:28 auth.go:60: AuthMiddleware Started
+APP_LOG: 2025/11/20 20:41:28 auth.go:60: AuthMiddleware Started
+APP_LOG: 2025/11/20 20:41:28 auth.go:60: AuthMiddleware Started
+APP_LOG: 2025/11/20 20:41:28 auth.go:60: AuthMiddleware Started
+APP_LOG: 2025/11/20 20:41:28 auth.go:60: AuthMiddleware Started
+APP_LOG: 2025/11/20 20:41:28 auth.go:60: AuthMiddleware Started
+APP_LOG: 2025/11/20 20:41:28 auth.go:60: AuthMiddleware Started
+APP_LOG: 2025/11/20 20:41:28 auth.go:60: AuthMiddleware Started
+APP_LOG: 2025/11/20 20:41:28 auth.go:60: AuthMiddleware Started
+APP_LOG: 2025/11/20 20:41:56 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/20 20:58:19 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/20 20:59:46 auth.go:66: AuthMiddleware: Cookie not found - http: named cookie not present
+APP_LOG: 2025/11/20 20:59:46 auth.go:66: AuthMiddleware: Cookie not found - http: named cookie not present
+APP_LOG: 2025/11/20 20:59:46 usersController.go:213: GetAccess request started
+APP_LOG: 2025/11/20 20:59:46 usersController.go:249: GetAccess success: Access token refreshed
+APP_LOG: 2025/11/20 20:59:46 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/20 20:59:46 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/20 21:03:18 productRepo.go:60:  true
+APP_LOG: 2025/11/20 21:03:18 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/20 21:03:18 productRepo.go:60:  true
+APP_LOG: 2025/11/20 21:03:18 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/20 21:03:20 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/20 21:03:20 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/20 21:03:21 productRepo.go:60:  true
+APP_LOG: 2025/11/20 21:03:21 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/20 21:03:21 productRepo.go:60:  true
+APP_LOG: 2025/11/20 21:03:21 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/20 21:16:32 productRepo.go:60:  true
+APP_LOG: 2025/11/20 21:16:32 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/20 21:17:05 productRepo.go:60:  true
+APP_LOG: 2025/11/20 21:17:05 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/20 21:17:05 productRepo.go:60:  true
+APP_LOG: 2025/11/20 21:17:05 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/20 21:17:08 auth.go:66: AuthMiddleware: Cookie not found - http: named cookie not present
+APP_LOG: 2025/11/20 21:17:08 auth.go:66: AuthMiddleware: Cookie not found - http: named cookie not present
+APP_LOG: 2025/11/20 21:17:08 usersController.go:213: GetAccess request started
+APP_LOG: 2025/11/20 21:17:08 usersController.go:249: GetAccess success: Access token refreshed
+APP_LOG: 2025/11/20 21:17:08 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/20 21:17:08 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/20 21:17:12 productRepo.go:60:  true
+APP_LOG: 2025/11/20 21:17:12 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/20 21:17:12 productRepo.go:60:  true
+APP_LOG: 2025/11/20 21:17:12 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/20 21:18:40 productRepo.go:60:  true
+APP_LOG: 2025/11/20 21:18:40 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/20 21:18:40 productRepo.go:60:  true
+APP_LOG: 2025/11/20 21:18:40 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/20 21:18:43 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/20 21:18:43 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/20 21:18:44 productRepo.go:60:  true
+APP_LOG: 2025/11/20 21:18:44 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/20 21:18:44 productRepo.go:60:  true
+APP_LOG: 2025/11/20 21:18:44 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/20 21:20:27 productRepo.go:60:  true
+APP_LOG: 2025/11/20 21:20:27 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/20 21:22:51 productRepo.go:60:  true
+APP_LOG: 2025/11/20 21:22:51 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/20 21:22:51 productRepo.go:60:  true
+APP_LOG: 2025/11/20 21:22:51 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/20 21:23:02 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/20 21:23:02 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/20 21:23:03 productRepo.go:60:  true
+APP_LOG: 2025/11/20 21:23:03 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/20 21:23:03 productRepo.go:60:  true
+APP_LOG: 2025/11/20 21:23:03 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/20 21:30:58 productRepo.go:60:  true
+APP_LOG: 2025/11/20 21:30:58 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/20 21:30:58 productRepo.go:60:  true
+APP_LOG: 2025/11/20 21:30:58 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/20 21:37:21 auth.go:66: AuthMiddleware: Cookie not found - http: named cookie not present
+APP_LOG: 2025/11/20 21:37:21 auth.go:66: AuthMiddleware: Cookie not found - http: named cookie not present
+APP_LOG: 2025/11/20 21:37:21 usersController.go:213: GetAccess request started
+APP_LOG: 2025/11/20 21:37:21 usersController.go:249: GetAccess success: Access token refreshed
+APP_LOG: 2025/11/20 21:37:21 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/20 21:37:21 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/20 21:37:22 productRepo.go:60:  true
+APP_LOG: 2025/11/20 21:37:22 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/20 21:37:22 productRepo.go:60:  true
+APP_LOG: 2025/11/20 21:37:22 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/20 21:38:13 productRepo.go:60:  true
+APP_LOG: 2025/11/20 21:38:13 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/20 21:38:13 productRepo.go:60:  true
+APP_LOG: 2025/11/20 21:38:13 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/20 21:38:16 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/20 21:38:16 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/20 21:38:30 productRepo.go:60:  true
+APP_LOG: 2025/11/20 21:38:30 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/20 21:38:30 productRepo.go:60:  true
+APP_LOG: 2025/11/20 21:38:30 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/20 21:44:03 controllers.go:21: Admin success response: 200
+APP_LOG: 2025/11/20 21:44:03 controllers.go:21: Admin success response: 200
+APP_LOG: 2025/11/20 21:44:07 productRepo.go:60:  true
+APP_LOG: 2025/11/20 21:44:07 controllers.go:21: Admin success response: 200
+APP_LOG: 2025/11/20 21:44:08 productRepo.go:60:  true
+APP_LOG: 2025/11/20 21:44:08 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/20 21:44:10 productRepo.go:60:  true
+APP_LOG: 2025/11/20 21:44:10 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/20 21:44:10 productRepo.go:60:  true
+APP_LOG: 2025/11/20 21:44:10 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/20 21:44:13 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/20 21:44:13 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/20 21:44:14 productRepo.go:60:  true
+APP_LOG: 2025/11/20 21:44:14 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/20 21:44:14 productRepo.go:60:  true
+APP_LOG: 2025/11/20 21:44:14 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/20 21:44:20 controllers.go:21: Admin success response: 200
+APP_LOG: 2025/11/20 21:44:22 productRepo.go:60:  true
+APP_LOG: 2025/11/20 21:44:22 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/20 21:47:28 productRepo.go:60:  true
+APP_LOG: 2025/11/20 21:47:28 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/20 21:47:31 productRepo.go:60:  true
+APP_LOG: 2025/11/20 21:47:31 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/20 21:53:26 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/20 21:53:26 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/20 21:53:29 auth.go:66: AuthMiddleware: Cookie not found - http: named cookie not present
+APP_LOG: 2025/11/20 21:53:29 auth.go:66: AuthMiddleware: Cookie not found - http: named cookie not present
+APP_LOG: 2025/11/20 21:53:29 usersController.go:213: GetAccess request started
+APP_LOG: 2025/11/20 21:53:29 usersController.go:249: GetAccess success: Access token refreshed
+APP_LOG: 2025/11/20 21:53:29 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/20 21:53:29 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/20 21:53:30 productRepo.go:60:  true
+APP_LOG: 2025/11/20 21:53:30 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/20 21:53:30 productRepo.go:60:  true
+APP_LOG: 2025/11/20 21:53:30 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/20 21:53:34 productRepo.go:60:  true
+APP_LOG: 2025/11/20 21:53:34 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/20 21:53:36 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/20 21:53:36 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/20 21:53:39 productRepo.go:60:  true
+APP_LOG: 2025/11/20 21:53:39 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/20 21:53:53 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/20 21:53:53 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/20 21:53:58 productRepo.go:60:  true
+APP_LOG: 2025/11/20 21:53:58 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/20 21:53:58 productRepo.go:60:  true
+APP_LOG: 2025/11/20 21:53:58 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/20 21:54:06 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/20 21:54:06 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/20 21:56:00 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/20 21:56:00 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/20 21:56:05 productRepo.go:60:  true
+APP_LOG: 2025/11/20 21:56:05 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/20 21:56:05 productRepo.go:60:  true
+APP_LOG: 2025/11/20 21:56:05 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/20 22:00:50 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/20 22:00:50 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/20 22:01:43 productRepo.go:60:  true
+APP_LOG: 2025/11/20 22:01:43 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/20 22:01:50 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/20 22:01:50 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/20 22:01:51 productRepo.go:60:  true
+APP_LOG: 2025/11/20 22:01:51 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/20 22:01:51 productRepo.go:60:  true
+APP_LOG: 2025/11/20 22:01:51 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/20 22:02:02 productRepo.go:60:  true
+APP_LOG: 2025/11/20 22:02:02 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/20 22:02:04 productRepo.go:60:  true
+APP_LOG: 2025/11/20 22:02:04 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/20 22:02:23 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/20 22:02:23 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/21 16:27:49 config.go:17: JWT_SECRET not set in environment
+APP_LOG: 2025/11/21 16:27:49 config.go:21: IMAGEKIT_PRIVATE_KEY not set in environment
+APP_LOG: 2025/11/21 16:27:49 config.go:25: REFRESH_TOKEN_SECRET not set in environment
+APP_LOG: 2025/11/21 16:27:49 main.go:24: Application started successfully.
+APP_LOG: 2025/11/21 16:27:49 auth.go:60: AuthMiddleware Started
+APP_LOG: 2025/11/21 16:27:49 auth.go:60: AuthMiddleware Started
+APP_LOG: 2025/11/21 16:27:49 auth.go:60: AuthMiddleware Started
+APP_LOG: 2025/11/21 16:27:49 auth.go:60: AuthMiddleware Started
+APP_LOG: 2025/11/21 16:27:49 auth.go:60: AuthMiddleware Started
+APP_LOG: 2025/11/21 16:27:49 auth.go:60: AuthMiddleware Started
+APP_LOG: 2025/11/21 16:27:49 auth.go:60: AuthMiddleware Started
+APP_LOG: 2025/11/21 16:27:49 auth.go:60: AuthMiddleware Started
+APP_LOG: 2025/11/21 16:27:49 auth.go:60: AuthMiddleware Started
+APP_LOG: 2025/11/21 16:27:49 auth.go:60: AuthMiddleware Started
+APP_LOG: 2025/11/21 16:27:49 auth.go:60: AuthMiddleware Started
+APP_LOG: 2025/11/21 16:32:28 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/21 16:36:39 config.go:17: JWT_SECRET not set in environment
+APP_LOG: 2025/11/21 16:36:39 config.go:21: IMAGEKIT_PRIVATE_KEY not set in environment
+APP_LOG: 2025/11/21 16:36:39 config.go:25: REFRESH_TOKEN_SECRET not set in environment
+APP_LOG: 2025/11/21 16:36:39 main.go:24: Application started successfully.
+APP_LOG: 2025/11/21 16:36:39 auth.go:60: AuthMiddleware Started
+APP_LOG: 2025/11/21 16:36:39 auth.go:60: AuthMiddleware Started
+APP_LOG: 2025/11/21 16:36:39 auth.go:60: AuthMiddleware Started
+APP_LOG: 2025/11/21 16:36:39 auth.go:60: AuthMiddleware Started
+APP_LOG: 2025/11/21 16:36:39 auth.go:60: AuthMiddleware Started
+APP_LOG: 2025/11/21 16:36:39 auth.go:60: AuthMiddleware Started
+APP_LOG: 2025/11/21 16:36:39 auth.go:60: AuthMiddleware Started
+APP_LOG: 2025/11/21 16:36:39 auth.go:60: AuthMiddleware Started
+APP_LOG: 2025/11/21 16:36:39 auth.go:60: AuthMiddleware Started
+APP_LOG: 2025/11/21 16:36:39 auth.go:60: AuthMiddleware Started
+APP_LOG: 2025/11/21 16:36:39 auth.go:60: AuthMiddleware Started
+APP_LOG: 2025/11/21 16:37:21 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/21 16:37:40 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/21 16:38:22 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/21 16:40:33 productRepo.go:60:  true
+APP_LOG: 2025/11/21 16:40:33 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/21 16:40:37 auth.go:66: AuthMiddleware: Cookie not found - http: named cookie not present
+APP_LOG: 2025/11/21 16:40:37 auth.go:66: AuthMiddleware: Cookie not found - http: named cookie not present
+APP_LOG: 2025/11/21 16:40:37 usersController.go:213: GetAccess request started
+APP_LOG: 2025/11/21 16:40:37 usersController.go:249: GetAccess success: Access token refreshed
+APP_LOG: 2025/11/21 16:40:37 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/21 16:40:37 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/21 16:40:40 productRepo.go:60:  true
+APP_LOG: 2025/11/21 16:40:40 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/21 16:40:40 productRepo.go:60:  true
+APP_LOG: 2025/11/21 16:40:40 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/21 16:40:43 controllers.go:21: Admin success response: 200
+APP_LOG: 2025/11/21 16:40:45 productRepo.go:60:  true
+APP_LOG: 2025/11/21 16:40:45 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/21 16:40:46 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/21 16:40:46 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/21 16:40:47 productRepo.go:60:  true
+APP_LOG: 2025/11/21 16:40:47 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/21 16:40:47 productRepo.go:60:  true
+APP_LOG: 2025/11/21 16:40:47 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/21 16:40:49 controllers.go:21: Admin success response: 200
+APP_LOG: 2025/11/21 16:40:50 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/21 16:40:50 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/21 16:40:51 productRepo.go:60:  true
+APP_LOG: 2025/11/21 16:40:51 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/21 16:40:51 productRepo.go:60:  true
+APP_LOG: 2025/11/21 16:40:51 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/21 16:40:51 productRepo.go:60:  true
+APP_LOG: 2025/11/21 16:40:51 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/21 16:40:52 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/21 16:40:52 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/21 16:40:53 productRepo.go:60:  true
+APP_LOG: 2025/11/21 16:40:53 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/21 16:40:53 productRepo.go:60:  true
+APP_LOG: 2025/11/21 16:40:53 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/21 16:40:58 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/21 16:40:58 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/21 16:40:59 productRepo.go:60:  true
+APP_LOG: 2025/11/21 16:40:59 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/21 16:41:08 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/21 16:41:08 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/21 16:41:08 productRepo.go:60:  true
+APP_LOG: 2025/11/21 16:41:08 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/21 16:41:10 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/21 16:41:10 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/21 16:41:11 productRepo.go:60:  true
+APP_LOG: 2025/11/21 16:41:11 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/21 16:41:11 productRepo.go:60:  true
+APP_LOG: 2025/11/21 16:41:11 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/21 16:41:18 productRepo.go:60:  true
+APP_LOG: 2025/11/21 16:41:18 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/21 16:41:20 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/21 16:41:20 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/21 16:41:22 productRepo.go:60:  true
+APP_LOG: 2025/11/21 16:41:22 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/21 16:41:22 productRepo.go:60:  true
+APP_LOG: 2025/11/21 16:41:22 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/21 16:42:25 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/21 16:42:25 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/21 16:42:54 productRepo.go:60:  true
+APP_LOG: 2025/11/21 16:42:54 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/21 16:43:05 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/21 16:43:05 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/21 16:43:07 productRepo.go:60:  true
+APP_LOG: 2025/11/21 16:43:07 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/21 16:44:02 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/21 16:44:02 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/21 16:44:10 productRepo.go:60:  true
+APP_LOG: 2025/11/21 16:44:10 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/21 16:44:12 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/21 16:44:12 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/21 16:50:33 config.go:17: JWT_SECRET not set in environment
+APP_LOG: 2025/11/21 16:50:33 config.go:21: IMAGEKIT_PRIVATE_KEY not set in environment
+APP_LOG: 2025/11/21 16:50:33 config.go:25: REFRESH_TOKEN_SECRET not set in environment
+APP_LOG: 2025/11/21 16:50:33 main.go:24: Application started successfully.
+APP_LOG: 2025/11/21 16:50:33 auth.go:60: AuthMiddleware Started
+APP_LOG: 2025/11/21 16:50:33 auth.go:60: AuthMiddleware Started
+APP_LOG: 2025/11/21 16:50:33 auth.go:60: AuthMiddleware Started
+APP_LOG: 2025/11/21 16:50:33 auth.go:60: AuthMiddleware Started
+APP_LOG: 2025/11/21 16:50:33 auth.go:60: AuthMiddleware Started
+APP_LOG: 2025/11/21 16:50:33 auth.go:60: AuthMiddleware Started
+APP_LOG: 2025/11/21 16:50:33 auth.go:60: AuthMiddleware Started
+APP_LOG: 2025/11/21 16:50:33 auth.go:60: AuthMiddleware Started
+APP_LOG: 2025/11/21 16:50:33 auth.go:60: AuthMiddleware Started
+APP_LOG: 2025/11/21 16:50:33 auth.go:60: AuthMiddleware Started
+APP_LOG: 2025/11/21 16:50:33 auth.go:60: AuthMiddleware Started
+APP_LOG: 2025/11/21 16:50:43 controllers.go:10: Error response: 400 - Error : %sDatabase error : %!s(MISSING)pq: syntax error at or near ":"
+APP_LOG: 2025/11/21 16:52:42 config.go:17: JWT_SECRET not set in environment
+APP_LOG: 2025/11/21 16:52:42 config.go:21: IMAGEKIT_PRIVATE_KEY not set in environment
+APP_LOG: 2025/11/21 16:52:42 config.go:25: REFRESH_TOKEN_SECRET not set in environment
+APP_LOG: 2025/11/21 16:52:42 main.go:24: Application started successfully.
+APP_LOG: 2025/11/21 16:52:42 auth.go:60: AuthMiddleware Started
+APP_LOG: 2025/11/21 16:52:42 auth.go:60: AuthMiddleware Started
+APP_LOG: 2025/11/21 16:52:42 auth.go:60: AuthMiddleware Started
+APP_LOG: 2025/11/21 16:52:42 auth.go:60: AuthMiddleware Started
+APP_LOG: 2025/11/21 16:52:42 auth.go:60: AuthMiddleware Started
+APP_LOG: 2025/11/21 16:52:42 auth.go:60: AuthMiddleware Started
+APP_LOG: 2025/11/21 16:52:42 auth.go:60: AuthMiddleware Started
+APP_LOG: 2025/11/21 16:52:42 auth.go:60: AuthMiddleware Started
+APP_LOG: 2025/11/21 16:52:42 auth.go:60: AuthMiddleware Started
+APP_LOG: 2025/11/21 16:52:42 auth.go:60: AuthMiddleware Started
+APP_LOG: 2025/11/21 16:52:42 auth.go:60: AuthMiddleware Started
+APP_LOG: 2025/11/21 16:54:16 config.go:17: JWT_SECRET not set in environment
+APP_LOG: 2025/11/21 16:54:16 config.go:21: IMAGEKIT_PRIVATE_KEY not set in environment
+APP_LOG: 2025/11/21 16:54:16 config.go:25: REFRESH_TOKEN_SECRET not set in environment
+APP_LOG: 2025/11/21 16:54:16 main.go:24: Application started successfully.
+APP_LOG: 2025/11/21 16:54:16 auth.go:60: AuthMiddleware Started
+APP_LOG: 2025/11/21 16:54:16 auth.go:60: AuthMiddleware Started
+APP_LOG: 2025/11/21 16:54:16 auth.go:60: AuthMiddleware Started
+APP_LOG: 2025/11/21 16:54:16 auth.go:60: AuthMiddleware Started
+APP_LOG: 2025/11/21 16:54:16 auth.go:60: AuthMiddleware Started
+APP_LOG: 2025/11/21 16:54:16 auth.go:60: AuthMiddleware Started
+APP_LOG: 2025/11/21 16:54:16 auth.go:60: AuthMiddleware Started
+APP_LOG: 2025/11/21 16:54:16 auth.go:60: AuthMiddleware Started
+APP_LOG: 2025/11/21 16:54:16 auth.go:60: AuthMiddleware Started
+APP_LOG: 2025/11/21 16:54:16 auth.go:60: AuthMiddleware Started
+APP_LOG: 2025/11/21 16:54:16 auth.go:60: AuthMiddleware Started
+APP_LOG: 2025/11/21 16:54:21 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/21 16:54:23 productRepo.go:60:  true
+APP_LOG: 2025/11/21 16:54:23 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/21 16:54:25 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/21 16:54:25 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/21 16:54:36 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/21 16:55:18 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/21 17:01:17 productRepo.go:60:  true
+APP_LOG: 2025/11/21 17:01:17 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/21 17:01:21 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/21 17:01:21 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/21 17:07:05 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/21 17:07:05 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/21 17:07:05 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/21 17:08:13 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/21 17:08:13 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/21 17:09:38 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/21 17:09:38 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/21 17:17:51 productRepo.go:60:  true
+APP_LOG: 2025/11/21 17:17:51 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/21 17:18:04 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/21 17:18:04 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/21 19:13:30 config.go:18: JWT_SECRET not set in environment
+APP_LOG: 2025/11/21 19:13:30 config.go:22: GEMINI_API_KEY not set in environment
+APP_LOG: 2025/11/21 19:13:30 config.go:27: IMAGEKIT_PRIVATE_KEY not set in environment
+APP_LOG: 2025/11/21 19:13:30 config.go:31: REFRESH_TOKEN_SECRET not set in environment
+APP_LOG: 2025/11/21 19:13:30 main.go:24: Application started successfully.
+APP_LOG: 2025/11/21 19:13:30 auth.go:60: AuthMiddleware Started
+APP_LOG: 2025/11/21 19:13:30 auth.go:60: AuthMiddleware Started
+APP_LOG: 2025/11/21 19:13:30 auth.go:60: AuthMiddleware Started
+APP_LOG: 2025/11/21 19:13:30 auth.go:60: AuthMiddleware Started
+APP_LOG: 2025/11/21 19:13:30 auth.go:60: AuthMiddleware Started
+APP_LOG: 2025/11/21 19:13:30 auth.go:60: AuthMiddleware Started
+APP_LOG: 2025/11/21 19:13:30 auth.go:60: AuthMiddleware Started
+APP_LOG: 2025/11/21 19:13:30 auth.go:60: AuthMiddleware Started
+APP_LOG: 2025/11/21 19:13:30 auth.go:60: AuthMiddleware Started
+APP_LOG: 2025/11/21 19:13:30 auth.go:60: AuthMiddleware Started
+APP_LOG: 2025/11/21 19:13:30 auth.go:60: AuthMiddleware Started
+APP_LOG: 2025/11/21 19:13:30 ai.go:20: Gemini client initialized successfully
+APP_LOG: 2025/11/21 19:13:30 image.go:19: ImageKit client initialized successfully
+APP_LOG: 2025/11/21 19:23:25 config.go:18: JWT_SECRET not set in environment
+APP_LOG: 2025/11/21 19:23:25 config.go:22: GEMINI_API_KEY not set in environment
+APP_LOG: 2025/11/21 19:23:25 config.go:27: IMAGEKIT_PRIVATE_KEY not set in environment
+APP_LOG: 2025/11/21 19:23:25 config.go:31: REFRESH_TOKEN_SECRET not set in environment
+APP_LOG: 2025/11/21 19:23:25 main.go:24: Application started successfully.
+APP_LOG: 2025/11/21 19:23:25 auth.go:60: AuthMiddleware Started
+APP_LOG: 2025/11/21 19:23:25 auth.go:60: AuthMiddleware Started
+APP_LOG: 2025/11/21 19:23:25 auth.go:60: AuthMiddleware Started
+APP_LOG: 2025/11/21 19:23:25 auth.go:60: AuthMiddleware Started
+APP_LOG: 2025/11/21 19:23:25 auth.go:60: AuthMiddleware Started
+APP_LOG: 2025/11/21 19:23:25 auth.go:60: AuthMiddleware Started
+APP_LOG: 2025/11/21 19:23:25 auth.go:60: AuthMiddleware Started
+APP_LOG: 2025/11/21 19:23:25 auth.go:60: AuthMiddleware Started
+APP_LOG: 2025/11/21 19:23:25 auth.go:60: AuthMiddleware Started
+APP_LOG: 2025/11/21 19:23:25 auth.go:60: AuthMiddleware Started
+APP_LOG: 2025/11/21 19:23:25 auth.go:60: AuthMiddleware Started
+APP_LOG: 2025/11/21 19:23:25 ai.go:20: Gemini client initialized successfully
+APP_LOG: 2025/11/21 19:23:25 image.go:19: ImageKit client initialized successfully
+APP_LOG: 2025/11/21 19:24:05 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/21 19:38:50 config.go:18: JWT_SECRET not set in environment
+APP_LOG: 2025/11/21 19:38:50 config.go:22: GEMINI_API_KEY not set in environment
+APP_LOG: 2025/11/21 19:38:50 config.go:27: IMAGEKIT_PRIVATE_KEY not set in environment
+APP_LOG: 2025/11/21 19:38:50 config.go:31: REFRESH_TOKEN_SECRET not set in environment
+APP_LOG: 2025/11/21 19:38:50 main.go:24: Application started successfully.
+APP_LOG: 2025/11/21 19:38:50 auth.go:60: AuthMiddleware Started
+APP_LOG: 2025/11/21 19:38:50 auth.go:60: AuthMiddleware Started
+APP_LOG: 2025/11/21 19:38:50 auth.go:60: AuthMiddleware Started
+APP_LOG: 2025/11/21 19:38:50 auth.go:60: AuthMiddleware Started
+APP_LOG: 2025/11/21 19:38:50 auth.go:60: AuthMiddleware Started
+APP_LOG: 2025/11/21 19:38:50 auth.go:60: AuthMiddleware Started
+APP_LOG: 2025/11/21 19:38:50 auth.go:60: AuthMiddleware Started
+APP_LOG: 2025/11/21 19:38:50 auth.go:60: AuthMiddleware Started
+APP_LOG: 2025/11/21 19:38:50 auth.go:60: AuthMiddleware Started
+APP_LOG: 2025/11/21 19:38:50 auth.go:60: AuthMiddleware Started
+APP_LOG: 2025/11/21 19:38:50 auth.go:60: AuthMiddleware Started
+APP_LOG: 2025/11/21 19:38:50 ai.go:20: Gemini client initialized successfully
+APP_LOG: 2025/11/21 19:38:50 image.go:19: ImageKit client initialized successfully
+APP_LOG: 2025/11/21 19:40:59 productController.go:266: CreateDescription request started
+APP_LOG: 2025/11/21 19:41:04 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/21 19:42:07 config.go:18: JWT_SECRET not set in environment
+APP_LOG: 2025/11/21 19:42:07 config.go:22: GEMINI_API_KEY not set in environment
+APP_LOG: 2025/11/21 19:42:07 config.go:27: IMAGEKIT_PRIVATE_KEY not set in environment
+APP_LOG: 2025/11/21 19:42:07 config.go:31: REFRESH_TOKEN_SECRET not set in environment
+APP_LOG: 2025/11/21 19:42:07 main.go:24: Application started successfully.
+APP_LOG: 2025/11/21 19:42:07 auth.go:60: AuthMiddleware Started
+APP_LOG: 2025/11/21 19:42:07 auth.go:60: AuthMiddleware Started
+APP_LOG: 2025/11/21 19:42:07 auth.go:60: AuthMiddleware Started
+APP_LOG: 2025/11/21 19:42:07 auth.go:60: AuthMiddleware Started
+APP_LOG: 2025/11/21 19:42:07 auth.go:60: AuthMiddleware Started
+APP_LOG: 2025/11/21 19:42:07 auth.go:60: AuthMiddleware Started
+APP_LOG: 2025/11/21 19:42:07 auth.go:60: AuthMiddleware Started
+APP_LOG: 2025/11/21 19:42:07 auth.go:60: AuthMiddleware Started
+APP_LOG: 2025/11/21 19:42:07 auth.go:60: AuthMiddleware Started
+APP_LOG: 2025/11/21 19:42:07 auth.go:60: AuthMiddleware Started
+APP_LOG: 2025/11/21 19:42:07 auth.go:60: AuthMiddleware Started
+APP_LOG: 2025/11/21 19:42:07 ai.go:20: Gemini client initialized successfully
+APP_LOG: 2025/11/21 19:42:07 image.go:19: ImageKit client initialized successfully
+APP_LOG: 2025/11/21 19:42:12 productController.go:266: CreateDescription request started
+APP_LOG: 2025/11/21 19:42:20 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/21 19:43:08 config.go:18: JWT_SECRET not set in environment
+APP_LOG: 2025/11/21 19:43:08 config.go:22: GEMINI_API_KEY not set in environment
+APP_LOG: 2025/11/21 19:43:08 config.go:27: IMAGEKIT_PRIVATE_KEY not set in environment
+APP_LOG: 2025/11/21 19:43:08 config.go:31: REFRESH_TOKEN_SECRET not set in environment
+APP_LOG: 2025/11/21 19:43:08 main.go:24: Application started successfully.
+APP_LOG: 2025/11/21 19:43:08 auth.go:60: AuthMiddleware Started
+APP_LOG: 2025/11/21 19:43:08 auth.go:60: AuthMiddleware Started
+APP_LOG: 2025/11/21 19:43:08 auth.go:60: AuthMiddleware Started
+APP_LOG: 2025/11/21 19:43:08 auth.go:60: AuthMiddleware Started
+APP_LOG: 2025/11/21 19:43:08 auth.go:60: AuthMiddleware Started
+APP_LOG: 2025/11/21 19:43:08 auth.go:60: AuthMiddleware Started
+APP_LOG: 2025/11/21 19:43:08 auth.go:60: AuthMiddleware Started
+APP_LOG: 2025/11/21 19:43:08 auth.go:60: AuthMiddleware Started
+APP_LOG: 2025/11/21 19:43:08 auth.go:60: AuthMiddleware Started
+APP_LOG: 2025/11/21 19:43:08 auth.go:60: AuthMiddleware Started
+APP_LOG: 2025/11/21 19:43:08 auth.go:60: AuthMiddleware Started
+APP_LOG: 2025/11/21 19:43:08 ai.go:20: Gemini client initialized successfully
+APP_LOG: 2025/11/21 19:43:08 image.go:19: ImageKit client initialized successfully
+APP_LOG: 2025/11/21 19:43:16 productController.go:266: CreateDescription request started
+APP_LOG: 2025/11/21 19:43:25 createDescription.go:38: Gemini Client Error: Error 504, Message: The request timed out. Please try again., Status: DEADLINE_EXCEEDED, Details: []
+APP_LOG: 2025/11/21 19:43:25 controllers.go:10: Error response: 500 - Gemini API error: Error 504, Message: The request timed out. Please try again., Status: DEADLINE_EXCEEDED, Details: []
+APP_LOG: 2025/11/21 19:43:30 productController.go:266: CreateDescription request started
+APP_LOG: 2025/11/21 19:43:39 createDescription.go:38: Gemini Client Error: Error 504, Message: The request timed out. Please try again., Status: DEADLINE_EXCEEDED, Details: []
+APP_LOG: 2025/11/21 19:43:39 controllers.go:10: Error response: 500 - Gemini API error: Error 504, Message: The request timed out. Please try again., Status: DEADLINE_EXCEEDED, Details: []
+APP_LOG: 2025/11/21 19:44:26 config.go:18: JWT_SECRET not set in environment
+APP_LOG: 2025/11/21 19:44:26 config.go:22: GEMINI_API_KEY not set in environment
+APP_LOG: 2025/11/21 19:44:26 config.go:27: IMAGEKIT_PRIVATE_KEY not set in environment
+APP_LOG: 2025/11/21 19:44:26 config.go:31: REFRESH_TOKEN_SECRET not set in environment
+APP_LOG: 2025/11/21 19:44:26 main.go:24: Application started successfully.
+APP_LOG: 2025/11/21 19:44:26 auth.go:60: AuthMiddleware Started
+APP_LOG: 2025/11/21 19:44:26 auth.go:60: AuthMiddleware Started
+APP_LOG: 2025/11/21 19:44:26 auth.go:60: AuthMiddleware Started
+APP_LOG: 2025/11/21 19:44:26 auth.go:60: AuthMiddleware Started
+APP_LOG: 2025/11/21 19:44:26 auth.go:60: AuthMiddleware Started
+APP_LOG: 2025/11/21 19:44:26 auth.go:60: AuthMiddleware Started
+APP_LOG: 2025/11/21 19:44:26 auth.go:60: AuthMiddleware Started
+APP_LOG: 2025/11/21 19:44:26 auth.go:60: AuthMiddleware Started
+APP_LOG: 2025/11/21 19:44:26 auth.go:60: AuthMiddleware Started
+APP_LOG: 2025/11/21 19:44:26 auth.go:60: AuthMiddleware Started
+APP_LOG: 2025/11/21 19:44:26 auth.go:60: AuthMiddleware Started
+APP_LOG: 2025/11/21 19:44:26 ai.go:20: Gemini client initialized successfully
+APP_LOG: 2025/11/21 19:44:26 image.go:19: ImageKit client initialized successfully
+APP_LOG: 2025/11/21 19:44:32 productController.go:266: CreateDescription request started
+APP_LOG: 2025/11/21 19:44:38 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/21 19:46:06 auth.go:66: AuthMiddleware: Cookie not found - http: named cookie not present
+APP_LOG: 2025/11/21 19:46:06 auth.go:66: AuthMiddleware: Cookie not found - http: named cookie not present
+APP_LOG: 2025/11/21 19:46:06 usersController.go:213: GetAccess request started
+APP_LOG: 2025/11/21 19:46:06 usersController.go:249: GetAccess success: Access token refreshed
+APP_LOG: 2025/11/21 19:46:06 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/21 19:46:06 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/21 19:46:09 productRepo.go:60:  true
+APP_LOG: 2025/11/21 19:46:09 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/21 19:46:09 productRepo.go:60:  true
+APP_LOG: 2025/11/21 19:46:09 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/21 19:49:29 config.go:18: JWT_SECRET not set in environment
+APP_LOG: 2025/11/21 19:49:29 config.go:22: GEMINI_API_KEY not set in environment
+APP_LOG: 2025/11/21 19:49:29 config.go:27: IMAGEKIT_PRIVATE_KEY not set in environment
+APP_LOG: 2025/11/21 19:49:29 config.go:31: REFRESH_TOKEN_SECRET not set in environment
+APP_LOG: 2025/11/21 19:49:29 main.go:24: Application started successfully.
+APP_LOG: 2025/11/21 19:49:29 auth.go:60: AuthMiddleware Started
+APP_LOG: 2025/11/21 19:49:29 auth.go:60: AuthMiddleware Started
+APP_LOG: 2025/11/21 19:49:29 auth.go:60: AuthMiddleware Started
+APP_LOG: 2025/11/21 19:49:29 auth.go:60: AuthMiddleware Started
+APP_LOG: 2025/11/21 19:49:29 auth.go:60: AuthMiddleware Started
+APP_LOG: 2025/11/21 19:49:29 auth.go:60: AuthMiddleware Started
+APP_LOG: 2025/11/21 19:49:29 auth.go:60: AuthMiddleware Started
+APP_LOG: 2025/11/21 19:49:29 auth.go:60: AuthMiddleware Started
+APP_LOG: 2025/11/21 19:49:29 auth.go:60: AuthMiddleware Started
+APP_LOG: 2025/11/21 19:49:29 auth.go:60: AuthMiddleware Started
+APP_LOG: 2025/11/21 19:49:29 auth.go:60: AuthMiddleware Started
+APP_LOG: 2025/11/21 19:49:29 ai.go:20: Gemini client initialized successfully
+APP_LOG: 2025/11/21 19:49:29 image.go:19: ImageKit client initialized successfully
+APP_LOG: 2025/11/21 19:49:35 productController.go:266: CreateDescription request started
+APP_LOG: 2025/11/21 19:49:43 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/21 19:55:08 productRepo.go:60:  true
+APP_LOG: 2025/11/21 19:55:08 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/21 19:59:41 productRepo.go:60:  true
+APP_LOG: 2025/11/21 19:59:41 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/21 19:59:41 productRepo.go:60:  true
+APP_LOG: 2025/11/21 19:59:41 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/21 19:59:41 productRepo.go:60:  true
+APP_LOG: 2025/11/21 19:59:41 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/21 19:59:41 productRepo.go:60:  true
+APP_LOG: 2025/11/21 19:59:41 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/21 20:00:56 productRepo.go:60:  true
+APP_LOG: 2025/11/21 20:00:56 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/21 20:00:56 productRepo.go:60:  true
+APP_LOG: 2025/11/21 20:00:56 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/21 20:01:41 productRepo.go:60:  true
+APP_LOG: 2025/11/21 20:01:41 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/21 20:01:41 productRepo.go:60:  true
+APP_LOG: 2025/11/21 20:01:41 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/21 20:01:53 productRepo.go:60:  true
+APP_LOG: 2025/11/21 20:01:53 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/21 20:01:53 productRepo.go:60:  true
+APP_LOG: 2025/11/21 20:01:53 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/21 20:02:01 productRepo.go:60:  true
+APP_LOG: 2025/11/21 20:02:01 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/21 20:02:01 productRepo.go:60:  true
+APP_LOG: 2025/11/21 20:02:01 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/21 20:02:07 productRepo.go:60:  true
+APP_LOG: 2025/11/21 20:02:07 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/21 20:02:07 productRepo.go:60:  true
+APP_LOG: 2025/11/21 20:02:07 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/21 20:03:01 productRepo.go:60:  true
+APP_LOG: 2025/11/21 20:03:01 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/21 20:03:01 productRepo.go:60:  true
+APP_LOG: 2025/11/21 20:03:01 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/21 20:04:40 productRepo.go:60:  true
+APP_LOG: 2025/11/21 20:04:40 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/21 20:04:40 productRepo.go:60:  true
+APP_LOG: 2025/11/21 20:04:40 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/21 20:04:42 productRepo.go:60:  true
+APP_LOG: 2025/11/21 20:04:42 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/21 20:04:42 productRepo.go:60:  true
+APP_LOG: 2025/11/21 20:04:42 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/21 20:04:58 productRepo.go:60:  true
+APP_LOG: 2025/11/21 20:04:58 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/21 20:04:58 productRepo.go:60:  true
+APP_LOG: 2025/11/21 20:04:58 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/21 20:05:02 auth.go:66: AuthMiddleware: Cookie not found - http: named cookie not present
+APP_LOG: 2025/11/21 20:05:02 auth.go:66: AuthMiddleware: Cookie not found - http: named cookie not present
+APP_LOG: 2025/11/21 20:05:02 usersController.go:213: GetAccess request started
+APP_LOG: 2025/11/21 20:05:02 usersController.go:249: GetAccess success: Access token refreshed
+APP_LOG: 2025/11/21 20:05:02 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/21 20:05:02 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/21 20:05:03 productRepo.go:60:  true
+APP_LOG: 2025/11/21 20:05:03 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/21 20:05:03 productRepo.go:60:  true
+APP_LOG: 2025/11/21 20:05:03 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/21 20:05:18 productRepo.go:60:  true
+APP_LOG: 2025/11/21 20:05:18 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/21 20:05:28 productRepo.go:60:  true
+APP_LOG: 2025/11/21 20:05:28 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/21 20:05:28 productRepo.go:60:  true
+APP_LOG: 2025/11/21 20:05:28 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/21 20:05:29 productRepo.go:60:  true
+APP_LOG: 2025/11/21 20:05:29 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/21 20:05:29 productRepo.go:60:  true
+APP_LOG: 2025/11/21 20:05:29 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/21 20:05:38 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/21 20:05:38 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/21 20:05:39 productRepo.go:60:  true
+APP_LOG: 2025/11/21 20:05:39 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/21 20:05:39 productRepo.go:60:  true
+APP_LOG: 2025/11/21 20:05:39 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/21 20:05:55 productController.go:266: CreateDescription request started
+APP_LOG: 2025/11/21 20:06:05 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/21 20:06:14 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/21 20:06:14 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/21 20:06:15 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/21 20:06:15 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/21 20:06:18 productRepo.go:60:  true
+APP_LOG: 2025/11/21 20:06:18 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/21 20:06:18 productRepo.go:60:  true
+APP_LOG: 2025/11/21 20:06:18 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/21 20:06:46 productController.go:266: CreateDescription request started
+APP_LOG: 2025/11/21 20:06:54 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/21 20:06:58 productRepo.go:60:  true
+APP_LOG: 2025/11/21 20:06:58 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/21 20:07:00 productRepo.go:60:  true
+APP_LOG: 2025/11/21 20:07:00 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/21 20:12:06 productController.go:266: CreateDescription request started
+APP_LOG: 2025/11/21 20:12:16 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/21 20:12:35 productRepo.go:60:  true
+APP_LOG: 2025/11/21 20:12:35 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/21 20:12:38 productRepo.go:60:  true
+APP_LOG: 2025/11/21 20:12:38 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/21 20:13:19 config.go:18: JWT_SECRET not set in environment
+APP_LOG: 2025/11/21 20:13:19 config.go:22: GEMINI_API_KEY not set in environment
+APP_LOG: 2025/11/21 20:13:19 config.go:27: IMAGEKIT_PRIVATE_KEY not set in environment
+APP_LOG: 2025/11/21 20:13:19 config.go:31: REFRESH_TOKEN_SECRET not set in environment
+APP_LOG: 2025/11/21 20:13:19 main.go:24: Application started successfully.
+APP_LOG: 2025/11/21 20:13:19 auth.go:60: AuthMiddleware Started
+APP_LOG: 2025/11/21 20:13:19 auth.go:60: AuthMiddleware Started
+APP_LOG: 2025/11/21 20:13:19 auth.go:60: AuthMiddleware Started
+APP_LOG: 2025/11/21 20:13:19 auth.go:60: AuthMiddleware Started
+APP_LOG: 2025/11/21 20:13:19 auth.go:60: AuthMiddleware Started
+APP_LOG: 2025/11/21 20:13:19 auth.go:60: AuthMiddleware Started
+APP_LOG: 2025/11/21 20:13:19 auth.go:60: AuthMiddleware Started
+APP_LOG: 2025/11/21 20:13:19 auth.go:60: AuthMiddleware Started
+APP_LOG: 2025/11/21 20:13:19 auth.go:60: AuthMiddleware Started
+APP_LOG: 2025/11/21 20:13:19 auth.go:60: AuthMiddleware Started
+APP_LOG: 2025/11/21 20:13:19 auth.go:60: AuthMiddleware Started
+APP_LOG: 2025/11/21 20:13:19 ai.go:20: Gemini client initialized successfully
+APP_LOG: 2025/11/21 20:13:19 image.go:19: ImageKit client initialized successfully
+APP_LOG: 2025/11/21 20:16:07 productRepo.go:60:  true
+APP_LOG: 2025/11/21 20:16:07 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/21 20:16:07 productRepo.go:60:  true
+APP_LOG: 2025/11/21 20:16:07 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/21 20:19:09 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/21 20:19:09 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/21 20:19:11 productRepo.go:60:  true
+APP_LOG: 2025/11/21 20:19:11 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/21 20:19:11 productRepo.go:60:  true
+APP_LOG: 2025/11/21 20:19:11 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/21 20:20:55 productRepo.go:60:  true
+APP_LOG: 2025/11/21 20:20:55 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/21 20:20:55 productRepo.go:60:  true
+APP_LOG: 2025/11/21 20:20:55 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/21 20:20:58 auth.go:66: AuthMiddleware: Cookie not found - http: named cookie not present
+APP_LOG: 2025/11/21 20:20:58 auth.go:66: AuthMiddleware: Cookie not found - http: named cookie not present
+APP_LOG: 2025/11/21 20:20:58 usersController.go:213: GetAccess request started
+APP_LOG: 2025/11/21 20:20:58 usersController.go:249: GetAccess success: Access token refreshed
+APP_LOG: 2025/11/21 20:20:58 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/21 20:20:58 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/21 20:20:59 productRepo.go:60:  true
+APP_LOG: 2025/11/21 20:20:59 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/21 20:20:59 productRepo.go:60:  true
+APP_LOG: 2025/11/21 20:20:59 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/21 20:21:26 productRepo.go:60:  true
+APP_LOG: 2025/11/21 20:21:26 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/21 20:21:26 productRepo.go:60:  true
+APP_LOG: 2025/11/21 20:21:26 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/21 20:21:29 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/21 20:21:29 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/21 20:22:09 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/21 20:22:09 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/21 20:22:17 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/21 20:22:17 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/21 20:22:20 productRepo.go:60:  true
+APP_LOG: 2025/11/21 20:22:20 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/21 20:22:20 productRepo.go:60:  true
+APP_LOG: 2025/11/21 20:22:20 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/21 20:23:35 productRepo.go:60:  true
+APP_LOG: 2025/11/21 20:23:35 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/21 20:23:35 productRepo.go:60:  true
+APP_LOG: 2025/11/21 20:23:35 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/21 20:23:38 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/21 20:23:38 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/21 20:23:39 productRepo.go:60:  true
+APP_LOG: 2025/11/21 20:23:39 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/21 20:23:39 productRepo.go:60:  true
+APP_LOG: 2025/11/21 20:23:39 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/21 20:27:51 productRepo.go:60:  true
+APP_LOG: 2025/11/21 20:27:51 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/21 20:27:51 productRepo.go:60:  true
+APP_LOG: 2025/11/21 20:27:51 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/21 20:28:09 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/21 20:28:09 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/21 20:28:11 productRepo.go:60:  true
+APP_LOG: 2025/11/21 20:28:11 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/21 20:28:11 productRepo.go:60:  true
+APP_LOG: 2025/11/21 20:28:11 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/21 20:30:43 productRepo.go:60:  true
+APP_LOG: 2025/11/21 20:30:43 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/21 20:30:43 productRepo.go:60:  true
+APP_LOG: 2025/11/21 20:30:43 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/21 20:31:12 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/21 20:31:12 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/21 20:31:16 productRepo.go:60:  true
+APP_LOG: 2025/11/21 20:31:16 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/21 20:31:16 productRepo.go:60:  true
+APP_LOG: 2025/11/21 20:31:16 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/21 20:32:42 productRepo.go:60:  true
+APP_LOG: 2025/11/21 20:32:42 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/21 20:32:42 productRepo.go:60:  true
+APP_LOG: 2025/11/21 20:32:42 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/21 20:37:08 auth.go:66: AuthMiddleware: Cookie not found - http: named cookie not present
+APP_LOG: 2025/11/21 20:37:08 auth.go:66: AuthMiddleware: Cookie not found - http: named cookie not present
+APP_LOG: 2025/11/21 20:37:08 usersController.go:213: GetAccess request started
+APP_LOG: 2025/11/21 20:37:08 usersController.go:249: GetAccess success: Access token refreshed
+APP_LOG: 2025/11/21 20:37:08 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/21 20:37:08 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/21 20:37:09 productRepo.go:60:  true
+APP_LOG: 2025/11/21 20:37:09 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/21 20:37:09 productRepo.go:60:  true
+APP_LOG: 2025/11/21 20:37:09 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/21 20:37:16 productController.go:266: CreateDescription request started
+APP_LOG: 2025/11/21 20:37:22 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/21 20:37:44 productRepo.go:60:  true
+APP_LOG: 2025/11/21 20:37:44 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/21 20:37:46 productRepo.go:60:  true
+APP_LOG: 2025/11/21 20:37:46 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/21 20:38:47 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/21 20:38:52 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/21 20:38:52 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/21 20:38:54 productRepo.go:60:  true
+APP_LOG: 2025/11/21 20:38:54 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/21 20:38:54 productRepo.go:60:  true
+APP_LOG: 2025/11/21 20:38:54 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/21 20:39:31 productController.go:266: CreateDescription request started
+APP_LOG: 2025/11/21 20:39:42 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/21 20:39:53 productRepo.go:60:  true
+APP_LOG: 2025/11/21 20:39:53 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/21 20:39:55 productRepo.go:60:  true
+APP_LOG: 2025/11/21 20:39:55 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/21 20:45:58 productRepo.go:60:  true
+APP_LOG: 2025/11/21 20:45:58 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/21 20:45:58 productRepo.go:60:  true
+APP_LOG: 2025/11/21 20:45:58 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/21 20:46:56 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/21 20:46:56 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/21 20:46:58 productRepo.go:60:  true
+APP_LOG: 2025/11/21 20:46:58 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/21 20:46:58 productRepo.go:60:  true
+APP_LOG: 2025/11/21 20:46:58 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/21 20:47:09 productController.go:266: CreateDescription request started
+APP_LOG: 2025/11/21 20:47:20 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/21 20:47:26 productRepo.go:60:  true
+APP_LOG: 2025/11/21 20:47:26 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/21 20:47:28 productRepo.go:60:  true
+APP_LOG: 2025/11/21 20:47:28 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/21 20:51:04 productRepo.go:60:  true
+APP_LOG: 2025/11/21 20:51:04 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/21 20:54:08 productController.go:266: CreateDescription request started
+APP_LOG: 2025/11/21 20:54:21 createDescription.go:39: Gemini Client Error: doRequest: error sending request: Post "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent": unexpected EOF
+APP_LOG: 2025/11/21 20:54:21 controllers.go:10: Error response: 500 - Gemini API error: doRequest: error sending request: Post "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent": unexpected EOF
+APP_LOG: 2025/11/21 20:55:01 productController.go:266: CreateDescription request started
+APP_LOG: 2025/11/21 20:55:15 createDescription.go:39: Gemini Client Error: doRequest: error sending request: Post "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent": context canceled
+APP_LOG: 2025/11/21 20:55:15 controllers.go:10: Error response: 500 - Gemini API error: doRequest: error sending request: Post "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent": context canceled
+APP_LOG: 2025/11/21 20:55:15 productRepo.go:60:  true
+APP_LOG: 2025/11/21 20:55:15 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/21 20:55:15 productRepo.go:60:  true
+APP_LOG: 2025/11/21 20:55:15 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/21 20:55:18 auth.go:66: AuthMiddleware: Cookie not found - http: named cookie not present
+APP_LOG: 2025/11/21 20:55:18 auth.go:66: AuthMiddleware: Cookie not found - http: named cookie not present
+APP_LOG: 2025/11/21 20:55:18 usersController.go:213: GetAccess request started
+APP_LOG: 2025/11/21 20:55:18 usersController.go:249: GetAccess success: Access token refreshed
+APP_LOG: 2025/11/21 20:55:18 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/21 20:55:18 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/21 20:55:19 productRepo.go:60:  true
+APP_LOG: 2025/11/21 20:55:19 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/21 20:55:19 productRepo.go:60:  true
+APP_LOG: 2025/11/21 20:55:19 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/21 20:55:32 productController.go:266: CreateDescription request started
+APP_LOG: 2025/11/21 20:55:44 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/21 20:55:51 productRepo.go:60:  true
+APP_LOG: 2025/11/21 20:55:51 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/21 20:55:53 productRepo.go:60:  true
+APP_LOG: 2025/11/21 20:55:53 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/21 20:57:16 productRepo.go:60:  true
+APP_LOG: 2025/11/21 20:57:16 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/21 21:03:36 productRepo.go:60:  true
+APP_LOG: 2025/11/21 21:03:36 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/21 21:03:36 productRepo.go:60:  true
+APP_LOG: 2025/11/21 21:03:36 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/21 21:03:39 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/21 21:03:39 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/21 21:03:40 productRepo.go:60:  true
+APP_LOG: 2025/11/21 21:03:40 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/21 21:03:40 productRepo.go:60:  true
+APP_LOG: 2025/11/21 21:03:40 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/21 21:04:45 config.go:18: JWT_SECRET not set in environment
+APP_LOG: 2025/11/21 21:04:45 config.go:22: GEMINI_API_KEY not set in environment
+APP_LOG: 2025/11/21 21:04:45 config.go:27: IMAGEKIT_PRIVATE_KEY not set in environment
+APP_LOG: 2025/11/21 21:04:45 config.go:31: REFRESH_TOKEN_SECRET not set in environment
+APP_LOG: 2025/11/21 21:04:45 main.go:24: Application started successfully.
+APP_LOG: 2025/11/21 21:04:45 auth.go:60: AuthMiddleware Started
+APP_LOG: 2025/11/21 21:04:45 auth.go:60: AuthMiddleware Started
+APP_LOG: 2025/11/21 21:04:45 auth.go:60: AuthMiddleware Started
+APP_LOG: 2025/11/21 21:04:45 auth.go:60: AuthMiddleware Started
+APP_LOG: 2025/11/21 21:04:45 auth.go:60: AuthMiddleware Started
+APP_LOG: 2025/11/21 21:04:45 auth.go:60: AuthMiddleware Started
+APP_LOG: 2025/11/21 21:04:45 auth.go:60: AuthMiddleware Started
+APP_LOG: 2025/11/21 21:04:45 auth.go:60: AuthMiddleware Started
+APP_LOG: 2025/11/21 21:04:45 auth.go:60: AuthMiddleware Started
+APP_LOG: 2025/11/21 21:04:45 auth.go:60: AuthMiddleware Started
+APP_LOG: 2025/11/21 21:04:45 auth.go:60: AuthMiddleware Started
+APP_LOG: 2025/11/21 21:04:45 ai.go:20: Gemini client initialized successfully
+APP_LOG: 2025/11/21 21:04:45 image.go:19: ImageKit client initialized successfully
+APP_LOG: 2025/11/21 21:04:52 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/21 21:04:52 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/21 21:04:54 productRepo.go:60:  true
+APP_LOG: 2025/11/21 21:04:54 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/21 21:04:54 productRepo.go:60:  true
+APP_LOG: 2025/11/21 21:04:54 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/21 21:05:03 productController.go:266: CreateDescription request started
+APP_LOG: 2025/11/21 21:05:13 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/21 21:05:20 productRepo.go:60:  true
+APP_LOG: 2025/11/21 21:05:20 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/21 21:05:22 productRepo.go:60:  true
+APP_LOG: 2025/11/21 21:05:22 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/21 21:05:33 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/21 21:05:33 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/21 21:05:37 productRepo.go:60:  true
+APP_LOG: 2025/11/21 21:05:37 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/21 21:05:59 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/21 21:05:59 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/21 21:06:03 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/21 21:06:03 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/21 21:17:45 auth.go:66: AuthMiddleware: Cookie not found - http: named cookie not present
+APP_LOG: 2025/11/21 21:17:45 usersController.go:213: GetAccess request started
+APP_LOG: 2025/11/21 21:17:45 usersController.go:249: GetAccess success: Access token refreshed
+APP_LOG: 2025/11/21 21:17:45 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/21 21:17:45 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/21 21:35:29 auth.go:66: AuthMiddleware: Cookie not found - http: named cookie not present
+APP_LOG: 2025/11/21 21:35:29 usersController.go:213: GetAccess request started
+APP_LOG: 2025/11/21 21:35:29 usersController.go:249: GetAccess success: Access token refreshed
+APP_LOG: 2025/11/21 21:35:29 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/21 21:35:29 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/21 21:36:41 productRepo.go:60:  true
+APP_LOG: 2025/11/21 21:36:41 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/21 21:36:41 productRepo.go:60:  true
+APP_LOG: 2025/11/21 21:36:41 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/21 21:36:52 controllers.go:21: Success response: 200
+APP_LOG: 2025/11/21 21:36:52 controllers.go:21: Success response: 200

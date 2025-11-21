@@ -12,7 +12,7 @@ export default async function ProductDetailPage({params} : {params : {id : numbe
         notFound()
     }
     return (
-        <main className="container mx-auto px-4 py-6 md:py-8 max-w-7xl">
+        <main className="container mx-auto sm:px-4 py-6 md:py-8 max-w-7xl">
             {/* Başlık ve Etiketler */}
             <div className="mb-8">
                 <h1 className="text-3xl md:text-4xl font-extrabold text-center mb-4 tracking-tight bg-gradient-to-r from-gray-900 via-gray-700 to-gray-900    bg-clip-text text-transparent">

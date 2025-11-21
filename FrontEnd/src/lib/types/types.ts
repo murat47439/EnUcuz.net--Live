@@ -444,7 +444,16 @@ export interface Notification {
     type: NotificationType;
     duration?: number;
 }
-
+export interface AIRequest{
+    text: string;
+}
+export interface AIResponse{
+    success: boolean,
+    message: string,
+    data: {
+        aitext: string,
+    }
+}
 export interface ToastContextType {
     showNotification: (message: string, type: NotificationType, duration?: number) => void;
 }

@@ -1,7 +1,7 @@
 package handlers
 
 import (
-	"Store-Dio/config"
+	"Store-Dio/clients"
 	"bytes"
 	"context"
 	"fmt"
@@ -20,7 +20,6 @@ import (
 
 	"github.com/disintegration/imaging"
 	"github.com/imagekit-developer/imagekit-go/v2"
-	"github.com/imagekit-developer/imagekit-go/v2/option"
 	"github.com/imagekit-developer/imagekit-go/v2/packages/param"
 )
 
@@ -93,19 +92,13 @@ func CompressImage(file io.Reader) (*bytes.Buffer, error) {
 	return buf, nil
 }
 func UploadImage(file io.Reader, fileName string) (string, error) {
-	// publicKey :=
-	privateKey := config.IMAGEKIT_PRIVATE_KEY
-	// urlEndpoint :=
-	client := imagekit.NewClient(
-		option.WithPrivateKey(privateKey), // defaults to os.LookupEnv("IMAGEKIT_PRIVATE_KEY")
-	)
 
 	filePathV2, err := CompressImage(file)
 	if err != nil {
 		return "", fmt.Errorf("hata: %w", err)
 	}
 
-	response, err := client.Files.Upload(context.Background(), imagekit.FileUploadParams{
+	response, err := clients.ImagekitClient.Files.Upload(context.Background(), imagekit.FileUploadParams{
 		File:              filePathV2,
 		FileName:          fileName,
 		UseUniqueFileName: param.NewOpt(true),
