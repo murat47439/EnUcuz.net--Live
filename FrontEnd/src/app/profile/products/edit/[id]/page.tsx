@@ -292,7 +292,16 @@ export default function ProductUpdatePage({ params }: { params: Promise<{ id: nu
                           </div>
                         </div>
                       </div>
-                      <Button type='button' className='w-full mt-4' onClick={() => openModal( <div className='sticky top-0 bg-white z-10 p-2 flex items-center justify-between gap-8'>Ürünü silmek istediğinize emin misiniz? <div className='grid grid-cols-1 sm:grid-cols-2 gap-4'> <Button type='button' onClick={closeModal}>Hayır</Button> <Button className=' bg-red-600 hover:bg-red-700'onClick={() => { handleDeleteAttribute(attr.id); closeModal(); }}>Evet</Button></div> </div> )}> Sil</Button>
+                      <Button type='button' className='w-full mt-4' onClick={() => openModal( 
+                        <div className='flex flex-col gap-4'>
+                          <h2 className='text-lg font-semibold text-gray-800'>Özellik Sil</h2>
+                          <p className='text-gray-600'>Bu özelliği silmek istediğinize emin misiniz?</p>
+                          <div className='flex flex-row gap-3 mt-2'>
+                            <Button type='button' onClick={closeModal} className='flex-1'>Hayır</Button>
+                            <Button className='flex-1 bg-red-600 hover:bg-red-700' onClick={() => { handleDeleteAttribute(attr.id); closeModal(); }}>Evet</Button>
+                          </div>
+                        </div>
+                      )}> Sil</Button>
                     </div>
                   ))}
                   
@@ -387,24 +396,31 @@ export default function ProductUpdatePage({ params }: { params: Promise<{ id: nu
             {/* Kaydet Butonu */}
             <div className='grid grid-cols-1 sm:grid-cols-2 gap-4'>
             <Button type='button' onClick={()=> openModal(
-              <div className='sticky top-0 bg-white z-10 p-2 flex items-center justify-between gap-8'>Ürünü silmek istediğinize emin misiniz? 
-                <div className='grid grid-cols-1 sm:grid-cols-2 gap-4'>
-                <Button type='button' onClick={closeModal}>Hayır</Button> <Button className=' bg-red-600  hover:bg-red-700'onClick={() => {
-                handleDelete();
-                closeModal();
-              }}>Evet</Button></div>
-
+              <div className='flex flex-col gap-4'>
+                <h2 className='text-lg font-semibold text-gray-800'>Ürün Sil</h2>
+                <p className='text-gray-600'>Bu ürünü silmek istediğinize emin misiniz? Bu işlem geri alınamaz.</p>
+                <div className='flex flex-row gap-3 mt-2'>
+                  <Button type='button' onClick={closeModal} className='flex-1'>Hayır</Button>
+                  <Button className='flex-1 bg-red-600 hover:bg-red-700' onClick={() => {
+                    handleDelete();
+                    closeModal();
+                  }}>Evet</Button>
                 </div>
+              </div>
             )} className="flex items-center justify-center gap-8 mt-4 w-full bg-gradient-to-r from-red-600 to-red-700 text-white py-3.5 rounded-xl font-semibold hover:from-red-700 hover:to-red-800 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 transition-all duration-200 text-base"> 
               <TrashIcon className='w-4 h-4' /> Ürünü Sil</Button>
 
             <Button type='button' onClick={() => openModal(
-              <div className='sticky top-0 bg-white z-10 p-2 flex items-center justify-between gap-8'>Kaydetmek istediğinize emin misiniz?
-              <div className='grid grid-cols-1 sm:grid-cols-2 gap-4'>
-              <Button type='button' onClick={closeModal}>Hayır</Button> <Button  type='button' onClick={handleSubmit(async (data) => {
-    await onsubmit(data)
-    closeModal()
-})} className=' bg-red-600  hover:bg-red-700'>Evet</Button></div>
+              <div className='flex flex-col gap-4'>
+                <h2 className='text-lg font-semibold text-gray-800'>Değişiklikleri Kaydet</h2>
+                <p className='text-gray-600'>Yaptığınız değişiklikleri kaydetmek istediğinize emin misiniz?</p>
+                <div className='flex flex-row gap-3 mt-2'>
+                  <Button type='button' onClick={closeModal} className='flex-1'>Hayır</Button>
+                  <Button type='button' onClick={handleSubmit(async (data) => {
+                    await onsubmit(data)
+                    closeModal()
+                  })} className='flex-1 bg-blue-600 hover:bg-blue-700'>Evet</Button>
+                </div>
               </div>
             )} className="mt-4 w-full bg-gradient-to-r from-blue-600 to-blue-700 text-white py-3.5 rounded-xl font-semibold hover:from-blue-700 hover:to-blue-800 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 transition-all duration-200 text-base">
               Değişiklikleri Kaydet

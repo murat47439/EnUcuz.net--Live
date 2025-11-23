@@ -22,7 +22,7 @@ export default function Footer() {
         <div className="flex flex-col items-center space-y-6">
             
             {/* Üst Bilgiler - Yan Yana */}
-            <div className="flex flex-wrap items-center justify-center gap-6">
+            <div className="flex flex-nowrap items-center justify-center gap-4 overflow-x-auto w-full">
                 {/* Proje Durumu */}
                 <div className="flex items-center space-x-2">
                     <span className="relative flex h-3 w-3">
@@ -52,7 +52,7 @@ export default function Footer() {
                 <span className="text-gray-600">|</span>
 
                 {/* Versiyon */}
-                <span className="text-sm text-gray-400">v0.1.2 - Beta</span>
+                <span className="text-sm text-gray-400">v0.1.3 - Beta</span>
             </div>
 
           
@@ -101,6 +101,7 @@ export default function Footer() {
 
         </div>
     </div>
+
 </footer>
 
     )
