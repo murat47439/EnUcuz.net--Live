@@ -68,9 +68,11 @@ func (pc *ProductController) UpdateProduct(w http.ResponseWriter, r *http.Reques
 		RespondWithError(w, http.StatusBadRequest, "Invalid JSON data")
 		return
 	}
-	product.Price, err = strconv.ParseFloat(product.PriceGet, 64)
-	if err != nil {
-		RespondWithError(w, http.StatusBadRequest, "Invalid Price data")
+
+	// Price validasyonu
+	if product.Price < 0 {
+		config.Logger.Printf("UpdateProduct error: Negative price value: %d", product.Price)
+		RespondWithError(w, http.StatusBadRequest, "Fiyat negatif olamaz")
 		return
 	}
 	if id != int(product.ID) {
@@ -116,13 +118,20 @@ func (pc *ProductController) AddProduct(w http.ResponseWriter, r *http.Request) 
 	product.SellerID = userID
 	product.Name = r.FormValue("name")
 	product.Description = r.FormValue("description")
-	product.Price, err = strconv.ParseFloat(r.FormValue("price"), 64)
+
+	priceStr := r.FormValue("price")
+	priceInt, err := strconv.ParseInt(priceStr, 10, 64)
 	if err != nil {
-		config.Logger.Printf("AddProduct error: Invalid price value '%s' - %v", r.FormValue("price"), err)
-		RespondWithError(w, http.StatusBadRequest, "Geçersiz fiyat değeri")
+		config.Logger.Printf("AddProduct error: Invalid price value '%s' - %v", priceStr, err)
+		RespondWithError(w, http.StatusBadRequest, "Geçersiz fiyat değeri: Fiyat tam sayı olmalıdır")
 		return
 	}
-
+	if priceInt < 0 {
+		config.Logger.Printf("AddProduct error: Negative price value: %d", priceInt)
+		RespondWithError(w, http.StatusBadRequest, "Fiyat negatif olamaz")
+		return
+	}
+	product.Price = priceInt
 	product.CategoryID, err = strconv.Atoi(r.FormValue("category"))
 	if err != nil {
 		config.Logger.Printf("AddProduct error: Invalid category value '%s' - %v", r.FormValue("category"), err)

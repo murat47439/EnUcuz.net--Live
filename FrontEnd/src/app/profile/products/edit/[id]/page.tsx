@@ -36,7 +36,7 @@ export default function ProductUpdatePage({ params }: { params: Promise<{ id: nu
         defaultValues : {
             name: product?.data.product.name ,
             description: product?.data.product.description ,
-            price: product?.data.product.price,
+            price: product?.data.product.price ? Number(product.data.product.price) / 100 : 0,
             stock: product?.data.product.stock 
         }
     })
@@ -45,7 +45,7 @@ export default function ProductUpdatePage({ params }: { params: Promise<{ id: nu
           methods.reset({
               name: product.data.product.name,
               description: product.data.product.description,
-              price: product.data.product.price,
+              price: product.data.product.price ? Number(product.data.product.price) / 100 : 0,
               stock: product.data.product.stock
           })
       }
@@ -107,11 +107,14 @@ export default function ProductUpdatePage({ params }: { params: Promise<{ id: nu
         }
     }
     const onsubmit = async (data: FormData) => {
+      // Kullanıcıdan gelen price TL cinsinden, API'ye cent (int64) olarak gönderiyoruz
+      // Backend: UpdProduct.Price int64 - JSON'da integer olarak gönderilmeli
+      const priceInCents = Math.round(data.price * 100);
       const request: UpdateProductRequest = {
         id: Number(resolvedParams.id),
         name: data.name,
         description: data.description,
-        price: data.price.toString(),
+        price: priceInCents, // Backend int64 bekliyor, number olarak gönder
         stock: data.stock
       }
       if (data.name == "" || data.description == "" || data.price == 0 || data.stock == 0) {showNotification('Lütfen tüm alanları doldurun.', 'error', 2000); return;}
@@ -346,11 +349,29 @@ export default function ProductUpdatePage({ params }: { params: Promise<{ id: nu
                     Fiyat (₺)
                   </label>
                   <Input
-                  {...register("price")}
+                  {...register("price", {
+                    valueAsNumber: true,
+                    required: "Fiyat zorunludur",
+                    min: {
+                      value: 0.01,
+                      message: "Fiyat 0.01'den küçük olamaz"
+                    },
+                    validate: (value) => {
+                      if (value == null || value <= 0) {
+                        return "Fiyat pozitif bir sayı olmalıdır";
+                      }
+                      // En fazla 2 ondalık hane kontrolü
+                      const decimalPlaces = (value.toString().split('.')[1] || '').length;
+                      if (decimalPlaces > 2) {
+                        return "Fiyat en fazla 2 ondalık haneli olabilir";
+                      }
+                      return true;
+                    }
+                  })}
                     type="number"
-                     step="0.01"
-                  
-                    className="w-full border-2 border-gray-200  rounded-lg px-4 py-2.5 bg-white  text-gray-900  focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200"
+                    step="0.01"
+                    min="0.01"
+                    className="w-full border-2 border-gray-200 rounded-lg px-4 py-2.5 bg-white text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200"
                   />
                 </div>
   
@@ -402,11 +423,11 @@ export default function ProductUpdatePage({ params }: { params: Promise<{ id: nu
                 <div className='flex flex-row gap-3 mt-2'>
                   <Button type='button' onClick={closeModal} className='flex-1'>Hayır</Button>
                   <Button className='flex-1 bg-red-600 hover:bg-red-700' onClick={() => {
-                    handleDelete();
-                    closeModal();
+                handleDelete();
+                closeModal();
                   }}>Evet</Button>
                 </div>
-              </div>
+                </div>
             )} className="flex items-center justify-center gap-8 mt-4 w-full bg-gradient-to-r from-red-600 to-red-700 text-white py-3.5 rounded-xl font-semibold hover:from-red-700 hover:to-red-800 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 transition-all duration-200 text-base"> 
               <TrashIcon className='w-4 h-4' /> Ürünü Sil</Button>
 
@@ -417,8 +438,8 @@ export default function ProductUpdatePage({ params }: { params: Promise<{ id: nu
                 <div className='flex flex-row gap-3 mt-2'>
                   <Button type='button' onClick={closeModal} className='flex-1'>Hayır</Button>
                   <Button type='button' onClick={handleSubmit(async (data) => {
-                    await onsubmit(data)
-                    closeModal()
+    await onsubmit(data)
+    closeModal()
                   })} className='flex-1 bg-blue-600 hover:bg-blue-700'>Evet</Button>
                 </div>
               </div>

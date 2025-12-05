@@ -45,6 +45,13 @@ func (pc *ProductController) UpdateProduct(w http.ResponseWriter, r *http.Reques
 	}
 	defer r.Body.Close()
 
+	// Price validasyonu
+	if product.Price < 0 {
+		config.Logger.Printf("UpdateProduct error: Negative price value: %d", product.Price)
+		RespondWithError(w, http.StatusBadRequest, "Fiyat negatif olamaz")
+		return
+	}
+
 	updproduct, err := pc.ProductService.UpdateProductForAdmin(ctx, product)
 	if err != nil {
 		config.Logger.Printf("UpdateProduct service error: %v", err)

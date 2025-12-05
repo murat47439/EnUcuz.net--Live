@@ -46,7 +46,7 @@ export default function RootLayout({
           <div className="absolute top-1/3 -right-10 h-72 w-72 bg-indigo-300/20 blur-3xl rounded-full"></div>
         </div>
 
-          <main className="pt-28 min-h-screen">{children}</main>
+          <main className="pt-24 sm:pt-38 min-h-screen">{children}</main>
 
         <Footer></Footer>
         </ModalProvider>

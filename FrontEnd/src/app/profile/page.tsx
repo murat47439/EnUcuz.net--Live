@@ -9,6 +9,7 @@ import { UserProfileResponse } from "@/lib/types/types";
 import { useForm } from "react-hook-form";
 import { updateUser } from "@/lib/api/user/useUpdate";
 import { UpdateUserRequest } from "@/lib/types/types";
+import { User, Mail, Phone, Lock, CheckCircle, XCircle, LogOut } from "lucide-react";
 type FormData = {
     name: string,
     surname: string,
@@ -40,7 +41,14 @@ export default function ProfilePage() {
             }
         })()
     }, []);
-    if (!user) return <div>Yükleniyor...</div>
+    if (!user) return (
+        <div className="min-h-screen flex items-center justify-center">
+            <div className="text-center">
+                <div className="inline-block animate-spin rounded-full h-8 w-8 border-2 border-gray-300 border-t-gray-600 mb-3"></div>
+                <p className="text-sm text-gray-500">Yükleniyor...</p>
+            </div>
+        </div>
+    )
 
     const onSubmit = async(data: FormData) => {
         try{
@@ -63,118 +71,201 @@ export default function ProfilePage() {
         }
     }
     return (
-       <main className="container mx-auto max-w-5xl px-4 py-10">
-  <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
-    
-    {/* Kullanıcı Profili */}
-    <div className="flex flex-col items-center">
-      <Image
-        src="/default.png"
-        className="rounded-full border border-gray-100 ring-4 ring-gray-50"
-        alt={user.data.user.name}
-        width={120}
-        height={120}
-      />
-      <h2 className="mt-4 text-2xl font-extrabold bg-gradient-to-r from-gray-900 via-gray-700 to-gray-900 bg-clip-text text-transparent">
-        {user.data.user.name}
-      </h2>
-      <p className="mt-1 inline-flex items-center rounded-full bg-gray-50 text-gray-700 text-xs font-medium px-3 py-1">
-        {user.data.user.gender}
-      </p>
-    </div>
-
-    {/* Kişisel Bilgiler Başlığı */}
-    <div className="flex flex-col justify-center">
-      <h2 className="text-xl font-extrabold bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">
-        Kişisel Bilgiler
-      </h2>
-      <p className="text-sm text-gray-500 mt-1">Bilgilerinizi güncel tutun.</p>
+       <main className="container mx-auto max-w-4xl px-4 py-8 sm:py-12">
+  {/* Profil Header */}
+  <div className="bg-white rounded-lg border border-gray-200 shadow-sm mb-6">
+    <div className="p-6 sm:p-8">
+      <div className="flex flex-col sm:flex-row items-center sm:items-start gap-6">
+        {/* Avatar */}
+        <div>
+          <Image
+            src="/default.png"
+            className="rounded-full border-2 border-gray-200"
+            alt={user.data.user.name}
+            width={100}
+            height={100}
+          />
+        </div>
+        
+        {/* Kullanıcı Bilgileri */}
+        <div className="flex-1 text-center sm:text-left">
+          <h1 className="text-2xl font-semibold text-gray-900 mb-2">
+            {user.data.user.name} {user.data.user.surname}
+          </h1>
+          <div className="flex flex-wrap items-center justify-center sm:justify-start gap-3 mt-4">
+            <span className="inline-flex items-center gap-1.5 text-sm text-gray-600">
+              <User size={14} />
+              {user.data.user.gender}
+            </span>
+            <span className="inline-flex items-center gap-1.5 text-sm text-gray-600">
+              <Mail size={14} />
+              {user.data.user.email}
+            </span>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 
-  {/* Form */}
-  <form
-    className="mt-10 bg-white p-6 rounded-xl border border-gray-100 shadow-sm space-y-6"
-    onSubmit={handleSubmit(onSubmit)}
-  >
-    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-
-      {/* Ad */}
-      <div className="flex flex-col">
-        <label className="font-medium text-gray-700">Ad</label>
-        <Input
-          {...register("name", { required: "Lütfen tüm alanları doldurun." })}
-          type="text"
-          defaultValue={user.data.user.name ?? ""}
-          name="name"
-          className="mt-2 border border-gray-200 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400"
-        />
-      </div>
-
-      {/* Soyad */}
-      <div className="flex flex-col">
-        <label className="font-medium text-gray-700">Soyad</label>
-        <Input
-          {...register("surname", { required: "Lütfen tüm alanları doldurun." })}
-          type="text"
-          defaultValue={user.data.user.surname ?? ""}
-          name="surname"
-          className="mt-2 border border-gray-200 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400"
-        />
-      </div>
-
-      {/* Telefon */}
-      <div className="flex flex-col">
-        <label className="font-medium text-gray-700">Telefon</label>
-        <Input
-          {...register("phone", { required: "Lütfen tüm alanları doldurun." })}
-          type="tel"
-          defaultValue={user.data.user.phone ?? ""}
-          name="phone"
-          className="mt-2 border border-gray-200 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400"
-        />
-      </div>
-
-      {/* Email */}
-      <div className="flex flex-col">
-        <label className="font-medium text-gray-700">Email</label>
-        <Input
-          {...register("email", { required: "Lütfen tüm alanları doldurun." })}
-          type="email"
-          defaultValue={user.data.user.email ?? ""}
-          name="email"
-          className="mt-2 border border-gray-200 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-400"
-        />
-      </div>
-
+  {/* Kişisel Bilgiler Formu */}
+  <div className="bg-white rounded-lg border border-gray-200 shadow-sm mb-6">
+    <div className="px-6 py-4 border-b border-gray-200">
+      <h2 className="text-lg font-semibold text-gray-900">Kişisel Bilgiler</h2>
+      <p className="text-sm text-gray-500 mt-1">Hesap bilgilerinizi güncelleyin</p>
     </div>
-
-    {/* Sonuç Mesajı */}
-    {result && (
-      <p className="text-green-600 text-center font-medium">{result}</p>
-    )}
-
-    {/* Gönderme Butonu */}
-    <div className="flex justify-end">
-      <Button
-        type="submit"
-        className="bg-gradient-to-r from-blue-600 to-indigo-600 text-white px-6 py-2 rounded-full shadow hover:from-blue-700 hover:to-indigo-700 transition"
-      >
-        Kaydet
-      </Button>
-    </div>
-  </form>
-
-  <form className="mt-10 bg-white p-6 rounded-xl border border-gray-100 shadow-sm space-y-6 ">
-        <h1 className="text-center font-extrabold text-xl bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">Şifre Değiştirme</h1>
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-        <span className="text-sm text-gray-700">Eski Şifre: <Input className="mt-2" /></span>
-        <span className="text-sm text-gray-700">Yeni Şifre: <Input className="mt-2" /></span>
-        <span className="text-sm text-gray-700">Yeni Şifre (Tekrar): <Input className="mt-2" /></span>
+    
+    <form
+      className="p-6 space-y-6"
+      onSubmit={handleSubmit(onSubmit)}
+    >
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        {/* Ad */}
+        <div>
+          <label className="block text-sm font-medium text-gray-700 mb-2">
+            Ad
+          </label>
+          <Input
+            {...register("name", { required: "Lütfen tüm alanları doldurun." })}
+            type="text"
+            defaultValue={user.data.user.name ?? ""}
+            name="name"
+            className="w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-blue-500"
+          />
         </div>
-        <Button type="submit" className="rounded-full bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700">Şifreyi Değiştir</Button>
-  </form>
-  <div className="w-full flex justify-end mt-4"><Button className="text-white bg-red-700 p-4 rounded-full" style={{width: "150px "}} onClick={logout}>Çıkış yap</Button></div>
+
+        {/* Soyad */}
+        <div>
+          <label className="block text-sm font-medium text-gray-700 mb-2">
+            Soyad
+          </label>
+          <Input
+            {...register("surname", { required: "Lütfen tüm alanları doldurun." })}
+            type="text"
+            defaultValue={user.data.user.surname ?? ""}
+            name="surname"
+            className="w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-blue-500"
+          />
+        </div>
+
+        {/* Telefon */}
+        <div>
+          <label className="block text-sm font-medium text-gray-700 mb-2">
+            Telefon
+          </label>
+          <Input
+            {...register("phone", { required: "Lütfen tüm alanları doldurun." })}
+            type="tel"
+            defaultValue={user.data.user.phone ?? ""}
+            name="phone"
+            className="w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-blue-500"
+          />
+        </div>
+
+        {/* Email */}
+        <div>
+          <label className="block text-sm font-medium text-gray-700 mb-2">
+            Email
+          </label>
+          <Input
+            {...register("email", { required: "Lütfen tüm alanları doldurun." })}
+            type="email"
+            defaultValue={user.data.user.email ?? ""}
+            name="email"
+            className="w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-blue-500"
+          />
+        </div>
+      </div>
+
+      {/* Sonuç Mesajı */}
+      {result && (
+        <div className={`p-3 rounded-md flex items-center gap-2 text-sm ${
+          result.includes('başarıyla') || result.includes('Başarılı')
+            ? 'bg-green-50 text-green-800 border border-green-200'
+            : 'bg-red-50 text-red-800 border border-red-200'
+        }`}>
+          {result.includes('başarıyla') || result.includes('Başarılı') ? (
+            <CheckCircle size={16} className="flex-shrink-0" />
+          ) : (
+            <XCircle size={16} className="flex-shrink-0" />
+          )}
+          <span>{result}</span>
+        </div>
+      )}
+
+      {/* Gönderme Butonu */}
+      <div className="flex justify-end pt-4 border-t border-gray-200">
+        <Button
+          type="submit"
+          className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-md font-medium transition-colors"
+        >
+          Kaydet
+        </Button>
+      </div>
+    </form>
+  </div>
+
+  {/* Şifre Değiştirme Formu */}
+  <div className="bg-white rounded-lg border border-gray-200 shadow-sm mb-6">
+    <div className="px-6 py-4 border-b border-gray-200">
+      <h2 className="text-lg font-semibold text-gray-900">Şifre Değiştir</h2>
+      <p className="text-sm text-gray-500 mt-1">Güvenliğiniz için şifrenizi düzenli olarak güncelleyin</p>
+    </div>
+    
+    <form className="p-6 space-y-6">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div>
+          <label className="block text-sm font-medium text-gray-700 mb-2">
+            Eski Şifre
+          </label>
+          <Input
+            type="password"
+            placeholder="Mevcut şifreniz"
+            className="w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-blue-500"
+          />
+        </div>
+        <div>
+          <label className="block text-sm font-medium text-gray-700 mb-2">
+            Yeni Şifre
+          </label>
+          <Input
+            type="password"
+            placeholder="En az 8 karakter"
+            className="w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-blue-500"
+          />
+        </div>
+        <div>
+          <label className="block text-sm font-medium text-gray-700 mb-2">
+            Yeni Şifre (Tekrar)
+          </label>
+          <Input
+            type="password"
+            placeholder="Şifrenizi tekrar girin"
+            className="w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-blue-500"
+          />
+        </div>
+      </div>
+      
+      <div className="flex justify-end pt-4 border-t border-gray-200">
+        <Button
+          type="submit"
+          className="bg-gray-900 hover:bg-gray-800 text-white px-6 py-2 rounded-md font-medium transition-colors"
+        >
+          Şifreyi Değiştir
+        </Button>
+      </div>
+    </form>
+  </div>
+
+  {/* Çıkış Yap Butonu */}
+  <div className="flex justify-end">
+    <Button
+      onClick={logout}
+      className="flex items-center gap-2 bg-red-600 hover:bg-red-700 text-white px-6 py-2 rounded-md font-medium transition-colors"
+    >
+      <LogOut size={16} />
+      Çıkış Yap
+    </Button>
+  </div>
 </main>
     )
 }

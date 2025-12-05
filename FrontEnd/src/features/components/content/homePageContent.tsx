@@ -68,7 +68,7 @@ function HomePageContent() {
   }
 
   return (
-    <main className="container mx-auto max-w-7xl px-4 py-10">
+    <main className="container mx-auto max-w-7xl px-2 sm:px-4 py-6 sm:py-10">
       {/* Hero Section */}
       <div className="relative overflow-hidden rounded-2xl border border-gray-100 bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 p-[1px] shadow-sm">
         <div className="rounded-2xl bg-white/90 backdrop-blur-sm px-6 py-10 text-center">
@@ -91,32 +91,34 @@ function HomePageContent() {
       <p className="text-center text-gray-600 mb-6 mt-8">Aradığınız ürünü satıcılardan uygun fiyata alın!</p>
       <SearchBar onSearchSubmit={handleSearchSubmit} />
       { products?.length >0 ?(
-      <div className="relative w-full mt-6">
+      <div className="relative w-full mt-6 -mx-2 sm:mx-0">
       {/* Sol Buton */}
       <button
         onClick={scrollLeft}
-        className="absolute left-2 top-1/2 -translate-y-1/2 bg-white shadow p-2 rounded-full z-10 hover:bg-gray-700 hover:text-white"
+        className="hidden sm:flex absolute left-2 top-1/2 -translate-y-1/2 bg-white shadow-lg p-2 rounded-full z-10 hover:bg-gray-700 hover:text-white transition-colors"
+        aria-label="Sola kaydır"
       >
-        <ChevronLeft   />
+        <ChevronLeft size={20} />
       </button>
 
       {/* Sağ Buton */}
       <button
         onClick={scrollRight}
-        className="absolute right-2 top-1/2 -translate-y-1/2 bg-white shadow p-2 rounded-full z-10 hover:bg-gray-700 hover:text-white"
+        className="hidden sm:flex absolute right-2 top-1/2 -translate-y-1/2 bg-white shadow-lg p-2 rounded-full z-10 hover:bg-gray-700 hover:text-white transition-colors"
+        aria-label="Sağa kaydır"
       >
-        <ChevronRight  />
+        <ChevronRight size={20} />
       </button>
 
       {/* Kayan Ürün Listesi */}
       <div
         ref={scrollRef}
-        className="flex gap-4 overflow-x-auto scroll-smooth no-scrollbar p-4"
+        className="flex gap-3 sm:gap-4 overflow-x-auto scroll-smooth p-2 sm:p-4 scrollbar-hide"
       >
         {products.map(product => (
           <div
             key={product.id}
-            className="min-w-[250px] max-w-[250px]"
+            className="min-w-[180px] sm:min-w-[220px] md:min-w-[250px] max-w-[180px] sm:max-w-[220px] md:max-w-[250px] flex-shrink-0"
           >
             <ProductCard product={product} />
           </div>

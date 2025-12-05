@@ -28,8 +28,14 @@ func (ps *ProductService) GetUserProducts(ctx context.Context, userID int, page 
 	return products, nil
 }
 func (ps *ProductService) AddProduct(ctx context.Context, data models.NewProduct) (bool, error) {
-	if data.Name == "" || data.SellerID == 0 || data.Price == 0 {
+	if data.Name == "" || data.SellerID == 0 {
 		return false, fmt.Errorf("Invalid data")
+	}
+	if data.Price < 0 {
+		return false, fmt.Errorf("Fiyat negatif olamaz")
+	}
+	if data.Price == 0 {
+		return false, fmt.Errorf("Fiyat sıfır olamaz")
 	}
 	tx, err := ps.db.BeginTxx(ctx, nil)
 	if err != nil {
@@ -64,6 +70,9 @@ func (ps *ProductService) AddProduct(ctx context.Context, data models.NewProduct
 	return true, nil
 }
 func (ps *ProductService) UpdateProduct(ctx context.Context, product *models.UpdProduct, user_id int) (*models.UpdProduct, error) {
+	if product.Price < 0 {
+		return nil, fmt.Errorf("Fiyat negatif olamaz")
+	}
 	p, err := ps.ProductRepo.GetProduct(ctx, product.ID)
 	switch {
 	case err != nil:
@@ -81,6 +90,9 @@ func (ps *ProductService) UpdateProduct(ctx context.Context, product *models.Upd
 
 }
 func (ps *ProductService) UpdateProductForAdmin(ctx context.Context, product models.UpdProduct) (*models.UpdProduct, error) {
+	if product.Price < 0 {
+		return nil, fmt.Errorf("Fiyat negatif olamaz")
+	}
 	exists, err := ps.ProductRepo.CheckProduct(product.ID)
 	switch {
 	case err != nil:

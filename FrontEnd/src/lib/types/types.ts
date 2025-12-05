@@ -252,7 +252,8 @@ export interface UpdateProductRequest{
     id : number,
     name: string,
     description: string,
-    price: string,
+    /** Price in cents/kuruş (int64 in backend). Backend expects integer in JSON */
+    price: number,
     stock: number,
 }
 export interface UpdateProductResponse{

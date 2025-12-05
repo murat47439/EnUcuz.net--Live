@@ -52,7 +52,7 @@ export default function Footer() {
                 <span className="text-gray-600">|</span>
 
                 {/* Versiyon */}
-                <span className="text-sm text-gray-400">v0.1.3 - Beta</span>
+                <span className="text-sm text-gray-400">v0.1.4 - Beta</span>
             </div>
 
           

@@ -8,6 +8,7 @@ import React from "react";
 import { LoginRequest,RegisterRequest } from "@/lib/types/types";
 import { loginUser } from "@/lib/api/user/useLogin";
 import { registerUser } from "@/lib/api/user/useRegister";
+import { Mail, Lock, User, Phone, CheckCircle, XCircle } from "lucide-react";
 
 
 export default function LoginPage() {
@@ -112,42 +113,226 @@ export default function LoginPage() {
     }
 
     return(
-        <div className="max-w-md mx-auto mt-12 p-6 bg-white rounded-xl border border-gray-100 shadow-sm">
-            <h1 className="text-center text-2xl font-extrabold mb-4 bg-gradient-to-r from-gray-900 via-gray-700 to-gray-900 bg-clip-text text-transparent">Hesabına Giriş Yap</h1>
-            <div className="grid grid-cols-2 gap-2">
-                <Button className="bg-gray-900 hover:bg-gray-800 rounded-full" onClick={() => {setLogin(true); setRegister(false)}}>Giriş</Button>
-            <Button className="bg-gray-900 hover:bg-gray-800 rounded-full" onClick={() => {setLogin(false); setRegister(true)}}>Kayıt ol</Button>
-            </div>
-            
-            {login && (
-                <div className="grid grid-cols-1 max-w-md mx-auto mt-8 gap-4">
-            <form onSubmit={handleLoginForm} className="flex flex-col gap-4">
-                <Input required type="email" name="email" placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)} />
-                <Input required type="password" name="password" placeholder="Şifre" value={password} onChange={(e) => setPassword(e.target.value)} />
-                <Button type="submit" className="rounded-full">Giriş yap</Button>
-            </form>
-            
-        </div>
-            )}
-            {register && (
-                <div className="grid grid-cols-1 max-w-md mx-auto mt-8 gap-4">
-                    <form onSubmit={handleRegisterForm} className="flex flex-col gap-4">
-                        <div className="grid grid-cols-2 gap-4">
-                            <Input required type="text" name="name" placeholder="Ad" value={name} onChange={(e) => setName(e.target.value)}></Input>
-                            <Input required type="text" name="surname" placeholder="Soyad" value={surname} onChange={(e) => setSurname(e.target.value)}></Input>
-                            
+        <div className="min-h-[calc(100vh-8rem)] flex items-center justify-center px-4 py-12">
+            <div className="w-full max-w-md">
+                {/* Ana Kart */}
+                <div className="relative overflow-hidden rounded-2xl border border-gray-200/60 bg-white/80 backdrop-blur-xl shadow-2xl">
+                    {/* Gradient Border Effect */}
+                    <div className="absolute inset-0 bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 opacity-0 group-hover:opacity-100 transition-opacity -z-10 blur-xl"></div>
+                    
+                    <div className="p-8">
+                        {/* Başlık */}
+                        <div className="text-center mb-8">
+                            <h1 className="text-3xl font-bold bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 bg-clip-text text-transparent mb-2">
+                                {login ? 'Hoş Geldiniz' : 'Hesap Oluştur'}
+                            </h1>
+                            <p className="text-gray-600 text-sm">
+                                {login ? 'Hesabınıza giriş yapın' : 'Yeni hesap oluşturun ve başlayın'}
+                            </p>
                         </div>
-                        <Input required type="email" name="email" placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)} />
-                        <Input required type="tel" name="phone" placeholder="Telefon numarası" value={phone} onChange={(e) => setPhone(e.target.value)} />
 
-                        <Input required type="password" name="password" placeholder="Şifre" value={regpassword} onChange={(e) => setregPassword(e.target.value)} />
-                        <Input required type="password" name="password" placeholder="Şifre Tekrar" value={reg1password} onChange={(e) => setreg1Password(e.target.value)} />
-                        <Button type="submit" className="rounded-full">Kayıt ol</Button>
-                    </form>
+                        {/* Tab Butonları */}
+                        <div className="grid grid-cols-2 gap-3 mb-8 p-1 bg-gray-100 rounded-xl">
+                            <button
+                                type="button"
+                                className={`py-3 px-4 rounded-lg font-semibold text-sm transition-all duration-200 ${
+                                    login
+                                        ? 'bg-white text-blue-600 shadow-md'
+                                        : 'text-gray-600 hover:text-gray-800'
+                                }`}
+                                onClick={() => {setLogin(true); setRegister(false); setResult('')}}
+                            >
+                                Giriş Yap
+                            </button>
+                            <button
+                                type="button"
+                                className={`py-3 px-4 rounded-lg font-semibold text-sm transition-all duration-200 ${
+                                    register
+                                        ? 'bg-white text-blue-600 shadow-md'
+                                        : 'text-gray-600 hover:text-gray-800'
+                                }`}
+                                onClick={() => {setLogin(false); setRegister(true); setResult('')}}
+                            >
+                                Kayıt Ol
+                            </button>
+                        </div>
+
+                        {/* Hata/Başarı Mesajı */}
+                        {result && (
+                            <div className={`mb-6 p-4 rounded-xl flex items-center gap-3 ${
+                                result.includes('Başarılı') || result.includes('başarılı')
+                                    ? 'bg-green-50 border border-green-200 text-green-700'
+                                    : 'bg-red-50 border border-red-200 text-red-700'
+                            }`}>
+                                {result.includes('Başarılı') || result.includes('başarılı') ? (
+                                    <CheckCircle size={20} className="flex-shrink-0" />
+                                ) : (
+                                    <XCircle size={20} className="flex-shrink-0" />
+                                )}
+                                <p className="text-sm font-medium">{result}</p>
+                            </div>
+                        )}
+
+                        {/* Giriş Formu */}
+                        {login && (
+                            <form onSubmit={handleLoginForm} className="space-y-5">
+                                <div className="space-y-1">
+                                    <label className="text-sm font-semibold text-gray-700 flex items-center gap-2">
+                                        <Mail size={16} className="text-gray-500" />
+                                        Email
+                                    </label>
+                                    <Input
+                                        required
+                                        type="email"
+                                        name="email"
+                                        placeholder="ornek@email.com"
+                                        value={email}
+                                        onChange={(e) => setEmail(e.target.value)}
+                                        className="w-full"
+                                    />
+                                </div>
+
+                                <div className="space-y-1">
+                                    <label className="text-sm font-semibold text-gray-700 flex items-center gap-2">
+                                        <Lock size={16} className="text-gray-500" />
+                                        Şifre
+                                    </label>
+                                    <Input
+                                        required
+                                        type="password"
+                                        name="password"
+                                        placeholder="••••••••"
+                                        value={password}
+                                        onChange={(e) => setPassword(e.target.value)}
+                                        className="w-full"
+                                    />
+                                </div>
+
+                                <Button
+                                    type="submit"
+                                    className="w-full py-3 rounded-xl bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white font-semibold shadow-lg hover:shadow-xl transition-all duration-200"
+                                >
+                                    Giriş Yap
+                                </Button>
+                            </form>
+                        )}
+
+                        {/* Kayıt Formu */}
+                        {register && (
+                            <form onSubmit={handleRegisterForm} className="space-y-5">
+                                <div className="grid grid-cols-2 gap-4">
+                                    <div className="space-y-1">
+                                        <label className="text-sm font-semibold text-gray-700 flex items-center gap-2">
+                                            <User size={16} className="text-gray-500" />
+                                            Ad
+                                        </label>
+                                        <Input
+                                            required
+                                            type="text"
+                                            name="name"
+                                            placeholder="Adınız"
+                                            value={name}
+                                            onChange={(e) => setName(e.target.value)}
+                                        />
+                                    </div>
+                                    <div className="space-y-1">
+                                        <label className="text-sm font-semibold text-gray-700 flex items-center gap-2">
+                                            <User size={16} className="text-gray-500" />
+                                            Soyad
+                                        </label>
+                                        <Input
+                                            required
+                                            type="text"
+                                            name="surname"
+                                            placeholder="Soyadınız"
+                                            value={surname}
+                                            onChange={(e) => setSurname(e.target.value)}
+                                        />
+                                    </div>
+                                </div>
+
+                                <div className="space-y-1">
+                                    <label className="text-sm font-semibold text-gray-700 flex items-center gap-2">
+                                        <Mail size={16} className="text-gray-500" />
+                                        Email
+                                    </label>
+                                    <Input
+                                        required
+                                        type="email"
+                                        name="email"
+                                        placeholder="ornek@email.com"
+                                        value={email}
+                                        onChange={(e) => setEmail(e.target.value)}
+                                    />
+                                </div>
+
+                                <div className="space-y-1">
+                                    <label className="text-sm font-semibold text-gray-700 flex items-center gap-2">
+                                        <Phone size={16} className="text-gray-500" />
+                                        Telefon
+                                    </label>
+                                    <Input
+                                        required
+                                        type="tel"
+                                        name="phone"
+                                        placeholder="+90 5XX XXX XX XX"
+                                        value={phone}
+                                        onChange={(e) => setPhone(e.target.value)}
+                                    />
+                                </div>
+
+                                <div className="space-y-1">
+                                    <label className="text-sm font-semibold text-gray-700 flex items-center gap-2">
+                                        <Lock size={16} className="text-gray-500" />
+                                        Şifre
+                                    </label>
+                                    <Input
+                                        required
+                                        type="password"
+                                        name="password"
+                                        placeholder="En az 8 karakter"
+                                        value={regpassword}
+                                        onChange={(e) => setregPassword(e.target.value)}
+                                    />
+                                    {regpassword && regpassword.length < 8 && (
+                                        <p className="text-xs text-amber-600 mt-1">Şifre en az 8 karakter olmalı</p>
+                                    )}
+                                </div>
+
+                                <div className="space-y-1">
+                                    <label className="text-sm font-semibold text-gray-700 flex items-center gap-2">
+                                        <Lock size={16} className="text-gray-500" />
+                                        Şifre Tekrar
+                                    </label>
+                                    <Input
+                                        required
+                                        type="password"
+                                        name="password"
+                                        placeholder="Şifrenizi tekrar girin"
+                                        value={reg1password}
+                                        onChange={(e) => setreg1Password(e.target.value)}
+                                    />
+                                    {reg1password && reg1password !== regpassword && (
+                                        <p className="text-xs text-red-600 mt-1">Şifreler uyuşmuyor</p>
+                                    )}
+                                    {reg1password && reg1password === regpassword && regpassword.length >= 8 && (
+                                        <p className="text-xs text-green-600 mt-1 flex items-center gap-1">
+                                            <CheckCircle size={12} /> Şifreler uyuşuyor
+                                        </p>
+                                    )}
+                                </div>
+
+                                <Button
+                                    type="submit"
+                                    className="w-full py-3 rounded-xl bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white font-semibold shadow-lg hover:shadow-xl transition-all duration-200"
+                                >
+                                    Kayıt Ol
+                                </Button>
+                            </form>
+                        )}
+                    </div>
                 </div>
-            )}
-            {result && <p className="text-center mt-3 text-gray-700">{result}</p>}
-        
+            </div>
         </div>
     )
 }

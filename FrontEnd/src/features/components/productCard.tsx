@@ -43,68 +43,79 @@ const ProductCard: React.FC<ProductCardProps> = ({ product, favori = false, edit
         }
     }
     return (
+        <div className="relative rounded-xl overflow-hidden bg-white border border-gray-200/60 shadow-sm hover:shadow-md transition-all duration-300 group hover:-translate-y-0.5">
+          {/* Favori Butonu */}
+          {favori ? (
+            <button
+              type="button"
+              className="absolute top-2 right-2 p-1.5 rounded-full bg-white/90 backdrop-blur-sm hover:bg-white shadow-md hover:shadow-lg transition-all z-10"
+              onClick={(e) => {
+                e.preventDefault();
+                removeFavori(product.id || 0);
+              }}
+            >
+              <HeartMinus size={16} className="text-red-500" />
+            </button>
+          ) : (
+            <button
+              type="button"
+              className="absolute top-2 right-2 p-1.5 rounded-full bg-white/90 backdrop-blur-sm hover:bg-white shadow-md hover:shadow-lg transition-all z-10"
+              onClick={(e) => {
+                e.preventDefault();
+                addFavori(product);
+              }}
+            >
+              <LucideHeart size={16} className="text-gray-600 hover:text-red-500 transition-colors" />
+            </button>
+          )}
         
-        <div className="relative rounded-2xl p-[1px] bg-gradient-to-b from-indigo-200/50 to-blue-100/40">
-
-        {/* Favori Butonu */}
-        {favori ? (
-          <button
-            type="button"
-            className="absolute top-4 right-4 p-2 rounded-full bg-white/80 backdrop-blur hover:bg-white shadow transition z-10"
-            onClick={() => removeFavori(product.id || 0)}
-          >
-            <HeartMinus color="black" />
-          </button>
-        ) : (
-          <button
-            type="button"
-            className="absolute top-4 right-4 p-2 rounded-full bg-white/80 backdrop-blur hover:bg-white shadow transition z-10"
-            onClick={() => addFavori(product)}
-          >
-            <LucideHeart />
-          </button>
-        )}
-      
-        {/* Düzenle Butonu */}
-        {edit && (
-          <button
-            type="button"
-            onClick={() => router.push(`/profile/products/edit/${product.id}`)}
-            className="absolute bottom-4 right-4 flex items-center justify-center gap-2 px-4 py-2 text-sm font-medium text-green-400 border border-green-400/40 rounded-xl bg-white/10 backdrop-blur-md hover:bg-green-500 hover:text-white transition-all duration-300 shadow-md hover:shadow-green-500/30 z-10"
-          >
-            <PencilIcon className="w-4 h-4" />
-            Düzenle
-          </button>
-        )}
-      
-        {/* Ürün Link */}
-        <Link key={product.id} href={`/product/${product.id}`}>
-          <div className="group flex flex-col max-w-full rounded-2xl p-4 h-full relative border border-gray-50 shadow-sm hover:shadow-lg transition-all duration-300 bg-white hover:-translate-y-1">
-            
-            <div className="flex justify-center items-center w-full h-40 md:h-48 overflow-hidden rounded-lg bg-gradient-to-b from-slate-50 to-white">
-              <Image
-                src={product?.image_url || "/placeholder.png"}
-                alt={product?.name}
-                width={150}
-                height={100}
-                className="rounded-lg object-contain ring-1 ring-gray-100 w-full h-full transition-transform duration-300 group-hover:scale-105"
-              />
+          {/* Düzenle Butonu */}
+          {edit && (
+            <button
+              type="button"
+              onClick={(e) => {
+                e.preventDefault();
+                router.push(`/profile/products/edit/${product.id}`);
+              }}
+              className="absolute bottom-2 right-2 flex items-center gap-1.5 px-2.5 py-1.5 text-xs font-medium text-green-600 border border-green-200 rounded-lg bg-white/95 backdrop-blur-sm hover:bg-green-50 hover:border-green-300 transition-all z-10 shadow-sm"
+            >
+              <PencilIcon className="w-3 h-3" />
+              <span>Düzenle</span>
+            </button>
+          )}
+        
+          {/* Ürün Link */}
+          <Link key={product.id} href={`/product/${product.id}`} className="block">
+            <div className="flex flex-col h-full">
+              {/* Görsel */}
+              <div className="relative w-full h-32 sm:h-36 overflow-hidden bg-gradient-to-br from-gray-50 to-gray-100">
+                <Image
+                  src={product?.image_url || "/placeholder.png"}
+                  alt={product?.name}
+                  width={200}
+                  height={150}
+                  className="object-contain w-full h-full p-2 transition-transform duration-300 group-hover:scale-105"
+                />
+              </div>
+        
+              {/* İçerik */}
+              <div className="p-2.5 flex flex-col flex-1">
+                <p className="font-semibold text-sm text-gray-900 line-clamp-2 leading-tight mb-2 min-h-[2.5rem]">
+                  {product.name}
+                </p>
+        
+                <div className="mt-auto flex items-center justify-between gap-2">
+                  <span className="inline-flex items-center rounded-md bg-gradient-to-r from-blue-50 to-indigo-50 text-blue-700 text-xs font-bold px-2 py-1 border border-blue-100">
+                    {product.price ? ((Number(product.price) / 100).toFixed(2) + " ₺") : "Fiyat yok"}
+                  </span>
+                  <span className="text-xs text-gray-500 truncate max-w-[80px]">
+                    {product.seller_name}
+                  </span>
+                </div>
+              </div>
             </div>
-      
-            <p className="font-semibold text-gray-900 mt-3 max-w-full line-clamp-2 leading-snug">{product.name}</p>
-      
-            <div className="mt-3 flex justify-between w-full items-center">
-              <p className="inline-flex items-center rounded-full bg-blue-50 text-blue-700 text-sm font-semibold px-3 py-1 shadow-sm">
-                {product.price ? String(product.price / 100) + " ₺" : "Fiyat bilgisi yok"}
-              </p>
-              <p className="text-sm text-gray-500">{product.seller_name}</p>
-            </div>
-          </div>
-        </Link>
-      </div>
-      
-
-
+          </Link>
+        </div>
     );
 };
 

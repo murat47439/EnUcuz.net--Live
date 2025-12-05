@@ -82,7 +82,7 @@ func (pr *ProductRepo) CheckProductByName(name, imageUrl string) (bool, error) {
 func (pr *ProductRepo) AddProduct(ctx context.Context, data models.NewProduct, tx *sqlx.Tx) (int, error) {
 	query := `INSERT INTO products(name,description,stock,price,image_url,category_id,created_at,brand_id,seller_id) VALUES($1,$2,$3,$4,$5,$6,NOW(),$7,$8) RETURNING id`
 	var id int
-	err := tx.QueryRowContext(ctx, query, data.Name, data.Description, data.Stock, (data.Price * 100), data.ImageURLs[0], data.CategoryID, data.BrandID, data.SellerID).Scan(&id)
+	err := tx.QueryRowContext(ctx, query, data.Name, data.Description, data.Stock, data.Price, data.ImageURLs[0], data.CategoryID, data.BrandID, data.SellerID).Scan(&id)
 	if err != nil {
 		return 0, fmt.Errorf("Database error %w", err)
 	}
@@ -130,7 +130,7 @@ func (pr *ProductRepo) ExistsData(name string, tx *sqlx.Tx) (bool, error) {
 func (pr *ProductRepo) UpdateProduct(ctx context.Context, product *models.UpdProduct) error {
 	query := `UPDATE products SET name = $1, description = $2,stock = $3, price = $4 WHERE id = $5 AND deleted_at IS NULL`
 
-	res, err := pr.db.ExecContext(ctx, query, product.Name, product.Description, product.Stock, (product.Price * 100), product.ID)
+	res, err := pr.db.ExecContext(ctx, query, product.Name, product.Description, product.Stock, product.Price, product.ID)
 	if err != nil {
 		return fmt.Errorf("Database error : %w", err)
 	}
@@ -163,7 +163,6 @@ func (pr *ProductRepo) GetProduct(ctx context.Context, prodid int) (*models.Prod
 		}
 		return nil, err
 	}
-	product.Price = product.Price / 100
 
 	return &product, nil
 }

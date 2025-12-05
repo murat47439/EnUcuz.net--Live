@@ -4,7 +4,7 @@ import { Message} from "@/lib/types/types";
 
 export async function addProduct(data: FormData) {
   try{
-      const res = await api.post<Message>("/products/transactions/add", data);
+      const res = await api.post<Message>("/products/transactions/new", data);
       return res.data
 
     }catch(err: unknown){ 
