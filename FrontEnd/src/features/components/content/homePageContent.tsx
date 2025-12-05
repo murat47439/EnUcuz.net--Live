@@ -27,8 +27,9 @@ function HomePageContent() {
       try{
         setResult('API nın başlatılması 30-45 saniye sürebilir lütfen bekleyiniz.');
         const data = await getProducts(request);
-        setProducts(data.products || []);
-        if (products.length == 0){
+        const fetchedProducts = data.products || [];
+        setProducts(fetchedProducts);
+        if (fetchedProducts.length === 0){
         setResult('Ürün bulunamadı.');
 
         }

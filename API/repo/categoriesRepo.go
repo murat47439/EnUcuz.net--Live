@@ -48,7 +48,7 @@ func (cr *CategoriesRepo) AddCategory(data *models.Category) (*models.Category, 
 		return nil, fmt.Errorf("Category does exists")
 	}
 
-	query := `INSERT INTO categories(name,parent_id,created_at) VALUES ($1, $2 ,NOW()) RETURNING id`
+	query := `INSERT INTO public.categories(name,parent_id,created_at) VALUES ($1, $2 ,NOW()) RETURNING id`
 	var id int
 	err = tx.QueryRow(query, data.Name, data.ParentID).Scan(&id)
 
@@ -61,7 +61,7 @@ func (cr *CategoriesRepo) CheckCategory(name string, tx *sqlx.Tx) (bool, error) 
 	if name == "" {
 		return false, fmt.Errorf("Invalid data")
 	}
-	query := `SELECT EXISTS(SELECT 1 FROM categories WHERE name = $1 AND deleted_at IS NULL)`
+	query := `SELECT EXISTS(SELECT 1 FROM public.categories WHERE name = $1 AND deleted_at IS NULL)`
 
 	var exists bool
 
@@ -91,7 +91,7 @@ func (cr *CategoriesRepo) UpdateCategory(data *models.Category) (bool, error) {
 		}
 	}()
 
-	query := `UPDATE categories SET name = $1, parent_id = $2 WHERE id = $3`
+	query := `UPDATE public.categories SET name = $1, parent_id = $2 WHERE id = $3`
 
 	res, err := tx.Exec(query, data.Name, data.ParentID, data.ID)
 
@@ -130,7 +130,7 @@ func (cr *CategoriesRepo) DeleteCategory(data *models.Category) error {
 		return fmt.Errorf("Category not found")
 	}
 
-	query := "UPDATE categories SET deleted_at = NOW() WHERE id = $1 AND deleted_at IS NULL"
+	query := "UPDATE public.categories SET deleted_at = NOW() WHERE id = $1 AND deleted_at IS NULL"
 
 	_, err = tx.Exec(query, data.ID)
 
@@ -140,7 +140,7 @@ func (cr *CategoriesRepo) DeleteCategory(data *models.Category) error {
 	return nil
 }
 func (cr *CategoriesRepo) GetCategory(id int) (*models.Category, error) {
-	query := `SELECT * FROM categories WHERE id = $1 AND deleted_at IS NULL`
+	query := `SELECT * FROM public.categories WHERE id = $1 AND deleted_at IS NULL`
 
 	var category models.Category
 
@@ -156,7 +156,7 @@ func (cr *CategoriesRepo) GetCategory(id int) (*models.Category, error) {
 }
 func (cr *CategoriesRepo) GetCategories(page int, search string) ([]*models.Category, error) {
 	limit := 50
-	query := `SELECT * FROM categories WHERE name ILIKE $1 AND deleted_at IS NULL LIMIT $2 OFFSET $3`
+	query := `SELECT * FROM public.categories WHERE name ILIKE $1 AND deleted_at IS NULL LIMIT $2 OFFSET $3`
 	offset := (page - 1) * 50
 	var categories []*models.Category
 

@@ -26,7 +26,7 @@ func NewProductRepo(db *sqlx.DB, brand *BrandsRepo, cat *CategoriesRepo) *Produc
 func (pr *ProductRepo) GetUserProducts(ctx context.Context, userID int, page int) ([]*models.Product, error) {
 	var products []*models.Product
 	offset := (page - 1) * 50
-	query := `SELECT * FROM products WHERE seller_id = $1 AND deleted_at IS NULL LIMIT $2 OFFSET $3`
+	query := `SELECT * FROM public.products WHERE seller_id = $1 AND deleted_at IS NULL LIMIT $2 OFFSET $3`
 	rows, err := pr.db.QueryxContext(ctx, query, userID, 50, offset)
 	if err != nil {
 		return nil, fmt.Errorf("Database error : %s", err.Error())
@@ -50,7 +50,7 @@ func (pr *ProductRepo) CheckProduct(prodid int) (bool, error) {
 	if prodid == 0 {
 		return false, fmt.Errorf("Invalid product id")
 	}
-	query := "SELECT EXISTS (SELECT 1 FROM products WHERE id = $1 AND deleted_at IS NULL)"
+	query := "SELECT EXISTS (SELECT 1 FROM public.products WHERE id = $1 AND deleted_at IS NULL)"
 
 	err := pr.db.Get(&exists, query, prodid)
 
@@ -68,7 +68,7 @@ func (pr *ProductRepo) CheckProductByName(name, imageUrl string) (bool, error) {
 	if name == "" || imageUrl == "" {
 		return false, fmt.Errorf("Name or ImageUrl cannot be empty")
 	}
-	query := "SELECT EXISTS (SELECT 1 FROM products WHERE name = $1 AND image_url = $2 AND deleted_at IS NULL)"
+	query := "SELECT EXISTS (SELECT 1 FROM public.products WHERE name = $1 AND image_url = $2 AND deleted_at IS NULL)"
 
 	err := pr.db.Get(&exists, query, name, imageUrl)
 
@@ -80,7 +80,7 @@ func (pr *ProductRepo) CheckProductByName(name, imageUrl string) (bool, error) {
 
 }
 func (pr *ProductRepo) AddProduct(ctx context.Context, data models.NewProduct, tx *sqlx.Tx) (int, error) {
-	query := `INSERT INTO products(name,description,stock,price,image_url,category_id,created_at,brand_id,seller_id) VALUES($1,$2,$3,$4,$5,$6,NOW(),$7,$8) RETURNING id`
+	query := `INSERT INTO public.products(name,description,stock,price,image_url,category_id,created_at,brand_id,seller_id) VALUES($1,$2,$3,$4,$5,$6,NOW(),$7,$8) RETURNING id`
 	var id int
 	err := tx.QueryRowContext(ctx, query, data.Name, data.Description, data.Stock, data.Price, data.ImageURLs[0], data.CategoryID, data.BrandID, data.SellerID).Scan(&id)
 	if err != nil {
@@ -93,7 +93,7 @@ func (pr *ProductRepo) AddProductImages(ctx context.Context, images []string, id
 		return nil
 	}
 
-	query := `INSERT INTO product_images (product_id, image_url, created_at) VALUES `
+	query := `INSERT INTO public.product_images (product_id, image_url, created_at) VALUES `
 	vals := []interface{}{}
 	paramIndex := 1
 
@@ -118,7 +118,7 @@ func (pr *ProductRepo) ExistsData(name string, tx *sqlx.Tx) (bool, error) {
 	if name == "" {
 		return false, fmt.Errorf("Invalid data")
 	}
-	query := `SELECT EXISTS(SELECT 1 FROM brands WHERE name = $1 AND deleted_at IS NULL)`
+	query := `SELECT EXISTS(SELECT 1 FROM public.brands WHERE name = $1 AND deleted_at IS NULL)`
 	var exists bool
 	err := tx.QueryRow(query, name).Scan(&exists)
 
@@ -128,7 +128,7 @@ func (pr *ProductRepo) ExistsData(name string, tx *sqlx.Tx) (bool, error) {
 	return exists, nil
 }
 func (pr *ProductRepo) UpdateProduct(ctx context.Context, product *models.UpdProduct) error {
-	query := `UPDATE products SET name = $1, description = $2,stock = $3, price = $4 WHERE id = $5 AND deleted_at IS NULL`
+	query := `UPDATE public.products SET name = $1, description = $2,stock = $3, price = $4 WHERE id = $5 AND deleted_at IS NULL`
 
 	res, err := pr.db.ExecContext(ctx, query, product.Name, product.Description, product.Stock, product.Price, product.ID)
 	if err != nil {
@@ -150,10 +150,10 @@ func (pr *ProductRepo) GetProduct(ctx context.Context, prodid int) (*models.Prod
 	if err != nil {
 		return nil, err
 	}
-	query := `SELECT p.*, b.name AS brand_name, c.name AS category_name, u.name AS seller_name, u.phone AS seller_phone FROM products p 
-	LEFT JOIN brands b ON p.brand_id = b.id 
-	LEFT JOIN categories c ON p.category_id = c.id
-	LEFT JOIN users u ON p.seller_id = u.id
+	query := `SELECT p.*, b.name AS brand_name, c.name AS category_name, u.name AS seller_name, u.phone AS seller_phone FROM public.products p 
+	LEFT JOIN public.brands b ON p.brand_id = b.id 
+	LEFT JOIN public.categories c ON p.category_id = c.id
+	LEFT JOIN public.users u ON p.seller_id = u.id
 	WHERE p.id = $1 AND p.deleted_at IS NULL`
 	err = pr.db.GetContext(ctx, &product, query, prodid)
 
@@ -171,7 +171,7 @@ func (pr *ProductRepo) GetProductImages(ctx context.Context, prodid int) ([]stri
 	if prodid == 0 {
 		return nil, fmt.Errorf("Invalid data")
 	}
-	query := `SELECT image_url FROM product_images WHERE product_id = $1`
+	query := `SELECT image_url FROM public.product_images WHERE product_id = $1`
 
 	rows, err := pr.db.QueryContext(ctx, query, prodid)
 	if err != nil {
@@ -207,11 +207,11 @@ func (pr *ProductRepo) GetProducts(ctx context.Context, page, brandID, categoryI
 		cte = `
 		WITH RECURSIVE alt_kategoriler AS (
 			SELECT id
-			FROM categories
+			FROM public.categories
 			WHERE id = $1
 			UNION ALL
 			SELECT c.id
-			FROM categories c
+			FROM public.categories c
 			JOIN alt_kategoriler ak ON c.parent_id = ak.id
 		)`
 		args = append(args, categoryID)
@@ -226,10 +226,10 @@ func (pr *ProductRepo) GetProducts(ctx context.Context, page, brandID, categoryI
 		c.name AS category_name,
 		u.name AS seller_name,
 		u.phone AS seller_phone
-	FROM products p
-	LEFT JOIN brands b ON p.brand_id = b.id
-	LEFT JOIN categories c ON p.category_id = c.id
-	LEFT JOIN users u ON p.seller_id = u.id
+	FROM public.products p
+	LEFT JOIN public.brands b ON p.brand_id = b.id
+	LEFT JOIN public.categories c ON p.category_id = c.id
+	LEFT JOIN public.users u ON p.seller_id = u.id
 	WHERE p.deleted_at IS NULL
 	`
 
@@ -295,7 +295,7 @@ func (pr *ProductRepo) DeleteProduct(data *models.Product) error {
 			err = tx.Commit()
 		}
 	}()
-	query := `UPDATE products SET deleted_at = NOW() WHERE id = $1 AND seller_id = $2`
+	query := `UPDATE public.products SET deleted_at = NOW() WHERE id = $1 AND seller_id = $2`
 
 	_, err = tx.Exec(query, data.ID, data.SellerID)
 

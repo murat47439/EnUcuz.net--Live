@@ -1,5 +1,5 @@
 "use client";
-import { useState, useCallback, useMemo } from "react";
+import { useState, useCallback } from "react";
 import React from "react";
 import { useAuth } from "@/context/authContext";
 import Image from "next/image";

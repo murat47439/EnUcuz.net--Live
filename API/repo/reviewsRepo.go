@@ -29,7 +29,7 @@ func (rr *ReviewsRepo) AddReview(data *models.Review) error {
 		return fmt.Errorf("Review is exists")
 	}
 
-	query := `INSERT INTO reviews (user_id,product_id,content,rating,created_at, updated_at) VALUES($1, $2, $3, $4, NOW(), NOW())`
+	query := `INSERT INTO public.reviews (user_id,product_id,content,rating,created_at, updated_at) VALUES($1, $2, $3, $4, NOW(), NOW())`
 
 	_, err = rr.db.Exec(query, data.UserID, data.ProductID, data.Content, data.Rating)
 
@@ -48,7 +48,7 @@ func (rr *ReviewsRepo) UpdateReview(data *models.Review) error {
 		return fmt.Errorf("Review not found")
 	}
 
-	query := `UPDATE reviews SET content = $1, rating = $2 ,status = $3 ,updated_at = NOW() WHERE id = $4 AND user_id = $5 AND deleted_at IS NULL`
+	query := `UPDATE public.reviews SET content = $1, rating = $2 ,status = $3 ,updated_at = NOW() WHERE id = $4 AND user_id = $5 AND deleted_at IS NULL`
 
 	res, err := rr.db.Exec(query, data.Content, data.Rating, data.Status, data.ID, data.UserID)
 	if err != nil {
@@ -69,7 +69,7 @@ func (rr *ReviewsRepo) RemoveReview(id, userID int) error {
 		return fmt.Errorf("Error")
 	}
 
-	query := `UPDATE reviews SET deleted_at = NOW() WHERE id = $1 AND user_id = $2 AND deleted_at IS NULL`
+	query := `UPDATE public.reviews SET deleted_at = NOW() WHERE id = $1 AND user_id = $2 AND deleted_at IS NULL`
 
 	_, err = rr.db.Exec(query, id, userID)
 
@@ -82,7 +82,7 @@ func (rr *ReviewsRepo) GetReview(id int) (*models.Review, error) {
 	if id == 0 {
 		return nil, fmt.Errorf("Invalid data")
 	}
-	query := `SELECT * FROM reviews WHERE id = $1 AND deleted_at IS NULL`
+	query := `SELECT * FROM public.reviews WHERE id = $1 AND deleted_at IS NULL`
 
 	var review models.Review
 
@@ -94,7 +94,7 @@ func (rr *ReviewsRepo) GetReview(id int) (*models.Review, error) {
 	return &review, nil
 }
 func (rr *ReviewsRepo) GetReviews(page, prodID int) ([]*models.Review, error) {
-	query := `SELECT id,user_id,product_id,content,rating, created_at, updated_at FROM reviews WHERE product_id = $1 AND deleted_at IS NULL LIMIT $2 OFFSET $3`
+	query := `SELECT id,user_id,product_id,content,rating, created_at, updated_at FROM public.reviews WHERE product_id = $1 AND deleted_at IS NULL LIMIT $2 OFFSET $3`
 	if page < 1 {
 		page = 1
 	}
@@ -126,7 +126,7 @@ func (rr *ReviewsRepo) GetUserReviews(user_id int) ([]*models.Review, error) {
 		return nil, fmt.Errorf("Invalid data")
 	}
 	var reviews []*models.Review
-	query := `SELECT id,user_id, product_id, content, rating, status, created_at FROM reviews WHERE user_id = $1 AND deleted_at IS NULL`
+	query := `SELECT id,user_id, product_id, content, rating, status, created_at FROM public.reviews WHERE user_id = $1 AND deleted_at IS NULL`
 
 	rows, err := rr.db.Queryx(query, user_id)
 
@@ -154,7 +154,7 @@ func (rr *ReviewsRepo) ExistsReview(userID int, prodID int) (bool, error) {
 		return false, fmt.Errorf("Invalid data")
 	}
 	var exists bool
-	query := `SELECT EXISTS(SELECT 1 FROM products WHERE id=$1 AND deleted_at IS NULL)`
+	query := `SELECT EXISTS(SELECT 1 FROM public.products WHERE id=$1 AND deleted_at IS NULL)`
 
 	err := rr.db.Get(&exists, query, prodID)
 
@@ -166,7 +166,7 @@ func (rr *ReviewsRepo) ExistsReview(userID int, prodID int) (bool, error) {
 	}
 
 	query = `SELECT EXISTS(
-    SELECT 1 FROM reviews 
+    SELECT 1 FROM public.reviews 
     WHERE product_id=$1 AND user_id=$2 AND deleted_at IS NULL)`
 
 	err = rr.db.Get(&exists, query, prodID, userID)
@@ -176,7 +176,7 @@ func (rr *ReviewsRepo) ExistsReview(userID int, prodID int) (bool, error) {
 	return exists, nil
 }
 func (rr *ReviewsRepo) ReviewStatusUpdate(id, status int) error {
-	query := `UPDATE reviews SET status=$1 WHERE id = $2 AND deleted_at IS NULL`
+	query := `UPDATE public.reviews SET status=$1 WHERE id = $2 AND deleted_at IS NULL`
 
 	_, err := rr.db.Exec(query, status, id)
 

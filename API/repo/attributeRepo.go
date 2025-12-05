@@ -26,7 +26,7 @@ func (ar *AttributeRepo) AddAttribute(ctx context.Context, data *models.Attribut
 	}
 	var model models.Attribute
 
-	query := `INSERT INTO attributes(name) VALUES($1) RETURNING id`
+	query := `INSERT INTO public.attributes(name) VALUES($1) RETURNING id`
 
 	var id int
 	err := ar.db.GetContext(ctx, &id, query, data.Name)
@@ -45,7 +45,7 @@ func (ar *AttributeRepo) AddCatAttribute(ctx context.Context, data *models.Categ
 	}
 	var model models.CategoryAttribute
 
-	query := `INSERT INTO category_attributes(category_id,attribute_id,allow_custom,required,varianter,slicer) VALUES($1,$2,$3,$4,$5,$6) RETURNING category_id, attribute_id, allow_custom, required, varianter, slicer`
+	query := `INSERT INTO public.category_attributes(category_id,attribute_id,allow_custom,required,varianter,slicer) VALUES($1,$2,$3,$4,$5,$6) RETURNING category_id, attribute_id, allow_custom, required, varianter, slicer`
 
 	err := ar.db.GetContext(ctx, &model, query, data.CategoryID, data.AttributeID, data.AllowCustom, data.Required, data.Varianter, data.Slicer)
 	if err != nil {
@@ -54,7 +54,7 @@ func (ar *AttributeRepo) AddCatAttribute(ctx context.Context, data *models.Categ
 	return model, nil
 }
 func (ar *AttributeRepo) AddProdAttribute(ctx context.Context, data *models.ProductAttribute, tx *sqlx.Tx) (*models.ProductAttribute, error) {
-	query := `INSERT INTO product_attributes(attribute_id,product_id,value) VALUES ($1,$2,$3) RETURNING attribute_id,product_id,value`
+	query := `INSERT INTO public.product_attributes(attribute_id,product_id,value) VALUES ($1,$2,$3) RETURNING attribute_id,product_id,value`
 	var result models.ProductAttribute
 	err := tx.GetContext(ctx, &result, query, data.AttributeID, data.ProductID, data.Value)
 	if err != nil {
@@ -84,7 +84,7 @@ func (ar *AttributeRepo) AddProdAttributes(ctx context.Context, data []models.Fe
 	}
 
 	query := fmt.Sprintf(
-		"INSERT INTO product_attributes (product_id, attribute_id, value) VALUES %s",
+		"INSERT INTO public.product_attributes (product_id, attribute_id, value) VALUES %s",
 		strings.Join(values, ","),
 	)
 
@@ -100,7 +100,7 @@ func (ar *AttributeRepo) DeleteAttribute(ctx context.Context, id int) error {
 	if id == 0 {
 		return fmt.Errorf("Invalid data")
 	}
-	query := `UPDATE attributes SET deleted_at = NOW() WHERE id = $1`
+	query := `UPDATE public.attributes SET deleted_at = NOW() WHERE id = $1`
 
 	res, err := ar.db.ExecContext(ctx, query, id)
 	if err != nil {
@@ -116,8 +116,8 @@ func (ar *AttributeRepo) GetProdAttributes(ctx context.Context, prodID int) ([]*
 	if prodID == 0 {
 		return nil, fmt.Errorf("Invalid data")
 	}
-	query := `SELECT pa.id, pa.attribute_id,pa.product_id,pa.value, a.name AS attribute_name FROM product_attributes pa
-		INNER JOIN attributes a ON a.id = pa.attribute_id
+	query := `SELECT pa.id, pa.attribute_id,pa.product_id,pa.value, a.name AS attribute_name FROM public.product_attributes pa
+		INNER JOIN public.attributes a ON a.id = pa.attribute_id
 	 WHERE pa.product_id = $1 AND pa.deleted_at IS NULL`
 
 	var data []*models.ProductAttribute
@@ -138,7 +138,7 @@ func (ar *AttributeRepo) GetAttributes(ctx context.Context, search string, page 
 
 	param := "%" + strings.ToLower(escaped) + "%"
 
-	query := `SELECT name FROM attributes WHERE LOWER(name) LIKE $1 ESCAPE '\' AND deleted_at IS NULL LIMIT $2 OFFSET $3`
+	query := `SELECT name FROM public.attributes WHERE LOWER(name) LIKE $1 ESCAPE '\' AND deleted_at IS NULL LIMIT $2 OFFSET $3`
 
 	var data []models.Attribute
 
@@ -152,9 +152,9 @@ func (ar *AttributeRepo) GetCatAttributes(ctx context.Context, id int) ([]models
 	if id == 0 {
 		return nil, fmt.Errorf("Invalid data")
 	}
-	query := `SELECT ca.id,ca.category_id,ca.attribute_id,ca.allow_custom,ca.required,ca.varianter,ca.slicer, a.name AS attribute_name, c.name AS category_name FROM category_attributes ca
-	INNER JOIN attributes a ON a.id = ca.attribute_id
-	INNER JOIN categories c ON c.id = ca.category_id
+	query := `SELECT ca.id,ca.category_id,ca.attribute_id,ca.allow_custom,ca.required,ca.varianter,ca.slicer, a.name AS attribute_name, c.name AS category_name FROM public.category_attributes ca
+	INNER JOIN public.attributes a ON a.id = ca.attribute_id
+	INNER JOIN public.categories c ON c.id = ca.category_id
 	WHERE ca.category_id = $1 AND ca.deleted_at IS NULL AND a.deleted_at IS NULL AND c.deleted_at IS NULL`
 	var data []models.CategoryAttribute
 	err := ar.db.SelectContext(ctx, &data, query, id)
@@ -168,7 +168,7 @@ func (ar *AttributeRepo) CheckAttribute(name string) (bool, error) {
 		return false, fmt.Errorf("Invalid data")
 	}
 	var exists bool
-	query := `SELECT EXISTS(SELECT 1 FROM attributes WHERE name = $1)`
+	query := `SELECT EXISTS(SELECT 1 FROM public.attributes WHERE name = $1)`
 	err := ar.db.Get(&exists, query, name)
 	if err != nil {
 		return false, fmt.Errorf("Database error")
@@ -181,7 +181,7 @@ func (ar *AttributeRepo) CheckCatAttribute(ctx context.Context, atID, catID int)
 		return false, fmt.Errorf("Invalid data")
 	}
 	var exists bool
-	query := `SELECT EXISTS(SELECT 1 FROM category_attributes WHERE category_id = $1 AND attribute_id = $2)`
+	query := `SELECT EXISTS(SELECT 1 FROM public.category_attributes WHERE category_id = $1 AND attribute_id = $2)`
 
 	err := ar.db.GetContext(ctx, &exists, query, catID, atID)
 	if err != nil {
@@ -209,7 +209,7 @@ func (ar *AttributeRepo) CheckProdAttribute(ctx context.Context, data *models.Ne
 	}
 
 	// 2) Veritabanında bu product için zaten ekli attribute'lar var mı kontrol et
-	query := `SELECT attribute_id FROM product_attributes WHERE product_id = $1 AND deleted_at IS NULL`
+	query := `SELECT attribute_id FROM public.product_attributes WHERE product_id = $1 AND deleted_at IS NULL`
 	var existingIDs []int
 	if err := ar.db.SelectContext(ctx, &existingIDs, query, data.ProductID); err != nil {
 		return false, fmt.Errorf("Database error (CheckProdAttribute): %w", err)
@@ -229,7 +229,7 @@ func (ar *AttributeRepo) DeleteCatAttribute(ctx context.Context, id int) error {
 	if id == 0 {
 		return fmt.Errorf("Invalid data")
 	}
-	query := `UPDATE category_attributes SET deleted_at = NOW() WHERE id = $1`
+	query := `UPDATE public.category_attributes SET deleted_at = NOW() WHERE id = $1`
 
 	res, err := ar.db.ExecContext(ctx, query, id)
 	if err != nil {
@@ -245,7 +245,7 @@ func (ar *AttributeRepo) DeleteProdAttribute(ctx context.Context, id int) error 
 	if id == 0 {
 		return fmt.Errorf("Invalid data")
 	}
-	query := `UPDATE product_attributes SET deleted_at = NOW() WHERE id = $1`
+	query := `UPDATE public.product_attributes SET deleted_at = NOW() WHERE id = $1`
 
 	res, err := ar.db.ExecContext(ctx, query, id)
 	if err != nil {

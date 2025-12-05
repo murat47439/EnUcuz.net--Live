@@ -1,5 +1,5 @@
 "use client"
-import { useEffect, useState, ChangeEvent } from "react";
+import React, { useEffect, useState, ChangeEvent } from "react";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
 import { Brand, Category, CategoryAttribute, FeatureKey } from "@/lib/types/types";
@@ -11,6 +11,7 @@ import { getCategoryAttributes } from "@/lib/api/attributes/useGetsCats";
 import Input from "@/features/components/input";
 import Button from "@/features/components/button";
 import dynamic from "next/dynamic";
+import type { StylesConfig, CSSObjectWithLabel, ControlProps, OptionProps } from "react-select";
 const Select = dynamic(() => import("react-select"), { ssr: false });
 import { 
   ImagePlus, 
@@ -245,8 +246,10 @@ export default function NewProductPage() {
   );
 
   // Custom select styles
-  const customSelectStyles = {
-    control: (provided: any, state: any) => ({
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const customSelectStyles: StylesConfig<any, false> = {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    control: (provided: CSSObjectWithLabel, state: ControlProps<any, false>) => ({
       ...provided,
       minHeight: "48px",
       border: state.isFocused ? "2px solid #3b82f6" : "1px solid #e5e7eb",
@@ -256,7 +259,8 @@ export default function NewProductPage() {
         border: "2px solid #3b82f6",
       },
     }),
-    option: (provided: any, state: any) => ({
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    option: (provided: CSSObjectWithLabel, state: OptionProps<any, false>) => ({
       ...provided,
       backgroundColor: state.isSelected
         ? "#3b82f6"

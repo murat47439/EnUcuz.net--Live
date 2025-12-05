@@ -41,7 +41,7 @@ func (br *BrandsRepo) AddBrand(data *models.Brand) (*models.Brand, error) {
 		return nil, fmt.Errorf("Brand does exists")
 	}
 
-	query := `INSERT INTO brands(name, created__at) VALUES ($1, NOW()) RETURNING id`
+	query := `INSERT INTO public.brands(name, created__at) VALUES ($1, NOW()) RETURNING id`
 
 	var id int
 	err = tx.QueryRow(query, data.Name).Scan(&id)
@@ -59,7 +59,7 @@ func (br *BrandsRepo) CheckBrand(name string, tx *sqlx.Tx) (bool, error) {
 		return false, fmt.Errorf("Invalid data")
 	}
 
-	query := `SELECT EXISTS(SELECT 1 FROM brands WHERE name = $1 AND deleted_at IS NULL)`
+	query := `SELECT EXISTS(SELECT 1 FROM public.brands WHERE name = $1 AND deleted_at IS NULL)`
 
 	var exists bool
 
@@ -99,7 +99,7 @@ func (br *BrandsRepo) UpdateBrand(data *models.Brand) error {
 		return fmt.Errorf("Brand Not Found")
 	}
 
-	query := `UPDATE brands SET name = $1 WHERE id = $2`
+	query := `UPDATE public.brands SET name = $1 WHERE id = $2`
 
 	_, err = tx.Exec(query, data.Name, data.ID)
 
@@ -109,7 +109,7 @@ func (br *BrandsRepo) UpdateBrand(data *models.Brand) error {
 	return nil
 }
 func (br *BrandsRepo) GetBrand(id int) (*models.Brand, error) {
-	query := `SELECT * FROM brands WHERE id = $1 AND deleted_at IS NULL`
+	query := `SELECT * FROM public.brands WHERE id = $1 AND deleted_at IS NULL`
 
 	var brand models.Brand
 
@@ -124,7 +124,7 @@ func (br *BrandsRepo) GetBrands(page int, search string) ([]*models.Brand, error
 	limit := 50
 	var brands []*models.Brand
 	offset := (page - 1) * 50
-	query := `SELECT * FROM brands WHERE name ILIKE $1 AND deleted_at IS NULL LIMIT $2 OFFSET $3`
+	query := `SELECT * FROM public.brands WHERE name ILIKE $1 AND deleted_at IS NULL LIMIT $2 OFFSET $3`
 
 	rows, err := br.db.Queryx(query, search+"%", limit, offset)
 
@@ -151,7 +151,7 @@ func (br *BrandsRepo) GetBrands(page int, search string) ([]*models.Brand, error
 	return brands, nil
 }
 func (br *BrandsRepo) DeleteBrand(data *models.Brand) error {
-	query := `UPDATE brands SET deleted_at = NOW() WHERE id = $1 AND deleted_at IS NULL`
+	query := `UPDATE public.brands SET deleted_at = NOW() WHERE id = $1 AND deleted_at IS NULL`
 
 	_, err := br.db.Exec(query, data.ID)
 

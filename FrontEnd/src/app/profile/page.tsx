@@ -9,7 +9,7 @@ import { UserProfileResponse } from "@/lib/types/types";
 import { useForm } from "react-hook-form";
 import { updateUser } from "@/lib/api/user/useUpdate";
 import { UpdateUserRequest } from "@/lib/types/types";
-import { User, Mail, Phone, Lock, CheckCircle, XCircle, LogOut } from "lucide-react";
+import { User, Mail, CheckCircle, XCircle, LogOut } from "lucide-react";
 type FormData = {
     name: string,
     surname: string,

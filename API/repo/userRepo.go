@@ -51,7 +51,7 @@ func (ur *UserRepo) CreateUser(user models.User) (bool, error) {
 	}
 	user.Password = password
 
-	query := `INSERT INTO users(email, phone, name, surname, gender, role, password) VALUES($1, $2, $3, $4, $5, $6, $7)`
+	query := `INSERT INTO public.users(email, phone, name, surname, gender, role, password) VALUES($1, $2, $3, $4, $5, $6, $7)`
 
 	_, err = tx.Exec(query, user.Email, user.Phone, user.Name, user.Surname, user.Gender, user.Role, user.Password)
 
@@ -67,7 +67,7 @@ func (ur *UserRepo) Login(email string, password string) (*models.User, error) {
 	}
 	user := &models.User{}
 
-	query := `SELECT id,email, phone, name, surname, gender, role, password FROM users WHERE email = $1 AND deleted_at IS NULL`
+	query := `SELECT id,email, phone, name, surname, gender, role, password FROM public.users WHERE email = $1 AND deleted_at IS NULL`
 	err := ur.db.Get(user, query, email)
 
 	if err != nil {
@@ -92,7 +92,7 @@ func (ur *UserRepo) Logout(userID int, refreshToken string) (bool, error) {
 	}
 	refreshTokenHash := ur.HashRefreshToken(refreshToken, config.REFRESH_TOKEN_SECRET)
 
-	query := "DELETE FROM tokens WHERE token = $1 AND user_id = $2"
+	query := "DELETE FROM public.tokens WHERE token = $1 AND user_id = $2"
 
 	result, err := ur.db.Exec(query, refreshTokenHash, userID)
 
@@ -111,7 +111,7 @@ func (ur *UserRepo) Update(user *models.User) (*models.User, error) {
 	if user.Email == "" || user.Name == "" || user.Surname == "" || user.ID == 0 {
 		return nil, fmt.Errorf("Invalid data")
 	}
-	query := "UPDATE USERS SET name=$1 ,surname = $2 ,email = $3 ,phone = $4 ,gender = $5 WHERE id=$6"
+	query := "UPDATE public.users SET name=$1 ,surname = $2 ,email = $3 ,phone = $4 ,gender = $5 WHERE id=$6"
 
 	_, err := ur.db.Exec(query, user.Name, user.Surname, user.Email, user.Phone, user.Gender, user.ID)
 
@@ -124,7 +124,7 @@ func (ur *UserRepo) Update(user *models.User) (*models.User, error) {
 func (ur *UserRepo) CheckEmailExists(email string) (bool, error) {
 	var exists bool
 
-	query := "SELECT EXISTS(SELECT 1 FROM users WHERE email = $1 AND deleted_at IS NULL)"
+	query := "SELECT EXISTS(SELECT 1 FROM public.users WHERE email = $1 AND deleted_at IS NULL)"
 	err := ur.db.Get(&exists, query, email)
 
 	if err != nil {
@@ -142,7 +142,7 @@ func (ur *UserRepo) GetUserDataByID(id int) (*models.User, error) {
 		return nil, fmt.Errorf("Invalid data")
 	}
 	var user models.User
-	query := `SELECT id,email,phone,name,surname,gender,role FROM users WHERE id = $1 AND deleted_at IS NULL`
+	query := `SELECT id,email,phone,name,surname,gender,role FROM public.users WHERE id = $1 AND deleted_at IS NULL`
 
 	err := ur.db.Get(&user, query, id)
 
@@ -205,7 +205,7 @@ func (ur *UserRepo) StoreRefreshToken(userID int, refresh string) error {
 
 	hashToken := ur.HashRefreshToken(refresh, config.REFRESH_TOKEN_SECRET)
 
-	query := `INSERT INTO tokens (user_id,token, expires_at) VALUES($1, $2, $3)`
+	query := `INSERT INTO public.tokens (user_id,token, expires_at) VALUES($1, $2, $3)`
 	_, err := ur.db.Exec(query, userID, hashToken, expiresAt)
 	if err != nil {
 		return fmt.Errorf("Database error : %s", err.Error())
@@ -252,9 +252,9 @@ func (ur *UserRepo) RestoreRefreshToken(token string) (int, int, string, error) 
 	}
 	var userID, role int
 	query := `
-    UPDATE tokens t
+    UPDATE public.tokens t
     SET token = $1
-    FROM users u
+    FROM public.users u
     WHERE t.token = $2 AND t.expires_at > NOW() AND u.id = t.user_id
     RETURNING t.user_id, u.role
 `
@@ -269,7 +269,7 @@ func (ur *UserRepo) RestoreRefreshToken(token string) (int, int, string, error) 
 //ADMİN CONTROL
 
 func (ur *UserRepo) OnlyAdmin(userID int) (bool, error) {
-	stmt, err := ur.db.Prepare("SELECT 1 FROM users WHERE role=1 AND id = $1 AND deleted_at IS NULL")
+	stmt, err := ur.db.Prepare("SELECT 1 FROM public.users WHERE role=1 AND id = $1 AND deleted_at IS NULL")
 
 	if err != nil {
 
