@@ -91,7 +91,7 @@ export default function NewProductPage() {
   const [attributes, setAttributes] = useState<CategoryAttribute[]>([])
   const category = watch("category")
   useEffect(() => {
-    const timeoutId = setTimeout(() => {
+    
       const fetchAttributes = async () => {
         if (!category) return;
         const request: IdParam = {
@@ -107,8 +107,6 @@ export default function NewProductPage() {
         }
       };
       fetchAttributes();
-    }, 500);
-    return () => clearTimeout(timeoutId);
   }, [category]);
 
   useEffect(() => {
@@ -164,7 +162,7 @@ export default function NewProductPage() {
     setResult("");
     try {
       if (data.name.length < 10) throw new Error("Ürün adı minimum 10 karakter olmalı.");
-      if (data.description.length < 250) throw new Error("Ürün açıklaması minimum 250 karakter olmalı.");
+      if (data.description.length < 100) throw new Error("Ürün açıklaması minimum 100 karakter olmalı.");
       if (!data.brand) throw new Error("Lütfen marka seçiniz.");
       if (!data.category) throw new Error("Lütfen kategori seçiniz.");
       if (data.stock < 1) throw new Error("Geçersiz stok");
@@ -346,7 +344,7 @@ export default function NewProductPage() {
                         )}
                         {watch("description") && (
                           <p className="text-xs text-gray-500 mt-1">
-                            {watch("description").length}/250 karakter (minimum 250)
+                            {watch("description").length}/100 karakter (minimum 100)
                           </p>
                         )}
                       </div>
@@ -598,6 +596,7 @@ export default function NewProductPage() {
                   </div>
                 </div>
               ) : !attributes || attributes.length === 0 ? (
+                <>
                 <div className="bg-white rounded-2xl shadow-xl p-12 border border-gray-100 text-center">
                   <div className="flex flex-col items-center justify-center">
                     <div className="p-4 bg-orange-100 rounded-full mb-4">
@@ -607,6 +606,34 @@ export default function NewProductPage() {
                     <p className="text-gray-600">Seçtiğiniz kategoriye ait özellik bulunmamaktadır.</p>
                   </div>
                 </div>
+                <div className="flex justify-between gap-4 pt-4">
+                    <Button 
+                      type="button" 
+                      onClick={prevstep}
+                      className="rounded-xl px-8 py-3 flex items-center gap-2 shadow-lg hover:shadow-xl transition-all bg-gray-100 hover:bg-gray-200 text-gray-700"
+                    >
+                      <ArrowLeft size={20} />
+                      Önceki Adım
+                    </Button>
+                    <Button 
+                      type="submit" 
+                      disabled={isSubmitting}
+                      className="rounded-xl px-8 py-3 flex items-center gap-2 shadow-lg hover:shadow-xl transition-all bg-gradient-to-r from-green-600 to-emerald-600 hover:from-green-700 hover:to-emerald-700 text-white disabled:opacity-50 disabled:cursor-not-allowed"
+                    >
+                      {isSubmitting ? (
+                        <>
+                          <Loader2 size={20} className="animate-spin" />
+                          Yükleniyor...
+                        </>
+                      ) : (
+                        <>
+                          <Upload size={20} />
+                          Ürünü Yükle
+                        </>
+                      )}
+                    </Button>
+                  </div>
+                </>
               ) : (
                 <>
                   {/* Features List */}
