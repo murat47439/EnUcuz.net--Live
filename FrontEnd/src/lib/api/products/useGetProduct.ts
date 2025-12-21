@@ -15,10 +15,16 @@ export async function getProduct(data: IdParam): Promise<ProductDetail> {
         }
         return res.data
     }catch(err: unknown){
-        const error = err as AxiosError<{ message: string }>;
-        if (error instanceof Error) {
-            throw error;
+        // AxiosError kontrolü
+        if (err instanceof Error && 'response' in err) {
+            const axiosError = err as AxiosError<{ message: string }>;
+            throw new Error(axiosError.response?.data?.message || "Ürün bulunamadı");
         }
-        throw new Error(error?.response?.data?.message || "Ürün bulunamadı")
+        // Genel Error kontrolü
+        if (err instanceof Error) {
+            throw err;
+        }
+        // Bilinmeyen hata
+        throw new Error("Ürün bulunamadı");
     }
 }

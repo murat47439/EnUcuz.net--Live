@@ -68,7 +68,7 @@ export default function NewProductPage() {
   const [result, setResult] = useState("");
   const [step, setStep] = useState(1);
   const [isSubmitting, setIsSubmitting] = useState(false);
-  
+
   // Yüklenen resimler için state
   type UploadingImage = {
     id: string;
@@ -217,8 +217,8 @@ export default function NewProductPage() {
 
             // Animasyon bittikten sonra (0.5 saniye) files listesine ekle ve uploadingImages'den çıkar
             setTimeout(() => {
-              const current = getValues("files");
-              setValue("files", [...current, res.data.url], { shouldDirty: true });
+          const current = getValues("files");
+          setValue("files", [...current, res.data.url], { shouldDirty: true });
               
               setUploadingImages((prev) => {
                 const filtered = prev.filter((img) => img.id !== uploadingImage.id);
@@ -627,7 +627,7 @@ export default function NewProductPage() {
                                     <div className="absolute inset-0 bg-black/30 flex items-center justify-center">
                                       <div className="bg-white/90 backdrop-blur-sm rounded-full p-3 shadow-lg">
                                         <Loader2 className="w-6 h-6 text-blue-600 animate-spin" />
-                                      </div>
+                          </div>
                                     </div>
                                   )}
                                   
