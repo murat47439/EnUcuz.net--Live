@@ -2,9 +2,9 @@ package user
 
 import (
 	"Store-Dio/config"
-	"Store-Dio/handlers"
 	"Store-Dio/middleware"
 	"Store-Dio/models"
+
 	"Store-Dio/services/products"
 	"context"
 	"encoding/json"
@@ -161,21 +161,14 @@ func (pc *ProductController) AddProduct(w http.ResponseWriter, r *http.Request) 
 			product.Features = features
 		}
 	}
-	files := r.MultipartForm.File["images"]
-
-	for _, fileHeader := range files {
-		file, err := fileHeader.Open()
-		if err != nil {
-			config.Logger.Printf("AddProduct error: File open failed - %v", err)
-			continue
+	imageURLS := r.FormValue("images")
+	if imageURLS != "" {
+		var images []string
+		if err := json.Unmarshal([]byte(imageURLS), &images); err != nil {
+			config.Logger.Printf("AddProduct error: Invalid images JSON - %v", err)
+		} else {
+			product.ImageURLs = images
 		}
-		url, err := handlers.UploadImage(file, product.Name)
-		file.Close()
-		if err != nil {
-			config.Logger.Printf("AddProduct error: Image upload failed - %v", err)
-			continue
-		}
-		product.ImageURLs = append(product.ImageURLs, url)
 	}
 
 	_, err = pc.ProductService.AddProduct(ctx, product)

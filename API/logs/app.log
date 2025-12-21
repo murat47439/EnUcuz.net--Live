@@ -20,3 +20,468 @@ APP_LOG: 2025/12/05 19:41:41 controllers.go:21: Success response: 200
 APP_LOG: 2025/12/05 19:41:49 controllers.go:21: Success response: 200
 APP_LOG: 2025/12/05 19:41:49 controllers.go:21: Success response: 200
 APP_LOG: 2025/12/05 19:41:53 controllers.go:21: Success response: 200
+APP_LOG: 2025/12/10 19:08:05 main.go:24: Application started successfully.
+APP_LOG: 2025/12/10 19:08:05 auth.go:60: AuthMiddleware Started
+APP_LOG: 2025/12/10 19:08:05 auth.go:60: AuthMiddleware Started
+APP_LOG: 2025/12/10 19:08:05 auth.go:60: AuthMiddleware Started
+APP_LOG: 2025/12/10 19:08:05 auth.go:60: AuthMiddleware Started
+APP_LOG: 2025/12/10 19:08:05 auth.go:60: AuthMiddleware Started
+APP_LOG: 2025/12/10 19:08:05 auth.go:60: AuthMiddleware Started
+APP_LOG: 2025/12/10 19:08:05 auth.go:60: AuthMiddleware Started
+APP_LOG: 2025/12/10 19:08:05 auth.go:60: AuthMiddleware Started
+APP_LOG: 2025/12/10 19:08:05 auth.go:60: AuthMiddleware Started
+APP_LOG: 2025/12/10 19:08:05 auth.go:60: AuthMiddleware Started
+APP_LOG: 2025/12/10 19:08:05 auth.go:60: AuthMiddleware Started
+APP_LOG: 2025/12/10 19:08:05 ai.go:20: Gemini client initialized successfully
+APP_LOG: 2025/12/10 19:08:05 image.go:19: ImageKit client initialized successfully
+APP_LOG: 2025/12/10 19:08:26 controllers.go:21: Success response: 200
+APP_LOG: 2025/12/10 19:08:52 auth.go:66: AuthMiddleware: Cookie not found - http: named cookie not present
+APP_LOG: 2025/12/10 19:08:52 auth.go:66: AuthMiddleware: Cookie not found - http: named cookie not present
+APP_LOG: 2025/12/10 19:08:52 usersController.go:213: GetAccess request started
+APP_LOG: 2025/12/10 19:08:52 usersController.go:249: GetAccess success: Access token refreshed
+APP_LOG: 2025/12/10 19:08:52 controllers.go:21: Success response: 200
+APP_LOG: 2025/12/10 19:08:52 controllers.go:21: Success response: 200
+APP_LOG: 2025/12/10 19:08:55 productRepo.go:60:  true
+APP_LOG: 2025/12/10 19:08:55 controllers.go:21: Success response: 200
+APP_LOG: 2025/12/10 19:08:55 productRepo.go:60:  true
+APP_LOG: 2025/12/10 19:08:55 controllers.go:21: Success response: 200
+APP_LOG: 2025/12/10 19:09:16 controllers.go:21: Success response: 200
+APP_LOG: 2025/12/10 19:09:16 controllers.go:21: Success response: 200
+APP_LOG: 2025/12/10 19:09:19 productRepo.go:60:  true
+APP_LOG: 2025/12/10 19:09:19 controllers.go:21: Success response: 200
+APP_LOG: 2025/12/10 19:09:19 controllers.go:21: Success response: 200
+APP_LOG: 2025/12/10 19:09:19 controllers.go:21: Success response: 200
+APP_LOG: 2025/12/10 19:22:00 main.go:24: Application started successfully.
+APP_LOG: 2025/12/10 19:22:00 auth.go:60: AuthMiddleware Started
+APP_LOG: 2025/12/10 19:22:00 auth.go:60: AuthMiddleware Started
+APP_LOG: 2025/12/10 19:22:00 auth.go:60: AuthMiddleware Started
+APP_LOG: 2025/12/10 19:22:00 auth.go:60: AuthMiddleware Started
+APP_LOG: 2025/12/10 19:22:00 auth.go:60: AuthMiddleware Started
+APP_LOG: 2025/12/10 19:22:00 auth.go:60: AuthMiddleware Started
+APP_LOG: 2025/12/10 19:22:00 auth.go:60: AuthMiddleware Started
+APP_LOG: 2025/12/10 19:22:00 auth.go:60: AuthMiddleware Started
+APP_LOG: 2025/12/10 19:22:00 auth.go:60: AuthMiddleware Started
+APP_LOG: 2025/12/10 19:22:00 auth.go:60: AuthMiddleware Started
+APP_LOG: 2025/12/10 19:22:00 auth.go:60: AuthMiddleware Started
+APP_LOG: 2025/12/10 19:22:00 ai.go:20: Gemini client initialized successfully
+APP_LOG: 2025/12/10 19:22:00 image.go:19: ImageKit client initialized successfully
+APP_LOG: 2025/12/10 19:22:09 controllers.go:21: Success response: 200
+APP_LOG: 2025/12/10 19:22:10 controllers.go:21: Success response: 200
+APP_LOG: 2025/12/10 19:22:12 controllers.go:21: Success response: 200
+APP_LOG: 2025/12/10 19:22:13 controllers.go:21: Success response: 200
+APP_LOG: 2025/12/10 19:22:14 productRepo.go:60:  true
+APP_LOG: 2025/12/10 19:22:15 controllers.go:21: Success response: 200
+APP_LOG: 2025/12/10 19:22:15 controllers.go:10: Error response: 400 - sql: no rows in result set
+APP_LOG: 2025/12/10 19:22:22 productRepo.go:60:  true
+APP_LOG: 2025/12/10 19:22:22 controllers.go:10: Error response: 400 - Database Error pq: bind message has 5 result formats but query has 1 columns
+APP_LOG: 2025/12/10 19:22:22 controllers.go:10: Error response: 400 - sql: no rows in result set
+APP_LOG: 2025/12/10 19:33:28 brandsController.go:45: GetBrands request started
+APP_LOG: 2025/12/10 19:33:28 brandsController.go:57: GetBrands parameters: page=1, search=''
+APP_LOG: 2025/12/10 19:33:28 categoriesController.go:44: GetCategories request started
+APP_LOG: 2025/12/10 19:33:28 categoriesController.go:56: GetCategories parameters: page=1, search=''
+APP_LOG: 2025/12/10 19:33:29 categoriesController.go:60: GetCategories service error: Database error%!(EXTRA string=pq: bind message has 5 result formats but query has 4 columns)
+APP_LOG: 2025/12/10 19:33:29 controllers.go:10: Error response: 500 - Kategoriler yüklenirken hata oluştu
+APP_LOG: 2025/12/10 19:33:29 brandsController.go:66: GetBrands success: 50 brands retrieved
+APP_LOG: 2025/12/10 19:33:29 controllers.go:21: Success response: 200
+APP_LOG: 2025/12/10 19:34:09 brandsController.go:45: GetBrands request started
+APP_LOG: 2025/12/10 19:34:09 brandsController.go:57: GetBrands parameters: page=1, search='Monster'
+APP_LOG: 2025/12/10 19:34:10 brandsController.go:66: GetBrands success: 35 brands retrieved
+APP_LOG: 2025/12/10 19:34:10 controllers.go:21: Success response: 200
+APP_LOG: 2025/12/10 19:34:11 brandsController.go:45: GetBrands request started
+APP_LOG: 2025/12/10 19:34:11 brandsController.go:57: GetBrands parameters: page=1, search=''
+APP_LOG: 2025/12/10 19:34:11 brandsController.go:66: GetBrands success: 50 brands retrieved
+APP_LOG: 2025/12/10 19:34:11 controllers.go:21: Success response: 200
+APP_LOG: 2025/12/10 19:34:13 categoriesController.go:44: GetCategories request started
+APP_LOG: 2025/12/10 19:34:13 categoriesController.go:56: GetCategories parameters: page=1, search='Dizüstü'
+APP_LOG: 2025/12/10 19:34:13 categoriesController.go:65: GetCategories success: 5 categories retrieved
+APP_LOG: 2025/12/10 19:34:13 controllers.go:21: Success response: 200
+APP_LOG: 2025/12/10 19:34:15 categoriesController.go:44: GetCategories request started
+APP_LOG: 2025/12/10 19:34:15 categoriesController.go:56: GetCategories parameters: page=1, search=''
+APP_LOG: 2025/12/10 19:34:15 categoriesController.go:60: GetCategories service error: Database error%!(EXTRA string=pq: unnamed prepared statement does not exist)
+APP_LOG: 2025/12/10 19:34:15 controllers.go:10: Error response: 500 - Kategoriler yüklenirken hata oluştu
+APP_LOG: 2025/12/10 19:34:15 controllers.go:10: Admin error response: 400 - Database error pq: unnamed prepared statement does not exist
+APP_LOG: 2025/12/10 19:35:46 brandsController.go:45: GetBrands request started
+APP_LOG: 2025/12/10 19:35:46 brandsController.go:57: GetBrands parameters: page=1, search=''
+APP_LOG: 2025/12/10 19:35:46 categoriesController.go:44: GetCategories request started
+APP_LOG: 2025/12/10 19:35:46 categoriesController.go:56: GetCategories parameters: page=1, search=''
+APP_LOG: 2025/12/10 19:35:47 categoriesController.go:60: GetCategories service error: Database error%!(EXTRA string=pq: unnamed prepared statement does not exist)
+APP_LOG: 2025/12/10 19:35:47 controllers.go:10: Error response: 500 - Kategoriler yüklenirken hata oluştu
+APP_LOG: 2025/12/10 19:35:47 brandsController.go:61: GetBrands service error: Database error : pq: unnamed prepared statement does not exist
+APP_LOG: 2025/12/10 19:35:47 controllers.go:10: Error response: 500 - Markalar yüklenirken hata oluştu
+APP_LOG: 2025/12/10 19:36:00 brandsController.go:45: GetBrands request started
+APP_LOG: 2025/12/10 19:36:00 brandsController.go:57: GetBrands parameters: page=1, search='Monster'
+APP_LOG: 2025/12/10 19:36:01 brandsController.go:66: GetBrands success: 35 brands retrieved
+APP_LOG: 2025/12/10 19:36:01 controllers.go:21: Success response: 200
+APP_LOG: 2025/12/10 19:36:02 brandsController.go:45: GetBrands request started
+APP_LOG: 2025/12/10 19:36:02 brandsController.go:57: GetBrands parameters: page=1, search=''
+APP_LOG: 2025/12/10 19:36:02 brandsController.go:66: GetBrands success: 50 brands retrieved
+APP_LOG: 2025/12/10 19:36:02 controllers.go:21: Success response: 200
+APP_LOG: 2025/12/10 19:36:08 categoriesController.go:44: GetCategories request started
+APP_LOG: 2025/12/10 19:36:08 categoriesController.go:56: GetCategories parameters: page=1, search='B'
+APP_LOG: 2025/12/10 19:36:08 categoriesController.go:65: GetCategories success: 50 categories retrieved
+APP_LOG: 2025/12/10 19:36:08 controllers.go:21: Success response: 200
+APP_LOG: 2025/12/10 19:36:08 categoriesController.go:44: GetCategories request started
+APP_LOG: 2025/12/10 19:36:08 categoriesController.go:56: GetCategories parameters: page=1, search=''
+APP_LOG: 2025/12/10 19:36:09 categoriesController.go:65: GetCategories success: 50 categories retrieved
+APP_LOG: 2025/12/10 19:36:09 controllers.go:21: Success response: 200
+APP_LOG: 2025/12/10 19:36:09 categoriesController.go:44: GetCategories request started
+APP_LOG: 2025/12/10 19:36:09 categoriesController.go:56: GetCategories parameters: page=1, search='A'
+APP_LOG: 2025/12/10 19:36:09 categoriesController.go:65: GetCategories success: 50 categories retrieved
+APP_LOG: 2025/12/10 19:36:09 controllers.go:21: Success response: 200
+APP_LOG: 2025/12/10 19:36:10 categoriesController.go:44: GetCategories request started
+APP_LOG: 2025/12/10 19:36:10 categoriesController.go:56: GetCategories parameters: page=1, search='IOS'
+APP_LOG: 2025/12/10 19:36:10 categoriesController.go:65: GetCategories success: 1 categories retrieved
+APP_LOG: 2025/12/10 19:36:10 controllers.go:21: Success response: 200
+APP_LOG: 2025/12/10 19:36:12 categoriesController.go:44: GetCategories request started
+APP_LOG: 2025/12/10 19:36:12 categoriesController.go:56: GetCategories parameters: page=1, search=''
+APP_LOG: 2025/12/10 19:36:12 categoriesController.go:60: GetCategories service error: Database error%!(EXTRA string=pq: bind message supplies 3 parameters, but prepared statement "" requires 1)
+APP_LOG: 2025/12/10 19:36:12 controllers.go:10: Error response: 500 - Kategoriler yüklenirken hata oluştu
+APP_LOG: 2025/12/10 19:36:12 controllers.go:21: Admin success response: 200
+APP_LOG: 2025/12/10 19:59:35 categoriesController.go:44: GetCategories request started
+APP_LOG: 2025/12/10 19:59:35 categoriesController.go:56: GetCategories parameters: page=1, search='oyuncu'
+APP_LOG: 2025/12/10 19:59:37 categoriesController.go:65: GetCategories success: 12 categories retrieved
+APP_LOG: 2025/12/10 19:59:37 controllers.go:21: Success response: 200
+APP_LOG: 2025/12/10 19:59:37 categoriesController.go:44: GetCategories request started
+APP_LOG: 2025/12/10 19:59:37 categoriesController.go:56: GetCategories parameters: page=1, search='oyuncu '
+APP_LOG: 2025/12/10 19:59:37 categoriesController.go:65: GetCategories success: 12 categories retrieved
+APP_LOG: 2025/12/10 19:59:37 controllers.go:21: Success response: 200
+APP_LOG: 2025/12/10 19:59:39 categoriesController.go:44: GetCategories request started
+APP_LOG: 2025/12/10 19:59:39 categoriesController.go:56: GetCategories parameters: page=1, search=''
+APP_LOG: 2025/12/10 19:59:39 controllers.go:21: Admin success response: 200
+APP_LOG: 2025/12/10 19:59:39 categoriesController.go:65: GetCategories success: 50 categories retrieved
+APP_LOG: 2025/12/10 19:59:39 controllers.go:21: Success response: 200
+APP_LOG: 2025/12/10 19:59:52 controllers.go:21: Admin success response: 200
+APP_LOG: 2025/12/10 19:59:56 categoriesController.go:44: GetCategories request started
+APP_LOG: 2025/12/10 19:59:56 categoriesController.go:56: GetCategories parameters: page=1, search='oyuncu'
+APP_LOG: 2025/12/10 19:59:56 categoriesController.go:65: GetCategories success: 12 categories retrieved
+APP_LOG: 2025/12/10 19:59:56 controllers.go:21: Success response: 200
+APP_LOG: 2025/12/10 19:59:57 categoriesController.go:44: GetCategories request started
+APP_LOG: 2025/12/10 19:59:57 categoriesController.go:56: GetCategories parameters: page=1, search='oyuncu '
+APP_LOG: 2025/12/10 19:59:57 categoriesController.go:65: GetCategories success: 12 categories retrieved
+APP_LOG: 2025/12/10 19:59:57 controllers.go:21: Success response: 200
+APP_LOG: 2025/12/10 19:59:57 categoriesController.go:44: GetCategories request started
+APP_LOG: 2025/12/10 19:59:57 categoriesController.go:56: GetCategories parameters: page=1, search=''
+APP_LOG: 2025/12/10 19:59:58 categoriesController.go:60: GetCategories service error: Database error%!(EXTRA string=pq: bind message supplies 3 parameters, but prepared statement "" requires 1)
+APP_LOG: 2025/12/10 19:59:58 controllers.go:10: Error response: 500 - Kategoriler yüklenirken hata oluştu
+APP_LOG: 2025/12/10 19:59:58 controllers.go:21: Admin success response: 200
+APP_LOG: 2025/12/10 20:15:27 auth.go:66: AuthMiddleware: Cookie not found - http: named cookie not present
+APP_LOG: 2025/12/10 20:15:27 usersController.go:213: GetAccess request started
+APP_LOG: 2025/12/10 20:15:29 usersController.go:225: GetAccess service error: sql: no rows in result set
+APP_LOG: 2025/12/10 20:15:29 controllers.go:10: Error response: 401 - Token süresi dolmuş
+APP_LOG: 2025/12/10 20:17:17 controllers.go:21: Success response: 200
+APP_LOG: 2025/12/10 20:17:17 controllers.go:21: Success response: 200
+APP_LOG: 2025/12/10 20:17:23 productRepo.go:60:  true
+APP_LOG: 2025/12/10 20:17:24 controllers.go:10: Error response: 400 - Database Error pq: bind message has 5 result formats but query has 1 columns
+APP_LOG: 2025/12/10 20:17:43 controllers.go:10: Error response: 400 - pq: unnamed prepared statement does not exist
+APP_LOG: 2025/12/10 20:17:47 productRepo.go:60:  false
+APP_LOG: 2025/12/10 20:17:47 controllers.go:10: Error response: 400 - Database Error pq: bind message has 5 result formats but query has 1 columns
+APP_LOG: 2025/12/10 20:19:25 productRepo.go:60:  false
+APP_LOG: 2025/12/10 20:19:25 controllers.go:21: Success response: 200
+APP_LOG: 2025/12/10 20:19:29 productRepo.go:60:  true
+APP_LOG: 2025/12/10 20:19:29 controllers.go:10: Error response: 400 - Database Error pq: bind message has 5 result formats but query has 1 columns
+APP_LOG: 2025/12/10 20:19:33 productRepo.go:60:  false
+APP_LOG: 2025/12/10 20:19:33 controllers.go:21: Success response: 200
+APP_LOG: 2025/12/10 20:19:59 main.go:24: Application started successfully.
+APP_LOG: 2025/12/10 20:19:59 auth.go:60: AuthMiddleware Started
+APP_LOG: 2025/12/10 20:19:59 auth.go:60: AuthMiddleware Started
+APP_LOG: 2025/12/10 20:19:59 auth.go:60: AuthMiddleware Started
+APP_LOG: 2025/12/10 20:19:59 auth.go:60: AuthMiddleware Started
+APP_LOG: 2025/12/10 20:19:59 auth.go:60: AuthMiddleware Started
+APP_LOG: 2025/12/10 20:19:59 auth.go:60: AuthMiddleware Started
+APP_LOG: 2025/12/10 20:19:59 auth.go:60: AuthMiddleware Started
+APP_LOG: 2025/12/10 20:19:59 auth.go:60: AuthMiddleware Started
+APP_LOG: 2025/12/10 20:19:59 auth.go:60: AuthMiddleware Started
+APP_LOG: 2025/12/10 20:19:59 auth.go:60: AuthMiddleware Started
+APP_LOG: 2025/12/10 20:19:59 auth.go:60: AuthMiddleware Started
+APP_LOG: 2025/12/10 20:19:59 ai.go:20: Gemini client initialized successfully
+APP_LOG: 2025/12/10 20:19:59 image.go:19: ImageKit client initialized successfully
+APP_LOG: 2025/12/10 20:20:03 brandsController.go:45: GetBrands request started
+APP_LOG: 2025/12/10 20:20:03 brandsController.go:57: GetBrands parameters: page=1, search=''
+APP_LOG: 2025/12/10 20:20:03 categoriesController.go:44: GetCategories request started
+APP_LOG: 2025/12/10 20:20:03 categoriesController.go:56: GetCategories parameters: page=1, search=''
+APP_LOG: 2025/12/10 20:20:03 brandsController.go:66: GetBrands success: 50 brands retrieved
+APP_LOG: 2025/12/10 20:20:03 controllers.go:21: Success response: 200
+APP_LOG: 2025/12/10 20:20:03 categoriesController.go:65: GetCategories success: 50 categories retrieved
+APP_LOG: 2025/12/10 20:20:03 controllers.go:21: Success response: 200
+APP_LOG: 2025/12/10 20:20:04 controllers.go:21: Success response: 200
+APP_LOG: 2025/12/10 20:20:04 controllers.go:21: Success response: 200
+APP_LOG: 2025/12/10 20:20:05 productRepo.go:60:  true
+APP_LOG: 2025/12/10 20:20:06 controllers.go:21: Success response: 200
+APP_LOG: 2025/12/10 20:20:06 controllers.go:21: Success response: 200
+APP_LOG: 2025/12/10 20:20:06 controllers.go:21: Success response: 200
+APP_LOG: 2025/12/10 20:20:08 controllers.go:21: Success response: 200
+APP_LOG: 2025/12/10 20:20:08 controllers.go:21: Success response: 200
+APP_LOG: 2025/12/10 20:20:11 productRepo.go:60:  true
+APP_LOG: 2025/12/10 20:20:11 controllers.go:21: Success response: 200
+APP_LOG: 2025/12/10 20:20:11 controllers.go:21: Success response: 200
+APP_LOG: 2025/12/10 20:20:11 controllers.go:21: Success response: 200
+APP_LOG: 2025/12/10 20:22:56 productRepo.go:60:  false
+APP_LOG: 2025/12/10 20:22:56 controllers.go:10: Error response: 400 - Product not found
+APP_LOG: 2025/12/10 20:22:57 productRepo.go:60:  false
+APP_LOG: 2025/12/10 20:22:57 controllers.go:10: Error response: 400 - Product not found
+APP_LOG: 2025/12/10 20:22:58 productRepo.go:60:  false
+APP_LOG: 2025/12/10 20:22:58 controllers.go:10: Error response: 400 - Product not found
+APP_LOG: 2025/12/10 20:22:59 productRepo.go:60:  false
+APP_LOG: 2025/12/10 20:22:59 controllers.go:10: Error response: 400 - Product not found
+APP_LOG: 2025/12/10 20:29:13 productRepo.go:60:  true
+APP_LOG: 2025/12/10 20:29:13 controllers.go:21: Success response: 200
+APP_LOG: 2025/12/10 20:29:14 controllers.go:21: Success response: 200
+APP_LOG: 2025/12/19 22:15:32 main.go:24: Application started successfully.
+APP_LOG: 2025/12/19 22:15:32 auth.go:60: AuthMiddleware Started
+APP_LOG: 2025/12/19 22:15:32 auth.go:60: AuthMiddleware Started
+APP_LOG: 2025/12/19 22:15:32 auth.go:60: AuthMiddleware Started
+APP_LOG: 2025/12/19 22:15:32 auth.go:60: AuthMiddleware Started
+APP_LOG: 2025/12/19 22:15:32 auth.go:60: AuthMiddleware Started
+APP_LOG: 2025/12/19 22:15:32 auth.go:60: AuthMiddleware Started
+APP_LOG: 2025/12/19 22:15:32 auth.go:60: AuthMiddleware Started
+APP_LOG: 2025/12/19 22:15:32 auth.go:60: AuthMiddleware Started
+APP_LOG: 2025/12/19 22:15:32 auth.go:60: AuthMiddleware Started
+APP_LOG: 2025/12/19 22:15:32 auth.go:60: AuthMiddleware Started
+APP_LOG: 2025/12/19 22:15:32 auth.go:60: AuthMiddleware Started
+APP_LOG: 2025/12/19 22:15:32 ai.go:20: Gemini client initialized successfully
+APP_LOG: 2025/12/19 22:17:47 controllers.go:21: Success response: 200
+APP_LOG: 2025/12/19 22:28:24 main.go:24: Application started successfully.
+APP_LOG: 2025/12/19 22:28:24 auth.go:60: AuthMiddleware Started
+APP_LOG: 2025/12/19 22:28:24 auth.go:60: AuthMiddleware Started
+APP_LOG: 2025/12/19 22:28:24 auth.go:60: AuthMiddleware Started
+APP_LOG: 2025/12/19 22:28:24 auth.go:60: AuthMiddleware Started
+APP_LOG: 2025/12/19 22:28:24 auth.go:60: AuthMiddleware Started
+APP_LOG: 2025/12/19 22:28:24 auth.go:60: AuthMiddleware Started
+APP_LOG: 2025/12/19 22:28:24 auth.go:60: AuthMiddleware Started
+APP_LOG: 2025/12/19 22:28:24 auth.go:60: AuthMiddleware Started
+APP_LOG: 2025/12/19 22:28:24 auth.go:60: AuthMiddleware Started
+APP_LOG: 2025/12/19 22:28:24 auth.go:60: AuthMiddleware Started
+APP_LOG: 2025/12/19 22:28:24 auth.go:60: AuthMiddleware Started
+APP_LOG: 2025/12/19 22:28:24 ai.go:20: Gemini client initialized successfully
+APP_LOG: 2025/12/19 22:29:32 controllers.go:21: Success response: 200
+APP_LOG: 2025/12/19 23:08:02 main.go:24: Application started successfully.
+APP_LOG: 2025/12/19 23:08:02 auth.go:60: AuthMiddleware Started
+APP_LOG: 2025/12/19 23:08:02 auth.go:60: AuthMiddleware Started
+APP_LOG: 2025/12/19 23:08:02 auth.go:60: AuthMiddleware Started
+APP_LOG: 2025/12/19 23:08:02 auth.go:60: AuthMiddleware Started
+APP_LOG: 2025/12/19 23:08:02 auth.go:60: AuthMiddleware Started
+APP_LOG: 2025/12/19 23:08:02 auth.go:60: AuthMiddleware Started
+APP_LOG: 2025/12/19 23:08:02 auth.go:60: AuthMiddleware Started
+APP_LOG: 2025/12/19 23:08:02 auth.go:60: AuthMiddleware Started
+APP_LOG: 2025/12/19 23:08:02 auth.go:60: AuthMiddleware Started
+APP_LOG: 2025/12/19 23:08:02 auth.go:60: AuthMiddleware Started
+APP_LOG: 2025/12/19 23:08:02 auth.go:60: AuthMiddleware Started
+APP_LOG: 2025/12/19 23:08:02 ai.go:20: Gemini client initialized successfully
+APP_LOG: 2025/12/19 23:08:51 controllers.go:21: Success response: 200
+APP_LOG: 2025/12/19 23:08:51 controllers.go:21: Success response: 200
+APP_LOG: 2025/12/19 23:08:52 controllers.go:21: Success response: 200
+APP_LOG: 2025/12/19 23:08:57 productRepo.go:60:  true
+APP_LOG: 2025/12/19 23:08:57 controllers.go:21: Success response: 200
+APP_LOG: 2025/12/19 23:08:57 controllers.go:21: Success response: 200
+APP_LOG: 2025/12/19 23:08:57 controllers.go:21: Success response: 200
+APP_LOG: 2025/12/19 23:09:00 productRepo.go:60:  true
+APP_LOG: 2025/12/19 23:09:00 controllers.go:21: Success response: 200
+APP_LOG: 2025/12/19 23:09:01 controllers.go:21: Success response: 200
+APP_LOG: 2025/12/19 23:09:02 productRepo.go:60:  true
+APP_LOG: 2025/12/19 23:09:02 controllers.go:21: Success response: 200
+APP_LOG: 2025/12/19 23:09:03 controllers.go:21: Success response: 200
+APP_LOG: 2025/12/19 23:09:03 productRepo.go:60:  true
+APP_LOG: 2025/12/19 23:09:03 controllers.go:21: Success response: 200
+APP_LOG: 2025/12/19 23:09:04 controllers.go:21: Success response: 200
+APP_LOG: 2025/12/19 23:09:23 usersController.go:54: Login request started
+APP_LOG: 2025/12/19 23:09:23 password.go:22: Unsuccesful CheckPasswordHash
+APP_LOG: 2025/12/19 23:09:23 usersController.go:70: Login service error: Şifre yanlış.
+APP_LOG: 2025/12/19 23:09:23 controllers.go:10: Error response: 401 - Giriş bilgileri hatalı
+APP_LOG: 2025/12/19 23:09:23 usersController.go:213: GetAccess request started
+APP_LOG: 2025/12/19 23:09:23 usersController.go:217: GetAccess error: No refresh token cookie
+APP_LOG: 2025/12/19 23:09:23 controllers.go:10: Error response: 401 - Yetkisiz erişim
+APP_LOG: 2025/12/19 23:09:24 usersController.go:54: Login request started
+APP_LOG: 2025/12/19 23:09:24 password.go:22: Unsuccesful CheckPasswordHash
+APP_LOG: 2025/12/19 23:09:24 usersController.go:70: Login service error: Şifre yanlış.
+APP_LOG: 2025/12/19 23:09:24 controllers.go:10: Error response: 401 - Giriş bilgileri hatalı
+APP_LOG: 2025/12/19 23:09:29 usersController.go:54: Login request started
+APP_LOG: 2025/12/19 23:09:30 password.go:22: Unsuccesful CheckPasswordHash
+APP_LOG: 2025/12/19 23:09:30 usersController.go:70: Login service error: Şifre yanlış.
+APP_LOG: 2025/12/19 23:09:30 controllers.go:10: Error response: 401 - Giriş bilgileri hatalı
+APP_LOG: 2025/12/19 23:09:30 usersController.go:54: Login request started
+APP_LOG: 2025/12/19 23:09:30 password.go:22: Unsuccesful CheckPasswordHash
+APP_LOG: 2025/12/19 23:09:30 usersController.go:70: Login service error: Şifre yanlış.
+APP_LOG: 2025/12/19 23:09:30 controllers.go:10: Error response: 401 - Giriş bilgileri hatalı
+APP_LOG: 2025/12/19 23:09:31 usersController.go:54: Login request started
+APP_LOG: 2025/12/19 23:09:31 password.go:22: Unsuccesful CheckPasswordHash
+APP_LOG: 2025/12/19 23:09:31 usersController.go:70: Login service error: Şifre yanlış.
+APP_LOG: 2025/12/19 23:09:31 controllers.go:10: Error response: 401 - Giriş bilgileri hatalı
+APP_LOG: 2025/12/19 23:09:36 usersController.go:54: Login request started
+APP_LOG: 2025/12/19 23:09:36 usersController.go:93: Login success: User 1 logged in
+APP_LOG: 2025/12/19 23:09:36 controllers.go:21: Success response: 202
+APP_LOG: 2025/12/19 23:09:37 controllers.go:21: Success response: 200
+APP_LOG: 2025/12/19 23:09:37 controllers.go:21: Success response: 200
+APP_LOG: 2025/12/19 23:09:41 controllers.go:21: Success response: 200
+APP_LOG: 2025/12/19 23:09:41 controllers.go:21: Success response: 200
+APP_LOG: 2025/12/19 23:09:42 productRepo.go:60:  true
+APP_LOG: 2025/12/19 23:09:42 controllers.go:21: Success response: 200
+APP_LOG: 2025/12/19 23:09:42 controllers.go:21: Success response: 200
+APP_LOG: 2025/12/19 23:09:42 controllers.go:21: Success response: 200
+APP_LOG: 2025/12/19 23:09:44 productRepo.go:60:  true
+APP_LOG: 2025/12/19 23:09:44 controllers.go:21: Success response: 200
+APP_LOG: 2025/12/19 23:09:45 controllers.go:21: Success response: 200
+APP_LOG: 2025/12/19 23:09:45 controllers.go:21: Success response: 200
+APP_LOG: 2025/12/19 23:09:48 productRepo.go:60:  true
+APP_LOG: 2025/12/19 23:09:48 controllers.go:21: Success response: 200
+APP_LOG: 2025/12/19 23:09:48 controllers.go:21: Success response: 200
+APP_LOG: 2025/12/19 23:09:50 controllers.go:21: Success response: 200
+APP_LOG: 2025/12/19 23:09:50 controllers.go:21: Success response: 200
+APP_LOG: 2025/12/19 23:09:52 productRepo.go:60:  true
+APP_LOG: 2025/12/19 23:09:52 controllers.go:21: Success response: 200
+APP_LOG: 2025/12/19 23:09:52 productRepo.go:60:  true
+APP_LOG: 2025/12/19 23:09:52 controllers.go:21: Success response: 200
+APP_LOG: 2025/12/19 23:09:55 productRepo.go:60:  true
+APP_LOG: 2025/12/19 23:09:55 controllers.go:21: Success response: 200
+APP_LOG: 2025/12/19 23:09:55 productRepo.go:60:  true
+APP_LOG: 2025/12/19 23:09:55 controllers.go:21: Success response: 200
+APP_LOG: 2025/12/19 23:09:56 productRepo.go:60:  true
+APP_LOG: 2025/12/19 23:09:56 controllers.go:21: Success response: 200
+APP_LOG: 2025/12/19 23:09:56 productRepo.go:60:  true
+APP_LOG: 2025/12/19 23:09:56 controllers.go:21: Success response: 200
+APP_LOG: 2025/12/19 23:09:58 productRepo.go:60:  true
+APP_LOG: 2025/12/19 23:09:58 controllers.go:21: Success response: 200
+APP_LOG: 2025/12/19 23:09:58 productRepo.go:60:  true
+APP_LOG: 2025/12/19 23:09:58 controllers.go:21: Success response: 200
+APP_LOG: 2025/12/19 23:09:59 productRepo.go:60:  true
+APP_LOG: 2025/12/19 23:09:59 controllers.go:21: Success response: 200
+APP_LOG: 2025/12/19 23:09:59 productRepo.go:60:  true
+APP_LOG: 2025/12/19 23:09:59 controllers.go:21: Success response: 200
+APP_LOG: 2025/12/21 20:52:28 main.go:24: Application started successfully.
+APP_LOG: 2025/12/21 20:52:28 auth.go:60: AuthMiddleware Started
+APP_LOG: 2025/12/21 20:52:28 auth.go:60: AuthMiddleware Started
+APP_LOG: 2025/12/21 20:52:28 auth.go:60: AuthMiddleware Started
+APP_LOG: 2025/12/21 20:52:28 auth.go:60: AuthMiddleware Started
+APP_LOG: 2025/12/21 20:52:28 auth.go:60: AuthMiddleware Started
+APP_LOG: 2025/12/21 20:52:28 auth.go:60: AuthMiddleware Started
+APP_LOG: 2025/12/21 20:52:28 auth.go:60: AuthMiddleware Started
+APP_LOG: 2025/12/21 20:52:28 auth.go:60: AuthMiddleware Started
+APP_LOG: 2025/12/21 20:52:28 auth.go:60: AuthMiddleware Started
+APP_LOG: 2025/12/21 20:52:28 auth.go:60: AuthMiddleware Started
+APP_LOG: 2025/12/21 20:52:28 auth.go:60: AuthMiddleware Started
+APP_LOG: 2025/12/21 20:52:28 ai.go:20: Gemini client initialized successfully
+APP_LOG: 2025/12/21 20:52:43 controllers.go:21: Success response: 200
+APP_LOG: 2025/12/21 21:19:18 controllers.go:21: Success response: 200
+APP_LOG: 2025/12/21 21:19:18 controllers.go:21: Success response: 200
+APP_LOG: 2025/12/21 21:19:19 controllers.go:21: Success response: 200
+APP_LOG: 2025/12/21 21:19:25 brandsController.go:45: GetBrands request started
+APP_LOG: 2025/12/21 21:19:25 brandsController.go:57: GetBrands parameters: page=1, search=''
+APP_LOG: 2025/12/21 21:19:25 categoriesController.go:44: GetCategories request started
+APP_LOG: 2025/12/21 21:19:25 categoriesController.go:56: GetCategories parameters: page=1, search=''
+APP_LOG: 2025/12/21 21:19:25 brandsController.go:66: GetBrands success: 50 brands retrieved
+APP_LOG: 2025/12/21 21:19:25 controllers.go:21: Success response: 200
+APP_LOG: 2025/12/21 21:19:25 categoriesController.go:65: GetCategories success: 50 categories retrieved
+APP_LOG: 2025/12/21 21:19:25 controllers.go:21: Success response: 200
+APP_LOG: 2025/12/21 21:19:30 controllers.go:10: Error response: 400 - invalid multipart form
+APP_LOG: 2025/12/21 21:21:12 brandsController.go:45: GetBrands request started
+APP_LOG: 2025/12/21 21:21:12 brandsController.go:57: GetBrands parameters: page=1, search=''
+APP_LOG: 2025/12/21 21:21:12 categoriesController.go:44: GetCategories request started
+APP_LOG: 2025/12/21 21:21:12 categoriesController.go:56: GetCategories parameters: page=1, search=''
+APP_LOG: 2025/12/21 21:21:12 brandsController.go:66: GetBrands success: 50 brands retrieved
+APP_LOG: 2025/12/21 21:21:12 controllers.go:21: Success response: 200
+APP_LOG: 2025/12/21 21:21:12 categoriesController.go:65: GetCategories success: 50 categories retrieved
+APP_LOG: 2025/12/21 21:21:12 controllers.go:21: Success response: 200
+APP_LOG: 2025/12/21 21:21:25 controllers.go:10: Error response: 400 - invalid multipart form
+APP_LOG: 2025/12/21 21:22:34 brandsController.go:45: GetBrands request started
+APP_LOG: 2025/12/21 21:22:34 brandsController.go:57: GetBrands parameters: page=1, search=''
+APP_LOG: 2025/12/21 21:22:34 categoriesController.go:44: GetCategories request started
+APP_LOG: 2025/12/21 21:22:34 categoriesController.go:56: GetCategories parameters: page=1, search=''
+APP_LOG: 2025/12/21 21:22:34 brandsController.go:66: GetBrands success: 50 brands retrieved
+APP_LOG: 2025/12/21 21:22:34 categoriesController.go:65: GetCategories success: 50 categories retrieved
+APP_LOG: 2025/12/21 21:22:34 controllers.go:21: Success response: 200
+APP_LOG: 2025/12/21 21:22:34 controllers.go:21: Success response: 200
+APP_LOG: 2025/12/21 21:22:39 controllers.go:10: Error response: 400 - invalid multipart form
+APP_LOG: 2025/12/21 21:24:26 brandsController.go:45: GetBrands request started
+APP_LOG: 2025/12/21 21:24:26 brandsController.go:57: GetBrands parameters: page=1, search=''
+APP_LOG: 2025/12/21 21:24:26 categoriesController.go:44: GetCategories request started
+APP_LOG: 2025/12/21 21:24:26 categoriesController.go:56: GetCategories parameters: page=1, search=''
+APP_LOG: 2025/12/21 21:24:26 categoriesController.go:65: GetCategories success: 50 categories retrieved
+APP_LOG: 2025/12/21 21:24:26 controllers.go:21: Success response: 200
+APP_LOG: 2025/12/21 21:24:26 brandsController.go:66: GetBrands success: 50 brands retrieved
+APP_LOG: 2025/12/21 21:24:26 controllers.go:21: Success response: 200
+APP_LOG: 2025/12/21 21:24:41 controllers.go:21: Success response: 200
+APP_LOG: 2025/12/21 21:25:45 brandsController.go:45: GetBrands request started
+APP_LOG: 2025/12/21 21:25:45 brandsController.go:57: GetBrands parameters: page=1, search=''
+APP_LOG: 2025/12/21 21:25:45 categoriesController.go:44: GetCategories request started
+APP_LOG: 2025/12/21 21:25:45 categoriesController.go:56: GetCategories parameters: page=1, search=''
+APP_LOG: 2025/12/21 21:25:45 brandsController.go:66: GetBrands success: 50 brands retrieved
+APP_LOG: 2025/12/21 21:25:45 controllers.go:21: Success response: 200
+APP_LOG: 2025/12/21 21:25:45 categoriesController.go:65: GetCategories success: 50 categories retrieved
+APP_LOG: 2025/12/21 21:25:45 controllers.go:21: Success response: 200
+APP_LOG: 2025/12/21 21:25:58 controllers.go:21: Success response: 200
+APP_LOG: 2025/12/21 21:26:16 controllers.go:21: Success response: 200
+APP_LOG: 2025/12/21 21:28:24 brandsController.go:45: GetBrands request started
+APP_LOG: 2025/12/21 21:28:24 brandsController.go:57: GetBrands parameters: page=1, search=''
+APP_LOG: 2025/12/21 21:28:24 categoriesController.go:44: GetCategories request started
+APP_LOG: 2025/12/21 21:28:24 categoriesController.go:56: GetCategories parameters: page=1, search=''
+APP_LOG: 2025/12/21 21:28:24 brandsController.go:66: GetBrands success: 50 brands retrieved
+APP_LOG: 2025/12/21 21:28:24 controllers.go:21: Success response: 200
+APP_LOG: 2025/12/21 21:28:24 categoriesController.go:65: GetCategories success: 50 categories retrieved
+APP_LOG: 2025/12/21 21:28:24 controllers.go:21: Success response: 200
+APP_LOG: 2025/12/21 21:28:46 brandsController.go:45: GetBrands request started
+APP_LOG: 2025/12/21 21:28:46 brandsController.go:57: GetBrands parameters: page=1, search=''
+APP_LOG: 2025/12/21 21:28:46 categoriesController.go:44: GetCategories request started
+APP_LOG: 2025/12/21 21:28:46 categoriesController.go:56: GetCategories parameters: page=1, search=''
+APP_LOG: 2025/12/21 21:28:46 brandsController.go:66: GetBrands success: 50 brands retrieved
+APP_LOG: 2025/12/21 21:28:46 controllers.go:21: Success response: 200
+APP_LOG: 2025/12/21 21:28:46 categoriesController.go:65: GetCategories success: 50 categories retrieved
+APP_LOG: 2025/12/21 21:28:46 controllers.go:21: Success response: 200
+APP_LOG: 2025/12/21 21:34:10 controllers.go:21: Success response: 200
+APP_LOG: 2025/12/21 21:34:20 brandsController.go:45: GetBrands request started
+APP_LOG: 2025/12/21 21:34:20 brandsController.go:57: GetBrands parameters: page=1, search=''
+APP_LOG: 2025/12/21 21:34:20 categoriesController.go:44: GetCategories request started
+APP_LOG: 2025/12/21 21:34:20 categoriesController.go:56: GetCategories parameters: page=1, search=''
+APP_LOG: 2025/12/21 21:34:20 brandsController.go:66: GetBrands success: 50 brands retrieved
+APP_LOG: 2025/12/21 21:34:20 controllers.go:21: Success response: 200
+APP_LOG: 2025/12/21 21:34:20 categoriesController.go:65: GetCategories success: 50 categories retrieved
+APP_LOG: 2025/12/21 21:34:20 controllers.go:21: Success response: 200
+APP_LOG: 2025/12/21 21:34:35 controllers.go:21: Success response: 200
+APP_LOG: 2025/12/21 22:29:17 main.go:24: Application started successfully.
+APP_LOG: 2025/12/21 22:29:17 auth.go:60: AuthMiddleware Started
+APP_LOG: 2025/12/21 22:29:17 auth.go:60: AuthMiddleware Started
+APP_LOG: 2025/12/21 22:29:17 auth.go:60: AuthMiddleware Started
+APP_LOG: 2025/12/21 22:29:17 auth.go:60: AuthMiddleware Started
+APP_LOG: 2025/12/21 22:29:17 auth.go:60: AuthMiddleware Started
+APP_LOG: 2025/12/21 22:29:17 auth.go:60: AuthMiddleware Started
+APP_LOG: 2025/12/21 22:29:17 auth.go:60: AuthMiddleware Started
+APP_LOG: 2025/12/21 22:29:17 auth.go:60: AuthMiddleware Started
+APP_LOG: 2025/12/21 22:29:17 auth.go:60: AuthMiddleware Started
+APP_LOG: 2025/12/21 22:29:17 auth.go:60: AuthMiddleware Started
+APP_LOG: 2025/12/21 22:29:17 auth.go:60: AuthMiddleware Started
+APP_LOG: 2025/12/21 22:29:17 auth.go:60: AuthMiddleware Started
+APP_LOG: 2025/12/21 22:29:17 ai.go:20: Gemini client initialized successfully
+APP_LOG: 2025/12/21 22:29:29 auth.go:66: AuthMiddleware: Cookie not found - http: named cookie not present
+APP_LOG: 2025/12/21 22:29:41 auth.go:66: AuthMiddleware: Cookie not found - http: named cookie not present
+APP_LOG: 2025/12/21 22:29:42 auth.go:66: AuthMiddleware: Cookie not found - http: named cookie not present
+APP_LOG: 2025/12/21 22:29:42 auth.go:66: AuthMiddleware: Cookie not found - http: named cookie not present
+APP_LOG: 2025/12/21 22:34:18 brandsController.go:45: GetBrands request started
+APP_LOG: 2025/12/21 22:34:18 brandsController.go:57: GetBrands parameters: page=1, search=''
+APP_LOG: 2025/12/21 22:34:18 categoriesController.go:44: GetCategories request started
+APP_LOG: 2025/12/21 22:34:18 categoriesController.go:56: GetCategories parameters: page=1, search=''
+APP_LOG: 2025/12/21 22:34:18 brandsController.go:66: GetBrands success: 50 brands retrieved
+APP_LOG: 2025/12/21 22:34:18 controllers.go:21: Success response: 200
+APP_LOG: 2025/12/21 22:34:18 categoriesController.go:65: GetCategories success: 50 categories retrieved
+APP_LOG: 2025/12/21 22:34:18 controllers.go:21: Success response: 200
+APP_LOG: 2025/12/21 22:35:12 brandsController.go:45: GetBrands request started
+APP_LOG: 2025/12/21 22:35:12 brandsController.go:57: GetBrands parameters: page=1, search=''
+APP_LOG: 2025/12/21 22:35:12 categoriesController.go:44: GetCategories request started
+APP_LOG: 2025/12/21 22:35:12 categoriesController.go:56: GetCategories parameters: page=1, search=''
+APP_LOG: 2025/12/21 22:35:12 brandsController.go:66: GetBrands success: 50 brands retrieved
+APP_LOG: 2025/12/21 22:35:12 controllers.go:21: Success response: 200
+APP_LOG: 2025/12/21 22:35:12 categoriesController.go:65: GetCategories success: 50 categories retrieved
+APP_LOG: 2025/12/21 22:35:12 controllers.go:21: Success response: 200
+APP_LOG: 2025/12/21 22:35:22 brandsController.go:45: GetBrands request started
+APP_LOG: 2025/12/21 22:35:22 categoriesController.go:44: GetCategories request started
+APP_LOG: 2025/12/21 22:35:22 categoriesController.go:56: GetCategories parameters: page=1, search=''
+APP_LOG: 2025/12/21 22:35:22 brandsController.go:57: GetBrands parameters: page=1, search=''
+APP_LOG: 2025/12/21 22:35:22 brandsController.go:66: GetBrands success: 50 brands retrieved
+APP_LOG: 2025/12/21 22:35:22 controllers.go:21: Success response: 200
+APP_LOG: 2025/12/21 22:35:22 categoriesController.go:65: GetCategories success: 50 categories retrieved
+APP_LOG: 2025/12/21 22:35:22 controllers.go:21: Success response: 200
+APP_LOG: 2025/12/21 22:35:35 categoriesController.go:44: GetCategories request started
+APP_LOG: 2025/12/21 22:35:35 brandsController.go:45: GetBrands request started
+APP_LOG: 2025/12/21 22:35:35 categoriesController.go:56: GetCategories parameters: page=1, search=''
+APP_LOG: 2025/12/21 22:35:35 brandsController.go:57: GetBrands parameters: page=1, search=''
+APP_LOG: 2025/12/21 22:35:35 brandsController.go:66: GetBrands success: 50 brands retrieved
+APP_LOG: 2025/12/21 22:35:35 controllers.go:21: Success response: 200
+APP_LOG: 2025/12/21 22:35:35 categoriesController.go:65: GetCategories success: 50 categories retrieved
+APP_LOG: 2025/12/21 22:35:35 controllers.go:21: Success response: 200

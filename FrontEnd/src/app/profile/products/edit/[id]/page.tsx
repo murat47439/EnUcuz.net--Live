@@ -26,6 +26,7 @@ type FormData = {
 export default function ProductUpdatePage({ params }: { params: Promise<{ id: number }> }) {
     const router = useRouter()
     const [product, setProduct] = useState<ProductDetail>()
+    const [isLoading, setIsLoading] = useState(true)
     const { user } = useAuth()
     const {openModal, closeModal} = UseModal()
     const {showNotification} = useToast();
@@ -52,31 +53,56 @@ export default function ProductUpdatePage({ params }: { params: Promise<{ id: nu
   }, [product, methods])
     const {register, handleSubmit, watch} = methods;
     const resolvedParams = React.use(params)
+    
+    // Kullanıcı kontrolü
     useEffect(() => {
-
-        const user = localStorage.getItem("user"); 
-        if (!user) {
+        const storedUser = localStorage.getItem("user"); 
+        if (!storedUser) {
           router.push("/login"); 
+          return;
         }
-      }, [router]);
-    // Ürünü getir
+    }, [router]);
+
+    // Ürünü getir - user yüklendikten sonra
     useEffect(() => {
         const fetchData = async () => {
+            // User henüz yüklenmemişse bekle
+            const storedUser = localStorage.getItem("user");
+            if (!storedUser) {
+                setIsLoading(false);
+                return;
+            }
+
+            let currentUser;
+            try {
+                currentUser = JSON.parse(storedUser);
+            } catch {
+                router.push("/login");
+                return;
+            }
+
             const request: IdParam = { id: Number(resolvedParams.id) }
             try {
+                setIsLoading(true);
                 const data = await getProduct(request)
-                if (user?.id == data.data.product.seller_id){
+                
+                // User context'ten gelmemişse localStorage'dan kontrol et
+                const userId = user?.id || currentUser?.id;
+                
+                if (userId && userId == data.data.product.seller_id){
                     setProduct(data)
-                }else{
+                } else {
                     router.push('/404')   
                 }
             } catch (err) {
                 console.error(err)
                 router.push('/404')
+            } finally {
+                setIsLoading(false);
             }
         }
         fetchData()
-    }, [resolvedParams, router,user])
+    }, [resolvedParams, router, user])
 
     const handleDelete = async () => {
         const request: IdParam = { id: Number(resolvedParams.id) }
@@ -131,7 +157,7 @@ export default function ProductUpdatePage({ params }: { params: Promise<{ id: nu
         showNotification('Ürün güncellenemedi.', 'error', 2000)
       }
     }
-    if (!product) {
+    if (isLoading || !product) {
         return (
             <div className="max-w-6xl mx-auto p-6 md:p-8 bg-white rounded-2xl shadow-xl border border-gray-100 mt-6 md:mt-10">
                 <div className="flex items-center justify-center min-h-[400px]">

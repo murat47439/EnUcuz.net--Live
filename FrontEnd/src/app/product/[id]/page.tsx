@@ -8,12 +8,21 @@ import RelatedProducts from "@/features/components/UI/productDetail/relatedProdu
 import { Tag, Building2 } from "lucide-react";
 
 export default async function ProductDetailPage({params} : {params : {id : number}}) {
-    const resolvedParams = await params; // async olarak çöz
-    const request: IdParam = { id: Number(resolvedParams.id) };
-    const product = await getProduct(request)
-    if(!product){
-        notFound()
-    }
+    try {
+        const resolvedParams = await params; // async olarak çöz
+        const request: IdParam = { id: Number(resolvedParams.id) };
+        
+        // Geçersiz ID kontrolü
+        if (!resolvedParams.id || isNaN(Number(resolvedParams.id))) {
+            notFound();
+        }
+        
+        const product = await getProduct(request);
+        
+        // Product ve data kontrolü
+        if (!product || !product.data || !product.data.product) {
+            notFound();
+        }
     return (
         <main className="min-h-screen bg-gray-50">
             <div className="container mx-auto sm:px-4 py-6 md:py-8 max-w-7xl">
@@ -58,4 +67,8 @@ export default async function ProductDetailPage({params} : {params : {id : numbe
             </div>
         </main>
     );
+    } catch (error) {
+        console.error("Product detail page error:", error);
+        notFound();
+    }
 } 

@@ -1,18 +1,28 @@
 package config
 
 import (
+	"log"
 	"os"
 	"strings"
+
+	"github.com/joho/godotenv"
 )
 
 var (
-	JWT_SECRET           []byte
-	REFRESH_TOKEN_SECRET []byte
-	IMAGEKIT_PRIVATE_KEY string
-	GEMINI_API_KEY       string
+	JWT_SECRET              []byte
+	REFRESH_TOKEN_SECRET    []byte
+	IMAGEKIT_PRIVATE_KEY    string
+	GEMINI_API_KEY          string
+	CLOUDFLARE_ACCOUNT_ID   string
+	CLOUDFLARE_API_KEY      string
+	CLOUDFLARE_ACCOUNT_HASH string
 )
 
 func LoadConfig() {
+	err := godotenv.Load()
+	if err != nil {
+		log.Println("ENV file is not found")
+	}
 	jwt_secret := os.Getenv("JWT_SECRET")
 	if jwt_secret == "" {
 		Logger.Printf("JWT_SECRET not set in environment")
@@ -30,9 +40,23 @@ func LoadConfig() {
 	if refresh_token_secret == "" {
 		Logger.Printf("REFRESH_TOKEN_SECRET not set in environment")
 	}
-
+	cloudflare_account_id := os.Getenv("CLOUDFLARE_ACCOUNT_ID")
+	if cloudflare_account_id == "" {
+		Logger.Printf("CLOUDFLARE_ACCOUNT_ID not set in environment")
+	}
+	cloudflare_account_hash := os.Getenv("CLOUDFLARE_ACCOUNT_HASH")
+	if cloudflare_account_id == "" {
+		Logger.Printf("CLOUDFLARE_ACCOUNT_HASH not set in environment")
+	}
+	cloudflare_api_key := os.Getenv("CLOUDFLARE_API_KEY")
+	if cloudflare_api_key == "" {
+		Logger.Printf("CLOUDFLARE_API_KEY not set in environment")
+	}
 	IMAGEKIT_PRIVATE_KEY = strings.TrimSpace(privateKey)
 	JWT_SECRET = []byte(jwt_secret)
 	REFRESH_TOKEN_SECRET = []byte(refresh_token_secret)
 	GEMINI_API_KEY = strings.TrimSpace(gemini_key)
+	CLOUDFLARE_ACCOUNT_ID = strings.TrimSpace(cloudflare_account_id)
+	CLOUDFLARE_API_KEY = strings.TrimSpace(cloudflare_api_key)
+	CLOUDFLARE_ACCOUNT_HASH = strings.TrimSpace(cloudflare_account_hash)
 }

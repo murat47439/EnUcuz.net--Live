@@ -3,11 +3,12 @@ import React, { useEffect, useState, ChangeEvent } from "react";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
 import { Brand, Category, CategoryAttribute, FeatureKey } from "@/lib/types/types";
-import { PaginationRequest, IdParam } from "@/lib/types/types";
+import { PaginationRequest, IdParam , UploadImageRequest} from "@/lib/types/types";
 import { addProduct } from "@/lib/api/products/useAdd";
 import { getBrands } from "@/lib/api/brands/useGets";
 import { GetCategories } from "@/lib/api/categories/useGets";
 import { getCategoryAttributes } from "@/lib/api/attributes/useGetsCats";
+import { uploadImage } from "@/lib/api/upload/useUploadImage";
 import Input from "@/features/components/input";
 import Button from "@/features/components/button";
 import dynamic from "next/dynamic";
@@ -42,7 +43,7 @@ type FormData = {
   stock: number,
   brand: { value: number; label: string } | null;
   category: { value: number; label: string } | null;
-  files: File[];
+  files: string[];
   features?: {
     key: {
       label: string,
@@ -67,6 +68,16 @@ export default function NewProductPage() {
   const [result, setResult] = useState("");
   const [step, setStep] = useState(1);
   const [isSubmitting, setIsSubmitting] = useState(false);
+  
+  // Yüklenen resimler için state
+  type UploadingImage = {
+    id: string;
+    file: File;
+    preview: string;
+    status: 'uploading' | 'uploaded' | 'completed';
+    url?: string;
+  };
+  const [uploadingImages, setUploadingImages] = useState<UploadingImage[]>([]);
 
   const methods = useForm<FormData>({
     defaultValues: {
@@ -81,7 +92,7 @@ export default function NewProductPage() {
     },
   });
 
-  const { register, handleSubmit, setValue, control, watch, formState: { errors } } = methods;
+  const { register, handleSubmit, setValue,getValues ,control, watch, formState: { errors } } = methods;
   const files = watch("files");
 
   const [brands, setBrands] = useState<Brand[]>([]);
@@ -90,6 +101,16 @@ export default function NewProductPage() {
   const [searchCategories, setSearchCategories] = useState("");
   const [attributes, setAttributes] = useState<CategoryAttribute[]>([])
   const category = watch("category")
+  
+  // Preview URL'lerini temizle
+  useEffect(() => {
+    return () => {
+      uploadingImages.forEach((img) => {
+        URL.revokeObjectURL(img.preview);
+      });
+    };
+  }, [uploadingImages]);
+  
   useEffect(() => {
     
       const fetchAttributes = async () => {
@@ -143,18 +164,91 @@ export default function NewProductPage() {
     return () => clearTimeout(timeoutId);
   }, [searchCategories]);
 
-  const handleChangeFileCount = (e: ChangeEvent<HTMLInputElement>) => {
+  const handleChangeFileCount = async (e: ChangeEvent<HTMLInputElement>) => {
     if (!e.target.files) return;
 
     const selectedFiles = Array.from(e.target.files);
-    if (selectedFiles.length > 8) {
+    const currentFilesCount = files.length + uploadingImages.length;
+    
+    if (currentFilesCount + selectedFiles.length > 8) {
       setResult("En fazla 8 adet dosya seçebilirsiniz.");
       e.target.value = "";
-      setValue("files", []);
       return;
     }
 
-    setValue("files", selectedFiles);
+    // Önce preview'ları göster
+    const newUploadingImages: UploadingImage[] = selectedFiles.map((file) => {
+      const preview = URL.createObjectURL(file);
+      return {
+        id: Math.random().toString(36).substring(7),
+        file,
+        preview,
+        status: 'uploading' as const,
+      };
+    });
+
+    setUploadingImages((prev) => [...prev, ...newUploadingImages]);
+
+    // Her resmi sırayla yükle
+    try {
+      for (const uploadingImage of newUploadingImages) {
+        try {
+          const imageRequest: UploadImageRequest = { image: uploadingImage.file };
+          const res = await uploadImage(imageRequest);
+          
+          // Yüklendi durumuna geç
+          setUploadingImages((prev) =>
+            prev.map((img) =>
+              img.id === uploadingImage.id
+                ? { ...img, status: 'uploaded' as const, url: res.data.url }
+                : img
+            )
+          );
+
+          // Tik animasyonu için 1 saniye bekle
+          setTimeout(() => {
+            setUploadingImages((prev) =>
+              prev.map((img) =>
+                img.id === uploadingImage.id
+                  ? { ...img, status: 'completed' as const }
+                  : img
+              )
+            );
+
+            // Animasyon bittikten sonra (0.5 saniye) files listesine ekle ve uploadingImages'den çıkar
+            setTimeout(() => {
+              const current = getValues("files");
+              setValue("files", [...current, res.data.url], { shouldDirty: true });
+              
+              setUploadingImages((prev) => {
+                const filtered = prev.filter((img) => img.id !== uploadingImage.id);
+                // Preview URL'lerini temizle
+                URL.revokeObjectURL(uploadingImage.preview);
+                return filtered;
+              });
+            }, 500);
+          }, 1000);
+        } catch (err) {
+          // Hata durumunda bu resmi kaldır
+          setUploadingImages((prev) => {
+            const filtered = prev.filter((img) => img.id !== uploadingImage.id);
+            URL.revokeObjectURL(uploadingImage.preview);
+            return filtered;
+          });
+          
+          if (err instanceof Error) {
+            setResult(err.message);
+          } else {
+            setResult("Resim yüklenirken bir hata oluştu.");
+          }
+        }
+      }
+    } catch (err: unknown) {
+      if (err instanceof Error) setResult(err.message);
+      else setResult("Bir hata oluştu.");
+    }
+    
+    e.target.value = "";
   };
 
   const onSubmit = async (data: FormData) => {
@@ -182,7 +276,9 @@ export default function NewProductPage() {
         formData.append("features", JSON.stringify(data.features));
       }
       // Dosyaları ekle
-      files.forEach((file) => formData.append("images", file));
+      data.files?.forEach((url) =>{
+        formData.append("images", url);
+      });
       await addProduct(formData);
       setResult("Ürün başarıyla eklendi.");
       setStep(3);
@@ -471,7 +567,7 @@ export default function NewProductPage() {
                         onChange={handleChangeFileCount}
                       />
                       
-                      {files.length === 0 ? (
+                      {files.length === 0 && uploadingImages.length === 0 ? (
                         <label
                           htmlFor="fileinput"
                           className="flex flex-col items-center justify-center w-full h-64 border-2 border-dashed border-gray-300 rounded-xl cursor-pointer hover:border-blue-500 hover:bg-blue-50/50 transition-all duration-300 group"
@@ -487,12 +583,13 @@ export default function NewProductPage() {
                       ) : (
                         <div className="space-y-4">
                           <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
+                            {/* Yüklenmiş resimler */}
                             {files.map((file, idx) => (
-                              <div key={idx} className="relative group">
+                              <div key={`uploaded-${idx}`} className="relative group">
                                 <div className="aspect-square rounded-xl overflow-hidden border-2 border-gray-200 shadow-md">
                                   <Image
-                                    src={URL.createObjectURL(file)}
-                                    alt={file.name}
+                                    src={file}
+                                    alt="image"
                                     width={200}
                                     height={200}
                                     className="w-full h-full object-cover"
@@ -504,23 +601,65 @@ export default function NewProductPage() {
                                     const newFiles = files.filter((_, i) => i !== idx);
                                     setValue("files", newFiles);
                                   }}
-                                  className="absolute -top-2 -right-2 bg-red-500 text-white rounded-full p-1 opacity-0 group-hover:opacity-100 transition-opacity shadow-lg hover:bg-red-600"
+                                  className="absolute -top-2 -right-2 bg-red-500 text-white rounded-full p-1 opacity-0 group-hover:opacity-100 transition-opacity shadow-lg hover:bg-red-600 z-10"
                                 >
                                   <X size={16} />
                                 </button>
-                                <p className="text-xs text-gray-600 mt-1 truncate" title={file.name}>
-                                  {file.name}
-                                </p>
+                              </div>
+                            ))}
+                            
+                            {/* Yüklenmekte olan resimler */}
+                            {uploadingImages.map((uploadingImage) => (
+                              <div key={uploadingImage.id} className="relative group">
+                                <div className="aspect-square rounded-xl overflow-hidden border-2 border-gray-200 shadow-md relative">
+                                  <Image
+                                    src={uploadingImage.preview}
+                                    alt="uploading"
+                                    width={200}
+                                    height={200}
+                                    className={`w-full h-full object-cover transition-opacity duration-300 ${
+                                      uploadingImage.status === 'completed' ? 'opacity-100' : 'opacity-70'
+                                    }`}
+                                  />
+                                  
+                                  {/* Loading Overlay */}
+                                  {uploadingImage.status === 'uploading' && (
+                                    <div className="absolute inset-0 bg-black/30 flex items-center justify-center">
+                                      <div className="bg-white/90 backdrop-blur-sm rounded-full p-3 shadow-lg">
+                                        <Loader2 className="w-6 h-6 text-blue-600 animate-spin" />
+                                      </div>
+                                    </div>
+                                  )}
+                                  
+                                  {/* Success Checkmark Animation */}
+                                  {uploadingImage.status === 'uploaded' && (
+                                    <div className="absolute inset-0 bg-green-500/30 flex items-center justify-center backdrop-blur-sm">
+                                      <div className="bg-green-500 rounded-full p-3 shadow-2xl animate-scale-in">
+                                        <CheckCircle2 className="w-10 h-10 text-white" />
+                                      </div>
+                                    </div>
+                                  )}
+                                  
+                                  {/* Completed Animation */}
+                                  {uploadingImage.status === 'completed' && (
+                                    <div className="absolute inset-0 bg-green-500/20 flex items-center justify-center backdrop-blur-sm animate-fade-out">
+                                      <div className="bg-green-500 rounded-full p-3 shadow-2xl animate-scale-out">
+                                        <CheckCircle2 className="w-10 h-10 text-white" />
+                                      </div>
+                                    </div>
+                                  )}
+                                </div>
                               </div>
                             ))}
                           </div>
-                          {files.length < 8 && (
+                          
+                          {(files.length + uploadingImages.length) < 8 && (
                             <label
                               htmlFor="fileinput"
                               className="flex items-center justify-center gap-2 px-4 py-2 border-2 border-dashed border-gray-300 rounded-lg cursor-pointer hover:border-blue-500 hover:bg-blue-50/50 transition-all text-sm text-gray-600 hover:text-blue-600"
                             >
                               <FileImage size={20} />
-                              Daha fazla fotoğraf ekle ({files.length}/8)
+                              Daha fazla fotoğraf ekle ({(files.length + uploadingImages.length)}/8)
                             </label>
                           )}
                         </div>

@@ -3,16 +3,34 @@ import { refreshToken } from "./user/useAccess";
 
 export const API_BASE_URL = process.env.NEXT_PUBLIC_API_BASE_URL;
 
+// Production'da API_BASE_URL kontrolü
+if (!API_BASE_URL && typeof window === "undefined") {
+  console.error("NEXT_PUBLIC_API_BASE_URL environment variable is not set!");
+}
+
 export interface AxiosRequestConfigWithRetry extends AxiosRequestConfig {
   _retry?: boolean;
   _retryCount?: number;
 }
 
 const api = axios.create({
-  baseURL: API_BASE_URL,
+  baseURL: API_BASE_URL || "",
   withCredentials: true,
   timeout: 30000,
 });
+
+// API_BASE_URL yoksa hata fırlat
+api.interceptors.request.use(
+  (config) => {
+    if (!API_BASE_URL) {
+      return Promise.reject(new Error("API base URL is not configured. Please set NEXT_PUBLIC_API_BASE_URL environment variable."));
+    }
+    return config;
+  },
+  (error) => {
+    return Promise.reject(error);
+  }
+);
 
 // === REFRESH TOKEN MEKANİZMASI ===
 let isRefreshing = false;

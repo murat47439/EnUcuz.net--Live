@@ -55,7 +55,7 @@ func (ps *ProductService) AddProduct(ctx context.Context, data models.NewProduct
 	if err != nil {
 		return false, fmt.Errorf("Error : %w", err)
 	}
-	err = ps.ProductRepo.AddProductImages(ctx, data.ImageURLs, prodID, tx)
+	err = ps.ProductRepo.AddProductImages(ctx, data.ImageURLs, prodID, data.SellerID, tx)
 	if err != nil {
 		return false, fmt.Errorf("Error : %w", err)
 	}

@@ -9,7 +9,7 @@ const techStack = [
     { label: "Vercel", src: "/vercel.svg", textClass: "text-gray-300" },
     { label: "", src: "/go.svg", textClass: "text-gray-300" },
     { label: "", src: "/gemini.svg", textClass: "text-white",imgWidth: 72,imgHeight: 72  },
-    { label: "", src: "/imagekit.svg", textClass: "text-gray-300", imgWidth: 72, imgHeight: 72 },
+    { label: "", src: "/Cloudflare_Logo.svg", textClass: "text-gray-300", imgWidth: 72, imgHeight: 72 },
     { label: "", src: "/render.svg", textClass: "text-gray-300", imgWidth: 96, imgHeight: 96 },
 ]
 

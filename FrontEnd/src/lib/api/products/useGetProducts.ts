@@ -12,10 +12,19 @@ export async function getProducts(data: PaginationRequest) {
         
         
         const res = await api.get<ProductsListResponse>(`/products?${params}`)
+        if (!res.data || !res.data.data) {
+            return { products: [], total: 0, page: 1, limit: 10 };
+        }
         return res.data.data
     }catch(err: unknown){
         const error = err as AxiosError<{ message: string }>;
-        throw new Error(error?.response?.data?.message || "Ürünler bulunamadı")
+        // Network hatası veya API hatası durumunda boş liste döndür (client component'ler zaten try-catch kullanıyor)
+        console.error("Products fetch error:", error);
+        // Eğer client-side ise boş liste döndür, server-side ise throw et
+        if (typeof window === "undefined") {
+            throw new Error(error?.response?.data?.message || "Ürünler bulunamadı");
+        }
+        return { products: [], total: 0, page: 1, limit: 10 };
     }
 }
 

@@ -47,7 +47,6 @@ func NewApp(db *sqlx.DB) *App {
 	//Clients
 	ctx := context.Background()
 	clients.InitGeminiClient(ctx)
-	clients.InitImagekitClient()
 	return &App{
 		DB: db,
 

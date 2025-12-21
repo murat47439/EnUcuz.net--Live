@@ -74,6 +74,11 @@ func SetupRoutes(
 			})
 
 		})
+		r.Route("/upload", func(upload chi.Router) {
+			upload.Use(um.AuthMiddleware)
+			upload.Post("/", controller.ImageController.UploadImage)
+			upload.Delete("/{id}", controller.ImageController.DeleteImage)
+		})
 		r.Route("/admin", func(admin chi.Router) {
 			admin.Use(um.OnlyAdmin)
 			admin.Route("/products", func(prod chi.Router) {

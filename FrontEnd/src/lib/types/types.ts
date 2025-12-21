@@ -458,3 +458,14 @@ export interface AIResponse{
 export interface ToastContextType {
     showNotification: (message: string, type: NotificationType, duration?: number) => void;
 }
+export interface UploadImageRequest{
+    image: File
+}
+export interface UploadImageResponse{
+    success: boolean,
+    message: string,
+    data: {
+        url: string,
+        image_id: number
+    }
+}

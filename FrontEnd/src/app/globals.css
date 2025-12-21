@@ -34,4 +34,47 @@ body {
   color: var(--foreground);
   font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
 }
-@medid
+
+/* Custom animations for image upload */
+@keyframes scaleIn {
+  from {
+    transform: scale(0);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes scaleOut {
+  from {
+    transform: scale(1);
+    opacity: 1;
+  }
+  to {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+.animate-\[scaleIn_0\.3s_ease-out_forwards\] {
+  animation: scaleIn 0.3s ease-out forwards;
+}
+
+.animate-\[scaleOut_0\.5s_ease-out_forwards\] {
+  animation: scaleOut 0.5s ease-out forwards;
+}
+
+.animate-\[fadeOut_0\.5s_ease-out_forwards\] {
+  animation: fadeOut 0.5s ease-out forwards;
+}
