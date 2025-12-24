@@ -96,6 +96,7 @@ func (pc *ProductController) UpdateProduct(w http.ResponseWriter, r *http.Reques
 func (pc *ProductController) AddProduct(w http.ResponseWriter, r *http.Request) {
 	config.Logger.Printf("AddProduct request started")
 	userID, ok := r.Context().Value(middleware.UserIDKey).(int)
+	config.Logger.Printf("AddProduct request started by user %d", userID)
 	if !ok {
 		config.Logger.Printf("AddProduct error: Unauthorized access")
 		RespondWithError(w, http.StatusUnauthorized, "Yetkisiz erişim")
@@ -103,7 +104,6 @@ func (pc *ProductController) AddProduct(w http.ResponseWriter, r *http.Request) 
 	}
 
 	var product models.NewProduct
-	product.SellerID = userID
 	ctx := r.Context()
 	ctx, cancel := context.WithTimeout(ctx, 30*time.Second)
 	defer cancel()
@@ -115,7 +115,6 @@ func (pc *ProductController) AddProduct(w http.ResponseWriter, r *http.Request) 
 		return
 	}
 
-	product.SellerID = userID
 	product.Name = r.FormValue("name")
 	product.Description = r.FormValue("description")
 
@@ -170,7 +169,7 @@ func (pc *ProductController) AddProduct(w http.ResponseWriter, r *http.Request) 
 			product.ImageURLs = images
 		}
 	}
-
+	product.SellerID = userID
 	_, err = pc.ProductService.AddProduct(ctx, product)
 	if err != nil {
 		config.Logger.Printf("AddProduct service error: %v", err)

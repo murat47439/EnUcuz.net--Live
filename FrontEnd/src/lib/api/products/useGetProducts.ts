@@ -17,18 +17,14 @@ export async function getProducts(data: PaginationRequest) {
         }
         return res.data.data
     }catch(err: unknown){
-        // AxiosError kontrolü
         if (err instanceof Error && 'response' in err) {
             const axiosError = err as AxiosError<{ message: string }>;
-            // Network hatası veya API hatası durumunda boş liste döndür (client component'ler zaten try-catch kullanıyor)
             console.error("Products fetch error:", axiosError);
-            // Eğer client-side ise boş liste döndür, server-side ise throw et
             if (typeof window === "undefined") {
                 throw new Error(axiosError.response?.data?.message || "Ürünler bulunamadı");
             }
             return { products: [], total: 0, page: 1, limit: 10 };
         }
-        // Genel Error kontrolü
         if (err instanceof Error) {
             console.error("Products fetch error:", err);
             if (typeof window === "undefined") {
@@ -36,7 +32,6 @@ export async function getProducts(data: PaginationRequest) {
             }
             return { products: [], total: 0, page: 1, limit: 10 };
         }
-        // Bilinmeyen hata
         console.error("Products fetch error:", err);
         if (typeof window === "undefined") {
             throw new Error("Ürünler bulunamadı");

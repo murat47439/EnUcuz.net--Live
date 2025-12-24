@@ -93,17 +93,17 @@ func (pr *ProductRepo) AddProductImages(ctx context.Context, images []string, id
 		return nil
 	}
 
-	query := `INSERT INTO product_images (product_id, image_url, created_at) VALUES `
+	query := `INSERT INTO product_images (product_id, image_url, created_at, user_id) VALUES `
 	vals := []interface{}{}
 	paramIndex := 1
 
 	for i, url := range images {
-		query += fmt.Sprintf("($%d, $%d, NOW())", paramIndex, paramIndex+1)
-		paramIndex += 2
+		query += fmt.Sprintf("($%d, $%d, NOW(), $%d)", paramIndex, paramIndex+1, paramIndex+2)
+		paramIndex += 3
 		if i < len(images)-1 {
 			query += ","
 		}
-		vals = append(vals, id, url)
+		vals = append(vals, id, url, userID)
 	}
 
 	_, err := tx.ExecContext(ctx, query, vals...)

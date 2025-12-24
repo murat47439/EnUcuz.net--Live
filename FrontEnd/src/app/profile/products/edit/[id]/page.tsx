@@ -23,24 +23,40 @@ type FormData = {
   price: number,
   stock: number
 }
-export default function ProductUpdatePage({ params }: { params: Promise<{ id: number }> }) {
+export default function ProductUpdatePage({ params }: { params: Promise<{ id: string }> }) {
     const router = useRouter()
     const [product, setProduct] = useState<ProductDetail>()
     const [isLoading, setIsLoading] = useState(true)
+    const [productId, setProductId] = useState<string | null>(null)
     const { user } = useAuth()
     const {openModal, closeModal} = UseModal()
     const {showNotification} = useToast();
 
+    // Params'ı resolve et
+    useEffect(() => {
+        params.then((resolved) => {
+            const id = resolved.id;
+            if (!id || isNaN(Number(id))) {
+                console.error("Geçersiz ürün ID:", id);
+                router.push('/profile/products');
+                return;
+            }
+            setProductId(id);
+        }).catch((err) => {
+            console.error("Params resolve hatası:", err);
+            router.push('/profile/products');
+        });
+    }, [params, router]);
 
-   
     const methods = useForm<FormData>({
         defaultValues : {
-            name: product?.data.product.name ,
-            description: product?.data.product.description ,
+            name: product?.data.product.name || "",
+            description: product?.data.product.description || "",
             price: product?.data.product.price ? Number(product.data.product.price) / 100 : 0,
-            stock: product?.data.product.stock 
+            stock: product?.data.product.stock || 1
         }
     })
+    
     useEffect(() => {
       if (product){
           methods.reset({
@@ -51,8 +67,8 @@ export default function ProductUpdatePage({ params }: { params: Promise<{ id: nu
           })
       }
   }, [product, methods])
+    
     const {register, handleSubmit, watch} = methods;
-    const resolvedParams = React.use(params)
     
     // Kullanıcı kontrolü
     useEffect(() => {
@@ -63,49 +79,87 @@ export default function ProductUpdatePage({ params }: { params: Promise<{ id: nu
         }
     }, [router]);
 
-    // Ürünü getir - user yüklendikten sonra
+    // Ürünü getir - user ve productId yüklendikten sonra
     useEffect(() => {
+        if (!productId) return;
+
         const fetchData = async () => {
-            // User henüz yüklenmemişse bekle
+            // User kontrolü
             const storedUser = localStorage.getItem("user");
             if (!storedUser) {
                 setIsLoading(false);
+                router.push("/login");
                 return;
             }
 
             let currentUser;
             try {
                 currentUser = JSON.parse(storedUser);
-            } catch {
+            } catch (err) {
+                console.error("User parse hatası:", err);
                 router.push("/login");
                 return;
             }
 
-            const request: IdParam = { id: Number(resolvedParams.id) }
+            // ID kontrolü
+            const id = Number(productId);
+            if (!id || isNaN(id) || id <= 0) {
+                console.error("Geçersiz ürün ID:", productId);
+                setIsLoading(false);
+                router.push('/profile/products');
+                return;
+            }
+
+            const request: IdParam = { id };
+            
             try {
                 setIsLoading(true);
-                const data = await getProduct(request)
+                const data = await getProduct(request);
+                
+                // Product kontrolü
+                if (!data || !data.data || !data.data.product) {
+                    console.error("Ürün verisi bulunamadı");
+                    setIsLoading(false);
+                    router.push('/profile/products');
+                    return;
+                }
                 
                 // User context'ten gelmemişse localStorage'dan kontrol et
                 const userId = user?.id || currentUser?.id;
                 
-                if (userId && userId == data.data.product.seller_id){
-                    setProduct(data)
+                if (!userId) {
+                    console.error("User ID bulunamadı");
+                    setIsLoading(false);
+                    router.push("/login");
+                    return;
+                }
+                
+                // Seller kontrolü
+                if (Number(userId) === Number(data.data.product.seller_id)) {
+                    setProduct(data);
                 } else {
-                    router.push('/404')   
+                    console.warn("Kullanıcı bu ürünün sahibi değil. User ID:", userId, "Seller ID:", data.data.product.seller_id);
+                    setIsLoading(false);
+                    router.push('/profile/products');
                 }
             } catch (err) {
-                console.error(err)
-                router.push('/404')
+                console.error("Ürün getirme hatası:", err);
+                setIsLoading(false);
+                // Hata mesajını göster
+                if (err instanceof Error) {
+                    showNotification(err.message || "Ürün yüklenirken bir hata oluştu", 'error', 3000);
+                }
+                router.push('/profile/products');
             } finally {
                 setIsLoading(false);
             }
         }
         fetchData()
-    }, [resolvedParams, router, user])
+    }, [productId, router, user, showNotification])
 
     const handleDelete = async () => {
-        const request: IdParam = { id: Number(resolvedParams.id) }
+        if (!productId) return;
+        const request: IdParam = { id: Number(productId) }
         try {
             const data = await deleteProduct(request)
             showNotification('Ürün başarıyla silindi. Yönlendiriliyorsunuz...', 'success', 4000)
@@ -116,6 +170,9 @@ export default function ProductUpdatePage({ params }: { params: Promise<{ id: nu
           }
         } catch (err) {
             console.error(err)
+            if (err instanceof Error) {
+                showNotification(err.message || "Ürün silinirken bir hata oluştu", 'error', 3000);
+            }
         }
     }
     const handleDeleteAttribute = async (attributeId: number) => {
@@ -133,20 +190,28 @@ export default function ProductUpdatePage({ params }: { params: Promise<{ id: nu
         }
     }
     const onsubmit = async (data: FormData) => {
+      if (!productId) {
+        showNotification('Ürün ID bulunamadı.', 'error', 2000);
+        return;
+      }
+      
       // Kullanıcıdan gelen price TL cinsinden, API'ye cent (int64) olarak gönderiyoruz
       // Backend: UpdProduct.Price int64 - JSON'da integer olarak gönderilmeli
       const priceInCents = Math.round(data.price * 100);
       const request: UpdateProductRequest = {
-        id: Number(resolvedParams.id),
+        id: Number(productId),
         name: data.name,
         description: data.description,
         price: priceInCents, // Backend int64 bekliyor, number olarak gönder
         stock: data.stock
       }
-      if (data.name == "" || data.description == "" || data.price == 0 || data.stock == 0) {showNotification('Lütfen tüm alanları doldurun.', 'error', 2000); return;}
+      if (data.name == "" || data.description == "" || data.price == 0 || data.stock == 0) {
+        showNotification('Lütfen tüm alanları doldurun.', 'error', 2000); 
+        return;
+      }
       try{
-        const data = await updateProduct(request)
-        if (data.success){
+        const response = await updateProduct(request)
+        if (response.success){
           showNotification('Ürün başarıyla güncellendi.', 'success', 2000)
           setTimeout(() => {
             router.refresh()
@@ -154,7 +219,11 @@ export default function ProductUpdatePage({ params }: { params: Promise<{ id: nu
         }
       }catch(err){
         console.error(err)
-        showNotification('Ürün güncellenemedi.', 'error', 2000)
+        if (err instanceof Error) {
+          showNotification(err.message || 'Ürün güncellenemedi.', 'error', 2000)
+        } else {
+          showNotification('Ürün güncellenemedi.', 'error', 2000)
+        }
       }
     }
     if (isLoading || !product) {

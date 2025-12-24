@@ -276,9 +276,9 @@ export default function NewProductPage() {
         formData.append("features", JSON.stringify(data.features));
       }
       // Dosyaları ekle
-      data.files?.forEach((url) =>{
-        formData.append("images", url);
-      });
+      if (data.files && data.files.length > 0) {
+  formData.append("images", JSON.stringify(data.files));
+}
       await addProduct(formData);
       setResult("Ürün başarıyla eklendi.");
       setStep(3);

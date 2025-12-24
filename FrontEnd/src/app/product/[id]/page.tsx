@@ -11,15 +11,11 @@ export default async function ProductDetailPage({params} : {params : {id : numbe
     try {
         const resolvedParams = await params; // async olarak çöz
         const request: IdParam = { id: Number(resolvedParams.id) };
-        
-        // Geçersiz ID kontrolü
         if (!resolvedParams.id || isNaN(Number(resolvedParams.id))) {
             notFound();
         }
         
         const product = await getProduct(request);
-        
-        // Product ve data kontrolü
         if (!product || !product.data || !product.data.product) {
             notFound();
         }
