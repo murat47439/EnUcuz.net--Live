@@ -110,7 +110,7 @@ func (fr *FavoriesRepo) GetFavourites(page int, user_id int) ([]*models.Product,
 		page = 1
 	}
 	offset := (page - 1) * 50
-	query := `SELECT p.* FROM products p INNER JOIN wishlist w ON p.id = w.product_id WHERE w.user_id = $1 AND w.deleted_at IS NULL LIMIT $2 OFFSET $3`
+	query := `SELECT p.id, p.name, p.description, p.stock, p.price, p.image_url, p.category_id, p.created_at, p.updated_at, p.brand_id, p.seller_id, p.status, p.deleted_at FROM products p INNER JOIN wishlist w ON p.id = w.product_id WHERE w.user_id = $1 AND w.deleted_at IS NULL LIMIT $2 OFFSET $3`
 
 	rows, err := fr.db.Queryx(query, user_id, 50, offset)
 

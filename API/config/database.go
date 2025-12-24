@@ -8,8 +8,9 @@ import (
 
 	"github.com/jmoiron/sqlx"
 
+	"github.com/jackc/pgx/v5"
+	"github.com/jackc/pgx/v5/stdlib"
 	"github.com/joho/godotenv"
-	_ "github.com/lib/pq"
 )
 
 var DB *sqlx.DB
@@ -27,28 +28,36 @@ func ConnectDB() *sqlx.DB {
 	dbhost := os.Getenv("DB_HOST")
 
 	if dbuser == "" || dbpass == "" || dbhost == "" || dbport == "" || dbname == "" {
-		log.Fatal("invalid value")
+		log.Fatal("invalid env values")
 	}
-	dsn := fmt.Sprintf("host=%s port=%s user=%s password=%s dbname=%s sslmode=require",
-		dbhost, dbport, dbuser, dbpass, dbname)
 
-	db, err := sqlx.Open("postgres", dsn)
+	dsn := fmt.Sprintf(
+		"host=%s port=%s user=%s password=%s dbname=%s sslmode=require",
+		dbhost, dbport, dbuser, dbpass, dbname,
+	)
 
+	config, err := pgx.ParseConfig(dsn)
 	if err != nil {
-		log.Fatal("Database connection failed")
+		log.Fatal("pgx parse config failed:", err)
 	}
 
-	db.SetMaxOpenConns(25)
-	db.SetMaxIdleConns(10)
-	db.SetConnMaxLifetime(5 * time.Minute)
+	config.DefaultQueryExecMode = pgx.QueryExecModeSimpleProtocol
 
-	if err := db.Ping(); err != nil {
-		log.Fatal("Failed to ping  database : %v", err)
+	sqlDB := stdlib.OpenDB(*config)
+
+	sqlDB.SetMaxOpenConns(10) // Neon için 25 fazla
+	sqlDB.SetMaxIdleConns(5)
+	sqlDB.SetConnMaxLifetime(3 * time.Minute)
+
+	if err := sqlDB.Ping(); err != nil {
+		log.Fatal("Failed to ping database:", err)
 	}
 
-	log.Println("Database connection succesful")
+	// 🔑 sqlx ile sarmala (EN ÖNEMLİ SATIR)
+	db := sqlx.NewDb(sqlDB, "pgx")
+
+	log.Println("Database connection successful")
 
 	DB = db
-
 	return db
 }

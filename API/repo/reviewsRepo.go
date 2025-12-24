@@ -82,7 +82,7 @@ func (rr *ReviewsRepo) GetReview(id int) (*models.Review, error) {
 	if id == 0 {
 		return nil, fmt.Errorf("Invalid data")
 	}
-	query := `SELECT * FROM reviews WHERE id = $1 AND deleted_at IS NULL`
+	query := `SELECT id, user_id, product_id, content, rating, status, created_at, updated_at, deleted_at FROM reviews WHERE id = $1 AND deleted_at IS NULL`
 
 	var review models.Review
 

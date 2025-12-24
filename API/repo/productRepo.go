@@ -26,7 +26,7 @@ func NewProductRepo(db *sqlx.DB, brand *BrandsRepo, cat *CategoriesRepo) *Produc
 func (pr *ProductRepo) GetUserProducts(ctx context.Context, userID int, page int) ([]*models.Product, error) {
 	var products []*models.Product
 	offset := (page - 1) * 50
-	query := `SELECT * FROM products WHERE seller_id = $1 AND deleted_at IS NULL LIMIT $2 OFFSET $3`
+	query := `SELECT id, name, description, stock, price, image_url, category_id, created_at, updated_at, brand_id, seller_id, status, deleted_at FROM products WHERE seller_id = $1 AND deleted_at IS NULL LIMIT $2 OFFSET $3`
 	rows, err := pr.db.QueryxContext(ctx, query, userID, 50, offset)
 	if err != nil {
 		return nil, fmt.Errorf("Database error : %s", err.Error())
@@ -150,7 +150,7 @@ func (pr *ProductRepo) GetProduct(ctx context.Context, prodid int) (*models.Prod
 	if err != nil {
 		return nil, err
 	}
-	query := `SELECT p.*, b.name AS brand_name, c.name AS category_name, u.name AS seller_name, u.phone AS seller_phone FROM products p 
+	query := `SELECT p.name, p.description, p.stock, p.price, p.image_url, p.category_id, p.brand_id, p.seller_id, b.name AS brand_name, c.name AS category_name, u.name AS seller_name, u.phone AS seller_phone FROM products p 
 	LEFT JOIN brands b ON p.brand_id = b.id 
 	LEFT JOIN categories c ON p.category_id = c.id
 	LEFT JOIN users u ON p.seller_id = u.id
@@ -221,7 +221,7 @@ func (pr *ProductRepo) GetProducts(ctx context.Context, page, brandID, categoryI
 	query := `
 	` + cte + `
 	SELECT 
-		p.*, 
+		p.id, p.name, p.description, p.stock, p.price, p.image_url, p.category_id, p.created_at, p.updated_at, p.brand_id, p.seller_id, p.status, p.deleted_at,
 		b.name AS brand_name, 
 		c.name AS category_name,
 		u.name AS seller_name,

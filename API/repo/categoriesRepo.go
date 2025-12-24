@@ -140,7 +140,7 @@ func (cr *CategoriesRepo) DeleteCategory(data *models.Category) error {
 	return nil
 }
 func (cr *CategoriesRepo) GetCategory(id int) (*models.Category, error) {
-	query := `SELECT * FROM categories WHERE id = $1 AND deleted_at IS NULL`
+	query := `SELECT id, name, parent_id, created_at, deleted_at FROM categories WHERE id = $1 AND deleted_at IS NULL`
 
 	var category models.Category
 
@@ -156,7 +156,7 @@ func (cr *CategoriesRepo) GetCategory(id int) (*models.Category, error) {
 }
 func (cr *CategoriesRepo) GetCategories(page int, search string) ([]*models.Category, error) {
 	limit := 50
-	query := `SELECT * FROM categories WHERE name ILIKE $1 AND deleted_at IS NULL LIMIT $2 OFFSET $3`
+	query := `SELECT id, name, parent_id, created_at, deleted_at FROM categories WHERE name ILIKE $1 AND deleted_at IS NULL LIMIT $2 OFFSET $3`
 	offset := (page - 1) * 50
 	var categories []*models.Category
 

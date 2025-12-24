@@ -109,7 +109,7 @@ func (br *BrandsRepo) UpdateBrand(data *models.Brand) error {
 	return nil
 }
 func (br *BrandsRepo) GetBrand(id int) (*models.Brand, error) {
-	query := `SELECT * FROM brands WHERE id = $1 AND deleted_at IS NULL`
+	query := `SELECT id, name, created_at, deleted_at FROM brands WHERE id = $1 AND deleted_at IS NULL`
 
 	var brand models.Brand
 
@@ -124,7 +124,7 @@ func (br *BrandsRepo) GetBrands(page int, search string) ([]*models.Brand, error
 	limit := 50
 	var brands []*models.Brand
 	offset := (page - 1) * 50
-	query := `SELECT * FROM brands WHERE name ILIKE $1 AND deleted_at IS NULL LIMIT $2 OFFSET $3`
+	query := `SELECT id, name, created_at, deleted_at FROM brands WHERE name ILIKE $1 AND deleted_at IS NULL LIMIT $2 OFFSET $3`
 
 	rows, err := br.db.Queryx(query, search+"%", limit, offset)
 

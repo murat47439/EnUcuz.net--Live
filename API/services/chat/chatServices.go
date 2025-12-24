@@ -30,7 +30,7 @@ func (cs *ChatService) CheckChat(ctx context.Context, user_id, prod_id int) (boo
 }
 func (cs *ChatService) NewChat(ctx context.Context, data *models.Chat, message string) (*models.Chat, *models.Message, error) {
 	switch {
-	case data.ChannelID == 0:
+	case data.ChannelID == "":
 		return nil, nil, fmt.Errorf("Invalid ChannelID")
 	case data.Sender == 0:
 		return nil, nil, fmt.Errorf("Invalid sender")

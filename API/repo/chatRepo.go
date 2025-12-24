@@ -73,7 +73,7 @@ func (cr *ChatRepo) GetChats(ctx context.Context, user_id int, page int) ([]*mod
 	offset := (page - 1) * 50
 	limit := 50
 	var data []*models.Chat
-	query := `SELECT * FROM chats WHERE sender = $1 OR recipient = $1 
+	query := `SELECT id, sender, recipient, channel_id, created_at, product_id FROM chats WHERE sender = $1 OR recipient = $1 
 	ORDER BY created_at DESC  LIMIT $2 OFFSET $3`
 	rows, err := cr.db.QueryxContext(ctx, query, user_id, limit, offset)
 	if err != nil {
