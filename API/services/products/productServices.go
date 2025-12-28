@@ -77,8 +77,6 @@ func (ps *ProductService) UpdateProduct(ctx context.Context, product *models.Upd
 	switch {
 	case err != nil:
 		return nil, err
-	case p.ID == 0:
-		return nil, fmt.Errorf("Product Not Found")
 	case p.SellerID != user_id:
 		return nil, fmt.Errorf("👍")
 	}

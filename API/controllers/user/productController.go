@@ -68,7 +68,7 @@ func (pc *ProductController) UpdateProduct(w http.ResponseWriter, r *http.Reques
 		RespondWithError(w, http.StatusBadRequest, "Invalid JSON data")
 		return
 	}
-
+	config.Logger.Printf("%+v", product)
 	// Price validasyonu
 	if product.Price < 0 {
 		config.Logger.Printf("UpdateProduct error: Negative price value: %d", product.Price)

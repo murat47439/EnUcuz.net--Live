@@ -36,3 +36,319 @@ APP_LOG: 2025/12/25 00:22:31 productController.go:180: AddProduct success: Produ
 APP_LOG: 2025/12/25 00:22:31 controllers.go:21: Success response: 201
 APP_LOG: 2025/12/25 00:22:34 controllers.go:21: Success response: 200
 APP_LOG: 2025/12/25 00:22:34 controllers.go:21: Success response: 200
+APP_LOG: 2025/12/28 21:49:17 main.go:24: Application started successfully.
+APP_LOG: 2025/12/28 21:49:17 auth.go:60: AuthMiddleware Started
+APP_LOG: 2025/12/28 21:49:17 auth.go:60: AuthMiddleware Started
+APP_LOG: 2025/12/28 21:49:17 auth.go:60: AuthMiddleware Started
+APP_LOG: 2025/12/28 21:49:17 auth.go:60: AuthMiddleware Started
+APP_LOG: 2025/12/28 21:49:17 auth.go:60: AuthMiddleware Started
+APP_LOG: 2025/12/28 21:49:17 auth.go:60: AuthMiddleware Started
+APP_LOG: 2025/12/28 21:49:17 auth.go:60: AuthMiddleware Started
+APP_LOG: 2025/12/28 21:49:17 auth.go:60: AuthMiddleware Started
+APP_LOG: 2025/12/28 21:49:17 auth.go:60: AuthMiddleware Started
+APP_LOG: 2025/12/28 21:49:17 auth.go:60: AuthMiddleware Started
+APP_LOG: 2025/12/28 21:49:17 auth.go:60: AuthMiddleware Started
+APP_LOG: 2025/12/28 21:49:17 auth.go:60: AuthMiddleware Started
+APP_LOG: 2025/12/28 21:49:17 ai.go:20: Gemini client initialized successfully
+APP_LOG: 2025/12/28 21:49:46 controllers.go:21: Success response: 200
+APP_LOG: 2025/12/28 21:50:30 auth.go:66: AuthMiddleware: Cookie not found - http: named cookie not present
+APP_LOG: 2025/12/28 21:50:30 auth.go:66: AuthMiddleware: Cookie not found - http: named cookie not present
+APP_LOG: 2025/12/28 21:50:30 usersController.go:213: GetAccess request started
+APP_LOG: 2025/12/28 21:50:30 usersController.go:249: GetAccess success: Access token refreshed
+APP_LOG: 2025/12/28 21:50:30 controllers.go:21: Success response: 200
+APP_LOG: 2025/12/28 21:50:30 controllers.go:21: Success response: 200
+APP_LOG: 2025/12/28 21:50:34 productRepo.go:60:  true
+APP_LOG: 2025/12/28 21:50:34 controllers.go:21: Success response: 200
+APP_LOG: 2025/12/28 21:50:47 controllers.go:21: Success response: 200
+APP_LOG: 2025/12/28 21:50:47 controllers.go:21: Success response: 200
+APP_LOG: 2025/12/28 21:50:50 productRepo.go:60:  true
+APP_LOG: 2025/12/28 21:50:50 controllers.go:21: Success response: 200
+APP_LOG: 2025/12/28 21:50:51 productRepo.go:60:  true
+APP_LOG: 2025/12/28 21:50:51 controllers.go:21: Success response: 200
+APP_LOG: 2025/12/28 21:50:51 controllers.go:21: Success response: 200
+APP_LOG: 2025/12/28 21:50:51 controllers.go:21: Success response: 200
+APP_LOG: 2025/12/28 21:50:56 controllers.go:21: Success response: 200
+APP_LOG: 2025/12/28 21:50:57 controllers.go:21: Success response: 200
+APP_LOG: 2025/12/28 21:50:57 productRepo.go:60:  true
+APP_LOG: 2025/12/28 21:50:57 controllers.go:21: Success response: 200
+APP_LOG: 2025/12/28 21:50:58 controllers.go:21: Success response: 200
+APP_LOG: 2025/12/28 21:50:58 controllers.go:21: Success response: 200
+APP_LOG: 2025/12/28 21:51:00 controllers.go:21: Success response: 200
+APP_LOG: 2025/12/28 21:51:00 controllers.go:21: Success response: 200
+APP_LOG: 2025/12/28 21:51:03 productRepo.go:60:  true
+APP_LOG: 2025/12/28 21:51:03 controllers.go:21: Success response: 200
+APP_LOG: 2025/12/28 21:51:49 productRepo.go:60:  true
+APP_LOG: 2025/12/28 21:51:50 controllers.go:10: Error response: 400 - Product Not Found
+APP_LOG: 2025/12/28 21:54:31 productRepo.go:60:  true
+APP_LOG: 2025/12/28 21:54:31 controllers.go:21: Success response: 200
+APP_LOG: 2025/12/28 21:54:39 productRepo.go:60:  true
+APP_LOG: 2025/12/28 21:54:39 controllers.go:21: Success response: 200
+APP_LOG: 2025/12/28 21:54:46 productRepo.go:60:  true
+APP_LOG: 2025/12/28 21:54:46 controllers.go:10: Error response: 400 - Product Not Found
+APP_LOG: 2025/12/28 21:55:30 main.go:24: Application started successfully.
+APP_LOG: 2025/12/28 21:55:30 auth.go:60: AuthMiddleware Started
+APP_LOG: 2025/12/28 21:55:30 auth.go:60: AuthMiddleware Started
+APP_LOG: 2025/12/28 21:55:30 auth.go:60: AuthMiddleware Started
+APP_LOG: 2025/12/28 21:55:30 auth.go:60: AuthMiddleware Started
+APP_LOG: 2025/12/28 21:55:30 auth.go:60: AuthMiddleware Started
+APP_LOG: 2025/12/28 21:55:30 auth.go:60: AuthMiddleware Started
+APP_LOG: 2025/12/28 21:55:30 auth.go:60: AuthMiddleware Started
+APP_LOG: 2025/12/28 21:55:30 auth.go:60: AuthMiddleware Started
+APP_LOG: 2025/12/28 21:55:30 auth.go:60: AuthMiddleware Started
+APP_LOG: 2025/12/28 21:55:30 auth.go:60: AuthMiddleware Started
+APP_LOG: 2025/12/28 21:55:30 auth.go:60: AuthMiddleware Started
+APP_LOG: 2025/12/28 21:55:30 auth.go:60: AuthMiddleware Started
+APP_LOG: 2025/12/28 21:55:30 ai.go:20: Gemini client initialized successfully
+APP_LOG: 2025/12/28 21:55:36 productRepo.go:60:  true
+APP_LOG: 2025/12/28 21:55:36 controllers.go:10: Error response: 400 - Product Not Found
+APP_LOG: 2025/12/28 21:55:59 productRepo.go:60:  true
+APP_LOG: 2025/12/28 21:55:59 controllers.go:10: Error response: 400 - Product Not Found
+APP_LOG: 2025/12/28 21:56:09 productRepo.go:60:  true
+APP_LOG: 2025/12/28 21:56:10 controllers.go:21: Success response: 200
+APP_LOG: 2025/12/28 21:56:14 productRepo.go:60:  true
+APP_LOG: 2025/12/28 21:56:14 controllers.go:10: Error response: 400 - Product Not Found
+APP_LOG: 2025/12/28 21:57:17 main.go:24: Application started successfully.
+APP_LOG: 2025/12/28 21:57:17 auth.go:60: AuthMiddleware Started
+APP_LOG: 2025/12/28 21:57:17 auth.go:60: AuthMiddleware Started
+APP_LOG: 2025/12/28 21:57:17 auth.go:60: AuthMiddleware Started
+APP_LOG: 2025/12/28 21:57:17 auth.go:60: AuthMiddleware Started
+APP_LOG: 2025/12/28 21:57:17 auth.go:60: AuthMiddleware Started
+APP_LOG: 2025/12/28 21:57:17 auth.go:60: AuthMiddleware Started
+APP_LOG: 2025/12/28 21:57:17 auth.go:60: AuthMiddleware Started
+APP_LOG: 2025/12/28 21:57:17 auth.go:60: AuthMiddleware Started
+APP_LOG: 2025/12/28 21:57:17 auth.go:60: AuthMiddleware Started
+APP_LOG: 2025/12/28 21:57:17 auth.go:60: AuthMiddleware Started
+APP_LOG: 2025/12/28 21:57:17 auth.go:60: AuthMiddleware Started
+APP_LOG: 2025/12/28 21:57:17 auth.go:60: AuthMiddleware Started
+APP_LOG: 2025/12/28 21:57:17 ai.go:20: Gemini client initialized successfully
+APP_LOG: 2025/12/28 21:57:32 productController.go:71: {ID:40 Name: iPhone 17 Pro 256 GB Akıllı Telefon Abis Description:iPhone 17 Pro
+Apple’ın en son amiral gemisi olan iPhone 17 Pro, akıllı telefon deneyimini baştan aşağı değiştiren özellikleriyle teknoloji severlerin karşısına çıkıyor. Gücünü yepyeni A19 Pro çipinden alan cihaz, buhar soğutma sistemi ile uzun süre kesintisiz performans sunuyor. Profesyonel düzeyde kamera sistemleri, bugüne kadar bir iPhone’da sunulmuş en yüksek optik zoom kapasitesi ve gelişmiş yapay zekâ desteği ile iPhone 17 Pro yalnızca bir telefon değil, aynı zamanda kişisel bir teknoloji asistanı.
+
+iPhone 17 Pro Yekpare Alüminyum Tasarım
+iPhone 17 Pro tasarımı, dayanıklılık ve estetiği bir araya getiren sıcak dövme alüminyum yekpare kasa ile geliyor. Bu yeni tasarım, cihazın hem daha hafif hem de çok daha sağlam olmasını sağlıyor. Alüminyumun yüksek ısı iletkenliği sayesinde telefonun içindeki bileşenler daha serin çalışıyor ve bu da uzun vadede performansın korunmasına yardımcı oluyor.
+Ön yüzeyde yer alan Ceramic Shield 2, çizilmelere karşı üç kata kadar daha güçlü bir koruma sunarken, arka yüzeydeki dayanıklı kaplama çatlamalara karşı dört kat daha fazla direnç gösteriyor. iPhone 17 Pro’nun tasarımı yalnızca şık bir görünüme sahip olmakla kalmıyor, aynı zamanda günlük yaşamda karşılaşılan zorluklara karşı yüksek dayanıklılık sergiliyor.
+
+iPhone 17 Pro Renkleri
+Apple, her yeni iPhone serisinde renk seçeneklerini cihazın ruhunu yansıtacak şekilde belirliyor. iPhone 17 Pro renkleri üç farklı seçeneğe sahip: Kozmik Turuncu, Gece Siyahı ve Gümüş Işık.
+
+Kozmik Turuncu, enerjik ve dinamik bir görünüm arayan kullanıcılar için tasarlanmış cesur bir seçenek.
+Gece Siyahı, profesyonel ve sofistike duruşuyla iş dünyasında ya da resmi kullanımda dikkat çekiyor.
+Gümüş Işık, minimalist ve modern tarzı benimseyen kullanıcılar için zamansız bir şıklık sunuyor.
+
+Bu renkler, yalnızca görsel olarak değil, aynı zamanda telefonun premium tasarım anlayışını da yansıtıyor. Kullanıcılar artık cihazlarını kendi kişisel tarzlarıyla daha kolay özdeşleştirebiliyor.
+ 
+
+iPhone 17 Pro İle Super Retina XDR Ekran
+iPhone 17 Pro ekranı, iki farklı boyutta sunuluyor: 6.3 inç ve 6.9 inç Super Retina XDR ekranlar. 120 Hz’e kadar ProMotion teknolojisi, içerik akışını ve kaydırmaları çok daha akıcı hale getiriyor. Ayrıca 3000 nit maksimum parlaklık, doğrudan güneş ışığında bile üstün görünürlük sağlıyor.
+HDR10 ve Dolby Vision desteği sayesinde filmler, diziler ve oyunlar canlı renklerle hayat buluyor. Daha az yansıma özelliği de ekranı hem iç hem dış mekânda kullanmayı konforlu hale getiriyor. Bu ekran, profesyonel kullanıcıların bile beklentilerini karşılayacak düzeyde.
+
+iPhone 17 Pro Kamera Özellikleri
+iPhone 17 Pro kamera sistemi, Apple’ın bugüne kadar geliştirdiği en profesyonel yapılandırmaya sahip. Üçlü 48 MP Fusion kamera sistemiyle kullanıcılar her ortamda olağanüstü kareler yakalayabiliyor.
+
+48 MP Fusion Ana Kamera: 24/48 mm odak uzaklığı ve ƒ/1.78 diyafram ile düşük ışık koşullarında bile net fotoğraflar.
+48 MP Fusion Ultra Geniş Kamera: 13 mm odak uzaklığı sayesinde geniş manzara ve makro çekimlerde mükemmel sonuçlar.
+48 MP Fusion Telefoto Kamera: 100/200 mm odak uzaklığı ve yeni tetraprizma tasarımı ile 16 kat optik zoom – iPhone tarihindeki en yüksek zoom kapasitesi.
+
+Yeni sensör teknolojisi ve %56 daha büyük sensör boyutu sayesinde fotoğraf ve videolar her zamankinden daha net ve detaylı. Ayrıca ProRes RAW video kaydı, profesyonel sinema kalitesinde içerik üretmeyi mümkün kılıyor. Yüksek seviye video stabilizasyonu ve gelişmiş iş akışlarıyla uyumluluk, iPhone 17 Pro’yu içerik üreticileri için eşsiz bir cihaz haline getiriyor.
+ 
+
+A19 Pro Çip – Buhar Soğutmalı Performans
+Apple’ın en yeni işlemcisi olan A19 Pro çip, performans ve verimliliği aynı anda sunuyor. Cihazın içindeki özel buhar soğutma haznesi, işlemciden gelen ısıyı anında dağıtarak performans kaybını önlüyor. Bu teknoloji sayesinde kullanıcılar, yüksek grafik gücü gerektiren oyunlarda, video düzenlemelerinde veya yoğun uygulama kullanımında cihazın hızından ödün vermiyor. A19 Pro çip, yapay zekâ görevlerini de çok daha hızlı yerine getiriyor. Apple Intelligence entegrasyonu, yazma önerilerinden görsel düzenlemelere kadar pek çok işlemde anında sonuç almanızı sağlıyor. Enerji verimliliği ise pil ömrünü doğrudan olumlu etkiliyor.
+
+iPhone 17 Pro Pil Ömrü
+iPhone 17 Pro bataryası, bugüne kadar bir iPhone’da sunulan en uzun kullanım süresine sahip. Yeni iç tasarım, pil için ekstra alan yaratarak kapasitenin ciddi şekilde artırılmasını sağladı. Özellikle iPhone 17 Pro Max, iPhone 15 Pro Max’e kıyasla tam dolu şarjda 3 saat daha uzun kullanım süresi sunuyor.
+
+Gün boyu kesintisiz kullanım.
+30 dakikada %50’ye kadar hızlı şarj.
+Video oynatma, oyun ve iş uygulamalarında saatlerce dayanıklılık.
+ 
+
+iOS 26 ve Apple Intelligence – Akıllı Yapay Zekâ Deneyimi
+iOS 26 ve Apple Intelligence iOS 26 işletim sistemi ve yeni Apple Intelligence yapay zekâ özellikleri, iPhone 17 Pro’yu yalnızca güçlü değil aynı zamanda kişisel bir asistan haline getiriyor.
+
+Mesajlarda ve e-postalarda akıllı öneriler.
+Fotoğraf düzenleme, otomatik kadrajlama ve görsel geliştirme.
+Günlük kullanım alışkanlıklarına göre kişiselleştirilmiş çözümler.
+
+Apple Intelligence, cihazı kullanırken zaman kazandırıyor ve üretkenliği artırıyor. Yapay zekâ, hem profesyonel hem de kişisel kullanımda iPhone 17 Pro’yu vazgeçilmez kılıyor.
+
+ Stock:1 Price:10880000}
+APP_LOG: 2025/12/28 21:57:32 productRepo.go:60:  true
+APP_LOG: 2025/12/28 21:57:32 controllers.go:10: Error response: 400 - Product Not Found
+APP_LOG: 2025/12/28 22:41:12 main.go:24: Application started successfully.
+APP_LOG: 2025/12/28 22:41:12 auth.go:60: AuthMiddleware Started
+APP_LOG: 2025/12/28 22:41:12 auth.go:60: AuthMiddleware Started
+APP_LOG: 2025/12/28 22:41:12 auth.go:60: AuthMiddleware Started
+APP_LOG: 2025/12/28 22:41:12 auth.go:60: AuthMiddleware Started
+APP_LOG: 2025/12/28 22:41:12 auth.go:60: AuthMiddleware Started
+APP_LOG: 2025/12/28 22:41:12 auth.go:60: AuthMiddleware Started
+APP_LOG: 2025/12/28 22:41:12 auth.go:60: AuthMiddleware Started
+APP_LOG: 2025/12/28 22:41:12 auth.go:60: AuthMiddleware Started
+APP_LOG: 2025/12/28 22:41:12 auth.go:60: AuthMiddleware Started
+APP_LOG: 2025/12/28 22:41:12 auth.go:60: AuthMiddleware Started
+APP_LOG: 2025/12/28 22:41:12 auth.go:60: AuthMiddleware Started
+APP_LOG: 2025/12/28 22:41:12 auth.go:60: AuthMiddleware Started
+APP_LOG: 2025/12/28 22:41:12 ai.go:20: Gemini client initialized successfully
+APP_LOG: 2025/12/28 22:41:22 controllers.go:21: Success response: 200
+APP_LOG: 2025/12/28 22:41:24 auth.go:66: AuthMiddleware: Cookie not found - http: named cookie not present
+APP_LOG: 2025/12/28 22:41:24 auth.go:66: AuthMiddleware: Cookie not found - http: named cookie not present
+APP_LOG: 2025/12/28 22:41:24 usersController.go:213: GetAccess request started
+APP_LOG: 2025/12/28 22:41:24 usersController.go:249: GetAccess success: Access token refreshed
+APP_LOG: 2025/12/28 22:41:24 controllers.go:21: Success response: 200
+APP_LOG: 2025/12/28 22:41:24 controllers.go:21: Success response: 200
+APP_LOG: 2025/12/28 22:41:26 productRepo.go:60:  true
+APP_LOG: 2025/12/28 22:41:26 controllers.go:21: Success response: 200
+APP_LOG: 2025/12/28 22:41:30 productController.go:71: {ID:40 Name: iPhone 17 Pro 256 GB Akıllı Telefon Abis Description:iPhone 17 Pro
+Apple’ın en son amiral gemisi olan iPhone 17 Pro, akıllı telefon deneyimini baştan aşağı değiştiren özellikleriyle teknoloji severlerin karşısına çıkıyor. Gücünü yepyeni A19 Pro çipinden alan cihaz, buhar soğutma sistemi ile uzun süre kesintisiz performans sunuyor. Profesyonel düzeyde kamera sistemleri, bugüne kadar bir iPhone’da sunulmuş en yüksek optik zoom kapasitesi ve gelişmiş yapay zekâ desteği ile iPhone 17 Pro yalnızca bir telefon değil, aynı zamanda kişisel bir teknoloji asistanı.
+
+iPhone 17 Pro Yekpare Alüminyum Tasarım
+iPhone 17 Pro tasarımı, dayanıklılık ve estetiği bir araya getiren sıcak dövme alüminyum yekpare kasa ile geliyor. Bu yeni tasarım, cihazın hem daha hafif hem de çok daha sağlam olmasını sağlıyor. Alüminyumun yüksek ısı iletkenliği sayesinde telefonun içindeki bileşenler daha serin çalışıyor ve bu da uzun vadede performansın korunmasına yardımcı oluyor.
+Ön yüzeyde yer alan Ceramic Shield 2, çizilmelere karşı üç kata kadar daha güçlü bir koruma sunarken, arka yüzeydeki dayanıklı kaplama çatlamalara karşı dört kat daha fazla direnç gösteriyor. iPhone 17 Pro’nun tasarımı yalnızca şık bir görünüme sahip olmakla kalmıyor, aynı zamanda günlük yaşamda karşılaşılan zorluklara karşı yüksek dayanıklılık sergiliyor.
+
+iPhone 17 Pro Renkleri
+Apple, her yeni iPhone serisinde renk seçeneklerini cihazın ruhunu yansıtacak şekilde belirliyor. iPhone 17 Pro renkleri üç farklı seçeneğe sahip: Kozmik Turuncu, Gece Siyahı ve Gümüş Işık.
+
+Kozmik Turuncu, enerjik ve dinamik bir görünüm arayan kullanıcılar için tasarlanmış cesur bir seçenek.
+Gece Siyahı, profesyonel ve sofistike duruşuyla iş dünyasında ya da resmi kullanımda dikkat çekiyor.
+Gümüş Işık, minimalist ve modern tarzı benimseyen kullanıcılar için zamansız bir şıklık sunuyor.
+
+Bu renkler, yalnızca görsel olarak değil, aynı zamanda telefonun premium tasarım anlayışını da yansıtıyor. Kullanıcılar artık cihazlarını kendi kişisel tarzlarıyla daha kolay özdeşleştirebiliyor.
+ 
+
+iPhone 17 Pro İle Super Retina XDR Ekran
+iPhone 17 Pro ekranı, iki farklı boyutta sunuluyor: 6.3 inç ve 6.9 inç Super Retina XDR ekranlar. 120 Hz’e kadar ProMotion teknolojisi, içerik akışını ve kaydırmaları çok daha akıcı hale getiriyor. Ayrıca 3000 nit maksimum parlaklık, doğrudan güneş ışığında bile üstün görünürlük sağlıyor.
+HDR10 ve Dolby Vision desteği sayesinde filmler, diziler ve oyunlar canlı renklerle hayat buluyor. Daha az yansıma özelliği de ekranı hem iç hem dış mekânda kullanmayı konforlu hale getiriyor. Bu ekran, profesyonel kullanıcıların bile beklentilerini karşılayacak düzeyde.
+
+iPhone 17 Pro Kamera Özellikleri
+iPhone 17 Pro kamera sistemi, Apple’ın bugüne kadar geliştirdiği en profesyonel yapılandırmaya sahip. Üçlü 48 MP Fusion kamera sistemiyle kullanıcılar her ortamda olağanüstü kareler yakalayabiliyor.
+
+48 MP Fusion Ana Kamera: 24/48 mm odak uzaklığı ve ƒ/1.78 diyafram ile düşük ışık koşullarında bile net fotoğraflar.
+48 MP Fusion Ultra Geniş Kamera: 13 mm odak uzaklığı sayesinde geniş manzara ve makro çekimlerde mükemmel sonuçlar.
+48 MP Fusion Telefoto Kamera: 100/200 mm odak uzaklığı ve yeni tetraprizma tasarımı ile 16 kat optik zoom – iPhone tarihindeki en yüksek zoom kapasitesi.
+
+Yeni sensör teknolojisi ve %56 daha büyük sensör boyutu sayesinde fotoğraf ve videolar her zamankinden daha net ve detaylı. Ayrıca ProRes RAW video kaydı, profesyonel sinema kalitesinde içerik üretmeyi mümkün kılıyor. Yüksek seviye video stabilizasyonu ve gelişmiş iş akışlarıyla uyumluluk, iPhone 17 Pro’yu içerik üreticileri için eşsiz bir cihaz haline getiriyor.
+ 
+
+A19 Pro Çip – Buhar Soğutmalı Performans
+Apple’ın en yeni işlemcisi olan A19 Pro çip, performans ve verimliliği aynı anda sunuyor. Cihazın içindeki özel buhar soğutma haznesi, işlemciden gelen ısıyı anında dağıtarak performans kaybını önlüyor. Bu teknoloji sayesinde kullanıcılar, yüksek grafik gücü gerektiren oyunlarda, video düzenlemelerinde veya yoğun uygulama kullanımında cihazın hızından ödün vermiyor. A19 Pro çip, yapay zekâ görevlerini de çok daha hızlı yerine getiriyor. Apple Intelligence entegrasyonu, yazma önerilerinden görsel düzenlemelere kadar pek çok işlemde anında sonuç almanızı sağlıyor. Enerji verimliliği ise pil ömrünü doğrudan olumlu etkiliyor.
+
+iPhone 17 Pro Pil Ömrü
+iPhone 17 Pro bataryası, bugüne kadar bir iPhone’da sunulan en uzun kullanım süresine sahip. Yeni iç tasarım, pil için ekstra alan yaratarak kapasitenin ciddi şekilde artırılmasını sağladı. Özellikle iPhone 17 Pro Max, iPhone 15 Pro Max’e kıyasla tam dolu şarjda 3 saat daha uzun kullanım süresi sunuyor.
+
+Gün boyu kesintisiz kullanım.
+30 dakikada %50’ye kadar hızlı şarj.
+Video oynatma, oyun ve iş uygulamalarında saatlerce dayanıklılık.
+ 
+
+iOS 26 ve Apple Intelligence – Akıllı Yapay Zekâ Deneyimi
+iOS 26 ve Apple Intelligence iOS 26 işletim sistemi ve yeni Apple Intelligence yapay zekâ özellikleri, iPhone 17 Pro’yu yalnızca güçlü değil aynı zamanda kişisel bir asistan haline getiriyor.
+
+Mesajlarda ve e-postalarda akıllı öneriler.
+Fotoğraf düzenleme, otomatik kadrajlama ve görsel geliştirme.
+Günlük kullanım alışkanlıklarına göre kişiselleştirilmiş çözümler.
+
+Apple Intelligence, cihazı kullanırken zaman kazandırıyor ve üretkenliği artırıyor. Yapay zekâ, hem profesyonel hem de kişisel kullanımda iPhone 17 Pro’yu vazgeçilmez kılıyor.
+
+ Stock:1 Price:10800000}
+APP_LOG: 2025/12/28 22:41:31 productRepo.go:60:  true
+APP_LOG: 2025/12/28 22:41:31 controllers.go:21: Success response: 200
+APP_LOG: 2025/12/28 22:41:35 productRepo.go:60:  true
+APP_LOG: 2025/12/28 22:41:36 controllers.go:21: Success response: 200
+APP_LOG: 2025/12/28 22:41:39 controllers.go:21: Success response: 200
+APP_LOG: 2025/12/28 22:41:39 controllers.go:21: Success response: 200
+APP_LOG: 2025/12/28 22:41:44 controllers.go:21: Success response: 200
+APP_LOG: 2025/12/28 22:41:44 controllers.go:21: Success response: 200
+APP_LOG: 2025/12/28 22:41:46 controllers.go:21: Success response: 200
+APP_LOG: 2025/12/28 22:41:46 controllers.go:21: Success response: 200
+APP_LOG: 2025/12/28 22:42:13 controllers.go:21: Success response: 200
+APP_LOG: 2025/12/28 22:42:13 controllers.go:21: Success response: 200
+APP_LOG: 2025/12/28 22:43:16 controllers.go:21: Success response: 200
+APP_LOG: 2025/12/28 22:43:16 controllers.go:21: Success response: 200
+APP_LOG: 2025/12/28 22:43:17 productRepo.go:60:  true
+APP_LOG: 2025/12/28 22:43:17 controllers.go:21: Success response: 200
+APP_LOG: 2025/12/28 22:43:19 controllers.go:21: Admin success response: 200
+APP_LOG: 2025/12/28 22:43:19 controllers.go:21: Admin success response: 200
+APP_LOG: 2025/12/28 22:43:19 controllers.go:21: Admin success response: 200
+APP_LOG: 2025/12/28 22:43:19 controllers.go:21: Admin success response: 200
+APP_LOG: 2025/12/28 22:43:23 controllers.go:10: Admin error response: 400 - Invalid data
+APP_LOG: 2025/12/28 22:48:08 controllers.go:10: Admin error response: 400 - Invalid data
+APP_LOG: 2025/12/28 22:49:15 controllers.go:10: Admin error response: 400 - Invalid data
+APP_LOG: 2025/12/28 22:51:43 controllers.go:10: Admin error response: 400 - Invalid data
+APP_LOG: 2025/12/28 22:51:53 productRepo.go:60:  true
+APP_LOG: 2025/12/28 22:51:53 controllers.go:21: Success response: 200
+APP_LOG: 2025/12/28 22:51:55 controllers.go:21: Admin success response: 200
+APP_LOG: 2025/12/28 22:51:55 controllers.go:21: Admin success response: 200
+APP_LOG: 2025/12/28 22:51:56 controllers.go:21: Admin success response: 200
+APP_LOG: 2025/12/28 22:51:56 controllers.go:21: Admin success response: 200
+APP_LOG: 2025/12/28 22:52:00 productRepo.go:60:  true
+APP_LOG: 2025/12/28 22:52:00 controllers.go:21: Admin success response: 200
+APP_LOG: 2025/12/28 22:52:32 controllers.go:21: Admin success response: 200
+APP_LOG: 2025/12/28 22:52:32 controllers.go:21: Admin success response: 200
+APP_LOG: 2025/12/28 22:52:32 controllers.go:21: Admin success response: 200
+APP_LOG: 2025/12/28 22:52:32 controllers.go:21: Admin success response: 200
+APP_LOG: 2025/12/28 22:52:35 productRepo.go:60:  true
+APP_LOG: 2025/12/28 22:52:35 controllers.go:21: Success response: 200
+APP_LOG: 2025/12/28 22:52:37 controllers.go:21: Admin success response: 200
+APP_LOG: 2025/12/28 22:52:37 controllers.go:21: Admin success response: 200
+APP_LOG: 2025/12/28 22:52:37 controllers.go:21: Admin success response: 200
+APP_LOG: 2025/12/28 22:52:37 controllers.go:21: Admin success response: 200
+APP_LOG: 2025/12/28 22:52:45 productRepo.go:60:  true
+APP_LOG: 2025/12/28 22:52:45 controllers.go:21: Admin success response: 200
+APP_LOG: 2025/12/28 22:53:03 productRepo.go:60:  true
+APP_LOG: 2025/12/28 22:53:03 controllers.go:21: Success response: 200
+APP_LOG: 2025/12/28 22:53:13 productController.go:267: CreateDescription request started
+APP_LOG: 2025/12/28 22:53:14 createDescription.go:38: Gemini Client Error: Error 403, Message: Your API key was reported as leaked. Please use another API key., Status: PERMISSION_DENIED, Details: []
+APP_LOG: 2025/12/28 22:53:14 controllers.go:10: Error response: 500 - Gemini API error: Error 403, Message: Your API key was reported as leaked. Please use another API key., Status: PERMISSION_DENIED, Details: []
+APP_LOG: 2025/12/28 22:54:26 main.go:24: Application started successfully.
+APP_LOG: 2025/12/28 22:54:26 auth.go:60: AuthMiddleware Started
+APP_LOG: 2025/12/28 22:54:26 auth.go:60: AuthMiddleware Started
+APP_LOG: 2025/12/28 22:54:26 auth.go:60: AuthMiddleware Started
+APP_LOG: 2025/12/28 22:54:26 auth.go:60: AuthMiddleware Started
+APP_LOG: 2025/12/28 22:54:26 auth.go:60: AuthMiddleware Started
+APP_LOG: 2025/12/28 22:54:26 auth.go:60: AuthMiddleware Started
+APP_LOG: 2025/12/28 22:54:26 auth.go:60: AuthMiddleware Started
+APP_LOG: 2025/12/28 22:54:26 auth.go:60: AuthMiddleware Started
+APP_LOG: 2025/12/28 22:54:26 auth.go:60: AuthMiddleware Started
+APP_LOG: 2025/12/28 22:54:26 auth.go:60: AuthMiddleware Started
+APP_LOG: 2025/12/28 22:54:26 auth.go:60: AuthMiddleware Started
+APP_LOG: 2025/12/28 22:54:26 auth.go:60: AuthMiddleware Started
+APP_LOG: 2025/12/28 22:54:26 ai.go:20: Gemini client initialized successfully
+APP_LOG: 2025/12/28 22:54:31 productController.go:267: CreateDescription request started
+APP_LOG: 2025/12/28 22:54:39 controllers.go:21: Success response: 200
+APP_LOG: 2025/12/28 22:54:48 productController.go:71: {ID:40 Name: iPhone 17 Pro 256 GB Akıllı Telefon Abis Description:<div class="max-w-prose mx-auto p-4 md:p-6 bg-white rounded-lg shadow-md">
+    <p class="text-xl md:text-2xl font-bold text-gray-900 mb-4">
+        Akıllı telefon deneyimini yeniden tanımlayan <b>iPhone 17 Pro</b> ile tanışın! Apple'ın en yeni amiral gemisi, çığır açan teknolojileri ve göz alıcı tasarımıyla beklentilerinizi aşmaya hazır.
+    </p>
+
+    <ul class="list-disc pl-5 space-y-2 text-base md:text-lg text-gray-700">
+        <li>
+            <b>Devrim Yaratan Performans:</b> Yepyeni <b>A19 Pro çipi</b> ve özel <b>buhar soğutma sistemi</b> sayesinde kesintisiz hız ve akıcılık.
+        </li>
+        <li>
+            <b>Profesyonel Kamera Sistemi:</b> <b>Üçlü 48 MP Fusion kamera</b> ile her anı yakalayın. iPhone tarihindeki en yüksek, <b>16 kata kadar optik zoom</b> kapasitesiyle detaylarda kaybolun.
+        </li>
+        <li>
+            <b>Muhteşem Ekran:</b> 6.3 veya 6.9 inç <b>Super Retina XDR ekran</b>, <b>120 Hz ProMotion</b> ve <b>3000 nit maksimum parlaklık</b> ile canlı renkler ve akıcı görüntüler sunar.
+        </li>
+        <li>
+            <b>Dayanıklı ve Şık Tasarım:</b> <b>Yekpare Alüminyum kasa</b>, Ceramic Shield 2 ön yüzey ve dört kat daha dayanıklı arka kaplama ile estetik ve sağlamlık bir arada.
+        </li>
+        <li>
+            <b>Uzun Ömürlü Batarya:</b> Bir iPhone'daki <b>en uzun pil ömrü</b> ve <b>30 dakikada %50 hızlı şarj</b> imkanıyla gün boyu kesintisiz kullanım.
+        </li>
+        <li>
+            <b>Akıllı Deneyim:</b> <b>iOS 26</b> ve <b>Apple Intelligence</b> entegrasyonuyla kişisel bir teknoloji asistanına sahip olun.
+        </li>
+        <li>
+            <b>Etkileyici Renk Seçenekleri:</b> <b>Kozmik Turuncu</b>, <b>Gece Siyahı</b> ve <b>Gümüş Işık</b> ile tarzınızı yansıtın.
+        </li>
+    </ul>
+
+    <p class="mt-6 text-base md:text-lg text-gray-800">
+        iPhone 17 Pro, yalnızca bir telefon değil, aynı zamanda kişisel bir teknoloji asistanı. Yenilikçi özellikleri ve üstün performansıyla dijital dünyanızı zirveye taşıyın.
+    </p>
+</div> Stock:1 Price:10800000}
+APP_LOG: 2025/12/28 22:54:48 productRepo.go:60:  true
+APP_LOG: 2025/12/28 22:54:48 controllers.go:21: Success response: 200
+APP_LOG: 2025/12/28 22:54:54 productRepo.go:60:  true
+APP_LOG: 2025/12/28 22:54:54 controllers.go:21: Success response: 200

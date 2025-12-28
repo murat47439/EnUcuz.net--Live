@@ -38,7 +38,7 @@ type NewProduct struct {
 	Features    []Feature `json:"features"`
 }
 type UpdProduct struct {
-	ID          int
+	ID          int    `json:"id"`
 	Name        string `json:"name"`
 	Description string `json:"description"`
 	Stock       int    `json:"stock"`
