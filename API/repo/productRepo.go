@@ -5,6 +5,7 @@ import (
 	"Store-Dio/models"
 	"context"
 	"database/sql"
+	"errors"
 	"fmt"
 	"strconv"
 
@@ -23,6 +24,15 @@ func NewProductRepo(db *sqlx.DB, brand *BrandsRepo, cat *CategoriesRepo) *Produc
 		brand: brand,
 		cat:   cat}
 }
+
+const (
+	ProductStatusDraft    = 0
+	ProductStatusActive   = 1
+	ProductStatusInactive = 2
+	ProductStatusRejected = 3
+	ProductStatusSold     = 4
+)
+
 func (pr *ProductRepo) GetUserProducts(ctx context.Context, userID int, page int) ([]*models.Product, error) {
 	var products []*models.Product
 	offset := (page - 1) * 50
@@ -43,6 +53,19 @@ func (pr *ProductRepo) GetUserProducts(ctx context.Context, userID int, page int
 		return nil, fmt.Errorf("Rows error : %s", err.Error())
 	}
 	return products, nil
+}
+func (pr *ProductRepo) GetProductSeller(ctx context.Context, id int) (int, error) {
+	query := `SELECT seller_id FROM products WHERE id = $1 AND deleted_at IS NULL`
+	var sellerID int
+	err := pr.db.GetContext(ctx, &sellerID, query, id)
+
+	if err != nil {
+		if errors.Is(err, sql.ErrNoRows) {
+			return 0, fmt.Errorf("Product not found")
+		}
+		return 0, err
+	}
+	return sellerID, nil
 }
 func (pr *ProductRepo) CheckProduct(prodid int) (bool, error) {
 
@@ -140,6 +163,18 @@ func (pr *ProductRepo) UpdateProduct(ctx context.Context, product *models.UpdPro
 	}
 	return nil
 
+}
+func (pr *ProductRepo) UpdateProductStatus(ctx context.Context, tx *sqlx.Tx, id, status int) error {
+	query := `UPDATE products SET status = $1, updated_at = NOW() WHERE id = $2 AND deleted_at IS NULL AND status IS DISTINCT FROM $1`
+	res, err := tx.ExecContext(ctx, query, status, id)
+	if err != nil {
+		return fmt.Errorf("Database error : %w", err)
+	}
+	rows, _ := res.RowsAffected()
+	if rows == 0 {
+		return fmt.Errorf("ProductNotFound")
+	}
+	return nil
 }
 func (pr *ProductRepo) GetProduct(ctx context.Context, prodid int) (*models.Product, error) {
 	var product models.Product
@@ -292,7 +327,9 @@ func (pr *ProductRepo) DeleteProduct(data *models.Product) error {
 		} else if err != nil {
 			_ = tx.Rollback()
 		} else {
-			err = tx.Commit()
+			if commitErr := tx.Commit(); commitErr != nil {
+				err = fmt.Errorf("transaction commit error: %w", commitErr)
+			}
 		}
 	}()
 	query := `UPDATE products SET deleted_at = NOW() WHERE id = $1 AND seller_id = $2`
@@ -301,6 +338,21 @@ func (pr *ProductRepo) DeleteProduct(data *models.Product) error {
 
 	if err != nil {
 		return fmt.Errorf("Database error : ", err.Error())
+	}
+	return nil
+}
+func (pr *ProductRepo) LockProduct(ctx context.Context, tx *sqlx.Tx, id int) error {
+	query := `SELECT id, status FROM products WHERE id = $1 FOR UPDATE`
+	var prodid, status int
+	err := tx.QueryRowContext(ctx, query, id).Scan(&prodid, &status)
+	if err != nil {
+		if err == sql.ErrNoRows {
+			return fmt.Errorf("Product not found")
+		}
+		return fmt.Errorf("Database error")
+	}
+	if status == ProductStatusSold {
+		return fmt.Errorf("Product already sold")
 	}
 	return nil
 }

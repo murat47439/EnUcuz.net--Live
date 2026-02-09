@@ -8,6 +8,7 @@ import (
 	"Store-Dio/services/chat"
 	"Store-Dio/services/favories"
 	"Store-Dio/services/images"
+	"Store-Dio/services/offers"
 	"Store-Dio/services/products"
 	"Store-Dio/services/reviews"
 
@@ -25,9 +26,9 @@ type Service struct {
 	ReviewsService    *reviews.ReviewService
 	AttributeService  *attributes.AttributeService
 	ChatService       *chat.ChatService
-
-	ImageService *images.ImageService
-	db           *sqlx.DB
+	OffersService     *offers.OffersService
+	ImageService      *images.ImageService
+	db                *sqlx.DB
 }
 
 func NewService(repo *repo.Repo, db *sqlx.DB) *Service {
@@ -41,6 +42,7 @@ func NewService(repo *repo.Repo, db *sqlx.DB) *Service {
 	attributeService := attributes.NewAttributeService(db, repo.AttributeRepo, repo.ProductRepo)
 	chatService := chat.NewChatService(repo.ChatRepo, db)
 	imageService := images.NewProductService(repo.ImageRepo, db)
+	offersService := offers.NewOffersService(repo.OffersRepo, repo.ProductRepo, db)
 	return &Service{
 
 		BrandsService:     brandsService,
@@ -52,6 +54,7 @@ func NewService(repo *repo.Repo, db *sqlx.DB) *Service {
 		AttributeService:  attributeService,
 		ChatService:       chatService,
 		ImageService:      imageService,
+		OffersService:     offersService,
 		db:                db,
 	}
 }

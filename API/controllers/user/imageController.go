@@ -42,7 +42,7 @@ func (ic *ImageController) UploadImage(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	cf := clients.NewImagesClient(config.CLOUDFLARE_ACCOUNT_ID, config.CLOUDFLARE_API_KEY)
+	cf := clients.ImageClient
 
 	ctx, cancel := context.WithTimeout(r.Context(), 25*time.Second)
 	defer cancel()

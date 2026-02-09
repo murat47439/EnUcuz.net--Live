@@ -5,9 +5,18 @@ import Button from "./button";
 import Link from "next/link";
 import { ProductDetail } from "@/lib/types/types";
 import { ChevronLeft, ChevronRight, ZoomIn } from "lucide-react";
+import { UseModal } from "@/context/modalContext";
+import Input from "./input";
+import { useToast } from "@/context/toastContext";
+import { useForm } from "react-hook-form";
+import { NewOffer } from "@/lib/types/types";
+import { AddOffer } from "@/lib/api/offers/useAddOffers";
 
 interface ProductDetailCardProps {
     product: ProductDetail
+}
+type FormData = {
+    price: number
 }
 
 const ProductDetailCard: React.FC<ProductDetailCardProps> = ({ product }) => {
@@ -15,7 +24,8 @@ const ProductDetailCard: React.FC<ProductDetailCardProps> = ({ product }) => {
     const [isZoomed, setIsZoomed] = useState(false);
     const mainImageRef = useRef<HTMLDivElement>(null);
     const thumbnailContainerRef = useRef<HTMLDivElement>(null);
-
+    const { openModal, closeModal } = UseModal();
+    const { showNotification } = useToast();
     // Tüm resimleri birleştir (image_url + image_urls)
     const allImages = React.useMemo(() => {
         const images: string[] = [];
@@ -35,11 +45,11 @@ const ProductDetailCard: React.FC<ProductDetailCardProps> = ({ product }) => {
     // Mouse ile zoom
     const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
         if (!isZoomed || !mainImageRef.current) return;
-        
+
         const rect = mainImageRef.current.getBoundingClientRect();
         const x = ((e.clientX - rect.left) / rect.width) * 100;
         const y = ((e.clientY - rect.top) / rect.height) * 100;
-        
+
         const img = mainImageRef.current.querySelector("img");
         if (img) {
             img.style.transformOrigin = `${x}% ${y}%`;
@@ -50,13 +60,13 @@ const ProductDetailCard: React.FC<ProductDetailCardProps> = ({ product }) => {
     useEffect(() => {
         const handleKeyDown = (e: KeyboardEvent) => {
             if (allImages.length <= 1) return;
-            
+
             if (e.key === "ArrowLeft") {
-                setSelectedImageIndex((prev) => 
+                setSelectedImageIndex((prev) =>
                     prev > 0 ? prev - 1 : allImages.length - 1
                 );
             } else if (e.key === "ArrowRight") {
-                setSelectedImageIndex((prev) => 
+                setSelectedImageIndex((prev) =>
                     prev < allImages.length - 1 ? prev + 1 : 0
                 );
             }
@@ -66,13 +76,50 @@ const ProductDetailCard: React.FC<ProductDetailCardProps> = ({ product }) => {
         return () => window.removeEventListener("keydown", handleKeyDown);
     }, [allImages.length]);
 
+    const methods = useForm<FormData>({
+        defaultValues: {
+            price: product.data.product.price / 100
+        }
+    })
+
+    const { register, handleSubmit, watch } = methods;
+
+    const onsubmit = async (data: FormData) => {
+        if (data.price < (product.data.product.price * 0.6 / 100)) {
+            showNotification("Teklif fiyatı çok düşük", "error");
+            return;
+        }
+
+        const priceInCents = data.price * 100
+
+        const request: NewOffer = {
+            price: priceInCents,
+            productId: Number(product.data.product.id),
+        }
+
+        try {
+            const response = await AddOffer(request)
+            if (response.success) {
+                showNotification('Teklif başarıyla verildi', 'success', 2000)
+            }
+        } catch (err) {
+            console.error(err)
+            if (err instanceof Error) {
+                showNotification(err.message || 'Teklif verilemedi', 'error', 2000)
+            } else {
+                showNotification('Teklif verilemedi', 'error', 2000)
+
+            }
+        }
+    }
+
     return (
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 p-4 sm:p-6 md:p-8 bg-white rounded-xl border border-gray-100 shadow-sm">
             {/* Resim Galerisi - Ana Resim + Alt Thumbnails */}
             <div className="flex flex-col items-center">
                 <div className="flex flex-col gap-3 w-full">
                     {/* Ana Resim */}
-                    <div 
+                    <div
                         className="relative w-full"
                         onMouseEnter={() => setIsZoomed(true)}
                         onMouseLeave={() => setIsZoomed(false)}
@@ -87,12 +134,11 @@ const ProductDetailCard: React.FC<ProductDetailCardProps> = ({ product }) => {
                                 alt={product?.data.product?.name || "Ürün resmi"}
                                 fill
                                 sizes="(max-width: 1024px) 100vw, 66vw"
-                                className={`object-contain transition-transform duration-300 ${
-                                    isZoomed ? "scale-150" : "scale-100"
-                                }`}
+                                className={`object-contain transition-transform duration-300 ${isZoomed ? "scale-150" : "scale-100"
+                                    }`}
                                 priority
                             />
-                            
+
                             {/* Zoom İkonu */}
                             {isZoomed && (
                                 <div className="absolute top-4 right-4 bg-white/90 backdrop-blur-sm rounded-full p-2 shadow-lg">
@@ -111,7 +157,7 @@ const ProductDetailCard: React.FC<ProductDetailCardProps> = ({ product }) => {
                             {allImages.length > 1 && (
                                 <>
                                     <button
-                                        onClick={() => setSelectedImageIndex((prev) => 
+                                        onClick={() => setSelectedImageIndex((prev) =>
                                             prev > 0 ? prev - 1 : allImages.length - 1
                                         )}
                                         className="absolute left-4 top-1/2 -translate-y-1/2 bg-white/90 hover:bg-white backdrop-blur-sm rounded-full p-2 shadow-lg transition-all opacity-0 group-hover:opacity-100"
@@ -120,7 +166,7 @@ const ProductDetailCard: React.FC<ProductDetailCardProps> = ({ product }) => {
                                         <ChevronLeft size={24} className="text-gray-700" />
                                     </button>
                                     <button
-                                        onClick={() => setSelectedImageIndex((prev) => 
+                                        onClick={() => setSelectedImageIndex((prev) =>
                                             prev < allImages.length - 1 ? prev + 1 : 0
                                         )}
                                         className="absolute right-4 top-1/2 -translate-y-1/2 bg-white/90 hover:bg-white backdrop-blur-sm rounded-full p-2 shadow-lg transition-all opacity-0 group-hover:opacity-100"
@@ -136,7 +182,7 @@ const ProductDetailCard: React.FC<ProductDetailCardProps> = ({ product }) => {
                     {/* Thumbnail Listesi - Ana resmin altında */}
                     {allImages.length > 1 && (
                         <div className="w-full">
-                            <div 
+                            <div
                                 ref={thumbnailContainerRef}
                                 className="flex gap-2 overflow-x-auto pb-2 scrollbar-thin scrollbar-thumb-gray-300 scrollbar-track-transparent justify-center"
                             >
@@ -144,11 +190,10 @@ const ProductDetailCard: React.FC<ProductDetailCardProps> = ({ product }) => {
                                     <button
                                         key={index}
                                         onClick={() => setSelectedImageIndex(index)}
-                                        className={`flex-shrink-0 relative w-16 h-16 rounded-lg overflow-hidden border-2 transition-all duration-200 ${
-                                            selectedImageIndex === index
-                                                ? "border-gray-700 ring-1 ring-gray-300 scale-105"
-                                                : "border-gray-200 hover:border-gray-400"
-                                        }`}
+                                        className={`flex-shrink-0 relative w-16 h-16 rounded-lg overflow-hidden border-2 transition-all duration-200 ${selectedImageIndex === index
+                                            ? "border-gray-700 ring-1 ring-gray-300 scale-105"
+                                            : "border-gray-200 hover:border-gray-400"
+                                            }`}
                                     >
                                         <Image
                                             src={image}
@@ -179,8 +224,8 @@ const ProductDetailCard: React.FC<ProductDetailCardProps> = ({ product }) => {
                 {product?.data.attribute && product.data.attribute.length > 0 ? (
                     <div className="space-y-2 max-h-96 overflow-y-auto scrollbar-thin scrollbar-thumb-gray-300  scrollbar-track-transparent pr-2">
                         {product.data.attribute.map((attr, index) => (
-                            <div 
-                                key={index} 
+                            <div
+                                key={index}
                                 className="group bg-gray-50 border border-gray-200 rounded-lg p-3 hover:border-gray-300 hover:shadow-sm transition-all duration-200"
                             >
                                 <div className="flex items-start gap-2">
@@ -219,11 +264,26 @@ const ProductDetailCard: React.FC<ProductDetailCardProps> = ({ product }) => {
                 <br></br>
                 <p className="text-gray-600">{product.data.product.seller_name}</p>
 
-                <Link href={`tel:${product.data.product.seller_phone}`}>
-                    <Button className="bg-gray-900 hover:bg-gray-800 text-white font-medium w-full p-4 rounded-lg">
-                        İletişime Geç
-                    </Button>
-                </Link>
+
+                <Button className="bg-gray-900 hover:bg-gray-800 text-white font-medium w-full p-4 rounded-lg" onClick={() => openModal(
+                    () => (
+                        <div className="p-4">
+                            <h2 className="text-lg font-semibold mb-2">Teklif ver</h2>
+                            <Input type="number" placeholder="Fiyat" {...register("price")} />
+                            <p className='text-gray-600 text-sm mt-2'>Verebileceğiniz en düşük teklif : {product.data.product.price * 0.6 / 100}</p>
+                            <div className='flex flex-row gap-3 mt-8 '>
+                                <Button type='button' onClick={closeModal} className='flex-1'>İptal Et</Button>
+                                <Button type='button' onClick={handleSubmit(async (data) => {
+                                    await onsubmit(data)
+                                    closeModal()
+                                })} className='flex-1 bg-blue-600 hover:bg-blue-700'>Teklifi ver</Button>
+                            </div>
+                        </div>
+                    )
+                )}>
+                    Teklif ver
+                </Button>
+
             </div>
         </div>
     );

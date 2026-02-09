@@ -1,7 +1,6 @@
 package clients
 
 import (
-	"Store-Dio/config"
 	"Store-Dio/models"
 	"bytes"
 	"context"
@@ -25,6 +24,9 @@ import (
 
 //		config.Logger.Printf("ImageKit client initialized successfully")
 //	}
+
+var ImageClient *ImagesClient
+
 type ImagesClient struct {
 	AccountID string
 	APIToken  string
@@ -32,13 +34,14 @@ type ImagesClient struct {
 }
 
 func NewImagesClient(accountID, apiToken string) *ImagesClient {
-	return &ImagesClient{
+	ImageClient = &ImagesClient{
 		AccountID: accountID,
 		APIToken:  apiToken,
 		Client: &http.Client{
 			Timeout: 20 * time.Second,
 		},
 	}
+	return ImageClient
 }
 func (c *ImagesClient) UploadImageV2(ctx context.Context, file multipart.File, filename string) (string, string, error) {
 	defer file.Close()
@@ -67,7 +70,7 @@ func (c *ImagesClient) UploadImageV2(ctx context.Context, file multipart.File, f
 	if err != nil {
 		return "", "", err
 	}
-	req.Header.Set("Authorization", "Bearer "+config.CLOUDFLARE_API_KEY)
+	req.Header.Set("Authorization", "Bearer "+c.APIToken)
 	req.Header.Set("Content-Type", writer.FormDataContentType())
 	resp, err := c.Client.Do(req)
 	if err != nil {
@@ -100,7 +103,7 @@ func (c *ImagesClient) DeleteImageV2(ctx context.Context, id string) (bool, erro
 	if err != nil {
 		return false, err
 	}
-	req.Header.Set("Authorization", "Bearer "+config.CLOUDFLARE_API_KEY)
+	req.Header.Set("Authorization", "Bearer "+c.APIToken)
 
 	resp, err := c.Client.Do(req)
 	if err != nil {

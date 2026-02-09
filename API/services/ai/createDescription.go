@@ -1,4 +1,4 @@
-package handlers
+package ai
 
 import (
 	"Store-Dio/clients"

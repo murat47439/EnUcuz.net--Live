@@ -1,38 +1,38 @@
 
 
-export interface Message{
+export interface Message {
     success: boolean,
     message: string,
     data?: unknown,
 }
-export interface Category{
-    id : number,
+export interface Category {
+    id: number,
     name: string,
     parent_id: number,
     created_at: string
 }
-export interface Favorite{
+export interface Favorite {
     id: number,
     user_id: number,
     product_id: number,
     product: Product,
-    created_at:string,
-    deleted_at : string
+    created_at: string,
+    deleted_at: string
 }
 export type Features = { key: FeatureKey; value: string; }[];
 export type Feature = {
     key: FeatureKey;
     value: string;
-  };
+};
 export type FeatureKey = {
-    label : string,
+    label: string,
     value: number
 }
-export interface Product{
+export interface Product {
     id?: number,
-    name:string,
-    description:string,
-    stock:number,
+    name: string,
+    description: string,
+    stock: number,
     price: number,
     brand_name?: string,
     brand_id: number,
@@ -48,30 +48,65 @@ export interface Product{
     created_at?: { Time: string; Valid: boolean; };
     updated_at?: { Time: string; Valid: boolean; };
 }
-export interface Favorites{
+export interface Favorites {
     success: boolean,
     message: string,
     data: {
         products: Product[],
-        pagination?: { 
+        pagination?: {
             page: number,
         }
     }
 }
-export interface UserProducts{
+export interface Offers {
+    success: boolean;
+    message: string;
+    data: {
+        offers: OffersModel[];
+        pagination?: {
+            page: number;
+        };
+    };
+}
+export interface NewOffer {
+    productId: number;
+    price: number; // int64 → number (istersen bigint/string yapabiliriz)
+}
+export interface Counter {
+    offerId: number;
+    price: number;
+}
+export interface UpdateOfferModel {
+    id: number;
+    action: 'accept' | 'reject' | 'cancel';
+}
+export interface OffersModel {
+    id: number;
+    productId: number;
+    bidderId: number;
+    sellerId: number;
+    price: number;
+    parentId: number;
+    createdBy: number;
+    status: number;
+    createdAt: string;
+    updatedAt: string | null;
+    expiresAt: string;
+}
+export interface UserProducts {
     success: boolean,
     message: string,
     data: {
         products: Product[],
     }
 }
-export interface Brand{
+export interface Brand {
     id: number,
     name: string,
     deleted_at: string,
     created_at: string
 }
-export interface Brands{
+export interface Brands {
     success: boolean,
     message: string,
     data: {
@@ -82,14 +117,14 @@ export interface Brands{
         }
     }
 }
-export interface Chat{
+export interface Chat {
     id: number,
     sender: number,
     recipient: number,
     channel_id: number,
     product_id: number
 }
-export interface Chats{
+export interface Chats {
     success: boolean,
     message: string,
     data: {
@@ -99,7 +134,7 @@ export interface Chats{
         }
     }
 }
-export interface ChatResponse{
+export interface ChatResponse {
     success: boolean,
     message: string,
     data: {
@@ -107,24 +142,24 @@ export interface ChatResponse{
         message: string
     }
 }
-export interface ChatMessage{
+export interface ChatMessage {
     id: number,
     chat_id: number,
     content: string,
     sender: number
 }
-export interface ChatMessages{
+export interface ChatMessages {
     success: boolean,
     message: string,
     data: {
         messages: ChatMessage[]
     }
 }
-export interface NewChat{
+export interface NewChat {
     chat: Chat,
     message: ChatMessage,
-} 
-export interface Review{
+}
+export interface Review {
     id: number,
     user_id: number,
     product_id: number,
@@ -133,25 +168,25 @@ export interface Review{
     created_at: string,
     updated_at: string
 }
-export interface IdParam{
-    id : number 
+export interface IdParam {
+    id: number
 }
-export interface CreateCategoryRequest{
+export interface CreateCategoryRequest {
     name: string,
     parent_id: number,
 }
-export interface CompareProductsRequest{
+export interface CompareProductsRequest {
     id: number,
     id2: number
 }
-export interface CreateCategoryResponse{
+export interface CreateCategoryResponse {
     success: boolean,
     message: string,
     data: {
         category: Category
     }
 }
-export interface CategoriesListResponse{
+export interface CategoriesListResponse {
     success: boolean,
     message: string,
     data: {
@@ -162,7 +197,7 @@ export interface CategoriesListResponse{
         }
     }
 }
-export interface ProductsListResponse{
+export interface ProductsListResponse {
     success: boolean,
     message: string,
     data: {
@@ -175,56 +210,57 @@ export interface ProductsListResponse{
         }
     }
 }
-export interface PaginationRequest{
+export interface PaginationRequest {
     page?: number,
     search?: string,
-    brand?:number,
-    category?:number,
+    brand?: number,
+    category?: number,
 }
-export interface UpdateCategoryRequest{
+export interface UpdateCategoryRequest {
     id: number,
     name: string,
     parent_id: number
 }
-export interface AddFavoriteRequest{
+export interface AddFavoriteRequest {
     id: number
 }
-export interface ProductDetail{    
-data: {product: Product,
-attribute: ProductAttribute[]
-}
+export interface ProductDetail {
+    data: {
+        product: Product,
+        attribute: ProductAttribute[]
     }
+}
 
-export interface Attribute{
+export interface Attribute {
     id: number,
     name: string,
 }
-export interface AddAttributeRes{
+export interface AddAttributeRes {
     success: boolean,
     message: string,
     data: {
         attribute: Attribute
     }
 }
-export interface AddProdAttributes{
+export interface AddProdAttributes {
     product_id: number,
     attributes: Feature[],
 }
-export interface ProdAttributeRes{
+export interface ProdAttributeRes {
     success: boolean,
     message: string,
     data: {
         attribute: ProductAttribute
     }
 }
-export interface ProductAttribute{
+export interface ProductAttribute {
     id: number,
-    attribute_id:number,
+    attribute_id: number,
     attribute_name: string,
-    product_id:number,
+    product_id: number,
     value: string,
 }
-export interface CategoryAttribute{
+export interface CategoryAttribute {
     category_id: number,
     category_name: string,
     attribute_id: number,
@@ -234,45 +270,45 @@ export interface CategoryAttribute{
     varianter: boolean,
     slicer: boolean,
 }
-export interface CategoryAttributeRes{
+export interface CategoryAttributeRes {
     success: boolean,
     message: string,
     data: {
         category_attributes: CategoryAttribute[]
     }
 }
-export interface ProductDetailResponse{
+export interface ProductDetailResponse {
     success: boolean,
     message: string,
     data: {
         product: ProductDetail,
     }
 }
-export interface UpdateProductRequest{
-    id : number,
+export interface UpdateProductRequest {
+    id: number,
     name: string,
     description: string,
     /** Price in cents/kuruş (int64 in backend). Backend expects integer in JSON */
     price: number,
     stock: number,
 }
-export interface UpdateProductResponse{
+export interface UpdateProductResponse {
     success: boolean,
     message: string,
     data: {
         product: Product
     }
 }
-export interface CreateReviewRequest{
-    product_id : number,
-    content : string,
+export interface CreateReviewRequest {
+    product_id: number,
+    content: string,
     rating: number
 }
-export interface UpdateReviewStatusRequest{
+export interface UpdateReviewStatusRequest {
     id: number,
-    status: number 
+    status: number
 }
-export interface ReviewsListResponse{
+export interface ReviewsListResponse {
     success: boolean,
     message: string,
     data: {
@@ -283,24 +319,24 @@ export interface ReviewsListResponse{
         }
     }
 }
-export interface ReviewDetailResponse{
+export interface ReviewDetailResponse {
     success: boolean,
     message: string,
     data: {
         review: Review
     }
 }
-export interface UpdateReviewRequest{
-    id : number,
+export interface UpdateReviewRequest {
+    id: number,
     product_id: number,
     content: string,
     rating: number
 }
-export interface LoginRequest{
-    email : string,
-    password : string,
+export interface LoginRequest {
+    email: string,
+    password: string,
 }
-export interface UserProfileResponse{
+export interface UserProfileResponse {
     success: boolean,
     message: string,
     data: {
@@ -314,28 +350,28 @@ export interface UserProfileResponse{
         }
     }
 }
-export interface RegisterRequest{
-    name : string,
+export interface RegisterRequest {
+    name: string,
     surname: string,
     email: string,
     phone: string,
     password: string
 }
-export interface RegisterResponse{
+export interface RegisterResponse {
     success: boolean,
     message: string,
     data?: unknown
 }
-export interface UpdateUserRequest{
+export interface UpdateUserRequest {
     id: number,
-    email : string,
-    name : string,
-    surname : string,
+    email: string,
+    name: string,
+    surname: string,
     phone: string,
     gender?: number,
 }
 
-export interface UpdateUserResponse{
+export interface UpdateUserResponse {
     success: boolean,
     message: string,
     data: {
@@ -350,7 +386,7 @@ export interface UpdateUserResponse{
 }
 
 // Additional response types for modernized API
-export interface LoginResponse{
+export interface LoginResponse {
     success: boolean,
     message: string,
     data: {
@@ -365,19 +401,19 @@ export interface LoginResponse{
     }
 }
 
-export interface LogoutResponse{
+export interface LogoutResponse {
     success: boolean,
     message: string,
     data?: unknown
 }
 
-export interface RefreshTokenResponse{
+export interface RefreshTokenResponse {
     success: boolean,
     message: string,
     data?: unknown
 }
 
-export interface BrandResponse{
+export interface BrandResponse {
     success: boolean,
     message: string,
     data: {
@@ -385,7 +421,7 @@ export interface BrandResponse{
     }
 }
 
-export interface CategoryResponse{
+export interface CategoryResponse {
     success: boolean,
     message: string,
     data: {
@@ -393,7 +429,7 @@ export interface CategoryResponse{
     }
 }
 
-export interface ProductResponse{
+export interface ProductResponse {
     success: boolean,
     message: string,
     data: {
@@ -401,7 +437,7 @@ export interface ProductResponse{
     }
 }
 
-export interface ChatExistsResponse{
+export interface ChatExistsResponse {
     success: boolean,
     message: string,
     data: {
@@ -409,7 +445,7 @@ export interface ChatExistsResponse{
     }
 }
 
-export interface NewMessageResponse{
+export interface NewMessageResponse {
     success: boolean,
     message: string,
     data: {
@@ -417,19 +453,19 @@ export interface NewMessageResponse{
     }
 }
 
-export interface FavoriteResponse{
+export interface FavoriteResponse {
     success: boolean,
     message: string,
     data?: unknown
 }
 
-export interface ReviewResponse{
+export interface ReviewResponse {
     success: boolean,
     message: string,
     data?: unknown
 }
 
-export interface AttributeResponse{
+export interface AttributeResponse {
     success: boolean,
     message: string,
     data: {
@@ -445,10 +481,10 @@ export interface Notification {
     type: NotificationType;
     duration?: number;
 }
-export interface AIRequest{
+export interface AIRequest {
     text: string;
 }
-export interface AIResponse{
+export interface AIResponse {
     success: boolean,
     message: string,
     data: {
@@ -458,10 +494,10 @@ export interface AIResponse{
 export interface ToastContextType {
     showNotification: (message: string, type: NotificationType, duration?: number) => void;
 }
-export interface UploadImageRequest{
+export interface UploadImageRequest {
     image: File
 }
-export interface UploadImageResponse{
+export interface UploadImageResponse {
     success: boolean,
     message: string,
     data: {

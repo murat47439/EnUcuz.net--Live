@@ -66,7 +66,9 @@ func (as *AttributeService) AddProdAttributes(ctx context.Context, data *models.
 		} else if err != nil {
 			_ = tx.Rollback()
 		} else {
-			err = tx.Commit()
+			if commitErr := tx.Commit(); commitErr != nil {
+				err = fmt.Errorf("transaction commit error: %w", commitErr)
+			}
 		}
 	}()
 	exists, err := as.ProductRepo.CheckProduct(data.ProductID)

@@ -39,7 +39,9 @@ func (ur *UserRepo) CreateUser(user models.User) (bool, error) {
 		} else if err != nil {
 			_ = tx.Rollback()
 		} else {
-			err = tx.Commit()
+			if commitErr := tx.Commit(); commitErr != nil {
+				err = fmt.Errorf("transaction commit error: %w", commitErr)
+			}
 		}
 
 	}()

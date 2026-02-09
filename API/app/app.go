@@ -2,11 +2,13 @@ package app
 
 import (
 	"Store-Dio/clients"
+	"Store-Dio/config"
 	"Store-Dio/controllers"
 	"Store-Dio/middleware"
 	"Store-Dio/repo"
 	"Store-Dio/routes"
 	"Store-Dio/services"
+	"Store-Dio/workers"
 	"context"
 
 	"github.com/go-chi/chi/v5"
@@ -29,6 +31,9 @@ type App struct {
 	UserMiddleware *middleware.UserMiddleware
 
 	Route *chi.Mux
+
+	//Workers
+	OfferWorker *workers.OfferWorker
 }
 
 func NewApp(db *sqlx.DB) *App {
@@ -44,9 +49,14 @@ func NewApp(db *sqlx.DB) *App {
 	// Route
 
 	route := routes.SetupRoutes(controllers, userMiddleware)
+
+	//workers
+	offerWorker := workers.NewOfferWorker(repo.OffersRepo)
+
 	//Clients
 	ctx := context.Background()
 	clients.InitGeminiClient(ctx)
+	clients.NewImagesClient(config.CLOUDFLARE_ACCOUNT_ID, config.CLOUDFLARE_API_KEY)
 	return &App{
 		DB: db,
 
@@ -54,6 +64,7 @@ func NewApp(db *sqlx.DB) *App {
 		Service:        service,
 		Controller:     controllers,
 		UserMiddleware: userMiddleware,
+		OfferWorker:    offerWorker,
 
 		// Route
 

@@ -1,10 +1,10 @@
 package products
 
 import (
-	"Store-Dio/handlers"
 	"Store-Dio/internal/db"
 	"Store-Dio/models"
 	"Store-Dio/repo"
+	"Store-Dio/services/ai"
 	"context"
 	"fmt"
 	"sync"
@@ -48,7 +48,9 @@ func (ps *ProductService) AddProduct(ctx context.Context, data models.NewProduct
 		} else if err != nil {
 			_ = tx.Rollback()
 		} else {
-			err = tx.Commit()
+			if commitErr := tx.Commit(); commitErr != nil {
+				err = fmt.Errorf("transaction commit error: %w", commitErr)
+			}
 		}
 	}()
 	prodID, err := ps.ProductRepo.AddProduct(ctx, data, tx)
@@ -172,6 +174,16 @@ func (ps *ProductService) GetProduct(ctx context.Context, id int) (*models.Produ
 	product.ImageURLs = images
 	return product, attributes, nil
 }
+func (ps *ProductService) GetProductSeller(ctx context.Context, id int) (int, error) {
+	if id == 0 {
+		return 0, fmt.Errorf("Invalid data")
+	}
+	id, err := ps.ProductRepo.GetProductSeller(ctx, id)
+	if err != nil {
+		return 0, err
+	}
+	return id, nil
+}
 func (ps *ProductService) GetProducts(ctx context.Context, page, brand_id, category_id int, search string) ([]*models.Product, error) {
 	switch {
 	case page < 1:
@@ -190,7 +202,7 @@ func (ps *ProductService) CreateDescription(ctx context.Context, text string) (s
 	if len(text) < 50 {
 		return "", fmt.Errorf("please give a longer text")
 	}
-	AItext, err := handlers.CreateDescription(text, ctx)
+	AItext, err := ai.CreateDescription(text, ctx)
 	if err != nil {
 		return "", err
 	}

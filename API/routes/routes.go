@@ -152,6 +152,14 @@ func SetupRoutes(
 			})
 
 		})
+		r.Route("/offers", func(off chi.Router) {
+			off.Use(um.AuthMiddleware)
+			off.Post("/", controller.UserOffersController.NewOffer)
+			off.Post("/counter/{id}", controller.UserOffersController.CounterOffer)
+			off.Put("/{id}", controller.UserOffersController.UpdateOffer)
+			off.Get("/", controller.UserOffersController.GetOffersBySeller)
+			off.Get("/bidder", controller.UserOffersController.GetOffersByBidder)
+		})
 
 	})
 

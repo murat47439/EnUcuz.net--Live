@@ -31,7 +31,9 @@ func (br *BrandsRepo) AddBrand(data *models.Brand) (*models.Brand, error) {
 		} else if err != nil {
 			_ = tx.Rollback()
 		} else {
-			err = tx.Commit()
+			if commitErr := tx.Commit(); commitErr != nil {
+				err = fmt.Errorf("transaction commit error: %w", commitErr)
+			}
 		}
 	}()
 
@@ -85,7 +87,9 @@ func (br *BrandsRepo) UpdateBrand(data *models.Brand) error {
 		} else if err != nil {
 			_ = tx.Rollback()
 		} else {
-			err = tx.Commit()
+			if commitErr := tx.Commit(); commitErr != nil {
+				err = fmt.Errorf("transaction commit error: %w", commitErr)
+			}
 		}
 	}()
 

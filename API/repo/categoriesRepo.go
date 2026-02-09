@@ -34,7 +34,9 @@ func (cr *CategoriesRepo) AddCategory(data *models.Category) (*models.Category, 
 		} else if err != nil {
 			_ = tx.Rollback()
 		} else {
-			err = tx.Commit()
+			if commitErr := tx.Commit(); commitErr != nil {
+				err = fmt.Errorf("transaction commit error: %w", commitErr)
+			}
 		}
 	}()
 
@@ -87,7 +89,9 @@ func (cr *CategoriesRepo) UpdateCategory(data *models.Category) (bool, error) {
 		} else if err != nil {
 			_ = tx.Rollback()
 		} else {
-			err = tx.Commit()
+			if commitErr := tx.Commit(); commitErr != nil {
+				err = fmt.Errorf("transaction commit error: %w", commitErr)
+			}
 		}
 	}()
 
@@ -121,7 +125,9 @@ func (cr *CategoriesRepo) DeleteCategory(data *models.Category) error {
 		} else if err != nil {
 			_ = tx.Rollback()
 		} else {
-			err = tx.Commit()
+			if commitErr := tx.Commit(); commitErr != nil {
+				err = fmt.Errorf("transaction commit error: %w", commitErr)
+			}
 		}
 	}()
 	exists, err := cr.CheckCategory(data.Name, tx)
