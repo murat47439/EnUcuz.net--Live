@@ -111,7 +111,17 @@ func (of *OffersRepo) LockAndGetPendingOffer(ctx context.Context, tx *sqlx.Tx, o
 //	}
 func (of *OffersRepo) GetOffersBySeller(ctx context.Context, page, seller_id int) ([]*models.OffersModel, error) {
 	limit := 50
-	query := `SELECT id, product_id, bidder_id,seller_id, offer_price,status, expires_at, created_at FROM offers WHERE seller_id = $1 ORDER BY created_at DESC LIMIT $2 OFFSET $3`
+	query := `SELECT o.id, o.product_id, o.bidder_id, o.seller_id, o.offer_price, o.status, o.expires_at, o.created_by, o.created_at,
+		seller.name  AS seller_name,
+		bidder.name  AS bidder_name
+
+		FROM offers o
+		LEFT JOIN users seller ON seller.id = o.seller_id
+		LEFT JOIN users bidder ON bidder.id = o.bidder_id
+
+		WHERE o.seller_id = $1
+		ORDER BY o.created_at DESC
+		LIMIT $2 OFFSET $3;`
 	offset := (page - 1) * 50
 	var offers []*models.OffersModel
 	rows, err := of.db.QueryxContext(ctx, query, seller_id, limit, offset)
@@ -140,7 +150,18 @@ func (of *OffersRepo) GetOffersBySeller(ctx context.Context, page, seller_id int
 }
 func (of *OffersRepo) GetOffersByBidder(ctx context.Context, page, bidder int) ([]*models.OffersModel, error) {
 	limit := 50
-	query := `SELECT id, product_id,bidder_id ,seller_id, offer_price,status, expires_at, created_at FROM offers WHERE bidder_id = $1 ORDER BY created_at DESC LIMIT $2 OFFSET $3`
+	query := `SELECT o.id, o.product_id, o.bidder_id, o.seller_id, o.offer_price, o.status, o.expires_at, o.created_by, o.created_at,
+ 	seller.name AS seller_name,
+    bidder.name AS bidder_name
+
+	FROM offers o
+	LEFT JOIN users seller ON seller.id = o.seller_id
+	LEFT JOIN users bidder ON bidder.id = o.bidder_id
+
+	WHERE o.bidder_id = $1
+	ORDER BY o.created_at DESC
+	LIMIT $2 OFFSET $3;
+`
 	offset := (page - 1) * 50
 	var offers []*models.OffersModel
 	rows, err := of.db.QueryxContext(ctx, query, bidder, limit, offset)
