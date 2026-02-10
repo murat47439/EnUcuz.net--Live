@@ -8,7 +8,7 @@ interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> {
   as?: "input" | "textarea"; // ✅ yeni prop
 }
 
-const Input = ({ children, className = '', as = "input", defaultValue = "", ...rest }: InputProps) => {
+const Input = ({ children, className = '', as = "input", defaultValue, ...rest }: InputProps) => {
   const baseClasses =
     "w-full p-3 pl-10 rounded-lg border border-gray-200 bg-white/80 backdrop-blur-sm shadow-sm focus:ring-2 focus:ring-blue-400 focus:border-blue-400 transition";
 

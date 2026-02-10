@@ -1,8 +1,33 @@
-import React from "react";
+"use client"
+import React, { useEffect } from "react";
 import Link from "next/link";
 import { Handshake, ArrowUpRight, ArrowDownLeft } from "lucide-react";
+import { useRouter } from "next/navigation";
+
+
+import { useAuth } from "@/context/authContext";
 
 export default function OfferPage() {
+    const router = useRouter()
+    const { user, isLoading } = useAuth();
+
+    useEffect(() => {
+        if (!isLoading && !user) {
+            router.push("/login")
+        }
+    }, [user, isLoading, router])
+
+    if (isLoading) {
+        return (
+            <div className="min-h-screen flex items-center justify-center">
+                <div className="text-center">
+                    <div className="inline-block animate-spin rounded-full h-8 w-8 border-2 border-gray-300 border-t-blue-600 mb-3"></div>
+                    <p className="text-sm text-gray-500">Yükleniyor...</p>
+                </div>
+            </div>
+        )
+    }
+
     return (
         <div className="max-w-5xl mx-auto px-4 sm:px-6 py-12">
             <div className="flex flex-col gap-8">

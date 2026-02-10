@@ -84,7 +84,9 @@ export interface OffersModel {
     id: number;
     productId: number;
     bidderId: number;
+    bidderName: string;
     sellerId: number;
+    sellerName: string;
     price: number;
     parentId: number;
     createdBy: number;
