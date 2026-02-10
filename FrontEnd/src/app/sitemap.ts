@@ -1,14 +1,15 @@
 import { MetadataRoute } from 'next'
 import { getProducts } from '@/lib/api/products/useGetProducts'
 
+export const dynamic = 'force-dynamic'
+export const revalidate = 3600
+
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-    const baseUrl = 'http://enucuz.net.tr'
+    const baseUrl = 'https://enucuz.net.tr'
 
     // Statik rotalar
     const routes = [
         '',
-        '/login',
-        // '/profile', // Robots.txt tarafından engellendiği için sitemap'e eklenmez
     ].map((route) => ({
         url: `${baseUrl}${route}`,
         lastModified: new Date(),
@@ -25,12 +26,21 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
         const productsData = await getProducts({ page: 1 })
         const products = productsData.products || []
 
-        productRoutes = products.map((product) => ({
-            url: `${baseUrl}/product/${product.id}`,
-            lastModified: new Date(), // API'den gelen updated_at varsa onu kullanabilirsiniz: new Date(product.updated_at?.Time || new Date())
-            changeFrequency: 'weekly' as const,
-            priority: 0.6,
-        }))
+        productRoutes = products.map((product) => {
+            let lastModified = new Date()
+            if (product.updated_at?.Valid && product.updated_at.Time) {
+                lastModified = new Date(product.updated_at.Time)
+            } else if (product.created_at?.Valid && product.created_at.Time) {
+                lastModified = new Date(product.created_at.Time)
+            }
+
+            return {
+                url: `${baseUrl}/product/${product.id}`,
+                lastModified,
+                changeFrequency: 'weekly' as const,
+                priority: 0.6,
+            }
+        })
     } catch (error) {
         console.warn('Sitemap oluşturulurken ürünler çekilemedi. API çalışıyor mu?', error)
     }
