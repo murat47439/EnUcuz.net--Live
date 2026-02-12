@@ -1,4 +1,4 @@
-import {Suspense } from "react"
+import { Suspense } from "react"
 import HomePageContent from "@/features/components/content/homePageContent"
 
 export const dynamic = 'force-dynamic'

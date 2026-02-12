@@ -160,7 +160,7 @@ export default function OfferBidderPage() {
         return (
             <div className="min-h-screen flex items-center justify-center">
                 <div className="text-center">
-                    <div className="inline-block animate-spin rounded-full h-8 w-8 border-2 border-gray-300 border-t-blue-600 mb-3"></div>
+                    <div className="inline-block animate-spin rounded-full h-8 w-8 border-2 border-gray-200 border-t-[#ff6000] mb-3"></div>
                     <p className="text-sm text-gray-500">Yükleniyor...</p>
                 </div>
             </div>
@@ -172,8 +172,8 @@ export default function OfferBidderPage() {
             <div className="flex flex-col gap-8">
                 {/* ── Header ── */}
                 <div className="flex items-center gap-4 border-b border-gray-100 pb-6">
-                    <div className="w-12 h-12 bg-blue-50 rounded-xl flex items-center justify-center border border-blue-100 shadow-sm">
-                        <button onClick={() => { router.back() }}><ArrowLeft className="w-6 h-6" /></button>
+                    <div className="w-10 h-10 bg-gray-100 rounded-lg flex items-center justify-center">
+                        <button onClick={() => { router.push('/profile/tekliflerim') }}><ArrowLeft className="w-5 h-5 text-gray-600" /></button>
 
                     </div>
                     <div>
@@ -198,7 +198,7 @@ export default function OfferBidderPage() {
                             const product = productsMap[offer.productId];
 
                             return (
-                                <div key={offer.id} className="bg-white border border-gray-200 rounded-2xl overflow-hidden hover:shadow-lg hover:shadow-blue-500/5 transition-all duration-300">
+                                <div key={offer.id} className="bg-white border border-gray-200 rounded-lg overflow-hidden hover:shadow-md transition-all duration-200">
                                     <div className="flex flex-col md:flex-row">
 
                                         {/* Ürün Bilgisi Sol Panel */}
@@ -217,7 +217,7 @@ export default function OfferBidderPage() {
                                             )}
                                             <div className="flex-1 min-w-0 md:text-center text-left">
                                                 {product ? (
-                                                    <Link href={`/product/${offer.productId}`} className="text-sm font-semibold text-gray-900 hover:text-blue-600 line-clamp-2 transition-colors">
+                                                    <Link href={`/product/${offer.productId}`} className="text-sm font-semibold text-gray-900 hover:text-[#ff6000] line-clamp-2 transition-colors">
                                                         {product.name}
                                                     </Link>
                                                 ) : (
@@ -248,15 +248,15 @@ export default function OfferBidderPage() {
                                                     </span>
                                                 </div>
 
-                                                <div className="bg-blue-50/50 rounded-xl p-4 border border-blue-100 flex items-center justify-between mb-2">
+                                                <div className="bg-gray-50 rounded-lg p-4 border border-gray-100 flex items-center justify-between mb-2">
                                                     <div>
-                                                        <p className="text-xs text-blue-600 font-medium uppercase">Teklif Fiyatı</p>
+                                                        <p className="text-xs text-gray-500 font-medium uppercase">Teklif Fiyatı</p>
                                                         <p className="text-2xl font-bold text-gray-900 mt-0.5">{formatPrice(offer.price)}</p>
                                                     </div>
                                                     {status.label === "Karşı Teklif" && (
                                                         <div className="text-right">
                                                             <p className="text-xs text-gray-500">Durum</p>
-                                                            <p className="text-sm font-medium text-blue-700">
+                                                            <p className="text-sm font-medium text-gray-700">
                                                                 {canRespondCounter ? "Yanıtlamanız Gerekiyor" : "Yanıt Bekleniyor"}
                                                             </p>
                                                         </div>
@@ -269,7 +269,7 @@ export default function OfferBidderPage() {
                                             {canCancel && (
                                                 <div className="flex flex-wrap gap-2 pt-3 border-t border-gray-100">
                                                     <div className="w-full mb-2">
-                                                        <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-blue-50 text-blue-700 text-xs font-medium border border-blue-100">
+                                                        <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-gray-100 text-gray-700 text-xs font-medium border border-gray-200">
                                                             Sizin Teklifiniz
                                                         </span>
                                                     </div>
@@ -286,17 +286,17 @@ export default function OfferBidderPage() {
                                             {/* Karşı teklif — satıcı oluşturmuş, ben yanıtlamalıyım */}
                                             {canRespondCounter && (
                                                 <div className="space-y-3 pt-3 border-t border-gray-100">
-                                                    <div className="bg-blue-50/60 border border-blue-100 rounded-xl px-4 py-3 flex items-center justify-between">
+                                                    <div className="bg-gray-50 border border-gray-200 rounded-lg px-4 py-3 flex items-center justify-between">
                                                         <div>
                                                             <div className="flex items-center gap-2 mb-1">
-                                                                <span className="inline-flex items-center gap-1.5 px-2 py-0.5 rounded text-[10px] font-bold bg-white border border-blue-200 text-blue-700 uppercase tracking-wide">
+                                                                <span className="inline-flex items-center gap-1.5 px-2 py-0.5 rounded text-[10px] font-bold bg-white border border-gray-200 text-gray-700 uppercase tracking-wide">
                                                                     Satıcı
                                                                 </span>
-                                                                <p className="text-xs text-blue-600 font-medium">
+                                                                <p className="text-xs text-gray-600 font-medium">
                                                                     Karşı teklif gönderdi
                                                                 </p>
                                                             </div>
-                                                            <p className="text-lg font-bold text-blue-700 mt-0.5">
+                                                            <p className="text-lg font-bold text-gray-900 mt-0.5">
                                                                 {formatPrice(offer.price)}
                                                             </p>
                                                         </div>
@@ -318,7 +318,7 @@ export default function OfferBidderPage() {
                                                         </button>
                                                         <button
                                                             onClick={() => openCounterModal(offer)}
-                                                            className="min-w-[120px] inline-flex items-center justify-center gap-1.5 px-4 py-2.5 text-sm font-medium rounded-lg bg-white text-blue-600 border border-blue-200 hover:bg-blue-50 transition-colors"
+                                                            className="min-w-[120px] inline-flex items-center justify-center gap-1.5 px-4 py-2.5 text-sm font-medium rounded-lg bg-white text-[#ff6000] border border-orange-200 hover:bg-[#fff4ed] transition-colors"
                                                         >
                                                             <TrendingUp size={15} />
                                                             Karşı Teklif
@@ -334,7 +334,7 @@ export default function OfferBidderPage() {
                     </div>
                 ) : (
                     /* ── Boş Durum ── */
-                    <div className="flex flex-col items-center justify-center py-20 bg-white border border-gray-200 rounded-2xl">
+                    <div className="flex flex-col items-center justify-center py-20 bg-white border border-gray-200 rounded-lg">
 
                         <h3 className="text-lg font-semibold text-gray-900 mb-1">
                             Henüz teklif göndermediniz

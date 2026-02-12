@@ -1,11 +1,11 @@
 "use client"
-import {  useAuth } from "@/context/authContext";
+import { useAuth } from "@/context/authContext";
 import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import Input from "@/features/components/input";
 import Button from "@/features/components/button";
 import React from "react";
-import { LoginRequest,RegisterRequest } from "@/lib/types/types";
+import { LoginRequest, RegisterRequest } from "@/lib/types/types";
 import { loginUser } from "@/lib/api/user/useLogin";
 import { registerUser } from "@/lib/api/user/useRegister";
 import { Mail, Lock, User, Phone, CheckCircle, XCircle } from "lucide-react";
@@ -13,19 +13,19 @@ import { Mail, Lock, User, Phone, CheckCircle, XCircle } from "lucide-react";
 
 export default function LoginPage() {
     const router = useRouter()
-    
+
     useEffect(() => {
         // localStorage'dan user bilgisi al
         const user = localStorage.getItem("user");
         if (user) {
-          router.push("/"); 
+            router.push("/");
         }
-      }, [router]);
+    }, [router]);
 
 
-    const [email,setEmail] = useState('');
-    const [name,setName] = useState('');
-    const [surname,setSurname] = useState('');
+    const [email, setEmail] = useState('');
+    const [name, setName] = useState('');
+    const [surname, setSurname] = useState('');
     const [phone, setPhone] = useState('+90')
 
 
@@ -35,34 +35,34 @@ export default function LoginPage() {
 
 
     const [result, setResult] = useState('');
-    const {setUser} = useAuth()
+    const { setUser } = useAuth()
     const [login, setLogin] = useState(true)
     const [register, setRegister] = useState(false)
 
     const handleLoginForm = async (e: React.FormEvent) => {
         e.preventDefault();
-        const request : LoginRequest = {
+        const request: LoginRequest = {
             email: email,
             password: password,
         };
-        
-        
-        try{
+
+
+        try {
             const login = await loginUser(request)
             setUser(login.data.user)
             console.log(login.data.user)
             localStorage.setItem("user", JSON.stringify(login.data.user))
             setResult('Giriş başarılı.');
             router.push("/");
-        }catch(err:unknown){
-            if (err instanceof Error){
+        } catch (err: unknown) {
+            if (err instanceof Error) {
                 setResult(err.message)
-            }else{
+            } else {
                 setResult('Bir hata oluştu.');
             }
         }
     };
-    const handleRegisterForm = async(e: React.FormEvent) => {
+    const handleRegisterForm = async (e: React.FormEvent) => {
         e.preventDefault()
         const request: RegisterRequest = {
             name: name,
@@ -71,87 +71,82 @@ export default function LoginPage() {
             password: regpassword,
             phone: phone,
         };
-        try{
-        switch (true) {
-    case (!name || name.trim() === ""):
-        setResult("Ad boş bırakılamaz");
-        return;
+        try {
+            switch (true) {
+                case (!name || name.trim() === ""):
+                    setResult("Ad boş bırakılamaz");
+                    return;
 
-    case (!surname || surname.trim() === ""):
-        setResult("Soyad boş bırakılamaz");
-        return;
+                case (!surname || surname.trim() === ""):
+                    setResult("Soyad boş bırakılamaz");
+                    return;
 
-    case (!email || email.trim() === ""):
-        setResult("Email boş bırakılamaz");
-        return;
+                case (!email || email.trim() === ""):
+                    setResult("Email boş bırakılamaz");
+                    return;
 
-    case (!phone || phone.trim() === ""):
-        setResult("Telefon numarası boş bırakılamaz");
-        return;
+                case (!phone || phone.trim() === ""):
+                    setResult("Telefon numarası boş bırakılamaz");
+                    return;
 
-    case (!regpassword || regpassword.trim() === ""):
-        setResult("Şifre boş bırakılamaz");
-        return;
+                case (!regpassword || regpassword.trim() === ""):
+                    setResult("Şifre boş bırakılamaz");
+                    return;
 
-    case (reg1password !== regpassword):
-        setResult("Şifreler uyuşmuyor");
-        return;
+                case (reg1password !== regpassword):
+                    setResult("Şifreler uyuşmuyor");
+                    return;
 
-    case (regpassword.length < 8):
-        setResult("Şifre en az 8 karakter olmalı");
-        return;
-    }
-        await registerUser(request)
-           setResult('Başarılı')
-        }catch(err: unknown){
-            if (err instanceof Error){
+                case (regpassword.length < 8):
+                    setResult("Şifre en az 8 karakter olmalı");
+                    return;
+            }
+            await registerUser(request)
+            setResult('Başarılı')
+        } catch (err: unknown) {
+            if (err instanceof Error) {
                 setResult(err.message)
-            }else{
+            } else {
                 setResult('Bir hata oluştu.');
             }
         }
     }
 
-    return(
-        <div className="min-h-[calc(100vh-8rem)] flex items-center justify-center px-4 py-12">
+    return (
+        <div className="min-h-[calc(100vh-10rem)] flex items-center justify-center px-4 py-12">
             <div className="w-full max-w-md">
                 {/* Ana Kart */}
-                <div className="relative overflow-hidden rounded-2xl border border-gray-200/60 bg-white/80 backdrop-blur-xl shadow-2xl">
-                    {/* Gradient Border Effect */}
-                    <div className="absolute inset-0 bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 opacity-0 group-hover:opacity-100 transition-opacity -z-10 blur-xl"></div>
-                    
-                    <div className="p-8">
+                <div className="bg-white rounded-lg border border-gray-200 shadow-sm overflow-hidden">
+                    <div className="p-6 sm:p-8">
                         {/* Başlık */}
-                        <div className="text-center mb-8">
-                            <h1 className="text-3xl font-bold bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 bg-clip-text text-transparent mb-2">
+                        <div className="text-center mb-6">
+                            <h1 className="text-2xl font-bold text-gray-900 mb-1">
                                 {login ? 'Hoş Geldiniz' : 'Hesap Oluştur'}
                             </h1>
-                            <p className="text-gray-600 text-sm">
+                            <p className="text-gray-500 text-sm">
                                 {login ? 'Hesabınıza giriş yapın' : 'Yeni hesap oluşturun ve başlayın'}
                             </p>
                         </div>
 
                         {/* Tab Butonları */}
-                        <div className="grid grid-cols-2 gap-3 mb-8 p-1 bg-gray-100 rounded-xl">
+                        <div className="grid grid-cols-2 gap-0 mb-6 border-b border-gray-200">
                             <button
                                 type="button"
-                                className={`py-3 px-4 rounded-lg font-semibold text-sm transition-all duration-200 ${
-                                    login
-                                        ? 'bg-white text-blue-600 shadow-md'
-                                        : 'text-gray-600 hover:text-gray-800'
-                                }`}
-                                onClick={() => {setLogin(true); setRegister(false); setResult('')}}
+                                className={`py-2.5 text-sm font-medium transition-all duration-200 border-b-2 ${login
+                                        ? 'border-[#ff6000] text-[#ff6000]'
+                                        : 'border-transparent text-gray-500 hover:text-gray-700'
+                                    }`}
+                                onClick={() => { setLogin(true); setRegister(false); setResult('') }}
                             >
                                 Giriş Yap
                             </button>
                             <button
                                 type="button"
-                                className={`py-3 px-4 rounded-lg font-semibold text-sm transition-all duration-200 ${
-                                    register
-                                        ? 'bg-white text-blue-600 shadow-md'
-                                        : 'text-gray-600 hover:text-gray-800'
-                                }`}
-                                onClick={() => {setLogin(false); setRegister(true); setResult('')}}
+                                className={`py-2.5 text-sm font-medium transition-all duration-200 border-b-2 ${register
+                                        ? 'border-[#ff6000] text-[#ff6000]'
+                                        : 'border-transparent text-gray-500 hover:text-gray-700'
+                                    }`}
+                                onClick={() => { setLogin(false); setRegister(true); setResult('') }}
                             >
                                 Kayıt Ol
                             </button>
@@ -159,15 +154,14 @@ export default function LoginPage() {
 
                         {/* Hata/Başarı Mesajı */}
                         {result && (
-                            <div className={`mb-6 p-4 rounded-xl flex items-center gap-3 ${
-                                result.includes('Başarılı') || result.includes('başarılı')
+                            <div className={`mb-5 p-3 rounded-lg flex items-center gap-2 text-sm ${result.includes('Başarılı') || result.includes('başarılı')
                                     ? 'bg-green-50 border border-green-200 text-green-700'
                                     : 'bg-red-50 border border-red-200 text-red-700'
-                            }`}>
+                                }`}>
                                 {result.includes('Başarılı') || result.includes('başarılı') ? (
-                                    <CheckCircle size={20} className="flex-shrink-0" />
+                                    <CheckCircle size={16} className="flex-shrink-0" />
                                 ) : (
-                                    <XCircle size={20} className="flex-shrink-0" />
+                                    <XCircle size={16} className="flex-shrink-0" />
                                 )}
                                 <p className="text-sm font-medium">{result}</p>
                             </div>
@@ -175,10 +169,10 @@ export default function LoginPage() {
 
                         {/* Giriş Formu */}
                         {login && (
-                            <form onSubmit={handleLoginForm} className="space-y-5">
+                            <form onSubmit={handleLoginForm} className="space-y-4">
                                 <div className="space-y-1">
-                                    <label className="text-sm font-semibold text-gray-700 flex items-center gap-2">
-                                        <Mail size={16} className="text-gray-500" />
+                                    <label className="text-sm font-medium text-gray-700 flex items-center gap-1.5">
+                                        <Mail size={14} className="text-gray-400" />
                                         Email
                                     </label>
                                     <Input
@@ -193,8 +187,8 @@ export default function LoginPage() {
                                 </div>
 
                                 <div className="space-y-1">
-                                    <label className="text-sm font-semibold text-gray-700 flex items-center gap-2">
-                                        <Lock size={16} className="text-gray-500" />
+                                    <label className="text-sm font-medium text-gray-700 flex items-center gap-1.5">
+                                        <Lock size={14} className="text-gray-400" />
                                         Şifre
                                     </label>
                                     <Input
@@ -210,7 +204,7 @@ export default function LoginPage() {
 
                                 <Button
                                     type="submit"
-                                    className="w-full py-3 rounded-xl bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white font-semibold shadow-lg hover:shadow-xl transition-all duration-200"
+                                    className="w-full py-2.5 rounded-lg bg-[#ff6000] hover:bg-[#e55500] text-white font-semibold mt-2"
                                 >
                                     Giriş Yap
                                 </Button>
@@ -219,11 +213,11 @@ export default function LoginPage() {
 
                         {/* Kayıt Formu */}
                         {register && (
-                            <form onSubmit={handleRegisterForm} className="space-y-5">
-                                <div className="grid grid-cols-2 gap-4">
+                            <form onSubmit={handleRegisterForm} className="space-y-4">
+                                <div className="grid grid-cols-2 gap-3">
                                     <div className="space-y-1">
-                                        <label className="text-sm font-semibold text-gray-700 flex items-center gap-2">
-                                            <User size={16} className="text-gray-500" />
+                                        <label className="text-sm font-medium text-gray-700 flex items-center gap-1.5">
+                                            <User size={14} className="text-gray-400" />
                                             Ad
                                         </label>
                                         <Input
@@ -236,8 +230,8 @@ export default function LoginPage() {
                                         />
                                     </div>
                                     <div className="space-y-1">
-                                        <label className="text-sm font-semibold text-gray-700 flex items-center gap-2">
-                                            <User size={16} className="text-gray-500" />
+                                        <label className="text-sm font-medium text-gray-700 flex items-center gap-1.5">
+                                            <User size={14} className="text-gray-400" />
                                             Soyad
                                         </label>
                                         <Input
@@ -252,8 +246,8 @@ export default function LoginPage() {
                                 </div>
 
                                 <div className="space-y-1">
-                                    <label className="text-sm font-semibold text-gray-700 flex items-center gap-2">
-                                        <Mail size={16} className="text-gray-500" />
+                                    <label className="text-sm font-medium text-gray-700 flex items-center gap-1.5">
+                                        <Mail size={14} className="text-gray-400" />
                                         Email
                                     </label>
                                     <Input
@@ -267,8 +261,8 @@ export default function LoginPage() {
                                 </div>
 
                                 <div className="space-y-1">
-                                    <label className="text-sm font-semibold text-gray-700 flex items-center gap-2">
-                                        <Phone size={16} className="text-gray-500" />
+                                    <label className="text-sm font-medium text-gray-700 flex items-center gap-1.5">
+                                        <Phone size={14} className="text-gray-400" />
                                         Telefon
                                     </label>
                                     <Input
@@ -282,8 +276,8 @@ export default function LoginPage() {
                                 </div>
 
                                 <div className="space-y-1">
-                                    <label className="text-sm font-semibold text-gray-700 flex items-center gap-2">
-                                        <Lock size={16} className="text-gray-500" />
+                                    <label className="text-sm font-medium text-gray-700 flex items-center gap-1.5">
+                                        <Lock size={14} className="text-gray-400" />
                                         Şifre
                                     </label>
                                     <Input
@@ -300,8 +294,8 @@ export default function LoginPage() {
                                 </div>
 
                                 <div className="space-y-1">
-                                    <label className="text-sm font-semibold text-gray-700 flex items-center gap-2">
-                                        <Lock size={16} className="text-gray-500" />
+                                    <label className="text-sm font-medium text-gray-700 flex items-center gap-1.5">
+                                        <Lock size={14} className="text-gray-400" />
                                         Şifre Tekrar
                                     </label>
                                     <Input
@@ -324,7 +318,7 @@ export default function LoginPage() {
 
                                 <Button
                                     type="submit"
-                                    className="w-full py-3 rounded-xl bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white font-semibold shadow-lg hover:shadow-xl transition-all duration-200"
+                                    className="w-full py-2.5 rounded-lg bg-[#ff6000] hover:bg-[#e55500] text-white font-semibold mt-2"
                                 >
                                     Kayıt Ol
                                 </Button>

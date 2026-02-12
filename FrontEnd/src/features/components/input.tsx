@@ -10,7 +10,7 @@ interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> {
 
 const Input = ({ children, className = '', as = "input", defaultValue, ...rest }: InputProps) => {
   const baseClasses =
-    "w-full p-3 pl-10 rounded-lg border border-gray-200 bg-white/80 backdrop-blur-sm shadow-sm focus:ring-2 focus:ring-blue-400 focus:border-blue-400 transition";
+    "w-full p-2.5 pl-10 rounded-lg border border-gray-200 bg-white text-sm placeholder:text-gray-400 focus:ring-2 focus:ring-[#ff6000]/20 focus:border-[#ff6000] transition-all outline-none";
 
   const textareaRef = useRef<HTMLTextAreaElement | null>(null);
 
@@ -29,7 +29,7 @@ const Input = ({ children, className = '', as = "input", defaultValue, ...rest }
   return (
     <div className="relative flex items-start w-full">
       {children && (
-        <span className="absolute left-3 top-3 text-gray-400 pointer-events-none">
+        <span className="absolute left-3 top-2.5 text-gray-400 pointer-events-none">
           {children}
         </span>
       )}

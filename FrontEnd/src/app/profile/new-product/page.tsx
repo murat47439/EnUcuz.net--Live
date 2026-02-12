@@ -3,7 +3,7 @@ import React, { useEffect, useState, ChangeEvent } from "react";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
 import { Brand, Category, CategoryAttribute, FeatureKey } from "@/lib/types/types";
-import { PaginationRequest, IdParam , UploadImageRequest} from "@/lib/types/types";
+import { PaginationRequest, IdParam, UploadImageRequest } from "@/lib/types/types";
 import { addProduct } from "@/lib/api/products/useAdd";
 import { getBrands } from "@/lib/api/brands/useGets";
 import { GetCategories } from "@/lib/api/categories/useGets";
@@ -14,14 +14,14 @@ import Button from "@/features/components/button";
 import dynamic from "next/dynamic";
 import type { StylesConfig, CSSObjectWithLabel, ControlProps, OptionProps } from "react-select";
 const Select = dynamic(() => import("react-select"), { ssr: false });
-import { 
-  ImagePlus, 
-  FileImage, 
-  BadgeCheck, 
-  AlertCircle, 
-  ArrowRight, 
-  ArrowLeft, 
-  Upload, 
+import {
+  ImagePlus,
+  FileImage,
+  BadgeCheck,
+  AlertCircle,
+  ArrowRight,
+  ArrowLeft,
+  Upload,
   X,
   CheckCircle2,
   Loader2,
@@ -88,11 +88,11 @@ export default function NewProductPage() {
       brand: null,
       category: null,
       files: [],
-      features: [{ key: {label: "", value: 0}, value: "" }]
+      features: [{ key: { label: "", value: 0 }, value: "" }]
     },
   });
 
-  const { register, handleSubmit, setValue,getValues ,control, watch, formState: { errors } } = methods;
+  const { register, handleSubmit, setValue, getValues, control, watch, formState: { errors } } = methods;
   const files = watch("files");
 
   const [brands, setBrands] = useState<Brand[]>([]);
@@ -101,7 +101,7 @@ export default function NewProductPage() {
   const [searchCategories, setSearchCategories] = useState("");
   const [attributes, setAttributes] = useState<CategoryAttribute[]>([])
   const category = watch("category")
-  
+
   // Preview URL'lerini temizle
   useEffect(() => {
     return () => {
@@ -110,24 +110,24 @@ export default function NewProductPage() {
       });
     };
   }, [uploadingImages]);
-  
-  useEffect(() => {
-    
-      const fetchAttributes = async () => {
-        if (!category) return;
-        const request: IdParam = {
-          id: category?.value || 0
-        }
-        try {
-          const data = await getCategoryAttributes(request)
-          setAttributes(data.data.category_attributes)
 
-        } catch (err) {
-          console.error(err)
-          setAttributes([]);
-        }
-      };
-      fetchAttributes();
+  useEffect(() => {
+
+    const fetchAttributes = async () => {
+      if (!category) return;
+      const request: IdParam = {
+        id: category?.value || 0
+      }
+      try {
+        const data = await getCategoryAttributes(request)
+        setAttributes(data.data.category_attributes)
+
+      } catch (err) {
+        console.error(err)
+        setAttributes([]);
+      }
+    };
+    fetchAttributes();
   }, [category]);
 
   useEffect(() => {
@@ -169,7 +169,7 @@ export default function NewProductPage() {
 
     const selectedFiles = Array.from(e.target.files);
     const currentFilesCount = files.length + uploadingImages.length;
-    
+
     if (currentFilesCount + selectedFiles.length > 8) {
       setResult("En fazla 8 adet dosya seçebilirsiniz.");
       e.target.value = "";
@@ -195,7 +195,7 @@ export default function NewProductPage() {
         try {
           const imageRequest: UploadImageRequest = { image: uploadingImage.file };
           const res = await uploadImage(imageRequest);
-          
+
           // Yüklendi durumuna geç
           setUploadingImages((prev) =>
             prev.map((img) =>
@@ -217,9 +217,9 @@ export default function NewProductPage() {
 
             // Animasyon bittikten sonra (0.5 saniye) files listesine ekle ve uploadingImages'den çıkar
             setTimeout(() => {
-          const current = getValues("files");
-          setValue("files", [...current, res.data.url], { shouldDirty: true });
-              
+              const current = getValues("files");
+              setValue("files", [...current, res.data.url], { shouldDirty: true });
+
               setUploadingImages((prev) => {
                 const filtered = prev.filter((img) => img.id !== uploadingImage.id);
                 // Preview URL'lerini temizle
@@ -235,7 +235,7 @@ export default function NewProductPage() {
             URL.revokeObjectURL(uploadingImage.preview);
             return filtered;
           });
-          
+
           if (err instanceof Error) {
             setResult(err.message);
           } else {
@@ -247,7 +247,7 @@ export default function NewProductPage() {
       if (err instanceof Error) setResult(err.message);
       else setResult("Bir hata oluştu.");
     }
-    
+
     e.target.value = "";
   };
 
@@ -262,7 +262,7 @@ export default function NewProductPage() {
       if (data.stock < 1) throw new Error("Geçersiz stok");
       if (data.files.length < 1) throw new Error("Resim yüklemeniz gerekmektedir.");
 
-  
+
       const formData = new FormData();
       formData.append("name", data.name);
       formData.append("description", data.description);
@@ -277,8 +277,8 @@ export default function NewProductPage() {
       }
       // Dosyaları ekle
       if (data.files && data.files.length > 0) {
-  formData.append("images", JSON.stringify(data.files));
-}
+        formData.append("images", JSON.stringify(data.files));
+      }
       await addProduct(formData);
       setResult("Ürün başarıyla eklendi.");
       setStep(3);
@@ -306,11 +306,10 @@ export default function NewProductPage() {
         {[1, 2].map((stepNum) => (
           <div key={stepNum} className="flex items-center">
             <div
-              className={`flex items-center justify-center w-12 h-12 rounded-full border-2 transition-all duration-300 ${
-                step >= stepNum
-                  ? "bg-gradient-to-r from-blue-600 to-indigo-600 border-blue-600 text-white shadow-lg"
+              className={`flex items-center justify-center w-10 h-10 rounded-full border-2 transition-all duration-200 ${step >= stepNum
+                  ? "bg-[#ff6000] border-[#ff6000] text-white"
                   : "bg-white border-gray-300 text-gray-400"
-              }`}
+                }`}
             >
               {step > stepNum ? (
                 <CheckCircle2 size={24} />
@@ -320,19 +319,18 @@ export default function NewProductPage() {
             </div>
             {stepNum < 2 && (
               <div
-                className={`w-24 h-1 mx-2 transition-all duration-300 ${
-                  step > stepNum ? "bg-gradient-to-r from-blue-600 to-indigo-600" : "bg-gray-300"
-                }`}
+                className={`w-24 h-1 mx-2 transition-all duration-200 ${step > stepNum ? "bg-[#ff6000]" : "bg-gray-300"
+                  }`}
               />
             )}
           </div>
         ))}
       </div>
       <div className="flex justify-center mt-4 space-x-12">
-        <span className={`text-sm font-medium ${step >= 1 ? "text-blue-600" : "text-gray-400"}`}>
+        <span className={`text-sm font-medium ${step >= 1 ? "text-[#ff6000]" : "text-gray-400"}`}>
           Temel Bilgiler
         </span>
-        <span className={`text-sm font-medium ${step >= 2 ? "text-blue-600" : "text-gray-400"}`}>
+        <span className={`text-sm font-medium ${step >= 2 ? "text-[#ff6000]" : "text-gray-400"}`}>
           Özellikler
         </span>
       </div>
@@ -346,37 +344,34 @@ export default function NewProductPage() {
     control: (provided: CSSObjectWithLabel, state: ControlProps<any, false>) => ({
       ...provided,
       minHeight: "48px",
-      border: state.isFocused ? "2px solid #3b82f6" : "1px solid #e5e7eb",
+      border: state.isFocused ? "2px solid #ff6000" : "1px solid #e5e7eb",
       borderRadius: "0.5rem",
-      boxShadow: state.isFocused ? "0 0 0 3px rgba(59, 130, 246, 0.1)" : "none",
+      boxShadow: state.isFocused ? "0 0 0 3px rgba(255, 96, 0, 0.1)" : "none",
       "&:hover": {
-        border: "2px solid #3b82f6",
+        border: "2px solid #ff6000",
       },
     }),
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     option: (provided: CSSObjectWithLabel, state: OptionProps<any, false>) => ({
       ...provided,
       backgroundColor: state.isSelected
-        ? "#3b82f6"
+        ? "#ff6000"
         : state.isFocused
-        ? "#eff6ff"
-        : "white",
+          ? "#fff4ed"
+          : "white",
       color: state.isSelected ? "white" : "#1f2937",
       padding: "12px 16px",
     }),
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-50 via-blue-50/30 to-indigo-50/30 py-8 px-4">
-      <div className="max-w-6xl mx-auto">
+    <div className="min-h-screen bg-[#fafafa] py-8 px-4">
+      <div className="max-w-5xl mx-auto">
         <FormProvider {...methods}>
           {/* Header */}
-          <div className="text-center mb-8">
-            <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-2xl mb-4 shadow-lg">
-              <Package className="text-white" size={32} />
-            </div>
-            <h1 className="text-4xl font-bold text-gray-900 mb-2">Yeni Ürün Ekle</h1>
-            <p className="text-gray-600">Ürününüzü detaylı bir şekilde ekleyin ve satışa başlayın</p>
+          <div className="mb-8">
+            <h1 className="text-2xl font-bold text-gray-900 mb-1">Yeni Ürün Ekle</h1>
+            <p className="text-sm text-gray-500">Ürününüzü detaylı bir şekilde ekleyin ve satışa başlayın</p>
           </div>
 
           {/* Progress Stepper */}
@@ -387,14 +382,14 @@ export default function NewProductPage() {
               <div className="space-y-6 animate-in fade-in slide-in-from-bottom-4 duration-500">
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
                   {/* Ürün Bilgileri Card */}
-                  <div className="bg-white rounded-2xl shadow-xl p-8 border border-gray-100">
-                    <div className="flex items-center gap-3 mb-6">
-                      <div className="p-2 bg-blue-100 rounded-lg">
-                        <Tag className="text-blue-600" size={24} />
+                  <div className="bg-white rounded-lg border border-gray-200 p-6">
+                    <div className="flex items-center gap-3 mb-5">
+                      <div className="p-2 bg-[#fff4ed] rounded-lg">
+                        <Tag className="text-[#ff6000]" size={20} />
                       </div>
                       <div>
-                        <h2 className="text-2xl font-bold text-gray-900">Ürün Bilgileri</h2>
-                        <p className="text-sm text-gray-500">Temel ürün bilgilerini girin</p>
+                        <h2 className="text-lg font-semibold text-gray-900">Ürün Bilgileri</h2>
+                        <p className="text-xs text-gray-500">Temel ürün bilgilerini girin</p>
                       </div>
                     </div>
 
@@ -404,8 +399,8 @@ export default function NewProductPage() {
                         <label className="block text-sm font-semibold text-gray-700 mb-2">
                           Ürün Adı <span className="text-red-500">*</span>
                         </label>
-                        <Input 
-                          {...register("name", { required: "Ürün adı zorunludur" })} 
+                        <Input
+                          {...register("name", { required: "Ürün adı zorunludur" })}
                           placeholder="Örn: iPhone 15 Pro Max 256GB"
                         />
                         {errors.name && (
@@ -497,7 +492,7 @@ export default function NewProductPage() {
                               step="0.01"
                               min="0.01"
                               className="pl-10"
-                              {...register("price", { 
+                              {...register("price", {
                                 required: "Fiyat zorunludur",
                                 min: {
                                   value: 0.01,
@@ -531,11 +526,11 @@ export default function NewProductPage() {
                           </label>
                           <div className="relative">
                             <Box className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" size={20} />
-                            <Input 
-                              type="number" 
-                              min={1} 
+                            <Input
+                              type="number"
+                              min={1}
                               className="pl-10"
-                              {...register("stock")} 
+                              {...register("stock")}
                               placeholder="1"
                             />
                           </div>
@@ -545,13 +540,13 @@ export default function NewProductPage() {
                   </div>
 
                   {/* Ürün Resimleri Card */}
-                  <div className="bg-white rounded-2xl shadow-xl p-8 border border-gray-100">
-                    <div className="flex items-center gap-3 mb-6">
-                      <div className="p-2 bg-purple-100 rounded-lg">
-                        <ImagePlus className="text-purple-600" size={24} />
+                  <div className="bg-white rounded-lg border border-gray-200 p-6">
+                    <div className="flex items-center gap-3 mb-5">
+                      <div className="p-2 bg-[#fff4ed] rounded-lg">
+                        <ImagePlus className="text-[#ff6000]" size={20} />
                       </div>
                       <div>
-                        <h2 className="text-2xl font-bold text-gray-900">Ürün Resimleri</h2>
+                        <h2 className="text-lg font-semibold text-gray-900">Ürün Resimleri</h2>
                         <p className="text-sm text-gray-500">En fazla 8 adet fotoğraf</p>
                       </div>
                     </div>
@@ -566,15 +561,15 @@ export default function NewProductPage() {
                         accept="image/*"
                         onChange={handleChangeFileCount}
                       />
-                      
+
                       {files.length === 0 && uploadingImages.length === 0 ? (
                         <label
                           htmlFor="fileinput"
-                          className="flex flex-col items-center justify-center w-full h-64 border-2 border-dashed border-gray-300 rounded-xl cursor-pointer hover:border-blue-500 hover:bg-blue-50/50 transition-all duration-300 group"
+                          className="flex flex-col items-center justify-center w-full h-64 border-2 border-dashed border-gray-300 rounded-lg cursor-pointer hover:border-[#ff6000] hover:bg-[#fff4ed]/50 transition-all duration-200 group"
                         >
                           <div className="flex flex-col items-center justify-center pt-5 pb-6">
-                            <Upload className="text-gray-400 group-hover:text-blue-500 mb-4" size={48} />
-                            <p className="mb-2 text-sm text-gray-500 group-hover:text-blue-600">
+                            <Upload className="text-gray-400 group-hover:text-[#ff6000] mb-4" size={48} />
+                            <p className="mb-2 text-sm text-gray-500 group-hover:text-[#ff6000]">
                               <span className="font-semibold">Fotoğrafları yüklemek için tıklayın</span> veya sürükleyip bırakın
                             </p>
                             <p className="text-xs text-gray-500">PNG, JPG, WEBP (MAX 8 dosya)</p>
@@ -607,7 +602,7 @@ export default function NewProductPage() {
                                 </button>
                               </div>
                             ))}
-                            
+
                             {/* Yüklenmekte olan resimler */}
                             {uploadingImages.map((uploadingImage) => (
                               <div key={uploadingImage.id} className="relative group">
@@ -617,20 +612,19 @@ export default function NewProductPage() {
                                     alt="uploading"
                                     width={200}
                                     height={200}
-                                    className={`w-full h-full object-cover transition-opacity duration-300 ${
-                                      uploadingImage.status === 'completed' ? 'opacity-100' : 'opacity-70'
-                                    }`}
+                                    className={`w-full h-full object-cover transition-opacity duration-300 ${uploadingImage.status === 'completed' ? 'opacity-100' : 'opacity-70'
+                                      }`}
                                   />
-                                  
+
                                   {/* Loading Overlay */}
                                   {uploadingImage.status === 'uploading' && (
                                     <div className="absolute inset-0 bg-black/30 flex items-center justify-center">
                                       <div className="bg-white/90 backdrop-blur-sm rounded-full p-3 shadow-lg">
-                                        <Loader2 className="w-6 h-6 text-blue-600 animate-spin" />
-                          </div>
+                                        <Loader2 className="w-6 h-6 text-[#ff6000] animate-spin" />
+                                      </div>
                                     </div>
                                   )}
-                                  
+
                                   {/* Success Checkmark Animation */}
                                   {uploadingImage.status === 'uploaded' && (
                                     <div className="absolute inset-0 bg-green-500/30 flex items-center justify-center backdrop-blur-sm">
@@ -639,7 +633,7 @@ export default function NewProductPage() {
                                       </div>
                                     </div>
                                   )}
-                                  
+
                                   {/* Completed Animation */}
                                   {uploadingImage.status === 'completed' && (
                                     <div className="absolute inset-0 bg-green-500/20 flex items-center justify-center backdrop-blur-sm animate-fade-out">
@@ -652,11 +646,11 @@ export default function NewProductPage() {
                               </div>
                             ))}
                           </div>
-                          
+
                           {(files.length + uploadingImages.length) < 8 && (
                             <label
                               htmlFor="fileinput"
-                              className="flex items-center justify-center gap-2 px-4 py-2 border-2 border-dashed border-gray-300 rounded-lg cursor-pointer hover:border-blue-500 hover:bg-blue-50/50 transition-all text-sm text-gray-600 hover:text-blue-600"
+                              className="flex items-center justify-center gap-2 px-4 py-2 border-2 border-dashed border-gray-300 rounded-lg cursor-pointer hover:border-[#ff6000] hover:bg-[#fff4ed]/50 transition-all text-sm text-gray-600 hover:text-[#ff6000]"
                             >
                               <FileImage size={20} />
                               Daha fazla fotoğraf ekle ({(files.length + uploadingImages.length)}/8)
@@ -670,11 +664,10 @@ export default function NewProductPage() {
 
                 {/* Result Message */}
                 {result && (
-                  <div className={`p-4 rounded-lg flex items-center gap-2 ${
-                    result.includes("başarıyla") 
-                      ? "bg-green-50 text-green-800 border border-green-200" 
+                  <div className={`p-4 rounded-lg flex items-center gap-2 ${result.includes("başarıyla")
+                      ? "bg-green-50 text-green-800 border border-green-200"
                       : "bg-red-50 text-red-800 border border-red-200"
-                  }`}>
+                    }`}>
                     {result.includes("başarıyla") ? (
                       <CheckCircle2 size={20} />
                     ) : (
@@ -686,8 +679,8 @@ export default function NewProductPage() {
 
                 {/* Next Button */}
                 <div className="flex justify-end">
-                  <Button 
-                    type="button" 
+                  <Button
+                    type="button"
                     onClick={nextstep}
                     className="rounded-xl px-8 py-3 flex items-center gap-2 shadow-lg hover:shadow-xl transition-all"
                   >
@@ -700,275 +693,274 @@ export default function NewProductPage() {
 
 
 
-          {step === 2 && (
-            <div className="space-y-6 animate-in fade-in slide-in-from-bottom-4 duration-500">
-              {/* Header Card */}
-              <div className="bg-white rounded-2xl shadow-xl p-8 border border-gray-100">
-                <div className="flex items-center gap-3 mb-4">
-                  <div className="p-2 bg-indigo-100 rounded-lg">
-                    <Settings className="text-indigo-600" size={24} />
-                  </div>
-                  <div>
-                    <h2 className="text-2xl font-bold text-gray-900">Ürün Özellikleri</h2>
-                    <p className="text-sm text-gray-500">Ürününüzü öne çıkaracak özellikleri eksiksiz ve doğru şekilde belirtin</p>
+            {step === 2 && (
+              <div className="space-y-6 animate-in fade-in slide-in-from-bottom-4 duration-500">
+                {/* Header Card */}
+                <div className="bg-white rounded-lg border border-gray-200 p-6">
+                  <div className="flex items-center gap-3 mb-4">
+                    <div className="p-2 bg-gray-100 rounded-lg">
+                      <Settings className="text-gray-600" size={20} />
+                    </div>
+                    <div>
+                      <h2 className="text-lg font-semibold text-gray-900">Ürün Özellikleri</h2>
+                      <p className="text-sm text-gray-500">Ürününüzü öne çıkaracak özellikleri eksiksiz ve doğru şekilde belirtin</p>
+                    </div>
                   </div>
                 </div>
-              </div>
 
-              {/* Content Area */}
-              {!category ? (
-                <div className="bg-white rounded-2xl shadow-xl p-12 border border-gray-100 text-center">
-                  <div className="flex flex-col items-center justify-center">
-                    <div className="p-4 bg-yellow-100 rounded-full mb-4">
-                      <AlertCircle className="text-yellow-600" size={48} />
-                    </div>
-                    <h3 className="text-xl font-bold text-gray-900 mb-2">Kategori Seçimi Gerekli</h3>
-                    <p className="text-gray-600">Özellik eklemek için önce bir kategori seçmeniz gerekmektedir.</p>
-                    <Button 
-                      type="button" 
-                      onClick={prevstep}
-                      className="mt-6 rounded-xl px-6 py-2 flex items-center gap-2"
-                    >
-                      <ArrowLeft size={18} />
-                      Kategori Seçmek İçin Geri Dön
-                    </Button>
-                  </div>
-                </div>
-              ) : !attributes || attributes.length === 0 ? (
-                <>
-                <div className="bg-white rounded-2xl shadow-xl p-12 border border-gray-100 text-center">
-                  <div className="flex flex-col items-center justify-center">
-                    <div className="p-4 bg-orange-100 rounded-full mb-4">
-                      <AlertCircle className="text-orange-600" size={48} />
-                    </div>
-                    <h3 className="text-xl font-bold text-gray-900 mb-2">Özellik Bulunamadı</h3>
-                    <p className="text-gray-600">Seçtiğiniz kategoriye ait özellik bulunmamaktadır.</p>
-                  </div>
-                </div>
-                <div className="flex justify-between gap-4 pt-4">
-                    <Button 
-                      type="button" 
-                      onClick={prevstep}
-                      className="rounded-xl px-8 py-3 flex items-center gap-2 shadow-lg hover:shadow-xl transition-all bg-gray-100 hover:bg-gray-200 text-gray-700"
-                    >
-                      <ArrowLeft size={20} />
-                      Önceki Adım
-                    </Button>
-                    <Button 
-                      type="submit" 
-                      disabled={isSubmitting}
-                      className="rounded-xl px-8 py-3 flex items-center gap-2 shadow-lg hover:shadow-xl transition-all bg-gradient-to-r from-green-600 to-emerald-600 hover:from-green-700 hover:to-emerald-700 text-white disabled:opacity-50 disabled:cursor-not-allowed"
-                    >
-                      {isSubmitting ? (
-                        <>
-                          <Loader2 size={20} className="animate-spin" />
-                          Yükleniyor...
-                        </>
-                      ) : (
-                        <>
-                          <Upload size={20} />
-                          Ürünü Yükle
-                        </>
-                      )}
-                    </Button>
-                  </div>
-                </>
-              ) : (
-                <>
-                  {/* Features List */}
-                  <div className="bg-white rounded-2xl shadow-xl p-8 border border-gray-100">
-                    {fields.length === 0 ? (
-                      <div className="text-center py-12">
-                        <div className="p-4 bg-blue-100 rounded-full inline-flex mb-4">
-                          <Sparkles className="text-blue-600" size={32} />
-                        </div>
-                        <h3 className="text-lg font-semibold text-gray-900 mb-2">Henüz Özellik Eklenmedi</h3>
-                        <p className="text-gray-600 mb-6">Ürününüzü daha iyi tanıtmak için özellik ekleyin</p>
-                        <Button
-                          type="button"
-                          onClick={() => append({ key: {label: "", value:0}, value: "" })}
-                          className="rounded-xl px-6 py-3 flex items-center gap-2 mx-auto shadow-lg hover:shadow-xl transition-all"
-                        >
-                          <Plus size={20} />
-                          İlk Özelliği Ekle
-                        </Button>
+                {/* Content Area */}
+                {!category ? (
+                  <div className="bg-white rounded-lg border border-gray-200 p-8 text-center">
+                    <div className="flex flex-col items-center justify-center">
+                      <div className="p-4 bg-yellow-100 rounded-full mb-4">
+                        <AlertCircle className="text-yellow-600" size={48} />
                       </div>
-                    ) : (
-                      <div className="space-y-4">
-                        <div className="flex items-center justify-between mb-6">
-                          <h3 className="text-lg font-semibold text-gray-900">
-                            Eklenen Özellikler ({fields.length})
-                          </h3>
+                      <h3 className="text-xl font-bold text-gray-900 mb-2">Kategori Seçimi Gerekli</h3>
+                      <p className="text-gray-600">Özellik eklemek için önce bir kategori seçmeniz gerekmektedir.</p>
+                      <Button
+                        type="button"
+                        onClick={prevstep}
+                        className="mt-6 rounded-xl px-6 py-2 flex items-center gap-2"
+                      >
+                        <ArrowLeft size={18} />
+                        Kategori Seçmek İçin Geri Dön
+                      </Button>
+                    </div>
+                  </div>
+                ) : !attributes || attributes.length === 0 ? (
+                  <>
+                    <div className="bg-white rounded-2xl shadow-xl p-12 border border-gray-100 text-center">
+                      <div className="flex flex-col items-center justify-center">
+                        <div className="p-4 bg-orange-100 rounded-full mb-4">
+                          <AlertCircle className="text-orange-600" size={48} />
+                        </div>
+                        <h3 className="text-xl font-bold text-gray-900 mb-2">Özellik Bulunamadı</h3>
+                        <p className="text-gray-600">Seçtiğiniz kategoriye ait özellik bulunmamaktadır.</p>
+                      </div>
+                    </div>
+                    <div className="flex justify-between gap-4 pt-4">
+                      <Button
+                        type="button"
+                        onClick={prevstep}
+                        className="rounded-xl px-8 py-3 flex items-center gap-2 shadow-lg hover:shadow-xl transition-all bg-gray-100 hover:bg-gray-200 text-gray-700"
+                      >
+                        <ArrowLeft size={20} />
+                        Önceki Adım
+                      </Button>
+                      <Button
+                        type="submit"
+                        disabled={isSubmitting}
+                        className="rounded-lg px-8 py-3 flex items-center gap-2 transition-all bg-[#ff6000] hover:bg-[#e55500] text-white disabled:opacity-50 disabled:cursor-not-allowed"
+                      >
+                        {isSubmitting ? (
+                          <>
+                            <Loader2 size={20} className="animate-spin" />
+                            Yükleniyor...
+                          </>
+                        ) : (
+                          <>
+                            <Upload size={20} />
+                            Ürünü Yükle
+                          </>
+                        )}
+                      </Button>
+                    </div>
+                  </>
+                ) : (
+                  <>
+                    {/* Features List */}
+                    <div className="bg-white rounded-lg border border-gray-200 p-6">
+                      {fields.length === 0 ? (
+                        <div className="text-center py-12">
+                          <div className="p-4 bg-[#fff4ed] rounded-full inline-flex mb-4">
+                            <Sparkles className="text-[#ff6000]" size={32} />
+                          </div>
+                          <h3 className="text-lg font-semibold text-gray-900 mb-2">Henüz Özellik Eklenmedi</h3>
+                          <p className="text-gray-600 mb-6">Ürününüzü daha iyi tanıtmak için özellik ekleyin</p>
                           <Button
                             type="button"
-                            onClick={() => append({ key: {label: "", value:0}, value: "" })}
-                            className="rounded-xl px-4 py-2 flex items-center gap-2 bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 shadow-lg hover:shadow-xl transition-all"
+                            onClick={() => append({ key: { label: "", value: 0 }, value: "" })}
+                            className="rounded-xl px-6 py-3 flex items-center gap-2 mx-auto shadow-lg hover:shadow-xl transition-all"
                           >
-                            <Plus size={18} />
-                            Yeni Özellik Ekle
+                            <Plus size={20} />
+                            İlk Özelliği Ekle
                           </Button>
                         </div>
-
-                        <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
-                          {fields.map((field, index) => (
-                            <div 
-                              key={field.id} 
-                              className="bg-gradient-to-br from-gray-50 to-white rounded-xl p-6 border border-gray-200 shadow-sm hover:shadow-md transition-all duration-300"
+                      ) : (
+                        <div className="space-y-4">
+                          <div className="flex items-center justify-between mb-6">
+                            <h3 className="text-lg font-semibold text-gray-900">
+                              Eklenen Özellikler ({fields.length})
+                            </h3>
+                            <Button
+                              type="button"
+                              onClick={() => append({ key: { label: "", value: 0 }, value: "" })}
+                              className="rounded-lg px-4 py-2 flex items-center gap-2 bg-[#ff6000] hover:bg-[#e55500] text-white transition-all"
                             >
-                              <div className="flex items-start gap-3">
-                                <div className="flex-1 space-y-3">
-                                  <div>
-                                    <label className="block text-sm font-semibold text-gray-700 mb-2">
-                                      Özellik <span className="text-red-500">*</span>
-                                    </label>
-                                    <Select
-                                      options={attributes?.map((b) => ({ label: b.attribute_name, value: b.attribute_id }))}
-                                      value={watch(`features.${index}.key`)}
-                                      onChange={(option) => {
-                                        const selected = option && typeof option === "object" ? option as FeatureKey : { label: "", value: 0};
-                                        setValue(`features.${index}.key`, selected, { shouldDirty: true });
-                                      }}
-                                      onInputChange={(val) => setSearchBrands(val)}
-                                      placeholder="Özellik seçin..."
-                                      isClearable
-                                      styles={customSelectStyles}
-                                      noOptionsMessage={() => "Sonuç bulunamadı"}
-                                    />
-                                  </div>
-                                  
-                                  <div>
-                                    <label className="block text-sm font-semibold text-gray-700 mb-2">
-                                      Değer <span className="text-red-500">*</span>
-                                    </label>
-                                    <Input
-                                      {...register(`features.${index}.value` as const)}
-                                      placeholder="Örn: 256GB, 8GB RAM, 128GB"
-                                      className="w-full"
-                                    />
-                                  </div>
-                                </div>
+                              <Plus size={18} />
+                              Yeni Özellik Ekle
+                            </Button>
+                          </div>
 
-                                <button
-                                  type="button"
-                                  onClick={() => remove(index)}
-                                  className="p-2 bg-red-50 hover:bg-red-100 text-red-600 rounded-lg transition-colors duration-200 flex-shrink-0"
-                                  title="Özelliği Sil"
-                                >
-                                  <Trash2 size={20} />
-                                </button>
+                          <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
+                            {fields.map((field, index) => (
+                              <div
+                                key={field.id}
+                                className="bg-white rounded-lg p-5 border border-gray-200 hover:shadow-sm transition-all duration-200"
+                              >
+                                <div className="flex items-start gap-3">
+                                  <div className="flex-1 space-y-3">
+                                    <div>
+                                      <label className="block text-sm font-semibold text-gray-700 mb-2">
+                                        Özellik <span className="text-red-500">*</span>
+                                      </label>
+                                      <Select
+                                        options={attributes?.map((b) => ({ label: b.attribute_name, value: b.attribute_id }))}
+                                        value={watch(`features.${index}.key`)}
+                                        onChange={(option) => {
+                                          const selected = option && typeof option === "object" ? option as FeatureKey : { label: "", value: 0 };
+                                          setValue(`features.${index}.key`, selected, { shouldDirty: true });
+                                        }}
+                                        onInputChange={(val) => setSearchBrands(val)}
+                                        placeholder="Özellik seçin..."
+                                        isClearable
+                                        styles={customSelectStyles}
+                                        noOptionsMessage={() => "Sonuç bulunamadı"}
+                                      />
+                                    </div>
+
+                                    <div>
+                                      <label className="block text-sm font-semibold text-gray-700 mb-2">
+                                        Değer <span className="text-red-500">*</span>
+                                      </label>
+                                      <Input
+                                        {...register(`features.${index}.value` as const)}
+                                        placeholder="Örn: 256GB, 8GB RAM, 128GB"
+                                        className="w-full"
+                                      />
+                                    </div>
+                                  </div>
+
+                                  <button
+                                    type="button"
+                                    onClick={() => remove(index)}
+                                    className="p-2 bg-red-50 hover:bg-red-100 text-red-600 rounded-lg transition-colors duration-200 flex-shrink-0"
+                                    title="Özelliği Sil"
+                                  >
+                                    <Trash2 size={20} />
+                                  </button>
+                                </div>
                               </div>
-                            </div>
-                          ))}
+                            ))}
+                          </div>
                         </div>
+                      )}
+                    </div>
+
+                    {/* Result Message */}
+                    {result && (
+                      <div className={`p-4 rounded-xl flex items-center gap-3 shadow-md ${result.includes("başarıyla")
+                          ? "bg-green-50 text-green-800 border border-green-200"
+                          : "bg-red-50 text-red-800 border border-red-200"
+                        }`}>
+                        {result.includes("başarıyla") ? (
+                          <CheckCircle2 size={20} />
+                        ) : (
+                          <AlertCircle size={20} />
+                        )}
+                        <span className="font-medium">{result}</span>
                       </div>
                     )}
-                  </div>
 
-                  {/* Result Message */}
-                  {result && (
-                    <div className={`p-4 rounded-xl flex items-center gap-3 shadow-md ${
-                      result.includes("başarıyla") 
-                        ? "bg-green-50 text-green-800 border border-green-200" 
-                        : "bg-red-50 text-red-800 border border-red-200"
-                    }`}>
-                      {result.includes("başarıyla") ? (
-                        <CheckCircle2 size={20} />
-                      ) : (
-                        <AlertCircle size={20} />
-                      )}
-                      <span className="font-medium">{result}</span>
+                    {/* Navigation Buttons */}
+                    <div className="flex justify-between gap-4 pt-4">
+                      <Button
+                        type="button"
+                        onClick={prevstep}
+                        className="rounded-xl px-8 py-3 flex items-center gap-2 shadow-lg hover:shadow-xl transition-all bg-gray-100 hover:bg-gray-200 text-gray-700"
+                      >
+                        <ArrowLeft size={20} />
+                        Önceki Adım
+                      </Button>
+                      <Button
+                        type="submit"
+                        disabled={isSubmitting}
+                        className="rounded-lg px-8 py-3 flex items-center gap-2 transition-all bg-[#ff6000] hover:bg-[#e55500] text-white disabled:opacity-50 disabled:cursor-not-allowed"
+                      >
+                        {isSubmitting ? (
+                          <>
+                            <Loader2 size={20} className="animate-spin" />
+                            Yükleniyor...
+                          </>
+                        ) : (
+                          <>
+                            <Upload size={20} />
+                            Ürünü Yükle
+                          </>
+                        )}
+                      </Button>
                     </div>
-                  )}
+                  </>
+                )}
+              </div>
+            )}
 
-                  {/* Navigation Buttons */}
-                  <div className="flex justify-between gap-4 pt-4">
-                    <Button 
-                      type="button" 
-                      onClick={prevstep}
-                      className="rounded-xl px-8 py-3 flex items-center gap-2 shadow-lg hover:shadow-xl transition-all bg-gray-100 hover:bg-gray-200 text-gray-700"
-                    >
-                      <ArrowLeft size={20} />
-                      Önceki Adım
-                    </Button>
-                    <Button 
-                      type="submit" 
-                      disabled={isSubmitting}
-                      className="rounded-xl px-8 py-3 flex items-center gap-2 shadow-lg hover:shadow-xl transition-all bg-gradient-to-r from-green-600 to-emerald-600 hover:from-green-700 hover:to-emerald-700 text-white disabled:opacity-50 disabled:cursor-not-allowed"
-                    >
-                      {isSubmitting ? (
-                        <>
-                          <Loader2 size={20} className="animate-spin" />
-                          Yükleniyor...
-                        </>
-                      ) : (
-                        <>
-                          <Upload size={20} />
-                          Ürünü Yükle
-                        </>
-                      )}
-                    </Button>
-                  </div>
-                </>
-              )}
-            </div>
-          )}
+          </form>
+        </FormProvider>
 
-        </form>
-      </FormProvider>
-
-      {/* Success Step */}
-      {step === 3 && (
-        <div className="flex items-center justify-center min-h-[60vh] animate-in fade-in slide-in-from-bottom-4 duration-500">
-          <div className="bg-white rounded-2xl shadow-2xl p-12 border border-gray-100 max-w-md w-full text-center">
-            <div className="mb-6">
-              <div className="inline-flex items-center justify-center w-24 h-24 bg-gradient-to-r from-green-500 to-emerald-500 rounded-full mb-4 shadow-lg animate-pulse">
-                <BadgeCheck className="text-white" size={48} />
+        {/* Success Step */}
+        {step === 3 && (
+          <div className="flex items-center justify-center min-h-[60vh] animate-in fade-in slide-in-from-bottom-4 duration-500">
+            <div className="bg-white rounded-lg border border-gray-200 p-10 max-w-md w-full text-center">
+              <div className="mb-6">
+                <div className="inline-flex items-center justify-center w-20 h-20 bg-green-50 rounded-full mb-4">
+                  <BadgeCheck className="text-green-600" size={40} />
+                </div>
+              </div>
+              <h1 className="text-3xl font-bold text-gray-900 mb-3">Başarılı!</h1>
+              <p className="text-lg text-gray-600 mb-8">{result}</p>
+              <div className="space-y-3">
+                <Button
+                  type="button"
+                  onClick={() => router.push("/profile/products")}
+                  className="w-full rounded-lg px-6 py-3 bg-[#ff6000] hover:bg-[#e55500] text-white transition-all"
+                >
+                  Ürünlerime Git
+                </Button>
+                <Button
+                  type="button"
+                  onClick={comeBack}
+                  className="w-full rounded-xl px-6 py-3 bg-gray-100 hover:bg-gray-200 text-gray-700 transition-all"
+                >
+                  Yeni Ürün Ekle
+                </Button>
               </div>
             </div>
-            <h1 className="text-3xl font-bold text-gray-900 mb-3">Başarılı!</h1>
-            <p className="text-lg text-gray-600 mb-8">{result}</p>
-            <div className="space-y-3">
-              <Button 
-                type="button" 
-                onClick={() => router.push("/profile/products")}
-                className="w-full rounded-xl px-6 py-3 bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 shadow-lg hover:shadow-xl transition-all"
-              >
-                Ürünlerime Git
-              </Button>
-              <Button 
-                type="button" 
+          </div>
+        )}
+
+        {/* Error Step */}
+        {step === 4 && (
+          <div className="flex items-center justify-center min-h-[60vh] animate-in fade-in slide-in-from-bottom-4 duration-500">
+            <div className="bg-white rounded-lg border border-gray-200 p-10 max-w-md w-full text-center">
+              <div className="mb-6">
+                <div className="inline-flex items-center justify-center w-20 h-20 bg-red-50 rounded-full mb-4">
+                  <AlertCircle className="text-red-500" size={40} />
+                </div>
+              </div>
+              <h1 className="text-3xl font-bold text-gray-900 mb-3">Hata Oluştu</h1>
+              <p className="text-lg text-gray-600 mb-8">{result}</p>
+              <Button
+                type="button"
                 onClick={comeBack}
-                className="w-full rounded-xl px-6 py-3 bg-gray-100 hover:bg-gray-200 text-gray-700 transition-all"
+                className="w-full rounded-lg px-6 py-3 bg-[#ff6000] hover:bg-[#e55500] text-white transition-all flex items-center justify-center gap-2"
               >
-                Yeni Ürün Ekle
+                <ArrowLeft size={20} />
+                Tekrar Dene
               </Button>
             </div>
           </div>
-        </div>
-      )}
-
-      {/* Error Step */}
-      {step === 4 && (
-        <div className="flex items-center justify-center min-h-[60vh] animate-in fade-in slide-in-from-bottom-4 duration-500">
-          <div className="bg-white rounded-2xl shadow-2xl p-12 border border-gray-100 max-w-md w-full text-center">
-            <div className="mb-6">
-              <div className="inline-flex items-center justify-center w-24 h-24 bg-gradient-to-r from-red-500 to-rose-500 rounded-full mb-4 shadow-lg">
-                <AlertCircle className="text-white" size={48} />
-              </div>
-            </div>
-            <h1 className="text-3xl font-bold text-gray-900 mb-3">Hata Oluştu</h1>
-            <p className="text-lg text-gray-600 mb-8">{result}</p>
-            <Button 
-              type="button" 
-              onClick={comeBack}
-              className="w-full rounded-xl px-6 py-3 bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 shadow-lg hover:shadow-xl transition-all flex items-center justify-center gap-2"
-            >
-              <ArrowLeft size={20} />
-              Tekrar Dene
-            </Button>
-          </div>
-        </div>
-      )}
+        )}
       </div>
     </div>
   );

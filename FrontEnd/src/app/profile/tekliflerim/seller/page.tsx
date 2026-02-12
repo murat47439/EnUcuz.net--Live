@@ -140,7 +140,7 @@ export default function OfferSellerPage() {
         return (
             <div className="min-h-screen flex items-center justify-center">
                 <div className="text-center">
-                    <div className="inline-block animate-spin rounded-full h-8 w-8 border-2 border-gray-300 border-t-purple-600 mb-3"></div>
+                    <div className="inline-block animate-spin rounded-full h-8 w-8 border-2 border-gray-200 border-t-[#ff6000] mb-3"></div>
                     <p className="text-sm text-gray-500">Yükleniyor...</p>
                 </div>
             </div>
@@ -152,9 +152,9 @@ export default function OfferSellerPage() {
             <div className="flex flex-col gap-8">
                 {/* ── Header ── */}
                 <div className="flex items-center gap-4 border-b border-gray-100 pb-6">
-                    <div className="w-12 h-12 bg-purple-50 rounded-xl flex items-center justify-center border border-purple-100 shadow-sm">
+                    <div className="w-10 h-10 bg-gray-100 rounded-lg flex items-center justify-center">
 
-                        <button onClick={() => { router.back() }}><ArrowLeft className="w-6 h-6" /></button>
+                        <button onClick={() => { router.push('/profile/tekliflerim') }}><ArrowLeft className="w-5 h-5 text-gray-600" /></button>
                     </div>
                     <div>
                         <h1 className="text-2xl font-bold text-gray-900">Aldığım Teklifler</h1>
@@ -177,7 +177,7 @@ export default function OfferSellerPage() {
                             const product = productsMap[offer.productId];
 
                             return (
-                                <div key={offer.id} className="bg-white border border-gray-200 rounded-2xl overflow-hidden hover:shadow-lg hover:shadow-purple-500/5 transition-all duration-300">
+                                <div key={offer.id} className="bg-white border border-gray-200 rounded-lg overflow-hidden hover:shadow-md transition-all duration-200">
                                     <div className="flex flex-col md:flex-row">
 
                                         {/* Ürün Bilgisi Sol Panel */}
@@ -196,7 +196,7 @@ export default function OfferSellerPage() {
                                             )}
                                             <div className="flex-1 min-w-0 md:text-center text-left">
                                                 {product ? (
-                                                    <Link href={`/product/${offer.productId}`} className="text-sm font-semibold text-gray-900 hover:text-purple-600 line-clamp-2 transition-colors">
+                                                    <Link href={`/product/${offer.productId}`} className="text-sm font-semibold text-gray-900 hover:text-[#ff6000] line-clamp-2 transition-colors">
                                                         {product.name}
                                                     </Link>
                                                 ) : (
@@ -225,15 +225,15 @@ export default function OfferSellerPage() {
                                                     </span>
                                                 </div>
 
-                                                <div className="bg-purple-50/50 rounded-xl p-4 border border-purple-100 flex items-center justify-between mb-2">
+                                                <div className="bg-gray-50 rounded-lg p-4 border border-gray-100 flex items-center justify-between mb-2">
                                                     <div>
-                                                        <p className="text-xs text-purple-600 font-medium uppercase">Teklif Fiyatı</p>
+                                                        <p className="text-xs text-gray-500 font-medium uppercase">Teklif Fiyatı</p>
                                                         <p className="text-2xl font-bold text-gray-900 mt-0.5">{formatPrice(offer.price)}</p>
                                                     </div>
                                                     {status.label === "Karşı Teklif" && (
                                                         <div className="text-right">
                                                             <p className="text-xs text-gray-500">Durum</p>
-                                                            <p className="text-sm font-medium text-purple-700">
+                                                            <p className="text-sm font-medium text-gray-700">
                                                                 {createdByMe ? "Yanıt Bekleniyor" : "Yanıtlamanız Gerekiyor"}
                                                             </p>
                                                         </div>
@@ -265,7 +265,7 @@ export default function OfferSellerPage() {
                                                             <XCircle size={16} />
                                                             Reddet
                                                         </button>
-                                                        <button onClick={() => openCounterModal(offer)} className="min-w-[120px] inline-flex items-center justify-center gap-1.5 px-4 py-2.5 text-sm font-medium rounded-lg bg-white text-purple-700 border border-purple-200 hover:bg-purple-50 transition-colors">
+                                                        <button onClick={() => openCounterModal(offer)} className="min-w-[120px] inline-flex items-center justify-center gap-1.5 px-4 py-2.5 text-sm font-medium rounded-lg bg-white text-[#ff6000] border border-orange-200 hover:bg-[#fff4ed] transition-colors">
                                                             <TrendingUp size={16} />
                                                             Karşı Teklif
                                                         </button>
@@ -291,7 +291,7 @@ export default function OfferSellerPage() {
                     </div>
                 ) : (
                     /* ── Boş Durum ── */
-                    <div className="flex flex-col items-center justify-center py-20 bg-white border border-gray-200 rounded-2xl">
+                    <div className="flex flex-col items-center justify-center py-20 bg-white border border-gray-200 rounded-lg">
 
                         <h3 className="text-lg font-semibold text-gray-900 mb-1">
                             Henüz teklif yok
