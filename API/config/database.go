@@ -46,7 +46,7 @@ func ConnectDB() *sqlx.DB {
 	sqlDB := stdlib.OpenDB(*config)
 
 	sqlDB.SetMaxOpenConns(10) // Neon için 25 fazla
-	sqlDB.SetMaxIdleConns(5)
+	sqlDB.SetMaxIdleConns(0)
 	sqlDB.SetConnMaxLifetime(3 * time.Minute)
 
 	if err := sqlDB.Ping(); err != nil {
