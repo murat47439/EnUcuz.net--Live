@@ -3,6 +3,7 @@ package repo
 import (
 	"Store-Dio/config"
 	"Store-Dio/models"
+	"Store-Dio/utils"
 	"context"
 	"database/sql"
 	"errors"
@@ -36,7 +37,7 @@ const (
 func (pr *ProductRepo) GetUserProducts(ctx context.Context, userID int, page int) ([]*models.Product, error) {
 	var products []*models.Product
 	offset := (page - 1) * 50
-	query := `SELECT id, name, description, stock, price, image_url, category_id, created_at, updated_at, brand_id, seller_id, status, deleted_at FROM products WHERE seller_id = $1 AND deleted_at IS NULL LIMIT $2 OFFSET $3`
+	query := `SELECT id, name,slug ,description, stock, price, image_url, category_id, created_at, updated_at, brand_id, seller_id, status, deleted_at FROM products WHERE seller_id = $1 AND deleted_at IS NULL LIMIT $2 OFFSET $3`
 	rows, err := pr.db.QueryxContext(ctx, query, userID, 50, offset)
 	if err != nil {
 		return nil, fmt.Errorf("Database error : %s", err.Error())
@@ -103,9 +104,15 @@ func (pr *ProductRepo) CheckProductByName(name, imageUrl string) (bool, error) {
 
 }
 func (pr *ProductRepo) AddProduct(ctx context.Context, data models.NewProduct, tx *sqlx.Tx) (int, error) {
-	query := `INSERT INTO products(name,description,stock,price,image_url,category_id,created_at,brand_id,seller_id) VALUES($1,$2,$3,$4,$5,$6,NOW(),$7,$8) RETURNING id`
+
+	slug, err := pr.GenerateUniqueSlug(ctx, tx, data.Name)
+	if err != nil {
+		return 0, err
+	}
+
+	query := `INSERT INTO products(name,slug,description,stock,price,image_url,category_id,created_at,brand_id,seller_id) VALUES($1,$2,$3,$4,$5,$6,NOW(),$7,$8) RETURNING id`
 	var id int
-	err := tx.QueryRowContext(ctx, query, data.Name, data.Description, data.Stock, data.Price, data.ImageURLs[0], data.CategoryID, data.BrandID, data.SellerID).Scan(&id)
+	err = tx.QueryRowContext(ctx, query, data.Name, slug, data.Description, data.Stock, data.Price, data.ImageURLs[0], data.CategoryID, data.BrandID, data.SellerID).Scan(&id)
 	if err != nil {
 		return 0, fmt.Errorf("Database error %w", err)
 	}
@@ -136,6 +143,25 @@ func (pr *ProductRepo) AddProductImages(ctx context.Context, images []string, id
 
 	return nil
 }
+func (pr *ProductRepo) GenerateUniqueSlug(ctx context.Context, tx *sqlx.Tx, text string) (string, error) {
+	baseSlug := utils.Slugify(text)
+	counter := 2
+
+	for {
+		var exists bool
+
+		err := tx.QueryRow(`SELECT EXISTS(SELECT 1 FROM products WHERE slug = $1 )`, baseSlug).Scan(&exists)
+		if err != nil {
+			return "", err
+		}
+		if !exists {
+			return baseSlug, nil
+		}
+
+		baseSlug = fmt.Sprintf("%s-%d", baseSlug, counter)
+		counter++
+	}
+}
 
 func (pr *ProductRepo) ExistsData(name string, tx *sqlx.Tx) (bool, error) {
 	if name == "" {
@@ -150,10 +176,15 @@ func (pr *ProductRepo) ExistsData(name string, tx *sqlx.Tx) (bool, error) {
 	}
 	return exists, nil
 }
-func (pr *ProductRepo) UpdateProduct(ctx context.Context, product *models.UpdProduct) error {
-	query := `UPDATE products SET name = $1, description = $2,stock = $3, price = $4 WHERE id = $5 AND deleted_at IS NULL`
+func (pr *ProductRepo) UpdateProduct(ctx context.Context, tx *sqlx.Tx, product *models.UpdProduct) error {
 
-	res, err := pr.db.ExecContext(ctx, query, product.Name, product.Description, product.Stock, product.Price, product.ID)
+	slug, err := pr.GenerateUniqueSlug(ctx, tx, product.Name)
+	if err != nil {
+		return err
+	}
+	query := `UPDATE products SET name = $1, slug = $2 ,description = $3,stock = $4, price = $5 WHERE id = $6 AND deleted_at IS NULL`
+
+	res, err := pr.db.ExecContext(ctx, query, product.Name, slug, product.Description, product.Stock, product.Price, product.ID)
 	if err != nil {
 		return fmt.Errorf("Database error : %w", err)
 	}
@@ -185,7 +216,7 @@ func (pr *ProductRepo) GetProduct(ctx context.Context, prodid int) (*models.Prod
 	if err != nil {
 		return nil, err
 	}
-	query := `SELECT p.name, p.description, p.stock, p.price, p.image_url, p.category_id, p.brand_id, p.seller_id, b.name AS brand_name, c.name AS category_name, u.name AS seller_name, u.phone AS seller_phone FROM products p 
+	query := `SELECT p.name,p.slug, p.description, p.stock, p.price, p.image_url, p.category_id, p.brand_id, p.seller_id, b.name AS brand_name, c.name AS category_name, u.name AS seller_name, u.phone AS seller_phone FROM products p 
 	LEFT JOIN brands b ON p.brand_id = b.id 
 	LEFT JOIN categories c ON p.category_id = c.id
 	LEFT JOIN users u ON p.seller_id = u.id
@@ -256,7 +287,7 @@ func (pr *ProductRepo) GetProducts(ctx context.Context, page, brandID, categoryI
 	query := `
 	` + cte + `
 	SELECT 
-		p.id, p.name, p.description, p.stock, p.price, p.image_url, p.category_id, p.created_at, p.updated_at, p.brand_id, p.seller_id, p.status, p.deleted_at,
+		p.id, p.name,p.slug ,p.description, p.stock, p.price, p.image_url, p.category_id, p.created_at, p.updated_at, p.brand_id, p.seller_id, p.status, p.deleted_at,
 		b.name AS brand_name, 
 		c.name AS category_name,
 		u.name AS seller_name,

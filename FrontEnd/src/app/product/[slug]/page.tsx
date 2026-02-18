@@ -7,11 +7,13 @@ import ProductDetailSection from "@/features/components/UI/productDetail/product
 import RelatedProducts from "@/features/components/UI/productDetail/relatedProducts";
 import { ChevronRight } from "lucide-react";
 
-export default async function ProductDetailPage({ params }: { params: { id: number } }) {
+export default async function ProductDetailPage({ params }: { params: { slug: string } }) {
     try {
         const resolvedParams = await params;
-        const request: IdParam = { id: Number(resolvedParams.id) };
-        if (!resolvedParams.id || isNaN(Number(resolvedParams.id))) {
+        const full = resolvedParams.slug;
+        const id = Number(full?.split("-p-").pop());
+        const request: IdParam = { id };
+        if (!full || isNaN(id)) {
             notFound();
         }
 

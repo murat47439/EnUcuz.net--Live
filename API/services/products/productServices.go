@@ -75,6 +75,22 @@ func (ps *ProductService) UpdateProduct(ctx context.Context, product *models.Upd
 	if product.Price < 0 {
 		return nil, fmt.Errorf("Fiyat negatif olamaz")
 	}
+	tx, err := ps.db.BeginTxx(ctx, nil)
+	if err != nil {
+		return nil, fmt.Errorf("TX Error : %w", err)
+	}
+	defer func() {
+		if p := recover(); p != nil {
+			_ = tx.Rollback()
+			panic(p)
+		} else if err != nil {
+			_ = tx.Rollback()
+		} else {
+			if commitErr := tx.Commit(); commitErr != nil {
+				err = fmt.Errorf("transaction commit error: %w", commitErr)
+			}
+		}
+	}()
 	p, err := ps.ProductRepo.GetProduct(ctx, product.ID)
 	switch {
 	case err != nil:
@@ -82,7 +98,7 @@ func (ps *ProductService) UpdateProduct(ctx context.Context, product *models.Upd
 	case p.SellerID != user_id:
 		return nil, fmt.Errorf("👍")
 	}
-	err = ps.ProductRepo.UpdateProduct(ctx, product)
+	err = ps.ProductRepo.UpdateProduct(ctx, tx, product)
 	if err != nil {
 		return nil, err
 	}
@@ -93,6 +109,22 @@ func (ps *ProductService) UpdateProductForAdmin(ctx context.Context, product mod
 	if product.Price < 0 {
 		return nil, fmt.Errorf("Fiyat negatif olamaz")
 	}
+	tx, err := ps.db.BeginTxx(ctx, nil)
+	if err != nil {
+		return nil, fmt.Errorf("TX Error : %w", err)
+	}
+	defer func() {
+		if p := recover(); p != nil {
+			_ = tx.Rollback()
+			panic(p)
+		} else if err != nil {
+			_ = tx.Rollback()
+		} else {
+			if commitErr := tx.Commit(); commitErr != nil {
+				err = fmt.Errorf("transaction commit error: %w", commitErr)
+			}
+		}
+	}()
 	exists, err := ps.ProductRepo.CheckProduct(product.ID)
 	switch {
 	case err != nil:
@@ -100,7 +132,7 @@ func (ps *ProductService) UpdateProductForAdmin(ctx context.Context, product mod
 	case !exists:
 		return nil, fmt.Errorf("Product Not Found")
 	}
-	err = ps.ProductRepo.UpdateProduct(ctx, &product)
+	err = ps.ProductRepo.UpdateProduct(ctx, tx, &product)
 	if err != nil {
 		return nil, err
 	}

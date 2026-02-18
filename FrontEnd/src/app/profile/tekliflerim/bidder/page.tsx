@@ -204,7 +204,7 @@ export default function OfferBidderPage() {
                                         {/* Ürün Bilgisi Sol Panel */}
                                         <div className="w-full md:w-48 bg-gray-50 p-4 flex flex-row md:flex-col items-center gap-3 border-b md:border-b-0 md:border-r border-gray-100">
                                             {product ? (
-                                                <Link href={`/product/${offer.productId}`} className="block relative w-16 h-16 md:w-24 md:h-24 bg-white rounded-lg border border-gray-200 overflow-hidden flex-shrink-0">
+                                                <Link href={`/product/${product.slug}-p-${offer.productId}`} className="block relative w-16 h-16 md:w-24 md:h-24 bg-white rounded-lg border border-gray-200 overflow-hidden flex-shrink-0">
                                                     <Image
                                                         src={product.image_url || "/placeholder.png"}
                                                         alt={product.name}
@@ -217,7 +217,7 @@ export default function OfferBidderPage() {
                                             )}
                                             <div className="flex-1 min-w-0 md:text-center text-left">
                                                 {product ? (
-                                                    <Link href={`/product/${offer.productId}`} className="text-sm font-semibold text-gray-900 hover:text-[#ff6000] line-clamp-2 transition-colors">
+                                                    <Link href={`/product/${product.slug}-p-${offer.productId}`} className="text-sm font-semibold text-gray-900 hover:text-[#ff6000] line-clamp-2 transition-colors">
                                                         {product.name}
                                                     </Link>
                                                 ) : (
