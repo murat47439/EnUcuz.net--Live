@@ -54,8 +54,8 @@ func (oc *OffersController) NewOffer(w http.ResponseWriter, r *http.Request) {
 	id, err := oc.OffersService.NewOffer(ctx, &offer)
 
 	if err != nil {
-		config.Logger.Printf("NewOffer Service Error")
-		RespondWithError(w, http.StatusInternalServerError, err.Error())
+		config.Logger.Printf("NewOffer Service Error: %v", err)
+		RespondWithError(w, http.StatusInternalServerError, "Teklif verilirken hata oluştu")
 		return
 	}
 	config.Logger.Printf("NewOffer success: offerID=%d userID=%d", id, userID)
@@ -66,7 +66,7 @@ func (oc *OffersController) NewOffer(w http.ResponseWriter, r *http.Request) {
 func (oc *OffersController) CounterOffer(w http.ResponseWriter, r *http.Request) {
 	config.Logger.Printf("Counter Offer request started")
 	userID, ok := r.Context().Value(middleware.UserIDKey).(int)
-	config.Logger.Printf("Counter offer request started by %s", userID)
+	config.Logger.Printf("Counter offer request started by %d", userID)
 	if !ok {
 		config.Logger.Printf("Unauthorized")
 		RespondWithError(w, http.StatusUnauthorized, "Yetkisiz erişim")
@@ -161,8 +161,8 @@ func (oc *OffersController) GetOffersBySeller(w http.ResponseWriter, r *http.Req
 	}
 	offers, err := oc.OffersService.GetOffersBySeller(ctx, page, userID)
 	if err != nil {
-		config.Logger.Printf("Offers Service Error : %w", err)
-		RespondWithError(w, http.StatusBadRequest, "İşlem başarısız")
+		config.Logger.Printf("Offers Service Error : %v", err)
+		RespondWithError(w, http.StatusInternalServerError, "Teklifler listelenirken hata oluştu")
 		return
 	}
 	config.Logger.Printf("Get Offers By Seller success: page=%d userID=%d", page, userID)
@@ -189,8 +189,8 @@ func (oc *OffersController) GetOffersByBidder(w http.ResponseWriter, r *http.Req
 	}
 	offers, err := oc.OffersService.GetOffersByBidder(ctx, page, userID)
 	if err != nil {
-		config.Logger.Printf("Offers Service Error : %w", err)
-		RespondWithError(w, http.StatusBadRequest, "İşlem başarısız")
+		config.Logger.Printf("Offers Service Error : %v", err)
+		RespondWithError(w, http.StatusInternalServerError, "Teklifler listelenirken hata oluştu")
 		return
 	}
 	config.Logger.Printf("Get Offers By Bidder success: page=%d userID=%d", page, userID)

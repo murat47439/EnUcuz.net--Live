@@ -4,6 +4,7 @@ import (
 	"Store-Dio/config"
 	"Store-Dio/models"
 	"Store-Dio/utils"
+	"context"
 	"crypto/hmac"
 	"crypto/sha256"
 	"database/sql"
@@ -25,8 +26,8 @@ func NewUserRepo(db *sqlx.DB) *UserRepo {
 
 // USER
 
-func (ur *UserRepo) CreateUser(user models.User) (bool, error) {
-	tx, err := ur.db.Beginx()
+func (ur *UserRepo) CreateUser(ctx context.Context, user models.User) (bool, error) {
+	tx, err := ur.db.BeginTxx(ctx, nil)
 
 	if err != nil {
 		return false, fmt.Errorf("TX Error : %s", err.Error())
@@ -55,7 +56,7 @@ func (ur *UserRepo) CreateUser(user models.User) (bool, error) {
 
 	query := `INSERT INTO users(email, phone, name, surname, gender, role, password) VALUES($1, $2, $3, $4, $5, $6, $7)`
 
-	_, err = tx.Exec(query, user.Email, user.Phone, user.Name, user.Surname, user.Gender, user.Role, user.Password)
+	_, err = tx.ExecContext(ctx, query, user.Email, user.Phone, user.Name, user.Surname, user.Gender, user.Role, user.Password)
 
 	if err != nil {
 		return false, fmt.Errorf("Database error : %s", err.Error())
@@ -63,14 +64,14 @@ func (ur *UserRepo) CreateUser(user models.User) (bool, error) {
 	return true, nil
 }
 
-func (ur *UserRepo) Login(email string, password string) (*models.User, error) {
+func (ur *UserRepo) Login(ctx context.Context, email string, password string) (*models.User, error) {
 	if email == "" || password == "" {
 		return nil, fmt.Errorf("Invalid data")
 	}
 	user := &models.User{}
 
 	query := `SELECT id,email, phone, name, surname, gender, role, password FROM users WHERE email = $1 AND deleted_at IS NULL`
-	err := ur.db.Get(user, query, email)
+	err := ur.db.GetContext(ctx, user, query, email)
 
 	if err != nil {
 		if err == sql.ErrNoRows {
@@ -88,7 +89,7 @@ func (ur *UserRepo) Login(email string, password string) (*models.User, error) {
 
 	return user, nil
 }
-func (ur *UserRepo) Logout(userID int, refreshToken string) (bool, error) {
+func (ur *UserRepo) Logout(ctx context.Context, userID int, refreshToken string) (bool, error) {
 	if userID == 0 || refreshToken == "" {
 		return false, fmt.Errorf("Invalid data")
 	}
@@ -96,7 +97,7 @@ func (ur *UserRepo) Logout(userID int, refreshToken string) (bool, error) {
 
 	query := "DELETE FROM tokens WHERE token = $1 AND user_id = $2"
 
-	result, err := ur.db.Exec(query, refreshTokenHash, userID)
+	result, err := ur.db.ExecContext(ctx, query, refreshTokenHash, userID)
 
 	if err != nil {
 		return false, fmt.Errorf("Log out unsuccessfully")
@@ -109,13 +110,13 @@ func (ur *UserRepo) Logout(userID int, refreshToken string) (bool, error) {
 	return true, nil
 
 }
-func (ur *UserRepo) Update(user *models.User) (*models.User, error) {
+func (ur *UserRepo) Update(ctx context.Context, user *models.User) (*models.User, error) {
 	if user.Email == "" || user.Name == "" || user.Surname == "" || user.ID == 0 {
 		return nil, fmt.Errorf("Invalid data")
 	}
 	query := "UPDATE USERS SET name=$1 ,surname = $2 ,email = $3 ,phone = $4 ,gender = $5 WHERE id=$6"
 
-	_, err := ur.db.Exec(query, user.Name, user.Surname, user.Email, user.Phone, user.Gender, user.ID)
+	_, err := ur.db.ExecContext(ctx, query, user.Name, user.Surname, user.Email, user.Phone, user.Gender, user.ID)
 
 	if err != nil {
 		config.Logger.Printf("Failed to update user")
@@ -123,11 +124,11 @@ func (ur *UserRepo) Update(user *models.User) (*models.User, error) {
 	}
 	return user, nil
 }
-func (ur *UserRepo) CheckEmailExists(email string) (bool, error) {
+func (ur *UserRepo) CheckEmailExists(ctx context.Context, email string) (bool, error) {
 	var exists bool
 
 	query := "SELECT EXISTS(SELECT 1 FROM users WHERE email = $1 AND deleted_at IS NULL)"
-	err := ur.db.Get(&exists, query, email)
+	err := ur.db.GetContext(ctx, &exists, query, email)
 
 	if err != nil {
 		if err == sql.ErrNoRows {
@@ -139,14 +140,14 @@ func (ur *UserRepo) CheckEmailExists(email string) (bool, error) {
 	return exists, nil
 }
 
-func (ur *UserRepo) GetUserDataByID(id int) (*models.User, error) {
+func (ur *UserRepo) GetUserDataByID(ctx context.Context, id int) (*models.User, error) {
 	if id == 0 {
 		return nil, fmt.Errorf("Invalid data")
 	}
 	var user models.User
 	query := `SELECT id,email,phone,name,surname,gender,role FROM users WHERE id = $1 AND deleted_at IS NULL`
 
-	err := ur.db.Get(&user, query, id)
+	err := ur.db.GetContext(ctx, &user, query, id)
 
 	if err != nil {
 		if err == sql.ErrNoRows {
@@ -159,7 +160,7 @@ func (ur *UserRepo) GetUserDataByID(id int) (*models.User, error) {
 
 // REFRESH AND ACCESS
 
-func (ur *UserRepo) NewTokens(userId, userRole int) (string, string, error) {
+func (ur *UserRepo) NewTokens(ctx context.Context, userId, userRole int) (string, string, error) {
 	if userId == 0 {
 		return "", "", fmt.Errorf("Invalid data")
 	}
@@ -171,7 +172,7 @@ func (ur *UserRepo) NewTokens(userId, userRole int) (string, string, error) {
 	if err != nil {
 		return "", "", err
 	}
-	err = ur.StoreRefreshToken(userId, refreshToken)
+	err = ur.StoreRefreshToken(ctx, userId, refreshToken)
 
 	if err != nil {
 		return "", "", err
@@ -199,7 +200,7 @@ func (ur *UserRepo) GenerateAccessToken(userID, userRole int) (string, error) {
 	return tokenstring, nil
 
 }
-func (ur *UserRepo) StoreRefreshToken(userID int, refresh string) error {
+func (ur *UserRepo) StoreRefreshToken(ctx context.Context, userID int, refresh string) error {
 	if userID == 0 || refresh == "" {
 		return fmt.Errorf("Invalid data.")
 	}
@@ -208,7 +209,7 @@ func (ur *UserRepo) StoreRefreshToken(userID int, refresh string) error {
 	hashToken := ur.HashRefreshToken(refresh, config.REFRESH_TOKEN_SECRET)
 
 	query := `INSERT INTO tokens (user_id,token, expires_at) VALUES($1, $2, $3)`
-	_, err := ur.db.Exec(query, userID, hashToken, expiresAt)
+	_, err := ur.db.ExecContext(ctx, query, userID, hashToken, expiresAt)
 	if err != nil {
 		return fmt.Errorf("Database error : %s", err.Error())
 	}
@@ -242,16 +243,14 @@ func (ur *UserRepo) VerifyAccessToken(tokenStr string) (*models.AccessToken, err
 
 	return accessToken, nil
 }
-func (ur *UserRepo) RestoreRefreshToken(token string) (int, int, string, error) {
+func (ur *UserRepo) RestoreRefreshToken(ctx context.Context, token string) (int, int, string, error) {
 	refreshHash := ur.HashRefreshToken(token, config.REFRESH_TOKEN_SECRET)
 	newRefresh, err := utils.GenerateRandomToken(32)
 	if err != nil {
 		return 0, 0, "", err
 	}
 	newRefreshHash := ur.HashRefreshToken(newRefresh, config.REFRESH_TOKEN_SECRET)
-	if err != nil {
-		return 0, 0, "", err
-	}
+
 	var userID, role int
 	query := `
     UPDATE tokens t
@@ -260,7 +259,7 @@ func (ur *UserRepo) RestoreRefreshToken(token string) (int, int, string, error) 
     WHERE t.token = $2 AND t.expires_at > NOW() AND u.id = t.user_id
     RETURNING t.user_id, u.role
 `
-	err = ur.db.QueryRow(query, newRefreshHash, refreshHash).Scan(&userID, &role)
+	err = ur.db.QueryRowContext(ctx, query, newRefreshHash, refreshHash).Scan(&userID, &role)
 
 	if err != nil {
 		return 0, 0, "", err
@@ -270,18 +269,11 @@ func (ur *UserRepo) RestoreRefreshToken(token string) (int, int, string, error) 
 
 //ADMİN CONTROL
 
-func (ur *UserRepo) OnlyAdmin(userID int) (bool, error) {
-	stmt, err := ur.db.Prepare("SELECT 1 FROM users WHERE role=1 AND id = $1 AND deleted_at IS NULL")
-
-	if err != nil {
-
-		return false, err
-	}
-	defer stmt.Close()
+func (ur *UserRepo) OnlyAdmin(ctx context.Context, userID int) (bool, error) {
+	query := "SELECT 1 FROM users WHERE role=1 AND id = $1 AND deleted_at IS NULL"
 
 	var tmp int
-
-	err = stmt.QueryRow(userID).Scan(&tmp)
+	err := ur.db.QueryRowContext(ctx, query, userID).Scan(&tmp)
 
 	if err != nil {
 		if err == sql.ErrNoRows {

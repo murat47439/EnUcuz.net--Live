@@ -96,7 +96,8 @@ func (pc *ProductController) GetLogs(w http.ResponseWriter, r *http.Request) {
 
 	data, err := os.ReadFile(logPath)
 	if err != nil {
-		http.Error(w, "Cannot read log", http.StatusInternalServerError)
+		config.Logger.Printf("GetLogs error: Cannot read log - %v", err)
+		RespondWithError(w, http.StatusInternalServerError, "Log dosyası okunamadı")
 		return
 	}
 	w.Write(data)

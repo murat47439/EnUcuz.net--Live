@@ -17,6 +17,7 @@ type Message struct {
 	Sender    int          `json:"sender" db:"sender"`
 	CreatedAt sql.NullTime `json:"created_at" db:"created_at"`
 }
+
 type NewChat struct {
 	Chat    Chat   `json:"chat"`
 	Message string `json:"message"`

@@ -45,9 +45,10 @@ func ConnectDB() *sqlx.DB {
 
 	sqlDB := stdlib.OpenDB(*config)
 
-	sqlDB.SetMaxOpenConns(10) // Neon için 25 fazla
-	sqlDB.SetMaxIdleConns(0)
-	sqlDB.SetConnMaxLifetime(3 * time.Minute)
+	sqlDB.SetMaxOpenConns(10)
+	sqlDB.SetMaxIdleConns(2)
+	sqlDB.SetConnMaxLifetime(5 * time.Minute)
+	sqlDB.SetConnMaxIdleTime(2 * time.Minute)
 
 	if err := sqlDB.Ping(); err != nil {
 		log.Fatal("Failed to ping database:", err)

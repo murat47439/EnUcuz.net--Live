@@ -9,8 +9,7 @@ import {
     ZoomIn,
     Store,
     ShieldCheck,
-    Share2,
-    Heart,
+    Link,
     AlertCircle,
     Gavel,
     Truck,
@@ -273,11 +272,9 @@ const ProductDetailCard: React.FC<ProductDetailCardProps> = ({ product }) => {
                         </div>
                         <div className="flex gap-1.5">
                             <button onClick={handleShare} className="p-2 rounded-lg border border-gray-200 text-gray-400 hover:text-gray-600 hover:bg-gray-50 transition-colors" title="Paylaş">
-                                <Share2 size={15} />
+                                <Link size={15} />
                             </button>
-                            <button onClick={() => setIsFav(!isFav)} className={`p-2 rounded-lg border transition-colors ${isFav ? "border-red-200 text-red-500 bg-red-50" : "border-gray-200 text-gray-400 hover:text-red-500 hover:bg-gray-50"}`} title="Favorilere Ekle">
-                                <Heart size={15} fill={isFav ? "currentColor" : "none"} />
-                            </button>
+
                         </div>
                     </div>
 

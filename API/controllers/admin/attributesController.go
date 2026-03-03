@@ -56,7 +56,8 @@ func (ac *AttributeController) AddCatAttribute(w http.ResponseWriter, r *http.Re
 
 	err := json.NewDecoder(r.Body).Decode(&data)
 	if err != nil {
-		RespondWithError(w, http.StatusBadRequest, "Invalid data")
+		config.Logger.Printf("AddCatAttribute error: Invalid JSON - %v", err)
+		RespondWithError(w, http.StatusBadRequest, "Geçersiz veri formatı")
 		return
 	}
 	defer r.Body.Close()
@@ -66,7 +67,8 @@ func (ac *AttributeController) AddCatAttribute(w http.ResponseWriter, r *http.Re
 
 	catattribute, err := ac.AttributeService.AddCatAttribute(ctx, &data)
 	if err != nil {
-		RespondWithError(w, http.StatusBadRequest, err.Error())
+		config.Logger.Printf("AddCatAttribute service error: %v", err)
+		RespondWithError(w, http.StatusInternalServerError, "Kategori özelliği eklenirken hata oluştu")
 		return
 	}
 	RespondWithJSON(w, http.StatusOK, map[string]interface{}{
@@ -78,7 +80,8 @@ func (ac *AttributeController) AddProdAttribute(w http.ResponseWriter, r *http.R
 	var data models.NewProductAttribute
 	err := json.NewDecoder(r.Body).Decode(&data)
 	if err != nil {
-		RespondWithError(w, http.StatusBadRequest, "Invalid data")
+		config.Logger.Printf("AddProdAttribute error: Invalid JSON - %v", err)
+		RespondWithError(w, http.StatusBadRequest, "Geçersiz veri formatı")
 		return
 	}
 	defer r.Body.Close()
@@ -88,7 +91,8 @@ func (ac *AttributeController) AddProdAttribute(w http.ResponseWriter, r *http.R
 
 	result, err := ac.AttributeService.AddProdAttributes(ctx, &data)
 	if err != nil {
-		RespondWithError(w, http.StatusBadRequest, err.Error())
+		config.Logger.Printf("AddProdAttribute service error: %v", err)
+		RespondWithError(w, http.StatusInternalServerError, "Ürün özelliği eklenirken hata oluştu")
 		return
 	}
 	RespondWithJSON(w, http.StatusOK, map[string]interface{}{
@@ -99,7 +103,8 @@ func (ac *AttributeController) AddProdAttribute(w http.ResponseWriter, r *http.R
 func (ac *AttributeController) GetProdAttributes(w http.ResponseWriter, r *http.Request) {
 	id, err := strconv.Atoi(chi.URLParam(r, "id"))
 	if err != nil {
-		RespondWithError(w, http.StatusBadRequest, "Invalid id")
+		config.Logger.Printf("GetProdAttributes error: Invalid ID - %v", err)
+		RespondWithError(w, http.StatusBadRequest, "Geçersiz ID")
 		return
 	}
 	ctx := r.Context()
@@ -107,7 +112,8 @@ func (ac *AttributeController) GetProdAttributes(w http.ResponseWriter, r *http.
 	defer cancel()
 	data, err := ac.AttributeService.GetProdAttributes(ctx, id)
 	if err != nil {
-		RespondWithError(w, http.StatusBadRequest, err.Error())
+		config.Logger.Printf("GetProdAttributes service error: %v", err)
+		RespondWithError(w, http.StatusInternalServerError, "Ürün özellikleri getirilirken hata oluştu")
 		return
 	}
 	RespondWithJSON(w, http.StatusOK, map[string]interface{}{
@@ -130,7 +136,8 @@ func (ac *AttributeController) GetAttributes(w http.ResponseWriter, r *http.Requ
 	defer cancel()
 	attributes, err := ac.AttributeService.GetAttributes(ctx, search, page)
 	if err != nil {
-		RespondWithError(w, http.StatusBadRequest, err.Error())
+		config.Logger.Printf("GetAttributes service error: %v", err)
+		RespondWithError(w, http.StatusInternalServerError, "Özellikler getirilirken hata oluştu")
 		return
 	}
 	RespondWithJSON(w, http.StatusOK, map[string]interface{}{
@@ -140,7 +147,8 @@ func (ac *AttributeController) GetAttributes(w http.ResponseWriter, r *http.Requ
 func (ac *AttributeController) GetCatAttributes(w http.ResponseWriter, r *http.Request) {
 	id, err := strconv.Atoi(chi.URLParam(r, "id"))
 	if err != nil {
-		RespondWithError(w, http.StatusBadRequest, "Invalid id")
+		config.Logger.Printf("GetCatAttributes error: Invalid ID - %v", err)
+		RespondWithError(w, http.StatusBadRequest, "Geçersiz ID")
 		return
 	}
 	ctx := r.Context()
@@ -149,7 +157,8 @@ func (ac *AttributeController) GetCatAttributes(w http.ResponseWriter, r *http.R
 	defer cancel()
 	catattribute, err := ac.AttributeService.GetCatAttribute(ctx, id)
 	if err != nil {
-		RespondWithError(w, http.StatusBadRequest, err.Error())
+		config.Logger.Printf("GetCatAttributes service error: %v", err)
+		RespondWithError(w, http.StatusInternalServerError, "Kategori özellikleri getirilirken hata oluştu")
 		return
 	}
 	RespondWithJSON(w, http.StatusOK, map[string]interface{}{
@@ -185,7 +194,8 @@ func (ac *AttributeController) DeleteAttribute(w http.ResponseWriter, r *http.Re
 func (ac *AttributeController) DeleteCatAttribute(w http.ResponseWriter, r *http.Request) {
 	id, err := strconv.Atoi(chi.URLParam(r, "id"))
 	if err != nil {
-		RespondWithError(w, http.StatusBadRequest, "Invalid id")
+		config.Logger.Printf("DeleteCatAttribute error: Invalid ID - %v", err)
+		RespondWithError(w, http.StatusBadRequest, "Geçersiz ID")
 		return
 	}
 	ctx := r.Context()
@@ -194,7 +204,8 @@ func (ac *AttributeController) DeleteCatAttribute(w http.ResponseWriter, r *http
 
 	err = ac.AttributeService.DeleteCatAttribute(ctx, id)
 	if err != nil {
-		RespondWithError(w, http.StatusBadRequest, err.Error())
+		config.Logger.Printf("DeleteCatAttribute service error: %v", err)
+		RespondWithError(w, http.StatusInternalServerError, "Kategori özelliği silinirken hata oluştu")
 		return
 	}
 	RespondWithJSON(w, http.StatusOK, map[string]string{
@@ -204,7 +215,8 @@ func (ac *AttributeController) DeleteCatAttribute(w http.ResponseWriter, r *http
 func (ac *AttributeController) DeleteProdAttribute(w http.ResponseWriter, r *http.Request) {
 	id, err := strconv.Atoi(chi.URLParam(r, "id"))
 	if err != nil {
-		RespondWithError(w, http.StatusBadRequest, "Invalid id")
+		config.Logger.Printf("DeleteProdAttribute error: Invalid ID - %v", err)
+		RespondWithError(w, http.StatusBadRequest, "Geçersiz ID")
 		return
 	}
 	ctx := r.Context()
@@ -212,7 +224,8 @@ func (ac *AttributeController) DeleteProdAttribute(w http.ResponseWriter, r *htt
 	defer cancel()
 	err = ac.AttributeService.DeleteProdAttribute(ctx, id)
 	if err != nil {
-		RespondWithError(w, http.StatusBadRequest, err.Error())
+		config.Logger.Printf("DeleteProdAttribute service error: %v", err)
+		RespondWithError(w, http.StatusInternalServerError, "Ürün özelliği silinirken hata oluştu")
 		return
 	}
 	RespondWithJSON(w, http.StatusOK, map[string]string{

@@ -2,7 +2,6 @@ package repo
 
 import (
 	"context"
-	"fmt"
 
 	"github.com/jmoiron/sqlx"
 )
@@ -20,8 +19,7 @@ func NewImageRepo(db *sqlx.DB) *ImageRepo {
 func (ir *ImageRepo) AuthDelete(ctx context.Context, userID int, imageID string) (bool, error) {
 	query := `SELECT EXISTS(SELECT 1 FROM product_images WHERE user_id = $1 AND product_url = $2)`
 	var exists bool
-	url := fmt.Sprintf(`s`)
-	err := ir.db.QueryRow(query, userID, url).Scan(&exists)
+	err := ir.db.QueryRowContext(ctx, query, userID, imageID).Scan(&exists)
 	if err != nil {
 		return false, err
 	}

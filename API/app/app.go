@@ -4,6 +4,7 @@ import (
 	"Store-Dio/clients"
 	"Store-Dio/config"
 	"Store-Dio/controllers"
+	"Store-Dio/internal/websocket"
 	"Store-Dio/middleware"
 	"Store-Dio/repo"
 	"Store-Dio/routes"
@@ -32,7 +33,9 @@ type App struct {
 
 	Route *chi.Mux
 
-	//Workers
+	Hub *websocket.Hub
+
+	// Workers
 	OfferWorker *workers.OfferWorker
 }
 
@@ -42,18 +45,22 @@ func NewApp(db *sqlx.DB) *App {
 
 	service := services.NewService(repo, db)
 
+	hub := websocket.NewHub(service.ChatService)
+	go hub.Run()
+
 	controllers := controllers.NewController(service)
 
 	userMiddleware := middleware.NewUserMiddleware(repo.UserRepo)
 
+	ws := websocket.NewHandler(hub)
+
 	// Route
+	route := routes.SetupRoutes(controllers, userMiddleware, ws)
 
-	route := routes.SetupRoutes(controllers, userMiddleware)
-
-	//workers
+	// Workers
 	offerWorker := workers.NewOfferWorker(repo.OffersRepo)
 
-	//Clients
+	// Clients
 	ctx := context.Background()
 	clients.InitGeminiClient(ctx)
 	clients.NewImagesClient(config.CLOUDFLARE_ACCOUNT_ID, config.CLOUDFLARE_API_KEY)
@@ -62,12 +69,12 @@ func NewApp(db *sqlx.DB) *App {
 
 		Repo:           repo,
 		Service:        service,
+		Hub:            hub,
 		Controller:     controllers,
 		UserMiddleware: userMiddleware,
 		OfferWorker:    offerWorker,
 
 		// Route
-
 		Route: route,
 	}
 }

@@ -18,7 +18,17 @@ func NewChatService(repo *repo.ChatRepo, db db.TxStarter) *ChatService {
 		db: db}
 }
 
-func (cs *ChatService) CheckChat(ctx context.Context, user_id, prod_id int) (bool, error) {
+func (cs *ChatService) CheckChat(ctx context.Context, user_id, chat_id int) (bool, error) {
+	if user_id == 0 || chat_id == 0 {
+		return false, fmt.Errorf("Invalid data")
+	}
+	exists, err := cs.ChatRepo.CheckChat(ctx, user_id, chat_id)
+	if err != nil {
+		return false, err
+	}
+	return exists, nil
+}
+func (cs *ChatService) CheckChatByProd(ctx context.Context, user_id, prod_id int) (bool, error) {
 	if user_id == 0 || prod_id == 0 {
 		return false, fmt.Errorf("Invalid data")
 	}
@@ -30,8 +40,6 @@ func (cs *ChatService) CheckChat(ctx context.Context, user_id, prod_id int) (boo
 }
 func (cs *ChatService) NewChat(ctx context.Context, data *models.Chat, message string) (*models.Chat, *models.Message, error) {
 	switch {
-	case data.ChannelID == "":
-		return nil, nil, fmt.Errorf("Invalid ChannelID")
 	case data.Sender == 0:
 		return nil, nil, fmt.Errorf("Invalid sender")
 	case data.Recipient == 0:
@@ -39,6 +47,9 @@ func (cs *ChatService) NewChat(ctx context.Context, data *models.Chat, message s
 	case message == "":
 		return nil, nil, fmt.Errorf("Invalid message")
 	}
+
+	// channel_id backend'de otomatik oluşturuluyor
+	data.ChannelID = fmt.Sprintf("chat-%d-%d-%d", data.Sender, data.Recipient, data.ProductID)
 	tx, err := cs.db.BeginTxx(ctx, nil)
 	if err != nil {
 		return nil, nil, fmt.Errorf("TX error : %w", err)

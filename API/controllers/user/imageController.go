@@ -49,7 +49,8 @@ func (ic *ImageController) UploadImage(w http.ResponseWriter, r *http.Request) {
 
 	imageID, _, err := cf.UploadImageV2(ctx, file, fileHeader.Filename)
 	if err != nil {
-		RespondWithError(w, http.StatusInternalServerError, err.Error())
+		config.Logger.Printf("UploadImage error: %v", err)
+		RespondWithError(w, http.StatusInternalServerError, "Resim yüklenirken hata oluştu")
 		return
 	}
 	RespondWithJSON(w, http.StatusOK, map[string]string{
@@ -74,8 +75,8 @@ func (ic *ImageController) DeleteImage(w http.ResponseWriter, r *http.Request) {
 
 	control, err := ic.ImagesServices.AuthDelete(ctx, userID, id)
 	if err != nil {
-		RespondWithError(w, http.StatusBadRequest, "Error")
-		config.Logger.Printf(err.Error())
+		config.Logger.Printf("DeleteImage Auth error: %v", err)
+		RespondWithError(w, http.StatusBadRequest, "Silme yetkisi doğrulanamadı")
 		return
 	}
 	if !control {
@@ -87,7 +88,8 @@ func (ic *ImageController) DeleteImage(w http.ResponseWriter, r *http.Request) {
 
 	result, err := cf.DeleteImageV2(ctx, id)
 	if err != nil {
-		RespondWithError(w, http.StatusInternalServerError, err.Error())
+		config.Logger.Printf("DeleteImage Cloudflare error: %v", err)
+		RespondWithError(w, http.StatusInternalServerError, "Resim silinirken hata oluştu")
 		return
 	}
 	if !result {

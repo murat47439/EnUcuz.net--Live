@@ -2,6 +2,7 @@ package repo
 
 import (
 	"Store-Dio/models"
+	"context"
 	"database/sql"
 	"fmt"
 
@@ -18,8 +19,8 @@ func NewBrandsRepo(db *sqlx.DB) *BrandsRepo {
 	}
 }
 
-func (br *BrandsRepo) AddBrand(data *models.Brand) (*models.Brand, error) {
-	tx, err := br.db.Beginx()
+func (br *BrandsRepo) AddBrand(ctx context.Context, data *models.Brand) (*models.Brand, error) {
+	tx, err := br.db.BeginTxx(ctx, nil)
 	if err != nil {
 		return nil, fmt.Errorf("TX Error : %s", err.Error())
 	}
@@ -37,7 +38,7 @@ func (br *BrandsRepo) AddBrand(data *models.Brand) (*models.Brand, error) {
 		}
 	}()
 
-	exists, err := br.CheckBrand(data.Name, tx)
+	exists, err := br.CheckBrand(ctx, data.Name, tx)
 
 	if exists {
 		return nil, fmt.Errorf("Brand does exists")
@@ -46,7 +47,7 @@ func (br *BrandsRepo) AddBrand(data *models.Brand) (*models.Brand, error) {
 	query := `INSERT INTO brands(name, created__at) VALUES ($1, NOW()) RETURNING id`
 
 	var id int
-	err = tx.QueryRow(query, data.Name).Scan(&id)
+	err = tx.QueryRowContext(ctx, query, data.Name).Scan(&id)
 
 	if err != nil {
 		return nil, fmt.Errorf("Database error : %s", err.Error())
@@ -56,7 +57,7 @@ func (br *BrandsRepo) AddBrand(data *models.Brand) (*models.Brand, error) {
 	return data, nil
 
 }
-func (br *BrandsRepo) CheckBrand(name string, tx *sqlx.Tx) (bool, error) {
+func (br *BrandsRepo) CheckBrand(ctx context.Context, name string, tx *sqlx.Tx) (bool, error) {
 	if name == "" {
 		return false, fmt.Errorf("Invalid data")
 	}
@@ -65,7 +66,7 @@ func (br *BrandsRepo) CheckBrand(name string, tx *sqlx.Tx) (bool, error) {
 
 	var exists bool
 
-	err := tx.QueryRow(query, name).Scan(&exists)
+	err := tx.QueryRowContext(ctx, query, name).Scan(&exists)
 
 	if err != nil {
 		return false, fmt.Errorf("Database error : %s", err.Error())
@@ -73,8 +74,8 @@ func (br *BrandsRepo) CheckBrand(name string, tx *sqlx.Tx) (bool, error) {
 	return exists, nil
 
 }
-func (br *BrandsRepo) UpdateBrand(data *models.Brand) error {
-	tx, err := br.db.Beginx()
+func (br *BrandsRepo) UpdateBrand(ctx context.Context, data *models.Brand) error {
+	tx, err := br.db.BeginTxx(ctx, nil)
 
 	if err != nil {
 		return fmt.Errorf("TX Error : %s", err.Error())
@@ -93,7 +94,7 @@ func (br *BrandsRepo) UpdateBrand(data *models.Brand) error {
 		}
 	}()
 
-	exists, err := br.CheckBrand(data.Name, tx)
+	exists, err := br.CheckBrand(ctx, data.Name, tx)
 
 	if err != nil {
 		return err
@@ -105,32 +106,32 @@ func (br *BrandsRepo) UpdateBrand(data *models.Brand) error {
 
 	query := `UPDATE brands SET name = $1 WHERE id = $2`
 
-	_, err = tx.Exec(query, data.Name, data.ID)
+	_, err = tx.ExecContext(ctx, query, data.Name, data.ID)
 
 	if err != nil {
 		return fmt.Errorf("Database error : %s", err.Error())
 	}
 	return nil
 }
-func (br *BrandsRepo) GetBrand(id int) (*models.Brand, error) {
+func (br *BrandsRepo) GetBrand(ctx context.Context, id int) (*models.Brand, error) {
 	query := `SELECT id, name, created_at, deleted_at FROM brands WHERE id = $1 AND deleted_at IS NULL`
 
 	var brand models.Brand
 
-	err := br.db.Get(&brand, query, id)
+	err := br.db.GetContext(ctx, &brand, query, id)
 
 	if err != nil {
 		return nil, fmt.Errorf("Database error : %s", err.Error())
 	}
 	return &brand, nil
 }
-func (br *BrandsRepo) GetBrands(page int, search string) ([]*models.Brand, error) {
+func (br *BrandsRepo) GetBrands(ctx context.Context, page int, search string) ([]*models.Brand, error) {
 	limit := 50
 	var brands []*models.Brand
 	offset := (page - 1) * 50
 	query := `SELECT id, name, created_at, deleted_at FROM brands WHERE name ILIKE $1 AND deleted_at IS NULL LIMIT $2 OFFSET $3`
 
-	rows, err := br.db.Queryx(query, search+"%", limit, offset)
+	rows, err := br.db.QueryxContext(ctx, query, search+"%", limit, offset)
 
 	if err != nil {
 		if err == sql.ErrNoRows {
@@ -154,10 +155,10 @@ func (br *BrandsRepo) GetBrands(page int, search string) ([]*models.Brand, error
 
 	return brands, nil
 }
-func (br *BrandsRepo) DeleteBrand(data *models.Brand) error {
+func (br *BrandsRepo) DeleteBrand(ctx context.Context, data *models.Brand) error {
 	query := `UPDATE brands SET deleted_at = NOW() WHERE id = $1 AND deleted_at IS NULL`
 
-	_, err := br.db.Exec(query, data.ID)
+	_, err := br.db.ExecContext(ctx, query, data.ID)
 
 	if err != nil {
 		return fmt.Errorf("Database error : %s", err.Error())

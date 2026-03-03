@@ -48,10 +48,13 @@ func (fc *FavoriesController) AddFavori(w http.ResponseWriter, r *http.Request) 
 	}
 	defer r.Body.Close()
 
-	err = fc.FavoriesServices.AddFavori(product, userID)
+	ctx := r.Context()
+	ctx, cancel := context.WithTimeout(ctx, 10*time.Second)
+	defer cancel()
+	err = fc.FavoriesServices.AddFavori(ctx, product, userID)
 	if err != nil {
 		config.Logger.Printf("AddFavori service error: %v", err)
-		RespondWithError(w, http.StatusInternalServerError, err.Error())
+		RespondWithError(w, http.StatusInternalServerError, "Favorilere eklenirken hata oluştu")
 		return
 	}
 
@@ -77,7 +80,10 @@ func (fc *FavoriesController) RemoveFavori(w http.ResponseWriter, r *http.Reques
 		return
 	}
 
-	err = fc.FavoriesServices.RemoveFavori(fav, userID)
+	ctx := r.Context()
+	ctx, cancel := context.WithTimeout(ctx, 10*time.Second)
+	defer cancel()
+	err = fc.FavoriesServices.RemoveFavori(ctx, fav, userID)
 	if err != nil {
 		config.Logger.Printf("RemoveFavori service error: %v", err)
 		RespondWithError(w, http.StatusNotFound, "Favori bulunamadı veya silinemedi")

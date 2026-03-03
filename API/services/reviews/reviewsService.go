@@ -3,6 +3,7 @@ package reviews
 import (
 	"Store-Dio/models"
 	"Store-Dio/repo"
+	"context"
 	"fmt"
 )
 
@@ -15,42 +16,42 @@ func NewReviewService(repo *repo.ReviewsRepo) *ReviewService {
 		ReviewRepo: repo,
 	}
 }
-func (rs *ReviewService) AddReview(data *models.Review) error {
+func (rs *ReviewService) AddReview(ctx context.Context, data *models.Review) error {
 	if data.ProductID == 0 || data.UserID == 0 || data.Content == "" {
 		return fmt.Errorf("Invalid data")
 	}
-	err := rs.ReviewRepo.AddReview(data)
+	err := rs.ReviewRepo.AddReview(ctx, data)
 	if err != nil {
 		return err
 	}
 	return nil
 }
-func (rs *ReviewService) UpdateReview(data *models.Review) error {
+func (rs *ReviewService) UpdateReview(ctx context.Context, data *models.Review) error {
 	if data.ProductID == 0 || data.UserID == 0 || data.Content == "" || data.ID == 0 {
 		return fmt.Errorf("Invalid data")
 	}
-	err := rs.ReviewRepo.UpdateReview(data)
+	err := rs.ReviewRepo.UpdateReview(ctx, data)
 
 	if err != nil {
 		return err
 	}
 	return nil
 }
-func (rs *ReviewService) RemoveReview(id, userID int) error {
+func (rs *ReviewService) RemoveReview(ctx context.Context, id, userID int) error {
 	if id == 0 || userID == 0 {
 		return fmt.Errorf("Invalid data")
 	}
-	err := rs.ReviewRepo.RemoveReview(id, userID)
+	err := rs.ReviewRepo.RemoveReview(ctx, id, userID)
 	if err != nil {
 		return err
 	}
 	return nil
 }
-func (rs *ReviewService) GetReview(id, userRole, userID int) (*models.Review, error) {
+func (rs *ReviewService) GetReview(ctx context.Context, id, userRole, userID int) (*models.Review, error) {
 	if id == 0 || userID == 0 {
 		return nil, fmt.Errorf("Invalid data")
 	}
-	review, err := rs.ReviewRepo.GetReview(id)
+	review, err := rs.ReviewRepo.GetReview(ctx, id)
 
 	if err != nil {
 		return nil, err
@@ -62,14 +63,14 @@ func (rs *ReviewService) GetReview(id, userRole, userID int) (*models.Review, er
 	}
 	return review, nil
 }
-func (rs *ReviewService) GetReviews(page, prodID int) ([]*models.Review, error) {
+func (rs *ReviewService) GetReviews(ctx context.Context, page, prodID int) ([]*models.Review, error) {
 	if page < 1 {
 		page = 1
 	}
 	if prodID == 0 {
 		return nil, fmt.Errorf("Invalid data")
 	}
-	reviews, err := rs.ReviewRepo.GetReviews(page, prodID)
+	reviews, err := rs.ReviewRepo.GetReviews(ctx, page, prodID)
 
 	if err != nil {
 		return nil, err
@@ -77,22 +78,22 @@ func (rs *ReviewService) GetReviews(page, prodID int) ([]*models.Review, error) 
 
 	return reviews, nil
 }
-func (rs *ReviewService) GetUserReviews(user_id int) ([]*models.Review, error) {
+func (rs *ReviewService) GetUserReviews(ctx context.Context, user_id int) ([]*models.Review, error) {
 	if user_id == 0 {
 		return nil, fmt.Errorf("Invalid data")
 	}
-	reviews, err := rs.ReviewRepo.GetUserReviews(user_id)
+	reviews, err := rs.ReviewRepo.GetUserReviews(ctx, user_id)
 
 	if err != nil {
 		return nil, err
 	}
 	return reviews, nil
 }
-func (rs *ReviewService) ReviewStatusUpdate(review *models.Review) error {
+func (rs *ReviewService) ReviewStatusUpdate(ctx context.Context, review *models.Review) error {
 	if review.ID == 0 || review.Status < 0 || review.Status > 3 {
 		return fmt.Errorf("Invalid data")
 	}
-	err := rs.ReviewRepo.ReviewStatusUpdate(review.ID, review.Status)
+	err := rs.ReviewRepo.ReviewStatusUpdate(ctx, review.ID, review.Status)
 	if err != nil {
 		return err
 	}

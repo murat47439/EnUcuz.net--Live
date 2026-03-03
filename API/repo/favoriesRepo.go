@@ -2,6 +2,7 @@ package repo
 
 import (
 	"Store-Dio/models"
+	"context"
 	"database/sql"
 	"fmt"
 
@@ -18,23 +19,23 @@ func NewFavoriesRepo(db *sqlx.DB) *FavoriesRepo {
 	}
 }
 
-func (fr *FavoriesRepo) CheckFavoriAdd(userID, prodid int) (bool, error) {
+func (fr *FavoriesRepo) CheckFavoriAdd(ctx context.Context, userID, prodid int) (bool, error) {
 	if prodid == 0 || userID == 0 {
 		return false, fmt.Errorf("Invalid CHECK")
 	}
 	query := `SELECT EXISTS(SELECT 1 FROM wishlist WHERE user_id = $1 AND product_id = $2 AND deleted_at IS NULL)`
 	var exists bool
 
-	err := fr.db.Get(&exists, query, userID, prodid)
+	err := fr.db.GetContext(ctx, &exists, query, userID, prodid)
 	if err != nil {
 		return false, fmt.Errorf("Database error")
 	}
 	return exists, nil
 }
 
-func (fr *FavoriesRepo) AddFavori(prod *models.Product, user_id int) error {
+func (fr *FavoriesRepo) AddFavori(ctx context.Context, prod *models.Product, user_id int) error {
 
-	exists, err := fr.CheckFavoriAdd(user_id, prod.ID)
+	exists, err := fr.CheckFavoriAdd(ctx, user_id, prod.ID)
 	if err != nil {
 		return err
 	}
@@ -44,16 +45,16 @@ func (fr *FavoriesRepo) AddFavori(prod *models.Product, user_id int) error {
 
 	query := `INSERT INTO wishlist(user_id,product_id,created_at) VALUES($1, $2, NOW())`
 
-	_, err = fr.db.Exec(query, user_id, prod.ID)
+	_, err = fr.db.ExecContext(ctx, query, user_id, prod.ID)
 
 	if err != nil {
 		return fmt.Errorf("Database error : %s", err.Error())
 	}
 	return nil
 }
-func (fr *FavoriesRepo) RemoveFavori(fav *models.Favori) error {
+func (fr *FavoriesRepo) RemoveFavori(ctx context.Context, fav *models.Favori) error {
 
-	tx, err := fr.db.Beginx()
+	tx, err := fr.db.BeginTxx(ctx, nil)
 
 	if err != nil {
 		return fmt.Errorf("TX error : %s", err.Error())
@@ -72,7 +73,7 @@ func (fr *FavoriesRepo) RemoveFavori(fav *models.Favori) error {
 		}
 	}()
 
-	exists, err := fr.CheckFavori(fav.ID, fav.UserID, tx)
+	exists, err := fr.CheckFavori(ctx, fav.ID, fav.UserID, tx)
 
 	if err != nil {
 		return err
@@ -83,7 +84,7 @@ func (fr *FavoriesRepo) RemoveFavori(fav *models.Favori) error {
 
 	query := `UPDATE wishlist SET deleted_at = NOW() WHERE product_id = $1 `
 
-	_, err = tx.Exec(query, fav.ID)
+	_, err = tx.ExecContext(ctx, query, fav.ID)
 
 	if err != nil {
 		return fmt.Errorf("Database error = %s ", err.Error())
@@ -91,7 +92,7 @@ func (fr *FavoriesRepo) RemoveFavori(fav *models.Favori) error {
 
 	return nil
 }
-func (fr *FavoriesRepo) CheckFavori(id int, user_id int, tx *sqlx.Tx) (bool, error) {
+func (fr *FavoriesRepo) CheckFavori(ctx context.Context, id int, user_id int, tx *sqlx.Tx) (bool, error) {
 	if id == 0 || user_id == 0 {
 		return false, fmt.Errorf("Invalid data")
 	}
@@ -99,14 +100,14 @@ func (fr *FavoriesRepo) CheckFavori(id int, user_id int, tx *sqlx.Tx) (bool, err
 
 	var exists bool
 
-	err := tx.Get(&exists, query, id, user_id)
+	err := tx.GetContext(ctx, &exists, query, id, user_id)
 
 	if err != nil {
 		return false, fmt.Errorf("Database error : %s", err.Error())
 	}
 	return exists, nil
 }
-func (fr *FavoriesRepo) GetFavourites(page int, user_id int) ([]*models.Product, error) {
+func (fr *FavoriesRepo) GetFavourites(ctx context.Context, page int, user_id int) ([]*models.Product, error) {
 	var favourites []*models.Product
 	if page < 1 {
 		page = 1
@@ -114,7 +115,7 @@ func (fr *FavoriesRepo) GetFavourites(page int, user_id int) ([]*models.Product,
 	offset := (page - 1) * 50
 	query := `SELECT p.id, p.name, p.description, p.stock, p.price, p.image_url, p.category_id, p.created_at, p.updated_at, p.brand_id, p.seller_id, p.status, p.deleted_at FROM products p INNER JOIN wishlist w ON p.id = w.product_id WHERE w.user_id = $1 AND w.deleted_at IS NULL LIMIT $2 OFFSET $3`
 
-	rows, err := fr.db.Queryx(query, user_id, 50, offset)
+	rows, err := fr.db.QueryxContext(ctx, query, user_id, 50, offset)
 
 	if err != nil {
 		if err == sql.ErrNoRows {
@@ -122,6 +123,7 @@ func (fr *FavoriesRepo) GetFavourites(page int, user_id int) ([]*models.Product,
 		}
 		return nil, fmt.Errorf("Database error : %s", err.Error())
 	}
+	defer rows.Close()
 	for rows.Next() {
 		var prod models.Product
 		if err = rows.StructScan(&prod); err != nil {

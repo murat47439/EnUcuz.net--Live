@@ -107,6 +107,7 @@ func (cr *ChatRepo) GetChat(ctx context.Context, chat_id int) ([]*models.Message
 	if err != nil {
 		return nil, fmt.Errorf("Database error %w", err)
 	}
+	defer rows.Close()
 
 	for rows.Next() {
 		var m models.Message

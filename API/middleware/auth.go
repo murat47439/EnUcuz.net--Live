@@ -40,7 +40,7 @@ func (um *UserMiddleware) OnlyAdmin(next http.Handler) http.Handler {
 			return
 		}
 
-		isAdmin, err := um.UserRepo.OnlyAdmin(jwtToken.UserID)
+		isAdmin, err := um.UserRepo.OnlyAdmin(r.Context(), jwtToken.UserID)
 
 		if err != nil {
 			config.Logger.Printf("DB error checking admin role: %v", err)

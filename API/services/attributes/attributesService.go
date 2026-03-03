@@ -23,7 +23,7 @@ func NewAttributeService(db db.TxStarter, attribtueRepo *repo.AttributeRepo, pro
 }
 
 func (as *AttributeService) AddAttribute(ctx context.Context, data *models.Attribute) (models.Attribute, error) {
-	exists, err := as.AttributeRepo.CheckAttribute(data.Name)
+	exists, err := as.AttributeRepo.CheckAttribute(ctx, data.Name)
 	if err != nil {
 		return models.Attribute{}, err
 	}
@@ -71,7 +71,7 @@ func (as *AttributeService) AddProdAttributes(ctx context.Context, data *models.
 			}
 		}
 	}()
-	exists, err := as.ProductRepo.CheckProduct(data.ProductID)
+	exists, err := as.ProductRepo.CheckProduct(ctx, data.ProductID)
 	if err != nil {
 		return nil, err
 	}

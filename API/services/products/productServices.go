@@ -125,7 +125,7 @@ func (ps *ProductService) UpdateProductForAdmin(ctx context.Context, product mod
 			}
 		}
 	}()
-	exists, err := ps.ProductRepo.CheckProduct(product.ID)
+	exists, err := ps.ProductRepo.CheckProduct(ctx, product.ID)
 	switch {
 	case err != nil:
 		return nil, err
@@ -151,7 +151,7 @@ func (ps *ProductService) DeleteProduct(ctx context.Context, id, user_id int) er
 	if data.SellerID != user_id {
 		return fmt.Errorf("👍")
 	}
-	err = ps.ProductRepo.DeleteProduct(data)
+	err = ps.ProductRepo.DeleteProduct(ctx, data)
 
 	if err != nil {
 		return err
@@ -167,7 +167,7 @@ func (ps *ProductService) DeleteProductForAdmin(ctx context.Context, id int) err
 	if err != nil {
 		return err
 	}
-	err = ps.ProductRepo.DeleteProduct(data)
+	err = ps.ProductRepo.DeleteProduct(ctx, data)
 
 	if err != nil {
 		return err

@@ -7,7 +7,7 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import {
   UserRound, LogOut, PackageIcon, Heart, LucidePlusCircle, Handshake,
-  Menu, X, Home, Power, Search, ChevronDown
+  Menu, X, Home, Power, Search, ChevronDown, MessageSquareText
 } from "lucide-react";
 
 const Header: React.FC = () => {
@@ -113,6 +113,9 @@ const Header: React.FC = () => {
                   {/* Favori */}
                   <Link href="/profile/favories" className="hidden sm:flex items-center justify-center w-10 h-10 rounded-lg hover:bg-gray-100 transition-colors relative" title="Favoriler">
                     <Heart size={20} className="text-gray-500" />
+                  </Link>
+                  <Link href="/profile/chats" className="hidden sm:flex items-center justify-center w-10 h-10 rounded-lg hover:bg-gray-100 transition-colors relative" title="Mesajlar">
+                    <MessageSquareText size={20} className="text-gray-500" />
                   </Link>
 
                   {/* Kullanıcı Dropdown */}

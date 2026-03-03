@@ -163,13 +163,13 @@ func (ar *AttributeRepo) GetCatAttributes(ctx context.Context, id int) ([]models
 	}
 	return data, nil
 }
-func (ar *AttributeRepo) CheckAttribute(name string) (bool, error) {
+func (ar *AttributeRepo) CheckAttribute(ctx context.Context, name string) (bool, error) {
 	if name == "" {
 		return false, fmt.Errorf("Invalid data")
 	}
 	var exists bool
 	query := `SELECT EXISTS(SELECT 1 FROM attributes WHERE name = $1)`
-	err := ar.db.Get(&exists, query, name)
+	err := ar.db.GetContext(ctx, &exists, query, name)
 	if err != nil {
 		return false, fmt.Errorf("Database error")
 	}

@@ -4,8 +4,10 @@ import (
 	"Store-Dio/config"
 	"Store-Dio/models"
 	"Store-Dio/services/reviews"
+	"context"
 	"encoding/json"
 	"net/http"
+	"time"
 )
 
 type ReviewController struct {
@@ -29,7 +31,10 @@ func (rc *ReviewController) ReviewStatusUpdate(w http.ResponseWriter, r *http.Re
 	}
 	defer r.Body.Close()
 
-	err = rc.ReviewService.ReviewStatusUpdate(review)
+	ctx := r.Context()
+	ctx, cancel := context.WithTimeout(ctx, 10*time.Second)
+	defer cancel()
+	err = rc.ReviewService.ReviewStatusUpdate(ctx, review)
 	if err != nil {
 		config.Logger.Printf("ReviewStatusUpdate service error: %v", err)
 		RespondWithError(w, http.StatusInternalServerError, "Yorum durumu güncellenirken hata oluştu")

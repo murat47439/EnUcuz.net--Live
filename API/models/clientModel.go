@@ -21,7 +21,7 @@ type CFMessage struct {
 
 type DeleteResponse struct {
 	Success  bool        `json:"success"`
-	Result   interface{} `json:"result"` // delete bazen boş döner
+	Result   interface{} `json:"result"`
 	Errors   []CFMessage `json:"errors"`
 	Messages []CFMessage `json:"messages"`
 }

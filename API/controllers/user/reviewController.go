@@ -4,9 +4,11 @@ import (
 	"Store-Dio/config"
 	"Store-Dio/models"
 	"Store-Dio/services/reviews"
+	"context"
 	"encoding/json"
 	"net/http"
 	"strconv"
+	"time"
 
 	"github.com/go-chi/chi/v5"
 )
@@ -41,7 +43,10 @@ func (rc *ReviewController) AddReview(w http.ResponseWriter, r *http.Request) {
 	defer r.Body.Close()
 
 	review.UserID = userID
-	err = rc.ReviewService.AddReview(review)
+	ctx := r.Context()
+	ctx, cancel := context.WithTimeout(ctx, 10*time.Second)
+	defer cancel()
+	err = rc.ReviewService.AddReview(ctx, review)
 	if err != nil {
 		config.Logger.Printf("AddReview service error: %v", err)
 		RespondWithError(w, http.StatusInternalServerError, "Yorum eklenirken hata oluştu")
@@ -73,7 +78,10 @@ func (rc *ReviewController) UpdateReview(w http.ResponseWriter, r *http.Request)
 	defer r.Body.Close()
 
 	review.UserID = userID
-	err = rc.ReviewService.UpdateReview(review)
+	ctx := r.Context()
+	ctx, cancel := context.WithTimeout(ctx, 10*time.Second)
+	defer cancel()
+	err = rc.ReviewService.UpdateReview(ctx, review)
 	if err != nil {
 		config.Logger.Printf("UpdateReview service error: %v", err)
 		RespondWithError(w, http.StatusInternalServerError, "Yorum güncellenirken hata oluştu")
@@ -102,7 +110,10 @@ func (rc *ReviewController) RemoveReview(w http.ResponseWriter, r *http.Request)
 		return
 	}
 
-	err = rc.ReviewService.RemoveReview(id, userID)
+	ctx := r.Context()
+	ctx, cancel := context.WithTimeout(ctx, 10*time.Second)
+	defer cancel()
+	err = rc.ReviewService.RemoveReview(ctx, id, userID)
 	if err != nil {
 		config.Logger.Printf("RemoveReview service error: %v", err)
 		RespondWithError(w, http.StatusNotFound, "Yorum bulunamadı veya silinemedi")
@@ -131,7 +142,10 @@ func (rc *ReviewController) GetReview(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	review, err := rc.ReviewService.GetReview(id, userRole, userID)
+	ctx := r.Context()
+	ctx, cancel := context.WithTimeout(ctx, 10*time.Second)
+	defer cancel()
+	review, err := rc.ReviewService.GetReview(ctx, id, userRole, userID)
 	if err != nil {
 		config.Logger.Printf("GetReview service error: %v", err)
 		RespondWithError(w, http.StatusNotFound, "Yorum bulunamadı")
@@ -160,7 +174,10 @@ func (rc *ReviewController) GetReviews(w http.ResponseWriter, r *http.Request) {
 
 	config.Logger.Printf("GetReviews parameters: productID=%d, page=%d", prodID, page)
 
-	reviews, err := rc.ReviewService.GetReviews(page, prodID)
+	ctx := r.Context()
+	ctx, cancel := context.WithTimeout(ctx, 10*time.Second)
+	defer cancel()
+	reviews, err := rc.ReviewService.GetReviews(ctx, page, prodID)
 	if err != nil {
 		config.Logger.Printf("GetReviews service error: %v", err)
 		RespondWithError(w, http.StatusInternalServerError, "Yorumlar yüklenirken hata oluştu")
@@ -186,7 +203,10 @@ func (rc *ReviewController) GetUserReviews(w http.ResponseWriter, r *http.Reques
 		return
 	}
 
-	reviews, err := rc.ReviewService.GetUserReviews(userID)
+	ctx := r.Context()
+	ctx, cancel := context.WithTimeout(ctx, 10*time.Second)
+	defer cancel()
+	reviews, err := rc.ReviewService.GetUserReviews(ctx, userID)
 	if err != nil {
 		config.Logger.Printf("GetUserReviews service error: %v", err)
 		RespondWithError(w, http.StatusInternalServerError, "Kullanıcı yorumları yüklenirken hata oluştu")

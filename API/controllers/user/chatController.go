@@ -42,7 +42,7 @@ func (cc *ChatController) CheckChat(w http.ResponseWriter, r *http.Request) {
 	ctx, cancel := context.WithTimeout(ctx, 10*time.Second)
 	defer cancel()
 
-	exists, err := cc.ChatService.CheckChat(ctx, userID, prod_id)
+	exists, err := cc.ChatService.CheckChatByProd(ctx, userID, prod_id)
 	if err != nil {
 		config.Logger.Printf("CheckChat service error: %v", err)
 		RespondWithError(w, http.StatusInternalServerError, "Sohbet kontrolü yapılırken hata oluştu")
@@ -74,6 +74,8 @@ func (cc *ChatController) NewChat(w http.ResponseWriter, r *http.Request) {
 	defer r.Body.Close()
 
 	model.Chat.Sender = userID
+	config.Logger.Printf("NewChat service error: %v", model.Chat.Sender)
+
 	ctx := r.Context()
 	ctx, cancel := context.WithTimeout(ctx, 10*time.Second)
 	defer cancel()
@@ -86,6 +88,9 @@ func (cc *ChatController) NewChat(w http.ResponseWriter, r *http.Request) {
 	}
 
 	config.Logger.Printf("NewChat success: Chat created for user %d", userID)
+
+	// Karşı tarafa (recipient) WebSocket ile anlık bildirim gönder
+
 	RespondWithJSON(w, http.StatusCreated, map[string]interface{}{
 		"message": mes,
 		"chat":    data,

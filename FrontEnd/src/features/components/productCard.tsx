@@ -85,7 +85,7 @@ const ProductCard: React.FC<ProductCardProps> = ({ product, favori = false, edit
             )}
 
             {/* Ürün Link */}
-            <Link key={product.id} href={`/product/${product.id}`} className="block">
+            <Link key={product.id} href={`/product/${product.slug}-p-${product.id}`} className="block">
                 <div className="flex flex-col h-full">
                     {/* Görsel */}
                     <div className="relative w-full h-36 sm:h-40 overflow-hidden bg-white">

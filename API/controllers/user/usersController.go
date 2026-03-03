@@ -4,6 +4,7 @@ import (
 	"Store-Dio/config"
 	"Store-Dio/models"
 	"Store-Dio/services/users"
+	"context"
 	"encoding/json"
 	"net/http"
 	"time"
@@ -25,22 +26,19 @@ func (uc *UserController) CreateUser(w http.ResponseWriter, r *http.Request) {
 
 	if err != nil {
 		config.Logger.Printf("CreateUser decode error: %v", err)
-		RespondWithJSON(w, http.StatusBadRequest, map[string]string{
-			"error":   "Internal Server Error",
-			"message": err.Error(),
-		})
+		RespondWithError(w, http.StatusBadRequest, "Geçersiz veri formatı")
 		return
 	}
 	defer r.Body.Close()
 
-	_, err = uc.UserService.CreateUser(user)
+	ctx := r.Context()
+	ctx, cancel := context.WithTimeout(ctx, 10*time.Second)
+	defer cancel()
+	_, err = uc.UserService.CreateUser(ctx, user)
 
 	if err != nil {
 		config.Logger.Printf("Failed to create user:  %v", err)
-		RespondWithJSON(w, http.StatusBadRequest, map[string]string{
-			"error":   "Internal Server Error",
-			"message": err.Error(),
-		})
+		RespondWithError(w, http.StatusInternalServerError, "Kullanıcı oluşturulurken hata oluştu")
 		return
 	}
 
@@ -64,7 +62,10 @@ func (uc *UserController) Login(w http.ResponseWriter, r *http.Request) {
 	}
 	defer r.Body.Close()
 
-	accessToken, refreshToken, userdata, err := uc.UserService.Login(user)
+	ctx := r.Context()
+	ctx, cancel := context.WithTimeout(ctx, 10*time.Second)
+	defer cancel()
+	accessToken, refreshToken, userdata, err := uc.UserService.Login(ctx, user)
 
 	if err != nil {
 		config.Logger.Printf("Login service error: %v", err)
@@ -108,12 +109,16 @@ func (uc *UserController) Logout(w http.ResponseWriter, r *http.Request) {
 
 	cookie, err := r.Cookie("refresh_token")
 	if err != nil {
-		http.Error(w, "Missing refresh token", http.StatusUnauthorized)
+		config.Logger.Printf("Logout error: Missing refresh token - %v", err)
+		RespondWithError(w, http.StatusUnauthorized, "Refresh token eksik")
 		return
 	}
 	token := cookie.Value
 
-	_, err = uc.UserService.Logout(token, userID)
+	ctx := r.Context()
+	ctx, cancel := context.WithTimeout(ctx, 10*time.Second)
+	defer cancel()
+	_, err = uc.UserService.Logout(ctx, token, userID)
 	if err != nil {
 		config.Logger.Printf("Logout service error: %v", err)
 		RespondWithError(w, http.StatusInternalServerError, "Çıkış yapılırken hata oluştu")
@@ -154,7 +159,10 @@ func (uc *UserController) GetUserData(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	user, err := uc.UserService.GetUserDataByID(userID)
+	ctx := r.Context()
+	ctx, cancel := context.WithTimeout(ctx, 10*time.Second)
+	defer cancel()
+	user, err := uc.UserService.GetUserDataByID(ctx, userID)
 	if err != nil {
 		config.Logger.Printf("GetUserData service error: %v", err)
 		RespondWithError(w, http.StatusNotFound, "Kullanıcı bulunamadı")
@@ -191,7 +199,10 @@ func (uc *UserController) Update(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	user, err := uc.UserService.Update(data)
+	ctx := r.Context()
+	ctx, cancel := context.WithTimeout(ctx, 10*time.Second)
+	defer cancel()
+	user, err := uc.UserService.Update(ctx, data)
 	if err != nil {
 		config.Logger.Printf("Update service error: %v", err)
 		RespondWithError(w, http.StatusInternalServerError, "Kullanıcı güncellenirken hata oluştu")
@@ -220,7 +231,10 @@ func (uc *UserController) GetAccess(w http.ResponseWriter, r *http.Request) {
 	}
 
 	refreshToken := cookie.Value
-	accessToken, refreshToken, err := uc.UserService.RefreshAccessToken(refreshToken)
+	ctx := r.Context()
+	ctx, cancel := context.WithTimeout(ctx, 10*time.Second)
+	defer cancel()
+	accessToken, refreshToken, err := uc.UserService.RefreshAccessToken(ctx, refreshToken)
 	if err != nil {
 		config.Logger.Printf("GetAccess service error: %v", err)
 		RespondWithError(w, http.StatusUnauthorized, "Token süresi dolmuş")

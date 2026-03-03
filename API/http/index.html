@@ -1,0 +1,817 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EnUcuz API Documentation</title>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
+    rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #0f172a;
+      --sidebar: #020617;
+      --content: #020617;
+      --text: #e5e7eb;
+      --muted: #94a3b8;
+      --border: #1e293b;
+      --accent: #3b82f6;
+      --code: #020617;
+      --green: #22c55e;
+      --sidebar-hover: #1e293b;
+      --badge-beta-bg: #475569;
+      --badge-beta-text: #f8fafc;
+    }
+
+    [data-theme="light"] {
+      --bg: #f8fafc;
+      --sidebar: #ffffff;
+      --content: #ffffff;
+      --text: #0f172a;
+      --muted: #64748b;
+      --border: #e2e8f0;
+      --accent: #2563eb;
+      --code: #f1f5f9;
+      --green: #16a34a;
+      --sidebar-hover: #f1f5f9;
+      --badge-beta-bg: #e2e8f0;
+      --badge-beta-text: #475569;
+    }
+
+    * {
+      box-sizing: border-box;
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    body {
+      margin: 0;
+      font-family: Inter, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      display: flex;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    /* SIDEBAR */
+
+    .sidebar {
+      width: 280px;
+      background: var(--sidebar);
+      border-right: 1px solid var(--border);
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+    }
+
+    .sidebar-header {
+      padding: 20px;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      font-weight: 700;
+      font-size: 1.1rem;
+      color: var(--text);
+    }
+
+    .theme-toggle {
+      background: transparent;
+      border: 1px solid var(--border);
+      color: var(--muted);
+      cursor: pointer;
+      padding: 6px 10px;
+      border-radius: 6px;
+      font-size: 12px;
+      font-weight: 500;
+    }
+
+    .theme-toggle:hover {
+      color: var(--text);
+      border-color: var(--muted);
+    }
+
+    .nav-content {
+      overflow-y: auto;
+      flex: 1;
+      padding: 20px 0;
+    }
+
+    .nav-group {
+      margin-bottom: 24px;
+    }
+
+    .nav-group h3 {
+      padding: 0 24px;
+      margin: 0 0 8px 0;
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--muted);
+      font-weight: 600;
+    }
+
+    .nav-link {
+      display: block;
+      padding: 8px 24px;
+      color: var(--muted);
+      text-decoration: none;
+      font-size: 14px;
+      border-left: 3px solid transparent;
+    }
+
+    .nav-link.active {
+      color: var(--text);
+      background: var(--sidebar-hover);
+      border-left: 3px solid var(--accent);
+      font-weight: 500;
+    }
+
+    .nav-link:hover {
+      color: var(--text);
+      background: var(--sidebar-hover);
+    }
+
+    /* CONTENT */
+
+    .main {
+      flex: 1;
+      overflow-y: auto;
+      position: relative;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: auto;
+      padding: 60px 40px;
+    }
+
+    .section {
+      margin-bottom: 80px;
+      padding-bottom: 60px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .section:last-child {
+      border-bottom: none;
+    }
+
+    h1 {
+      font-size: 32px;
+      margin-bottom: 16px;
+      font-weight: 700;
+      color: var(--text);
+    }
+
+    h2 {
+      margin-top: 40px;
+      font-size: 20px;
+      display: flex;
+      align-items: center;
+    }
+
+    p {
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 4px 8px;
+      font-size: 12px;
+      font-weight: 700;
+      border-radius: 4px;
+      margin-right: 12px;
+      color: white;
+      text-transform: uppercase;
+      font-family: "JetBrains Mono";
+    }
+
+    .get {
+      background: #2563eb
+    }
+
+    .post {
+      background: #16a34a
+    }
+
+    .put {
+      background: #ca8a04
+    }
+
+    .delete {
+      background: #dc2626
+    }
+
+    .badge-beta {
+      background: var(--badge-beta-bg);
+      color: var(--badge-beta-text);
+      font-size: 0.7em;
+      padding: 2px 6px;
+      border-radius: 4px;
+      margin-left: 8px;
+      vertical-align: middle;
+    }
+
+    /* CODE */
+
+    .code-container {
+      margin-top: 20px;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    .code-header {
+      background: var(--sidebar-hover);
+      padding: 8px 16px;
+      font-size: 12px;
+      color: var(--muted);
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-weight: 600;
+      text-transform: uppercase;
+    }
+
+    .code {
+      background: var(--code);
+      padding: 20px;
+      font-family: "JetBrains Mono";
+      font-size: 13px;
+      white-space: pre;
+      overflow-x: auto;
+      color: var(--text);
+      line-height: 1.5;
+      margin: 0;
+      border: none;
+    }
+
+    /* TABLE */
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+    }
+
+    td,
+    th {
+      padding: 12px 0;
+      border-bottom: 1px solid var(--border);
+      font-size: 14px;
+      text-align: left;
+    }
+
+    th {
+      color: var(--text);
+      font-weight: 600;
+      border-bottom: 2px solid var(--border);
+    }
+
+    td {
+      color: var(--muted);
+      vertical-align: top;
+    }
+
+    .type-label {
+      font-family: "JetBrains Mono";
+      color: var(--accent);
+      font-size: 13px;
+    }
+
+    /* COPY BUTTON */
+
+    .copy {
+      background: transparent;
+      border: 1px solid var(--border);
+      color: var(--muted);
+      padding: 4px 8px;
+      cursor: pointer;
+      font-size: 10px;
+      border-radius: 4px;
+      text-transform: uppercase;
+    }
+
+    .copy:hover {
+      color: var(--accent);
+      border-color: var(--accent);
+    }
+
+    /* Beta Off Box */
+    .beta-box {
+      background: var(--sidebar-hover);
+      border: 1px dashed var(--border);
+      border-radius: 12px;
+      padding: 60px;
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    .beta-icon {
+      font-size: 48px;
+      margin-bottom: 20px;
+      display: block;
+    }
+  </style>
+</head>
+
+<body data-theme="dark">
+
+  <div class="sidebar">
+    <div class="sidebar-header">
+      <div class="logo">EnUcuz API</div>
+      <button class="theme-toggle" onclick="toggleTheme()">Light</button>
+    </div>
+
+    <div class="nav-content">
+      <div class="nav-group">
+        <h3>General</h3>
+        <a href="#overview" class="nav-link active">Overview</a>
+        <a href="#auth" class="nav-link">Cookie Structure</a>
+      </div>
+
+      <div class="nav-group">
+        <h3>Authentication & Profile</h3>
+        <a href="#auth-login" class="nav-link">Login</a>
+        <a href="#auth-register" class="nav-link">Register</a>
+        <a href="#auth-logout" class="nav-link">Logout</a>
+        <a href="#profile-get" class="nav-link">Get Profile</a>
+        <a href="#profile-update" class="nav-link">Update Profile</a>
+      </div>
+
+      <div class="nav-group">
+        <h3>Products</h3>
+        <a href="#products-list" class="nav-link">List Products</a>
+        <a href="#products-get" class="nav-link">Get Product</a>
+        <a href="#products-create" class="nav-link">Create Product</a>
+        <a href="#products-update" class="nav-link">Update Product</a>
+        <a href="#products-delete" class="nav-link">Delete Product</a>
+      </div>
+
+      <div class="nav-group">
+        <h3>Offers</h3>
+        <a href="#offers-list" class="nav-link">List Offers (Incoming)</a>
+        <a href="#offers-bidder" class="nav-link">List Offers (Outgoing)</a>
+        <a href="#offers-create" class="nav-link">Create Offer</a>
+        <a href="#offers-update" class="nav-link">Update Offer</a>
+        <a href="#offers-counter" class="nav-link">Counter Offer</a>
+      </div>
+
+      <div class="nav-group">
+        <h3>Reviews & Favorites</h3>
+        <a href="#reviews-list" class="nav-link">Reviews</a>
+        <a href="#reviews-create" class="nav-link">Add Review</a>
+        <a href="#favorites-list" class="nav-link">Favorites</a>
+      </div>
+
+      <div class="nav-group">
+        <h3>Communication</h3>
+        <a href="#chats" class="nav-link">Chats <span class="badge-beta">BETA OFF</span></a>
+      </div>
+
+      <div class="nav-group">
+        <h3>Metadata</h3>
+        <a href="#brands" class="nav-link">Brands</a>
+        <a href="#categories" class="nav-link">Categories</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="main">
+    <div class="container">
+
+      <!-- OVERVIEW -->
+      <section id="overview" class="section">
+        <h1>Overview</h1>
+        <p>Welcome to the EnUcuz API. This API allows programmatic access to platform resources including products,
+          offers, and user data. All responses are in JSON format.</p>
+
+        <div class="code-container">
+          <div class="code-header">
+            <span>Base URL</span>
+            <button class="copy" onclick="copyCode(this)">copy</button>
+          </div>
+          <div class="code">https://api.enucuz.net.tr/api</div>
+        </div>
+      </section>
+
+      <!-- AUTH -->
+      <section id="auth" class="section">
+        <h1>Authentication</h1>
+        <p>Authentication is handled using secure HTTP-only cookies. You do not need to manually attach tokens to your
+          requests if you are operating within a browser environment that supports cookies.</p>
+
+        <div class="code-container">
+          <div class="code-header">
+            <span>Cookie Structure</span>
+          </div>
+          <div class="code">Cookie: access_token=...; refresh_token=...;</div>
+        </div>
+      </section>
+
+      <!-- AUTHENTICATION -->
+      <section id="auth-login" class="section">
+        <h1><span class="badge post">POST</span> /login</h1>
+        <p>Authenticate a user and set new session cookies.</p>
+
+        <div class="code-container">
+          <div class="code-header">
+            <span>Request Body</span>
+            <button class="copy" onclick="copyCode(this)">copy</button>
+          </div>
+          <div class="code">{
+            "email": "user@example.com",
+            "password": "password123"
+            }</div>
+        </div>
+      </section>
+
+      <section id="auth-register" class="section">
+        <h1><span class="badge post">POST</span> /register</h1>
+        <p>Create a new user account.</p>
+
+        <div class="code-container">
+          <div class="code-header">
+            <span>Request Body</span>
+            <button class="copy" onclick="copyCode(this)">copy</button>
+          </div>
+          <div class="code">{
+            "name": "Jane",
+            "surname": "Doe",
+            "email": "jane@example.com",
+            "password": "securePass!23",
+            "phone": "5550000000"
+            }</div>
+        </div>
+      </section>
+
+      <section id="auth-logout" class="section">
+        <h1><span class="badge get">GET</span> /refresh/logout</h1>
+        <p>Invalidate session cookies.</p>
+      </section>
+
+      <!-- USER PROFILE -->
+      <section id="profile-get" class="section">
+        <h1><span class="badge get">GET</span> /profile</h1>
+        <p>Get the currently logged-in user's profile.</p>
+
+        <div class="code-container">
+          <div class="code-header">
+            <span>Response</span>
+            <button class="copy" onclick="copyCode(this)">copy</button>
+          </div>
+          <div class="code">{
+            "user": {
+            "id": 1,
+            "email": "jane@example.com",
+            "name": "Jane",
+            "surname": "Doe",
+            "phone": "5550000000"
+            }
+            }</div>
+        </div>
+      </section>
+
+      <section id="profile-update" class="section">
+        <h1><span class="badge put">PUT</span> /profile/update</h1>
+        <p>Update user profile information.</p>
+
+        <div class="code-container">
+          <div class="code-header">
+            <span>Request Body</span>
+            <button class="copy" onclick="copyCode(this)">copy</button>
+          </div>
+          <div class="code">{
+            "id": 1,
+            "name": "Jane",
+            "surname": "Smith",
+            "email": "jane.new@example.com",
+            "phone": "5551112222"
+            }</div>
+        </div>
+      </section>
+
+      <!-- PRODUCT ROUTES -->
+      <section id="products-list" class="section">
+        <h1><span class="badge get">GET</span> /products</h1>
+        <p>Retrieve a paginated list of products. Use query parameters to filter results.</p>
+
+        <h3>Query Parameters</h3>
+        <table>
+          <tr>
+            <th>Field</th>
+            <th>Type</th>
+            <th>Description</th>
+          </tr>
+          <tr>
+            <td>page</td>
+            <td class="type-label">integer</td>
+            <td>Page number (default: 1)</td>
+          </tr>
+          <tr>
+            <td>category</td>
+            <td class="type-label">integer</td>
+            <td>Filter by category ID</td>
+          </tr>
+          <tr>
+            <td>brand</td>
+            <td class="type-label">integer</td>
+            <td>Filter by brand ID</td>
+          </tr>
+          <tr>
+            <td>search</td>
+            <td class="type-label">string</td>
+            <td>Search term for product name</td>
+          </tr>
+        </table>
+
+        <div class="code-container">
+          <div class="code-header">
+            <span>Response</span>
+            <button class="copy" onclick="copyCode(this)">copy</button>
+          </div>
+          <div class="code">{
+            "message": "Successfully",
+            "products": [
+            {
+            "id": 101,
+            "name": "Wireless Mouse",
+            "price": 250,
+            "stock": 50,
+            "category_id": 1,
+            "brand_id": 2
+            }
+            ]
+            }</div>
+        </div>
+      </section>
+
+      <section id="products-get" class="section">
+        <h1><span class="badge get">GET</span> /products/{id}</h1>
+        <p>Get detailed information about a specific product.</p>
+
+        <div class="code-container">
+          <div class="code-header">
+            <span>Response</span>
+            <button class="copy" onclick="copyCode(this)">copy</button>
+          </div>
+          <div class="code">{
+            "product": {
+            "id": 101,
+            "name": "Wireless Mouse",
+            "description": "Ergonomic...",
+            "price": 250,
+            "stock": 50
+            },
+            "attribute": []
+            }</div>
+        </div>
+      </section>
+
+      <section id="products-create" class="section">
+        <h1><span class="badge post">POST</span> /products/transactions/new</h1>
+        <p>Create a new product listing. <strong>Requires Authentication.</strong> This endpoint expects Multipart Form
+          Data.</p>
+
+        <h3>Form Data</h3>
+        <table>
+          <tr>
+            <th>Field</th>
+            <th>Type</th>
+            <th>Description</th>
+          </tr>
+          <tr>
+            <td>name</td>
+            <td class="type-label">string</td>
+            <td>Product name</td>
+          </tr>
+          <tr>
+            <td>price</td>
+            <td class="type-label">integer</td>
+            <td>Price (must be positive)</td>
+          </tr>
+          <tr>
+            <td>stock</td>
+            <td class="type-label">integer</td>
+            <td>Stock quantity</td>
+          </tr>
+          <tr>
+            <td>category</td>
+            <td class="type-label">integer</td>
+            <td>Category ID</td>
+          </tr>
+          <tr>
+            <td>brand</td>
+            <td class="type-label">integer</td>
+            <td>Brand ID</td>
+          </tr>
+          <tr>
+            <td>images</td>
+            <td class="type-label">json</td>
+            <td>JSON array of image URLs</td>
+          </tr>
+        </table>
+      </section>
+
+      <section id="products-update" class="section">
+        <h1><span class="badge put">PUT</span> /products/transactions/{id}</h1>
+        <p>Update an existing product's details.</p>
+
+        <div class="code-container">
+          <div class="code-header">
+            <span>Request Body</span>
+            <button class="copy" onclick="copyCode(this)">copy</button>
+          </div>
+          <div class="code">{
+            "price": 300,
+            "stock": 45
+            }</div>
+        </div>
+      </section>
+
+      <section id="products-delete" class="section">
+        <h1><span class="badge delete">DELETE</span> /products/transactions/{id}</h1>
+        <p>Delete a product listing.</p>
+      </section>
+
+
+      <!-- OFFERS -->
+      <section id="offers-list" class="section">
+        <h1><span class="badge get">GET</span> /offers</h1>
+        <p>Get offers received for your products (Incoming).</p>
+        <div class="code-container">
+          <div class="code-header"><span>Response</span></div>
+          <div class="code">{ "offers": [ ... ] }</div>
+        </div>
+      </section>
+
+      <section id="offers-bidder" class="section">
+        <h1><span class="badge get">GET</span> /offers/bidder</h1>
+        <p>Get offers you have made on other products (Outgoing).</p>
+      </section>
+
+      <section id="offers-create" class="section">
+        <h1><span class="badge post">POST</span> /offers</h1>
+        <p>Make a new offer on a product.</p>
+
+        <div class="code-container">
+          <div class="code-header">
+            <span>Request Body</span>
+            <button class="copy" onclick="copyCode(this)">copy</button>
+          </div>
+          <div class="code">{
+            "productId": 101,
+            "price": 200
+            }</div>
+        </div>
+      </section>
+
+      <section id="offers-update" class="section">
+        <h1><span class="badge put">PUT</span> /offers/{id}</h1>
+        <p>Accept or reject an offer.</p>
+
+        <div class="code-container">
+          <div class="code-header">
+            <span>Request Body</span>
+            <button class="copy" onclick="copyCode(this)">copy</button>
+          </div>
+          <div class="code">{
+            "action": "accept"
+            }</div>
+        </div>
+      </section>
+
+      <section id="offers-counter" class="section">
+        <h1><span class="badge post">POST</span> /offers/counter/{id}</h1>
+        <p>Respond to an offer with a counter-offer.</p>
+
+        <div class="code-container">
+          <div class="code-header">
+            <span>Request Body</span>
+            <button class="copy" onclick="copyCode(this)">copy</button>
+          </div>
+          <div class="code">{
+            "price": 220
+            }</div>
+        </div>
+      </section>
+
+      <!-- REVIEWS & FAVORITES -->
+      <section id="reviews-list" class="section">
+        <h1><span class="badge get">GET</span> /reviews</h1>
+        <p>List reviews for a user or product.</p>
+      </section>
+
+      <section id="reviews-create" class="section">
+        <h1><span class="badge post">POST</span> /reviews</h1>
+        <p>Add a review for a product.</p>
+        <div class="code-container">
+          <div class="code-header"><span>Request Body</span></div>
+          <div class="code">{
+            "product_id": 101,
+            "content": "Excellent quality!",
+            "rating": 5
+            }</div>
+        </div>
+      </section>
+
+      <section id="favorites-list" class="section">
+        <h1><span class="badge get">GET</span> /favourites</h1>
+        <p>Get your favorite products.</p>
+      </section>
+
+
+      <!-- CHATS BETA OFF -->
+      <section id="chats" class="section">
+        <h1>Chats <span class="badge-beta">BETA OFF</span></h1>
+
+        <div class="beta-box">
+          <span class="beta-icon">🚧</span>
+          <h2 style="justify-content: center; margin-top: 0;">Feature Under Maintenance</h2>
+          <p>The Chat functionality is currently disabled for beta testing. Endpoints usually available under
+            <code>/chats</code> are offline while we perform infrastructure upgrades.
+          </p>
+          <p>Please check back later for the release version.</p>
+        </div>
+      </section>
+
+      <!-- METADATA -->
+      <section id="brands" class="section">
+        <h1><span class="badge get">GET</span> /brands</h1>
+        <p>Get a list of all available brands.</p>
+      </section>
+
+      <section id="categories" class="section">
+        <h1><span class="badge get">GET</span> /categories</h1>
+        <p>Get the category tree.</p>
+        <div class="code-container">
+          <div class="code-header"><span>Response</span></div>
+          <div class="code">[
+            { "id": 1, "name": "Electronics" },
+            { "id": 2, "name": "Fashion" }
+            ]</div>
+        </div>
+      </section>
+
+    </div>
+  </div>
+
+  <script>
+    function toggleTheme() {
+      const body = document.body;
+      const btn = document.querySelector('.theme-toggle');
+      const isDark = body.getAttribute('data-theme') === 'dark';
+
+      body.setAttribute('data-theme', isDark ? 'light' : 'dark');
+      btn.innerText = isDark ? 'Dark Mode' : 'Light Mode';
+    }
+
+    function copyCode(btn) {
+      // Find the code block within the same container
+      let container = btn.closest('.code-container');
+      let codeBlock = container.querySelector('.code');
+
+      if (codeBlock) {
+        navigator.clipboard.writeText(codeBlock.innerText);
+        let originalText = btn.innerText;
+        btn.innerText = "COPIED";
+        setTimeout(() => {
+          btn.innerText = originalText;
+        }, 1000);
+      }
+    }
+
+    // Active Link Highlighting
+    const navLinks = document.querySelectorAll('.nav-link');
+    const sections = document.querySelectorAll('.section');
+
+    window.addEventListener('scroll', () => {
+      let current = '';
+      sections.forEach(section => {
+        const sectionTop = section.offsetTop;
+        const sectionHeight = section.clientHeight;
+        if (pageYOffset >= (sectionTop - 200)) {
+          current = section.getAttribute('id');
+        }
+      });
+
+      navLinks.forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href').includes(current) && current !== '') {
+          link.classList.add('active');
+        }
+      });
+    });
+  </script>
+
+</body>
+
+</html>

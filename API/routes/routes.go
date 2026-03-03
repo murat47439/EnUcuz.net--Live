@@ -2,6 +2,7 @@ package routes
 
 import (
 	"Store-Dio/controllers"
+	"Store-Dio/internal/websocket"
 
 	userMiddleware "Store-Dio/middleware"
 	"net/http"
@@ -14,6 +15,7 @@ import (
 func SetupRoutes(
 	controller *controllers.Controller,
 	um *userMiddleware.UserMiddleware,
+	ws *websocket.Handler,
 ) *chi.Mux {
 	r := chi.NewRouter()
 	r.Use(cors.Handler(cors.Options{
@@ -159,6 +161,12 @@ func SetupRoutes(
 			off.Put("/{id}", controller.UserOffersController.UpdateOffer)
 			off.Get("/", controller.UserOffersController.GetOffersBySeller)
 			off.Get("/bidder", controller.UserOffersController.GetOffersByBidder)
+		})
+
+		// WebSocket endpoint
+		r.Route("/ws", func(wsRoute chi.Router) {
+			wsRoute.Use(um.AuthMiddleware)
+			wsRoute.Get("/", ws.ServeWS)
 		})
 
 	})

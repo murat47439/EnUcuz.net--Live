@@ -26,7 +26,8 @@ func NewProductController(service *products.ProductService) *ProductController {
 func (pc *ProductController) GetProduct(w http.ResponseWriter, r *http.Request) {
 	id, err := strconv.Atoi(chi.URLParam(r, "id"))
 	if err != nil {
-		RespondWithError(w, http.StatusBadRequest, "Invalid id")
+		config.Logger.Printf("GetProduct error: Invalid ID - %v", err)
+		RespondWithError(w, http.StatusBadRequest, "Geçersiz ürün ID'si")
 		return
 	}
 	ctx := r.Context()
@@ -36,7 +37,8 @@ func (pc *ProductController) GetProduct(w http.ResponseWriter, r *http.Request) 
 	product, attributes, err := pc.ProductService.GetProduct(ctx, id)
 
 	if err != nil {
-		RespondWithError(w, http.StatusBadRequest, err.Error())
+		config.Logger.Printf("GetProduct service error: %v", err)
+		RespondWithError(w, http.StatusNotFound, "Ürün bulunamadı")
 		return
 	}
 
@@ -49,12 +51,14 @@ func (pc *ProductController) GetProduct(w http.ResponseWriter, r *http.Request) 
 func (pc *ProductController) UpdateProduct(w http.ResponseWriter, r *http.Request) {
 	userID, ok := r.Context().Value(middleware.UserIDKey).(int)
 	if !ok {
-		RespondWithError(w, http.StatusUnauthorized, "Unauthorized")
+		config.Logger.Printf("UpdateProduct error: Unauthorized access")
+		RespondWithError(w, http.StatusUnauthorized, "Yetkisiz erişim")
 		return
 	}
 	id, err := strconv.Atoi(chi.URLParam(r, "id"))
 	if err != nil {
-		RespondWithError(w, http.StatusBadRequest, "Invalid data")
+		config.Logger.Printf("UpdateProduct error: Invalid ID - %v", err)
+		RespondWithError(w, http.StatusBadRequest, "Geçersiz veri")
 		return
 	}
 	ctx := r.Context()
@@ -65,7 +69,8 @@ func (pc *ProductController) UpdateProduct(w http.ResponseWriter, r *http.Reques
 	err = json.NewDecoder(r.Body).Decode(&product)
 
 	if err != nil {
-		RespondWithError(w, http.StatusBadRequest, "Invalid JSON data")
+		config.Logger.Printf("UpdateProduct error: Invalid JSON - %v", err)
+		RespondWithError(w, http.StatusBadRequest, "Geçersiz veri formatı")
 		return
 	}
 	config.Logger.Printf("%+v", product)
@@ -76,7 +81,8 @@ func (pc *ProductController) UpdateProduct(w http.ResponseWriter, r *http.Reques
 		return
 	}
 	if id != int(product.ID) {
-		RespondWithError(w, http.StatusBadRequest, "ID does not match")
+		config.Logger.Printf("UpdateProduct error: ID mismatch %d != %d", id, product.ID)
+		RespondWithError(w, http.StatusBadRequest, "ID eşleşmiyor")
 		return
 	}
 
@@ -85,7 +91,8 @@ func (pc *ProductController) UpdateProduct(w http.ResponseWriter, r *http.Reques
 	updproduct, err := pc.ProductService.UpdateProduct(ctx, &product, userID)
 
 	if err != nil {
-		RespondWithError(w, http.StatusBadRequest, err.Error())
+		config.Logger.Printf("UpdateProduct service error: %v", err)
+		RespondWithError(w, http.StatusInternalServerError, "Ürün güncellenirken hata oluştu")
 		return
 	}
 	RespondWithJSON(w, http.StatusOK, map[string]interface{}{
@@ -187,7 +194,8 @@ func (pc *ProductController) DeleteProduct(w http.ResponseWriter, r *http.Reques
 	id, err := strconv.Atoi(chi.URLParam(r, "id"))
 
 	if err != nil {
-		RespondWithError(w, http.StatusBadRequest, "Invalid data")
+		config.Logger.Printf("DeleteProduct error: Invalid ID - %v", err)
+		RespondWithError(w, http.StatusBadRequest, "Geçersiz veri")
 		return
 	}
 	ctx := r.Context()
@@ -195,12 +203,14 @@ func (pc *ProductController) DeleteProduct(w http.ResponseWriter, r *http.Reques
 	defer cancel()
 	userID, ok := r.Context().Value(middleware.UserIDKey).(int)
 	if !ok {
-		RespondWithError(w, http.StatusUnauthorized, "Unauthorized")
+		config.Logger.Printf("DeleteProduct error: Unauthorized access")
+		RespondWithError(w, http.StatusUnauthorized, "Yetkisiz erişim")
 		return
 	}
 	err = pc.ProductService.DeleteProduct(ctx, id, userID)
 	if err != nil {
-		RespondWithError(w, http.StatusBadRequest, err.Error())
+		config.Logger.Printf("DeleteProduct service error: %v", err)
+		RespondWithError(w, http.StatusInternalServerError, "Ürün silinirken hata oluştu")
 		return
 	}
 	RespondWithJSON(w, http.StatusOK, map[string]string{
@@ -232,7 +242,8 @@ func (pc *ProductController) GetProducts(w http.ResponseWriter, r *http.Request)
 	products, err := pc.ProductService.GetProducts(ctx, page, brand_id, category_id, search)
 
 	if err != nil {
-		RespondWithError(w, http.StatusBadRequest, "Error : %s"+err.Error())
+		config.Logger.Printf("GetProducts service error: %v", err)
+		RespondWithError(w, http.StatusInternalServerError, "Ürünler listelenirken hata oluştu")
 		return
 	}
 
@@ -244,7 +255,8 @@ func (pc *ProductController) GetProducts(w http.ResponseWriter, r *http.Request)
 func (pc *ProductController) GetUserProducts(w http.ResponseWriter, r *http.Request) {
 	userID, ok := r.Context().Value(middleware.UserIDKey).(int)
 	if !ok {
-		RespondWithError(w, http.StatusUnauthorized, "Unauthorized")
+		config.Logger.Printf("GetUserProducts error: Unauthorized access")
+		RespondWithError(w, http.StatusUnauthorized, "Yetkisiz erişim")
 		return
 	}
 	page, err := strconv.Atoi(r.URL.Query().Get("page"))
@@ -256,7 +268,8 @@ func (pc *ProductController) GetUserProducts(w http.ResponseWriter, r *http.Requ
 	defer cancel()
 	products, err := pc.ProductService.GetUserProducts(ctx, userID, page)
 	if err != nil {
-		RespondWithError(w, http.StatusBadRequest, err.Error())
+		config.Logger.Printf("GetUserProducts service error: %v", err)
+		RespondWithError(w, http.StatusInternalServerError, "Kullanıcı ürünleri listelenirken hata oluştu")
 		return
 	}
 	RespondWithJSON(w, http.StatusOK, map[string]interface{}{
@@ -268,7 +281,8 @@ func (pc *ProductController) CreateDescription(w http.ResponseWriter, r *http.Re
 	var text models.AIRequestDescription
 	err := json.NewDecoder(r.Body).Decode(&text)
 	if err != nil {
-		RespondWithError(w, http.StatusBadRequest, "Invalid JSON data")
+		config.Logger.Printf("CreateDescription error: Invalid JSON - %v", err)
+		RespondWithError(w, http.StatusBadRequest, "Geçersiz veri formatı")
 		return
 	}
 	ctx := r.Context()
@@ -276,7 +290,8 @@ func (pc *ProductController) CreateDescription(w http.ResponseWriter, r *http.Re
 	defer cancel()
 	AItext, err := pc.ProductService.CreateDescription(ctx, text.Text)
 	if err != nil {
-		RespondWithError(w, http.StatusInternalServerError, err.Error())
+		config.Logger.Printf("CreateDescription service error: %v", err)
+		RespondWithError(w, http.StatusInternalServerError, "Açıklama oluşturulurken hata oluştu")
 		return
 	}
 	RespondWithJSON(w, http.StatusOK, map[string]interface{}{

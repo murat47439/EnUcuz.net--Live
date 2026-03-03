@@ -4,9 +4,11 @@ import (
 	"Store-Dio/config"
 	"Store-Dio/models"
 	"Store-Dio/services/categories"
+	"context"
 	"encoding/json"
 	"net/http"
 	"strconv"
+	"time"
 
 	"github.com/go-chi/chi/v5"
 )
@@ -32,7 +34,8 @@ func (cc *CategoriesController) AddCategory(w http.ResponseWriter, r *http.Reque
 	}
 	defer r.Body.Close()
 
-	data, err := cc.CategoriesService.AddCategory(category)
+	ctx := r.Context()
+	data, err := cc.CategoriesService.AddCategory(ctx, category)
 	if err != nil {
 		config.Logger.Printf("AddCategory service error: %v", err)
 		RespondWithError(w, http.StatusInternalServerError, "Kategori eklenirken hata oluştu")
@@ -50,14 +53,19 @@ func (cc *CategoriesController) UpdateCategory(w http.ResponseWriter, r *http.Re
 	err := json.NewDecoder(r.Body).Decode(&category)
 
 	if err != nil {
-		RespondWithError(w, http.StatusBadRequest, "Invalid data")
+		config.Logger.Printf("UpdateCategory error: Invalid JSON - %v", err)
+		RespondWithError(w, http.StatusBadRequest, "Geçersiz veri formatı")
 		return
 	}
 	defer r.Body.Close()
-	err = cc.CategoriesService.UpdateCategory(category)
+	ctx := r.Context()
+	ctx, cancel := context.WithTimeout(ctx, 10*time.Second)
+	defer cancel()
+	err = cc.CategoriesService.UpdateCategory(ctx, category)
 
 	if err != nil {
-		RespondWithError(w, http.StatusBadRequest, err.Error())
+		config.Logger.Printf("UpdateCategory service error: %v", err)
+		RespondWithError(w, http.StatusInternalServerError, "Kategori güncellenirken hata oluştu")
 		return
 	}
 	RespondWithJSON(w, http.StatusOK, map[string]string{
@@ -74,7 +82,10 @@ func (cc *CategoriesController) DeleteCategory(w http.ResponseWriter, r *http.Re
 		return
 	}
 
-	err = cc.CategoriesService.DeleteCategory(id)
+	ctx := r.Context()
+	ctx, cancel := context.WithTimeout(ctx, 10*time.Second)
+	defer cancel()
+	err = cc.CategoriesService.DeleteCategory(ctx, id)
 	if err != nil {
 		config.Logger.Printf("DeleteCategory service error: %v", err)
 		RespondWithError(w, http.StatusNotFound, "Kategori bulunamadı veya silinemedi")

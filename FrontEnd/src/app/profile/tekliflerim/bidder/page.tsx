@@ -27,7 +27,8 @@ import {
 
     CalendarDays,
 
-    TrendingUp
+    TrendingUp,
+    MessageCircle
 } from "lucide-react";
 
 
@@ -323,6 +324,21 @@ export default function OfferBidderPage() {
                                                             <TrendingUp size={15} />
                                                             Karşı Teklif
                                                         </button>
+                                                    </div>
+                                                </div>
+                                            )}
+
+                                            {/* Kabul Edildi — satıcıdan mesaj bekleniyor */}
+                                            {offer.status === 1 && (
+                                                <div className="pt-3 border-t border-gray-100">
+                                                    <div className="flex items-center gap-3 bg-blue-50 border border-blue-200 rounded-lg px-4 py-3">
+                                                        <div className="flex-shrink-0 w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center">
+                                                            <MessageCircle size={16} className="text-blue-600" />
+                                                        </div>
+                                                        <div>
+                                                            <p className="text-sm font-semibold text-blue-800">Teklif Kabul Edildi</p>
+                                                            <p className="text-xs text-blue-600 mt-0.5">Satıcıdan mesaj bekleyiniz.</p>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             )}

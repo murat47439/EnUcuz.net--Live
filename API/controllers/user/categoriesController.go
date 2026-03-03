@@ -3,8 +3,10 @@ package user
 import (
 	"Store-Dio/config"
 	"Store-Dio/services/categories"
+	"context"
 	"net/http"
 	"strconv"
+	"time"
 
 	"github.com/go-chi/chi/v5"
 )
@@ -28,7 +30,8 @@ func (uc *UCategoriesController) GetCategory(w http.ResponseWriter, r *http.Requ
 		return
 	}
 
-	category, err := uc.CategoriesService.GetCategory(id)
+	ctx := r.Context()
+	category, err := uc.CategoriesService.GetCategory(ctx, id)
 	if err != nil {
 		config.Logger.Printf("GetCategory service error: %v", err)
 		RespondWithError(w, http.StatusNotFound, "Kategori bulunamadı")
@@ -55,7 +58,10 @@ func (uc *UCategoriesController) GetCategories(w http.ResponseWriter, r *http.Re
 
 	config.Logger.Printf("GetCategories parameters: page=%d, search='%s'", page, search)
 
-	categories, err := uc.CategoriesService.GetCategories(page, search)
+	ctx := r.Context()
+	ctx, cancel := context.WithTimeout(ctx, 10*time.Second)
+	defer cancel()
+	categories, err := uc.CategoriesService.GetCategories(ctx, page, search)
 	if err != nil {
 		config.Logger.Printf("GetCategories service error: %v", err)
 		RespondWithError(w, http.StatusInternalServerError, "Kategoriler yüklenirken hata oluştu")

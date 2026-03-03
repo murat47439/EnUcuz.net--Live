@@ -3,8 +3,10 @@ package user
 import (
 	"Store-Dio/config"
 	"Store-Dio/services/brands"
+	"context"
 	"net/http"
 	"strconv"
+	"time"
 
 	"github.com/go-chi/chi/v5"
 )
@@ -29,7 +31,8 @@ func (uc *UBrandController) GetBrand(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	brand, err := uc.BrandsService.GetBrand(id)
+	ctx := r.Context()
+	brand, err := uc.BrandsService.GetBrand(ctx, id)
 	if err != nil {
 		config.Logger.Printf("GetBrand service error: %v", err)
 		RespondWithError(w, http.StatusNotFound, "Marka bulunamadı")
@@ -56,7 +59,10 @@ func (uc *UBrandController) GetBrands(w http.ResponseWriter, r *http.Request) {
 
 	config.Logger.Printf("GetBrands parameters: page=%d, search='%s'", page, search)
 
-	brands, err := uc.BrandsService.GetBrands(page, search)
+	ctx := r.Context()
+	ctx, cancel := context.WithTimeout(ctx, 10*time.Second)
+	defer cancel()
+	brands, err := uc.BrandsService.GetBrands(ctx, page, search)
 	if err != nil {
 		config.Logger.Printf("GetBrands service error: %v", err)
 		RespondWithError(w, http.StatusInternalServerError, "Markalar yüklenirken hata oluştu")

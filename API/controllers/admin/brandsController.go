@@ -4,9 +4,11 @@ import (
 	"Store-Dio/config"
 	"Store-Dio/models"
 	"Store-Dio/services/brands"
+	"context"
 	"encoding/json"
 	"net/http"
 	"strconv"
+	"time"
 
 	"github.com/go-chi/chi/v5"
 )
@@ -33,7 +35,8 @@ func (bc *BrandsController) AddBrand(w http.ResponseWriter, r *http.Request) {
 	}
 	defer r.Body.Close()
 
-	brand, err := bc.BrandsService.AddBrand(data)
+	ctx := r.Context()
+	brand, err := bc.BrandsService.AddBrand(ctx, data)
 	if err != nil {
 		config.Logger.Printf("AddBrand service error: %v", err)
 		RespondWithError(w, http.StatusInternalServerError, "Marka eklenirken hata oluştu")
@@ -51,14 +54,19 @@ func (bc *BrandsController) UpdateBrand(w http.ResponseWriter, r *http.Request) 
 	err := json.NewDecoder(r.Body).Decode(&data)
 
 	if err != nil {
-		RespondWithError(w, http.StatusBadRequest, "Invalid data")
+		config.Logger.Printf("UpdateBrand error: Invalid JSON - %v", err)
+		RespondWithError(w, http.StatusBadRequest, "Geçersiz veri formatı")
 		return
 	}
 	defer r.Body.Close()
-	_, err = bc.BrandsService.UpdateBrand(data)
+	ctx := r.Context()
+	ctx, cancel := context.WithTimeout(ctx, 10*time.Second)
+	defer cancel()
+	_, err = bc.BrandsService.UpdateBrand(ctx, data)
 
 	if err != nil {
-		RespondWithError(w, http.StatusBadRequest, err.Error())
+		config.Logger.Printf("UpdateBrand service error: %v", err)
+		RespondWithError(w, http.StatusInternalServerError, "Marka güncellenirken hata oluştu")
 		return
 	}
 	RespondWithJSON(w, http.StatusOK, map[string]string{
@@ -75,7 +83,10 @@ func (bc *BrandsController) DeleteBrand(w http.ResponseWriter, r *http.Request) 
 		return
 	}
 
-	err = bc.BrandsService.DeleteBrand(id)
+	ctx := r.Context()
+	ctx, cancel := context.WithTimeout(ctx, 10*time.Second)
+	defer cancel()
+	err = bc.BrandsService.DeleteBrand(ctx, id)
 	if err != nil {
 		config.Logger.Printf("DeleteBrand service error: %v", err)
 		RespondWithError(w, http.StatusNotFound, "Marka bulunamadı veya silinemedi")

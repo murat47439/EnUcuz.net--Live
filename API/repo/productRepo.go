@@ -68,7 +68,7 @@ func (pr *ProductRepo) GetProductSeller(ctx context.Context, id int) (int, error
 	}
 	return sellerID, nil
 }
-func (pr *ProductRepo) CheckProduct(prodid int) (bool, error) {
+func (pr *ProductRepo) CheckProduct(ctx context.Context, prodid int) (bool, error) {
 
 	var exists bool
 	if prodid == 0 {
@@ -76,7 +76,7 @@ func (pr *ProductRepo) CheckProduct(prodid int) (bool, error) {
 	}
 	query := "SELECT EXISTS (SELECT 1 FROM products WHERE id = $1 AND deleted_at IS NULL)"
 
-	err := pr.db.Get(&exists, query, prodid)
+	err := pr.db.GetContext(ctx, &exists, query, prodid)
 
 	if err != nil {
 		return false, err
@@ -86,7 +86,7 @@ func (pr *ProductRepo) CheckProduct(prodid int) (bool, error) {
 	return exists, nil
 
 }
-func (pr *ProductRepo) CheckProductByName(name, imageUrl string) (bool, error) {
+func (pr *ProductRepo) CheckProductByName(ctx context.Context, name, imageUrl string) (bool, error) {
 
 	var exists bool
 	if name == "" || imageUrl == "" {
@@ -94,7 +94,7 @@ func (pr *ProductRepo) CheckProductByName(name, imageUrl string) (bool, error) {
 	}
 	query := "SELECT EXISTS (SELECT 1 FROM products WHERE name = $1 AND image_url = $2 AND deleted_at IS NULL)"
 
-	err := pr.db.Get(&exists, query, name, imageUrl)
+	err := pr.db.GetContext(ctx, &exists, query, name, imageUrl)
 
 	if err != nil {
 		return false, err
@@ -150,7 +150,7 @@ func (pr *ProductRepo) GenerateUniqueSlug(ctx context.Context, tx *sqlx.Tx, text
 	for {
 		var exists bool
 
-		err := tx.QueryRow(`SELECT EXISTS(SELECT 1 FROM products WHERE slug = $1 )`, baseSlug).Scan(&exists)
+		err := tx.QueryRowContext(ctx, `SELECT EXISTS(SELECT 1 FROM products WHERE slug = $1 )`, baseSlug).Scan(&exists)
 		if err != nil {
 			return "", err
 		}
@@ -163,13 +163,13 @@ func (pr *ProductRepo) GenerateUniqueSlug(ctx context.Context, tx *sqlx.Tx, text
 	}
 }
 
-func (pr *ProductRepo) ExistsData(name string, tx *sqlx.Tx) (bool, error) {
+func (pr *ProductRepo) ExistsData(ctx context.Context, name string, tx *sqlx.Tx) (bool, error) {
 	if name == "" {
 		return false, fmt.Errorf("Invalid data")
 	}
 	query := `SELECT EXISTS(SELECT 1 FROM brands WHERE name = $1 AND deleted_at IS NULL)`
 	var exists bool
-	err := tx.QueryRow(query, name).Scan(&exists)
+	err := tx.QueryRowContext(ctx, query, name).Scan(&exists)
 
 	if err != nil {
 		return false, err
@@ -212,7 +212,7 @@ func (pr *ProductRepo) GetProduct(ctx context.Context, prodid int) (*models.Prod
 	if prodid == 0 {
 		return nil, fmt.Errorf("Invalid data")
 	}
-	_, err := pr.CheckProduct(prodid)
+	_, err := pr.CheckProduct(ctx, prodid)
 	if err != nil {
 		return nil, err
 	}
@@ -344,8 +344,8 @@ func (pr *ProductRepo) GetProducts(ctx context.Context, page, brandID, categoryI
 	return products, nil
 }
 
-func (pr *ProductRepo) DeleteProduct(data *models.Product) error {
-	tx, err := pr.db.Beginx()
+func (pr *ProductRepo) DeleteProduct(ctx context.Context, data *models.Product) error {
+	tx, err := pr.db.BeginTxx(ctx, nil)
 
 	if err != nil {
 		return fmt.Errorf("TX Error :%s", err.Error())
@@ -365,10 +365,10 @@ func (pr *ProductRepo) DeleteProduct(data *models.Product) error {
 	}()
 	query := `UPDATE products SET deleted_at = NOW() WHERE id = $1 AND seller_id = $2`
 
-	_, err = tx.Exec(query, data.ID, data.SellerID)
+	_, err = tx.ExecContext(ctx, query, data.ID, data.SellerID)
 
 	if err != nil {
-		return fmt.Errorf("Database error : ", err.Error())
+		return fmt.Errorf("Database error : %w", err)
 	}
 	return nil
 }
