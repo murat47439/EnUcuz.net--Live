@@ -1,765 +1,315 @@
-APP_LOG: 2026/02/20 20:02:15 main.go:36: Application started successfully.
-APP_LOG: 2026/02/20 20:02:15 auth.go:60: AuthMiddleware Started
-APP_LOG: 2026/02/20 20:02:15 auth.go:60: AuthMiddleware Started
-APP_LOG: 2026/02/20 20:02:15 auth.go:60: AuthMiddleware Started
-APP_LOG: 2026/02/20 20:02:15 auth.go:60: AuthMiddleware Started
-APP_LOG: 2026/02/20 20:02:15 auth.go:60: AuthMiddleware Started
-APP_LOG: 2026/02/20 20:02:15 auth.go:60: AuthMiddleware Started
-APP_LOG: 2026/02/20 20:02:15 auth.go:60: AuthMiddleware Started
-APP_LOG: 2026/02/20 20:02:15 auth.go:60: AuthMiddleware Started
-APP_LOG: 2026/02/20 20:02:15 auth.go:60: AuthMiddleware Started
-APP_LOG: 2026/02/20 20:02:15 auth.go:60: AuthMiddleware Started
-APP_LOG: 2026/02/20 20:02:15 auth.go:60: AuthMiddleware Started
-APP_LOG: 2026/02/20 20:02:15 auth.go:60: AuthMiddleware Started
-APP_LOG: 2026/02/20 20:02:15 auth.go:60: AuthMiddleware Started
-APP_LOG: 2026/02/20 20:02:15 auth.go:60: AuthMiddleware Started
-APP_LOG: 2026/02/20 20:02:15 ai.go:20: Gemini client initialized successfully
-APP_LOG: 2026/02/20 20:02:15 hub.go:30: WebSocket Hub started
-APP_LOG: 2026/02/20 20:03:05 usersController.go:48: Login request started
-APP_LOG: 2026/02/20 20:03:07 usersController.go:87: Login success: User 38 logged in
-APP_LOG: 2026/02/20 20:03:07 controllers.go:21: Success response: 202
-APP_LOG: 2026/02/20 20:03:15 chatController.go:60: NewChat request started
-APP_LOG: 2026/02/20 20:03:15 chatController.go:79: NewChat service error: 38
-APP_LOG: 2026/02/20 20:03:17 chatController.go:92: NewChat success: Chat created for user 38
-APP_LOG: 2026/02/20 20:03:17 chatController.go:106: NewChat: WS notification sent to user 1
-APP_LOG: 2026/02/20 20:03:17 controllers.go:21: Success response: 201
-APP_LOG: 2026/02/20 20:04:07 handler.go:59: ServeWS: User 38 connected via WebSocket
-APP_LOG: 2026/02/20 20:04:07 hub.go:43: WebSocket: User 38 connected. Total: 1
-APP_LOG: 2026/02/20 20:04:26 room.go:31: WebSocket: User 38 joined room 5
-APP_LOG: 2026/02/20 20:05:38 auth.go:66: AuthMiddleware: Cookie not found - http: named cookie not present
-APP_LOG: 2026/02/20 20:05:48 auth.go:66: AuthMiddleware: Cookie not found - http: named cookie not present
-APP_LOG: 2026/02/20 20:06:09 controllers.go:21: Success response: 200
-APP_LOG: 2026/02/20 20:06:12 auth.go:66: AuthMiddleware: Cookie not found - http: named cookie not present
-APP_LOG: 2026/02/20 20:06:12 auth.go:66: AuthMiddleware: Cookie not found - http: named cookie not present
-APP_LOG: 2026/02/20 20:06:12 usersController.go:208: GetAccess request started
-APP_LOG: 2026/02/20 20:06:13 usersController.go:244: GetAccess success: Access token refreshed
-APP_LOG: 2026/02/20 20:06:13 controllers.go:21: Success response: 200
-APP_LOG: 2026/02/20 20:06:13 usersController.go:143: GetUserData request started
-APP_LOG: 2026/02/20 20:06:13 usersController.go:159: GetUserData success: User data retrieved for user 1
-APP_LOG: 2026/02/20 20:06:13 controllers.go:21: Success response: 200
-APP_LOG: 2026/02/20 20:06:23 handler.go:59: ServeWS: User 1 connected via WebSocket
-APP_LOG: 2026/02/20 20:06:23 hub.go:43: WebSocket: User 1 connected. Total: 2
-APP_LOG: 2026/02/20 20:07:53 hub.go:53: WebSocket: User 1 disconnected. Total: 1
-APP_LOG: 2026/02/20 20:08:00 controllers.go:21: Success response: 200
-APP_LOG: 2026/02/20 20:08:01 controllers.go:21: Success response: 200
-APP_LOG: 2026/02/20 20:08:05 offersController.go:174: Get Offers By Bidder request started
-APP_LOG: 2026/02/20 20:08:05 offersController.go:177: Get Offers By Bidder request started by user 38
-APP_LOG: 2026/02/20 20:08:06 offersController.go:196: Get Offers By Bidder success: page=1 userID=38
-APP_LOG: 2026/02/20 20:08:06 controllers.go:21: Success response: 200
-APP_LOG: 2026/02/20 20:08:06 offersController.go:174: Get Offers By Bidder request started
-APP_LOG: 2026/02/20 20:08:06 offersController.go:177: Get Offers By Bidder request started by user 38
-APP_LOG: 2026/02/20 20:08:06 offersController.go:196: Get Offers By Bidder success: page=1 userID=38
-APP_LOG: 2026/02/20 20:08:06 controllers.go:21: Success response: 200
-APP_LOG: 2026/02/20 20:08:07 productRepo.go:84:  true
-APP_LOG: 2026/02/20 20:08:07 productRepo.go:84:  true
-APP_LOG: 2026/02/20 20:08:07 controllers.go:21: Success response: 200
-APP_LOG: 2026/02/20 20:08:07 controllers.go:21: Success response: 200
-APP_LOG: 2026/02/20 20:08:08 productRepo.go:84:  true
-APP_LOG: 2026/02/20 20:08:08 productRepo.go:84:  true
-APP_LOG: 2026/02/20 20:08:09 controllers.go:21: Success response: 200
-APP_LOG: 2026/02/20 20:08:09 controllers.go:21: Success response: 200
-APP_LOG: 2026/02/20 20:09:40 main.go:36: Application started successfully.
-APP_LOG: 2026/02/20 20:09:40 auth.go:60: AuthMiddleware Started
-APP_LOG: 2026/02/20 20:09:40 auth.go:60: AuthMiddleware Started
-APP_LOG: 2026/02/20 20:09:40 auth.go:60: AuthMiddleware Started
-APP_LOG: 2026/02/20 20:09:40 auth.go:60: AuthMiddleware Started
-APP_LOG: 2026/02/20 20:09:40 auth.go:60: AuthMiddleware Started
-APP_LOG: 2026/02/20 20:09:40 auth.go:60: AuthMiddleware Started
-APP_LOG: 2026/02/20 20:09:40 auth.go:60: AuthMiddleware Started
-APP_LOG: 2026/02/20 20:09:40 auth.go:60: AuthMiddleware Started
-APP_LOG: 2026/02/20 20:09:40 auth.go:60: AuthMiddleware Started
-APP_LOG: 2026/02/20 20:09:40 auth.go:60: AuthMiddleware Started
-APP_LOG: 2026/02/20 20:09:40 auth.go:60: AuthMiddleware Started
-APP_LOG: 2026/02/20 20:09:40 auth.go:60: AuthMiddleware Started
-APP_LOG: 2026/02/20 20:09:40 auth.go:60: AuthMiddleware Started
-APP_LOG: 2026/02/20 20:09:40 auth.go:60: AuthMiddleware Started
-APP_LOG: 2026/02/20 20:09:40 ai.go:20: Gemini client initialized successfully
-APP_LOG: 2026/02/20 20:09:40 hub.go:30: WebSocket Hub started
-APP_LOG: 2026/02/20 20:09:58 offersController.go:174: Get Offers By Bidder request started
-APP_LOG: 2026/02/20 20:09:58 offersController.go:177: Get Offers By Bidder request started by user 38
-APP_LOG: 2026/02/20 20:09:59 offersController.go:196: Get Offers By Bidder success: page=1 userID=38
-APP_LOG: 2026/02/20 20:09:59 controllers.go:21: Success response: 200
-APP_LOG: 2026/02/20 20:10:00 productRepo.go:84:  true
-APP_LOG: 2026/02/20 20:10:00 productRepo.go:84:  true
-APP_LOG: 2026/02/20 20:10:03 controllers.go:21: Success response: 200
-APP_LOG: 2026/02/20 20:10:03 controllers.go:21: Success response: 200
-APP_LOG: 2026/02/20 20:13:13 controllers.go:21: Success response: 200
-APP_LOG: 2026/02/20 20:15:03 auth.go:66: AuthMiddleware: Cookie not found - http: named cookie not present
-APP_LOG: 2026/02/20 20:15:03 usersController.go:208: GetAccess request started
-APP_LOG: 2026/02/20 20:15:04 usersController.go:244: GetAccess success: Access token refreshed
-APP_LOG: 2026/02/20 20:15:04 controllers.go:21: Success response: 200
-APP_LOG: 2026/02/20 20:15:04 offersController.go:174: Get Offers By Bidder request started
-APP_LOG: 2026/02/20 20:15:04 offersController.go:177: Get Offers By Bidder request started by user 38
-APP_LOG: 2026/02/20 20:15:05 offersController.go:196: Get Offers By Bidder success: page=1 userID=38
-APP_LOG: 2026/02/20 20:15:05 controllers.go:21: Success response: 200
-APP_LOG: 2026/02/20 20:15:06 productRepo.go:84:  true
-APP_LOG: 2026/02/20 20:15:06 productRepo.go:84:  true
-APP_LOG: 2026/02/20 20:15:08 controllers.go:21: Success response: 200
-APP_LOG: 2026/02/20 20:15:08 controllers.go:21: Success response: 200
-APP_LOG: 2026/02/20 20:15:18 controllers.go:21: Success response: 200
-APP_LOG: 2026/02/20 20:15:19 controllers.go:21: Success response: 200
-APP_LOG: 2026/02/20 20:16:05 controllers.go:21: Success response: 200
-APP_LOG: 2026/02/20 20:30:18 auth.go:66: AuthMiddleware: Cookie not found - http: named cookie not present
-APP_LOG: 2026/02/20 20:30:18 usersController.go:208: GetAccess request started
-APP_LOG: 2026/02/20 20:30:19 usersController.go:244: GetAccess success: Access token refreshed
-APP_LOG: 2026/02/20 20:30:19 controllers.go:21: Success response: 200
-APP_LOG: 2026/02/20 20:30:19 chatController.go:185: GetChats request started
-APP_LOG: 2026/02/20 20:30:19 chatController.go:200: GetChats parameters: userID=38, page=1
-APP_LOG: 2026/02/20 20:30:21 chatController.go:213: GetChats success: 1 chats retrieved for user 38
-APP_LOG: 2026/02/20 20:30:21 controllers.go:21: Success response: 200
-APP_LOG: 2026/02/20 20:30:29 chatController.go:152: GetChat request started
-APP_LOG: 2026/02/20 20:30:31 chatController.go:179: GetChat success: 3 messages retrieved for chat 5
-APP_LOG: 2026/02/20 20:30:31 controllers.go:21: Success response: 200
-APP_LOG: 2026/02/20 20:30:39 chatController.go:152: GetChat request started
-APP_LOG: 2026/02/20 20:30:41 chatController.go:179: GetChat success: 3 messages retrieved for chat 5
-APP_LOG: 2026/02/20 20:30:41 controllers.go:21: Success response: 200
-APP_LOG: 2026/02/20 20:30:46 chatController.go:116: NewMessage request started
-APP_LOG: 2026/02/20 20:30:47 chatController.go:141: NewMessage service error: Invalid chat
-APP_LOG: 2026/02/20 20:30:47 controllers.go:10: Error response: 500 - Mesaj gönderilirken hata oluştu
-APP_LOG: 2026/02/20 20:31:08 chatController.go:185: GetChats request started
-APP_LOG: 2026/02/20 20:31:08 chatController.go:200: GetChats parameters: userID=38, page=1
-APP_LOG: 2026/02/20 20:31:09 chatController.go:213: GetChats success: 1 chats retrieved for user 38
-APP_LOG: 2026/02/20 20:31:09 controllers.go:21: Success response: 200
-APP_LOG: 2026/02/20 20:31:22 chatController.go:152: GetChat request started
-APP_LOG: 2026/02/20 20:31:25 chatController.go:179: GetChat success: 3 messages retrieved for chat 5
-APP_LOG: 2026/02/20 20:31:25 controllers.go:21: Success response: 200
-APP_LOG: 2026/02/20 20:34:53 handler.go:59: ServeWS: User 38 connected via WebSocket
-APP_LOG: 2026/02/20 20:34:53 hub.go:43: WebSocket: User 38 connected. Total: 1
-APP_LOG: 2026/02/20 20:34:53 chatController.go:185: GetChats request started
-APP_LOG: 2026/02/20 20:34:53 chatController.go:200: GetChats parameters: userID=38, page=1
-APP_LOG: 2026/02/20 20:34:58 chatController.go:213: GetChats success: 1 chats retrieved for user 38
-APP_LOG: 2026/02/20 20:34:58 controllers.go:21: Success response: 200
-APP_LOG: 2026/02/20 20:35:01 chatController.go:152: GetChat request started
-APP_LOG: 2026/02/20 20:35:03 chatController.go:179: GetChat success: 3 messages retrieved for chat 5
-APP_LOG: 2026/02/20 20:35:03 controllers.go:21: Success response: 200
-APP_LOG: 2026/02/20 20:35:03 room.go:31: WebSocket: User 38 joined room 5
-APP_LOG: 2026/02/20 20:35:11 room.go:45: WebSocket: User 38 left room 5
-APP_LOG: 2026/02/20 20:35:12 hub.go:53: WebSocket: User 38 disconnected. Total: 0
-APP_LOG: 2026/02/20 20:35:13 handler.go:59: ServeWS: User 38 connected via WebSocket
-APP_LOG: 2026/02/20 20:35:13 hub.go:43: WebSocket: User 38 connected. Total: 1
-APP_LOG: 2026/02/20 20:35:13 chatController.go:185: GetChats request started
-APP_LOG: 2026/02/20 20:35:13 chatController.go:200: GetChats parameters: userID=38, page=1
-APP_LOG: 2026/02/20 20:35:15 chatController.go:213: GetChats success: 1 chats retrieved for user 38
-APP_LOG: 2026/02/20 20:35:15 controllers.go:21: Success response: 200
-APP_LOG: 2026/02/20 20:35:18 chatController.go:152: GetChat request started
-APP_LOG: 2026/02/20 20:35:19 chatController.go:179: GetChat success: 4 messages retrieved for chat 5
-APP_LOG: 2026/02/20 20:35:19 controllers.go:21: Success response: 200
-APP_LOG: 2026/02/20 20:35:20 room.go:31: WebSocket: User 38 joined room 5
-APP_LOG: 2026/02/20 20:35:37 controllers.go:21: Success response: 200
-APP_LOG: 2026/02/20 20:35:41 usersController.go:48: Login request started
-APP_LOG: 2026/02/20 20:35:42 usersController.go:87: Login success: User 1 logged in
-APP_LOG: 2026/02/20 20:35:42 controllers.go:21: Success response: 202
-APP_LOG: 2026/02/20 20:35:43 controllers.go:21: Success response: 200
-APP_LOG: 2026/02/20 20:35:44 handler.go:59: ServeWS: User 1 connected via WebSocket
-APP_LOG: 2026/02/20 20:35:44 hub.go:43: WebSocket: User 1 connected. Total: 2
-APP_LOG: 2026/02/20 20:35:44 chatController.go:185: GetChats request started
-APP_LOG: 2026/02/20 20:35:44 chatController.go:200: GetChats parameters: userID=1, page=1
-APP_LOG: 2026/02/20 20:35:44 hub.go:53: WebSocket: User 1 disconnected. Total: 1
-APP_LOG: 2026/02/20 20:35:44 handler.go:59: ServeWS: User 1 connected via WebSocket
-APP_LOG: 2026/02/20 20:35:44 hub.go:43: WebSocket: User 1 connected. Total: 2
-APP_LOG: 2026/02/20 20:35:44 controllers.go:21: Success response: 200
-APP_LOG: 2026/02/20 20:35:45 chatController.go:213: GetChats success: 1 chats retrieved for user 1
-APP_LOG: 2026/02/20 20:35:45 controllers.go:21: Success response: 200
-APP_LOG: 2026/02/20 20:35:45 chatController.go:185: GetChats request started
-APP_LOG: 2026/02/20 20:35:45 chatController.go:200: GetChats parameters: userID=1, page=1
-APP_LOG: 2026/02/20 20:35:45 chatController.go:213: GetChats success: 1 chats retrieved for user 1
-APP_LOG: 2026/02/20 20:35:45 controllers.go:21: Success response: 200
-APP_LOG: 2026/02/20 20:35:47 chatController.go:152: GetChat request started
-APP_LOG: 2026/02/20 20:35:48 chatController.go:179: GetChat success: 4 messages retrieved for chat 5
-APP_LOG: 2026/02/20 20:35:48 controllers.go:21: Success response: 200
-APP_LOG: 2026/02/20 20:35:49 handler.go:59: ServeWS: User 1 connected via WebSocket
-APP_LOG: 2026/02/20 20:35:49 hub.go:39: WebSocket: User 1 reconnected, old connection closed
-APP_LOG: 2026/02/20 20:35:49 hub.go:43: WebSocket: User 1 connected. Total: 2
-APP_LOG: 2026/02/20 20:35:49 room.go:31: WebSocket: User 1 joined room 5
-APP_LOG: 2026/02/20 20:36:09 main.go:36: Application started successfully.
-APP_LOG: 2026/02/20 20:36:09 auth.go:60: AuthMiddleware Started
-APP_LOG: 2026/02/20 20:36:09 auth.go:60: AuthMiddleware Started
-APP_LOG: 2026/02/20 20:36:09 auth.go:60: AuthMiddleware Started
-APP_LOG: 2026/02/20 20:36:09 auth.go:60: AuthMiddleware Started
-APP_LOG: 2026/02/20 20:36:09 auth.go:60: AuthMiddleware Started
-APP_LOG: 2026/02/20 20:36:09 auth.go:60: AuthMiddleware Started
-APP_LOG: 2026/02/20 20:36:09 auth.go:60: AuthMiddleware Started
-APP_LOG: 2026/02/20 20:36:09 auth.go:60: AuthMiddleware Started
-APP_LOG: 2026/02/20 20:36:09 auth.go:60: AuthMiddleware Started
-APP_LOG: 2026/02/20 20:36:09 auth.go:60: AuthMiddleware Started
-APP_LOG: 2026/02/20 20:36:09 auth.go:60: AuthMiddleware Started
-APP_LOG: 2026/02/20 20:36:09 auth.go:60: AuthMiddleware Started
-APP_LOG: 2026/02/20 20:36:09 auth.go:60: AuthMiddleware Started
-APP_LOG: 2026/02/20 20:36:09 auth.go:60: AuthMiddleware Started
-APP_LOG: 2026/02/20 20:36:09 ai.go:20: Gemini client initialized successfully
-APP_LOG: 2026/02/20 20:36:09 hub.go:30: WebSocket Hub started
-APP_LOG: 2026/02/20 20:36:09 handler.go:59: ServeWS: User 1 connected via WebSocket
-APP_LOG: 2026/02/20 20:36:09 hub.go:43: WebSocket: User 1 connected. Total: 1
-APP_LOG: 2026/02/20 20:36:10 room.go:31: WebSocket: User 1 joined room 5
-APP_LOG: 2026/02/20 20:36:10 client.go:56: WebSocket read error (user 1): websocket: close 1005 (no status)
-APP_LOG: 2026/02/20 20:36:10 room.go:60: WebSocket: User 1 removed from room 5 (cleanup)
-APP_LOG: 2026/02/20 20:36:10 hub.go:53: WebSocket: User 1 disconnected. Total: 0
-APP_LOG: 2026/02/20 20:36:10 handler.go:59: ServeWS: User 38 connected via WebSocket
-APP_LOG: 2026/02/20 20:36:10 hub.go:43: WebSocket: User 38 connected. Total: 1
-APP_LOG: 2026/02/20 20:36:10 handler.go:59: ServeWS: User 1 connected via WebSocket
-APP_LOG: 2026/02/20 20:36:10 hub.go:43: WebSocket: User 1 connected. Total: 2
-APP_LOG: 2026/02/20 20:36:11 room.go:31: WebSocket: User 38 joined room 5
-APP_LOG: 2026/02/20 20:36:11 room.go:31: WebSocket: User 1 joined room 5
-APP_LOG: 2026/02/20 20:36:15 room.go:60: WebSocket: User 38 removed from room 5 (cleanup)
-APP_LOG: 2026/02/20 20:36:15 hub.go:53: WebSocket: User 38 disconnected. Total: 1
-APP_LOG: 2026/02/20 20:36:15 client.go:56: WebSocket read error (user 1): websocket: close 1005 (no status)
-APP_LOG: 2026/02/20 20:36:15 room.go:60: WebSocket: User 1 removed from room 5 (cleanup)
-APP_LOG: 2026/02/20 20:36:15 hub.go:53: WebSocket: User 1 disconnected. Total: 0
-APP_LOG: 2026/02/20 20:36:15 handler.go:59: ServeWS: User 1 connected via WebSocket
-APP_LOG: 2026/02/20 20:36:15 hub.go:43: WebSocket: User 1 connected. Total: 1
-APP_LOG: 2026/02/20 20:36:15 handler.go:59: ServeWS: User 38 connected via WebSocket
-APP_LOG: 2026/02/20 20:36:15 hub.go:43: WebSocket: User 38 connected. Total: 2
-APP_LOG: 2026/02/20 20:36:15 chatController.go:185: GetChats request started
-APP_LOG: 2026/02/20 20:36:15 chatController.go:200: GetChats parameters: userID=38, page=1
-APP_LOG: 2026/02/20 20:36:17 room.go:31: WebSocket: User 1 joined room 5
-APP_LOG: 2026/02/20 20:36:18 chatController.go:213: GetChats success: 1 chats retrieved for user 38
-APP_LOG: 2026/02/20 20:36:18 controllers.go:21: Success response: 200
-APP_LOG: 2026/02/20 20:36:18 room.go:60: WebSocket: User 1 removed from room 5 (cleanup)
-APP_LOG: 2026/02/20 20:36:18 hub.go:53: WebSocket: User 1 disconnected. Total: 1
-APP_LOG: 2026/02/20 20:36:18 handler.go:59: ServeWS: User 1 connected via WebSocket
-APP_LOG: 2026/02/20 20:36:18 hub.go:43: WebSocket: User 1 connected. Total: 2
-APP_LOG: 2026/02/20 20:36:18 chatController.go:185: GetChats request started
-APP_LOG: 2026/02/20 20:36:18 chatController.go:200: GetChats parameters: userID=1, page=1
-APP_LOG: 2026/02/20 20:36:19 chatController.go:213: GetChats success: 1 chats retrieved for user 1
-APP_LOG: 2026/02/20 20:36:19 controllers.go:21: Success response: 200
-APP_LOG: 2026/02/20 20:36:24 chatController.go:152: GetChat request started
-APP_LOG: 2026/02/20 20:36:25 chatController.go:152: GetChat request started
-APP_LOG: 2026/02/20 20:36:26 chatController.go:179: GetChat success: 4 messages retrieved for chat 5
-APP_LOG: 2026/02/20 20:36:26 controllers.go:21: Success response: 200
-APP_LOG: 2026/02/20 20:36:26 chatController.go:179: GetChat success: 4 messages retrieved for chat 5
-APP_LOG: 2026/02/20 20:36:26 controllers.go:21: Success response: 200
-APP_LOG: 2026/02/20 20:36:27 room.go:31: WebSocket: User 38 joined room 5
-APP_LOG: 2026/02/20 20:36:27 room.go:31: WebSocket: User 1 joined room 5
-APP_LOG: 2026/02/20 20:39:04 client.go:56: WebSocket read error (user 38): websocket: close 1005 (no status)
-APP_LOG: 2026/02/20 20:39:04 room.go:60: WebSocket: User 38 removed from room 5 (cleanup)
-APP_LOG: 2026/02/20 20:39:04 hub.go:53: WebSocket: User 38 disconnected. Total: 1
-APP_LOG: 2026/02/20 20:39:04 handler.go:59: ServeWS: User 38 connected via WebSocket
-APP_LOG: 2026/02/20 20:39:04 hub.go:43: WebSocket: User 38 connected. Total: 2
-APP_LOG: 2026/02/20 20:39:04 client.go:56: WebSocket read error (user 1): websocket: close 1005 (no status)
-APP_LOG: 2026/02/20 20:39:04 room.go:60: WebSocket: User 1 removed from room 5 (cleanup)
-APP_LOG: 2026/02/20 20:39:04 hub.go:53: WebSocket: User 1 disconnected. Total: 1
-APP_LOG: 2026/02/20 20:39:04 chatController.go:185: GetChats request started
-APP_LOG: 2026/02/20 20:39:04 chatController.go:200: GetChats parameters: userID=38, page=1
-APP_LOG: 2026/02/20 20:39:04 handler.go:59: ServeWS: User 1 connected via WebSocket
-APP_LOG: 2026/02/20 20:39:04 hub.go:43: WebSocket: User 1 connected. Total: 2
-APP_LOG: 2026/02/20 20:39:04 chatController.go:185: GetChats request started
-APP_LOG: 2026/02/20 20:39:04 chatController.go:200: GetChats parameters: userID=1, page=1
-APP_LOG: 2026/02/20 20:39:09 handler.go:94: WebSocket join verify error: Database error = failed to connect to `user=neondb_owner database=neondb`:
-	35.177.127.187:5432 (ep-withered-lab-aboqcz1z-pooler.eu-west-2.aws.neon.tech): failed SASL auth: timeout: context deadline exceeded
-	13.41.250.251:5432 (ep-withered-lab-aboqcz1z-pooler.eu-west-2.aws.neon.tech): dial error: timeout: context deadline exceeded
-	13.43.29.36:5432 (ep-withered-lab-aboqcz1z-pooler.eu-west-2.aws.neon.tech): dial error: timeout: context deadline exceeded
-APP_LOG: 2026/02/20 20:39:09 handler.go:94: WebSocket join verify error: Database error = failed to connect to `user=neondb_owner database=neondb`:
-	35.177.127.187:5432 (ep-withered-lab-aboqcz1z-pooler.eu-west-2.aws.neon.tech): failed SASL auth: timeout: context deadline exceeded
-	13.41.250.251:5432 (ep-withered-lab-aboqcz1z-pooler.eu-west-2.aws.neon.tech): dial error: timeout: context deadline exceeded
-	13.43.29.36:5432 (ep-withered-lab-aboqcz1z-pooler.eu-west-2.aws.neon.tech): dial error: timeout: context deadline exceeded
-APP_LOG: 2026/02/20 20:39:09 client.go:56: WebSocket read error (user 38): websocket: close 1005 (no status)
-APP_LOG: 2026/02/20 20:39:09 hub.go:53: WebSocket: User 38 disconnected. Total: 1
-APP_LOG: 2026/02/20 20:39:09 client.go:56: WebSocket read error (user 1): websocket: close 1005 (no status)
-APP_LOG: 2026/02/20 20:39:09 hub.go:53: WebSocket: User 1 disconnected. Total: 0
-APP_LOG: 2026/02/20 20:39:09 handler.go:59: ServeWS: User 38 connected via WebSocket
-APP_LOG: 2026/02/20 20:39:09 hub.go:43: WebSocket: User 38 connected. Total: 1
-APP_LOG: 2026/02/20 20:39:09 handler.go:59: ServeWS: User 1 connected via WebSocket
-APP_LOG: 2026/02/20 20:39:09 hub.go:43: WebSocket: User 1 connected. Total: 2
-APP_LOG: 2026/02/20 20:39:14 chatController.go:208: GetChats service error: Database error timeout: context deadline exceeded
-APP_LOG: 2026/02/20 20:39:14 controllers.go:10: Error response: 500 - Sohbetler yüklenirken hata oluştu
-APP_LOG: 2026/02/20 20:39:14 chatController.go:208: GetChats service error: Database error timeout: context deadline exceeded
-APP_LOG: 2026/02/20 20:39:14 controllers.go:10: Error response: 500 - Sohbetler yüklenirken hata oluştu
-APP_LOG: 2026/02/20 20:39:14 handler.go:94: WebSocket join verify error: Database error = failed to connect to `user=neondb_owner database=neondb`:
-	35.177.127.187:5432 (ep-withered-lab-aboqcz1z-pooler.eu-west-2.aws.neon.tech): tls error: timeout: context deadline exceeded
-	13.41.250.251:5432 (ep-withered-lab-aboqcz1z-pooler.eu-west-2.aws.neon.tech): dial error: timeout: context deadline exceeded
-	13.43.29.36:5432 (ep-withered-lab-aboqcz1z-pooler.eu-west-2.aws.neon.tech): dial error: timeout: context deadline exceeded
-APP_LOG: 2026/02/20 20:39:14 handler.go:94: WebSocket join verify error: Database error = failed to connect to `user=neondb_owner database=neondb`:
-	35.177.127.187:5432 (ep-withered-lab-aboqcz1z-pooler.eu-west-2.aws.neon.tech): tls error: timeout: context deadline exceeded
-	13.41.250.251:5432 (ep-withered-lab-aboqcz1z-pooler.eu-west-2.aws.neon.tech): dial error: timeout: context deadline exceeded
-	13.43.29.36:5432 (ep-withered-lab-aboqcz1z-pooler.eu-west-2.aws.neon.tech): dial error: timeout: context deadline exceeded
-APP_LOG: 2026/02/20 20:39:15 client.go:56: WebSocket read error (user 38): websocket: close 1005 (no status)
-APP_LOG: 2026/02/20 20:39:15 hub.go:53: WebSocket: User 38 disconnected. Total: 1
-APP_LOG: 2026/02/20 20:39:15 client.go:56: WebSocket read error (user 1): websocket: close 1005 (no status)
-APP_LOG: 2026/02/20 20:39:15 hub.go:53: WebSocket: User 1 disconnected. Total: 0
-APP_LOG: 2026/02/20 20:39:15 handler.go:59: ServeWS: User 1 connected via WebSocket
-APP_LOG: 2026/02/20 20:39:15 hub.go:43: WebSocket: User 1 connected. Total: 1
-APP_LOG: 2026/02/20 20:39:15 handler.go:59: ServeWS: User 38 connected via WebSocket
-APP_LOG: 2026/02/20 20:39:15 hub.go:43: WebSocket: User 38 connected. Total: 2
-APP_LOG: 2026/02/20 20:39:18 room.go:31: WebSocket: User 1 joined room 5
-APP_LOG: 2026/02/20 20:39:19 room.go:31: WebSocket: User 38 joined room 5
-APP_LOG: 2026/02/20 20:39:21 client.go:56: WebSocket read error (user 38): websocket: close 1005 (no status)
-APP_LOG: 2026/02/20 20:39:21 client.go:56: WebSocket read error (user 1): websocket: close 1005 (no status)
-APP_LOG: 2026/02/20 20:39:21 room.go:60: WebSocket: User 38 removed from room 5 (cleanup)
-APP_LOG: 2026/02/20 20:39:21 hub.go:53: WebSocket: User 38 disconnected. Total: 1
-APP_LOG: 2026/02/20 20:39:21 room.go:60: WebSocket: User 1 removed from room 5 (cleanup)
-APP_LOG: 2026/02/20 20:39:21 hub.go:53: WebSocket: User 1 disconnected. Total: 0
-APP_LOG: 2026/02/20 20:39:21 handler.go:59: ServeWS: User 38 connected via WebSocket
-APP_LOG: 2026/02/20 20:39:21 hub.go:43: WebSocket: User 38 connected. Total: 1
-APP_LOG: 2026/02/20 20:39:21 handler.go:59: ServeWS: User 1 connected via WebSocket
-APP_LOG: 2026/02/20 20:39:21 hub.go:43: WebSocket: User 1 connected. Total: 2
-APP_LOG: 2026/02/20 20:39:23 room.go:31: WebSocket: User 1 joined room 5
-APP_LOG: 2026/02/20 20:39:23 room.go:31: WebSocket: User 38 joined room 5
-APP_LOG: 2026/02/20 20:39:26 client.go:56: WebSocket read error (user 38): websocket: close 1005 (no status)
-APP_LOG: 2026/02/20 20:39:26 room.go:60: WebSocket: User 38 removed from room 5 (cleanup)
-APP_LOG: 2026/02/20 20:39:26 hub.go:53: WebSocket: User 38 disconnected. Total: 1
-APP_LOG: 2026/02/20 20:39:26 handler.go:59: ServeWS: User 38 connected via WebSocket
-APP_LOG: 2026/02/20 20:39:26 hub.go:43: WebSocket: User 38 connected. Total: 2
-APP_LOG: 2026/02/20 20:39:27 client.go:56: WebSocket read error (user 1): websocket: close 1005 (no status)
-APP_LOG: 2026/02/20 20:39:27 room.go:60: WebSocket: User 1 removed from room 5 (cleanup)
-APP_LOG: 2026/02/20 20:39:27 hub.go:53: WebSocket: User 1 disconnected. Total: 1
-APP_LOG: 2026/02/20 20:39:27 handler.go:59: ServeWS: User 1 connected via WebSocket
-APP_LOG: 2026/02/20 20:39:27 hub.go:43: WebSocket: User 1 connected. Total: 2
-APP_LOG: 2026/02/20 20:39:28 room.go:31: WebSocket: User 38 joined room 5
-APP_LOG: 2026/02/20 20:39:28 room.go:31: WebSocket: User 1 joined room 5
-APP_LOG: 2026/02/20 20:39:31 client.go:56: WebSocket read error (user 38): websocket: close 1005 (no status)
-APP_LOG: 2026/02/20 20:39:31 room.go:60: WebSocket: User 38 removed from room 5 (cleanup)
-APP_LOG: 2026/02/20 20:39:31 hub.go:53: WebSocket: User 38 disconnected. Total: 1
-APP_LOG: 2026/02/20 20:39:31 handler.go:59: ServeWS: User 38 connected via WebSocket
-APP_LOG: 2026/02/20 20:39:31 hub.go:43: WebSocket: User 38 connected. Total: 2
-APP_LOG: 2026/02/20 20:39:32 room.go:31: WebSocket: User 38 joined room 5
-APP_LOG: 2026/02/20 20:39:32 room.go:60: WebSocket: User 38 removed from room 5 (cleanup)
-APP_LOG: 2026/02/20 20:39:32 hub.go:53: WebSocket: User 38 disconnected. Total: 1
-APP_LOG: 2026/02/20 20:39:33 handler.go:59: ServeWS: User 38 connected via WebSocket
-APP_LOG: 2026/02/20 20:39:33 hub.go:43: WebSocket: User 38 connected. Total: 2
-APP_LOG: 2026/02/20 20:39:33 chatController.go:185: GetChats request started
-APP_LOG: 2026/02/20 20:39:33 chatController.go:200: GetChats parameters: userID=38, page=1
-APP_LOG: 2026/02/20 20:39:33 client.go:56: WebSocket read error (user 1): websocket: close 1005 (no status)
-APP_LOG: 2026/02/20 20:39:33 room.go:60: WebSocket: User 1 removed from room 5 (cleanup)
-APP_LOG: 2026/02/20 20:39:33 hub.go:53: WebSocket: User 1 disconnected. Total: 1
-APP_LOG: 2026/02/20 20:39:33 handler.go:59: ServeWS: User 1 connected via WebSocket
-APP_LOG: 2026/02/20 20:39:33 hub.go:43: WebSocket: User 1 connected. Total: 2
-APP_LOG: 2026/02/20 20:39:35 chatController.go:213: GetChats success: 1 chats retrieved for user 38
-APP_LOG: 2026/02/20 20:39:35 controllers.go:21: Success response: 200
-APP_LOG: 2026/02/20 20:39:35 room.go:31: WebSocket: User 1 joined room 5
-APP_LOG: 2026/02/20 20:39:38 room.go:60: WebSocket: User 1 removed from room 5 (cleanup)
-APP_LOG: 2026/02/20 20:39:38 hub.go:53: WebSocket: User 1 disconnected. Total: 1
-APP_LOG: 2026/02/20 20:39:38 handler.go:59: ServeWS: User 1 connected via WebSocket
-APP_LOG: 2026/02/20 20:39:38 hub.go:43: WebSocket: User 1 connected. Total: 2
-APP_LOG: 2026/02/20 20:39:38 chatController.go:185: GetChats request started
-APP_LOG: 2026/02/20 20:39:38 chatController.go:200: GetChats parameters: userID=1, page=1
-APP_LOG: 2026/02/20 20:39:39 chatController.go:213: GetChats success: 1 chats retrieved for user 1
-APP_LOG: 2026/02/20 20:39:39 controllers.go:21: Success response: 200
-APP_LOG: 2026/02/20 20:39:45 chatController.go:152: GetChat request started
-APP_LOG: 2026/02/20 20:39:48 chatController.go:152: GetChat request started
-APP_LOG: 2026/02/20 20:39:55 chatController.go:174: GetChat service error: Database error = failed to connect to `user=neondb_owner database=neondb`:
-	35.177.127.187:5432 (ep-withered-lab-aboqcz1z-pooler.eu-west-2.aws.neon.tech): failed to receive message: timeout: context deadline exceeded
-	13.41.250.251:5432 (ep-withered-lab-aboqcz1z-pooler.eu-west-2.aws.neon.tech): dial error: timeout: context deadline exceeded
-	13.43.29.36:5432 (ep-withered-lab-aboqcz1z-pooler.eu-west-2.aws.neon.tech): dial error: timeout: context deadline exceeded
-APP_LOG: 2026/02/20 20:39:55 controllers.go:10: Error response: 500 - Sohbet mesajları yüklenirken hata oluştu
-APP_LOG: 2026/02/20 20:39:58 chatController.go:174: GetChat service error: Database error = failed to connect to `user=neondb_owner database=neondb`:
-	35.177.127.187:5432 (ep-withered-lab-aboqcz1z-pooler.eu-west-2.aws.neon.tech): dial error: timeout: context deadline exceeded
-	13.41.250.251:5432 (ep-withered-lab-aboqcz1z-pooler.eu-west-2.aws.neon.tech): dial error: timeout: context deadline exceeded
-	13.43.29.36:5432 (ep-withered-lab-aboqcz1z-pooler.eu-west-2.aws.neon.tech): dial error: timeout: context deadline exceeded
-APP_LOG: 2026/02/20 20:39:58 controllers.go:10: Error response: 500 - Sohbet mesajları yüklenirken hata oluştu
-APP_LOG: 2026/02/20 20:39:58 chatController.go:152: GetChat request started
-APP_LOG: 2026/02/20 20:39:59 chatController.go:174: GetChat service error: Database error = failed to connect to `user=neondb_owner database=neondb`: hostname resolving error: lookup ep-withered-lab-aboqcz1z-pooler.eu-west-2.aws.neon.tech: operation was canceled
-APP_LOG: 2026/02/20 20:39:59 controllers.go:10: Error response: 500 - Sohbet mesajları yüklenirken hata oluştu
-APP_LOG: 2026/02/20 20:39:59 handler.go:59: ServeWS: User 38 connected via WebSocket
-APP_LOG: 2026/02/20 20:39:59 hub.go:39: WebSocket: User 38 reconnected, old connection closed
-APP_LOG: 2026/02/20 20:39:59 hub.go:43: WebSocket: User 38 connected. Total: 2
-APP_LOG: 2026/02/20 20:39:59 chatController.go:185: GetChats request started
-APP_LOG: 2026/02/20 20:39:59 chatController.go:200: GetChats parameters: userID=38, page=1
-APP_LOG: 2026/02/20 20:40:00 handler.go:94: WebSocket join verify error: Database error = failed to connect to `user=neondb_owner database=neondb`: hostname resolving error: lookup ep-withered-lab-aboqcz1z-pooler.eu-west-2.aws.neon.tech: i/o timeout
-APP_LOG: 2026/02/20 20:40:00 hub.go:53: WebSocket: User 38 disconnected. Total: 2
-APP_LOG: 2026/02/20 20:43:54 main.go:36: Application started successfully.
-APP_LOG: 2026/02/20 20:43:54 auth.go:60: AuthMiddleware Started
-APP_LOG: 2026/02/20 20:43:54 auth.go:60: AuthMiddleware Started
-APP_LOG: 2026/02/20 20:43:54 auth.go:60: AuthMiddleware Started
-APP_LOG: 2026/02/20 20:43:54 auth.go:60: AuthMiddleware Started
-APP_LOG: 2026/02/20 20:43:54 auth.go:60: AuthMiddleware Started
-APP_LOG: 2026/02/20 20:43:54 auth.go:60: AuthMiddleware Started
-APP_LOG: 2026/02/20 20:43:54 auth.go:60: AuthMiddleware Started
-APP_LOG: 2026/02/20 20:43:54 auth.go:60: AuthMiddleware Started
-APP_LOG: 2026/02/20 20:43:54 auth.go:60: AuthMiddleware Started
-APP_LOG: 2026/02/20 20:43:54 auth.go:60: AuthMiddleware Started
-APP_LOG: 2026/02/20 20:43:54 auth.go:60: AuthMiddleware Started
-APP_LOG: 2026/02/20 20:43:54 auth.go:60: AuthMiddleware Started
-APP_LOG: 2026/02/20 20:43:54 auth.go:60: AuthMiddleware Started
-APP_LOG: 2026/02/20 20:43:54 auth.go:60: AuthMiddleware Started
-APP_LOG: 2026/02/20 20:43:54 ai.go:20: Gemini client initialized successfully
-APP_LOG: 2026/02/20 20:43:54 hub.go:30: WebSocket Hub started
-APP_LOG: 2026/02/20 20:44:13 handler.go:59: ServeWS: User 1 connected via WebSocket
-APP_LOG: 2026/02/20 20:44:13 hub.go:43: WebSocket: User 1 connected. Total: 1
-APP_LOG: 2026/02/20 20:44:13 chatController.go:185: GetChats request started
-APP_LOG: 2026/02/20 20:44:13 chatController.go:200: GetChats parameters: userID=1, page=1
-APP_LOG: 2026/02/20 20:44:13 handler.go:59: ServeWS: User 38 connected via WebSocket
-APP_LOG: 2026/02/20 20:44:13 hub.go:43: WebSocket: User 38 connected. Total: 2
-APP_LOG: 2026/02/20 20:44:13 chatController.go:185: GetChats request started
-APP_LOG: 2026/02/20 20:44:13 chatController.go:200: GetChats parameters: userID=38, page=1
-APP_LOG: 2026/02/20 20:44:17 chatController.go:213: GetChats success: 1 chats retrieved for user 38
-APP_LOG: 2026/02/20 20:44:17 controllers.go:21: Success response: 200
-APP_LOG: 2026/02/20 20:44:17 chatController.go:213: GetChats success: 1 chats retrieved for user 1
-APP_LOG: 2026/02/20 20:44:17 controllers.go:21: Success response: 200
-APP_LOG: 2026/02/20 20:44:20 chatController.go:152: GetChat request started
-APP_LOG: 2026/02/20 20:44:21 chatController.go:152: GetChat request started
-APP_LOG: 2026/02/20 20:44:21 chatController.go:179: GetChat success: 6 messages retrieved for chat 5
-APP_LOG: 2026/02/20 20:44:21 controllers.go:21: Success response: 200
-APP_LOG: 2026/02/20 20:44:22 chatController.go:179: GetChat success: 6 messages retrieved for chat 5
-APP_LOG: 2026/02/20 20:44:22 controllers.go:21: Success response: 200
-APP_LOG: 2026/02/20 20:44:22 room.go:31: WebSocket: User 1 joined room 5
-APP_LOG: 2026/02/20 20:44:23 room.go:31: WebSocket: User 38 joined room 5
-APP_LOG: 2026/02/20 20:45:43 client.go:86: WebSocket read error (user 1): websocket: close 1005 (no status)
-APP_LOG: 2026/02/20 20:45:43 room.go:60: WebSocket: User 1 removed from room 5 (cleanup)
-APP_LOG: 2026/02/20 20:45:43 hub.go:53: WebSocket: User 1 disconnected. Total: 1
-APP_LOG: 2026/02/20 20:45:43 client.go:86: WebSocket read error (user 38): websocket: close 1005 (no status)
-APP_LOG: 2026/02/20 20:45:43 room.go:60: WebSocket: User 38 removed from room 5 (cleanup)
-APP_LOG: 2026/02/20 20:45:43 hub.go:53: WebSocket: User 38 disconnected. Total: 0
-APP_LOG: 2026/02/20 20:45:43 handler.go:59: ServeWS: User 1 connected via WebSocket
-APP_LOG: 2026/02/20 20:45:43 hub.go:43: WebSocket: User 1 connected. Total: 1
-APP_LOG: 2026/02/20 20:45:43 auth.go:66: AuthMiddleware: Cookie not found - http: named cookie not present
-APP_LOG: 2026/02/20 20:45:43 chatController.go:185: GetChats request started
-APP_LOG: 2026/02/20 20:45:43 chatController.go:200: GetChats parameters: userID=1, page=1
-APP_LOG: 2026/02/20 20:45:43 auth.go:66: AuthMiddleware: Cookie not found - http: named cookie not present
-APP_LOG: 2026/02/20 20:45:43 usersController.go:208: GetAccess request started
-APP_LOG: 2026/02/20 20:45:44 usersController.go:244: GetAccess success: Access token refreshed
-APP_LOG: 2026/02/20 20:45:44 controllers.go:21: Success response: 200
-APP_LOG: 2026/02/20 20:45:44 chatController.go:185: GetChats request started
-APP_LOG: 2026/02/20 20:45:44 chatController.go:200: GetChats parameters: userID=38, page=1
-APP_LOG: 2026/02/20 20:45:44 chatController.go:213: GetChats success: 1 chats retrieved for user 1
-APP_LOG: 2026/02/20 20:45:44 controllers.go:21: Success response: 200
-APP_LOG: 2026/02/20 20:45:48 chatController.go:213: GetChats success: 1 chats retrieved for user 38
-APP_LOG: 2026/02/20 20:45:48 controllers.go:21: Success response: 200
-APP_LOG: 2026/02/20 20:45:48 handler.go:59: ServeWS: User 1 connected via WebSocket
-APP_LOG: 2026/02/20 20:45:48 hub.go:39: WebSocket: User 1 reconnected, old connection closed
-APP_LOG: 2026/02/20 20:45:48 hub.go:43: WebSocket: User 1 connected. Total: 1
-APP_LOG: 2026/02/20 20:45:48 hub.go:53: WebSocket: User 1 disconnected. Total: 1
-APP_LOG: 2026/02/20 20:45:48 handler.go:59: ServeWS: User 38 connected via WebSocket
-APP_LOG: 2026/02/20 20:45:48 hub.go:43: WebSocket: User 38 connected. Total: 2
-APP_LOG: 2026/02/20 20:45:48 handler.go:59: ServeWS: User 38 connected via WebSocket
-APP_LOG: 2026/02/20 20:45:48 hub.go:39: WebSocket: User 38 reconnected, old connection closed
-APP_LOG: 2026/02/20 20:45:48 hub.go:43: WebSocket: User 38 connected. Total: 2
-APP_LOG: 2026/02/20 20:45:49 room.go:31: WebSocket: User 38 joined room 5
-APP_LOG: 2026/02/20 20:45:49 room.go:31: WebSocket: User 1 joined room 5
-APP_LOG: 2026/02/20 20:45:49 handler.go:203: WebSocket: Failed to send to user 38 (closed or full)
-APP_LOG: 2026/02/20 20:45:49 room.go:60: WebSocket: User 38 removed from room 5 (cleanup)
-APP_LOG: 2026/02/20 20:45:49 hub.go:53: WebSocket: User 38 disconnected. Total: 2
-APP_LOG: 2026/02/20 20:45:53 handler.go:59: ServeWS: User 1 connected via WebSocket
-APP_LOG: 2026/02/20 20:45:53 hub.go:39: WebSocket: User 1 reconnected, old connection closed
-APP_LOG: 2026/02/20 20:45:53 hub.go:43: WebSocket: User 1 connected. Total: 2
-APP_LOG: 2026/02/20 20:45:53 room.go:60: WebSocket: User 1 removed from room 5 (cleanup)
-APP_LOG: 2026/02/20 20:45:53 hub.go:53: WebSocket: User 1 disconnected. Total: 2
-APP_LOG: 2026/02/20 20:45:53 handler.go:59: ServeWS: User 38 connected via WebSocket
-APP_LOG: 2026/02/20 20:45:53 hub.go:39: WebSocket: User 38 reconnected, old connection closed
-APP_LOG: 2026/02/20 20:45:53 hub.go:43: WebSocket: User 38 connected. Total: 2
-APP_LOG: 2026/02/20 20:45:53 hub.go:53: WebSocket: User 38 disconnected. Total: 2
-APP_LOG: 2026/02/20 20:45:56 room.go:31: WebSocket: User 38 joined room 5
-APP_LOG: 2026/02/20 20:45:56 room.go:60: WebSocket: User 38 removed from room 5 (cleanup)
-APP_LOG: 2026/02/20 20:45:56 hub.go:53: WebSocket: User 38 disconnected. Total: 1
-APP_LOG: 2026/02/20 20:45:57 handler.go:59: ServeWS: User 38 connected via WebSocket
-APP_LOG: 2026/02/20 20:45:57 hub.go:43: WebSocket: User 38 connected. Total: 2
-APP_LOG: 2026/02/20 20:45:57 chatController.go:185: GetChats request started
-APP_LOG: 2026/02/20 20:45:57 chatController.go:200: GetChats parameters: userID=38, page=1
-APP_LOG: 2026/02/20 20:45:58 handler.go:59: ServeWS: User 1 connected via WebSocket
-APP_LOG: 2026/02/20 20:45:58 hub.go:39: WebSocket: User 1 reconnected, old connection closed
-APP_LOG: 2026/02/20 20:45:58 hub.go:43: WebSocket: User 1 connected. Total: 2
-APP_LOG: 2026/02/20 20:45:58 hub.go:53: WebSocket: User 1 disconnected. Total: 2
-APP_LOG: 2026/02/20 20:46:01 chatController.go:213: GetChats success: 1 chats retrieved for user 38
-APP_LOG: 2026/02/20 20:46:01 controllers.go:21: Success response: 200
-APP_LOG: 2026/02/20 20:46:01 room.go:31: WebSocket: User 1 joined room 5
-APP_LOG: 2026/02/20 20:46:03 chatController.go:152: GetChat request started
-APP_LOG: 2026/02/20 20:46:03 handler.go:59: ServeWS: User 1 connected via WebSocket
-APP_LOG: 2026/02/20 20:46:03 hub.go:39: WebSocket: User 1 reconnected, old connection closed
-APP_LOG: 2026/02/20 20:46:03 hub.go:43: WebSocket: User 1 connected. Total: 2
-APP_LOG: 2026/02/20 20:46:03 room.go:60: WebSocket: User 1 removed from room 5 (cleanup)
-APP_LOG: 2026/02/20 20:46:03 hub.go:53: WebSocket: User 1 disconnected. Total: 2
-APP_LOG: 2026/02/20 20:46:04 chatController.go:152: GetChat request started
-APP_LOG: 2026/02/20 20:46:05 chatController.go:179: GetChat success: 6 messages retrieved for chat 5
-APP_LOG: 2026/02/20 20:46:05 controllers.go:21: Success response: 200
-APP_LOG: 2026/02/20 20:46:06 room.go:31: WebSocket: User 38 joined room 5
-APP_LOG: 2026/02/20 20:46:06 chatController.go:179: GetChat success: 6 messages retrieved for chat 5
-APP_LOG: 2026/02/20 20:46:06 controllers.go:21: Success response: 200
-APP_LOG: 2026/02/20 20:46:07 room.go:31: WebSocket: User 1 joined room 5
-APP_LOG: 2026/02/20 20:46:08 handler.go:59: ServeWS: User 1 connected via WebSocket
-APP_LOG: 2026/02/20 20:46:08 hub.go:39: WebSocket: User 1 reconnected, old connection closed
-APP_LOG: 2026/02/20 20:46:08 hub.go:43: WebSocket: User 1 connected. Total: 2
-APP_LOG: 2026/02/20 20:46:08 room.go:60: WebSocket: User 1 removed from room 5 (cleanup)
-APP_LOG: 2026/02/20 20:46:08 hub.go:53: WebSocket: User 1 disconnected. Total: 2
-APP_LOG: 2026/02/20 20:46:09 room.go:31: WebSocket: User 1 joined room 5
-APP_LOG: 2026/02/20 20:46:13 handler.go:59: ServeWS: User 1 connected via WebSocket
-APP_LOG: 2026/02/20 20:46:13 hub.go:39: WebSocket: User 1 reconnected, old connection closed
-APP_LOG: 2026/02/20 20:46:13 hub.go:43: WebSocket: User 1 connected. Total: 2
-APP_LOG: 2026/02/20 20:46:13 room.go:60: WebSocket: User 1 removed from room 5 (cleanup)
-APP_LOG: 2026/02/20 20:46:13 hub.go:53: WebSocket: User 1 disconnected. Total: 2
-APP_LOG: 2026/02/20 20:46:14 room.go:31: WebSocket: User 1 joined room 5
-APP_LOG: 2026/02/20 20:46:18 handler.go:59: ServeWS: User 1 connected via WebSocket
-APP_LOG: 2026/02/20 20:46:18 hub.go:39: WebSocket: User 1 reconnected, old connection closed
-APP_LOG: 2026/02/20 20:46:18 hub.go:43: WebSocket: User 1 connected. Total: 2
-APP_LOG: 2026/02/20 20:46:18 room.go:60: WebSocket: User 1 removed from room 5 (cleanup)
-APP_LOG: 2026/02/20 20:46:18 hub.go:53: WebSocket: User 1 disconnected. Total: 2
-APP_LOG: 2026/02/20 20:46:19 room.go:31: WebSocket: User 1 joined room 5
-APP_LOG: 2026/02/20 20:46:23 handler.go:59: ServeWS: User 1 connected via WebSocket
-APP_LOG: 2026/02/20 20:46:23 hub.go:39: WebSocket: User 1 reconnected, old connection closed
-APP_LOG: 2026/02/20 20:46:23 hub.go:43: WebSocket: User 1 connected. Total: 2
-APP_LOG: 2026/02/20 20:46:23 room.go:60: WebSocket: User 1 removed from room 5 (cleanup)
-APP_LOG: 2026/02/20 20:46:23 hub.go:53: WebSocket: User 1 disconnected. Total: 2
-APP_LOG: 2026/02/20 20:46:24 room.go:31: WebSocket: User 1 joined room 5
-APP_LOG: 2026/02/20 20:46:28 handler.go:59: ServeWS: User 1 connected via WebSocket
-APP_LOG: 2026/02/20 20:46:28 hub.go:39: WebSocket: User 1 reconnected, old connection closed
-APP_LOG: 2026/02/20 20:46:28 hub.go:43: WebSocket: User 1 connected. Total: 2
-APP_LOG: 2026/02/20 20:46:28 room.go:60: WebSocket: User 1 removed from room 5 (cleanup)
-APP_LOG: 2026/02/20 20:46:28 hub.go:53: WebSocket: User 1 disconnected. Total: 2
-APP_LOG: 2026/02/20 20:46:29 room.go:31: WebSocket: User 1 joined room 5
-APP_LOG: 2026/02/20 20:46:33 handler.go:59: ServeWS: User 1 connected via WebSocket
-APP_LOG: 2026/02/20 20:46:33 hub.go:39: WebSocket: User 1 reconnected, old connection closed
-APP_LOG: 2026/02/20 20:46:33 hub.go:43: WebSocket: User 1 connected. Total: 2
-APP_LOG: 2026/02/20 20:46:33 room.go:60: WebSocket: User 1 removed from room 5 (cleanup)
-APP_LOG: 2026/02/20 20:46:33 hub.go:53: WebSocket: User 1 disconnected. Total: 2
-APP_LOG: 2026/02/20 20:46:34 room.go:31: WebSocket: User 1 joined room 5
-APP_LOG: 2026/02/20 20:46:34 room.go:60: WebSocket: User 1 removed from room 5 (cleanup)
-APP_LOG: 2026/02/20 20:46:34 hub.go:53: WebSocket: User 1 disconnected. Total: 1
-APP_LOG: 2026/02/20 20:46:34 handler.go:59: ServeWS: User 1 connected via WebSocket
-APP_LOG: 2026/02/20 20:46:34 hub.go:43: WebSocket: User 1 connected. Total: 2
-APP_LOG: 2026/02/20 20:46:34 chatController.go:185: GetChats request started
-APP_LOG: 2026/02/20 20:46:34 chatController.go:200: GetChats parameters: userID=1, page=1
-APP_LOG: 2026/02/20 20:46:35 chatController.go:213: GetChats success: 1 chats retrieved for user 1
-APP_LOG: 2026/02/20 20:46:35 controllers.go:21: Success response: 200
-APP_LOG: 2026/02/20 20:46:35 chatController.go:152: GetChat request started
-APP_LOG: 2026/02/20 20:46:37 chatController.go:179: GetChat success: 7 messages retrieved for chat 5
-APP_LOG: 2026/02/20 20:46:37 controllers.go:21: Success response: 200
-APP_LOG: 2026/02/20 20:46:38 room.go:31: WebSocket: User 1 joined room 5
-APP_LOG: 2026/03/03 22:27:11 main.go:36: Application started successfully.
-APP_LOG: 2026/03/03 22:27:11 auth.go:60: AuthMiddleware Started
-APP_LOG: 2026/03/03 22:27:11 auth.go:60: AuthMiddleware Started
-APP_LOG: 2026/03/03 22:27:11 auth.go:60: AuthMiddleware Started
-APP_LOG: 2026/03/03 22:27:11 auth.go:60: AuthMiddleware Started
-APP_LOG: 2026/03/03 22:27:11 auth.go:60: AuthMiddleware Started
-APP_LOG: 2026/03/03 22:27:11 auth.go:60: AuthMiddleware Started
-APP_LOG: 2026/03/03 22:27:11 auth.go:60: AuthMiddleware Started
-APP_LOG: 2026/03/03 22:27:11 auth.go:60: AuthMiddleware Started
-APP_LOG: 2026/03/03 22:27:11 auth.go:60: AuthMiddleware Started
-APP_LOG: 2026/03/03 22:27:11 auth.go:60: AuthMiddleware Started
-APP_LOG: 2026/03/03 22:27:11 auth.go:60: AuthMiddleware Started
-APP_LOG: 2026/03/03 22:27:11 auth.go:60: AuthMiddleware Started
-APP_LOG: 2026/03/03 22:27:11 auth.go:60: AuthMiddleware Started
-APP_LOG: 2026/03/03 22:27:11 auth.go:60: AuthMiddleware Started
-APP_LOG: 2026/03/03 22:27:11 ai.go:20: Gemini client initialized successfully
-APP_LOG: 2026/03/03 22:46:47 main.go:36: Application started successfully.
-APP_LOG: 2026/03/03 22:46:47 auth.go:60: AuthMiddleware Started
-APP_LOG: 2026/03/03 22:46:47 auth.go:60: AuthMiddleware Started
-APP_LOG: 2026/03/03 22:46:47 auth.go:60: AuthMiddleware Started
-APP_LOG: 2026/03/03 22:46:47 auth.go:60: AuthMiddleware Started
-APP_LOG: 2026/03/03 22:46:47 auth.go:60: AuthMiddleware Started
-APP_LOG: 2026/03/03 22:46:47 auth.go:60: AuthMiddleware Started
-APP_LOG: 2026/03/03 22:46:47 auth.go:60: AuthMiddleware Started
-APP_LOG: 2026/03/03 22:46:47 auth.go:60: AuthMiddleware Started
-APP_LOG: 2026/03/03 22:46:47 auth.go:60: AuthMiddleware Started
-APP_LOG: 2026/03/03 22:46:47 auth.go:60: AuthMiddleware Started
-APP_LOG: 2026/03/03 22:46:47 auth.go:60: AuthMiddleware Started
-APP_LOG: 2026/03/03 22:46:47 auth.go:60: AuthMiddleware Started
-APP_LOG: 2026/03/03 22:46:47 auth.go:60: AuthMiddleware Started
-APP_LOG: 2026/03/03 22:46:47 auth.go:60: AuthMiddleware Started
-APP_LOG: 2026/03/03 22:46:47 ai.go:20: Gemini client initialized successfully
-APP_LOG: 2026/03/03 22:47:07 controllers.go:21: Success response: 200
-APP_LOG: 2026/03/03 22:47:07 controllers.go:21: Success response: 200
-APP_LOG: 2026/03/03 22:47:11 usersController.go:52: Login request started
-APP_LOG: 2026/03/03 22:47:12 usersController.go:94: Login success: User 1 logged in
-APP_LOG: 2026/03/03 22:47:12 controllers.go:21: Success response: 202
-APP_LOG: 2026/03/03 22:47:12 controllers.go:21: Success response: 200
-APP_LOG: 2026/03/03 22:47:12 controllers.go:21: Success response: 200
-APP_LOG: 2026/03/03 22:47:13 usersController.go:52: Login request started
-APP_LOG: 2026/03/03 22:47:13 usersController.go:94: Login success: User 38 logged in
-APP_LOG: 2026/03/03 22:47:13 controllers.go:21: Success response: 202
-APP_LOG: 2026/03/03 22:47:13 controllers.go:21: Success response: 200
-APP_LOG: 2026/03/03 22:47:13 controllers.go:21: Success response: 200
-APP_LOG: 2026/03/03 22:48:29 handler.go:59: User connected:%!(EXTRA int=38)
-APP_LOG: 2026/03/03 22:48:31 handler.go:59: User connected:%!(EXTRA int=38)
-APP_LOG: 2026/03/03 22:55:27 client.go:54: WS read error: websocket: close 1001 (going away)
-APP_LOG: 2026/03/03 22:55:27 client.go:54: WS read error: websocket: close 1001 (going away)
-APP_LOG: 2026/03/03 23:07:05 main.go:36: Application started successfully.
-APP_LOG: 2026/03/03 23:07:05 auth.go:60: AuthMiddleware Started
-APP_LOG: 2026/03/03 23:07:05 auth.go:60: AuthMiddleware Started
-APP_LOG: 2026/03/03 23:07:05 auth.go:60: AuthMiddleware Started
-APP_LOG: 2026/03/03 23:07:05 auth.go:60: AuthMiddleware Started
-APP_LOG: 2026/03/03 23:07:05 auth.go:60: AuthMiddleware Started
-APP_LOG: 2026/03/03 23:07:05 auth.go:60: AuthMiddleware Started
-APP_LOG: 2026/03/03 23:07:05 auth.go:60: AuthMiddleware Started
-APP_LOG: 2026/03/03 23:07:05 auth.go:60: AuthMiddleware Started
-APP_LOG: 2026/03/03 23:07:05 auth.go:60: AuthMiddleware Started
-APP_LOG: 2026/03/03 23:07:05 auth.go:60: AuthMiddleware Started
-APP_LOG: 2026/03/03 23:07:05 auth.go:60: AuthMiddleware Started
-APP_LOG: 2026/03/03 23:07:05 auth.go:60: AuthMiddleware Started
-APP_LOG: 2026/03/03 23:07:05 auth.go:60: AuthMiddleware Started
-APP_LOG: 2026/03/03 23:07:05 auth.go:60: AuthMiddleware Started
-APP_LOG: 2026/03/03 23:07:05 ai.go:20: Gemini client initialized successfully
-APP_LOG: 2026/03/03 23:07:23 controllers.go:21: Success response: 200
-APP_LOG: 2026/03/03 23:07:27 controllers.go:21: Success response: 200
-APP_LOG: 2026/03/03 23:07:47 auth.go:66: AuthMiddleware: Cookie not found - http: named cookie not present
-APP_LOG: 2026/03/03 23:07:47 auth.go:66: AuthMiddleware: Cookie not found - http: named cookie not present
-APP_LOG: 2026/03/03 23:07:47 usersController.go:224: GetAccess request started
-APP_LOG: 2026/03/03 23:07:47 usersController.go:239: GetAccess service error: sql: no rows in result set
-APP_LOG: 2026/03/03 23:07:47 controllers.go:10: Error response: 401 - Token süresi dolmuş
-APP_LOG: 2026/03/03 23:07:52 auth.go:66: AuthMiddleware: Cookie not found - http: named cookie not present
-APP_LOG: 2026/03/03 23:07:57 auth.go:66: AuthMiddleware: Cookie not found - http: named cookie not present
-APP_LOG: 2026/03/03 23:07:57 auth.go:66: AuthMiddleware: Cookie not found - http: named cookie not present
-APP_LOG: 2026/03/03 23:07:57 usersController.go:224: GetAccess request started
-APP_LOG: 2026/03/03 23:07:57 usersController.go:239: GetAccess service error: sql: no rows in result set
-APP_LOG: 2026/03/03 23:07:57 controllers.go:10: Error response: 401 - Token süresi dolmuş
-APP_LOG: 2026/03/03 23:08:02 auth.go:66: AuthMiddleware: Cookie not found - http: named cookie not present
-APP_LOG: 2026/03/03 23:08:07 auth.go:66: AuthMiddleware: Cookie not found - http: named cookie not present
-APP_LOG: 2026/03/03 23:08:12 auth.go:66: AuthMiddleware: Cookie not found - http: named cookie not present
-APP_LOG: 2026/03/03 23:08:17 auth.go:66: AuthMiddleware: Cookie not found - http: named cookie not present
-APP_LOG: 2026/03/03 23:08:22 auth.go:66: AuthMiddleware: Cookie not found - http: named cookie not present
-APP_LOG: 2026/03/03 23:08:27 auth.go:66: AuthMiddleware: Cookie not found - http: named cookie not present
-APP_LOG: 2026/03/03 23:08:32 auth.go:66: AuthMiddleware: Cookie not found - http: named cookie not present
-APP_LOG: 2026/03/03 23:08:38 auth.go:66: AuthMiddleware: Cookie not found - http: named cookie not present
-APP_LOG: 2026/03/03 23:08:44 auth.go:66: AuthMiddleware: Cookie not found - http: named cookie not present
-APP_LOG: 2026/03/03 23:08:50 auth.go:66: AuthMiddleware: Cookie not found - http: named cookie not present
-APP_LOG: 2026/03/03 23:08:56 auth.go:66: AuthMiddleware: Cookie not found - http: named cookie not present
-APP_LOG: 2026/03/03 23:09:02 auth.go:66: AuthMiddleware: Cookie not found - http: named cookie not present
-APP_LOG: 2026/03/03 23:09:08 auth.go:66: AuthMiddleware: Cookie not found - http: named cookie not present
-APP_LOG: 2026/03/03 23:09:14 auth.go:66: AuthMiddleware: Cookie not found - http: named cookie not present
-APP_LOG: 2026/03/03 23:09:20 auth.go:66: AuthMiddleware: Cookie not found - http: named cookie not present
-APP_LOG: 2026/03/03 23:09:26 auth.go:66: AuthMiddleware: Cookie not found - http: named cookie not present
-APP_LOG: 2026/03/03 23:09:32 auth.go:66: AuthMiddleware: Cookie not found - http: named cookie not present
-APP_LOG: 2026/03/03 23:09:38 auth.go:66: AuthMiddleware: Cookie not found - http: named cookie not present
-APP_LOG: 2026/03/03 23:09:44 auth.go:66: AuthMiddleware: Cookie not found - http: named cookie not present
-APP_LOG: 2026/03/03 23:09:50 auth.go:66: AuthMiddleware: Cookie not found - http: named cookie not present
-APP_LOG: 2026/03/03 23:09:56 auth.go:66: AuthMiddleware: Cookie not found - http: named cookie not present
-APP_LOG: 2026/03/03 23:10:02 auth.go:66: AuthMiddleware: Cookie not found - http: named cookie not present
-APP_LOG: 2026/03/03 23:10:08 auth.go:66: AuthMiddleware: Cookie not found - http: named cookie not present
-APP_LOG: 2026/03/03 23:10:14 auth.go:66: AuthMiddleware: Cookie not found - http: named cookie not present
-APP_LOG: 2026/03/03 23:10:21 auth.go:66: AuthMiddleware: Cookie not found - http: named cookie not present
-APP_LOG: 2026/03/03 23:10:27 auth.go:66: AuthMiddleware: Cookie not found - http: named cookie not present
-APP_LOG: 2026/03/03 23:10:34 auth.go:66: AuthMiddleware: Cookie not found - http: named cookie not present
-APP_LOG: 2026/03/03 23:10:40 auth.go:66: AuthMiddleware: Cookie not found - http: named cookie not present
-APP_LOG: 2026/03/03 23:10:47 auth.go:66: AuthMiddleware: Cookie not found - http: named cookie not present
-APP_LOG: 2026/03/03 23:10:53 auth.go:66: AuthMiddleware: Cookie not found - http: named cookie not present
-APP_LOG: 2026/03/03 23:11:04 auth.go:66: AuthMiddleware: Cookie not found - http: named cookie not present
-APP_LOG: 2026/03/03 23:11:13 auth.go:66: AuthMiddleware: Cookie not found - http: named cookie not present
-APP_LOG: 2026/03/03 23:11:19 auth.go:66: AuthMiddleware: Cookie not found - http: named cookie not present
-APP_LOG: 2026/03/03 23:11:29 auth.go:66: AuthMiddleware: Cookie not found - http: named cookie not present
-APP_LOG: 2026/03/03 23:11:37 auth.go:66: AuthMiddleware: Cookie not found - http: named cookie not present
-APP_LOG: 2026/03/03 23:11:44 auth.go:66: AuthMiddleware: Cookie not found - http: named cookie not present
-APP_LOG: 2026/03/03 23:11:51 auth.go:66: AuthMiddleware: Cookie not found - http: named cookie not present
-APP_LOG: 2026/03/03 23:11:56 auth.go:66: AuthMiddleware: Cookie not found - http: named cookie not present
-APP_LOG: 2026/03/03 23:12:02 auth.go:66: AuthMiddleware: Cookie not found - http: named cookie not present
-APP_LOG: 2026/03/03 23:12:08 auth.go:66: AuthMiddleware: Cookie not found - http: named cookie not present
-APP_LOG: 2026/03/03 23:12:14 auth.go:66: AuthMiddleware: Cookie not found - http: named cookie not present
-APP_LOG: 2026/03/03 23:12:20 auth.go:66: AuthMiddleware: Cookie not found - http: named cookie not present
-APP_LOG: 2026/03/03 23:12:26 auth.go:66: AuthMiddleware: Cookie not found - http: named cookie not present
-APP_LOG: 2026/03/03 23:12:32 auth.go:66: AuthMiddleware: Cookie not found - http: named cookie not present
-APP_LOG: 2026/03/03 23:12:38 auth.go:66: AuthMiddleware: Cookie not found - http: named cookie not present
-APP_LOG: 2026/03/03 23:12:44 auth.go:66: AuthMiddleware: Cookie not found - http: named cookie not present
-APP_LOG: 2026/03/03 23:12:50 auth.go:66: AuthMiddleware: Cookie not found - http: named cookie not present
-APP_LOG: 2026/03/03 23:12:56 auth.go:66: AuthMiddleware: Cookie not found - http: named cookie not present
-APP_LOG: 2026/03/03 23:13:02 auth.go:66: AuthMiddleware: Cookie not found - http: named cookie not present
-APP_LOG: 2026/03/03 23:13:08 auth.go:66: AuthMiddleware: Cookie not found - http: named cookie not present
-APP_LOG: 2026/03/03 23:13:14 auth.go:66: AuthMiddleware: Cookie not found - http: named cookie not present
-APP_LOG: 2026/03/03 23:13:21 auth.go:66: AuthMiddleware: Cookie not found - http: named cookie not present
-APP_LOG: 2026/03/03 23:13:29 auth.go:66: AuthMiddleware: Cookie not found - http: named cookie not present
-APP_LOG: 2026/03/03 23:13:36 auth.go:66: AuthMiddleware: Cookie not found - http: named cookie not present
-APP_LOG: 2026/03/03 23:13:46 auth.go:66: AuthMiddleware: Cookie not found - http: named cookie not present
-APP_LOG: 2026/03/03 23:13:56 auth.go:66: AuthMiddleware: Cookie not found - http: named cookie not present
-APP_LOG: 2026/03/03 23:14:01 auth.go:66: AuthMiddleware: Cookie not found - http: named cookie not present
-APP_LOG: 2026/03/03 23:14:05 auth.go:66: AuthMiddleware: Cookie not found - http: named cookie not present
-APP_LOG: 2026/03/03 23:14:05 auth.go:66: AuthMiddleware: Cookie not found - http: named cookie not present
-APP_LOG: 2026/03/03 23:14:05 usersController.go:224: GetAccess request started
-APP_LOG: 2026/03/03 23:14:06 usersController.go:239: GetAccess service error: sql: no rows in result set
-APP_LOG: 2026/03/03 23:14:06 controllers.go:10: Error response: 401 - Token süresi dolmuş
-APP_LOG: 2026/03/03 23:14:06 auth.go:66: AuthMiddleware: Cookie not found - http: named cookie not present
-APP_LOG: 2026/03/03 23:14:06 auth.go:66: AuthMiddleware: Cookie not found - http: named cookie not present
-APP_LOG: 2026/03/03 23:14:06 usersController.go:224: GetAccess request started
-APP_LOG: 2026/03/03 23:14:07 usersController.go:239: GetAccess service error: sql: no rows in result set
-APP_LOG: 2026/03/03 23:14:07 controllers.go:10: Error response: 401 - Token süresi dolmuş
-APP_LOG: 2026/03/03 23:14:08 auth.go:66: AuthMiddleware: Cookie not found - http: named cookie not present
-APP_LOG: 2026/03/03 23:14:08 auth.go:66: AuthMiddleware: Cookie not found - http: named cookie not present
-APP_LOG: 2026/03/03 23:14:08 usersController.go:224: GetAccess request started
-APP_LOG: 2026/03/03 23:14:08 usersController.go:239: GetAccess service error: sql: no rows in result set
-APP_LOG: 2026/03/03 23:14:08 controllers.go:10: Error response: 401 - Token süresi dolmuş
-APP_LOG: 2026/03/03 23:14:13 auth.go:66: AuthMiddleware: Cookie not found - http: named cookie not present
-APP_LOG: 2026/03/03 23:14:18 auth.go:66: AuthMiddleware: Cookie not found - http: named cookie not present
-APP_LOG: 2026/03/03 23:14:23 auth.go:66: AuthMiddleware: Cookie not found - http: named cookie not present
-APP_LOG: 2026/03/03 23:14:28 auth.go:66: AuthMiddleware: Cookie not found - http: named cookie not present
-APP_LOG: 2026/03/03 23:14:34 auth.go:66: AuthMiddleware: Cookie not found - http: named cookie not present
-APP_LOG: 2026/03/03 23:14:40 auth.go:66: AuthMiddleware: Cookie not found - http: named cookie not present
-APP_LOG: 2026/03/03 23:14:45 auth.go:66: AuthMiddleware: Cookie not found - http: named cookie not present
-APP_LOG: 2026/03/03 23:14:45 auth.go:66: AuthMiddleware: Cookie not found - http: named cookie not present
-APP_LOG: 2026/03/03 23:14:50 auth.go:66: AuthMiddleware: Cookie not found - http: named cookie not present
-APP_LOG: 2026/03/03 23:14:56 auth.go:66: AuthMiddleware: Cookie not found - http: named cookie not present
-APP_LOG: 2026/03/03 23:15:02 auth.go:66: AuthMiddleware: Cookie not found - http: named cookie not present
-APP_LOG: 2026/03/03 23:15:08 auth.go:66: AuthMiddleware: Cookie not found - http: named cookie not present
-APP_LOG: 2026/03/03 23:15:14 auth.go:66: AuthMiddleware: Cookie not found - http: named cookie not present
-APP_LOG: 2026/03/03 23:15:20 auth.go:66: AuthMiddleware: Cookie not found - http: named cookie not present
-APP_LOG: 2026/03/03 23:15:26 auth.go:66: AuthMiddleware: Cookie not found - http: named cookie not present
-APP_LOG: 2026/03/03 23:15:32 auth.go:66: AuthMiddleware: Cookie not found - http: named cookie not present
-APP_LOG: 2026/03/03 23:15:38 auth.go:66: AuthMiddleware: Cookie not found - http: named cookie not present
-APP_LOG: 2026/03/03 23:15:44 auth.go:66: AuthMiddleware: Cookie not found - http: named cookie not present
-APP_LOG: 2026/03/03 23:15:50 auth.go:66: AuthMiddleware: Cookie not found - http: named cookie not present
-APP_LOG: 2026/03/03 23:15:56 auth.go:66: AuthMiddleware: Cookie not found - http: named cookie not present
-APP_LOG: 2026/03/03 23:16:02 auth.go:66: AuthMiddleware: Cookie not found - http: named cookie not present
-APP_LOG: 2026/03/03 23:16:08 auth.go:66: AuthMiddleware: Cookie not found - http: named cookie not present
-APP_LOG: 2026/03/03 23:16:14 auth.go:66: AuthMiddleware: Cookie not found - http: named cookie not present
-APP_LOG: 2026/03/03 23:16:20 auth.go:66: AuthMiddleware: Cookie not found - http: named cookie not present
-APP_LOG: 2026/03/03 23:16:26 auth.go:66: AuthMiddleware: Cookie not found - http: named cookie not present
-APP_LOG: 2026/03/03 23:16:32 auth.go:66: AuthMiddleware: Cookie not found - http: named cookie not present
-APP_LOG: 2026/03/03 23:16:38 auth.go:66: AuthMiddleware: Cookie not found - http: named cookie not present
-APP_LOG: 2026/03/03 23:16:44 auth.go:66: AuthMiddleware: Cookie not found - http: named cookie not present
-APP_LOG: 2026/03/03 23:16:50 auth.go:66: AuthMiddleware: Cookie not found - http: named cookie not present
-APP_LOG: 2026/03/03 23:16:56 auth.go:66: AuthMiddleware: Cookie not found - http: named cookie not present
-APP_LOG: 2026/03/03 23:17:02 auth.go:66: AuthMiddleware: Cookie not found - http: named cookie not present
-APP_LOG: 2026/03/03 23:17:08 auth.go:66: AuthMiddleware: Cookie not found - http: named cookie not present
-APP_LOG: 2026/03/03 23:17:14 auth.go:66: AuthMiddleware: Cookie not found - http: named cookie not present
-APP_LOG: 2026/03/03 23:17:20 auth.go:66: AuthMiddleware: Cookie not found - http: named cookie not present
-APP_LOG: 2026/03/03 23:17:26 auth.go:66: AuthMiddleware: Cookie not found - http: named cookie not present
-APP_LOG: 2026/03/03 23:17:32 auth.go:66: AuthMiddleware: Cookie not found - http: named cookie not present
-APP_LOG: 2026/03/03 23:17:38 auth.go:66: AuthMiddleware: Cookie not found - http: named cookie not present
-APP_LOG: 2026/03/03 23:17:44 auth.go:66: AuthMiddleware: Cookie not found - http: named cookie not present
-APP_LOG: 2026/03/03 23:17:50 auth.go:66: AuthMiddleware: Cookie not found - http: named cookie not present
-APP_LOG: 2026/03/03 23:17:56 auth.go:66: AuthMiddleware: Cookie not found - http: named cookie not present
-APP_LOG: 2026/03/03 23:18:02 auth.go:66: AuthMiddleware: Cookie not found - http: named cookie not present
-APP_LOG: 2026/03/03 23:18:08 auth.go:66: AuthMiddleware: Cookie not found - http: named cookie not present
-APP_LOG: 2026/03/03 23:18:14 auth.go:66: AuthMiddleware: Cookie not found - http: named cookie not present
-APP_LOG: 2026/03/03 23:18:20 auth.go:66: AuthMiddleware: Cookie not found - http: named cookie not present
-APP_LOG: 2026/03/03 23:18:26 auth.go:66: AuthMiddleware: Cookie not found - http: named cookie not present
-APP_LOG: 2026/03/03 23:18:32 auth.go:66: AuthMiddleware: Cookie not found - http: named cookie not present
-APP_LOG: 2026/03/03 23:18:38 auth.go:66: AuthMiddleware: Cookie not found - http: named cookie not present
-APP_LOG: 2026/03/03 23:18:44 auth.go:66: AuthMiddleware: Cookie not found - http: named cookie not present
-APP_LOG: 2026/03/03 23:18:50 auth.go:66: AuthMiddleware: Cookie not found - http: named cookie not present
-APP_LOG: 2026/03/03 23:18:56 auth.go:66: AuthMiddleware: Cookie not found - http: named cookie not present
-APP_LOG: 2026/03/03 23:19:02 auth.go:66: AuthMiddleware: Cookie not found - http: named cookie not present
-APP_LOG: 2026/03/03 23:19:08 auth.go:66: AuthMiddleware: Cookie not found - http: named cookie not present
-APP_LOG: 2026/03/03 23:19:14 auth.go:66: AuthMiddleware: Cookie not found - http: named cookie not present
-APP_LOG: 2026/03/03 23:19:21 auth.go:66: AuthMiddleware: Cookie not found - http: named cookie not present
-APP_LOG: 2026/03/03 23:19:27 auth.go:66: AuthMiddleware: Cookie not found - http: named cookie not present
-APP_LOG: 2026/03/03 23:19:35 auth.go:66: AuthMiddleware: Cookie not found - http: named cookie not present
-APP_LOG: 2026/03/03 23:19:42 auth.go:66: AuthMiddleware: Cookie not found - http: named cookie not present
-APP_LOG: 2026/03/03 23:19:49 auth.go:66: AuthMiddleware: Cookie not found - http: named cookie not present
-APP_LOG: 2026/03/03 23:19:49 usersController.go:224: GetAccess request started
-APP_LOG: 2026/03/03 23:19:53 auth.go:66: AuthMiddleware: Cookie not found - http: named cookie not present
-APP_LOG: 2026/03/03 23:19:58 usersController.go:239: GetAccess service error: sql: no rows in result set
-APP_LOG: 2026/03/03 23:19:58 controllers.go:10: Error response: 401 - Token süresi dolmuş
-APP_LOG: 2026/03/03 23:19:58 auth.go:66: AuthMiddleware: Cookie not found - http: named cookie not present
-APP_LOG: 2026/03/03 23:20:03 auth.go:66: AuthMiddleware: Cookie not found - http: named cookie not present
-APP_LOG: 2026/03/03 23:20:08 auth.go:66: AuthMiddleware: Cookie not found - http: named cookie not present
-APP_LOG: 2026/03/03 23:20:14 auth.go:66: AuthMiddleware: Cookie not found - http: named cookie not present
-APP_LOG: 2026/03/03 23:20:20 auth.go:66: AuthMiddleware: Cookie not found - http: named cookie not present
-APP_LOG: 2026/03/03 23:20:26 auth.go:66: AuthMiddleware: Cookie not found - http: named cookie not present
-APP_LOG: 2026/03/03 23:20:33 auth.go:66: AuthMiddleware: Cookie not found - http: named cookie not present
-APP_LOG: 2026/03/03 23:20:39 auth.go:66: AuthMiddleware: Cookie not found - http: named cookie not present
-APP_LOG: 2026/03/03 23:20:44 auth.go:66: AuthMiddleware: Cookie not found - http: named cookie not present
-APP_LOG: 2026/03/03 23:20:51 auth.go:66: AuthMiddleware: Cookie not found - http: named cookie not present
-APP_LOG: 2026/03/03 23:21:03 main.go:36: Application started successfully.
-APP_LOG: 2026/03/03 23:21:03 auth.go:60: AuthMiddleware Started
-APP_LOG: 2026/03/03 23:21:03 auth.go:60: AuthMiddleware Started
-APP_LOG: 2026/03/03 23:21:03 auth.go:60: AuthMiddleware Started
-APP_LOG: 2026/03/03 23:21:03 auth.go:60: AuthMiddleware Started
-APP_LOG: 2026/03/03 23:21:03 auth.go:60: AuthMiddleware Started
-APP_LOG: 2026/03/03 23:21:03 auth.go:60: AuthMiddleware Started
-APP_LOG: 2026/03/03 23:21:03 auth.go:60: AuthMiddleware Started
-APP_LOG: 2026/03/03 23:21:03 auth.go:60: AuthMiddleware Started
-APP_LOG: 2026/03/03 23:21:03 auth.go:60: AuthMiddleware Started
-APP_LOG: 2026/03/03 23:21:03 auth.go:60: AuthMiddleware Started
-APP_LOG: 2026/03/03 23:21:03 auth.go:60: AuthMiddleware Started
-APP_LOG: 2026/03/03 23:21:03 auth.go:60: AuthMiddleware Started
-APP_LOG: 2026/03/03 23:21:03 auth.go:60: AuthMiddleware Started
-APP_LOG: 2026/03/03 23:21:03 auth.go:60: AuthMiddleware Started
-APP_LOG: 2026/03/03 23:21:03 ai.go:20: Gemini client initialized successfully
-APP_LOG: 2026/03/03 23:21:07 auth.go:66: AuthMiddleware: Cookie not found - http: named cookie not present
-APP_LOG: 2026/03/03 23:21:14 auth.go:66: AuthMiddleware: Cookie not found - http: named cookie not present
-APP_LOG: 2026/03/03 23:21:22 auth.go:66: AuthMiddleware: Cookie not found - http: named cookie not present
-APP_LOG: 2026/03/03 23:21:31 auth.go:66: AuthMiddleware: Cookie not found - http: named cookie not present
-APP_LOG: 2026/03/03 23:21:35 auth.go:66: AuthMiddleware: Cookie not found - http: named cookie not present
-APP_LOG: 2026/03/03 23:21:35 usersController.go:224: GetAccess request started
-APP_LOG: 2026/03/03 23:21:36 usersController.go:239: GetAccess service error: sql: no rows in result set
-APP_LOG: 2026/03/03 23:21:36 controllers.go:10: Error response: 401 - Token süresi dolmuş
-APP_LOG: 2026/03/03 23:21:37 auth.go:66: AuthMiddleware: Cookie not found - http: named cookie not present
-APP_LOG: 2026/03/03 23:21:42 auth.go:66: AuthMiddleware: Cookie not found - http: named cookie not present
-APP_LOG: 2026/03/03 23:21:47 auth.go:66: AuthMiddleware: Cookie not found - http: named cookie not present
-APP_LOG: 2026/03/03 23:21:54 auth.go:66: AuthMiddleware: Cookie not found - http: named cookie not present
-APP_LOG: 2026/03/03 23:21:59 auth.go:66: AuthMiddleware: Cookie not found - http: named cookie not present
-APP_LOG: 2026/03/03 23:22:04 auth.go:66: AuthMiddleware: Cookie not found - http: named cookie not present
+APP_LOG: 2026/03/08 14:37:54 main.go:36: Application started successfully.
+APP_LOG: 2026/03/08 14:37:54 auth.go:60: AuthMiddleware Started
+APP_LOG: 2026/03/08 14:37:54 auth.go:60: AuthMiddleware Started
+APP_LOG: 2026/03/08 14:37:54 auth.go:60: AuthMiddleware Started
+APP_LOG: 2026/03/08 14:37:54 auth.go:60: AuthMiddleware Started
+APP_LOG: 2026/03/08 14:37:54 auth.go:60: AuthMiddleware Started
+APP_LOG: 2026/03/08 14:37:54 auth.go:60: AuthMiddleware Started
+APP_LOG: 2026/03/08 14:37:54 auth.go:60: AuthMiddleware Started
+APP_LOG: 2026/03/08 14:37:54 auth.go:60: AuthMiddleware Started
+APP_LOG: 2026/03/08 14:37:54 auth.go:60: AuthMiddleware Started
+APP_LOG: 2026/03/08 14:37:54 auth.go:60: AuthMiddleware Started
+APP_LOG: 2026/03/08 14:37:54 auth.go:60: AuthMiddleware Started
+APP_LOG: 2026/03/08 14:37:54 auth.go:60: AuthMiddleware Started
+APP_LOG: 2026/03/08 14:37:54 auth.go:60: AuthMiddleware Started
+APP_LOG: 2026/03/08 14:37:54 auth.go:60: AuthMiddleware Started
+APP_LOG: 2026/03/08 14:37:54 ai.go:20: Gemini client initialized successfully
+APP_LOG: 2026/03/08 14:38:18 controllers.go:21: Success response: 200
+APP_LOG: 2026/03/08 14:38:26 auth.go:66: AuthMiddleware: Cookie not found - http: named cookie not present
+APP_LOG: 2026/03/08 14:38:26 usersController.go:224: GetAccess request started
+APP_LOG: 2026/03/08 14:38:27 usersController.go:239: GetAccess service error: sql: no rows in result set
+APP_LOG: 2026/03/08 14:38:27 controllers.go:10: Error response: 401 - Token süresi dolmuş
+APP_LOG: 2026/03/08 14:38:30 usersController.go:52: Login request started
+APP_LOG: 2026/03/08 14:38:31 usersController.go:94: Login success: User 1 logged in
+APP_LOG: 2026/03/08 14:38:31 controllers.go:21: Success response: 202
+APP_LOG: 2026/03/08 14:38:31 controllers.go:21: Success response: 200
+APP_LOG: 2026/03/08 14:38:31 controllers.go:21: Success response: 200
+APP_LOG: 2026/03/08 14:38:38 offersController.go:174: Get Offers By Bidder request started
+APP_LOG: 2026/03/08 14:38:38 offersController.go:177: Get Offers By Bidder request started by user 1
+APP_LOG: 2026/03/08 14:38:39 offersController.go:196: Get Offers By Bidder success: page=1 userID=1
+APP_LOG: 2026/03/08 14:38:39 controllers.go:21: Success response: 200
+APP_LOG: 2026/03/08 14:38:39 offersController.go:174: Get Offers By Bidder request started
+APP_LOG: 2026/03/08 14:38:39 offersController.go:177: Get Offers By Bidder request started by user 1
+APP_LOG: 2026/03/08 14:38:40 offersController.go:196: Get Offers By Bidder success: page=1 userID=1
+APP_LOG: 2026/03/08 14:38:40 controllers.go:21: Success response: 200
+APP_LOG: 2026/03/08 14:38:41 offersController.go:147: Get Offers By Seller request started
+APP_LOG: 2026/03/08 14:38:41 offersController.go:149: Get Offers By Seller request started by user 1
+APP_LOG: 2026/03/08 14:38:42 offersController.go:168: Get Offers By Seller success: page=1 userID=1
+APP_LOG: 2026/03/08 14:38:42 controllers.go:21: Success response: 200
+APP_LOG: 2026/03/08 14:38:42 offersController.go:147: Get Offers By Seller request started
+APP_LOG: 2026/03/08 14:38:42 offersController.go:149: Get Offers By Seller request started by user 1
+APP_LOG: 2026/03/08 14:38:42 offersController.go:168: Get Offers By Seller success: page=1 userID=1
+APP_LOG: 2026/03/08 14:38:42 controllers.go:21: Success response: 200
+APP_LOG: 2026/03/08 14:38:43 productRepo.go:84:  true
+APP_LOG: 2026/03/08 14:38:43 productRepo.go:84:  true
+APP_LOG: 2026/03/08 14:38:44 controllers.go:21: Success response: 200
+APP_LOG: 2026/03/08 14:38:45 controllers.go:21: Success response: 200
+APP_LOG: 2026/03/08 14:38:45 productRepo.go:84:  true
+APP_LOG: 2026/03/08 14:38:46 productRepo.go:84:  true
+APP_LOG: 2026/03/08 14:38:46 controllers.go:21: Success response: 200
+APP_LOG: 2026/03/08 14:38:47 controllers.go:21: Success response: 200
+APP_LOG: 2026/03/08 14:38:47 chatController.go:25: NewChat request started
+APP_LOG: 2026/03/08 14:38:47 chatController.go:44: NewChat service error: 1
+APP_LOG: 2026/03/08 14:38:47 chatController.go:52: NewChat service error: Unknown recipient
+APP_LOG: 2026/03/08 14:38:47 controllers.go:10: Error response: 500 - Yeni sohbet oluşturulurken hata oluştu
+APP_LOG: 2026/03/08 14:40:19 offersController.go:147: Get Offers By Seller request started
+APP_LOG: 2026/03/08 14:40:19 offersController.go:149: Get Offers By Seller request started by user 1
+APP_LOG: 2026/03/08 14:40:19 offersController.go:168: Get Offers By Seller success: page=1 userID=1
+APP_LOG: 2026/03/08 14:40:19 controllers.go:21: Success response: 200
+APP_LOG: 2026/03/08 14:40:19 productRepo.go:84:  true
+APP_LOG: 2026/03/08 14:40:20 productRepo.go:84:  true
+APP_LOG: 2026/03/08 14:40:20 controllers.go:21: Success response: 200
+APP_LOG: 2026/03/08 14:40:20 controllers.go:21: Success response: 200
+APP_LOG: 2026/03/08 14:40:22 offersController.go:147: Get Offers By Seller request started
+APP_LOG: 2026/03/08 14:40:22 offersController.go:149: Get Offers By Seller request started by user 1
+APP_LOG: 2026/03/08 14:40:23 offersController.go:168: Get Offers By Seller success: page=1 userID=1
+APP_LOG: 2026/03/08 14:40:23 controllers.go:21: Success response: 200
+APP_LOG: 2026/03/08 14:40:23 productRepo.go:84:  true
+APP_LOG: 2026/03/08 14:40:23 productRepo.go:84:  true
+APP_LOG: 2026/03/08 14:40:24 controllers.go:21: Success response: 200
+APP_LOG: 2026/03/08 14:40:24 controllers.go:21: Success response: 200
+APP_LOG: 2026/03/08 14:40:53 offersController.go:147: Get Offers By Seller request started
+APP_LOG: 2026/03/08 14:40:53 offersController.go:149: Get Offers By Seller request started by user 1
+APP_LOG: 2026/03/08 14:41:05 offersController.go:164: Offers Service Error : Database error %!!(MISSING)(EXTRA string=context canceled)
+APP_LOG: 2026/03/08 14:41:05 controllers.go:10: Error response: 500 - Teklifler listelenirken hata oluştu
+APP_LOG: 2026/03/08 14:41:06 offersController.go:147: Get Offers By Seller request started
+APP_LOG: 2026/03/08 14:41:06 offersController.go:149: Get Offers By Seller request started by user 1
+APP_LOG: 2026/03/08 14:41:15 offersController.go:168: Get Offers By Seller success: page=1 userID=1
+APP_LOG: 2026/03/08 14:41:15 controllers.go:21: Success response: 200
+APP_LOG: 2026/03/08 14:41:20 offersController.go:147: Get Offers By Seller request started
+APP_LOG: 2026/03/08 14:41:20 offersController.go:149: Get Offers By Seller request started by user 1
+APP_LOG: 2026/03/08 14:41:21 productRepo.go:84:  true
+APP_LOG: 2026/03/08 14:41:21 productRepo.go:84:  true
+APP_LOG: 2026/03/08 14:41:21 offersController.go:168: Get Offers By Seller success: page=1 userID=1
+APP_LOG: 2026/03/08 14:41:21 controllers.go:21: Success response: 200
+APP_LOG: 2026/03/08 14:41:21 offersController.go:147: Get Offers By Seller request started
+APP_LOG: 2026/03/08 14:41:21 offersController.go:149: Get Offers By Seller request started by user 1
+APP_LOG: 2026/03/08 14:41:21 controllers.go:21: Success response: 200
+APP_LOG: 2026/03/08 14:41:21 controllers.go:21: Success response: 200
+APP_LOG: 2026/03/08 14:41:21 offersController.go:168: Get Offers By Seller success: page=1 userID=1
+APP_LOG: 2026/03/08 14:41:21 controllers.go:21: Success response: 200
+APP_LOG: 2026/03/08 14:41:21 productRepo.go:84:  true
+APP_LOG: 2026/03/08 14:41:21 productRepo.go:84:  true
+APP_LOG: 2026/03/08 14:41:25 controllers.go:21: Success response: 200
+APP_LOG: 2026/03/08 14:41:25 productRepo.go:84:  true
+APP_LOG: 2026/03/08 14:41:25 controllers.go:21: Success response: 200
+APP_LOG: 2026/03/08 14:41:25 offersController.go:174: Get Offers By Bidder request started
+APP_LOG: 2026/03/08 14:41:25 offersController.go:177: Get Offers By Bidder request started by user 1
+APP_LOG: 2026/03/08 14:41:26 controllers.go:21: Success response: 200
+APP_LOG: 2026/03/08 14:41:26 offersController.go:196: Get Offers By Bidder success: page=1 userID=1
+APP_LOG: 2026/03/08 14:41:26 controllers.go:21: Success response: 200
+APP_LOG: 2026/03/08 14:41:26 offersController.go:174: Get Offers By Bidder request started
+APP_LOG: 2026/03/08 14:41:26 offersController.go:177: Get Offers By Bidder request started by user 1
+APP_LOG: 2026/03/08 14:41:26 productRepo.go:84:  true
+APP_LOG: 2026/03/08 14:41:26 offersController.go:196: Get Offers By Bidder success: page=1 userID=1
+APP_LOG: 2026/03/08 14:41:26 controllers.go:21: Success response: 200
+APP_LOG: 2026/03/08 14:41:26 controllers.go:21: Success response: 200
+APP_LOG: 2026/03/08 14:41:35 offersController.go:147: Get Offers By Seller request started
+APP_LOG: 2026/03/08 14:41:35 offersController.go:149: Get Offers By Seller request started by user 1
+APP_LOG: 2026/03/08 14:41:35 offersController.go:168: Get Offers By Seller success: page=1 userID=1
+APP_LOG: 2026/03/08 14:41:35 controllers.go:21: Success response: 200
+APP_LOG: 2026/03/08 14:41:35 offersController.go:147: Get Offers By Seller request started
+APP_LOG: 2026/03/08 14:41:35 offersController.go:149: Get Offers By Seller request started by user 1
+APP_LOG: 2026/03/08 14:41:36 offersController.go:168: Get Offers By Seller success: page=1 userID=1
+APP_LOG: 2026/03/08 14:41:36 controllers.go:21: Success response: 200
+APP_LOG: 2026/03/08 14:41:37 productRepo.go:84:  true
+APP_LOG: 2026/03/08 14:41:37 productRepo.go:84:  true
+APP_LOG: 2026/03/08 14:41:38 controllers.go:21: Success response: 200
+APP_LOG: 2026/03/08 14:41:38 controllers.go:21: Success response: 200
+APP_LOG: 2026/03/08 14:41:38 productRepo.go:84:  true
+APP_LOG: 2026/03/08 14:41:38 controllers.go:21: Success response: 200
+APP_LOG: 2026/03/08 14:41:38 productRepo.go:84:  true
+APP_LOG: 2026/03/08 14:41:39 controllers.go:21: Success response: 200
+APP_LOG: 2026/03/08 14:41:39 chatController.go:25: NewChat request started
+APP_LOG: 2026/03/08 14:41:39 chatController.go:44: NewChat service error: 1
+APP_LOG: 2026/03/08 14:41:39 chatController.go:52: NewChat service error: Unknown recipient
+APP_LOG: 2026/03/08 14:41:39 controllers.go:10: Error response: 500 - Yeni sohbet oluşturulurken hata oluştu
+APP_LOG: 2026/03/08 14:41:53 chatController.go:25: NewChat request started
+APP_LOG: 2026/03/08 14:41:53 chatController.go:44: NewChat service error: 1
+APP_LOG: 2026/03/08 14:41:53 chatController.go:52: NewChat service error: Unknown recipient
+APP_LOG: 2026/03/08 14:41:53 controllers.go:10: Error response: 500 - Yeni sohbet oluşturulurken hata oluştu
+APP_LOG: 2026/03/08 14:41:57 chatController.go:25: NewChat request started
+APP_LOG: 2026/03/08 14:41:57 chatController.go:44: NewChat service error: 1
+APP_LOG: 2026/03/08 14:41:57 chatController.go:52: NewChat service error: Unknown recipient
+APP_LOG: 2026/03/08 14:41:57 controllers.go:10: Error response: 500 - Yeni sohbet oluşturulurken hata oluştu
+APP_LOG: 2026/03/08 14:42:28 offersController.go:147: Get Offers By Seller request started
+APP_LOG: 2026/03/08 14:42:28 offersController.go:149: Get Offers By Seller request started by user 1
+APP_LOG: 2026/03/08 14:42:28 offersController.go:168: Get Offers By Seller success: page=1 userID=1
+APP_LOG: 2026/03/08 14:42:28 controllers.go:21: Success response: 200
+APP_LOG: 2026/03/08 14:42:28 productRepo.go:84:  true
+APP_LOG: 2026/03/08 14:42:29 productRepo.go:84:  true
+APP_LOG: 2026/03/08 14:42:29 controllers.go:21: Success response: 200
+APP_LOG: 2026/03/08 14:42:29 controllers.go:21: Success response: 200
+APP_LOG: 2026/03/08 14:42:41 offersController.go:147: Get Offers By Seller request started
+APP_LOG: 2026/03/08 14:42:41 offersController.go:149: Get Offers By Seller request started by user 1
+APP_LOG: 2026/03/08 14:42:41 offersController.go:168: Get Offers By Seller success: page=1 userID=1
+APP_LOG: 2026/03/08 14:42:41 controllers.go:21: Success response: 200
+APP_LOG: 2026/03/08 14:42:41 productRepo.go:84:  true
+APP_LOG: 2026/03/08 14:42:42 productRepo.go:84:  true
+APP_LOG: 2026/03/08 14:42:43 controllers.go:21: Success response: 200
+APP_LOG: 2026/03/08 14:42:43 controllers.go:21: Success response: 200
+APP_LOG: 2026/03/08 14:44:05 offersController.go:147: Get Offers By Seller request started
+APP_LOG: 2026/03/08 14:44:05 offersController.go:149: Get Offers By Seller request started by user 1
+APP_LOG: 2026/03/08 14:44:05 offersController.go:168: Get Offers By Seller success: page=1 userID=1
+APP_LOG: 2026/03/08 14:44:05 controllers.go:21: Success response: 200
+APP_LOG: 2026/03/08 14:44:06 productRepo.go:84:  true
+APP_LOG: 2026/03/08 14:44:07 productRepo.go:84:  true
+APP_LOG: 2026/03/08 14:44:07 controllers.go:21: Success response: 200
+APP_LOG: 2026/03/08 14:44:15 productController.go:40: GetProduct service error: timeout: context deadline exceeded
+APP_LOG: 2026/03/08 14:44:15 controllers.go:10: Error response: 404 - Ürün bulunamadı
+APP_LOG: 2026/03/08 14:44:55 offersController.go:147: Get Offers By Seller request started
+APP_LOG: 2026/03/08 14:44:55 offersController.go:149: Get Offers By Seller request started by user 1
+APP_LOG: 2026/03/08 14:44:57 offersController.go:168: Get Offers By Seller success: page=1 userID=1
+APP_LOG: 2026/03/08 14:44:57 controllers.go:21: Success response: 200
+APP_LOG: 2026/03/08 14:44:57 productRepo.go:84:  true
+APP_LOG: 2026/03/08 14:44:58 productRepo.go:84:  true
+APP_LOG: 2026/03/08 14:44:58 controllers.go:21: Success response: 200
+APP_LOG: 2026/03/08 14:44:58 controllers.go:21: Success response: 200
+APP_LOG: 2026/03/08 14:45:12 offersController.go:147: Get Offers By Seller request started
+APP_LOG: 2026/03/08 14:45:12 offersController.go:149: Get Offers By Seller request started by user 1
+APP_LOG: 2026/03/08 14:45:12 offersController.go:168: Get Offers By Seller success: page=1 userID=1
+APP_LOG: 2026/03/08 14:45:12 controllers.go:21: Success response: 200
+APP_LOG: 2026/03/08 14:45:13 productRepo.go:84:  true
+APP_LOG: 2026/03/08 14:45:13 productRepo.go:84:  true
+APP_LOG: 2026/03/08 14:45:13 controllers.go:21: Success response: 200
+APP_LOG: 2026/03/08 14:45:14 controllers.go:21: Success response: 200
+APP_LOG: 2026/03/08 14:45:15 chatController.go:25: NewChat request started
+APP_LOG: 2026/03/08 14:45:15 chatController.go:44: NewChat service error: 1
+APP_LOG: 2026/03/08 14:45:16 chatController.go:52: NewChat service error: Offer not found
+APP_LOG: 2026/03/08 14:45:16 controllers.go:10: Error response: 500 - Yeni sohbet oluşturulurken hata oluştu
+APP_LOG: 2026/03/08 14:48:24 main.go:36: Application started successfully.
+APP_LOG: 2026/03/08 14:48:24 auth.go:60: AuthMiddleware Started
+APP_LOG: 2026/03/08 14:48:24 auth.go:60: AuthMiddleware Started
+APP_LOG: 2026/03/08 14:48:24 auth.go:60: AuthMiddleware Started
+APP_LOG: 2026/03/08 14:48:24 auth.go:60: AuthMiddleware Started
+APP_LOG: 2026/03/08 14:48:24 auth.go:60: AuthMiddleware Started
+APP_LOG: 2026/03/08 14:48:24 auth.go:60: AuthMiddleware Started
+APP_LOG: 2026/03/08 14:48:24 auth.go:60: AuthMiddleware Started
+APP_LOG: 2026/03/08 14:48:24 auth.go:60: AuthMiddleware Started
+APP_LOG: 2026/03/08 14:48:24 auth.go:60: AuthMiddleware Started
+APP_LOG: 2026/03/08 14:48:24 auth.go:60: AuthMiddleware Started
+APP_LOG: 2026/03/08 14:48:24 auth.go:60: AuthMiddleware Started
+APP_LOG: 2026/03/08 14:48:24 auth.go:60: AuthMiddleware Started
+APP_LOG: 2026/03/08 14:48:24 auth.go:60: AuthMiddleware Started
+APP_LOG: 2026/03/08 14:48:24 auth.go:60: AuthMiddleware Started
+APP_LOG: 2026/03/08 14:48:24 ai.go:20: Gemini client initialized successfully
+APP_LOG: 2026/03/08 14:48:30 chatController.go:25: NewChat request started
+APP_LOG: 2026/03/08 14:48:30 chatController.go:44: NewChat service error: 1
+APP_LOG: 2026/03/08 14:48:31 chatController.go:57: NewChat success: Chat created for user 1
+APP_LOG: 2026/03/08 14:48:31 controllers.go:21: Success response: 201
+APP_LOG: 2026/03/08 14:48:32 handler.go:60: User connected:%!(EXTRA int=1)
+APP_LOG: 2026/03/08 14:48:32 chatController.go:101: GetChats request started
+APP_LOG: 2026/03/08 14:48:32 chatController.go:116: GetChats parameters: userID=1, page=1
+APP_LOG: 2026/03/08 14:48:32 client.go:54: WS read error: websocket: close 1001 (going away)
+APP_LOG: 2026/03/08 14:48:32 handler.go:60: User connected:%!(EXTRA int=1)
+APP_LOG: 2026/03/08 14:48:32 chatController.go:129: GetChats success: 2 chats retrieved for user 1
+APP_LOG: 2026/03/08 14:48:32 controllers.go:21: Success response: 200
+APP_LOG: 2026/03/08 14:48:32 chatController.go:101: GetChats request started
+APP_LOG: 2026/03/08 14:48:32 chatController.go:116: GetChats parameters: userID=1, page=1
+APP_LOG: 2026/03/08 14:48:32 chatController.go:129: GetChats success: 2 chats retrieved for user 1
+APP_LOG: 2026/03/08 14:48:32 controllers.go:21: Success response: 200
+APP_LOG: 2026/03/08 14:48:35 chatController.go:68: GetChat request started
+APP_LOG: 2026/03/08 14:48:35 chatController.go:95: GetChat success: 0 messages retrieved for chat 5
+APP_LOG: 2026/03/08 14:48:35 controllers.go:21: Success response: 200
+APP_LOG: 2026/03/08 14:48:37 client.go:54: WS read error: websocket: close 1005 (no status)
+APP_LOG: 2026/03/08 14:48:37 handler.go:60: User connected:%!(EXTRA int=1)
+APP_LOG: 2026/03/08 14:48:37 chatController.go:68: GetChat request started
+APP_LOG: 2026/03/08 14:48:38 chatController.go:95: GetChat success: 1 messages retrieved for chat 6
+APP_LOG: 2026/03/08 14:48:38 controllers.go:21: Success response: 200
+APP_LOG: 2026/03/08 14:48:42 client.go:54: WS read error: websocket: close 1005 (no status)
+APP_LOG: 2026/03/08 14:48:42 handler.go:60: User connected:%!(EXTRA int=1)
+APP_LOG: 2026/03/08 14:48:44 chatController.go:68: GetChat request started
+APP_LOG: 2026/03/08 14:48:44 chatController.go:95: GetChat success: 0 messages retrieved for chat 5
+APP_LOG: 2026/03/08 14:48:44 controllers.go:21: Success response: 200
+APP_LOG: 2026/03/08 14:48:45 chatController.go:68: GetChat request started
+APP_LOG: 2026/03/08 14:48:45 chatController.go:95: GetChat success: 1 messages retrieved for chat 6
+APP_LOG: 2026/03/08 14:48:45 controllers.go:21: Success response: 200
+APP_LOG: 2026/03/08 14:48:47 client.go:54: WS read error: websocket: close 1005 (no status)
+APP_LOG: 2026/03/08 14:48:47 handler.go:60: User connected:%!(EXTRA int=1)
+APP_LOG: 2026/03/08 14:48:50 client.go:54: WS read error: websocket: close 1005 (no status)
+APP_LOG: 2026/03/08 14:48:55 handler.go:60: User connected:%!(EXTRA int=1)
+APP_LOG: 2026/03/08 14:48:58 offersController.go:147: Get Offers By Seller request started
+APP_LOG: 2026/03/08 14:48:58 offersController.go:149: Get Offers By Seller request started by user 1
+APP_LOG: 2026/03/08 14:48:58 offersController.go:168: Get Offers By Seller success: page=1 userID=1
+APP_LOG: 2026/03/08 14:48:58 controllers.go:21: Success response: 200
+APP_LOG: 2026/03/08 14:48:58 offersController.go:147: Get Offers By Seller request started
+APP_LOG: 2026/03/08 14:48:58 offersController.go:149: Get Offers By Seller request started by user 1
+APP_LOG: 2026/03/08 14:48:58 offersController.go:168: Get Offers By Seller success: page=1 userID=1
+APP_LOG: 2026/03/08 14:48:58 controllers.go:21: Success response: 200
+APP_LOG: 2026/03/08 14:48:59 productRepo.go:84:  true
+APP_LOG: 2026/03/08 14:48:59 productRepo.go:84:  true
+APP_LOG: 2026/03/08 14:48:59 controllers.go:21: Success response: 200
+APP_LOG: 2026/03/08 14:48:59 controllers.go:21: Success response: 200
+APP_LOG: 2026/03/08 14:48:59 productRepo.go:84:  true
+APP_LOG: 2026/03/08 14:48:59 controllers.go:21: Success response: 200
+APP_LOG: 2026/03/08 14:49:00 productRepo.go:84:  true
+APP_LOG: 2026/03/08 14:49:00 controllers.go:21: Success response: 200
+APP_LOG: 2026/03/08 14:49:00 chatController.go:25: NewChat request started
+APP_LOG: 2026/03/08 14:49:00 chatController.go:44: NewChat service error: 1
+APP_LOG: 2026/03/08 14:49:00 chatController.go:52: NewChat service error: Chat already exists
+APP_LOG: 2026/03/08 14:49:00 controllers.go:10: Error response: 500 - Yeni sohbet oluşturulurken hata oluştu
+APP_LOG: 2026/03/08 14:49:11 handler.go:60: User connected:%!(EXTRA int=1)
+APP_LOG: 2026/03/08 14:49:11 client.go:54: WS read error: read tcp [::1]:8080->[::1]:54552: wsarecv: Kurulan bir bağlantı, ana makinenizdeki yazılım tarafından iptal edildi.
+APP_LOG: 2026/03/08 14:49:11 chatController.go:101: GetChats request started
+APP_LOG: 2026/03/08 14:49:11 chatController.go:116: GetChats parameters: userID=1, page=1
+APP_LOG: 2026/03/08 14:49:11 handler.go:60: User connected:%!(EXTRA int=1)
+APP_LOG: 2026/03/08 14:49:11 chatController.go:129: GetChats success: 2 chats retrieved for user 1
+APP_LOG: 2026/03/08 14:49:11 controllers.go:21: Success response: 200
+APP_LOG: 2026/03/08 14:49:11 chatController.go:101: GetChats request started
+APP_LOG: 2026/03/08 14:49:11 chatController.go:116: GetChats parameters: userID=1, page=1
+APP_LOG: 2026/03/08 14:49:12 chatController.go:129: GetChats success: 2 chats retrieved for user 1
+APP_LOG: 2026/03/08 14:49:12 controllers.go:21: Success response: 200
+APP_LOG: 2026/03/08 14:49:13 chatController.go:68: GetChat request started
+APP_LOG: 2026/03/08 14:49:13 chatController.go:95: GetChat success: 1 messages retrieved for chat 6
+APP_LOG: 2026/03/08 14:49:13 controllers.go:21: Success response: 200
+APP_LOG: 2026/03/08 14:49:17 client.go:54: WS read error: websocket: close 1005 (no status)
+APP_LOG: 2026/03/08 14:49:17 handler.go:60: User connected:%!(EXTRA int=1)
+APP_LOG: 2026/03/08 14:49:23 client.go:54: WS read error: websocket: close 1005 (no status)
+APP_LOG: 2026/03/08 14:49:23 handler.go:60: User connected:%!(EXTRA int=1)
+APP_LOG: 2026/03/08 14:49:29 client.go:54: WS read error: websocket: close 1005 (no status)
+APP_LOG: 2026/03/08 14:49:29 handler.go:60: User connected:%!(EXTRA int=1)
+APP_LOG: 2026/03/08 14:49:35 client.go:54: WS read error: websocket: close 1005 (no status)
+APP_LOG: 2026/03/08 14:49:35 handler.go:60: User connected:%!(EXTRA int=1)
+APP_LOG: 2026/03/08 14:49:41 client.go:54: WS read error: websocket: close 1005 (no status)
+APP_LOG: 2026/03/08 14:49:41 handler.go:60: User connected:%!(EXTRA int=1)
+APP_LOG: 2026/03/08 14:49:46 client.go:54: WS read error: websocket: close 1005 (no status)
+APP_LOG: 2026/03/08 14:49:46 handler.go:60: User connected:%!(EXTRA int=1)
+APP_LOG: 2026/03/08 14:49:47 chatController.go:68: GetChat request started
+APP_LOG: 2026/03/08 14:49:47 chatController.go:95: GetChat success: 0 messages retrieved for chat 5
+APP_LOG: 2026/03/08 14:49:47 controllers.go:21: Success response: 200
+APP_LOG: 2026/03/08 14:49:48 chatController.go:68: GetChat request started
+APP_LOG: 2026/03/08 14:49:48 chatController.go:95: GetChat success: 1 messages retrieved for chat 6
+APP_LOG: 2026/03/08 14:49:48 controllers.go:21: Success response: 200
+APP_LOG: 2026/03/08 14:49:50 client.go:54: WS read error: websocket: close 1005 (no status)
+APP_LOG: 2026/03/08 14:49:51 offersController.go:174: Get Offers By Bidder request started
+APP_LOG: 2026/03/08 14:49:51 offersController.go:177: Get Offers By Bidder request started by user 1
+APP_LOG: 2026/03/08 14:49:51 offersController.go:196: Get Offers By Bidder success: page=1 userID=1
+APP_LOG: 2026/03/08 14:49:51 controllers.go:21: Success response: 200
+APP_LOG: 2026/03/08 14:49:51 offersController.go:174: Get Offers By Bidder request started
+APP_LOG: 2026/03/08 14:49:51 offersController.go:177: Get Offers By Bidder request started by user 1
+APP_LOG: 2026/03/08 14:49:51 offersController.go:196: Get Offers By Bidder success: page=1 userID=1
+APP_LOG: 2026/03/08 14:49:51 controllers.go:21: Success response: 200
+APP_LOG: 2026/03/08 14:49:55 offersController.go:147: Get Offers By Seller request started
+APP_LOG: 2026/03/08 14:49:55 offersController.go:149: Get Offers By Seller request started by user 1
+APP_LOG: 2026/03/08 14:49:55 handler.go:60: User connected:%!(EXTRA int=1)
+APP_LOG: 2026/03/08 14:49:55 offersController.go:168: Get Offers By Seller success: page=1 userID=1
+APP_LOG: 2026/03/08 14:49:55 controllers.go:21: Success response: 200
+APP_LOG: 2026/03/08 14:49:55 offersController.go:147: Get Offers By Seller request started
+APP_LOG: 2026/03/08 14:49:55 offersController.go:149: Get Offers By Seller request started by user 1
+APP_LOG: 2026/03/08 14:49:55 offersController.go:168: Get Offers By Seller success: page=1 userID=1
+APP_LOG: 2026/03/08 14:49:55 controllers.go:21: Success response: 200
+APP_LOG: 2026/03/08 14:49:56 productRepo.go:84:  true
+APP_LOG: 2026/03/08 14:49:56 productRepo.go:84:  true
+APP_LOG: 2026/03/08 14:49:56 controllers.go:21: Success response: 200
+APP_LOG: 2026/03/08 14:49:56 controllers.go:21: Success response: 200
+APP_LOG: 2026/03/08 14:49:56 productRepo.go:84:  true
+APP_LOG: 2026/03/08 14:49:57 productRepo.go:84:  true
+APP_LOG: 2026/03/08 14:49:57 controllers.go:21: Success response: 200
+APP_LOG: 2026/03/08 14:49:57 controllers.go:21: Success response: 200
+APP_LOG: 2026/03/08 14:49:57 chatController.go:25: NewChat request started
+APP_LOG: 2026/03/08 14:49:57 chatController.go:44: NewChat service error: 1
+APP_LOG: 2026/03/08 14:49:58 chatController.go:52: NewChat service error: Chat already exists
+APP_LOG: 2026/03/08 14:49:58 controllers.go:10: Error response: 500 - Yeni sohbet oluşturulurken hata oluştu
+APP_LOG: 2026/03/08 14:50:08 productRepo.go:84:  true
+APP_LOG: 2026/03/08 14:50:08 controllers.go:21: Success response: 200
+APP_LOG: 2026/03/08 14:50:10 controllers.go:21: Success response: 200

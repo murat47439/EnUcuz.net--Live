@@ -120,11 +120,15 @@ export interface Brands {
         }
     }
 }
+export interface NewChat {
+    Chat: Chat,
+    message: string
+}
 export interface Chat {
-    id: number,
+    id?: number,
     sender: number,
     recipient: number,
-    channel_id: number,
+    channel_id?: number,
     product_id: number
 }
 export interface Chats {
@@ -158,10 +162,7 @@ export interface ChatMessages {
         messages: ChatMessage[]
     }
 }
-export interface NewChat {
-    chat: Chat,
-    message: ChatMessage,
-}
+
 export interface Review {
     id: number,
     user_id: number,

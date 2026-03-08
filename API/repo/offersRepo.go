@@ -49,6 +49,18 @@ func (of *OffersRepo) ExistsOffer(ctx context.Context, tx *sqlx.Tx, productId, b
 	}
 	return exists, nil
 }
+func (of *OffersRepo) ExistsOfferForChat(ctx context.Context, tx *sqlx.Tx, productId, bidderId, sellerId int) (bool, error) {
+	var exists bool
+	query := `SELECT EXISTS(SELECT 1 FROM offers WHERE product_id = $1 AND status = $2 AND bidder_id = $3 AND seller_id = $4)`
+	err := tx.QueryRowContext(ctx, query, productId, OfferAccepted, bidderId, sellerId).Scan(&exists)
+	if err != nil {
+		if err == sql.ErrNoRows {
+			return false, nil
+		}
+		return false, fmt.Errorf("Database Error : %w", err)
+	}
+	return exists, nil
+}
 func (of *OffersRepo) UpdateOffer(ctx context.Context, tx *sqlx.Tx, status, id int) error {
 	query := `UPDATE offers SET status = $1, updated_at = NOW() WHERE id = $2 AND  status = $3 AND expires_at > NOW()`
 

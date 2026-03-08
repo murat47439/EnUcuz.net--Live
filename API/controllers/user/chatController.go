@@ -21,39 +21,6 @@ func NewChatController(service *chat.ChatService) *ChatController {
 	return &ChatController{ChatService: service}
 }
 
-func (cc *ChatController) CheckChat(w http.ResponseWriter, r *http.Request) {
-	config.Logger.Printf("CheckChat request started")
-
-	userID, _, ok := GetUserIDFromContext(r)
-	if !ok {
-		config.Logger.Printf("CheckChat error: Unauthorized access")
-		RespondWithError(w, http.StatusUnauthorized, "Yetkisiz erişim")
-		return
-	}
-
-	prod_id, err := strconv.Atoi(chi.URLParam(r, "id"))
-	if err != nil {
-		config.Logger.Printf("CheckChat error: Invalid product ID - %v", err)
-		RespondWithError(w, http.StatusBadRequest, "Geçersiz ürün ID'si")
-		return
-	}
-
-	ctx := r.Context()
-	ctx, cancel := context.WithTimeout(ctx, 10*time.Second)
-	defer cancel()
-
-	exists, err := cc.ChatService.CheckChatByProd(ctx, userID, prod_id)
-	if err != nil {
-		config.Logger.Printf("CheckChat service error: %v", err)
-		RespondWithError(w, http.StatusInternalServerError, "Sohbet kontrolü yapılırken hata oluştu")
-		return
-	}
-
-	config.Logger.Printf("CheckChat success: User %d, Product %d, Exists: %v", userID, prod_id, exists)
-	RespondWithJSON(w, http.StatusOK, map[string]interface{}{
-		"chat_exists": exists,
-	})
-}
 func (cc *ChatController) NewChat(w http.ResponseWriter, r *http.Request) {
 	config.Logger.Printf("NewChat request started")
 
@@ -96,42 +63,7 @@ func (cc *ChatController) NewChat(w http.ResponseWriter, r *http.Request) {
 		"chat":    data,
 	})
 }
-func (cc *ChatController) NewMessage(w http.ResponseWriter, r *http.Request) {
-	config.Logger.Printf("NewMessage request started")
 
-	userID, _, ok := GetUserIDFromContext(r)
-	if !ok {
-		config.Logger.Printf("NewMessage error: Unauthorized access")
-		RespondWithError(w, http.StatusUnauthorized, "Yetkisiz erişim")
-		return
-	}
-
-	var model models.Message
-	err := json.NewDecoder(r.Body).Decode(&model)
-	if err != nil {
-		config.Logger.Printf("NewMessage error: Invalid request data - %v", err)
-		RespondWithError(w, http.StatusBadRequest, "Geçersiz veri formatı")
-		return
-	}
-	defer r.Body.Close()
-
-	model.Sender = userID
-	ctx := r.Context()
-	ctx, cancel := context.WithTimeout(ctx, 10*time.Second)
-	defer cancel()
-
-	mes, err := cc.ChatService.NewMessage(ctx, &model)
-	if err != nil {
-		config.Logger.Printf("NewMessage service error: %v", err)
-		RespondWithError(w, http.StatusInternalServerError, "Mesaj gönderilirken hata oluştu")
-		return
-	}
-
-	config.Logger.Printf("NewMessage success: Message sent by user %d", userID)
-	RespondWithJSON(w, http.StatusCreated, map[string]interface{}{
-		"message": mes,
-	})
-}
 func (cc *ChatController) GetChat(w http.ResponseWriter, r *http.Request) {
 	config.Logger.Printf("GetChat request started")
 

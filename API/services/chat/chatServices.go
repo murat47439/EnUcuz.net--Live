@@ -9,14 +9,24 @@ import (
 )
 
 type ChatService struct {
-	ChatRepo *repo.ChatRepo
-	db       db.TxStarter
+	ChatRepo  *repo.ChatRepo
+	OfferRepo *repo.OffersRepo
+	db        db.TxStarter
 }
 
-func NewChatService(repo *repo.ChatRepo, db db.TxStarter) *ChatService {
+func NewChatService(repo *repo.ChatRepo, orepo *repo.OffersRepo, db db.TxStarter) *ChatService {
 	return &ChatService{ChatRepo: repo,
-		db: db}
+		OfferRepo: orepo,
+		db:        db}
 }
+
+const (
+	OfferPending   = 0 // Beklemede (teklif verildi, cevap yok)
+	OfferAccepted  = 1 // Kabul edildi (satış gerçekleşiyor)
+	OfferRejected  = 2 // Reddedildi (satıcı reddetti)
+	OfferCancelled = 3 // İptal edildi (teklif veren iptal etti)
+	OfferExpired   = 4 // Süresi doldu (otomatik)
+)
 
 func (cs *ChatService) CheckChat(ctx context.Context, user_id, chat_id int) (bool, error) {
 	if user_id == 0 || chat_id == 0 {
@@ -44,6 +54,8 @@ func (cs *ChatService) NewChat(ctx context.Context, data *models.Chat, message s
 		return nil, nil, fmt.Errorf("Invalid sender")
 	case data.Recipient == 0:
 		return nil, nil, fmt.Errorf("Unknown recipient")
+	case data.ProductID == 0:
+		return nil, nil, fmt.Errorf("Unkown Product")
 	case message == "":
 		return nil, nil, fmt.Errorf("Invalid message")
 	}
@@ -68,6 +80,13 @@ func (cs *ChatService) NewChat(ctx context.Context, data *models.Chat, message s
 	}
 	if exists {
 		return nil, nil, fmt.Errorf("Chat already exists")
+	}
+	offerexx, err := cs.OfferRepo.ExistsOfferForChat(ctx, tx, data.ProductID, data.Recipient, data.Sender)
+	if err != nil {
+		return nil, nil, err
+	}
+	if !offerexx {
+		return nil, nil, fmt.Errorf("Offer not found")
 	}
 	result, err := cs.ChatRepo.NewChat(ctx, data, tx)
 	if err != nil {
