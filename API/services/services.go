@@ -42,7 +42,7 @@ func NewService(repo *repo.Repo, db *sqlx.DB) *Service {
 	attributeService := attributes.NewAttributeService(db, repo.AttributeRepo, repo.ProductRepo)
 	chatService := chat.NewChatService(repo.ChatRepo, repo.OffersRepo, db)
 	imageService := images.NewProductService(repo.ImageRepo, db)
-	offersService := offers.NewOffersService(repo.OffersRepo, repo.ProductRepo, db)
+	offersService := offers.NewOffersService(repo.OffersRepo, repo.ProductRepo, db, chatService)
 	return &Service{
 
 		BrandsService:     brandsService,

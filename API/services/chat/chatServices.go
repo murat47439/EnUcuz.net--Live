@@ -6,6 +6,8 @@ import (
 	"Store-Dio/repo"
 	"context"
 	"fmt"
+
+	"github.com/jmoiron/sqlx"
 )
 
 type ChatService struct {
@@ -48,60 +50,49 @@ func (cs *ChatService) CheckChatByProd(ctx context.Context, user_id, prod_id int
 	}
 	return exists, nil
 }
-func (cs *ChatService) NewChat(ctx context.Context, data *models.Chat, message string) (*models.Chat, *models.Message, error) {
+func (cs *ChatService) NewChat(ctx context.Context, data *models.Chat, message string, tx *sqlx.Tx) (bool, error) {
 	switch {
 	case data.Sender == 0:
-		return nil, nil, fmt.Errorf("Invalid sender")
+		return false, fmt.Errorf("Invalid sender")
 	case data.Recipient == 0:
-		return nil, nil, fmt.Errorf("Unknown recipient")
+		return false, fmt.Errorf("Unknown recipient")
 	case data.ProductID == 0:
-		return nil, nil, fmt.Errorf("Unkown Product")
+		return false, fmt.Errorf("Unkown Product")
 	case message == "":
-		return nil, nil, fmt.Errorf("Invalid message")
+		return false, fmt.Errorf("Invalid message")
 	}
 
 	// channel_id backend'de otomatik oluşturuluyor
 	data.ChannelID = fmt.Sprintf("chat-%d-%d-%d", data.Sender, data.Recipient, data.ProductID)
-	tx, err := cs.db.BeginTxx(ctx, nil)
-	if err != nil {
-		return nil, nil, fmt.Errorf("TX error : %w", err)
-	}
-	defer func() {
-		if p := recover(); p != nil {
-			_ = tx.Rollback()
-			panic(p)
-		} else if err := tx.Commit(); err != nil {
-			_ = tx.Rollback()
-		}
-	}()
+
 	exists, err := cs.ChatRepo.CheckChatByProd(ctx, data.Sender, data.ProductID)
 	if err != nil {
-		return nil, nil, err
+		return false, err
 	}
 	if exists {
-		return nil, nil, fmt.Errorf("Chat already exists")
+		return false, fmt.Errorf("Chat already exists")
 	}
 	offerexx, err := cs.OfferRepo.ExistsOfferForChat(ctx, tx, data.ProductID, data.Recipient, data.Sender)
 	if err != nil {
-		return nil, nil, err
+		return false, err
 	}
 	if !offerexx {
-		return nil, nil, fmt.Errorf("Offer not found")
+		return false, fmt.Errorf("Offer not found")
 	}
 	result, err := cs.ChatRepo.NewChat(ctx, data, tx)
 	if err != nil {
-		return nil, nil, err
+		return false, err
 	}
 	mes := &models.Message{
 		ChatID:  result.ID,
 		Sender:  result.Sender,
 		Content: message,
 	}
-	content, err := cs.ChatRepo.NewMessageForFirst(ctx, mes, tx)
+	_, err = cs.ChatRepo.NewMessageForFirst(ctx, mes, tx)
 	if err != nil {
-		return nil, nil, err
+		return false, err
 	}
-	return result, content, nil
+	return true, nil
 
 }
 func (cs *ChatService) NewMessage(ctx context.Context, data *models.Message) (*models.Message, error) {

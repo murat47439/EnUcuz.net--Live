@@ -1,22 +1,26 @@
 package offers
 
 import (
+	"Store-Dio/config"
 	"Store-Dio/internal/db"
 	"Store-Dio/models"
 	"Store-Dio/repo"
+	"Store-Dio/services/chat"
 	"context"
 	"fmt"
 )
 
 type OffersService struct {
 	OffersRepo  *repo.OffersRepo
+	ChatService *chat.ChatService
 	ProductRepo *repo.ProductRepo
 	db          db.TxStarter
 }
 
-func NewOffersService(repo *repo.OffersRepo, prepo *repo.ProductRepo, db db.TxStarter) *OffersService {
+func NewOffersService(repo *repo.OffersRepo, prepo *repo.ProductRepo, db db.TxStarter, chatService *chat.ChatService) *OffersService {
 	return &OffersService{
 		OffersRepo:  repo,
+		ChatService: chatService,
 		ProductRepo: prepo,
 		db:          db,
 	}
@@ -196,6 +200,22 @@ func (os *OffersService) UpdateOffer(ctx context.Context, data models.UpdateOffe
 		if err != nil {
 			return err
 		}
+		var chat models.NewChat
+		chat.Chat.Sender = offer.SellerID
+		chat.Chat.ProductID = offer.ProductID
+		chat.Chat.Recipient = offer.BidderID
+		chat.Message = "Merhaba, teklifiniz kabul edildi!"
+
+		result, err := os.ChatService.NewChat(ctx, &chat.Chat, chat.Message, tx)
+		if err != nil {
+			return err
+		}
+		if !result {
+			return fmt.Errorf("İşlem başarısız")
+		}
+
+		config.Logger.Printf("NewChat success: Chat created for user %d", userID)
+
 	}
 
 	return nil

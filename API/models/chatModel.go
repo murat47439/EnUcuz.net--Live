@@ -19,6 +19,6 @@ type Message struct {
 }
 
 type NewChat struct {
-	Chat    Chat   `json:"chat"`
-	Message string `json:"message"`
+	Chat    Chat
+	Message string
 }

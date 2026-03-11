@@ -4,9 +4,8 @@ import { GetSellerOffers } from "@/lib/api/offers/useGetSeller";
 import { UpdateOffer } from "@/lib/api/offers/useUpdate";
 import { AddCounter } from "@/lib/api/offers/useAddCounter";
 import { getProduct } from "@/lib/api/products/useGetProduct";
-import { addChat } from "@/lib/api/chats/useAdd";
 import { useRouter } from "next/navigation";
-import { Chat, NewChat, Offers, OffersModel, Product } from "@/lib/types/types";
+import { Offers, OffersModel, Product } from "@/lib/types/types";
 import { useToast } from "@/context/toastContext";
 import { UseModal } from "@/context/modalContext";
 import { useAuth } from "@/context/authContext";
@@ -137,24 +136,7 @@ export default function OfferSellerPage() {
         );
     };
 
-    const handleStartChat = async (offer: OffersModel) => {
-        try {
-            const chat: Chat = {
-                sender: Number(user?.id),
-                recipient: offer.bidderId,
-                product_id: offer.productId,
-            };
-            const request: NewChat = {
-                Chat: chat,
-                message: "Merhaba, teklifiniz kabul edildi!",
-            };
-            await addChat(request);
-            router.push("/profile/chats");
-        } catch (err) {
-            if (err instanceof Error) showNotification(err.message, "error", 4000);
-            else showNotification("Sohbet başlatılamadı.", "error", 4000);
-        }
-    };
+
 
     /* ── Loading ── */
     if (loading || authLoading) {
@@ -297,7 +279,7 @@ export default function OfferSellerPage() {
                                             {offer.status === 1 && (
                                                 <div className="mt-4 pt-4 border-t border-gray-100">
                                                     <button
-                                                        onClick={() => handleStartChat(offer)}
+                                                        onClick={() => router.push(`/profile/chats`)}
                                                         className="w-full inline-flex items-center justify-center gap-2 px-4 py-3 text-sm font-medium rounded-lg bg-[#ff6000] text-white hover:bg-[#e55500] transition-colors shadow-sm"
                                                     >
                                                         <MessageSquare size={16} />

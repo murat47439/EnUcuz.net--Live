@@ -138,7 +138,7 @@ func SetupRoutes(
 		})
 		r.Route("/chats", func(chat chi.Router) {
 			chat.Use(um.AuthMiddleware)
-			chat.Post("/", controller.UserChatController.NewChat)
+			// chat.Post("/", controller.UserChatController.NewChat)
 			chat.Get("/", controller.UserChatController.GetChats)
 			chat.Get("/{id}", controller.UserChatController.GetChat)
 
