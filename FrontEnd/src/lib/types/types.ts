@@ -79,7 +79,7 @@ export interface Counter {
 }
 export interface UpdateOfferModel {
     id: number;
-    action: 'accept' | 'reject' | 'cancel';
+    action: 'accept' | 'reject' | 'cancel' | 'buyer-accept';
 }
 export interface OffersModel {
     id: number;
