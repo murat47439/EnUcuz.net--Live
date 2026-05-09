@@ -113,7 +113,7 @@ export default function OfferBidderPage() {
 
     const handleAcceptCounter = async (id: number) => {
         try {
-            await UpdateOffer({ id, action: "accept" });
+            await UpdateOffer({ id, action: "buyer-accept" });
             showNotification("Karşı teklif kabul edildi!", "success", 3000);
             fetchOffers();
         } catch (err) {
@@ -121,6 +121,7 @@ export default function OfferBidderPage() {
             else showNotification("Bir hata oluştu", "error", 4000);
         }
     };
+
 
     const handleRejectCounter = async (id: number) => {
         try {

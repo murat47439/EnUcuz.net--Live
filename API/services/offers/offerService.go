@@ -170,6 +170,11 @@ func (os *OffersService) UpdateOffer(ctx context.Context, data models.UpdateOffe
 			return fmt.Errorf("Unauthorized")
 		}
 		newStatus = OfferAccepted
+	case "buyer-accept":
+		if offer.CreatedBy != userID {
+			return fmt.Errorf("Unauthorized")
+		}
+		newStatus = OfferAccepted
 	case "reject":
 		if offer.SellerID != userID {
 			return fmt.Errorf("Unauthorized")
