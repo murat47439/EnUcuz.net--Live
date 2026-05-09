@@ -359,7 +359,9 @@ export interface RegisterRequest {
     surname: string,
     email: string,
     phone: string,
-    password: string
+    password: string,
+    kvkk: boolean,
+    contact: boolean,
 }
 export interface RegisterResponse {
     success: boolean,

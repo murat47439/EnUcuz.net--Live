@@ -26,7 +26,7 @@ func NewUserRepo(db *sqlx.DB) *UserRepo {
 
 // USER
 
-func (ur *UserRepo) CreateUser(ctx context.Context, user models.User) (bool, error) {
+func (ur *UserRepo) CreateUser(ctx context.Context, user models.NewUser) (bool, error) {
 	tx, err := ur.db.BeginTxx(ctx, nil)
 
 	if err != nil {
@@ -54,12 +54,26 @@ func (ur *UserRepo) CreateUser(ctx context.Context, user models.User) (bool, err
 	}
 	user.Password = password
 
-	query := `INSERT INTO users(email, phone, name, surname, gender, role, password) VALUES($1, $2, $3, $4, $5, $6, $7)`
-
-	_, err = tx.ExecContext(ctx, query, user.Email, user.Phone, user.Name, user.Surname, user.Gender, user.Role, user.Password)
+	query := `INSERT INTO users(email, phone, name, surname, gender, role, password) VALUES($1, $2, $3, $4, $5, $6, $7) RETURNING id `
+	var id int
+	err = tx.QueryRowContext(ctx, query, user.Email, user.Phone, user.Name, user.Surname, user.Gender, user.Role, user.Password).Scan(&id)
 
 	if err != nil {
 		return false, fmt.Errorf("Database error : %s", err.Error())
+	}
+	var acceptedID []int
+	if user.Contact == true {
+		acceptedID = []int{1, 2, 3, 4}
+	} else {
+		acceptedID = []int{1, 2, 3}
+
+	}
+	query = `INSERT INTO user_contracts(user_id, contract_id, ip_address, user_agent ) VALUES ($1, $2, $3, $4)`
+	for _, contractID := range acceptedID {
+		_, err := tx.ExecContext(ctx, query, id, contractID, user.IpAddress, user.UserAgent)
+		if err != nil {
+			return false, err
+		}
 	}
 	return true, nil
 }

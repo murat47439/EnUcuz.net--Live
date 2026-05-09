@@ -28,7 +28,8 @@ export default function LoginPage() {
     const [surname, setSurname] = useState('');
     const [phone, setPhone] = useState('+90')
 
-
+    const [kvkkAccepted, setKvkkAccepted] = useState(false);
+    const [contactAccepted, setContactAccepted] = useState(false);
     const [password, setPassword] = useState('');
     const [regpassword, setregPassword] = useState('');
     const [reg1password, setreg1Password] = useState('');
@@ -70,7 +71,10 @@ export default function LoginPage() {
             email: email,
             password: regpassword,
             phone: phone,
+            kvkk: kvkkAccepted,
+            contact: contactAccepted
         };
+        console.log(request)
         try {
             switch (true) {
                 case (!name || name.trim() === ""):
@@ -96,6 +100,11 @@ export default function LoginPage() {
                 case (reg1password !== regpassword):
                     setResult("Şifreler uyuşmuyor");
                     return;
+                case (!kvkkAccepted):
+                    setResult("Sözleşme ve ekleri kabul edilmedi");
+                    return;
+
+
 
                 case (regpassword.length < 8):
                     setResult("Şifre en az 8 karakter olmalı");
@@ -133,8 +142,8 @@ export default function LoginPage() {
                             <button
                                 type="button"
                                 className={`py-2.5 text-sm font-medium transition-all duration-200 border-b-2 ${login
-                                        ? 'border-[#ff6000] text-[#ff6000]'
-                                        : 'border-transparent text-gray-500 hover:text-gray-700'
+                                    ? 'border-[#ff6000] text-[#ff6000]'
+                                    : 'border-transparent text-gray-500 hover:text-gray-700'
                                     }`}
                                 onClick={() => { setLogin(true); setRegister(false); setResult('') }}
                             >
@@ -143,8 +152,8 @@ export default function LoginPage() {
                             <button
                                 type="button"
                                 className={`py-2.5 text-sm font-medium transition-all duration-200 border-b-2 ${register
-                                        ? 'border-[#ff6000] text-[#ff6000]'
-                                        : 'border-transparent text-gray-500 hover:text-gray-700'
+                                    ? 'border-[#ff6000] text-[#ff6000]'
+                                    : 'border-transparent text-gray-500 hover:text-gray-700'
                                     }`}
                                 onClick={() => { setLogin(false); setRegister(true); setResult('') }}
                             >
@@ -155,8 +164,8 @@ export default function LoginPage() {
                         {/* Hata/Başarı Mesajı */}
                         {result && (
                             <div className={`mb-5 p-3 rounded-lg flex items-center gap-2 text-sm ${result.includes('Başarılı') || result.includes('başarılı')
-                                    ? 'bg-green-50 border border-green-200 text-green-700'
-                                    : 'bg-red-50 border border-red-200 text-red-700'
+                                ? 'bg-green-50 border border-green-200 text-green-700'
+                                : 'bg-red-50 border border-red-200 text-red-700'
                                 }`}>
                                 {result.includes('Başarılı') || result.includes('başarılı') ? (
                                     <CheckCircle size={16} className="flex-shrink-0" />
@@ -314,6 +323,35 @@ export default function LoginPage() {
                                             <CheckCircle size={12} /> Şifreler uyuşuyor
                                         </p>
                                     )}
+                                </div>
+                                <div className="space-y-1">
+                                    <label className="flex items-center gap-2.5 cursor-pointer group">
+                                        <input className="peer hidden" required type="checkbox" name="KVKK" onChange={(e) => setKvkkAccepted(e.target.checked)} />
+                                        <div className="w-5 h-5 border-2 border-gray-300 rounded-md flex items-center justify-center transition-all duration-200 
+                                            peer-checked:bg-[#ff6000] peer-checked:border-[#ff6000] p-1
+                                            group-hover:border-[#ff6000]/60">
+                                            <svg className="w-3 h-3 text-white" viewBox="0 0 12 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M1 5L4.5 8.5L11 1.5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                                            </svg>
+                                        </div>
+                                        <span className="text-sm text-gray-600 select-none group-hover:text-gray-800 transition-colors duration-200">
+                                            <a href="/sozlesme" target="_blank" className="text-[#ff6000] hover:underline font-medium">Bireysel Hesap Sözleşmesi ve Ekleri'</a>&apos;ni okudum ve kabul ediyorum.
+                                        </span>
+                                    </label>
+                                    <label className="flex items-center gap-2.5 cursor-pointer group">
+                                        <input className="peer hidden" type="checkbox" name="contact" onChange={(e) => setContactAccepted(e.target.checked)} />
+                                        <div className="w-5 h-5 border-2 border-gray-300 rounded-md flex items-center justify-center transition-all duration-200 
+                                            peer-checked:bg-[#ff6000] peer-checked:border-[#ff6000] p-1
+                                            group-hover:border-[#ff6000]/60">
+                                            <svg className="w-3 h-3 text-white" viewBox="0 0 12 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M1 5L4.5 8.5L11 1.5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                                            </svg>
+                                        </div>
+                                        <span className="text-sm text-gray-600 select-none group-hover:text-gray-800 transition-colors duration-200">
+
+                                            İletişim bilgilerime kampanya, tanıtım ve reklam içerikli ticari elektronik ileti gönderilmesine, bu amaçla kişisel verilerimin işlenmesine ve tedarikçilerinizle paylaşılmasına izin veriyorum.
+                                        </span>
+                                    </label>
                                 </div>
 
                                 <Button

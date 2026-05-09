@@ -4,6 +4,7 @@ import (
 	"Store-Dio/config"
 	"Store-Dio/models"
 	"Store-Dio/services/users"
+	"Store-Dio/utils"
 	"context"
 	"encoding/json"
 	"net/http"
@@ -20,7 +21,7 @@ func NewUserController(us *users.UserService) *UserController {
 	}
 }
 func (uc *UserController) CreateUser(w http.ResponseWriter, r *http.Request) {
-	var user models.User
+	var user models.NewUser
 
 	err := json.NewDecoder(r.Body).Decode(&user)
 
@@ -30,6 +31,8 @@ func (uc *UserController) CreateUser(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 	defer r.Body.Close()
+	user.IpAddress = utils.GetClientIP(r)
+	user.UserAgent = r.Header.Get("User-Agent")
 
 	ctx := r.Context()
 	ctx, cancel := context.WithTimeout(ctx, 10*time.Second)

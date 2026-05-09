@@ -58,6 +58,7 @@ const Header: React.FC = () => {
     { label: "Favoriler", href: "/profile/favories", icon: Heart, color: "text-red-500" },
     { label: "Ürünlerim", href: "/profile/products", icon: PackageIcon, color: "text-gray-500" },
     { label: "Tekliflerim", href: "/profile/tekliflerim", icon: Handshake, color: "text-gray-500" },
+    { label: "Mesajlar", href: "/profile/chats", icon: MessageSquareText, color: "text-gray-500" },
   ];
 
   return (

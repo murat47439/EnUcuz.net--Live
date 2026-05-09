@@ -313,3 +313,130 @@ APP_LOG: 2026/03/08 14:49:58 controllers.go:10: Error response: 500 - Yeni sohbe
 APP_LOG: 2026/03/08 14:50:08 productRepo.go:84:  true
 APP_LOG: 2026/03/08 14:50:08 controllers.go:21: Success response: 200
 APP_LOG: 2026/03/08 14:50:10 controllers.go:21: Success response: 200
+APP_LOG: 2026/05/09 14:29:04 main.go:36: Application started successfully.
+APP_LOG: 2026/05/09 14:29:04 auth.go:60: AuthMiddleware Started
+APP_LOG: 2026/05/09 14:29:04 auth.go:60: AuthMiddleware Started
+APP_LOG: 2026/05/09 14:29:04 auth.go:60: AuthMiddleware Started
+APP_LOG: 2026/05/09 14:29:04 auth.go:60: AuthMiddleware Started
+APP_LOG: 2026/05/09 14:29:04 auth.go:60: AuthMiddleware Started
+APP_LOG: 2026/05/09 14:29:04 auth.go:60: AuthMiddleware Started
+APP_LOG: 2026/05/09 14:29:04 auth.go:60: AuthMiddleware Started
+APP_LOG: 2026/05/09 14:29:04 auth.go:60: AuthMiddleware Started
+APP_LOG: 2026/05/09 14:29:04 auth.go:60: AuthMiddleware Started
+APP_LOG: 2026/05/09 14:29:04 auth.go:60: AuthMiddleware Started
+APP_LOG: 2026/05/09 14:29:04 auth.go:60: AuthMiddleware Started
+APP_LOG: 2026/05/09 14:29:04 auth.go:60: AuthMiddleware Started
+APP_LOG: 2026/05/09 14:29:04 auth.go:60: AuthMiddleware Started
+APP_LOG: 2026/05/09 14:29:04 auth.go:60: AuthMiddleware Started
+APP_LOG: 2026/05/09 14:29:04 ai.go:20: Gemini client initialized successfully
+APP_LOG: 2026/05/09 14:29:17 controllers.go:21: Success response: 200
+APP_LOG: 2026/05/09 14:29:20 auth.go:66: AuthMiddleware: Cookie not found - http: named cookie not present
+APP_LOG: 2026/05/09 14:29:20 usersController.go:224: GetAccess request started
+APP_LOG: 2026/05/09 14:29:20 usersController.go:228: GetAccess error: No refresh token cookie
+APP_LOG: 2026/05/09 14:29:20 controllers.go:10: Error response: 401 - Yetkisiz erişim
+APP_LOG: 2026/05/09 15:24:46 usersController.go:40: Failed to create user:  Email already exists
+APP_LOG: 2026/05/09 15:24:46 controllers.go:10: Error response: 500 - Kullanıcı oluşturulurken hata oluştu
+APP_LOG: 2026/05/09 15:24:46 usersController.go:40: Failed to create user:  Email already exists
+APP_LOG: 2026/05/09 15:24:46 controllers.go:10: Error response: 500 - Kullanıcı oluşturulurken hata oluştu
+APP_LOG: 2026/05/09 15:34:58 usersController.go:40: Failed to create user:  Email already exists
+APP_LOG: 2026/05/09 15:34:58 controllers.go:10: Error response: 500 - Kullanıcı oluşturulurken hata oluştu
+APP_LOG: 2026/05/09 16:35:15 main.go:36: Application started successfully.
+APP_LOG: 2026/05/09 16:35:15 auth.go:60: AuthMiddleware Started
+APP_LOG: 2026/05/09 16:35:15 auth.go:60: AuthMiddleware Started
+APP_LOG: 2026/05/09 16:35:15 auth.go:60: AuthMiddleware Started
+APP_LOG: 2026/05/09 16:35:15 auth.go:60: AuthMiddleware Started
+APP_LOG: 2026/05/09 16:35:15 auth.go:60: AuthMiddleware Started
+APP_LOG: 2026/05/09 16:35:15 auth.go:60: AuthMiddleware Started
+APP_LOG: 2026/05/09 16:35:15 auth.go:60: AuthMiddleware Started
+APP_LOG: 2026/05/09 16:35:15 auth.go:60: AuthMiddleware Started
+APP_LOG: 2026/05/09 16:35:15 auth.go:60: AuthMiddleware Started
+APP_LOG: 2026/05/09 16:35:15 auth.go:60: AuthMiddleware Started
+APP_LOG: 2026/05/09 16:35:15 auth.go:60: AuthMiddleware Started
+APP_LOG: 2026/05/09 16:35:15 auth.go:60: AuthMiddleware Started
+APP_LOG: 2026/05/09 16:35:15 auth.go:60: AuthMiddleware Started
+APP_LOG: 2026/05/09 16:35:15 auth.go:60: AuthMiddleware Started
+APP_LOG: 2026/05/09 16:35:15 ai.go:20: Gemini client initialized successfully
+APP_LOG: 2026/05/09 16:36:16 usersController.go:47: Failed to create user:  Create User error: Database error : sql: no rows in result set
+APP_LOG: 2026/05/09 16:36:16 controllers.go:10: Error response: 500 - Kullanıcı oluşturulurken hata oluştu
+APP_LOG: 2026/05/09 16:39:23 main.go:36: Application started successfully.
+APP_LOG: 2026/05/09 16:39:23 auth.go:60: AuthMiddleware Started
+APP_LOG: 2026/05/09 16:39:23 auth.go:60: AuthMiddleware Started
+APP_LOG: 2026/05/09 16:39:23 auth.go:60: AuthMiddleware Started
+APP_LOG: 2026/05/09 16:39:23 auth.go:60: AuthMiddleware Started
+APP_LOG: 2026/05/09 16:39:23 auth.go:60: AuthMiddleware Started
+APP_LOG: 2026/05/09 16:39:23 auth.go:60: AuthMiddleware Started
+APP_LOG: 2026/05/09 16:39:23 auth.go:60: AuthMiddleware Started
+APP_LOG: 2026/05/09 16:39:23 auth.go:60: AuthMiddleware Started
+APP_LOG: 2026/05/09 16:39:23 auth.go:60: AuthMiddleware Started
+APP_LOG: 2026/05/09 16:39:23 auth.go:60: AuthMiddleware Started
+APP_LOG: 2026/05/09 16:39:23 auth.go:60: AuthMiddleware Started
+APP_LOG: 2026/05/09 16:39:23 auth.go:60: AuthMiddleware Started
+APP_LOG: 2026/05/09 16:39:23 auth.go:60: AuthMiddleware Started
+APP_LOG: 2026/05/09 16:39:23 auth.go:60: AuthMiddleware Started
+APP_LOG: 2026/05/09 16:39:23 ai.go:20: Gemini client initialized successfully
+APP_LOG: 2026/05/09 16:39:31 usersController.go:47: Failed to create user:  Create User error: ERROR: relation "users_contracts" does not exist (SQLSTATE 42P01)
+APP_LOG: 2026/05/09 16:39:31 controllers.go:10: Error response: 500 - Kullanıcı oluşturulurken hata oluştu
+APP_LOG: 2026/05/09 16:39:54 main.go:36: Application started successfully.
+APP_LOG: 2026/05/09 16:39:54 auth.go:60: AuthMiddleware Started
+APP_LOG: 2026/05/09 16:39:54 auth.go:60: AuthMiddleware Started
+APP_LOG: 2026/05/09 16:39:54 auth.go:60: AuthMiddleware Started
+APP_LOG: 2026/05/09 16:39:54 auth.go:60: AuthMiddleware Started
+APP_LOG: 2026/05/09 16:39:54 auth.go:60: AuthMiddleware Started
+APP_LOG: 2026/05/09 16:39:54 auth.go:60: AuthMiddleware Started
+APP_LOG: 2026/05/09 16:39:54 auth.go:60: AuthMiddleware Started
+APP_LOG: 2026/05/09 16:39:54 auth.go:60: AuthMiddleware Started
+APP_LOG: 2026/05/09 16:39:54 auth.go:60: AuthMiddleware Started
+APP_LOG: 2026/05/09 16:39:54 auth.go:60: AuthMiddleware Started
+APP_LOG: 2026/05/09 16:39:54 auth.go:60: AuthMiddleware Started
+APP_LOG: 2026/05/09 16:39:54 auth.go:60: AuthMiddleware Started
+APP_LOG: 2026/05/09 16:39:54 auth.go:60: AuthMiddleware Started
+APP_LOG: 2026/05/09 16:39:54 auth.go:60: AuthMiddleware Started
+APP_LOG: 2026/05/09 16:39:54 ai.go:20: Gemini client initialized successfully
+APP_LOG: 2026/05/09 16:40:00 usersController.go:47: Failed to create user:  Create User error: ERROR: null value in column "ip_address" of relation "user_contracts" violates not-null constraint (SQLSTATE 23502)
+APP_LOG: 2026/05/09 16:40:00 controllers.go:10: Error response: 500 - Kullanıcı oluşturulurken hata oluştu
+APP_LOG: 2026/05/09 16:41:15 main.go:36: Application started successfully.
+APP_LOG: 2026/05/09 16:41:15 auth.go:60: AuthMiddleware Started
+APP_LOG: 2026/05/09 16:41:15 auth.go:60: AuthMiddleware Started
+APP_LOG: 2026/05/09 16:41:15 auth.go:60: AuthMiddleware Started
+APP_LOG: 2026/05/09 16:41:15 auth.go:60: AuthMiddleware Started
+APP_LOG: 2026/05/09 16:41:15 auth.go:60: AuthMiddleware Started
+APP_LOG: 2026/05/09 16:41:15 auth.go:60: AuthMiddleware Started
+APP_LOG: 2026/05/09 16:41:15 auth.go:60: AuthMiddleware Started
+APP_LOG: 2026/05/09 16:41:15 auth.go:60: AuthMiddleware Started
+APP_LOG: 2026/05/09 16:41:15 auth.go:60: AuthMiddleware Started
+APP_LOG: 2026/05/09 16:41:15 auth.go:60: AuthMiddleware Started
+APP_LOG: 2026/05/09 16:41:15 auth.go:60: AuthMiddleware Started
+APP_LOG: 2026/05/09 16:41:15 auth.go:60: AuthMiddleware Started
+APP_LOG: 2026/05/09 16:41:15 auth.go:60: AuthMiddleware Started
+APP_LOG: 2026/05/09 16:41:15 auth.go:60: AuthMiddleware Started
+APP_LOG: 2026/05/09 16:41:15 ai.go:20: Gemini client initialized successfully
+APP_LOG: 2026/05/09 16:41:21 usersController.go:48: CreateUser success: User created
+APP_LOG: 2026/05/09 16:41:21 controllers.go:21: Success response: 201
+APP_LOG: 2026/05/09 16:41:35 usersController.go:55: Login request started
+APP_LOG: 2026/05/09 16:41:35 password.go:22: Unsuccesful CheckPasswordHash
+APP_LOG: 2026/05/09 16:41:35 usersController.go:74: Login service error: Şifre yanlış.
+APP_LOG: 2026/05/09 16:41:35 controllers.go:10: Error response: 401 - Giriş bilgileri hatalı
+APP_LOG: 2026/05/09 16:41:35 usersController.go:227: GetAccess request started
+APP_LOG: 2026/05/09 16:41:35 usersController.go:231: GetAccess error: No refresh token cookie
+APP_LOG: 2026/05/09 16:41:35 controllers.go:10: Error response: 401 - Yetkisiz erişim
+APP_LOG: 2026/05/09 16:41:38 usersController.go:55: Login request started
+APP_LOG: 2026/05/09 16:41:38 password.go:22: Unsuccesful CheckPasswordHash
+APP_LOG: 2026/05/09 16:41:38 usersController.go:74: Login service error: Şifre yanlış.
+APP_LOG: 2026/05/09 16:41:38 controllers.go:10: Error response: 401 - Giriş bilgileri hatalı
+APP_LOG: 2026/05/09 16:41:47 usersController.go:55: Login request started
+APP_LOG: 2026/05/09 16:41:48 password.go:22: Unsuccesful CheckPasswordHash
+APP_LOG: 2026/05/09 16:41:48 usersController.go:74: Login service error: Şifre yanlış.
+APP_LOG: 2026/05/09 16:41:48 controllers.go:10: Error response: 401 - Giriş bilgileri hatalı
+APP_LOG: 2026/05/09 16:41:51 usersController.go:55: Login request started
+APP_LOG: 2026/05/09 16:41:51 usersController.go:97: Login success: User 43 logged in
+APP_LOG: 2026/05/09 16:41:51 controllers.go:21: Success response: 202
+APP_LOG: 2026/05/09 16:41:53 controllers.go:21: Success response: 200
+APP_LOG: 2026/05/09 16:41:53 controllers.go:21: Success response: 200
+APP_LOG: 2026/05/09 16:41:57 usersController.go:156: GetUserData request started
+APP_LOG: 2026/05/09 16:41:57 usersController.go:175: GetUserData success: User data retrieved for user 43
+APP_LOG: 2026/05/09 16:41:57 controllers.go:21: Success response: 200
+APP_LOG: 2026/05/09 16:41:57 usersController.go:156: GetUserData request started
+APP_LOG: 2026/05/09 16:41:57 usersController.go:175: GetUserData success: User data retrieved for user 43
+APP_LOG: 2026/05/09 16:41:57 controllers.go:21: Success response: 200
+APP_LOG: 2026/05/09 16:42:13 controllers.go:21: Success response: 200
+APP_LOG: 2026/05/09 16:42:13 controllers.go:21: Success response: 200

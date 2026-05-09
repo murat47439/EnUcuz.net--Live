@@ -1,6 +1,8 @@
 package models
 
-import "database/sql"
+import (
+	"database/sql"
+)
 
 type User struct {
 	ID        int           `db:"id"  json:"id,omitempty"`
@@ -12,4 +14,18 @@ type User struct {
 	Role      int           `db:"role" json:"-"`
 	Password  string        `db:"password" json:"password,omitempty"`
 	DeletedAt *sql.NullTime `json:"-" db:"deleted_at"`
+}
+
+type NewUser struct {
+	Email     string `json:"email"`
+	Phone     string `json:"phone"`
+	Name      string `json:"name"`
+	Surname   string `json:"surname"`
+	Gender    int    `json:"gender,omitempty"`
+	Password  string `json:"password,omitempty"`
+	Kvkk      bool   `json:"kvkk,omitempty" `
+	Contact   bool   `json:"contact,omitempty"`
+	Role      int    `db:"role" json:"-"`
+	IpAddress string ``
+	UserAgent string ``
 }

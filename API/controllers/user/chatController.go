@@ -19,49 +19,6 @@ func NewChatController(service *chat.ChatService) *ChatController {
 	return &ChatController{ChatService: service}
 }
 
-// func (cc *ChatController) NewChat(w http.ResponseWriter, r *http.Request) {
-// 	config.Logger.Printf("NewChat request started")
-
-// 	userID, _, ok := GetUserIDFromContext(r)
-// 	if !ok {
-// 		config.Logger.Printf("NewChat error: Unauthorized access")
-// 		RespondWithError(w, http.StatusUnauthorized, "Yetkisiz erişim")
-// 		return
-// 	}
-
-// 	var model models.NewChat
-// 	err := json.NewDecoder(r.Body).Decode(&model)
-// 	if err != nil {
-// 		config.Logger.Printf("NewChat error: Invalid request data - %v", err)
-// 		RespondWithError(w, http.StatusBadRequest, "Geçersiz veri formatı")
-// 		return
-// 	}
-// 	defer r.Body.Close()
-
-// 	model.Chat.Sender = userID
-// 	config.Logger.Printf("NewChat service error: %v", model.Chat.Sender)
-
-// 	ctx := r.Context()
-// 	ctx, cancel := context.WithTimeout(ctx, 10*time.Second)
-// 	defer cancel()
-
-// 	data, mes, err := cc.ChatService.NewChat(ctx, &model.Chat, model.Message)
-// 	if err != nil {
-// 		config.Logger.Printf("NewChat service error: %v", err)
-// 		RespondWithError(w, http.StatusInternalServerError, "Yeni sohbet oluşturulurken hata oluştu")
-// 		return
-// 	}
-
-// 	config.Logger.Printf("NewChat success: Chat created for user %d", userID)
-
-// 	// Karşı tarafa (recipient) WebSocket ile anlık bildirim gönder
-
-// 	RespondWithJSON(w, http.StatusCreated, map[string]interface{}{
-// 		"message": mes,
-// 		"chat":    data,
-// 	})
-// }
-
 func (cc *ChatController) GetChat(w http.ResponseWriter, r *http.Request) {
 	config.Logger.Printf("GetChat request started")
 

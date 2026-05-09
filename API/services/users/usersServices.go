@@ -15,25 +15,25 @@ func NewUserService(userRepo *repo.UserRepo) *UserService {
 	return &UserService{UserRepo: userRepo}
 }
 
-func (s *UserService) CreateUser(ctx context.Context, user models.User) (models.User, error) {
+func (s *UserService) CreateUser(ctx context.Context, user models.NewUser) (models.NewUser, error) {
 
-	if user.Name == "" || user.Email == "" || user.Surname == "" || user.Password == "" {
-		return models.User{}, fmt.Errorf("Some data is empty")
+	if user.Name == "" || user.Email == "" || user.Surname == "" || user.Password == "" || user.Kvkk == false {
+		return models.NewUser{}, fmt.Errorf("Some data is empty")
 	}
 
 	existEmail, err := s.UserRepo.CheckEmailExists(ctx, user.Email)
 
 	if err != nil {
-		return models.User{}, fmt.Errorf("CheckEmailExists error : %v", err)
+		return models.NewUser{}, fmt.Errorf("CheckEmailExists error : %v", err)
 	}
 	if existEmail {
-		return models.User{}, fmt.Errorf("Email already exists")
+		return models.NewUser{}, fmt.Errorf("Email already exists")
 	}
 
 	_, err = s.UserRepo.CreateUser(ctx, user)
 
 	if err != nil {
-		return models.User{}, fmt.Errorf("Create User error: %v", err)
+		return models.NewUser{}, fmt.Errorf("Create User error: %v", err)
 	}
 
 	return user, nil

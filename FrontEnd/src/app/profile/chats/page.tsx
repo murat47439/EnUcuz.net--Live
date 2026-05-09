@@ -203,7 +203,7 @@ export default function ChatPage() {
         setMessages([]);
         setMessagesLoading(true);
         try {
-            const data: ChatMessages = await getChat({ id: chat.id });
+            const data: ChatMessages = await getChat({ id: chat.id! });
             setMessages(data.data.messages || []);
         } catch (err) {
             if (err instanceof Error) showNotification(err.message, "error", 4000);
@@ -445,18 +445,7 @@ export default function ChatPage() {
                                         </div>
                                         <p className="text-xs text-gray-600">Teklifiniz kabul edildiğinde sohbet otomatik oluşturulur.</p>
                                     </div>
-                                    <div className="flex items-start gap-2.5">
-                                        <div className="w-5 h-5 bg-[#fff4ed] rounded flex items-center justify-center flex-shrink-0 mt-0.5">
-                                            <span className="text-[#ff6000] text-xs font-bold">2</span>
-                                        </div>
-                                        <p className="text-xs text-gray-600">Mesajlar anlık olarak iletilir, sayfa yenilemeye gerek yoktur.</p>
-                                    </div>
-                                    <div className="flex items-start gap-2.5">
-                                        <div className="w-5 h-5 bg-[#fff4ed] rounded flex items-center justify-center flex-shrink-0 mt-0.5">
-                                            <span className="text-[#ff6000] text-xs font-bold">3</span>
-                                        </div>
-                                        <p className="text-xs text-gray-600">Karşı taraf yazarken &quot;yazıyor...&quot; göstergesi görünür.</p>
-                                    </div>
+
                                 </div>
                             </div>
                         </div>
