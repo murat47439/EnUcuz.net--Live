@@ -16,7 +16,7 @@ func NewOfferWorker(repo *repo.OffersRepo) *OfferWorker {
 }
 
 func (ow *OfferWorker) Start(ctx context.Context) {
-	ticker := time.NewTicker(15 * time.Minute)
+	ticker := time.NewTicker(2 * time.Hour)
 
 	for {
 		select {
@@ -33,4 +33,3 @@ func (ow *OfferWorker) Start(ctx context.Context) {
 		}
 	}
 }
-

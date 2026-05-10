@@ -39,12 +39,16 @@ func GetClientIP(r *http.Request) string {
 		return ""
 	}
 
-	if !isCloudflareIP(remoteIP) {
+	if !isTrustedProxy(remoteIP) {
 		return remoteIP
 	}
 
 	if cfIP := sanitizeIP(r.Header.Get("CF-Connecting-IP")); cfIP != "" {
 		return cfIP
+	}
+
+	if realIP := sanitizeIP(r.Header.Get("X-Real-IP")); realIP != "" {
+		return realIP
 	}
 
 	if xff := r.Header.Get("X-Forwarded-For"); xff != "" {
@@ -53,11 +57,18 @@ func GetClientIP(r *http.Request) string {
 		}
 	}
 
-	if realIP := sanitizeIP(r.Header.Get("X-Real-IP")); realIP != "" {
-		return realIP
-	}
-
 	return remoteIP
+}
+
+func isTrustedProxy(ipStr string) bool {
+	ip := net.ParseIP(ipStr)
+	if ip == nil {
+		return false
+	}
+	if ip.IsLoopback() {
+		return true
+	}
+	return isCloudflareIP(ipStr)
 }
 
 func extractIPFromAddr(remoteAddr string) string {
@@ -67,7 +78,6 @@ func extractIPFromAddr(remoteAddr string) string {
 
 	host, _, err := net.SplitHostPort(remoteAddr)
 	if err != nil {
-		// Port yoksa (nadir durum) direkt parse et
 		if ip := net.ParseIP(remoteAddr); ip != nil {
 			return remoteAddr
 		}
