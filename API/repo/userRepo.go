@@ -54,7 +54,7 @@ func (ur *UserRepo) CreateUser(ctx context.Context, user models.NewUser) (bool, 
 	}
 	user.Password = password
 
-	query := `INSERT INTO users(email, phone, name, surname, gender, role, password) VALUES($1, $2, $3, $4, $5, $6, $7) RETURNING id `
+	query := `INSERT INTO users.users(email, phone, name, surname, gender, role, password) VALUES($1, $2, $3, $4, $5, $6, $7) RETURNING id `
 	var id int
 	err = tx.QueryRowContext(ctx, query, user.Email, user.Phone, user.Name, user.Surname, user.Gender, user.Role, user.Password).Scan(&id)
 
@@ -68,7 +68,7 @@ func (ur *UserRepo) CreateUser(ctx context.Context, user models.NewUser) (bool, 
 		acceptedID = []int{1, 2, 3}
 
 	}
-	query = `INSERT INTO user_contracts(user_id, contract_id, ip_address, user_agent ) VALUES ($1, $2, $3, $4)`
+	query = `INSERT INTO users.user_contracts(user_id, contract_id, ip_address, user_agent ) VALUES ($1, $2, $3, $4)`
 	for _, contractID := range acceptedID {
 		_, err := tx.ExecContext(ctx, query, id, contractID, user.IpAddress, user.UserAgent)
 		if err != nil {
@@ -84,7 +84,7 @@ func (ur *UserRepo) Login(ctx context.Context, email string, password string) (*
 	}
 	user := &models.User{}
 
-	query := `SELECT id,email, phone, name, surname, gender, role, password FROM users WHERE email = $1 AND deleted_at IS NULL`
+	query := `SELECT id,email, phone, name, surname, gender, role, password FROM users.users WHERE email = $1 AND deleted_at IS NULL`
 	err := ur.db.GetContext(ctx, user, query, email)
 
 	if err != nil {
@@ -109,7 +109,7 @@ func (ur *UserRepo) Logout(ctx context.Context, userID int, refreshToken string)
 	}
 	refreshTokenHash := ur.HashRefreshToken(refreshToken, config.REFRESH_TOKEN_SECRET)
 
-	query := "DELETE FROM tokens WHERE token = $1 AND user_id = $2"
+	query := "DELETE FROM users.tokens WHERE token = $1 AND user_id = $2"
 
 	result, err := ur.db.ExecContext(ctx, query, refreshTokenHash, userID)
 
@@ -128,7 +128,7 @@ func (ur *UserRepo) Update(ctx context.Context, user *models.User) (*models.User
 	if user.Email == "" || user.Name == "" || user.Surname == "" || user.ID == 0 {
 		return nil, fmt.Errorf("Invalid data")
 	}
-	query := "UPDATE USERS SET name=$1 ,surname = $2 ,email = $3 ,phone = $4 ,gender = $5 WHERE id=$6"
+	query := "UPDATE users.users SET name=$1 ,surname = $2 ,email = $3 ,phone = $4 ,gender = $5 WHERE id=$6"
 
 	_, err := ur.db.ExecContext(ctx, query, user.Name, user.Surname, user.Email, user.Phone, user.Gender, user.ID)
 
@@ -141,7 +141,7 @@ func (ur *UserRepo) Update(ctx context.Context, user *models.User) (*models.User
 func (ur *UserRepo) CheckEmailExists(ctx context.Context, email string) (bool, error) {
 	var exists bool
 
-	query := "SELECT EXISTS(SELECT 1 FROM users WHERE email = $1 AND deleted_at IS NULL)"
+	query := "SELECT EXISTS(SELECT 1 FROM users.users WHERE email = $1 AND deleted_at IS NULL)"
 	err := ur.db.GetContext(ctx, &exists, query, email)
 
 	if err != nil {
@@ -159,7 +159,7 @@ func (ur *UserRepo) GetUserDataByID(ctx context.Context, id int) (*models.User, 
 		return nil, fmt.Errorf("Invalid data")
 	}
 	var user models.User
-	query := `SELECT id,email,phone,name,surname,gender,role FROM users WHERE id = $1 AND deleted_at IS NULL`
+	query := `SELECT id,email,phone,name,surname,gender,role FROM users.users WHERE id = $1 AND deleted_at IS NULL`
 
 	err := ur.db.GetContext(ctx, &user, query, id)
 
@@ -222,7 +222,7 @@ func (ur *UserRepo) StoreRefreshToken(ctx context.Context, userID int, refresh s
 
 	hashToken := ur.HashRefreshToken(refresh, config.REFRESH_TOKEN_SECRET)
 
-	query := `INSERT INTO tokens (user_id,token, expires_at) VALUES($1, $2, $3)`
+	query := `INSERT INTO users.tokens (user_id,token, expires_at) VALUES($1, $2, $3)`
 	_, err := ur.db.ExecContext(ctx, query, userID, hashToken, expiresAt)
 	if err != nil {
 		return fmt.Errorf("Database error : %s", err.Error())
@@ -267,9 +267,9 @@ func (ur *UserRepo) RestoreRefreshToken(ctx context.Context, token string) (int,
 
 	var userID, role int
 	query := `
-    UPDATE tokens t
+    UPDATE users.tokens t
     SET token = $1
-    FROM users u
+    FROM users.users u
     WHERE t.token = $2 AND t.expires_at > NOW() AND u.id = t.user_id
     RETURNING t.user_id, u.role
 `
@@ -284,7 +284,7 @@ func (ur *UserRepo) RestoreRefreshToken(ctx context.Context, token string) (int,
 //ADMİN CONTROL
 
 func (ur *UserRepo) OnlyAdmin(ctx context.Context, userID int) (bool, error) {
-	query := "SELECT 1 FROM users WHERE role=1 AND id = $1 AND deleted_at IS NULL"
+	query := "SELECT 1 FROM users.users WHERE role=1 AND id = $1 AND deleted_at IS NULL"
 
 	var tmp int
 	err := ur.db.QueryRowContext(ctx, query, userID).Scan(&tmp)

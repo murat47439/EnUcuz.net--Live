@@ -6,6 +6,7 @@ import (
 
 	userMiddleware "Store-Dio/middleware"
 	"net/http"
+	"time"
 
 	"github.com/go-chi/chi/v5"
 	"github.com/go-chi/chi/v5/middleware"
@@ -154,6 +155,9 @@ func SetupRoutes(
 		})
 		r.Route("/offers", func(off chi.Router) {
 			off.Use(um.AuthMiddleware)
+			// Rate limit: dakikada 10 istek (teklif spam önlemi)
+			offerLimiter := userMiddleware.NewRateLimiter(10, 1*time.Minute)
+			off.Use(offerLimiter.RateLimit)
 			off.Post("/", controller.UserOffersController.NewOffer)
 			off.Post("/counter/{id}", controller.UserOffersController.CounterOffer)
 			off.Put("/{id}", controller.UserOffersController.UpdateOffer)

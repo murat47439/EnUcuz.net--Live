@@ -1,6 +1,7 @@
 package workers
 
 import (
+	"Store-Dio/config"
 	"Store-Dio/repo"
 	"context"
 	"time"
@@ -15,15 +16,21 @@ func NewOfferWorker(repo *repo.OffersRepo) *OfferWorker {
 }
 
 func (ow *OfferWorker) Start(ctx context.Context) {
-	ticker := time.NewTicker(120 * time.Minute)
+	ticker := time.NewTicker(15 * time.Minute)
 
 	for {
 		select {
 		case <-ticker.C:
-			ow.OffersRepo.ExpireOffers(ctx)
+			count, err := ow.OffersRepo.ExpireOffers(ctx)
+			if err != nil {
+				config.Logger.Printf("OfferWorker ExpireOffers error: %v", err)
+			} else if count > 0 {
+				config.Logger.Printf("OfferWorker: %d teklif süresi doldu", count)
+			}
 		case <-ctx.Done():
 			ticker.Stop()
 			return
 		}
 	}
 }
+

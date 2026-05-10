@@ -41,8 +41,11 @@ const (
 	ProductStatusSold     = 4
 )
 
+// MaxOfferPrice — Tek bir teklif için izin verilen maksimum fiyat (kuruş cinsinden, 10 milyon TL)
+const MaxOfferPrice int64 = 10_000_000_00
+
 func (os *OffersService) NewOffer(ctx context.Context, data *models.NewOffer) (int, error) {
-	if data.ProductID == 0 || data.Price <= 0 || data.BidderID == 0 || data.CreatedBy == 0 {
+	if data.ProductID == 0 || data.Price <= 0 || data.Price > MaxOfferPrice || data.BidderID == 0 || data.CreatedBy == 0 {
 		return 0, fmt.Errorf("Invalid data")
 	}
 	tx, err := os.db.BeginTxx(ctx, nil)
@@ -62,9 +65,16 @@ func (os *OffersService) NewOffer(ctx context.Context, data *models.NewOffer) (i
 			}
 		}
 	}()
-	sId, err := os.ProductRepo.GetProductSeller(ctx, data.ProductID)
+
+	// FIX: Transaction içinde FOR UPDATE ile ürün bilgisini al (TOCTOU önlemi)
+	sId, productStatus, err := os.ProductRepo.GetProductForOfferTx(ctx, tx, data.ProductID)
 	if err != nil {
 		return 0, err
+	}
+
+	// FIX: Ürünün aktif olduğunu doğrula — satılmış/pasif/taslak ürüne teklif engelle
+	if productStatus != ProductStatusActive {
+		return 0, fmt.Errorf("ErrProductNotAvailable")
 	}
 
 	exists, err := os.OffersRepo.ExistsOffer(ctx, tx, data.ProductID, data.BidderID, sId)
@@ -88,7 +98,8 @@ func (os *OffersService) NewOffer(ctx context.Context, data *models.NewOffer) (i
 	return id, nil
 }
 func (os *OffersService) CounterOffer(ctx context.Context, data *models.CounterOffer, id int) (int, error) {
-	if data.CreatedBy == 0 || data.Price == 0 {
+	// FIX: Negatif fiyat engelleme (== 0 yerine <= 0) + maksimum fiyat limiti
+	if data.CreatedBy == 0 || data.Price <= 0 || data.Price > MaxOfferPrice {
 		return 0, fmt.Errorf("Invalid data")
 	}
 	tx, err := os.db.BeginTxx(ctx, nil)
@@ -112,6 +123,12 @@ func (os *OffersService) CounterOffer(ctx context.Context, data *models.CounterO
 	if err != nil {
 		return 0, err
 	}
+
+	// FIX: Kullanıcının bu teklifin taraflarından biri olduğunu doğrula
+	if data.CreatedBy != parentOffer.BidderID && data.CreatedBy != parentOffer.SellerID {
+		return 0, fmt.Errorf("Unauthorized")
+	}
+
 	if parentOffer.CreatedBy == data.CreatedBy {
 		return 0, fmt.Errorf("Wait for notification from the other party.")
 	}
@@ -171,7 +188,7 @@ func (os *OffersService) UpdateOffer(ctx context.Context, data models.UpdateOffe
 		}
 		newStatus = OfferAccepted
 	case "buyer-accept":
-		if offer.CreatedBy != userID {
+		if offer.BidderID != userID || offer.BidderID == offer.CreatedBy {
 			return fmt.Errorf("Unauthorized")
 		}
 		newStatus = OfferAccepted

@@ -157,7 +157,7 @@ func (rr *ReviewsRepo) ExistsReview(ctx context.Context, userID int, prodID int)
 		return false, fmt.Errorf("Invalid data")
 	}
 	var exists bool
-	query := `SELECT EXISTS(SELECT 1 FROM products WHERE id=$1 AND deleted_at IS NULL)`
+	query := `SELECT EXISTS(SELECT 1 FROM products.products WHERE id=$1 AND deleted_at IS NULL)`
 
 	err := rr.db.GetContext(ctx, &exists, query, prodID)
 

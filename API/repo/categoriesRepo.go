@@ -51,7 +51,7 @@ func (cr *CategoriesRepo) AddCategory(ctx context.Context, data *models.Category
 		return nil, fmt.Errorf("Category does exists")
 	}
 
-	query := `INSERT INTO categories(name,parent_id,created_at) VALUES ($1, $2 ,NOW()) RETURNING id`
+	query := `INSERT INTO products.categories(name,parent_id,created_at) VALUES ($1, $2 ,NOW()) RETURNING id`
 	var id int
 	err = tx.QueryRowContext(ctx, query, data.Name, data.ParentID).Scan(&id)
 
@@ -64,7 +64,7 @@ func (cr *CategoriesRepo) CheckCategory(ctx context.Context, name string, tx *sq
 	if name == "" {
 		return false, fmt.Errorf("Invalid data")
 	}
-	query := `SELECT EXISTS(SELECT 1 FROM categories WHERE name = $1 AND deleted_at IS NULL)`
+	query := `SELECT EXISTS(SELECT 1 FROM products.categories WHERE name = $1 AND deleted_at IS NULL)`
 
 	var exists bool
 
@@ -96,7 +96,7 @@ func (cr *CategoriesRepo) UpdateCategory(ctx context.Context, data *models.Categ
 		}
 	}()
 
-	query := `UPDATE categories SET name = $1, parent_id = $2 WHERE id = $3`
+	query := `UPDATE products.categories SET name = $1, parent_id = $2 WHERE id = $3`
 
 	res, err := tx.ExecContext(ctx, query, data.Name, data.ParentID, data.ID)
 
@@ -137,7 +137,7 @@ func (cr *CategoriesRepo) DeleteCategory(ctx context.Context, data *models.Categ
 		return fmt.Errorf("Category not found")
 	}
 
-	query := "UPDATE categories SET deleted_at = NOW() WHERE id = $1 AND deleted_at IS NULL"
+	query := "UPDATE products.categories SET deleted_at = NOW() WHERE id = $1 AND deleted_at IS NULL"
 
 	_, err = tx.ExecContext(ctx, query, data.ID)
 
@@ -147,7 +147,7 @@ func (cr *CategoriesRepo) DeleteCategory(ctx context.Context, data *models.Categ
 	return nil
 }
 func (cr *CategoriesRepo) GetCategory(ctx context.Context, id int) (*models.Category, error) {
-	query := `SELECT id, name, parent_id, created_at, deleted_at FROM categories WHERE id = $1 AND deleted_at IS NULL`
+	query := `SELECT id, name, parent_id, created_at, deleted_at FROM products.categories WHERE id = $1 AND deleted_at IS NULL`
 
 	var category models.Category
 
@@ -163,7 +163,7 @@ func (cr *CategoriesRepo) GetCategory(ctx context.Context, id int) (*models.Cate
 }
 func (cr *CategoriesRepo) GetCategories(ctx context.Context, page int, search string) ([]*models.Category, error) {
 	limit := 50
-	query := `SELECT id, name, parent_id, created_at, deleted_at FROM categories WHERE name ILIKE $1 AND deleted_at IS NULL LIMIT $2 OFFSET $3`
+	query := `SELECT id, name, parent_id, created_at, deleted_at FROM products.categories WHERE name ILIKE $1 AND deleted_at IS NULL LIMIT $2 OFFSET $3`
 	offset := (page - 1) * 50
 	var categories []*models.Category
 
