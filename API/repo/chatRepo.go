@@ -26,7 +26,7 @@ func (cr *ChatRepo) NewChat(ctx context.Context, data *models.Chat, tx *sqlx.Tx)
 	return &result, nil
 }
 func (cr *ChatRepo) NewMessage(ctx context.Context, message *models.Message) (*models.Message, error) {
-	query := `INSERT INTO chats.chat_messages(chat_id, content,sender,created_at) VALUES ($1,$2,$3, NOW()) RETURNING id, chat_id, content, sender, created_at`
+	query := `INSERT INTO chat.chat_messages(chat_id, content,sender,created_at) VALUES ($1,$2,$3, NOW()) RETURNING id, chat_id, content, sender, created_at`
 	var result models.Message
 
 	err := cr.db.GetContext(ctx, &result, query, message.ChatID, message.Content, message.Sender)
@@ -36,7 +36,7 @@ func (cr *ChatRepo) NewMessage(ctx context.Context, message *models.Message) (*m
 	return &result, nil
 }
 func (cr *ChatRepo) NewMessageForFirst(ctx context.Context, message *models.Message, tx *sqlx.Tx) (*models.Message, error) {
-	query := `INSERT INTO chats.chat_messages(chat_id, content,sender,created_at) VALUES ($1,$2,$3, NOW()) RETURNING id, chat_id, content, sender, created_at`
+	query := `INSERT INTO chat.chat_messages(chat_id, content,sender,created_at) VALUES ($1,$2,$3, NOW()) RETURNING id, chat_id, content, sender, created_at`
 	var result models.Message
 
 	err := tx.GetContext(ctx, &result, query, message.ChatID, message.Content, message.Sender)
@@ -99,7 +99,7 @@ func (cr *ChatRepo) GetChats(ctx context.Context, user_id int, page int) ([]*mod
 func (cr *ChatRepo) GetChat(ctx context.Context, chat_id int) ([]*models.Message, error) {
 	var data []*models.Message
 	query := `SELECT id, chat_id, sender, content, created_at 
-			FROM chats.chat_messages
+			FROM chat.chat_messages
 			WHERE chat_id = $1
 			ORDER BY created_at ASC`
 
