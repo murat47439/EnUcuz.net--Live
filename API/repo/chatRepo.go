@@ -17,7 +17,7 @@ func NewChatRepo(db *sqlx.DB) *ChatRepo {
 }
 
 func (cr *ChatRepo) NewChat(ctx context.Context, data *models.Chat, tx *sqlx.Tx) (*models.Chat, error) {
-	query := `INSERT INTO chats.chats(sender,recipient,channel_id,product_id) VALUES($1,$2,$3,$4) RETURNING id, sender, recipient, channel_id, product_id, created_at`
+	query := `INSERT INTO chat.chats(sender,recipient,channel_id,product_id) VALUES($1,$2,$3,$4) RETURNING id, sender, recipient, channel_id, product_id, created_at`
 	var result models.Chat
 	err := tx.GetContext(ctx, &result, query, data.Sender, data.Recipient, data.ChannelID, data.ProductID)
 	if err != nil {
@@ -47,7 +47,7 @@ func (cr *ChatRepo) NewMessageForFirst(ctx context.Context, message *models.Mess
 }
 func (cr *ChatRepo) CheckChat(ctx context.Context, user_id, chat_id int) (bool, error) {
 	var exists bool
-	query := `SELECT EXISTS(SELECT 1 FROM chats.chats WHERE id = $1 AND (sender = $2 OR recipient = $2))`
+	query := `SELECT EXISTS(SELECT 1 FROM chat.chats WHERE id = $1 AND (sender = $2 OR recipient = $2))`
 	err := cr.db.GetContext(ctx, &exists, query, chat_id, user_id)
 	if err != nil {
 		return false, fmt.Errorf("Database error = %w", err)
@@ -56,7 +56,7 @@ func (cr *ChatRepo) CheckChat(ctx context.Context, user_id, chat_id int) (bool, 
 }
 func (cr *ChatRepo) CheckChatByProd(ctx context.Context, user_id, prod_id int) (bool, error) {
 	var exists bool
-	query := `SELECT EXISTS(SELECT 1 FROM chats.chats WHERE product_id = $1 AND (sender = $2 OR recipient = $2))`
+	query := `SELECT EXISTS(SELECT 1 FROM chat.chats WHERE product_id = $1 AND (sender = $2 OR recipient = $2))`
 	err := cr.db.GetContext(ctx, &exists, query, prod_id, user_id)
 	if err != nil {
 		return false, fmt.Errorf("Database error = %w", err)
@@ -73,7 +73,7 @@ func (cr *ChatRepo) GetChats(ctx context.Context, user_id int, page int) ([]*mod
 	offset := (page - 1) * 50
 	limit := 50
 	var data []*models.Chat
-	query := `SELECT id, sender, recipient, channel_id, created_at, product_id FROM chats.chats WHERE sender = $1 OR recipient = $1 
+	query := `SELECT id, sender, recipient, channel_id, created_at, product_id FROM chat.chats WHERE sender = $1 OR recipient = $1 
 	ORDER BY created_at DESC  LIMIT $2 OFFSET $3`
 	rows, err := cr.db.QueryxContext(ctx, query, user_id, limit, offset)
 	if err != nil {
