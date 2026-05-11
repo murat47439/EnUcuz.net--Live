@@ -103,6 +103,22 @@ export interface UserProducts {
         products: Product[],
     }
 }
+export interface Sessions {
+    success: boolean,
+    message: string,
+    data: {
+        Sessions: Session[],
+    }
+}
+export interface Session {
+    ID: string,
+    UserId: number,
+    UserAgent: string,
+    IpAddress: string,
+    StartedAt: string,
+    LastActivityAt: string,
+    ExpiresAt: string,
+}
 export interface Brand {
     id: number,
     name: string,

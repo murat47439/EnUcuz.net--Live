@@ -10,7 +10,7 @@ import { UserProfileResponse } from "@/lib/types/types";
 import { useForm } from "react-hook-form";
 import { updateUser } from "@/lib/api/user/useUpdate";
 import { UpdateUserRequest } from "@/lib/types/types";
-import { User, Mail, CheckCircle, XCircle, LogOut, Package, Heart, Gavel, ChevronRight, ShieldCheck, Phone } from "lucide-react";
+import { User, Monitor, Mail, CheckCircle, XCircle, LogOut, Package, Heart, Gavel, ChevronRight, ShieldCheck, Phone } from "lucide-react";
 
 type FormData = {
   name: string,
@@ -76,6 +76,8 @@ export default function ProfilePage() {
     { label: "Ürünlerim", href: "/profile/products", icon: Package },
     { label: "Favorilerim", href: "/profile/favories", icon: Heart },
     { label: "Tekliflerim", href: "/profile/tekliflerim", icon: Gavel },
+    { label: "Oturumlarım", href: "/profile/oturumlar", icon: Monitor },
+
   ];
 
   return (

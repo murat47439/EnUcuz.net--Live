@@ -75,6 +75,12 @@ func SetupRoutes(
 				logout.Use(um.AuthMiddleware)
 				logout.Get("/logout", controller.UserController.Logout)
 			})
+			ref.Group(func(session chi.Router) {
+				session.Use(um.AuthMiddleware)
+				session.Get("/sessions", controller.UserController.GetSessions)
+				session.Delete("/sessions/{id}", controller.UserController.DropSession)
+
+			})
 
 		})
 		r.Route("/upload", func(upload chi.Router) {

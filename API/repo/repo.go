@@ -15,8 +15,8 @@ type Repo struct {
 	AttributeRepo  *AttributeRepo
 	ChatRepo       *ChatRepo
 	OffersRepo     *OffersRepo
-
-	ImageRepo *ImageRepo
+	SessionRepo    *SessionRepo
+	ImageRepo      *ImageRepo
 }
 
 func NewRepo(db *sqlx.DB) *Repo {
@@ -31,6 +31,7 @@ func NewRepo(db *sqlx.DB) *Repo {
 	chatRepo := NewChatRepo(db)
 	imageRepo := NewImageRepo(db)
 	offersRepo := NewOffersRepo(db)
+	sessionRepo := NewSessionRepo(db)
 	return &Repo{
 		db: db,
 
@@ -44,5 +45,6 @@ func NewRepo(db *sqlx.DB) *Repo {
 		ChatRepo:       chatRepo,
 		ImageRepo:      imageRepo,
 		OffersRepo:     offersRepo,
+		SessionRepo:    sessionRepo,
 	}
 }

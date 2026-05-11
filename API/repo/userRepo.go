@@ -103,27 +103,7 @@ func (ur *UserRepo) Login(ctx context.Context, email string, password string) (*
 
 	return user, nil
 }
-func (ur *UserRepo) Logout(ctx context.Context, userID int, refreshToken string) (bool, error) {
-	if userID == 0 || refreshToken == "" {
-		return false, fmt.Errorf("Invalid data")
-	}
-	refreshTokenHash := ur.HashRefreshToken(refreshToken, config.REFRESH_TOKEN_SECRET)
 
-	query := "DELETE FROM users.tokens WHERE token = $1 AND user_id = $2"
-
-	result, err := ur.db.ExecContext(ctx, query, refreshTokenHash, userID)
-
-	if err != nil {
-		return false, fmt.Errorf("Log out unsuccessfully")
-	}
-
-	rowsAffected, _ := result.RowsAffected()
-	if rowsAffected == 0 {
-		return false, fmt.Errorf("no matching token found")
-	}
-	return true, nil
-
-}
 func (ur *UserRepo) Update(ctx context.Context, user *models.User) (*models.User, error) {
 	if user.Email == "" || user.Name == "" || user.Surname == "" || user.ID == 0 {
 		return nil, fmt.Errorf("Invalid data")
@@ -186,11 +166,6 @@ func (ur *UserRepo) NewTokens(ctx context.Context, userId, userRole int) (string
 	if err != nil {
 		return "", "", err
 	}
-	err = ur.StoreRefreshToken(ctx, userId, refreshToken)
-
-	if err != nil {
-		return "", "", err
-	}
 	return accessToken, refreshToken, nil
 
 }
@@ -214,21 +189,7 @@ func (ur *UserRepo) GenerateAccessToken(userID, userRole int) (string, error) {
 	return tokenstring, nil
 
 }
-func (ur *UserRepo) StoreRefreshToken(ctx context.Context, userID int, refresh string) error {
-	if userID == 0 || refresh == "" {
-		return fmt.Errorf("Invalid data.")
-	}
-	expiresAt := time.Now().Add(7 * 24 * time.Hour)
 
-	hashToken := ur.HashRefreshToken(refresh, config.REFRESH_TOKEN_SECRET)
-
-	query := `INSERT INTO users.tokens (user_id,token, expires_at) VALUES($1, $2, $3)`
-	_, err := ur.db.ExecContext(ctx, query, userID, hashToken, expiresAt)
-	if err != nil {
-		return fmt.Errorf("Database error : %s", err.Error())
-	}
-	return nil
-}
 func (ur *UserRepo) HashRefreshToken(token string, secret []byte) string {
 	mac := hmac.New(sha256.New, []byte(secret))
 	mac.Write([]byte(token))
@@ -267,8 +228,8 @@ func (ur *UserRepo) RestoreRefreshToken(ctx context.Context, token string) (int,
 
 	var userID, role int
 	query := `
-    UPDATE users.tokens t
-    SET token = $1
+    UPDATE users.sessions t
+    SET t.token = $1
     FROM users.users u
     WHERE t.token = $2 AND t.expires_at > NOW() AND u.id = t.user_id
     RETURNING t.user_id, u.role

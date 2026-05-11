@@ -9,6 +9,9 @@ import (
 	"encoding/json"
 	"net/http"
 	"time"
+
+	"github.com/go-chi/chi/v5"
+	"github.com/google/uuid"
 )
 
 type UserController struct {
@@ -55,7 +58,7 @@ func (uc *UserController) Login(w http.ResponseWriter, r *http.Request) {
 	config.Logger.Printf("Login request started")
 
 	var user models.User
-
+	var session models.NewSession
 	err := json.NewDecoder(r.Body).Decode(&user)
 
 	if err != nil {
@@ -64,11 +67,13 @@ func (uc *UserController) Login(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 	defer r.Body.Close()
+	session.UserAgent = r.Header.Get("User-Agent")
+	session.IpAddress = utils.GetClientIP(r)
 
 	ctx := r.Context()
 	ctx, cancel := context.WithTimeout(ctx, 10*time.Second)
 	defer cancel()
-	accessToken, refreshToken, userdata, err := uc.UserService.Login(ctx, user)
+	accessToken, refreshToken, userdata, err := uc.UserService.Login(ctx, user, session)
 
 	if err != nil {
 		config.Logger.Printf("Login service error: %v", err)
@@ -98,6 +103,30 @@ func (uc *UserController) Login(w http.ResponseWriter, r *http.Request) {
 	RespondWithJSON(w, http.StatusAccepted, map[string]interface{}{
 		"message": "Giriş başarılı",
 		"user":    userdata,
+	})
+}
+func (uc *UserController) GetSessions(w http.ResponseWriter, r *http.Request) {
+	config.Logger.Printf("GetSessions request started")
+
+	userID, _, ok := GetUserIDFromContext(r)
+	if !ok {
+		config.Logger.Printf("GetSessionsError : Unauthorized access")
+		RespondWithError(w, http.StatusUnauthorized, "Yetkisiz erişim")
+		return
+	}
+	ctx := r.Context()
+	ctx, cancel := context.WithTimeout(ctx, 10*time.Second)
+	defer cancel()
+
+	sessions, err := uc.UserService.GetSessions(ctx, userID)
+	if err != nil {
+		config.Logger.Printf("GetSessions service error: %v", err)
+		RespondWithError(w, http.StatusNotFound, "Oturum bulunamadı")
+		return
+	}
+	config.Logger.Printf("GetUserData success: User data retrieved for user %d", userID)
+	RespondWithJSON(w, http.StatusOK, map[string]interface{}{
+		"Sessions": sessions,
 	})
 }
 func (uc *UserController) Logout(w http.ResponseWriter, r *http.Request) {
@@ -267,4 +296,37 @@ func (uc *UserController) GetAccess(w http.ResponseWriter, r *http.Request) {
 	RespondWithJSON(w, http.StatusOK, map[string]interface{}{
 		"message": "Token başarıyla yenilendi",
 	})
+}
+func (uc *UserController) DropSession(w http.ResponseWriter, r *http.Request) {
+	config.Logger.Printf("DropSession request started")
+
+	userID, _, ok := GetUserIDFromContext(r)
+	if !ok {
+		config.Logger.Printf("DropSession Error : Unauthorized access")
+		RespondWithError(w, http.StatusUnauthorized, "Yetkisiz erişim")
+		return
+	}
+
+	id, err := uuid.Parse(chi.URLParam(r, "id"))
+	if err != nil {
+		config.Logger.Printf("Drop error: Invalid request data - %v", err)
+		RespondWithError(w, http.StatusBadRequest, "Geçersiz veri formatı")
+		return
+	}
+	defer r.Body.Close()
+
+	ctx := r.Context()
+	ctx, cancel := context.WithTimeout(ctx, 10*time.Second)
+	defer cancel()
+	err = uc.UserService.DropSession(ctx, userID, id)
+	if err != nil {
+		config.Logger.Printf("DropSession service error: %v", err)
+		RespondWithError(w, http.StatusInternalServerError, "Oturum kapatılırken hata oluştu")
+		return
+	}
+	config.Logger.Printf("Session Drop success: User %d", userID)
+	RespondWithJSON(w, http.StatusOK, map[string]interface{}{
+		"message": "Başarılı",
+	})
+
 }

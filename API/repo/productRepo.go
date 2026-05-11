@@ -388,8 +388,6 @@ func (pr *ProductRepo) LockProduct(ctx context.Context, tx *sqlx.Tx, id int) err
 	return nil
 }
 
-// GetProductForOfferTx — Transaction içinde ürünün seller_id ve status bilgisini
-// FOR UPDATE ile kilitleyerek döndürür. TOCTOU yarış durumunu önler.
 func (pr *ProductRepo) GetProductForOfferTx(ctx context.Context, tx *sqlx.Tx, productID int) (sellerID int, status int, err error) {
 	query := `SELECT seller_id, status FROM products.products WHERE id = $1 AND deleted_at IS NULL FOR UPDATE`
 	err = tx.QueryRowContext(ctx, query, productID).Scan(&sellerID, &status)

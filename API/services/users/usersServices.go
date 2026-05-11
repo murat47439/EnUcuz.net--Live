@@ -1,18 +1,22 @@
 package users
 
 import (
+	"Store-Dio/config"
 	"Store-Dio/models"
 	"Store-Dio/repo"
 	"context"
 	"fmt"
+
+	"github.com/google/uuid"
 )
 
 type UserService struct {
-	UserRepo *repo.UserRepo
+	UserRepo    *repo.UserRepo
+	SessionRepo *repo.SessionRepo
 }
 
-func NewUserService(userRepo *repo.UserRepo) *UserService {
-	return &UserService{UserRepo: userRepo}
+func NewUserService(userRepo *repo.UserRepo, sessionRepo *repo.SessionRepo) *UserService {
+	return &UserService{UserRepo: userRepo, SessionRepo: sessionRepo}
 }
 
 func (s *UserService) CreateUser(ctx context.Context, user models.NewUser) (models.NewUser, error) {
@@ -38,7 +42,7 @@ func (s *UserService) CreateUser(ctx context.Context, user models.NewUser) (mode
 
 	return user, nil
 }
-func (s *UserService) Login(ctx context.Context, user models.User) (string, string, *models.User, error) {
+func (s *UserService) Login(ctx context.Context, user models.User, session models.NewSession) (string, string, *models.User, error) {
 
 	userdata, err := s.UserRepo.Login(ctx, user.Email, user.Password)
 
@@ -46,6 +50,13 @@ func (s *UserService) Login(ctx context.Context, user models.User) (string, stri
 		return "", "", nil, err
 	}
 	accessToken, refreshToken, err := s.UserRepo.NewTokens(ctx, userdata.ID, userdata.Role)
+
+	if err != nil {
+		return "", "", nil, err
+	}
+	session.Token = s.UserRepo.HashRefreshToken(refreshToken, config.REFRESH_TOKEN_SECRET)
+	session.UserId = userdata.ID
+	err = s.SessionRepo.NewSession(ctx, session)
 
 	if err != nil {
 		return "", "", nil, err
@@ -58,11 +69,32 @@ func (s *UserService) Logout(ctx context.Context, token string, user_id int) (bo
 	if token == "" || user_id == 0 {
 		return false, fmt.Errorf("Invalid data")
 	}
-	_, err := s.UserRepo.Logout(ctx, user_id, token)
+	refreshTokenHash := s.UserRepo.HashRefreshToken(token, config.REFRESH_TOKEN_SECRET)
+	err := s.SessionRepo.ShutdownSession(ctx, refreshTokenHash, user_id)
 	if err != nil {
 		return false, err
 	}
 	return true, nil
+}
+func (s *UserService) GetSessions(ctx context.Context, user_id int) ([]*models.Session, error) {
+	if user_id == 0 {
+		return nil, fmt.Errorf("User id 0")
+	}
+	session, err := s.SessionRepo.GetActiveSession(ctx, user_id)
+	if err != nil {
+		return nil, err
+	}
+	return session, nil
+}
+func (s *UserService) DropSession(ctx context.Context, user_id int, id uuid.UUID) error {
+	if user_id == 0 || id == uuid.Nil {
+		return fmt.Errorf("Invalid data")
+	}
+	err := s.SessionRepo.DropSession(ctx, user_id, id)
+	if err != nil {
+		return err
+	}
+	return nil
 }
 func (s *UserService) Update(ctx context.Context, user *models.User) (*models.User, error) {
 	if user.ID == 0 {
