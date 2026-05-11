@@ -50,6 +50,10 @@ api.interceptors.response.use(
   async (error) => {
     const originalRequest = error.config as AxiosRequestConfigWithRetry;
 
+    if (originalRequest.url?.includes("/refresh")) {
+      return Promise.reject(error);
+    }
+
     if (error.response?.status === 401 && !originalRequest._retry) {
       if (isRefreshing) {
         // refresh işlemi sürüyorsa, sıraya ekle
@@ -68,10 +72,12 @@ api.interceptors.response.use(
 
         if (!response?.success) throw new Error("Refresh failed");
 
+        processQueue(null, null);
+
         return api(originalRequest);
       } catch (err) {
         processQueue(err, null);
-        // Refresh başarısız → kullanıcıyı login sayfasına at
+
         if (typeof window !== "undefined") {
           localStorage.removeItem("user");
           window.location.href = "/login";
