@@ -20,18 +20,10 @@ func NewOffersRepo(db *sqlx.DB) *OffersRepo {
 	}
 }
 
-const (
-	OfferPending   = 0 // Beklemede (teklif verildi, cevap yok)
-	OfferAccepted  = 1 // Kabul edildi (satış gerçekleşiyor)
-	OfferRejected  = 2 // Reddedildi (satıcı reddetti)
-	OfferCancelled = 3 // İptal edildi (teklif veren iptal etti)
-	OfferExpired   = 4 // Süresi doldu (otomatik)
-)
-
 func (of *OffersRepo) NewOffer(ctx context.Context, tx *sqlx.Tx, data *models.NewOffer) (int, error) {
 	query := `INSERT INTO offers.offers(product_id,parent_id,created_by,bidder_id,seller_id,offer_price,status, created_at, expires_at) VALUES ($1, $2, $3, $4, $5, $6, $7 ,NOW(), NOW() + INTERVAL '24 hours') RETURNING id`
 	var id int
-	err := tx.QueryRowContext(ctx, query, data.ProductID, data.ParentID, data.CreatedBy, data.BidderID, data.SellerID, data.Price, OfferPending).Scan(&id)
+	err := tx.QueryRowContext(ctx, query, data.ProductID, data.ParentID, data.CreatedBy, data.BidderID, data.SellerID, data.Price, models.OfferPending).Scan(&id)
 	if err != nil {
 		return 0, fmt.Errorf("Database error %w", err)
 	}
@@ -40,7 +32,7 @@ func (of *OffersRepo) NewOffer(ctx context.Context, tx *sqlx.Tx, data *models.Ne
 func (of *OffersRepo) ExistsOffer(ctx context.Context, tx *sqlx.Tx, productId, bidderId, sellerId int) (bool, error) {
 	var exists bool
 	query := `SELECT EXISTS(SELECT 1 FROM offers.offers WHERE product_id = $1 AND status = $2 AND expires_at > NOW() AND bidder_id = $3 AND seller_id = $4)`
-	err := tx.QueryRowContext(ctx, query, productId, OfferPending, bidderId, sellerId).Scan(&exists)
+	err := tx.QueryRowContext(ctx, query, productId, models.OfferPending, bidderId, sellerId).Scan(&exists)
 	if err != nil {
 		if err == sql.ErrNoRows {
 			return false, nil
@@ -52,7 +44,7 @@ func (of *OffersRepo) ExistsOffer(ctx context.Context, tx *sqlx.Tx, productId, b
 func (of *OffersRepo) ExistsOfferForChat(ctx context.Context, tx *sqlx.Tx, productId, bidderId, sellerId int) (bool, error) {
 	var exists bool
 	query := `SELECT EXISTS(SELECT 1 FROM offers.offers WHERE product_id = $1 AND status = $2 AND bidder_id = $3 AND seller_id = $4)`
-	err := tx.QueryRowContext(ctx, query, productId, OfferAccepted, bidderId, sellerId).Scan(&exists)
+	err := tx.QueryRowContext(ctx, query, productId, models.OfferAccepted, bidderId, sellerId).Scan(&exists)
 	if err != nil {
 		if err == sql.ErrNoRows {
 			return false, nil
@@ -61,10 +53,10 @@ func (of *OffersRepo) ExistsOfferForChat(ctx context.Context, tx *sqlx.Tx, produ
 	}
 	return exists, nil
 }
-func (of *OffersRepo) UpdateOffer(ctx context.Context, tx *sqlx.Tx, status, id int) error {
+func (of *OffersRepo) UpdateOffer(ctx context.Context, tx *sqlx.Tx, status models.OfferStatus, id int) error {
 	query := `UPDATE offers.offers SET status = $1, updated_at = NOW() WHERE id = $2 AND  status = $3 AND expires_at > NOW()`
 
-	res, err := tx.ExecContext(ctx, query, status, id, OfferPending)
+	res, err := tx.ExecContext(ctx, query, status, id, models.OfferPending)
 	if err != nil {
 		return fmt.Errorf("Database error : %w", err)
 	}
@@ -83,7 +75,7 @@ func (of *OffersRepo) RejectOtherOffers(ctx context.Context, tx *sqlx.Tx, id int
 			AND id <> $2
 			AND status = $3
 			AND expires_at > NOW()`
-	_, err := tx.ExecContext(ctx, query, OfferRejected, id, OfferPending)
+	_, err := tx.ExecContext(ctx, query, models.OfferRejected, id, models.OfferPending)
 	if err != nil {
 		return fmt.Errorf("Database error : %w", err)
 	}
@@ -92,7 +84,7 @@ func (of *OffersRepo) RejectOtherOffers(ctx context.Context, tx *sqlx.Tx, id int
 func (of *OffersRepo) LockAndGetPendingOffer(ctx context.Context, tx *sqlx.Tx, offerId int) (*models.OffersModel, error) {
 	query := `SELECT id, product_id, bidder_id, seller_id, offer_price, status, expires_at,created_by FROM offers.offers WHERE id = $1 AND status = $2 AND expires_at > NOW() FOR UPDATE`
 	var offer models.OffersModel
-	err := tx.QueryRowContext(ctx, query, offerId, OfferPending).Scan(&offer.ID,
+	err := tx.QueryRowContext(ctx, query, offerId, models.OfferPending).Scan(&offer.ID,
 		&offer.ProductID,
 		&offer.BidderID,
 		&offer.SellerID,
@@ -203,7 +195,7 @@ func (of *OffersRepo) GetOffersByBidder(ctx context.Context, page, bidder int) (
 func (of *OffersRepo) ExpireOffers(ctx context.Context) (int64, error) {
 	query := `UPDATE offers.offers SET status = $1 WHERE status = $2 AND expires_at < NOW()`
 
-	rows, err := of.db.ExecContext(ctx, query, OfferExpired, OfferPending)
+	rows, err := of.db.ExecContext(ctx, query, models.OfferExpired, models.OfferPending)
 	if err != nil {
 		return 0, fmt.Errorf("Database error : %w ", err)
 	}

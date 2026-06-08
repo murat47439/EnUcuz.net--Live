@@ -24,6 +24,12 @@ func NewUserRepo(db *sqlx.DB) *UserRepo {
 	return &UserRepo{db: db}
 }
 
+const (
+	UserRole   = 0
+	AdminRole  = 1
+	SellerRole = 2
+)
+
 // USER
 
 func (ur *UserRepo) CreateUser(ctx context.Context, user models.NewUser) (bool, error) {
@@ -56,7 +62,7 @@ func (ur *UserRepo) CreateUser(ctx context.Context, user models.NewUser) (bool, 
 
 	query := `INSERT INTO users.users(email, phone, name, surname, gender, role, password) VALUES($1, $2, $3, $4, $5, $6, $7) RETURNING id `
 	var id int
-	err = tx.QueryRowContext(ctx, query, user.Email, user.Phone, user.Name, user.Surname, user.Gender, user.Role, user.Password).Scan(&id)
+	err = tx.QueryRowContext(ctx, query, user.Email, user.Phone, user.Name, user.Surname, user.Gender, models.UserRole, user.Password).Scan(&id)
 
 	if err != nil {
 		return false, fmt.Errorf("Database error : %s", err.Error())
@@ -154,7 +160,7 @@ func (ur *UserRepo) GetUserDataByID(ctx context.Context, id int) (*models.User, 
 
 // REFRESH AND ACCESS
 
-func (ur *UserRepo) NewTokens(ctx context.Context, userId, userRole int) (string, string, error) {
+func (ur *UserRepo) NewTokens(ctx context.Context, userId int, userRole models.Role) (string, string, error) {
 	if userId == 0 {
 		return "", "", fmt.Errorf("Invalid data")
 	}
@@ -169,7 +175,7 @@ func (ur *UserRepo) NewTokens(ctx context.Context, userId, userRole int) (string
 	return accessToken, refreshToken, nil
 
 }
-func (ur *UserRepo) GenerateAccessToken(userID, userRole int) (string, error) {
+func (ur *UserRepo) GenerateAccessToken(userID int, userRole models.Role) (string, error) {
 	expirationTime := time.Now().Add(15 * time.Minute)
 
 	claims := models.AccessToken{
@@ -218,37 +224,35 @@ func (ur *UserRepo) VerifyAccessToken(tokenStr string) (*models.AccessToken, err
 
 	return accessToken, nil
 }
-func (ur *UserRepo) RestoreRefreshToken(ctx context.Context, token string) (int, int, string, error) {
+func (ur *UserRepo) RestoreRefreshToken(ctx context.Context, token string) (int, models.Role, string, error) {
 	refreshHash := ur.HashRefreshToken(token, config.REFRESH_TOKEN_SECRET)
-	newRefresh, err := utils.GenerateRandomToken(32)
-	if err != nil {
-		return 0, 0, "", err
-	}
-	newRefreshHash := ur.HashRefreshToken(newRefresh, config.REFRESH_TOKEN_SECRET)
 
-	var userID, role int
+	var userID int
+	var role models.Role
 	query := `
-    UPDATE users.sessions t
-    SET t.token = $1
-    FROM users.users u
-    WHERE t.token = $2 AND t.expires_at > NOW() AND u.id = t.user_id
-    RETURNING t.user_id, u.role
+    SELECT u.id, u.role
+    FROM users.sessions t
+    JOIN users.users u ON u.id = t.user_id
+    WHERE t.token = $1 AND t.expires_at > NOW() AND t.is_active = true AND u.deleted_at IS NULL
 `
-	err = ur.db.QueryRowContext(ctx, query, newRefreshHash, refreshHash).Scan(&userID, &role)
+	err := ur.db.QueryRowContext(ctx, query, refreshHash).Scan(&userID, &role)
 
 	if err != nil {
 		return 0, 0, "", err
 	}
-	return userID, role, newRefresh, nil
+
+	_, _ = ur.db.ExecContext(ctx, `UPDATE users.sessions SET last_activity_at = NOW() WHERE token = $1`, refreshHash)
+
+	return userID, role, token, nil
 }
 
 //ADMİN CONTROL
 
 func (ur *UserRepo) OnlyAdmin(ctx context.Context, userID int) (bool, error) {
-	query := "SELECT 1 FROM users.users WHERE role=1 AND id = $1 AND deleted_at IS NULL"
+	query := "SELECT 1 FROM users.users WHERE role=$1 AND id = $2 AND deleted_at IS NULL"
 
 	var tmp int
-	err := ur.db.QueryRowContext(ctx, query, userID).Scan(&tmp)
+	err := ur.db.QueryRowContext(ctx, query, models.AdminRole, userID).Scan(&tmp)
 
 	if err != nil {
 		if err == sql.ErrNoRows {

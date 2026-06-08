@@ -7,7 +7,8 @@ import { PaginationRequest, Product } from "@/lib/types/types"
 import { getProducts } from "@/lib/api/products/useGetProducts"
 import Link from "next/link"
 import { useSearchParams, useRouter } from "next/navigation"
-import { Plus, Search, ShieldCheck, Truck, CreditCard, ArrowRight, Loader2, PackageX, ChevronRight, Home } from "lucide-react"
+import { Plus, Search, ShieldCheck, Truck, CreditCard, ArrowRight, PackageX, ChevronRight, Home } from "lucide-react"
+import PageLoader from "@/features/components/pageLoader"
 
 function HomePageContent() {
     const [products, setProducts] = useState<Product[]>([]);
@@ -98,11 +99,7 @@ function HomePageContent() {
             </div>
 
             {isLoading ? (
-                <div className="flex flex-col items-center justify-center py-20">
-                    <Loader2 size={32} className="text-[#ff6000] animate-spin mb-3" />
-                    <p className="text-sm text-gray-500">Ürünler yükleniyor...</p>
-                    <p className="text-xs text-gray-400 mt-1">API başlatılması 30-45 saniye sürebilir</p>
-                </div>
+                <PageLoader fullPage={false} size="sm" label="Ürünler yükleniyor" />
             ) : products?.length > 0 ? (
                 <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-3 sm:gap-4 mb-8">
                     {products.map(product => (

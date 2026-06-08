@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import { getProducts } from "@/lib/api/products/useGetProducts";
 import { PaginationRequest, Product } from "@/lib/types/types";
 import ProductCard from "@/features/components/productCard";
-import { Loader2 } from "lucide-react";
+import PageLoader from "@/features/components/pageLoader";
 
 interface RelatedProductsProps {
   categoryId: number;
@@ -52,9 +52,7 @@ export default function RelatedProducts({ categoryId, currentProductId }: Relate
         </h2>
 
         {loading ? (
-          <div className="flex items-center justify-center py-10">
-            <Loader2 className="w-6 h-6 animate-spin text-[#ff6000]" />
-          </div>
+          <PageLoader fullPage={false} size="sm" label="Benzer ürünler" />
         ) : error || products.length === 0 ? (
           <div className="text-center py-8">
             <p className="text-sm text-gray-400">Bu kategoride başka ürün bulunamadı.</p>

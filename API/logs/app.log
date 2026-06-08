@@ -1,0 +1,470 @@
+APP_LOG: 2026/05/18 17:42:14 main.go:36: Application started successfully.
+APP_LOG: 2026/05/18 17:42:14 auth.go:60: AuthMiddleware Started
+APP_LOG: 2026/05/18 17:42:14 auth.go:60: AuthMiddleware Started
+APP_LOG: 2026/05/18 17:42:14 auth.go:60: AuthMiddleware Started
+APP_LOG: 2026/05/18 17:42:14 auth.go:60: AuthMiddleware Started
+APP_LOG: 2026/05/18 17:42:14 auth.go:60: AuthMiddleware Started
+APP_LOG: 2026/05/18 17:42:14 auth.go:60: AuthMiddleware Started
+APP_LOG: 2026/05/18 17:42:14 auth.go:60: AuthMiddleware Started
+APP_LOG: 2026/05/18 17:42:14 auth.go:60: AuthMiddleware Started
+APP_LOG: 2026/05/18 17:42:14 auth.go:60: AuthMiddleware Started
+APP_LOG: 2026/05/18 17:42:14 auth.go:60: AuthMiddleware Started
+APP_LOG: 2026/05/18 17:42:14 auth.go:60: AuthMiddleware Started
+APP_LOG: 2026/05/18 17:42:14 auth.go:60: AuthMiddleware Started
+APP_LOG: 2026/05/18 17:42:14 auth.go:60: AuthMiddleware Started
+APP_LOG: 2026/05/18 17:42:14 auth.go:60: AuthMiddleware Started
+APP_LOG: 2026/05/18 17:42:14 auth.go:60: AuthMiddleware Started
+APP_LOG: 2026/05/18 17:42:14 auth.go:60: AuthMiddleware Started
+APP_LOG: 2026/05/18 17:42:14 ai.go:20: Gemini client initialized successfully
+APP_LOG: 2026/05/18 17:42:19 usersController.go:58: Login request started
+APP_LOG: 2026/05/18 17:42:19 usersController.go:102: Login success: User 38 logged in
+APP_LOG: 2026/05/18 17:42:19 controllers.go:21: Success response: 202
+APP_LOG: 2026/05/18 17:47:09 usersController.go:58: Login request started
+APP_LOG: 2026/05/18 17:47:10 usersController.go:102: Login success: User 38 logged in
+APP_LOG: 2026/05/18 17:47:10 controllers.go:21: Success response: 202
+APP_LOG: 2026/05/18 17:47:24 usersController.go:58: Login request started
+APP_LOG: 2026/05/18 17:47:24 password.go:22: Unsuccesful CheckPasswordHash
+APP_LOG: 2026/05/18 17:47:24 usersController.go:79: Login service error: Şifre yanlış.
+APP_LOG: 2026/05/18 17:47:24 controllers.go:10: Error response: 401 - Giriş bilgileri hatalı
+APP_LOG: 2026/05/18 17:47:26 usersController.go:58: Login request started
+APP_LOG: 2026/05/18 17:47:26 password.go:22: Unsuccesful CheckPasswordHash
+APP_LOG: 2026/05/18 17:47:26 usersController.go:79: Login service error: Şifre yanlış.
+APP_LOG: 2026/05/18 17:47:26 controllers.go:10: Error response: 401 - Giriş bilgileri hatalı
+APP_LOG: 2026/05/18 17:47:28 usersController.go:58: Login request started
+APP_LOG: 2026/05/18 17:47:28 password.go:22: Unsuccesful CheckPasswordHash
+APP_LOG: 2026/05/18 17:47:28 usersController.go:79: Login service error: Şifre yanlış.
+APP_LOG: 2026/05/18 17:47:28 controllers.go:10: Error response: 401 - Giriş bilgileri hatalı
+APP_LOG: 2026/05/18 17:47:37 usersController.go:58: Login request started
+APP_LOG: 2026/05/18 17:47:37 usersController.go:102: Login success: User 1 logged in
+APP_LOG: 2026/05/18 17:47:37 controllers.go:21: Success response: 202
+APP_LOG: 2026/05/18 17:48:29 main.go:36: Application started successfully.
+APP_LOG: 2026/05/18 17:48:29 auth.go:60: AuthMiddleware Started
+APP_LOG: 2026/05/18 17:48:29 auth.go:60: AuthMiddleware Started
+APP_LOG: 2026/05/18 17:48:29 auth.go:60: AuthMiddleware Started
+APP_LOG: 2026/05/18 17:48:29 auth.go:60: AuthMiddleware Started
+APP_LOG: 2026/05/18 17:48:29 auth.go:60: AuthMiddleware Started
+APP_LOG: 2026/05/18 17:48:29 auth.go:60: AuthMiddleware Started
+APP_LOG: 2026/05/18 17:48:29 auth.go:60: AuthMiddleware Started
+APP_LOG: 2026/05/18 17:48:29 auth.go:60: AuthMiddleware Started
+APP_LOG: 2026/05/18 17:48:29 auth.go:60: AuthMiddleware Started
+APP_LOG: 2026/05/18 17:48:29 auth.go:60: AuthMiddleware Started
+APP_LOG: 2026/05/18 17:48:29 auth.go:60: AuthMiddleware Started
+APP_LOG: 2026/05/18 17:48:29 auth.go:60: AuthMiddleware Started
+APP_LOG: 2026/05/18 17:48:29 auth.go:60: AuthMiddleware Started
+APP_LOG: 2026/05/18 17:48:29 auth.go:60: AuthMiddleware Started
+APP_LOG: 2026/05/18 17:48:29 auth.go:60: AuthMiddleware Started
+APP_LOG: 2026/05/18 17:48:29 auth.go:60: AuthMiddleware Started
+APP_LOG: 2026/05/18 17:48:29 ai.go:20: Gemini client initialized successfully
+APP_LOG: 2026/05/18 17:48:35 usersController.go:58: Login request started
+APP_LOG: 2026/05/18 17:48:35 usersController.go:102: Login success: User 1 logged in
+APP_LOG: 2026/05/18 17:48:35 controllers.go:21: Success response: 202
+APP_LOG: 2026/05/18 17:50:03 usersController.go:185: GetUserData request started
+APP_LOG: 2026/05/18 17:50:03 usersController.go:204: GetUserData success: User data retrieved for user 1
+APP_LOG: 2026/05/18 17:50:03 controllers.go:21: Success response: 200
+APP_LOG: 2026/05/18 17:57:01 controllers.go:21: Success response: 200
+APP_LOG: 2026/05/18 17:57:07 brandsController.go:48: GetBrands request started
+APP_LOG: 2026/05/18 17:57:07 brandsController.go:60: GetBrands parameters: page=1, search=''
+APP_LOG: 2026/05/18 17:57:07 categoriesController.go:47: GetCategories request started
+APP_LOG: 2026/05/18 17:57:07 categoriesController.go:59: GetCategories parameters: page=1, search=''
+APP_LOG: 2026/05/18 17:57:07 brandsController.go:67: GetBrands service error: Rows error context canceled
+APP_LOG: 2026/05/18 17:57:07 controllers.go:10: Error response: 500 - Markalar yüklenirken hata oluştu
+APP_LOG: 2026/05/18 17:57:07 categoriesController.go:66: GetCategories service error: Database error: failed to connect to `user=neondb_owner database=neondb`:
+	13.43.29.36:5432 (ep-withered-lab-aboqcz1z-pooler.eu-west-2.aws.neon.tech): failed to write startup message: context canceled
+	35.177.127.187:5432 (ep-withered-lab-aboqcz1z-pooler.eu-west-2.aws.neon.tech): dial error: dial tcp 35.177.127.187:5432: operation was canceled
+	13.41.250.251:5432 (ep-withered-lab-aboqcz1z-pooler.eu-west-2.aws.neon.tech): dial error: dial tcp 13.41.250.251:5432: operation was canceled
+APP_LOG: 2026/05/18 17:57:07 controllers.go:10: Error response: 500 - Kategoriler yüklenirken hata oluştu
+APP_LOG: 2026/05/18 17:57:17 auth.go:66: AuthMiddleware: Cookie not found - http: named cookie not present
+APP_LOG: 2026/05/18 17:57:20 usersController.go:58: Login request started
+APP_LOG: 2026/05/18 17:57:21 usersController.go:102: Login success: User 1 logged in
+APP_LOG: 2026/05/18 17:57:21 controllers.go:21: Success response: 202
+APP_LOG: 2026/05/18 17:57:22 controllers.go:21: Success response: 200
+APP_LOG: 2026/05/18 17:57:22 controllers.go:21: Success response: 200
+APP_LOG: 2026/05/18 17:57:49 usersController.go:133: Logout request started
+APP_LOG: 2026/05/18 17:57:49 usersController.go:178: Logout success: User 1 logged out
+APP_LOG: 2026/05/18 17:57:49 controllers.go:21: Success response: 200
+APP_LOG: 2026/05/18 17:57:50 controllers.go:21: Success response: 200
+APP_LOG: 2026/05/18 17:57:54 usersController.go:58: Login request started
+APP_LOG: 2026/05/18 17:57:54 usersController.go:102: Login success: User 1 logged in
+APP_LOG: 2026/05/18 17:57:54 controllers.go:21: Success response: 202
+APP_LOG: 2026/05/18 17:57:54 controllers.go:21: Success response: 200
+APP_LOG: 2026/05/18 17:57:55 controllers.go:21: Success response: 200
+APP_LOG: 2026/05/18 17:59:09 usersController.go:133: Logout request started
+APP_LOG: 2026/05/18 17:59:09 usersController.go:178: Logout success: User 1 logged out
+APP_LOG: 2026/05/18 17:59:09 controllers.go:21: Success response: 200
+APP_LOG: 2026/05/18 17:59:10 controllers.go:21: Success response: 200
+APP_LOG: 2026/05/18 17:59:12 usersController.go:58: Login request started
+APP_LOG: 2026/05/18 17:59:12 usersController.go:102: Login success: User 38 logged in
+APP_LOG: 2026/05/18 17:59:12 controllers.go:21: Success response: 202
+APP_LOG: 2026/05/18 17:59:12 controllers.go:21: Success response: 200
+APP_LOG: 2026/05/18 17:59:12 controllers.go:21: Success response: 200
+APP_LOG: 2026/05/18 18:06:48 brandsController.go:48: GetBrands request started
+APP_LOG: 2026/05/18 18:06:48 brandsController.go:60: GetBrands parameters: page=1, search=''
+APP_LOG: 2026/05/18 18:06:48 categoriesController.go:47: GetCategories request started
+APP_LOG: 2026/05/18 18:06:48 categoriesController.go:59: GetCategories parameters: page=1, search=''
+APP_LOG: 2026/05/18 18:06:50 brandsController.go:72: GetBrands success: 50 brands retrieved
+APP_LOG: 2026/05/18 18:06:50 controllers.go:21: Success response: 200
+APP_LOG: 2026/05/18 18:06:50 categoriesController.go:71: GetCategories success: 50 categories retrieved
+APP_LOG: 2026/05/18 18:06:50 controllers.go:21: Success response: 200
+APP_LOG: 2026/05/18 18:06:54 usersController.go:133: Logout request started
+APP_LOG: 2026/05/18 18:06:55 usersController.go:178: Logout success: User 38 logged out
+APP_LOG: 2026/05/18 18:06:55 controllers.go:21: Success response: 200
+APP_LOG: 2026/05/18 18:06:57 controllers.go:21: Success response: 200
+APP_LOG: 2026/05/18 18:06:59 usersController.go:58: Login request started
+APP_LOG: 2026/05/18 18:06:59 usersController.go:102: Login success: User 1 logged in
+APP_LOG: 2026/05/18 18:06:59 controllers.go:21: Success response: 202
+APP_LOG: 2026/05/18 18:07:00 controllers.go:21: Success response: 200
+APP_LOG: 2026/05/18 18:07:00 controllers.go:21: Success response: 200
+APP_LOG: 2026/05/18 18:07:32 usersController.go:185: GetUserData request started
+APP_LOG: 2026/05/18 18:07:32 usersController.go:204: GetUserData success: User data retrieved for user 1
+APP_LOG: 2026/05/18 18:07:32 controllers.go:21: Success response: 200
+APP_LOG: 2026/05/18 18:07:32 usersController.go:185: GetUserData request started
+APP_LOG: 2026/05/18 18:07:32 usersController.go:204: GetUserData success: User data retrieved for user 1
+APP_LOG: 2026/05/18 18:07:32 controllers.go:21: Success response: 200
+APP_LOG: 2026/05/18 18:07:45 offersController.go:174: Get Offers By Bidder request started
+APP_LOG: 2026/05/18 18:07:45 offersController.go:177: Get Offers By Bidder request started by user 1
+APP_LOG: 2026/05/18 18:07:45 offersController.go:196: Get Offers By Bidder success: page=1 userID=1
+APP_LOG: 2026/05/18 18:07:45 controllers.go:21: Success response: 200
+APP_LOG: 2026/05/18 18:07:45 offersController.go:174: Get Offers By Bidder request started
+APP_LOG: 2026/05/18 18:07:45 offersController.go:177: Get Offers By Bidder request started by user 1
+APP_LOG: 2026/05/18 18:07:45 offersController.go:196: Get Offers By Bidder success: page=1 userID=1
+APP_LOG: 2026/05/18 18:07:45 controllers.go:21: Success response: 200
+APP_LOG: 2026/05/18 18:07:47 offersController.go:147: Get Offers By Seller request started
+APP_LOG: 2026/05/18 18:07:47 offersController.go:149: Get Offers By Seller request started by user 1
+APP_LOG: 2026/05/18 18:07:47 offersController.go:168: Get Offers By Seller success: page=1 userID=1
+APP_LOG: 2026/05/18 18:07:47 controllers.go:21: Success response: 200
+APP_LOG: 2026/05/18 18:07:47 offersController.go:147: Get Offers By Seller request started
+APP_LOG: 2026/05/18 18:07:47 offersController.go:149: Get Offers By Seller request started by user 1
+APP_LOG: 2026/05/18 18:07:48 offersController.go:168: Get Offers By Seller success: page=1 userID=1
+APP_LOG: 2026/05/18 18:07:48 controllers.go:21: Success response: 200
+APP_LOG: 2026/05/18 18:07:48 productRepo.go:76:  true
+APP_LOG: 2026/05/18 18:07:48 controllers.go:21: Success response: 200
+APP_LOG: 2026/05/18 18:07:49 productRepo.go:76:  true
+APP_LOG: 2026/05/18 18:07:49 controllers.go:21: Success response: 200
+APP_LOG: 2026/05/18 18:07:50 handler.go:60: User connected:%!(EXTRA int=1)
+APP_LOG: 2026/05/18 18:07:50 chatController.go:56: GetChats request started
+APP_LOG: 2026/05/18 18:07:50 chatController.go:71: GetChats parameters: userID=1, page=1
+APP_LOG: 2026/05/18 18:07:50 client.go:54: WS read error: websocket: close 1001 (going away)
+APP_LOG: 2026/05/18 18:07:50 handler.go:60: User connected:%!(EXTRA int=1)
+APP_LOG: 2026/05/18 18:07:50 chatController.go:84: GetChats success: 1 chats retrieved for user 1
+APP_LOG: 2026/05/18 18:07:50 controllers.go:21: Success response: 200
+APP_LOG: 2026/05/18 18:07:50 chatController.go:56: GetChats request started
+APP_LOG: 2026/05/18 18:07:50 chatController.go:71: GetChats parameters: userID=1, page=1
+APP_LOG: 2026/05/18 18:07:50 chatController.go:84: GetChats success: 1 chats retrieved for user 1
+APP_LOG: 2026/05/18 18:07:50 controllers.go:21: Success response: 200
+APP_LOG: 2026/05/18 18:07:51 chatController.go:23: GetChat request started
+APP_LOG: 2026/05/18 18:07:51 chatController.go:50: GetChat success: 3 messages retrieved for chat 13
+APP_LOG: 2026/05/18 18:07:51 controllers.go:21: Success response: 200
+APP_LOG: 2026/05/18 18:07:55 client.go:54: WS read error: websocket: close 1005 (no status)
+APP_LOG: 2026/05/18 18:07:55 handler.go:60: User connected:%!(EXTRA int=1)
+APP_LOG: 2026/05/18 18:07:55 client.go:54: WS read error: websocket: close 1005 (no status)
+APP_LOG: 2026/05/18 18:07:56 controllers.go:21: Success response: 200
+APP_LOG: 2026/05/18 18:07:56 controllers.go:21: Success response: 200
+APP_LOG: 2026/05/18 18:08:00 handler.go:60: User connected:%!(EXTRA int=1)
+APP_LOG: 2026/05/18 18:08:01 handler.go:60: User connected:%!(EXTRA int=1)
+APP_LOG: 2026/05/18 18:08:01 client.go:54: WS read error: websocket: close 1006 (abnormal closure): unexpected EOF
+APP_LOG: 2026/05/18 18:08:01 chatController.go:56: GetChats request started
+APP_LOG: 2026/05/18 18:08:01 chatController.go:71: GetChats parameters: userID=1, page=1
+APP_LOG: 2026/05/18 18:08:01 handler.go:60: User connected:%!(EXTRA int=1)
+APP_LOG: 2026/05/18 18:08:01 chatController.go:84: GetChats success: 1 chats retrieved for user 1
+APP_LOG: 2026/05/18 18:08:01 controllers.go:21: Success response: 200
+APP_LOG: 2026/05/18 18:08:01 chatController.go:56: GetChats request started
+APP_LOG: 2026/05/18 18:08:01 chatController.go:71: GetChats parameters: userID=1, page=1
+APP_LOG: 2026/05/18 18:08:01 chatController.go:84: GetChats success: 1 chats retrieved for user 1
+APP_LOG: 2026/05/18 18:08:01 controllers.go:21: Success response: 200
+APP_LOG: 2026/05/18 18:08:02 client.go:54: WS read error: websocket: close 1005 (no status)
+APP_LOG: 2026/05/18 18:08:02 favoriesController.go:99: GetFavourites request started
+APP_LOG: 2026/05/18 18:08:02 favoriesController.go:116: GetFavourites parameters: userID=1, page=1
+APP_LOG: 2026/05/18 18:08:02 favoriesController.go:125: GetFavourites success: 0 favorites retrieved for user 1
+APP_LOG: 2026/05/18 18:08:02 controllers.go:21: Success response: 200
+APP_LOG: 2026/05/18 18:08:02 favoriesController.go:99: GetFavourites request started
+APP_LOG: 2026/05/18 18:08:02 favoriesController.go:116: GetFavourites parameters: userID=1, page=1
+APP_LOG: 2026/05/18 18:08:02 favoriesController.go:125: GetFavourites success: 0 favorites retrieved for user 1
+APP_LOG: 2026/05/18 18:08:02 controllers.go:21: Success response: 200
+APP_LOG: 2026/05/18 18:08:03 controllers.go:21: Success response: 200
+APP_LOG: 2026/05/18 18:08:04 controllers.go:21: Success response: 200
+APP_LOG: 2026/05/18 18:08:07 handler.go:60: User connected:%!(EXTRA int=1)
+APP_LOG: 2026/05/18 18:51:55 client.go:54: WS read error: websocket: close 1001 (going away)
+APP_LOG: 2026/05/18 18:51:55 client.go:54: WS read error: websocket: close 1001 (going away)
+APP_LOG: 2026/06/05 01:07:05 main.go:36: Application started successfully.
+APP_LOG: 2026/06/05 01:07:05 auth.go:60: AuthMiddleware Started
+APP_LOG: 2026/06/05 01:07:05 auth.go:60: AuthMiddleware Started
+APP_LOG: 2026/06/05 01:07:05 auth.go:60: AuthMiddleware Started
+APP_LOG: 2026/06/05 01:07:05 auth.go:60: AuthMiddleware Started
+APP_LOG: 2026/06/05 01:07:05 auth.go:60: AuthMiddleware Started
+APP_LOG: 2026/06/05 01:07:05 auth.go:60: AuthMiddleware Started
+APP_LOG: 2026/06/05 01:07:05 auth.go:60: AuthMiddleware Started
+APP_LOG: 2026/06/05 01:07:05 auth.go:60: AuthMiddleware Started
+APP_LOG: 2026/06/05 01:07:05 auth.go:60: AuthMiddleware Started
+APP_LOG: 2026/06/05 01:07:05 auth.go:60: AuthMiddleware Started
+APP_LOG: 2026/06/05 01:07:05 auth.go:60: AuthMiddleware Started
+APP_LOG: 2026/06/05 01:07:05 auth.go:60: AuthMiddleware Started
+APP_LOG: 2026/06/05 01:07:05 auth.go:60: AuthMiddleware Started
+APP_LOG: 2026/06/05 01:07:05 auth.go:60: AuthMiddleware Started
+APP_LOG: 2026/06/05 01:07:05 auth.go:60: AuthMiddleware Started
+APP_LOG: 2026/06/05 01:07:05 auth.go:60: AuthMiddleware Started
+APP_LOG: 2026/06/05 01:07:05 ai.go:20: Gemini client initialized successfully
+APP_LOG: 2026/06/05 01:07:50 controllers.go:21: Success response: 200
+APP_LOG: 2026/06/05 01:07:53 brandsController.go:48: GetBrands request started
+APP_LOG: 2026/06/05 01:07:53 brandsController.go:60: GetBrands parameters: page=1, search=''
+APP_LOG: 2026/06/05 01:07:53 categoriesController.go:47: GetCategories request started
+APP_LOG: 2026/06/05 01:07:53 categoriesController.go:59: GetCategories parameters: page=1, search=''
+APP_LOG: 2026/06/05 01:07:54 brandsController.go:67: GetBrands service error: Rows error context canceled
+APP_LOG: 2026/06/05 01:07:54 controllers.go:10: Error response: 500 - Markalar yüklenirken hata oluştu
+APP_LOG: 2026/06/05 01:07:54 categoriesController.go:66: GetCategories service error: Database error: failed to connect to `user=neondb_owner database=neondb`:
+	13.43.29.36:5432 (ep-withered-lab-aboqcz1z-pooler.eu-west-2.aws.neon.tech): failed to write startup message: context canceled
+	35.177.127.187:5432 (ep-withered-lab-aboqcz1z-pooler.eu-west-2.aws.neon.tech): dial error: dial tcp 35.177.127.187:5432: operation was canceled
+	13.41.250.251:5432 (ep-withered-lab-aboqcz1z-pooler.eu-west-2.aws.neon.tech): dial error: dial tcp 13.41.250.251:5432: operation was canceled
+APP_LOG: 2026/06/05 01:07:54 controllers.go:10: Error response: 500 - Kategoriler yüklenirken hata oluştu
+APP_LOG: 2026/06/05 01:08:34 controllers.go:21: Success response: 200
+APP_LOG: 2026/06/05 01:08:35 controllers.go:21: Success response: 200
+APP_LOG: 2026/06/05 01:09:15 controllers.go:21: Success response: 200
+APP_LOG: 2026/06/05 01:09:16 controllers.go:21: Success response: 200
+APP_LOG: 2026/06/05 01:10:28 controllers.go:21: Success response: 200
+APP_LOG: 2026/06/05 01:10:33 controllers.go:21: Success response: 200
+APP_LOG: 2026/06/05 01:10:33 controllers.go:21: Success response: 200
+APP_LOG: 2026/06/05 01:12:21 auth.go:66: AuthMiddleware: Cookie not found - http: named cookie not present
+APP_LOG: 2026/06/05 01:12:29 controllers.go:21: Success response: 200
+APP_LOG: 2026/06/05 01:12:34 usersController.go:58: Login request started
+APP_LOG: 2026/06/05 01:12:34 usersController.go:102: Login success: User 1 logged in
+APP_LOG: 2026/06/05 01:12:34 controllers.go:21: Success response: 202
+APP_LOG: 2026/06/05 01:12:34 controllers.go:21: Success response: 200
+APP_LOG: 2026/06/05 01:12:34 controllers.go:21: Success response: 200
+APP_LOG: 2026/06/05 01:12:55 controllers.go:21: Success response: 200
+APP_LOG: 2026/06/05 01:15:01 controllers.go:21: Success response: 200
+APP_LOG: 2026/06/05 01:15:01 controllers.go:21: Success response: 200
+APP_LOG: 2026/06/05 01:15:20 controllers.go:21: Success response: 200
+APP_LOG: 2026/06/05 01:15:20 controllers.go:21: Success response: 200
+APP_LOG: 2026/06/08 13:59:54 main.go:36: Application started successfully.
+APP_LOG: 2026/06/08 13:59:54 auth.go:60: AuthMiddleware Started
+APP_LOG: 2026/06/08 13:59:54 auth.go:60: AuthMiddleware Started
+APP_LOG: 2026/06/08 13:59:54 auth.go:60: AuthMiddleware Started
+APP_LOG: 2026/06/08 13:59:54 auth.go:60: AuthMiddleware Started
+APP_LOG: 2026/06/08 13:59:54 auth.go:60: AuthMiddleware Started
+APP_LOG: 2026/06/08 13:59:54 auth.go:60: AuthMiddleware Started
+APP_LOG: 2026/06/08 13:59:54 auth.go:60: AuthMiddleware Started
+APP_LOG: 2026/06/08 13:59:54 auth.go:60: AuthMiddleware Started
+APP_LOG: 2026/06/08 13:59:54 auth.go:60: AuthMiddleware Started
+APP_LOG: 2026/06/08 13:59:54 auth.go:60: AuthMiddleware Started
+APP_LOG: 2026/06/08 13:59:54 auth.go:60: AuthMiddleware Started
+APP_LOG: 2026/06/08 13:59:54 auth.go:60: AuthMiddleware Started
+APP_LOG: 2026/06/08 13:59:54 auth.go:60: AuthMiddleware Started
+APP_LOG: 2026/06/08 13:59:54 auth.go:60: AuthMiddleware Started
+APP_LOG: 2026/06/08 13:59:54 auth.go:60: AuthMiddleware Started
+APP_LOG: 2026/06/08 13:59:54 auth.go:60: AuthMiddleware Started
+APP_LOG: 2026/06/08 13:59:54 ai.go:20: Gemini client initialized successfully
+APP_LOG: 2026/06/08 14:00:51 controllers.go:21: Success response: 200
+APP_LOG: 2026/06/08 14:01:22 controllers.go:21: Success response: 200
+APP_LOG: 2026/06/08 14:02:43 controllers.go:21: Success response: 200
+APP_LOG: 2026/06/08 14:02:54 controllers.go:21: Success response: 200
+APP_LOG: 2026/06/08 14:03:19 controllers.go:21: Success response: 200
+APP_LOG: 2026/06/08 14:16:32 productController.go:245: GetProducts service error: Database error: failed to connect to `user=neondb_owner database=neondb`: hostname resolving error: lookup ep-withered-lab-aboqcz1z-pooler.eu-west-2.aws.neon.tech: i/o timeout
+APP_LOG: 2026/06/08 14:16:32 controllers.go:10: Error response: 500 - Ürünler listelenirken hata oluştu
+APP_LOG: 2026/06/08 14:24:04 controllers.go:21: Success response: 200
+APP_LOG: 2026/06/08 14:27:19 productController.go:245: GetProducts service error: Database error: failed to connect to `user=neondb_owner database=neondb`:
+	13.41.250.251:5432 (ep-withered-lab-aboqcz1z-pooler.eu-west-2.aws.neon.tech): failed to write startup message: context canceled
+	13.43.29.36:5432 (ep-withered-lab-aboqcz1z-pooler.eu-west-2.aws.neon.tech): dial error: dial tcp 13.43.29.36:5432: operation was canceled
+	35.177.127.187:5432 (ep-withered-lab-aboqcz1z-pooler.eu-west-2.aws.neon.tech): dial error: dial tcp 35.177.127.187:5432: operation was canceled
+APP_LOG: 2026/06/08 14:27:19 controllers.go:10: Error response: 500 - Ürünler listelenirken hata oluştu
+APP_LOG: 2026/06/08 14:27:20 controllers.go:21: Success response: 200
+APP_LOG: 2026/06/08 14:27:25 controllers.go:21: Success response: 200
+APP_LOG: 2026/06/08 14:28:03 controllers.go:21: Success response: 200
+APP_LOG: 2026/06/08 14:28:35 controllers.go:21: Success response: 200
+APP_LOG: 2026/06/08 14:30:05 controllers.go:21: Success response: 200
+APP_LOG: 2026/06/08 14:31:42 controllers.go:21: Success response: 200
+APP_LOG: 2026/06/08 14:33:24 controllers.go:21: Success response: 200
+APP_LOG: 2026/06/08 14:33:25 controllers.go:21: Success response: 200
+APP_LOG: 2026/06/08 14:33:26 controllers.go:21: Success response: 200
+APP_LOG: 2026/06/08 14:33:26 controllers.go:21: Success response: 200
+APP_LOG: 2026/06/08 14:34:40 controllers.go:21: Success response: 200
+APP_LOG: 2026/06/08 14:34:44 controllers.go:21: Success response: 200
+APP_LOG: 2026/06/08 14:35:07 controllers.go:21: Success response: 200
+APP_LOG: 2026/06/08 14:35:10 controllers.go:21: Success response: 200
+APP_LOG: 2026/06/08 14:35:15 productRepo.go:76:  true
+APP_LOG: 2026/06/08 14:35:15 controllers.go:21: Success response: 200
+APP_LOG: 2026/06/08 14:35:15 controllers.go:21: Success response: 200
+APP_LOG: 2026/06/08 14:35:16 controllers.go:21: Success response: 200
+APP_LOG: 2026/06/08 14:35:32 productRepo.go:76:  true
+APP_LOG: 2026/06/08 14:35:32 controllers.go:21: Success response: 200
+APP_LOG: 2026/06/08 14:35:34 controllers.go:21: Success response: 200
+APP_LOG: 2026/06/08 14:36:41 productRepo.go:76:  true
+APP_LOG: 2026/06/08 14:36:42 controllers.go:21: Success response: 200
+APP_LOG: 2026/06/08 14:36:42 controllers.go:21: Success response: 200
+APP_LOG: 2026/06/08 14:37:15 productRepo.go:76:  true
+APP_LOG: 2026/06/08 14:37:15 productRepo.go:76:  true
+APP_LOG: 2026/06/08 14:37:15 productRepo.go:76:  true
+APP_LOG: 2026/06/08 14:37:15 controllers.go:21: Success response: 200
+APP_LOG: 2026/06/08 14:37:15 productRepo.go:76:  true
+APP_LOG: 2026/06/08 14:37:15 productRepo.go:76:  true
+APP_LOG: 2026/06/08 14:37:15 productRepo.go:76:  true
+APP_LOG: 2026/06/08 14:37:15 controllers.go:21: Success response: 200
+APP_LOG: 2026/06/08 14:37:15 productRepo.go:76:  true
+APP_LOG: 2026/06/08 14:37:15 productRepo.go:76:  true
+APP_LOG: 2026/06/08 14:37:15 productRepo.go:76:  true
+APP_LOG: 2026/06/08 14:37:15 controllers.go:21: Success response: 200
+APP_LOG: 2026/06/08 14:37:16 productRepo.go:76:  true
+APP_LOG: 2026/06/08 14:37:16 productRepo.go:76:  true
+APP_LOG: 2026/06/08 14:37:16 productRepo.go:76:  true
+APP_LOG: 2026/06/08 14:37:16 productRepo.go:76:  true
+APP_LOG: 2026/06/08 14:37:16 controllers.go:21: Success response: 200
+APP_LOG: 2026/06/08 14:37:16 controllers.go:21: Success response: 200
+APP_LOG: 2026/06/08 14:37:16 controllers.go:21: Success response: 200
+APP_LOG: 2026/06/08 14:37:16 productRepo.go:76:  true
+APP_LOG: 2026/06/08 14:37:16 controllers.go:21: Success response: 200
+APP_LOG: 2026/06/08 14:37:16 controllers.go:21: Success response: 200
+APP_LOG: 2026/06/08 14:37:16 productRepo.go:76:  true
+APP_LOG: 2026/06/08 14:37:16 controllers.go:21: Success response: 200
+APP_LOG: 2026/06/08 14:37:16 controllers.go:21: Success response: 200
+APP_LOG: 2026/06/08 14:37:16 controllers.go:21: Success response: 200
+APP_LOG: 2026/06/08 14:37:16 productRepo.go:76:  true
+APP_LOG: 2026/06/08 14:37:16 productRepo.go:76:  true
+APP_LOG: 2026/06/08 14:37:16 controllers.go:21: Success response: 200
+APP_LOG: 2026/06/08 14:37:16 controllers.go:21: Success response: 200
+APP_LOG: 2026/06/08 14:37:16 controllers.go:21: Success response: 200
+APP_LOG: 2026/06/08 14:37:16 controllers.go:21: Success response: 200
+APP_LOG: 2026/06/08 14:37:16 productRepo.go:76:  true
+APP_LOG: 2026/06/08 14:37:16 controllers.go:21: Success response: 200
+APP_LOG: 2026/06/08 14:37:16 controllers.go:21: Success response: 200
+APP_LOG: 2026/06/08 14:37:16 productRepo.go:76:  true
+APP_LOG: 2026/06/08 14:37:16 controllers.go:21: Success response: 200
+APP_LOG: 2026/06/08 14:37:16 productRepo.go:76:  true
+APP_LOG: 2026/06/08 14:37:16 productRepo.go:76:  true
+APP_LOG: 2026/06/08 14:37:16 productRepo.go:76:  true
+APP_LOG: 2026/06/08 14:37:17 controllers.go:21: Success response: 200
+APP_LOG: 2026/06/08 14:37:17 productRepo.go:76:  true
+APP_LOG: 2026/06/08 14:37:17 productRepo.go:76:  true
+APP_LOG: 2026/06/08 14:37:17 productRepo.go:76:  true
+APP_LOG: 2026/06/08 14:37:17 productRepo.go:76:  true
+APP_LOG: 2026/06/08 14:37:17 controllers.go:21: Success response: 200
+APP_LOG: 2026/06/08 14:37:17 productRepo.go:76:  true
+APP_LOG: 2026/06/08 14:37:17 controllers.go:21: Success response: 200
+APP_LOG: 2026/06/08 14:37:17 controllers.go:21: Success response: 200
+APP_LOG: 2026/06/08 14:37:17 productRepo.go:76:  true
+APP_LOG: 2026/06/08 14:37:17 controllers.go:21: Success response: 200
+APP_LOG: 2026/06/08 14:37:17 productRepo.go:76:  true
+APP_LOG: 2026/06/08 14:37:17 controllers.go:21: Success response: 200
+APP_LOG: 2026/06/08 14:37:17 controllers.go:21: Success response: 200
+APP_LOG: 2026/06/08 14:37:17 productRepo.go:76:  true
+APP_LOG: 2026/06/08 14:37:17 productRepo.go:76:  true
+APP_LOG: 2026/06/08 14:37:17 productRepo.go:76:  true
+APP_LOG: 2026/06/08 14:37:17 controllers.go:21: Success response: 200
+APP_LOG: 2026/06/08 14:37:17 controllers.go:21: Success response: 200
+APP_LOG: 2026/06/08 14:37:17 controllers.go:21: Success response: 200
+APP_LOG: 2026/06/08 14:37:17 productRepo.go:76:  true
+APP_LOG: 2026/06/08 14:37:17 controllers.go:21: Success response: 200
+APP_LOG: 2026/06/08 14:37:17 productRepo.go:76:  true
+APP_LOG: 2026/06/08 14:37:17 controllers.go:21: Success response: 200
+APP_LOG: 2026/06/08 14:37:17 controllers.go:21: Success response: 200
+APP_LOG: 2026/06/08 14:37:17 controllers.go:21: Success response: 200
+APP_LOG: 2026/06/08 14:37:17 controllers.go:21: Success response: 200
+APP_LOG: 2026/06/08 14:37:17 controllers.go:21: Success response: 200
+APP_LOG: 2026/06/08 14:37:18 productRepo.go:76:  true
+APP_LOG: 2026/06/08 14:37:18 productRepo.go:76:  true
+APP_LOG: 2026/06/08 14:37:18 productRepo.go:76:  true
+APP_LOG: 2026/06/08 14:37:18 productRepo.go:76:  true
+APP_LOG: 2026/06/08 14:37:18 productRepo.go:76:  true
+APP_LOG: 2026/06/08 14:37:18 productRepo.go:76:  true
+APP_LOG: 2026/06/08 14:37:18 controllers.go:21: Success response: 200
+APP_LOG: 2026/06/08 14:37:18 controllers.go:21: Success response: 200
+APP_LOG: 2026/06/08 14:37:18 productRepo.go:76:  true
+APP_LOG: 2026/06/08 14:37:18 productRepo.go:76:  true
+APP_LOG: 2026/06/08 14:37:18 productRepo.go:76:  true
+APP_LOG: 2026/06/08 14:37:18 productRepo.go:76:  true
+APP_LOG: 2026/06/08 14:37:18 productRepo.go:76:  true
+APP_LOG: 2026/06/08 14:37:18 productRepo.go:76:  true
+APP_LOG: 2026/06/08 14:37:18 controllers.go:21: Success response: 200
+APP_LOG: 2026/06/08 14:37:18 controllers.go:21: Success response: 200
+APP_LOG: 2026/06/08 14:37:18 controllers.go:21: Success response: 200
+APP_LOG: 2026/06/08 14:37:19 controllers.go:21: Success response: 200
+APP_LOG: 2026/06/08 14:37:19 productRepo.go:76:  true
+APP_LOG: 2026/06/08 14:37:19 productRepo.go:76:  true
+APP_LOG: 2026/06/08 14:37:19 controllers.go:21: Success response: 200
+APP_LOG: 2026/06/08 14:37:19 controllers.go:21: Success response: 200
+APP_LOG: 2026/06/08 14:37:19 controllers.go:21: Success response: 200
+APP_LOG: 2026/06/08 14:37:19 controllers.go:21: Success response: 200
+APP_LOG: 2026/06/08 14:37:19 productRepo.go:76:  true
+APP_LOG: 2026/06/08 14:37:19 controllers.go:21: Success response: 200
+APP_LOG: 2026/06/08 14:37:19 controllers.go:21: Success response: 200
+APP_LOG: 2026/06/08 14:37:19 controllers.go:21: Success response: 200
+APP_LOG: 2026/06/08 14:37:19 productRepo.go:76:  true
+APP_LOG: 2026/06/08 14:37:19 controllers.go:21: Success response: 200
+APP_LOG: 2026/06/08 14:37:19 controllers.go:21: Success response: 200
+APP_LOG: 2026/06/08 14:37:19 productRepo.go:76:  true
+APP_LOG: 2026/06/08 14:37:19 controllers.go:21: Success response: 200
+APP_LOG: 2026/06/08 14:37:19 productRepo.go:76:  true
+APP_LOG: 2026/06/08 14:37:19 productRepo.go:76:  true
+APP_LOG: 2026/06/08 14:37:19 productRepo.go:76:  true
+APP_LOG: 2026/06/08 14:37:19 controllers.go:21: Success response: 200
+APP_LOG: 2026/06/08 14:37:20 productRepo.go:76:  true
+APP_LOG: 2026/06/08 14:37:20 productRepo.go:76:  true
+APP_LOG: 2026/06/08 14:37:20 controllers.go:21: Success response: 200
+APP_LOG: 2026/06/08 14:37:20 controllers.go:21: Success response: 200
+APP_LOG: 2026/06/08 14:37:20 controllers.go:21: Success response: 200
+APP_LOG: 2026/06/08 14:37:20 productRepo.go:76:  true
+APP_LOG: 2026/06/08 14:37:20 productRepo.go:76:  true
+APP_LOG: 2026/06/08 14:37:20 productRepo.go:76:  true
+APP_LOG: 2026/06/08 14:37:20 productRepo.go:76:  true
+APP_LOG: 2026/06/08 14:37:20 productRepo.go:76:  true
+APP_LOG: 2026/06/08 14:37:20 controllers.go:21: Success response: 200
+APP_LOG: 2026/06/08 14:37:20 controllers.go:21: Success response: 200
+APP_LOG: 2026/06/08 14:37:20 productRepo.go:76:  true
+APP_LOG: 2026/06/08 14:37:20 controllers.go:21: Success response: 200
+APP_LOG: 2026/06/08 14:37:20 productRepo.go:76:  true
+APP_LOG: 2026/06/08 14:37:20 controllers.go:21: Success response: 200
+APP_LOG: 2026/06/08 14:37:20 controllers.go:21: Success response: 200
+APP_LOG: 2026/06/08 14:37:20 productRepo.go:76:  true
+APP_LOG: 2026/06/08 14:37:20 controllers.go:21: Success response: 200
+APP_LOG: 2026/06/08 14:37:20 productRepo.go:76:  true
+APP_LOG: 2026/06/08 14:37:20 controllers.go:21: Success response: 200
+APP_LOG: 2026/06/08 14:37:20 productRepo.go:76:  true
+APP_LOG: 2026/06/08 14:37:20 productRepo.go:76:  true
+APP_LOG: 2026/06/08 14:37:20 controllers.go:21: Success response: 200
+APP_LOG: 2026/06/08 14:37:20 controllers.go:21: Success response: 200
+APP_LOG: 2026/06/08 14:37:20 productRepo.go:76:  true
+APP_LOG: 2026/06/08 14:37:20 controllers.go:21: Success response: 200
+APP_LOG: 2026/06/08 14:37:20 controllers.go:21: Success response: 200
+APP_LOG: 2026/06/08 14:37:20 productRepo.go:76:  true
+APP_LOG: 2026/06/08 14:37:20 controllers.go:21: Success response: 200
+APP_LOG: 2026/06/08 14:37:20 controllers.go:21: Success response: 200
+APP_LOG: 2026/06/08 14:37:20 productRepo.go:76:  true
+APP_LOG: 2026/06/08 14:37:20 controllers.go:21: Success response: 200
+APP_LOG: 2026/06/08 14:37:20 controllers.go:21: Success response: 200
+APP_LOG: 2026/06/08 14:37:20 productRepo.go:76:  true
+APP_LOG: 2026/06/08 14:37:20 controllers.go:21: Success response: 200
+APP_LOG: 2026/06/08 14:37:20 productRepo.go:76:  true
+APP_LOG: 2026/06/08 14:37:21 productRepo.go:76:  true
+APP_LOG: 2026/06/08 14:37:21 productRepo.go:76:  true
+APP_LOG: 2026/06/08 14:37:21 productRepo.go:76:  true
+APP_LOG: 2026/06/08 14:37:21 controllers.go:21: Success response: 200
+APP_LOG: 2026/06/08 14:37:21 controllers.go:21: Success response: 200
+APP_LOG: 2026/06/08 14:37:21 productRepo.go:76:  true
+APP_LOG: 2026/06/08 14:37:21 productRepo.go:76:  true
+APP_LOG: 2026/06/08 14:37:21 productRepo.go:76:  true
+APP_LOG: 2026/06/08 14:37:21 controllers.go:21: Success response: 200
+APP_LOG: 2026/06/08 14:37:21 controllers.go:21: Success response: 200
+APP_LOG: 2026/06/08 14:37:21 controllers.go:21: Success response: 200
+APP_LOG: 2026/06/08 14:37:21 productRepo.go:76:  true
+APP_LOG: 2026/06/08 14:37:21 controllers.go:21: Success response: 200
+APP_LOG: 2026/06/08 14:37:21 controllers.go:21: Success response: 200
+APP_LOG: 2026/06/08 14:37:21 productRepo.go:76:  true
+APP_LOG: 2026/06/08 14:37:21 controllers.go:21: Success response: 200
+APP_LOG: 2026/06/08 14:37:21 controllers.go:21: Success response: 200
+APP_LOG: 2026/06/08 14:37:21 controllers.go:21: Success response: 200
+APP_LOG: 2026/06/08 14:37:28 productRepo.go:76:  true
+APP_LOG: 2026/06/08 14:37:28 productRepo.go:76:  true
+APP_LOG: 2026/06/08 14:37:28 productRepo.go:76:  true
+APP_LOG: 2026/06/08 14:37:28 controllers.go:21: Success response: 200
+APP_LOG: 2026/06/08 14:37:29 productRepo.go:76:  true
+APP_LOG: 2026/06/08 14:37:29 controllers.go:21: Success response: 200
+APP_LOG: 2026/06/08 14:37:29 controllers.go:21: Success response: 200
+APP_LOG: 2026/06/08 14:37:29 controllers.go:21: Success response: 200
+APP_LOG: 2026/06/08 14:37:32 controllers.go:21: Success response: 200
+APP_LOG: 2026/06/08 14:37:32 controllers.go:21: Success response: 200
+APP_LOG: 2026/06/08 14:37:44 controllers.go:21: Success response: 200
+APP_LOG: 2026/06/08 14:39:38 controllers.go:21: Success response: 200
+APP_LOG: 2026/06/08 14:39:40 productRepo.go:76:  true
+APP_LOG: 2026/06/08 14:39:40 controllers.go:21: Success response: 200
+APP_LOG: 2026/06/08 14:39:41 controllers.go:21: Success response: 200
+APP_LOG: 2026/06/08 14:39:41 controllers.go:21: Success response: 200
+APP_LOG: 2026/06/08 14:39:59 controllers.go:21: Success response: 200
+APP_LOG: 2026/06/08 14:40:52 controllers.go:21: Success response: 200
+APP_LOG: 2026/06/08 14:40:55 controllers.go:21: Success response: 200

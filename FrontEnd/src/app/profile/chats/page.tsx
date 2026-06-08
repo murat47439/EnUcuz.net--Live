@@ -17,6 +17,7 @@ import {
     WifiOff,
     ArrowLeft,
 } from "lucide-react";
+import PageLoader from "@/features/components/pageLoader";
 
 interface WSIncoming {
     type: string;
@@ -246,14 +247,7 @@ export default function ChatPage() {
 
     /* ── Loading ── */
     if (loading || authLoading) {
-        return (
-            <div className="min-h-screen flex items-center justify-center">
-                <div className="text-center">
-                    <div className="inline-block animate-spin rounded-full h-8 w-8 border-2 border-gray-200 border-t-[#ff6000] mb-3"></div>
-                    <p className="text-sm text-gray-500">Yükleniyor...</p>
-                </div>
-            </div>
-        );
+        return <PageLoader label="Mesajlar yükleniyor" />;
     }
 
     /* ═══════════════════════════════════════

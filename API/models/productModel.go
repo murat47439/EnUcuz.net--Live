@@ -54,3 +54,12 @@ type FeatureKey struct {
 	Label string `json:"label"`
 	Value int    `json:"value"`
 }
+type ProductStatus int
+
+const (
+	ProductStatusDraft ProductStatus = iota
+	ProductStatusActive
+	ProductStatusInactive
+	ProductStatusRejected
+	ProductStatusSold
+)

@@ -11,6 +11,7 @@ import { useForm } from "react-hook-form";
 import { updateUser } from "@/lib/api/user/useUpdate";
 import { UpdateUserRequest } from "@/lib/types/types";
 import { User, Monitor, Mail, CheckCircle, XCircle, LogOut, Package, Heart, Gavel, ChevronRight, ShieldCheck, Phone } from "lucide-react";
+import PageLoader from "@/features/components/pageLoader";
 
 type FormData = {
   name: string,
@@ -45,14 +46,7 @@ export default function ProfilePage() {
     })()
   }, []);
 
-  if (!user) return (
-    <div className="min-h-screen flex items-center justify-center">
-      <div className="text-center">
-        <div className="inline-block animate-spin rounded-full h-7 w-7 border-2 border-gray-200 border-t-[#ff6000] mb-3"></div>
-        <p className="text-sm text-gray-500">Yükleniyor...</p>
-      </div>
-    </div>
-  )
+  if (!user) return <PageLoader label="Profil yükleniyor" />;
 
   const onSubmit = async (data: FormData) => {
     try {

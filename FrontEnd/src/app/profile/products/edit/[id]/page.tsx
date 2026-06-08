@@ -11,6 +11,7 @@ import { UseModal } from '@/context/modalContext'
 import Button from '@/features/components/button'
 import Input from '@/features/components/input'
 import { PencilIcon, TrashIcon } from 'lucide-react'
+import PageLoader from '@/features/components/pageLoader'
 import { useToast } from '@/context/toastContext'
 import { deleteProdAttribute } from '@/lib/api/attributes/useDeleteProd'
 import AttributeSelect from '@/features/components/attributeselect'
@@ -227,13 +228,7 @@ export default function ProductUpdatePage({ params }: { params: Promise<{ id: st
     }
   }
   if (isLoading || !product) {
-    return (
-      <div className="max-w-5xl mx-auto p-4 sm:p-6 bg-white rounded-lg border border-gray-200 mt-6">
-        <div className="flex items-center justify-center min-h-[400px]">
-          <p className="text-gray-500">Yükleniyor...</p>
-        </div>
-      </div>
-    )
+    return <PageLoader label="Ürün yükleniyor" />;
   }
   const handleAIGenerate = async () => {
     showNotification('Oluşturuluyor', 'info', 10000)

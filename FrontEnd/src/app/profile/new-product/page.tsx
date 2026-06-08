@@ -2,7 +2,7 @@
 import React, { useEffect, useState, ChangeEvent } from "react";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
-import { Brand, Category, CategoryAttribute, FeatureKey } from "@/lib/types/types";
+import { Brand, Category, CategoryAttribute, FeatureKey, UserRole } from "@/lib/types/types";
 import { PaginationRequest, IdParam, UploadImageRequest } from "@/lib/types/types";
 import { addProduct } from "@/lib/api/products/useAdd";
 import { getBrands } from "@/lib/api/brands/useGets";
@@ -34,6 +34,7 @@ import {
   Trash2,
   Settings
 } from "lucide-react";
+import PageLoader from "@/features/components/pageLoader";
 import { useForm, FormProvider, useFieldArray } from "react-hook-form";
 
 type FormData = {
@@ -56,12 +57,20 @@ type FormData = {
 export default function NewProductPage() {
 
   const router = useRouter();
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    // localStorage'dan user bilgisi al
-    const user = localStorage.getItem("user"); // veya kullandığınız key
+    const user = localStorage.getItem("user");
+
     if (!user) {
-      router.push("/login"); // user yoksa login sayfasına yönlendir
+      router.push("/login");
+    } else {
+      const userObj = JSON.parse(user);
+      if (userObj.role != UserRole.seller) {
+        router.push("/verify");
+      } else {
+        setIsLoading(false);
+      }
     }
   }, [router]);
 
@@ -307,8 +316,8 @@ export default function NewProductPage() {
           <div key={stepNum} className="flex items-center">
             <div
               className={`flex items-center justify-center w-10 h-10 rounded-full border-2 transition-all duration-200 ${step >= stepNum
-                  ? "bg-[#ff6000] border-[#ff6000] text-white"
-                  : "bg-white border-gray-300 text-gray-400"
+                ? "bg-[#ff6000] border-[#ff6000] text-white"
+                : "bg-white border-gray-300 text-gray-400"
                 }`}
             >
               {step > stepNum ? (
@@ -363,6 +372,10 @@ export default function NewProductPage() {
       padding: "12px 16px",
     }),
   };
+
+  if (isLoading) {
+    return <PageLoader label="Sayfa yükleniyor" />;
+  }
 
   return (
     <div className="min-h-screen bg-[#fafafa] py-8 px-4">
@@ -665,8 +678,8 @@ export default function NewProductPage() {
                 {/* Result Message */}
                 {result && (
                   <div className={`p-4 rounded-lg flex items-center gap-2 ${result.includes("başarıyla")
-                      ? "bg-green-50 text-green-800 border border-green-200"
-                      : "bg-red-50 text-red-800 border border-red-200"
+                    ? "bg-green-50 text-green-800 border border-green-200"
+                    : "bg-red-50 text-red-800 border border-red-200"
                     }`}>
                     {result.includes("başarıyla") ? (
                       <CheckCircle2 size={20} />
@@ -860,8 +873,8 @@ export default function NewProductPage() {
                     {/* Result Message */}
                     {result && (
                       <div className={`p-4 rounded-xl flex items-center gap-3 shadow-md ${result.includes("başarıyla")
-                          ? "bg-green-50 text-green-800 border border-green-200"
-                          : "bg-red-50 text-red-800 border border-red-200"
+                        ? "bg-green-50 text-green-800 border border-green-200"
+                        : "bg-red-50 text-red-800 border border-red-200"
                         }`}>
                         {result.includes("başarıyla") ? (
                           <CheckCircle2 size={20} />

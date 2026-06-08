@@ -26,21 +26,6 @@ func NewOffersService(repo *repo.OffersRepo, prepo *repo.ProductRepo, db db.TxSt
 	}
 }
 
-const (
-	OfferPending   = 0 // Beklemede (teklif verildi, cevap yok)
-	OfferAccepted  = 1 // Kabul edildi (satış gerçekleşiyor)
-	OfferRejected  = 2 // Reddedildi (satıcı reddetti)
-	OfferCancelled = 3 // İptal edildi (teklif veren iptal etti)
-	OfferExpired   = 4 // Süresi doldu (otomatik)
-)
-const (
-	ProductStatusDraft    = 0
-	ProductStatusActive   = 1
-	ProductStatusInactive = 2
-	ProductStatusRejected = 3
-	ProductStatusSold     = 4
-)
-
 // MaxOfferPrice — Tek bir teklif için izin verilen maksimum fiyat (kuruş cinsinden, 10 milyon TL)
 const MaxOfferPrice int64 = 10_000_000_00
 
@@ -73,7 +58,7 @@ func (os *OffersService) NewOffer(ctx context.Context, data *models.NewOffer) (i
 	}
 
 	// FIX: Ürünün aktif olduğunu doğrula — satılmış/pasif/taslak ürüne teklif engelle
-	if productStatus != ProductStatusActive {
+	if productStatus != models.ProductStatusActive {
 		return 0, fmt.Errorf("ErrProductNotAvailable")
 	}
 
@@ -132,7 +117,7 @@ func (os *OffersService) CounterOffer(ctx context.Context, data *models.CounterO
 	if parentOffer.CreatedBy == data.CreatedBy {
 		return 0, fmt.Errorf("Wait for notification from the other party.")
 	}
-	if parentOffer.Status != OfferPending {
+	if parentOffer.Status != models.OfferPending {
 		return 0, fmt.Errorf("The offer is no longer valid.")
 	}
 	newOffer := &models.NewOffer{
@@ -152,7 +137,7 @@ func (os *OffersService) CounterOffer(ctx context.Context, data *models.CounterO
 	if err != nil {
 		return 0, err
 	}
-	err = os.OffersRepo.UpdateOffer(ctx, tx, OfferExpired, parentOffer.ID)
+	err = os.OffersRepo.UpdateOffer(ctx, tx, models.OfferExpired, parentOffer.ID)
 
 	if err != nil {
 		return 0, err
@@ -180,28 +165,28 @@ func (os *OffersService) UpdateOffer(ctx context.Context, data models.UpdateOffe
 	if err != nil {
 		return err
 	}
-	var newStatus int
+	var newStatus models.OfferStatus
 	switch data.Action {
 	case "accept":
 		if offer.SellerID != userID {
 			return fmt.Errorf("Unauthorized")
 		}
-		newStatus = OfferAccepted
+		newStatus = models.OfferAccepted
 	case "buyer-accept":
 		if offer.BidderID != userID || offer.BidderID == offer.CreatedBy {
 			return fmt.Errorf("Unauthorized")
 		}
-		newStatus = OfferAccepted
+		newStatus = models.OfferAccepted
 	case "reject":
 		if offer.SellerID != userID {
 			return fmt.Errorf("Unauthorized")
 		}
-		newStatus = OfferRejected
+		newStatus = models.OfferRejected
 	case "cancel":
 		if offer.BidderID != userID {
 			return fmt.Errorf("Unauthorized")
 		}
-		newStatus = OfferCancelled
+		newStatus = models.OfferCancelled
 	default:
 		return fmt.Errorf("Invalid action")
 	}
@@ -209,7 +194,7 @@ func (os *OffersService) UpdateOffer(ctx context.Context, data models.UpdateOffe
 	if err != nil {
 		return err
 	}
-	if newStatus == OfferAccepted {
+	if newStatus == models.OfferAccepted {
 		err = os.OffersRepo.RejectOtherOffers(ctx, tx, offer.ID)
 		if err != nil {
 			return err
@@ -218,7 +203,7 @@ func (os *OffersService) UpdateOffer(ctx context.Context, data models.UpdateOffe
 		if err != nil {
 			return err
 		}
-		err = os.ProductRepo.UpdateProductStatus(ctx, tx, offer.ProductID, ProductStatusSold)
+		err = os.ProductRepo.UpdateProductStatus(ctx, tx, offer.ProductID, models.ProductStatusSold)
 		if err != nil {
 			return err
 		}

@@ -24,10 +24,10 @@ func NewFavoriesController(service *favories.FavoriesService) *FavoriesControlle
 	}
 }
 func GetUserIDFromContext(r *http.Request) (int, int, bool) {
-	userID, ok := r.Context().Value(middleware.UserIDKey).(int)
-	userRole, ok := r.Context().Value(middleware.UserRole).(int)
+	userID, ok1 := r.Context().Value(middleware.UserIDKey).(int)
+	userRole, ok2 := r.Context().Value(middleware.UserRole).(models.Role)
 
-	return userID, userRole, ok
+	return userID, int(userRole), ok1 && ok2
 }
 func (fc *FavoriesController) AddFavori(w http.ResponseWriter, r *http.Request) {
 	config.Logger.Printf("AddFavori request started")

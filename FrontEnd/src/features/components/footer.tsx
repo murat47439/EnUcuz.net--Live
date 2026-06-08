@@ -25,11 +25,11 @@ export default function Footer() {
                     {/* Logo & Açıklama */}
                     <div>
                         <Image
-                            src="/logo.png"
-                            alt="EnUcuz-Net"
-                            width={140}
-                            height={50}
-                            className="h-8 w-auto mb-3 brightness-0 invert opacity-80"
+                            src="/logo-white.png"
+                            alt="2pazar"
+                            width={320}
+                            height={100}
+                            className="h-16 w-auto mb-3"
                         />
                         <p className="text-sm text-gray-400 leading-relaxed mt-2">
                             Türkiye&apos;nin en uygun 2. el ürün platformu. Binlerce ilan arasından aradığınızı bulun veya ürünlerinizi kolayca satışa çıkarın.
@@ -62,7 +62,7 @@ export default function Footer() {
                             LinkedIn
                         </a>
                         <a
-                            href="https://github.com/murat47439/EnUcuz.net--Live"
+                            href="https://github.com/murat47439"
                             target="_blank"
                             rel="noopener noreferrer"
                             className="inline-flex items-center gap-2 bg-gray-700 hover:bg-gray-600 rounded-lg px-4 py-2.5 text-white text-sm font-medium transition-colors ml-2 mt-2 sm:mt-0"
@@ -114,7 +114,7 @@ export default function Footer() {
                         </div>
 
                         <p className="text-xs text-gray-500">
-                            © 2025 EnUcuz-Net. Tüm hakları saklıdır.
+                            © 2025 2pazar. Tüm hakları saklıdır.
                         </p>
                     </div>
                 </div>

@@ -19,8 +19,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "EnUcuz-Net",
-  description: "2. El Ürün Sitesi",
+  title: "2pazar | Senin İkinci Pazarın",
+  description: "2pazar - Türkiye'nin en iyi 2. el ürün platformu. Binlerce ilan arasından aradığınızı bulun veya ürünlerinizi kolayca satışa çıkarın.",
 };
 
 export default function RootLayout({

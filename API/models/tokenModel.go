@@ -7,8 +7,8 @@ import (
 )
 
 type AccessToken struct {
-	UserID   int `json:"id"`
-	UserRole int `json:"role"`
+	UserID   int  `json:"id"`
+	UserRole Role `json:"role"`
 	jwt.RegisteredClaims
 }
 

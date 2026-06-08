@@ -66,7 +66,7 @@ const Header: React.FC = () => {
       {/* Ana Header Bar */}
       <div className="bg-white border-b border-gray-200">
         <div className="max-w-7xl mx-auto px-3 sm:px-4 lg:px-6">
-          <div className="h-16 flex items-center gap-4">
+          <div className="h-20 flex items-center gap-4">
             {/* Mobil Menü Butonu */}
             <button
               className="lg:hidden flex items-center justify-center w-10 h-10 rounded-lg hover:bg-gray-100 transition-colors"
@@ -80,10 +80,10 @@ const Header: React.FC = () => {
             <Link href="/" className="flex-shrink-0">
               <Image
                 src="/logo.png"
-                alt="EnUcuz-Net"
-                width={180}
-                height={70}
-                className="h-8 w-auto sm:h-9"
+                alt="2pazar"
+                width={500}
+                height={300}
+                className="h-20 w-auto sm:h-22"
                 priority
               />
             </Link>
@@ -234,7 +234,7 @@ const Header: React.FC = () => {
       >
         {/* Üst */}
         <div className="flex items-center justify-between p-4 border-b border-gray-100">
-          <Image src="/logo.png" alt="EnUcuz-Net" width={120} height={40} className="h-7 w-auto" />
+          <Image src="/logo.png" alt="2pazar" width={180} height={60} className="h-10 w-auto" />
           <button onClick={closeMobile} className="w-8 h-8 flex items-center justify-center rounded-lg hover:bg-gray-100">
             <X size={18} className="text-gray-600" />
           </button>

@@ -5,7 +5,7 @@ export const dynamic = 'force-dynamic'
 export const revalidate = 3600
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-    const baseUrl = 'https://enucuz.net.tr'
+    const baseUrl = 'https://2pazar.com'
 
     // Statik rotalar
     const routes = [
@@ -35,7 +35,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
             }
 
             return {
-                url: `${baseUrl}/product/${product.id}`,
+                url: `${baseUrl}/product/${product.slug ? `${product.slug}-p-${product.id}` : product.id}`,
                 lastModified,
                 changeFrequency: 'weekly' as const,
                 priority: 0.6,

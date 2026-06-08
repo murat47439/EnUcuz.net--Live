@@ -13,12 +13,13 @@ import (
 type ProductService struct {
 	ProductRepo   *repo.ProductRepo
 	AttributeRepo *repo.AttributeRepo
+	UserRepo      *repo.UserRepo
 	db            db.TxStarter
 }
 
-func NewProductService(repo *repo.ProductRepo, arepo *repo.AttributeRepo, db db.TxStarter) *ProductService {
+func NewProductService(repo *repo.ProductRepo, arepo *repo.AttributeRepo, urepo *repo.UserRepo, db db.TxStarter) *ProductService {
 	return &ProductService{ProductRepo: repo,
-		AttributeRepo: arepo, db: db}
+		AttributeRepo: arepo, UserRepo: urepo, db: db}
 }
 func (ps *ProductService) GetUserProducts(ctx context.Context, userID int, page int) ([]*models.Product, error) {
 	products, err := ps.ProductRepo.GetUserProducts(ctx, userID, page)
@@ -53,6 +54,14 @@ func (ps *ProductService) AddProduct(ctx context.Context, data models.NewProduct
 			}
 		}
 	}()
+
+	user, err := ps.UserRepo.GetUserDataByID(ctx, data.SellerID)
+	if err != nil {
+		return false, fmt.Errorf("Error : %w", err)
+	}
+	if user.Role != models.SellerRole {
+		return false, fmt.Errorf("User not a seller")
+	}
 	prodID, err := ps.ProductRepo.AddProduct(ctx, data, tx)
 	if err != nil {
 		return false, fmt.Errorf("Error : %w", err)

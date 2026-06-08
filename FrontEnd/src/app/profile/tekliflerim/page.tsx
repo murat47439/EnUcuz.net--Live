@@ -6,6 +6,7 @@ import { useRouter } from "next/navigation";
 
 
 import { useAuth } from "@/context/authContext";
+import PageLoader from "@/features/components/pageLoader";
 
 export default function OfferPage() {
     const router = useRouter()
@@ -18,14 +19,7 @@ export default function OfferPage() {
     }, [user, isLoading, router])
 
     if (isLoading) {
-        return (
-            <div className="min-h-screen flex items-center justify-center">
-                <div className="text-center">
-                    <div className="inline-block animate-spin rounded-full h-8 w-8 border-2 border-gray-200 border-t-[#ff6000] mb-3"></div>
-                    <p className="text-sm text-gray-500">Yükleniyor...</p>
-                </div>
-            </div>
-        )
+        return <PageLoader label="Yükleniyor" />;
     }
 
     return (

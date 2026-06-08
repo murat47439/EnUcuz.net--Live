@@ -11,7 +11,7 @@ type User struct {
 	Name      string        `db:"name" json:"name"`
 	Surname   string        `db:"surname" json:"surname"`
 	Gender    int           `db:"gender" json:"gender,omitempty"`
-	Role      int           `db:"role" json:"-"`
+	Role      Role          `db:"role" json:"role"`
 	Password  string        `db:"password" json:"password,omitempty"`
 	DeletedAt *sql.NullTime `json:"-" db:"deleted_at"`
 }
@@ -25,7 +25,15 @@ type NewUser struct {
 	Password  string `json:"password,omitempty"`
 	Kvkk      bool   `json:"kvkk,omitempty" `
 	Contact   bool   `json:"contact,omitempty"`
-	Role      int    `db:"role" json:"-"`
+	Role      Role   `db:"role" json:"-"`
 	IpAddress string ``
 	UserAgent string ``
 }
+
+type Role int16
+
+const (
+	UserRole Role = iota
+	AdminRole
+	SellerRole
+)

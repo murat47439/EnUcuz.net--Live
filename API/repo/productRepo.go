@@ -26,14 +26,6 @@ func NewProductRepo(db *sqlx.DB, brand *BrandsRepo, cat *CategoriesRepo) *Produc
 		cat:   cat}
 }
 
-const (
-	ProductStatusDraft    = 0
-	ProductStatusActive   = 1
-	ProductStatusInactive = 2
-	ProductStatusRejected = 3
-	ProductStatusSold     = 4
-)
-
 func (pr *ProductRepo) GetUserProducts(ctx context.Context, userID int, page int) ([]*models.Product, error) {
 	var products []*models.Product
 	offset := (page - 1) * 50
@@ -112,7 +104,7 @@ func (pr *ProductRepo) AddProduct(ctx context.Context, data models.NewProduct, t
 
 	query := `INSERT INTO products.products(name,slug,description,status,stock,price,image_url,category_id,created_at,brand_id,seller_id) VALUES($1,$2,$3,$4,$5,$6,$7,$8,NOW(),$9,$10) RETURNING id`
 	var id int
-	err = tx.QueryRowContext(ctx, query, data.Name, slug, data.Description, ProductStatusActive, data.Stock, data.Price, data.ImageURLs[0], data.CategoryID, data.BrandID, data.SellerID).Scan(&id)
+	err = tx.QueryRowContext(ctx, query, data.Name, slug, data.Description, models.ProductStatusActive, data.Stock, data.Price, data.ImageURLs[0], data.CategoryID, data.BrandID, data.SellerID).Scan(&id)
 	if err != nil {
 		return 0, fmt.Errorf("Database error %w", err)
 	}
@@ -195,7 +187,7 @@ func (pr *ProductRepo) UpdateProduct(ctx context.Context, tx *sqlx.Tx, product *
 	return nil
 
 }
-func (pr *ProductRepo) UpdateProductStatus(ctx context.Context, tx *sqlx.Tx, id, status int) error {
+func (pr *ProductRepo) UpdateProductStatus(ctx context.Context, tx *sqlx.Tx, id int, status models.ProductStatus) error {
 	query := `UPDATE products.products SET status = $1, updated_at = NOW() WHERE id = $2 AND deleted_at IS NULL AND status IS DISTINCT FROM $1`
 	res, err := tx.ExecContext(ctx, query, status, id)
 	if err != nil {
@@ -374,7 +366,8 @@ func (pr *ProductRepo) DeleteProduct(ctx context.Context, data *models.Product) 
 }
 func (pr *ProductRepo) LockProduct(ctx context.Context, tx *sqlx.Tx, id int) error {
 	query := `SELECT id, status FROM products.products WHERE id = $1 FOR UPDATE`
-	var prodid, status int
+	var prodid int
+	var status models.ProductStatus
 	err := tx.QueryRowContext(ctx, query, id).Scan(&prodid, &status)
 	if err != nil {
 		if err == sql.ErrNoRows {
@@ -382,13 +375,13 @@ func (pr *ProductRepo) LockProduct(ctx context.Context, tx *sqlx.Tx, id int) err
 		}
 		return fmt.Errorf("Database error")
 	}
-	if status == ProductStatusSold {
+	if status == models.ProductStatusSold {
 		return fmt.Errorf("Product already sold")
 	}
 	return nil
 }
 
-func (pr *ProductRepo) GetProductForOfferTx(ctx context.Context, tx *sqlx.Tx, productID int) (sellerID int, status int, err error) {
+func (pr *ProductRepo) GetProductForOfferTx(ctx context.Context, tx *sqlx.Tx, productID int) (sellerID int, status models.ProductStatus, err error) {
 	query := `SELECT seller_id, status FROM products.products WHERE id = $1 AND deleted_at IS NULL FOR UPDATE`
 	err = tx.QueryRowContext(ctx, query, productID).Scan(&sellerID, &status)
 	if err != nil {

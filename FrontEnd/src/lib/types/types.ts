@@ -365,6 +365,7 @@ export interface UserProfileResponse {
             email: string,
             phone: string,
             name: string,
+            role: number,
             surname: string,
             gender: number,
         }
@@ -417,12 +418,17 @@ export interface LoginResponse {
             email: string,
             phone: string,
             name: string,
+            role: number,
             surname: string,
             gender: number,
         }
     }
 }
-
+export enum UserRole {
+    seller = 2,
+    user = 0,
+    admin = 1,
+}
 export interface LogoutResponse {
     success: boolean,
     message: string,

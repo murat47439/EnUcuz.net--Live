@@ -28,6 +28,8 @@ func SetupRoutes(
 			"https://enucuz.net.tr",
 			"https://en-ucuz-net.vercel.app",
 			"https://en-ucuz-net-murats-projects-c4a123ca.vercel.app",
+			"https://2pazar.com",
+			"https://www.2pazar.com",
 		},
 		AllowedMethods:   []string{"GET", "POST", "PUT", "DELETE"},
 		AllowedHeaders:   []string{"Accept", "Authorization", "Content-Type"},
