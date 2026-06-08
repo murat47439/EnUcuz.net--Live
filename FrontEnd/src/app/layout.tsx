@@ -5,6 +5,7 @@ import { ToastProvider } from "@/context/toastContext";
 import ModalProvider from "@/context/modalContext";
 import Header from "@/features/components/header";
 import Footer from "@/features/components/footer";
+import ChatWidget from "@/features/components/chat-widget";
 import "./globals.css";
 import "../styles/globals.css";
 
@@ -40,6 +41,7 @@ export default function RootLayout({
               <Header></Header>
               <main className="pt-[116px] sm:pt-[106px] lg:pt-[106px] min-h-screen">{children}</main>
               <Footer></Footer>
+              <ChatWidget />
             </ModalProvider>
           </ToastProvider>
         </AuthProvider>
