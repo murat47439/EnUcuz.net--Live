@@ -83,7 +83,7 @@ const Header: React.FC = () => {
                 alt="2pazar"
                 width={500}
                 height={300}
-                className="h-20 w-auto sm:h-22"
+                className="h-14 w-auto sm:h-16"
                 priority
               />
             </Link>
