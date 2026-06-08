@@ -14,6 +14,8 @@ var allowedOrigins = map[string]bool{
 	"http://localhost:3000":          true,
 	"http://localhost:3001":          true,
 	"https://www.enucuz.net.tr":      true,
+	"https://www.2pazar.com":      true,
+	"https://2pazar.com":      true,
 	"https://enucuz.net.tr":          true,
 	"https://en-ucuz-net.vercel.app": true,
 	"https://en-ucuz-net-git-main-murats-projects-c4a123ca.vercel.app": true,
