@@ -42,3 +42,51 @@ APP_LOG: 2026/06/09 15:19:08 kycController.go:36: CreateKYC success for user 1: 
 APP_LOG: 2026/06/09 15:19:08 controllers.go:21: Success response: 200
 APP_LOG: 2026/06/09 15:19:08 kycController.go:36: CreateKYC success for user 1: applicant=6a27fa4361d4357639437c00
 APP_LOG: 2026/06/09 15:19:08 controllers.go:21: Success response: 200
+APP_LOG: 2026/06/09 15:32:09 main.go:36: Application started successfully.
+APP_LOG: 2026/06/09 15:32:09 ai.go:20: Gemini client initialized successfully
+APP_LOG: 2026/06/09 15:32:09 auth.go:60: AuthMiddleware Started
+APP_LOG: 2026/06/09 15:32:09 auth.go:60: AuthMiddleware Started
+APP_LOG: 2026/06/09 15:32:09 auth.go:60: AuthMiddleware Started
+APP_LOG: 2026/06/09 15:32:09 auth.go:60: AuthMiddleware Started
+APP_LOG: 2026/06/09 15:32:09 auth.go:60: AuthMiddleware Started
+APP_LOG: 2026/06/09 15:32:09 auth.go:60: AuthMiddleware Started
+APP_LOG: 2026/06/09 15:32:09 auth.go:60: AuthMiddleware Started
+APP_LOG: 2026/06/09 15:32:09 auth.go:60: AuthMiddleware Started
+APP_LOG: 2026/06/09 15:32:09 auth.go:60: AuthMiddleware Started
+APP_LOG: 2026/06/09 15:32:09 auth.go:60: AuthMiddleware Started
+APP_LOG: 2026/06/09 15:32:09 auth.go:60: AuthMiddleware Started
+APP_LOG: 2026/06/09 15:32:09 auth.go:60: AuthMiddleware Started
+APP_LOG: 2026/06/09 15:32:09 auth.go:60: AuthMiddleware Started
+APP_LOG: 2026/06/09 15:32:09 auth.go:60: AuthMiddleware Started
+APP_LOG: 2026/06/09 15:32:09 auth.go:60: AuthMiddleware Started
+APP_LOG: 2026/06/09 15:32:09 auth.go:60: AuthMiddleware Started
+APP_LOG: 2026/06/09 15:32:09 auth.go:60: AuthMiddleware Started
+APP_LOG: 2026/06/09 15:32:09 auth.go:60: AuthMiddleware Started
+APP_LOG: 2026/06/09 15:32:16 controllers.go:21: Success response: 200
+APP_LOG: 2026/06/09 15:32:25 brandsController.go:48: GetBrands request started
+APP_LOG: 2026/06/09 15:32:25 brandsController.go:60: GetBrands parameters: page=1, search=''
+APP_LOG: 2026/06/09 15:32:25 categoriesController.go:47: GetCategories request started
+APP_LOG: 2026/06/09 15:32:25 categoriesController.go:59: GetCategories parameters: page=1, search=''
+APP_LOG: 2026/06/09 15:32:35 brandsController.go:67: GetBrands service error: Database error : context deadline exceeded
+APP_LOG: 2026/06/09 15:32:35 controllers.go:10: Error response: 500 - Markalar yüklenirken hata oluştu
+APP_LOG: 2026/06/09 15:32:35 categoriesController.go:66: GetCategories service error: Database error: failed to connect to `user=neondb_owner database=neondb`:
+	13.43.29.36:5432 (ep-withered-lab-aboqcz1z-pooler.eu-west-2.aws.neon.tech): dial error: timeout: context deadline exceeded
+	35.177.127.187:5432 (ep-withered-lab-aboqcz1z-pooler.eu-west-2.aws.neon.tech): dial error: timeout: context deadline exceeded
+	13.41.250.251:5432 (ep-withered-lab-aboqcz1z-pooler.eu-west-2.aws.neon.tech): dial error: timeout: context deadline exceeded
+APP_LOG: 2026/06/09 15:32:35 controllers.go:10: Error response: 500 - Kategoriler yüklenirken hata oluştu
+APP_LOG: 2026/06/09 15:32:42 kycController.go:31: CreateKYC error for user 1: failed to begin transaction: failed to connect to `user=neondb_owner database=neondb`:
+	13.43.29.36:5432 (ep-withered-lab-aboqcz1z-pooler.eu-west-2.aws.neon.tech): tls error: timeout: context deadline exceeded
+	35.177.127.187:5432 (ep-withered-lab-aboqcz1z-pooler.eu-west-2.aws.neon.tech): dial error: timeout: context deadline exceeded
+	13.41.250.251:5432 (ep-withered-lab-aboqcz1z-pooler.eu-west-2.aws.neon.tech): dial error: timeout: context deadline exceeded
+APP_LOG: 2026/06/09 15:32:42 controllers.go:10: Error response: 500 - KYC başlatma hatası
+APP_LOG: 2026/06/09 15:32:42 kycController.go:31: CreateKYC error for user 1: failed to begin transaction: failed to connect to `user=neondb_owner database=neondb`:
+	13.43.29.36:5432 (ep-withered-lab-aboqcz1z-pooler.eu-west-2.aws.neon.tech): tls error: timeout: context deadline exceeded
+	35.177.127.187:5432 (ep-withered-lab-aboqcz1z-pooler.eu-west-2.aws.neon.tech): dial error: timeout: context deadline exceeded
+	13.41.250.251:5432 (ep-withered-lab-aboqcz1z-pooler.eu-west-2.aws.neon.tech): dial error: timeout: context deadline exceeded
+APP_LOG: 2026/06/09 15:32:42 controllers.go:10: Error response: 500 - KYC başlatma hatası
+APP_LOG: 2026/06/09 15:32:43 auth.go:66: AuthMiddleware: Cookie not found - http: named cookie not present
+APP_LOG: 2026/06/09 15:32:43 usersController.go:256: GetAccess request started
+APP_LOG: 2026/06/09 15:32:47 usersController.go:295: GetAccess success: Access token refreshed
+APP_LOG: 2026/06/09 15:32:47 controllers.go:21: Success response: 200
+APP_LOG: 2026/06/09 15:32:49 kycController.go:36: CreateKYC success for user 1: applicant=6a27fa4361d4357639437c00
+APP_LOG: 2026/06/09 15:32:49 controllers.go:21: Success response: 200

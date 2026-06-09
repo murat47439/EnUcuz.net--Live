@@ -2,6 +2,7 @@ package user
 
 import (
 	"Store-Dio/config"
+	"Store-Dio/models"
 	"Store-Dio/services/kyc"
 	"context"
 	"crypto/hmac"
@@ -17,10 +18,10 @@ import (
 )
 
 const (
-	maxWebhookBodyBytes  = 1 << 20
-	webhookMaxAgeDur     = 5 * time.Minute
-	algHMACSHA256        = "HMAC_SHA256_HEX"
-	algHMACSHA512        = "HMAC_SHA512_HEX"
+	maxWebhookBodyBytes    = 1 << 20
+	webhookMaxAgeDur       = 5 * time.Minute
+	algHMACSHA256          = "HMAC_SHA256_HEX"
+	algHMACSHA512          = "HMAC_SHA512_HEX"
 	eventApplicantReviewed = "applicantReviewed"
 	eventApplicantPending  = "applicantPending"
 	eventApplicantOnHold   = "applicantOnHold"
@@ -51,11 +52,6 @@ type sumsubWebhookPayload struct {
 	} `json:"reviewResult"`
 }
 
-// verifySignature validates the Sumsub webhook HMAC digest.
-// Per Sumsub documentation: X-Payload-Digest = HMAC(secretKey, rawBody).
-// The algorithm is specified in X-Payload-Digest-Alg (default: HMAC_SHA256_HEX).
-// Timestamp is NOT part of the Sumsub signature — replay protection is handled
-// separately via createdAt freshness check and correlationId deduplication.
 func (wc *WebhookController) verifySignature(body []byte, alg, signature string) bool {
 	sig := strings.TrimPrefix(signature, "sha256=")
 
@@ -119,50 +115,44 @@ func (wc *WebhookController) HandleWebhook(w http.ResponseWriter, r *http.Reques
 	ctx, cancel := context.WithTimeout(r.Context(), 10*time.Second)
 	defer cancel()
 
+	var status models.VerifiedStatus
+	var shouldUpdate bool
+
 	switch payload.Type {
 	case eventApplicantReviewed:
-		if payload.ReviewStatus != "completed" || payload.ReviewResult == nil {
-			w.WriteHeader(http.StatusOK)
-			return
+		if payload.ReviewStatus == "completed" && payload.ReviewResult != nil {
+			shouldUpdate = true
+			switch payload.ReviewResult.ReviewAnswer {
+			case "GREEN":
+				status = models.VerifiedStatusApproved
+			case "RED":
+				status = models.VerifiedStatusRejected
+			case "YELLOW":
+				status = models.VerifiedStatusRetry
+			default:
+				status = models.VerifiedStatusUnverified
+			}
 		}
-		wc.handleReviewCompleted(w, ctx, &payload)
 
 	case eventApplicantPending, eventApplicantOnHold:
-		config.Logger.Printf("webhook: applicant lifecycle event type=%s applicantId=%s correlationId=%s",
-			payload.Type, payload.ApplicantID, payload.CorrelationID)
-		w.WriteHeader(http.StatusOK)
+		shouldUpdate = true
+		status = models.VerifiedStatusPending
 
 	default:
-		w.WriteHeader(http.StatusOK)
-	}
-}
-
-func (wc *WebhookController) handleReviewCompleted(w http.ResponseWriter, ctx context.Context, payload *sumsubWebhookPayload) {
-	isNew, err := wc.kycService.MarkWebhookProcessed(ctx, payload.CorrelationID)
-	if err != nil {
-		config.Logger.Printf("webhook: replay check failed correlationId=%s applicantId=%s: %v",
-			payload.CorrelationID, payload.ApplicantID, err)
-		w.WriteHeader(http.StatusInternalServerError)
-		return
-	}
-	if !isNew {
-		config.Logger.Printf("webhook: duplicate event ignored correlationId=%s applicantId=%s",
-			payload.CorrelationID, payload.ApplicantID)
-		w.WriteHeader(http.StatusOK)
-		return
+		// Other events are acknowledged with 200 OK without updating database
+		shouldUpdate = false
 	}
 
-	answer := payload.ReviewResult.ReviewAnswer
-	rejectType := payload.ReviewResult.ReviewRejectType
-
-	if err := wc.kycService.UpdateVerificationStatus(ctx, payload.ApplicantID, answer); err != nil {
-		config.Logger.Printf("webhook: failed to update status correlationId=%s applicantId=%s answer=%s: %v",
-			payload.CorrelationID, payload.ApplicantID, answer, err)
-		w.WriteHeader(http.StatusInternalServerError)
-		return
+	if shouldUpdate {
+		if err := wc.kycService.UpdateVerificationStatus(ctx, payload.ApplicantID, status); err != nil {
+			config.Logger.Printf("webhook: failed to update status applicantId=%s status=%d: %v",
+				payload.ApplicantID, status, err)
+			w.WriteHeader(http.StatusInternalServerError)
+			return
+		}
+		config.Logger.Printf("webhook: verification status updated successfully applicantId=%s status=%d",
+			payload.ApplicantID, status)
 	}
 
-	config.Logger.Printf("webhook: verification updated correlationId=%s applicantId=%s answer=%s rejectType=%s",
-		payload.CorrelationID, payload.ApplicantID, answer, rejectType)
 	w.WriteHeader(http.StatusOK)
 }
