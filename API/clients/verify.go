@@ -18,7 +18,6 @@ import (
 )
 
 const (
-	SumsubSandboxURL   = "https://api.sandbox.sumsub.com"
 	SumsubBaseURL      = "https://api.sumsub.com"
 	defaultHTTPTimeout = 30 * time.Second
 	maxRetries         = 3
@@ -67,15 +66,11 @@ type applicantOneResponse struct {
 	} `json:"review"`
 }
 
-func NewSumsubClient(apiKey, secretKey string, useSandbox bool) *SumsubClient {
-	baseURL := SumsubBaseURL
-	if useSandbox {
-		baseURL = SumsubSandboxURL
-	}
+func NewSumsubClient(apiKey, secretKey string) *SumsubClient {
 	c := &SumsubClient{
 		apiKey:    apiKey,
 		secretKey: secretKey,
-		baseURL:   baseURL,
+		baseURL:   SumsubBaseURL,
 		httpClient: &http.Client{
 			Timeout: defaultHTTPTimeout,
 		},

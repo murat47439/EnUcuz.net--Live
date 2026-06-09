@@ -18,7 +18,6 @@ var (
 	CLOUDFLARE_ACCOUNT_HASH string
 	SUMSUB_SECRET_KEY       string
 	SUMSUB_API_KEY          string
-	SUMSUB_SANDBOX          bool
 )
 
 func LoadConfig() {
@@ -63,8 +62,8 @@ func LoadConfig() {
 	if sumsub_secret_key == "" {
 		Logger.Printf("SUMSUB_SECRET_KEY not set in environment")
 	}
-	sumsub_sandbox := os.Getenv("SUMSUB_SANDBOX")
-	SUMSUB_SANDBOX = sumsub_sandbox == "true" || sumsub_sandbox == "1"
+	SUMSUB_API_KEY = strings.TrimSpace(sumsub_api_key)
+	SUMSUB_SECRET_KEY = strings.TrimSpace(sumsub_secret_key)
 	IMAGEKIT_PRIVATE_KEY = strings.TrimSpace(privateKey)
 	JWT_SECRET = []byte(jwt_secret)
 	REFRESH_TOKEN_SECRET = []byte(refresh_token_secret)
@@ -72,6 +71,4 @@ func LoadConfig() {
 	CLOUDFLARE_ACCOUNT_ID = strings.TrimSpace(cloudflare_account_id)
 	CLOUDFLARE_API_KEY = strings.TrimSpace(cloudflare_api_key)
 	CLOUDFLARE_ACCOUNT_HASH = strings.TrimSpace(cloudflare_account_hash)
-	SUMSUB_API_KEY = strings.TrimSpace(sumsub_api_key)
-	SUMSUB_SECRET_KEY = strings.TrimSpace(sumsub_secret_key)
 }

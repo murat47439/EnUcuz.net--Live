@@ -424,6 +424,10 @@ export interface LoginResponse {
         }
     }
 }
+export interface KycResponse {
+    applicantId: string;
+    token: string;
+}
 export enum UserRole {
     seller = 2,
     user = 0,

@@ -31,7 +31,7 @@ func NewApp(db *sqlx.DB) *App {
 	ctx := context.Background()
 	clients.InitGeminiClient(ctx)
 	clients.NewImagesClient(config.CLOUDFLARE_ACCOUNT_ID, config.CLOUDFLARE_API_KEY)
-	sumsubClient := clients.NewSumsubClient(config.SUMSUB_API_KEY, config.SUMSUB_SECRET_KEY, config.SUMSUB_SANDBOX)
+	sumsubClient := clients.NewSumsubClient(config.SUMSUB_API_KEY, config.SUMSUB_SECRET_KEY)
 
 	repo := repo.NewRepo(db)
 	service := services.NewService(repo, db, sumsubClient)
