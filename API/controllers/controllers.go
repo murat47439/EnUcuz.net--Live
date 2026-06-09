@@ -22,6 +22,8 @@ type Controller struct {
 	UserChatController       *user.ChatController
 	UserOffersController     *user.OffersController
 	ImageController          *user.ImageController
+	KYCController            *user.KYCController
+	WebhookController        *user.WebhookController
 }
 
 func NewController(service *services.Service) *Controller {
@@ -39,8 +41,10 @@ func NewController(service *services.Service) *Controller {
 	userReviewController := user.NewReviewController(service.ReviewsService)
 	userChatController := user.NewChatController(service.ChatService)
 	userOffersController := user.NewOffersController(service.OffersService)
-
 	imageController := user.NewImageController(service.ImageService)
+	kycController := user.NewKYCController(service.KYCService)
+	webhookController := user.NewWebhookController(service.KYCService)
+
 	return &Controller{
 		AdminbrandsController:     adminBrandsController,
 		AdminCategoriesController: adminCategoriesController,
@@ -56,7 +60,8 @@ func NewController(service *services.Service) *Controller {
 		UserReviewController:     userReviewController,
 		UserChatController:       userChatController,
 		UserOffersController:     userOffersController,
-
-		ImageController: imageController,
+		ImageController:          imageController,
+		KYCController:            kycController,
+		WebhookController:        webhookController,
 	}
 }

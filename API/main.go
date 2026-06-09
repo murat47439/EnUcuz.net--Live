@@ -43,10 +43,7 @@ func main() {
 
 	routes := application.Route
 
-	//Start server
-
-	//Workers
-
+	// Workers
 	go application.OfferWorker.Start(ctx)
 
 	//Start server

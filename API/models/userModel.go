@@ -5,15 +5,17 @@ import (
 )
 
 type User struct {
-	ID        int           `db:"id"  json:"id,omitempty"`
-	Email     string        `db:"email" json:"email"`
-	Phone     string        `db:"phone" json:"phone"`
-	Name      string        `db:"name" json:"name"`
-	Surname   string        `db:"surname" json:"surname"`
-	Gender    int           `db:"gender" json:"gender,omitempty"`
-	Role      Role          `db:"role" json:"role"`
-	Password  string        `db:"password" json:"password,omitempty"`
-	DeletedAt *sql.NullTime `json:"-" db:"deleted_at"`
+	ID          int           `db:"id"  json:"id,omitempty"`
+	Email       string        `db:"email" json:"email"`
+	Phone       string        `db:"phone" json:"phone"`
+	Name        string        `db:"name" json:"name"`
+	Surname     string        `db:"surname" json:"surname"`
+	Gender      int           `db:"gender" json:"gender,omitempty"`
+	Role        Role          `db:"role" json:"role"`
+	Verified    int           `db:"verified" json:"verified"`
+	ApplicantID string        `db:"sumsub_applicant_id" json:"applicantId,omitempty"`
+	Password    string        `db:"password" json:"password,omitempty"`
+	DeletedAt   *sql.NullTime `json:"-" db:"deleted_at"`
 }
 
 type NewUser struct {

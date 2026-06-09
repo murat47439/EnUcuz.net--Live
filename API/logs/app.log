@@ -468,3 +468,203 @@ APP_LOG: 2026/06/08 14:39:41 controllers.go:21: Success response: 200
 APP_LOG: 2026/06/08 14:39:59 controllers.go:21: Success response: 200
 APP_LOG: 2026/06/08 14:40:52 controllers.go:21: Success response: 200
 APP_LOG: 2026/06/08 14:40:55 controllers.go:21: Success response: 200
+APP_LOG: 2026/06/08 14:44:20 main.go:36: Application started successfully.
+APP_LOG: 2026/06/08 14:44:20 auth.go:60: AuthMiddleware Started
+APP_LOG: 2026/06/08 14:44:20 auth.go:60: AuthMiddleware Started
+APP_LOG: 2026/06/08 14:44:20 auth.go:60: AuthMiddleware Started
+APP_LOG: 2026/06/08 14:44:20 auth.go:60: AuthMiddleware Started
+APP_LOG: 2026/06/08 14:44:20 auth.go:60: AuthMiddleware Started
+APP_LOG: 2026/06/08 14:44:20 auth.go:60: AuthMiddleware Started
+APP_LOG: 2026/06/08 14:44:20 auth.go:60: AuthMiddleware Started
+APP_LOG: 2026/06/08 14:44:20 auth.go:60: AuthMiddleware Started
+APP_LOG: 2026/06/08 14:44:20 auth.go:60: AuthMiddleware Started
+APP_LOG: 2026/06/08 14:44:20 auth.go:60: AuthMiddleware Started
+APP_LOG: 2026/06/08 14:44:20 auth.go:60: AuthMiddleware Started
+APP_LOG: 2026/06/08 14:44:20 auth.go:60: AuthMiddleware Started
+APP_LOG: 2026/06/08 14:44:20 auth.go:60: AuthMiddleware Started
+APP_LOG: 2026/06/08 14:44:20 auth.go:60: AuthMiddleware Started
+APP_LOG: 2026/06/08 14:44:20 auth.go:60: AuthMiddleware Started
+APP_LOG: 2026/06/08 14:44:20 auth.go:60: AuthMiddleware Started
+APP_LOG: 2026/06/08 14:44:20 ai.go:20: Gemini client initialized successfully
+APP_LOG: 2026/06/08 14:44:24 auth.go:66: AuthMiddleware: Cookie not found - http: named cookie not present
+APP_LOG: 2026/06/08 14:44:24 usersController.go:256: GetAccess request started
+APP_LOG: 2026/06/08 14:44:25 usersController.go:295: GetAccess success: Access token refreshed
+APP_LOG: 2026/06/08 14:44:25 controllers.go:21: Success response: 200
+APP_LOG: 2026/06/08 14:44:25 controllers.go:21: Success response: 200
+APP_LOG: 2026/06/08 14:44:26 controllers.go:21: Success response: 200
+APP_LOG: 2026/06/08 14:44:29 productRepo.go:76:  true
+APP_LOG: 2026/06/08 14:44:29 controllers.go:21: Success response: 200
+APP_LOG: 2026/06/08 14:47:02 controllers.go:21: Success response: 200
+APP_LOG: 2026/06/08 14:47:02 controllers.go:21: Success response: 200
+APP_LOG: 2026/06/08 14:47:59 productRepo.go:76:  true
+APP_LOG: 2026/06/08 14:48:00 controllers.go:21: Success response: 200
+APP_LOG: 2026/06/08 14:48:08 productRepo.go:76:  true
+APP_LOG: 2026/06/08 14:48:08 productRepo.go:76:  true
+APP_LOG: 2026/06/08 14:48:08 controllers.go:21: Success response: 200
+APP_LOG: 2026/06/08 14:48:08 productRepo.go:76:  true
+APP_LOG: 2026/06/08 14:48:08 controllers.go:21: Success response: 200
+APP_LOG: 2026/06/08 14:48:08 productRepo.go:76:  true
+APP_LOG: 2026/06/08 14:48:08 controllers.go:21: Success response: 200
+APP_LOG: 2026/06/08 14:48:08 controllers.go:21: Success response: 200
+APP_LOG: 2026/06/08 14:48:54 controllers.go:21: Success response: 200
+APP_LOG: 2026/06/08 14:48:56 controllers.go:21: Success response: 200
+APP_LOG: 2026/06/08 14:48:58 controllers.go:21: Success response: 200
+APP_LOG: 2026/06/08 14:48:59 controllers.go:21: Success response: 200
+APP_LOG: 2026/06/08 14:49:00 controllers.go:21: Success response: 200
+APP_LOG: 2026/06/08 14:49:03 controllers.go:21: Success response: 200
+APP_LOG: 2026/06/08 14:49:03 controllers.go:21: Success response: 200
+APP_LOG: 2026/06/08 15:25:18 controllers.go:21: Success response: 200
+APP_LOG: 2026/06/08 15:25:19 controllers.go:21: Success response: 200
+APP_LOG: 2026/06/08 15:25:20 controllers.go:21: Success response: 200
+APP_LOG: 2026/06/08 15:25:20 controllers.go:21: Success response: 200
+APP_LOG: 2026/06/08 15:25:22 controllers.go:21: Success response: 200
+APP_LOG: 2026/06/08 15:25:22 controllers.go:21: Success response: 200
+APP_LOG: 2026/06/08 15:25:24 controllers.go:21: Success response: 200
+APP_LOG: 2026/06/08 15:25:24 controllers.go:21: Success response: 200
+APP_LOG: 2026/06/08 15:25:25 auth.go:66: AuthMiddleware: Cookie not found - http: named cookie not present
+APP_LOG: 2026/06/08 15:25:29 usersController.go:58: Login request started
+APP_LOG: 2026/06/08 15:25:29 usersController.go:102: Login success: User 1 logged in
+APP_LOG: 2026/06/08 15:25:29 controllers.go:21: Success response: 202
+APP_LOG: 2026/06/08 15:25:30 controllers.go:21: Success response: 200
+APP_LOG: 2026/06/08 15:25:30 controllers.go:21: Success response: 200
+APP_LOG: 2026/06/08 15:25:35 controllers.go:21: Success response: 200
+APP_LOG: 2026/06/08 15:25:35 controllers.go:21: Success response: 200
+APP_LOG: 2026/06/08 15:25:52 controllers.go:21: Success response: 200
+APP_LOG: 2026/06/08 15:25:52 controllers.go:21: Success response: 200
+APP_LOG: 2026/06/08 15:26:06 controllers.go:21: Success response: 200
+APP_LOG: 2026/06/08 15:26:07 controllers.go:21: Success response: 200
+APP_LOG: 2026/06/08 15:26:40 controllers.go:21: Success response: 200
+APP_LOG: 2026/06/08 15:29:55 controllers.go:21: Success response: 200
+APP_LOG: 2026/06/08 15:29:55 controllers.go:21: Success response: 200
+APP_LOG: 2026/06/08 15:30:22 controllers.go:21: Success response: 200
+APP_LOG: 2026/06/08 15:30:22 controllers.go:21: Success response: 200
+APP_LOG: 2026/06/08 15:30:53 controllers.go:21: Success response: 200
+APP_LOG: 2026/06/08 15:30:53 controllers.go:21: Success response: 200
+APP_LOG: 2026/06/08 15:30:56 productRepo.go:76:  true
+APP_LOG: 2026/06/08 15:30:56 controllers.go:21: Success response: 200
+APP_LOG: 2026/06/08 15:30:57 controllers.go:21: Success response: 200
+APP_LOG: 2026/06/08 15:30:57 controllers.go:21: Success response: 200
+APP_LOG: 2026/06/08 15:31:13 controllers.go:21: Success response: 200
+APP_LOG: 2026/06/08 15:31:13 controllers.go:21: Success response: 200
+APP_LOG: 2026/06/08 15:33:24 productRepo.go:76:  true
+APP_LOG: 2026/06/08 15:33:25 controllers.go:21: Success response: 200
+APP_LOG: 2026/06/08 15:33:25 controllers.go:21: Success response: 200
+APP_LOG: 2026/06/08 15:33:25 controllers.go:21: Success response: 200
+APP_LOG: 2026/06/08 15:33:26 controllers.go:21: Success response: 200
+APP_LOG: 2026/06/08 15:33:26 controllers.go:21: Success response: 200
+APP_LOG: 2026/06/08 15:34:31 handler.go:60: User connected:%!(EXTRA int=1)
+APP_LOG: 2026/06/08 15:34:31 chatController.go:56: GetChats request started
+APP_LOG: 2026/06/08 15:34:31 chatController.go:71: GetChats parameters: userID=1, page=1
+APP_LOG: 2026/06/08 15:34:31 client.go:54: WS read error: websocket: close 1001 (going away)
+APP_LOG: 2026/06/08 15:34:31 handler.go:60: User connected:%!(EXTRA int=1)
+APP_LOG: 2026/06/08 15:34:31 chatController.go:84: GetChats success: 1 chats retrieved for user 1
+APP_LOG: 2026/06/08 15:34:31 controllers.go:21: Success response: 200
+APP_LOG: 2026/06/08 15:34:31 chatController.go:56: GetChats request started
+APP_LOG: 2026/06/08 15:34:31 chatController.go:71: GetChats parameters: userID=1, page=1
+APP_LOG: 2026/06/08 15:34:31 chatController.go:84: GetChats success: 1 chats retrieved for user 1
+APP_LOG: 2026/06/08 15:34:31 controllers.go:21: Success response: 200
+APP_LOG: 2026/06/08 15:34:33 client.go:54: WS read error: websocket: close 1005 (no status)
+APP_LOG: 2026/06/08 15:34:33 controllers.go:21: Success response: 200
+APP_LOG: 2026/06/08 15:34:33 controllers.go:21: Success response: 200
+APP_LOG: 2026/06/08 15:34:38 controllers.go:21: Success response: 200
+APP_LOG: 2026/06/09 11:29:24 main.go:36: Application started successfully.
+APP_LOG: 2026/06/09 11:29:24 auth.go:60: AuthMiddleware Started
+APP_LOG: 2026/06/09 11:29:24 auth.go:60: AuthMiddleware Started
+APP_LOG: 2026/06/09 11:29:24 auth.go:60: AuthMiddleware Started
+APP_LOG: 2026/06/09 11:29:24 auth.go:60: AuthMiddleware Started
+APP_LOG: 2026/06/09 11:29:24 auth.go:60: AuthMiddleware Started
+APP_LOG: 2026/06/09 11:29:24 auth.go:60: AuthMiddleware Started
+APP_LOG: 2026/06/09 11:29:24 auth.go:60: AuthMiddleware Started
+APP_LOG: 2026/06/09 11:29:24 auth.go:60: AuthMiddleware Started
+APP_LOG: 2026/06/09 11:29:24 auth.go:60: AuthMiddleware Started
+APP_LOG: 2026/06/09 11:29:24 auth.go:60: AuthMiddleware Started
+APP_LOG: 2026/06/09 11:29:24 auth.go:60: AuthMiddleware Started
+APP_LOG: 2026/06/09 11:29:24 auth.go:60: AuthMiddleware Started
+APP_LOG: 2026/06/09 11:29:24 auth.go:60: AuthMiddleware Started
+APP_LOG: 2026/06/09 11:29:24 auth.go:60: AuthMiddleware Started
+APP_LOG: 2026/06/09 11:29:24 auth.go:60: AuthMiddleware Started
+APP_LOG: 2026/06/09 11:29:24 auth.go:60: AuthMiddleware Started
+APP_LOG: 2026/06/09 11:29:24 ai.go:20: Gemini client initialized successfully
+APP_LOG: 2026/06/09 11:29:33 controllers.go:21: Success response: 200
+APP_LOG: 2026/06/09 11:29:43 brandsController.go:48: GetBrands request started
+APP_LOG: 2026/06/09 11:29:43 brandsController.go:60: GetBrands parameters: page=1, search=''
+APP_LOG: 2026/06/09 11:29:43 categoriesController.go:47: GetCategories request started
+APP_LOG: 2026/06/09 11:29:43 categoriesController.go:59: GetCategories parameters: page=1, search=''
+APP_LOG: 2026/06/09 11:29:44 brandsController.go:72: GetBrands success: 50 brands retrieved
+APP_LOG: 2026/06/09 11:29:44 controllers.go:21: Success response: 200
+APP_LOG: 2026/06/09 11:29:45 categoriesController.go:71: GetCategories success: 50 categories retrieved
+APP_LOG: 2026/06/09 11:29:45 controllers.go:21: Success response: 200
+APP_LOG: 2026/06/09 13:58:10 main.go:36: Application started successfully.
+APP_LOG: 2026/06/09 13:58:10 ai.go:20: Gemini client initialized successfully
+APP_LOG: 2026/06/09 13:58:10 auth.go:60: AuthMiddleware Started
+APP_LOG: 2026/06/09 13:58:10 auth.go:60: AuthMiddleware Started
+APP_LOG: 2026/06/09 13:58:10 auth.go:60: AuthMiddleware Started
+APP_LOG: 2026/06/09 13:58:10 auth.go:60: AuthMiddleware Started
+APP_LOG: 2026/06/09 13:58:10 auth.go:60: AuthMiddleware Started
+APP_LOG: 2026/06/09 13:58:10 auth.go:60: AuthMiddleware Started
+APP_LOG: 2026/06/09 13:58:10 auth.go:60: AuthMiddleware Started
+APP_LOG: 2026/06/09 13:58:10 auth.go:60: AuthMiddleware Started
+APP_LOG: 2026/06/09 13:58:10 auth.go:60: AuthMiddleware Started
+APP_LOG: 2026/06/09 13:58:10 auth.go:60: AuthMiddleware Started
+APP_LOG: 2026/06/09 13:58:10 auth.go:60: AuthMiddleware Started
+APP_LOG: 2026/06/09 13:58:10 auth.go:60: AuthMiddleware Started
+APP_LOG: 2026/06/09 13:58:10 auth.go:60: AuthMiddleware Started
+APP_LOG: 2026/06/09 13:58:10 auth.go:60: AuthMiddleware Started
+APP_LOG: 2026/06/09 13:58:10 auth.go:60: AuthMiddleware Started
+APP_LOG: 2026/06/09 13:58:10 auth.go:60: AuthMiddleware Started
+APP_LOG: 2026/06/09 13:58:10 auth.go:60: AuthMiddleware Started
+APP_LOG: 2026/06/09 13:58:10 auth.go:60: AuthMiddleware Started
+APP_LOG: 2026/06/09 14:00:09 auth.go:66: AuthMiddleware: Cookie not found - http: named cookie not present
+APP_LOG: 2026/06/09 14:00:22 usersController.go:58: Login request started
+APP_LOG: 2026/06/09 14:00:25 usersController.go:102: Login success: User 1 logged in
+APP_LOG: 2026/06/09 14:00:25 controllers.go:21: Success response: 202
+APP_LOG: 2026/06/09 14:00:32 kycController.go:31: CreateKYC error for user 1: failed to create applicant: CreateApplicant: sumsub API error (http=403 code=403): User not authorized.
+APP_LOG: 2026/06/09 14:00:32 controllers.go:10: Error response: 500 - KYC başlatma hatası
+APP_LOG: 2026/06/09 14:01:00 kycController.go:31: CreateKYC error for user 1: failed to create applicant: CreateApplicant: sumsub API error (http=403 code=403): User not authorized.
+APP_LOG: 2026/06/09 14:01:00 controllers.go:10: Error response: 500 - KYC başlatma hatası
+APP_LOG: 2026/06/09 14:06:04 main.go:36: Application started successfully.
+APP_LOG: 2026/06/09 14:06:04 ai.go:20: Gemini client initialized successfully
+APP_LOG: 2026/06/09 14:06:04 auth.go:60: AuthMiddleware Started
+APP_LOG: 2026/06/09 14:06:04 auth.go:60: AuthMiddleware Started
+APP_LOG: 2026/06/09 14:06:04 auth.go:60: AuthMiddleware Started
+APP_LOG: 2026/06/09 14:06:04 auth.go:60: AuthMiddleware Started
+APP_LOG: 2026/06/09 14:06:04 auth.go:60: AuthMiddleware Started
+APP_LOG: 2026/06/09 14:06:04 auth.go:60: AuthMiddleware Started
+APP_LOG: 2026/06/09 14:06:04 auth.go:60: AuthMiddleware Started
+APP_LOG: 2026/06/09 14:06:04 auth.go:60: AuthMiddleware Started
+APP_LOG: 2026/06/09 14:06:04 auth.go:60: AuthMiddleware Started
+APP_LOG: 2026/06/09 14:06:04 auth.go:60: AuthMiddleware Started
+APP_LOG: 2026/06/09 14:06:04 auth.go:60: AuthMiddleware Started
+APP_LOG: 2026/06/09 14:06:04 auth.go:60: AuthMiddleware Started
+APP_LOG: 2026/06/09 14:06:04 auth.go:60: AuthMiddleware Started
+APP_LOG: 2026/06/09 14:06:04 auth.go:60: AuthMiddleware Started
+APP_LOG: 2026/06/09 14:06:04 auth.go:60: AuthMiddleware Started
+APP_LOG: 2026/06/09 14:06:04 auth.go:60: AuthMiddleware Started
+APP_LOG: 2026/06/09 14:06:04 auth.go:60: AuthMiddleware Started
+APP_LOG: 2026/06/09 14:06:04 auth.go:60: AuthMiddleware Started
+APP_LOG: 2026/06/09 14:06:14 kycController.go:31: CreateKYC error for user 1: failed to lookup existing applicant: GetApplicantByExternalUserID: request failed: Get "https://api.sandbox.sumsub.com/resources/applicants/-;externalUserId=1/one": dial tcp: lookup api.sandbox.sumsub.com: no such host
+APP_LOG: 2026/06/09 14:06:14 controllers.go:10: Error response: 500 - KYC başlatma hatası
+APP_LOG: 2026/06/09 14:07:30 kycController.go:31: CreateKYC error for user 1: failed to lookup existing applicant: GetApplicantByExternalUserID: request failed: Get "https://api.sandbox.sumsub.com/resources/applicants/-;externalUserId=1/one": dial tcp: lookup api.sandbox.sumsub.com: no such host
+APP_LOG: 2026/06/09 14:07:30 controllers.go:10: Error response: 500 - KYC başlatma hatası
+APP_LOG: 2026/06/09 14:08:21 main.go:36: Application started successfully.
+APP_LOG: 2026/06/09 14:08:21 ai.go:20: Gemini client initialized successfully
+APP_LOG: 2026/06/09 14:08:21 auth.go:60: AuthMiddleware Started
+APP_LOG: 2026/06/09 14:08:21 auth.go:60: AuthMiddleware Started
+APP_LOG: 2026/06/09 14:08:21 auth.go:60: AuthMiddleware Started
+APP_LOG: 2026/06/09 14:08:21 auth.go:60: AuthMiddleware Started
+APP_LOG: 2026/06/09 14:08:21 auth.go:60: AuthMiddleware Started
+APP_LOG: 2026/06/09 14:08:21 auth.go:60: AuthMiddleware Started
+APP_LOG: 2026/06/09 14:08:21 auth.go:60: AuthMiddleware Started
+APP_LOG: 2026/06/09 14:08:21 auth.go:60: AuthMiddleware Started
+APP_LOG: 2026/06/09 14:08:21 auth.go:60: AuthMiddleware Started
+APP_LOG: 2026/06/09 14:08:21 auth.go:60: AuthMiddleware Started
+APP_LOG: 2026/06/09 14:08:21 auth.go:60: AuthMiddleware Started
+APP_LOG: 2026/06/09 14:08:21 auth.go:60: AuthMiddleware Started
+APP_LOG: 2026/06/09 14:08:21 auth.go:60: AuthMiddleware Started
+APP_LOG: 2026/06/09 14:08:21 auth.go:60: AuthMiddleware Started
+APP_LOG: 2026/06/09 14:08:21 auth.go:60: AuthMiddleware Started
+APP_LOG: 2026/06/09 14:08:21 auth.go:60: AuthMiddleware Started
+APP_LOG: 2026/06/09 14:08:21 auth.go:60: AuthMiddleware Started
+APP_LOG: 2026/06/09 14:08:21 auth.go:60: AuthMiddleware Started
+APP_LOG: 2026/06/09 14:08:25 kycController.go:31: CreateKYC error for user 1: failed to lookup existing applicant: GetApplicantByExternalUserID: request failed: Get "https://api.sandbox.sumsub.com/resources/applicants/-;externalUserId=1/one": dial tcp: lookup api.sandbox.sumsub.com: no such host
+APP_LOG: 2026/06/09 14:08:25 controllers.go:10: Error response: 500 - KYC başlatma hatası

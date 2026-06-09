@@ -1,6 +1,7 @@
 package services
 
 import (
+	"Store-Dio/clients"
 	"Store-Dio/repo"
 	"Store-Dio/services/attributes"
 	"Store-Dio/services/brands"
@@ -8,10 +9,10 @@ import (
 	"Store-Dio/services/chat"
 	"Store-Dio/services/favories"
 	"Store-Dio/services/images"
+	"Store-Dio/services/kyc"
 	"Store-Dio/services/offers"
 	"Store-Dio/services/products"
 	"Store-Dio/services/reviews"
-
 	"Store-Dio/services/users"
 
 	"github.com/jmoiron/sqlx"
@@ -28,11 +29,11 @@ type Service struct {
 	ChatService       *chat.ChatService
 	OffersService     *offers.OffersService
 	ImageService      *images.ImageService
+	KYCService        *kyc.KYCService
 	db                *sqlx.DB
 }
 
-func NewService(repo *repo.Repo, db *sqlx.DB) *Service {
-
+func NewService(repo *repo.Repo, db *sqlx.DB, sumsubClient clients.ISumsubClient) *Service {
 	brandsService := brands.NewBrandsService(repo.BrandsRepo)
 	categoriesService := categories.NewCategoriesService(repo.CategoriesRepo)
 	productsService := products.NewProductService(repo.ProductRepo, repo.AttributeRepo, repo.UserRepo, db)
@@ -43,8 +44,9 @@ func NewService(repo *repo.Repo, db *sqlx.DB) *Service {
 	chatService := chat.NewChatService(repo.ChatRepo, repo.OffersRepo, db)
 	imageService := images.NewProductService(repo.ImageRepo, db)
 	offersService := offers.NewOffersService(repo.OffersRepo, repo.ProductRepo, db, chatService)
-	return &Service{
+	kycService := kyc.NewKYCService(repo.UserRepo, sumsubClient)
 
+	return &Service{
 		BrandsService:     brandsService,
 		CategoriesService: categoriesService,
 		ProductsService:   productsService,
@@ -55,6 +57,7 @@ func NewService(repo *repo.Repo, db *sqlx.DB) *Service {
 		ChatService:       chatService,
 		ImageService:      imageService,
 		OffersService:     offersService,
+		KYCService:        kycService,
 		db:                db,
 	}
 }

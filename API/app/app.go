@@ -17,64 +17,42 @@ import (
 )
 
 type App struct {
-	DB *sqlx.DB
-
-	// Repo
-	Repo *repo.Repo
-
-	// Services
-	Service *services.Service
-
-	// Controller
-	Controller *controllers.Controller
-
-	// Middleware
+	DB             *sqlx.DB
+	Repo           *repo.Repo
+	Service        *services.Service
+	Controller     *controllers.Controller
 	UserMiddleware *middleware.UserMiddleware
-
-	Route *chi.Mux
-
-	Hub *websocket.Hub
-
-	// Workers
-	OfferWorker *workers.OfferWorker
+	Route          *chi.Mux
+	Hub            *websocket.Hub
+	OfferWorker    *workers.OfferWorker
 }
 
 func NewApp(db *sqlx.DB) *App {
+	ctx := context.Background()
+	clients.InitGeminiClient(ctx)
+	clients.NewImagesClient(config.CLOUDFLARE_ACCOUNT_ID, config.CLOUDFLARE_API_KEY)
+	sumsubClient := clients.NewSumsubClient(config.SUMSUB_API_KEY, config.SUMSUB_SECRET_KEY, config.SUMSUB_SANDBOX)
 
 	repo := repo.NewRepo(db)
-
-	service := services.NewService(repo, db)
+	service := services.NewService(repo, db, sumsubClient)
 
 	hub := websocket.NewHub(service.ChatService)
 	go hub.Run()
 
-	controllers := controllers.NewController(service)
-
+	controller := controllers.NewController(service)
 	userMiddleware := middleware.NewUserMiddleware(repo.UserRepo)
-
 	ws := websocket.NewHandler(hub)
-
-	// Route
-	route := routes.SetupRoutes(controllers, userMiddleware, ws)
-
-	// Workers
+	route := routes.SetupRoutes(controller, userMiddleware, ws)
 	offerWorker := workers.NewOfferWorker(repo.OffersRepo)
 
-	// Clients
-	ctx := context.Background()
-	clients.InitGeminiClient(ctx)
-	clients.NewImagesClient(config.CLOUDFLARE_ACCOUNT_ID, config.CLOUDFLARE_API_KEY)
 	return &App{
-		DB: db,
-
+		DB:             db,
 		Repo:           repo,
 		Service:        service,
 		Hub:            hub,
-		Controller:     controllers,
+		Controller:     controller,
 		UserMiddleware: userMiddleware,
 		OfferWorker:    offerWorker,
-
-		// Route
-		Route: route,
+		Route:          route,
 	}
 }

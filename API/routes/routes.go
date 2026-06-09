@@ -173,6 +173,19 @@ func SetupRoutes(
 			off.Get("/bidder", controller.UserOffersController.GetOffersByBidder)
 		})
 
+		r.Route("/kyc", func(kyc chi.Router) {
+
+			kyc.Post("/webhook", controller.WebhookController.HandleWebhook)
+
+			kyc.Group(func(auth chi.Router) {
+				auth.Use(um.AuthMiddleware)
+
+				auth.Post("/", controller.KYCController.CreateKYC)
+
+				auth.Get("/", controller.KYCController.GetKYC)
+			})
+		})
+
 		// WebSocket endpoint
 		r.Route("/ws", func(wsRoute chi.Router) {
 			wsRoute.Use(um.AuthMiddleware)

@@ -114,9 +114,9 @@ func (ur *UserRepo) Update(ctx context.Context, user *models.User) (*models.User
 	if user.Email == "" || user.Name == "" || user.Surname == "" || user.ID == 0 {
 		return nil, fmt.Errorf("Invalid data")
 	}
-	query := "UPDATE users.users SET name=$1 ,surname = $2 ,email = $3 ,phone = $4 ,gender = $5 WHERE id=$6"
+	query := "UPDATE users.users SET name=$1 ,surname = $2 ,email = $3 ,phone = $4 ,gender = $5, verified = $6 WHERE id=$7 AND deleted_at IS NULL"
 
-	_, err := ur.db.ExecContext(ctx, query, user.Name, user.Surname, user.Email, user.Phone, user.Gender, user.ID)
+	_, err := ur.db.ExecContext(ctx, query, user.Name, user.Surname, user.Email, user.Phone, user.Gender, user.Verified, user.ID)
 
 	if err != nil {
 		config.Logger.Printf("Failed to update user")
@@ -145,7 +145,7 @@ func (ur *UserRepo) GetUserDataByID(ctx context.Context, id int) (*models.User, 
 		return nil, fmt.Errorf("Invalid data")
 	}
 	var user models.User
-	query := `SELECT id,email,phone,name,surname,gender,role FROM users.users WHERE id = $1 AND deleted_at IS NULL`
+	query := `SELECT id,email,phone,name,surname,gender,role,verified, sumsub_applicant_id FROM users.users WHERE id = $1 AND deleted_at IS NULL`
 
 	err := ur.db.GetContext(ctx, &user, query, id)
 
@@ -264,3 +264,100 @@ func (ur *UserRepo) OnlyAdmin(ctx context.Context, userID int) (bool, error) {
 	return true, nil
 
 }
+
+func (ur *UserRepo) AddApplicantID(ctx context.Context, userID int, applicantID string) error {
+	if userID == 0 || applicantID == "" {
+		return fmt.Errorf("invalid arguments: userID or applicantID is empty")
+	}
+	query := "UPDATE users.users SET sumsub_applicant_id = $1 WHERE id = $2 AND deleted_at IS NULL"
+	_, err := ur.db.ExecContext(ctx, query, applicantID, userID)
+	if err != nil {
+		config.Logger.Printf("AddApplicantID: failed to update user %d: %v", userID, err)
+		return fmt.Errorf("failed to persist applicant ID: %w", err)
+	}
+	return nil
+}
+
+// UpdateVerifiedStatus sets the verified column for a user.
+// verified=1 means KYC approved (GREEN), verified=0 means not approved (RED or pending).
+func (ur *UserRepo) UpdateVerifiedStatus(ctx context.Context, userID int, verified int) error {
+	if userID == 0 {
+		return fmt.Errorf("invalid userID")
+	}
+	query := "UPDATE users.users SET verified = $1 WHERE id = $2 AND deleted_at IS NULL"
+	_, err := ur.db.ExecContext(ctx, query, verified, userID)
+	if err != nil {
+		config.Logger.Printf("UpdateVerifiedStatus: failed for user %d: %v", userID, err)
+		return fmt.Errorf("failed to update verified status: %w", err)
+	}
+	return nil
+}
+
+func (ur *UserRepo) BeginTx(ctx context.Context) (*sqlx.Tx, error) {
+	return ur.db.BeginTxx(ctx, nil)
+}
+
+// GetUserDataByIDForUpdate fetches only the KYC-relevant columns with a row-level
+// exclusive lock. Must be called within an active transaction.
+func (ur *UserRepo) GetUserDataByIDForUpdate(ctx context.Context, tx *sqlx.Tx, userID int) (*models.User, error) {
+	var user models.User
+	query := `SELECT id, COALESCE(sumsub_applicant_id, '') AS sumsub_applicant_id
+	          FROM users.users WHERE id = $1 AND deleted_at IS NULL FOR UPDATE`
+	err := tx.QueryRowContext(ctx, query, userID).Scan(&user.ID, &user.ApplicantID)
+	if err != nil {
+		if err == sql.ErrNoRows {
+			return nil, fmt.Errorf("user not found")
+		}
+		return nil, err
+	}
+	return &user, nil
+}
+
+// SetApplicantIDTx writes the Sumsub applicant ID inside an active transaction.
+func (ur *UserRepo) SetApplicantIDTx(ctx context.Context, tx *sqlx.Tx, userID int, applicantID string) error {
+	query := "UPDATE users.users SET sumsub_applicant_id = $1 WHERE id = $2 AND deleted_at IS NULL"
+	_, err := tx.ExecContext(ctx, query, applicantID, userID)
+	if err != nil {
+		return fmt.Errorf("SetApplicantIDTx: %w", err)
+	}
+	return nil
+}
+
+// GetUserByApplicantID looks up a user by their Sumsub applicant ID.
+// Used by the webhook handler to avoid relying on externalUserId.
+func (ur *UserRepo) GetUserByApplicantID(ctx context.Context, applicantID string) (*models.User, error) {
+	var user models.User
+	query := `SELECT id FROM users.users WHERE sumsub_applicant_id = $1 AND deleted_at IS NULL`
+	err := ur.db.QueryRowContext(ctx, query, applicantID).Scan(&user.ID)
+	if err != nil {
+		if err == sql.ErrNoRows {
+			return nil, fmt.Errorf("user not found for applicantId %q", applicantID)
+		}
+		return nil, err
+	}
+	return &user, nil
+}
+
+// MarkWebhookProcessed inserts a correlationId into the deduplication table.
+// Returns (true, nil) if the event is new and should be processed.
+// Returns (false, nil) if the event was already processed (duplicate/replay).
+// Requires the users.kyc_webhook_events table to exist:
+//
+//	CREATE TABLE users.kyc_webhook_events (
+//	    correlation_id TEXT PRIMARY KEY,
+//	    processed_at   TIMESTAMPTZ NOT NULL DEFAULT NOW()
+//	);
+func (ur *UserRepo) MarkWebhookProcessed(ctx context.Context, correlationID string) (bool, error) {
+	query := `INSERT INTO users.kyc_webhook_events (correlation_id) VALUES ($1)
+	          ON CONFLICT (correlation_id) DO NOTHING`
+	result, err := ur.db.ExecContext(ctx, query, correlationID)
+	if err != nil {
+		return false, fmt.Errorf("MarkWebhookProcessed: %w", err)
+	}
+	rows, err := result.RowsAffected()
+	if err != nil {
+		return false, err
+	}
+	return rows > 0, nil
+}
+
