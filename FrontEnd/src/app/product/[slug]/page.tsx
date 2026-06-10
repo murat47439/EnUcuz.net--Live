@@ -7,7 +7,7 @@ import ProductDetailSection from "@/features/components/UI/productDetail/product
 import RelatedProducts from "@/features/components/UI/productDetail/relatedProducts";
 import { ChevronRight } from "lucide-react";
 
-export default async function ProductDetailPage({ params }: { params: { slug: string } }) {
+export default async function ProductDetailPage({ params }: { params: Promise<{ slug: string }> }) {
     try {
         const resolvedParams = await params;
         const full = resolvedParams.slug;

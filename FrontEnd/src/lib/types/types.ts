@@ -368,6 +368,7 @@ export interface UserProfileResponse {
             role: number,
             surname: string,
             gender: number,
+            verified: number,
         }
     }
 }
@@ -421,6 +422,7 @@ export interface LoginResponse {
             role: number,
             surname: string,
             gender: number,
+            verified: number,
         }
     }
 }

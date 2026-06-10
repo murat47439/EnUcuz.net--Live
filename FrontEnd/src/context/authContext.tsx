@@ -10,6 +10,7 @@ interface User {
     surname?: string;
     phone?: string;
     gender?: number;
+    verified?: number; 
 }
 
 interface AuthContextType {
