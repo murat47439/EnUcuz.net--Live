@@ -15,11 +15,16 @@ export async function getProduct(data: IdParam): Promise<ProductDetail> {
     }catch(err: unknown){
         if (err instanceof Error && 'response' in err) {
             const axiosError = err as AxiosError<{ message: string }>;
+            console.error("[getProduct] AxiosError status:", axiosError.response?.status);
+            console.error("[getProduct] AxiosError data:", JSON.stringify(axiosError.response?.data)?.substring(0, 500));
+            console.error("[getProduct] AxiosError headers:", JSON.stringify(axiosError.response?.headers)?.substring(0, 500));
             throw new Error(axiosError.response?.data?.message || "Ürün bulunamadı");
         }
         if (err instanceof Error) {
+            console.error("[getProduct] Error:", err.message);
             throw err;
         }
+        console.error("[getProduct] Unknown error:", err);
         throw new Error("Ürün bulunamadı");
     }
 }
