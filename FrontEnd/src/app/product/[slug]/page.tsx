@@ -7,13 +7,24 @@ import ProductDetailSection from "@/features/components/UI/productDetail/product
 import RelatedProducts from "@/features/components/UI/productDetail/relatedProducts";
 import { ChevronRight } from "lucide-react";
 
+export const dynamic = 'force-dynamic'
+
 export default async function ProductDetailPage({ params }: { params: Promise<{ slug: string }> }) {
     try {
         const resolvedParams = await params;
-        const full = resolvedParams.slug;
+        const rawSlug = resolvedParams.slug;
+        const full = decodeURIComponent(rawSlug);
+        
+        console.log("[ProductDetail] rawSlug:", rawSlug);
+        console.log("[ProductDetail] decodedSlug:", full);
+        console.log("[ProductDetail] API_BASE_URL:", process.env.NEXT_PUBLIC_API_BASE_URL);
+        
         const id = Number(full?.split("-p-").pop());
+        console.log("[ProductDetail] parsedId:", id);
+        
         const request: IdParam = { id };
         if (!full || isNaN(id)) {
+            console.error("[ProductDetail] Invalid slug or id. full:", full, "id:", id);
             notFound();
         }
 
